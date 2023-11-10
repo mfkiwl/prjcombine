@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>XC9500, XC9500XL, XC9500XV &#8212; Project Combine  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction" href="intro.html" />
+    <link rel="prev" title="Project Combine" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="xc9500-xc9500xl-xc9500xv">
+<h1>XC9500, XC9500XL, XC9500XV<a class="headerlink" href="#xc9500-xc9500xl-xc9500xv" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#devices">Devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#packages">Packages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="structure.html">Device structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#uim-and-fb-inputs-xc9500">UIM and FB inputs — XC9500</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#uim-and-fb-inputs-xc9500xl-xv">UIM and FB inputs — XC9500XL/XV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#fb-global-fuses">FB global fuses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#product-terms">Product terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#sum-term-xor-gate">Sum term, XOR gate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#flip-flop">Flip-flop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#macrocell-output-xc9500">Macrocell output — XC9500</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#macrocell-output-xc9500xl-xv">Macrocell output — XC9500XL/XV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#input-output-buffer">Input/output buffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#configuration-pull-ups">Configuration pull-ups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#xc9500xl-xv-bus-keeper">XC9500XL/XV bus keeper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#global-networks-xc9500">Global networks — XC9500</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#global-networks-xc9500xl-xv">Global networks — XC9500XL/XV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#misc-configuration">Misc configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bitstream-xc9500.html">Bitstream structure - XC9500</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html#jed-format-mapping">JED format mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html#fuses-product-terms">Fuses — product terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html#fuses-macrocells">Fuses — macrocells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html#fuses-fb-inputs">Fuses — FB inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html#fuses-per-fb-bits-and-globals">Fuses — per-FB bits and globals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html#fuses-input-buffer-enable">Fuses — input buffer enable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html#fuses-protection-bits">Fuses — protection bits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html#fuses-uim-wire-and">Fuses — UIM wire-AND</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bitstream-xc9500xl.html">Bitstream structure — XC9500XL/XV</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html#jed-format-mapping">JED format mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html#fuses-product-terms">Fuses — product terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html#fuses-macrocells">Fuses — macrocells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html#fuses-fb-inputs">Fuses — FB inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html#fuses-per-fb-bits-and-globals">Fuses — per-FB bits and globals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html#fuses-protection-bits-done">Fuses — protection bits, DONE</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jtag.html">JTAG interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jtag.html#ir">IR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jtag.html#boundary-scan-register">Boundary scan register</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jtag.html#isp-instructions">ISP instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jtag.html#programming-sequence">Programming sequence</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Project Combine</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">XC9500, XC9500XL, XC9500XV</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../index.html" title="previous chapter">Project Combine</a></li>
+      <li>Next: <a href="intro.html" title="next chapter">Introduction</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Wanda.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../_sources/xc9500/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
