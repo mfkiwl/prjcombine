@@ -48,6 +48,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Introduction</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#devices">Devices</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#packages">Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#device-pins">Device pins</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="structure.html">Device structure</a></li>
@@ -95,13 +96,14 @@ EPLD families.  It comes in three variants:</p>
 <li><p>FFs have clock enable function</p></li>
 <li><p>54 (instead of 36) UIM inputs per function block</p></li>
 <li><p>FF has configurable clock polarity</p></li>
+<li><p>output enable has configurable polarity</p></li>
 <li><p>FOE/FCLK multiplexers and inversion have been removed</p></li>
 <li><p>optional weak bus keeper can be configured for all pins</p></li>
 </ul>
 </li>
 <li><p>XC9500XV: 2.5V core logic, 1.8V, 2.5V, or 3.3V I/O, with minor functional changes from XC9500XL:</p>
 <ul class="simple">
-<li><p>larger devices have two I/O banks with separate VCCIO</p></li>
+<li><p>larger devices have two or four I/O banks with separate VCCIO</p></li>
 <li><p>the bitstream now contains a <code class="docutils literal notranslate"><span class="pre">DONE</span></code> bit tied to <code class="docutils literal notranslate"><span class="pre">ISC_DONE</span></code>, preventing problems with partially configured devices</p></li>
 </ul>
 </li>
@@ -114,76 +116,130 @@ EPLD families.  It comes in three variants:</p>
 <tr class="row-odd"><th class="head"><p>Device</p></th>
 <th class="head"><p>Variant</p></th>
 <th class="head"><p>Function Blocks</p></th>
+<th class="head"><p>GOE pins / FOE networks</p></th>
+<th class="head"><p>I/O banks</p></th>
+<th class="head"><p>Notes</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>XC9536</p></td>
 <td><p>XC9500</p></td>
 <td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>Does not have FB input feedback</p></td>
 </tr>
 <tr class="row-odd"><td><p>XC9572</p></td>
 <td><p>XC9500</p></td>
 <td><p>4</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>GOE mapping to pads varies with package</p></td>
 </tr>
 <tr class="row-even"><td><p>XC95108</p></td>
 <td><p>XC9500</p></td>
 <td><p>6</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><p>XC95144</p></td>
 <td><p>XC9500</p></td>
 <td><p>8</p></td>
+<td><p>4</p></td>
+<td><p>1</p></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p>XC95216</p></td>
 <td><p>XC9500</p></td>
 <td><p>12</p></td>
+<td><p>4</p></td>
+<td><p>1</p></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><p>XC95288</p></td>
 <td><p>XC9500</p></td>
 <td><p>16</p></td>
+<td><p>4</p></td>
+<td><p>1</p></td>
+<td><p>Has special input buffer enable fuses</p></td>
 </tr>
 <tr class="row-even"><td><p>XC9536XL</p></td>
 <td><p>XC9500XL</p></td>
 <td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><p>XC9572XL</p></td>
 <td><p>XC9500XL</p></td>
 <td><p>4</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>GOE mapping to pads varies with package</p></td>
 </tr>
 <tr class="row-even"><td><p>XC95144XL</p></td>
 <td><p>XC9500XL</p></td>
 <td><p>8</p></td>
+<td><p>4</p></td>
+<td><p>1</p></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><p>XC95288XL</p></td>
 <td><p>XC9500XL</p></td>
 <td><p>16</p></td>
+<td><p>4</p></td>
+<td><p>1</p></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p>XA9536XL</p></td>
 <td><p>XC9500XL</p></td>
 <td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><p>XA9572XL</p></td>
 <td><p>XC9500XL</p></td>
 <td><p>4</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>GOE mapping to pads varies with package</p></td>
 </tr>
 <tr class="row-even"><td><p>XA95144XL</p></td>
 <td><p>XC9500XL</p></td>
 <td><p>8</p></td>
+<td><p>4</p></td>
+<td><p>1</p></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><p>XC9536XV</p></td>
 <td><p>XC9500XV</p></td>
 <td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p>XC9572XV</p></td>
 <td><p>XC9500XV</p></td>
 <td><p>4</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>GOE mapping to pads varies with package</p></td>
 </tr>
 <tr class="row-odd"><td><p>XC95144XV</p></td>
 <td><p>XC9500XV</p></td>
 <td><p>8</p></td>
+<td><p>4</p></td>
+<td><p>2</p></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p>XC95288XV</p></td>
 <td><p>XC9500XV</p></td>
 <td><p>16</p></td>
+<td><p>4</p></td>
+<td><p>4</p></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -582,6 +638,51 @@ EPLD families.  It comes in three variants:</p>
 </table>
 <p>Pin compatibility is maintained across all 3 variants of the XC9500 family within a single package.
 Additionally, devices in PQ208 and HQ208 packages are pin compatible with each other.</p>
+</section>
+<section id="device-pins">
+<h2>Device pins<a class="headerlink" href="#device-pins" title="Link to this heading"></a></h2>
+<p>The XC9500 family devices have the following pads:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">GND</span></code>: ground pins</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VCCINT</span></code>: core power, has to be:</p>
+<ul class="simple">
+<li><p>5V on XC9500</p></li>
+<li><p>3.3V on XC9500XL</p></li>
+<li><p>2.5V on XC9500XV</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VCCIO</span></code> or <code class="docutils literal notranslate"><span class="pre">VCCIO{bank}</span></code>: I/O power, has to be:</p>
+<ul class="simple">
+<li><p>3.3V or 5V on XC9500</p></li>
+<li><p>2.5V or 3.3V on XC9500XL</p></li>
+<li><p>1.8V, 2.5V, or 3.3V on XC9500XV</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB{i}_MC{j}</span></code>: general purpose I/O, associated with a macrocell; some of them also have an associated
+special function that can be used in addition to or instead of their plain I/O function:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GCLK[0-2]</span></code>: capable of driving <code class="docutils literal notranslate"><span class="pre">FCLK*</span></code> fast clock networks</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GSR</span></code>: capable of driving <code class="docutils literal notranslate"><span class="pre">FSR</span></code> fast set/reset network</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GOE[0-1]</span></code> (smaller devices) or <code class="docutils literal notranslate"><span class="pre">GOE[0-3]</span></code> (larger devices): capable of driving <code class="docutils literal notranslate"><span class="pre">FOE*</span></code> fast output enable networks</p></li>
+</ul>
+<p>Curiously, the <code class="docutils literal notranslate"><span class="pre">GOE</span></code> specials mapping to device pads varies with packaging on XC9572* devices.
+How exactly that works is unknown.</p>
+<p>The output drivers are powered by the <code class="docutils literal notranslate"><span class="pre">VCCIO</span></code> rails, and the output voltage
+is determined by that rail.</p>
+<p>For input, the following voltages are supported on all pins, regardless of VCCIO voltage:</p>
+<ul class="simple">
+<li><p>XC9500: 3.3V or 5V</p></li>
+<li><p>XC9500XL: 2.5V or 3.3V</p></li>
+<li><p>XC9500XV: 2.5V or 3.3V (notably, 1.8V is not supported)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TCK</span></code>, <code class="docutils literal notranslate"><span class="pre">TMS</span></code>, <code class="docutils literal notranslate"><span class="pre">TDI</span></code>, <code class="docutils literal notranslate"><span class="pre">TDO</span></code>: dedicated JTAG pins; the <code class="docutils literal notranslate"><span class="pre">TDO</span></code> pin output driver
+is powered by one of the <code class="docutils literal notranslate"><span class="pre">VCCIO</span></code> rails</p></li>
+</ul>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>include TDO bank information in database</p>
+</div>
 </section>
 </section>
 
