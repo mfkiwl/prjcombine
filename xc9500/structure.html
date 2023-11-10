@@ -1,40 +1,108 @@
 <!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-<html lang="en" data-content_root="../">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
-    <title>Device structure &#8212; Project Combine  documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
-    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Device structure &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Bitstream structure - XC9500" href="bitstream-xc9500.html" />
-    <link rel="prev" title="Introduction" href="intro.html" />
-   
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <link rel="prev" title="Introduction" href="intro.html" /> 
+</head>
 
-  </head><body>
-  
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
           
+          
+          <a href="../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">XC9500, XC9500XL, XC9500XV</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Device structure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uim-and-fb-inputs-xc9500">UIM and FB inputs — XC9500</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uim-and-fb-inputs-xc9500xl-xv">UIM and FB inputs — XC9500XL/XV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fb-global-fuses">FB global fuses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#product-terms">Product terms</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pt-import-export">PT import/export</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sum-term-xor-gate">Sum term, XOR gate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flip-flop">Flip-flop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#macrocell-output-xc9500">Macrocell output — XC9500</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#macrocell-output-xc9500xl-xv">Macrocell output — XC9500XL/XV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#input-output-buffer">Input/output buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-pull-ups">Configuration pull-ups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#xc9500xl-xv-bus-keeper">XC9500XL/XV bus keeper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#global-networks-xc9500">Global networks — XC9500</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#global-networks-xc9500xl-xv">Global networks — XC9500XL/XV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#misc-configuration">Misc configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html">Bitstream structure - XC9500</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html">Bitstream structure — XC9500XL/XV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jtag.html">JTAG interface</a></li>
+</ul>
+</li>
+</ul>
 
-          <div class="body" role="main">
-            
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">XC9500, XC9500XL, XC9500XV</a></li>
+      <li class="breadcrumb-item active">Device structure</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/xc9500/structure.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
   <section id="device-structure">
-<h1>Device structure<a class="headerlink" href="#device-structure" title="Link to this heading">¶</a></h1>
+<h1>Device structure<a class="headerlink" href="#device-structure" title="Link to this heading"></a></h1>
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>An XC9500 family device is made of:</p>
 <ul class="simple">
 <li><p>the UIM (universal interconnect matrix), which routes MC and IOB outputs to FB inputs</p></li>
@@ -115,7 +183,7 @@
 </ul>
 </section>
 <section id="uim-and-fb-inputs-xc9500">
-<h2>UIM and FB inputs — XC9500<a class="headerlink" href="#uim-and-fb-inputs-xc9500" title="Link to this heading">¶</a></h2>
+<h2>UIM and FB inputs — XC9500<a class="headerlink" href="#uim-and-fb-inputs-xc9500" title="Link to this heading"></a></h2>
 <p>The core interconnect structure in XC9500 devices is the UIM, Universal Interconnect Matrix.
 The name is quite appropriate, at least for internal signals: any FB input can be routed
 to any MC output.  More than that, any FB input can be routed to a <em>wire-AND</em> of an arbitrary
@@ -154,7 +222,7 @@ in the product.  These fuses are only relevant when the mux fuse set is set to <
 </div>
 </section>
 <section id="uim-and-fb-inputs-xc9500xl-xv">
-<h2>UIM and FB inputs — XC9500XL/XV<a class="headerlink" href="#uim-and-fb-inputs-xc9500xl-xv" title="Link to this heading">¶</a></h2>
+<h2>UIM and FB inputs — XC9500XL/XV<a class="headerlink" href="#uim-and-fb-inputs-xc9500xl-xv" title="Link to this heading"></a></h2>
 <p>The core interconnect structure in XC9500XL/XV devices is the UIM 2.  This version of the UIM
 is not really universal, and is much more of a classic CPLD design.</p>
 <p>Each FB has 54 inputs, which we call <code class="docutils literal notranslate"><span class="pre">FB[i].IM[j]</span></code>.  Each FB input is controlled by a set of fuses:</p>
@@ -176,7 +244,7 @@ depends only on the <code class="docutils literal notranslate"><span class="pre"
 </div>
 </section>
 <section id="fb-global-fuses">
-<h2>FB global fuses<a class="headerlink" href="#fb-global-fuses" title="Link to this heading">¶</a></h2>
+<h2>FB global fuses<a class="headerlink" href="#fb-global-fuses" title="Link to this heading"></a></h2>
 <p>Each function block has two fuses controlling the entire FB:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">FB[i].ENABLE</span></code>: function block enable; needs to be programmed to use this function block</p></li>
@@ -189,7 +257,7 @@ import/export within this function block</p></li>
 </div>
 </section>
 <section id="product-terms">
-<h2>Product terms<a class="headerlink" href="#product-terms" title="Link to this heading">¶</a></h2>
+<h2>Product terms<a class="headerlink" href="#product-terms" title="Link to this heading"></a></h2>
 <p>Each function block has 90 product terms, 5 per macrocell.  We call them <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k]</span></code>.
 Each of the 5 PTs has a dedicated function, as follows:</p>
 <ul class="simple">
@@ -225,7 +293,7 @@ true and inverted forms.</p>
 <p>The product term’s corresponding dedicated function is called <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k].SPECIAL</span></code>.
 It is equal to <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k]</span></code> if the dedicated function is enabled in <code class="docutils literal notranslate"><span class="pre">ALLOC</span></code>, 0 otherwise.</p>
 <section id="pt-import-export">
-<h3>PT import/export<a class="headerlink" href="#pt-import-export" title="Link to this heading">¶</a></h3>
+<h3>PT import/export<a class="headerlink" href="#pt-import-export" title="Link to this heading"></a></h3>
 <p>Product terms can be borrowed between neighbouring MCs within a FB.  To this end, each MC has two outputs,
 <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].EXPORT_{UP|DOWN}</span></code>, and two inputs, <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IMPORT_{UP|DOWN}</span></code>.  The “down” direction
 corresponds to exporting PTs toward lower-numbered MCs (with a wraparound from 0 to 17), and the “up”
@@ -281,7 +349,7 @@ FB[i].MC[j].EXPORT_DOWN = (FB[i].MC[j].EXPORT_DIR == DOWN ? FB[i].MC[j].EXPORT :
 </section>
 </section>
 <section id="sum-term-xor-gate">
-<h2>Sum term, XOR gate<a class="headerlink" href="#sum-term-xor-gate" title="Link to this heading">¶</a></h2>
+<h2>Sum term, XOR gate<a class="headerlink" href="#sum-term-xor-gate" title="Link to this heading"></a></h2>
 <p>Each macrocell has a main sum term, which includes all product terms and imports routed towards it:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FB[i].MC[j].SUM =
     (FB[i].MC[j].IMPORT_UP_ALLOC == OR_MAIN ? FB[i].MC[j].IMPORT_UP : 0) |
@@ -304,7 +372,7 @@ FB[i].MC[j].EXPORT_DOWN = (FB[i].MC[j].EXPORT_DIR == DOWN ? FB[i].MC[j].EXPORT :
 </ul>
 </section>
 <section id="flip-flop">
-<h2>Flip-flop<a class="headerlink" href="#flip-flop" title="Link to this heading">¶</a></h2>
+<h2>Flip-flop<a class="headerlink" href="#flip-flop" title="Link to this heading"></a></h2>
 <p>Each macrocell includes a flip-flop.  It has:</p>
 <ul class="simple">
 <li><p>configurable DFF or TFF function</p></li>
@@ -423,7 +491,7 @@ always @(posedge FB[i].MC[j].CLK, posedge FB[i].MC[j].RST_MUX, posedge FB[i].MC[
 </div>
 </section>
 <section id="macrocell-output-xc9500">
-<h2>Macrocell output — XC9500<a class="headerlink" href="#macrocell-output-xc9500" title="Link to this heading">¶</a></h2>
+<h2>Macrocell output — XC9500<a class="headerlink" href="#macrocell-output-xc9500" title="Link to this heading"></a></h2>
 <p>The output of the macrocell can be selected from combinatorial (XOR gate output) or registered (FF output):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FB[i].MC[j].OUT = (FB[i].MC[j].OUT_MUX == COMB ? FB[i].MC[j].XOR : FB[i].MC[j].FF);
 </pre></div>
@@ -498,7 +566,7 @@ to implement emulated on-chip tristate buses in conjunction with the UIM wire-AN
 </div>
 </section>
 <section id="macrocell-output-xc9500xl-xv">
-<h2>Macrocell output — XC9500XL/XV<a class="headerlink" href="#macrocell-output-xc9500xl-xv" title="Link to this heading">¶</a></h2>
+<h2>Macrocell output — XC9500XL/XV<a class="headerlink" href="#macrocell-output-xc9500xl-xv" title="Link to this heading"></a></h2>
 <p>The output of the macrocell can be selected from combinatorial (XOR gate output) or registered (FF output):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FB[i].MC[j].OUT = (FB[i].MC[j].OUT_MUX == COMB ? FB[i].MC[j].XOR : FB[i].MC[j].FF);
 </pre></div>
@@ -533,7 +601,7 @@ be freely inverted.  It is used for the IOB output buffer:</p>
 </ul>
 </section>
 <section id="input-output-buffer">
-<h2>Input/output buffer<a class="headerlink" href="#input-output-buffer" title="Link to this heading">¶</a></h2>
+<h2>Input/output buffer<a class="headerlink" href="#input-output-buffer" title="Link to this heading"></a></h2>
 <p>All I/O buffers (except dedicated JTAG pins) are associated with a macrocell.  Not all MCs
 have associated IOBs.</p>
 <p>The output buffer is controlled by the <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].OUT</span></code> and <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IOB_OE</span></code> signals of the macrocell.
@@ -569,7 +637,7 @@ it is directly connected to the UIM.  On XC95288, there are additional enable fu
 </div>
 </section>
 <section id="configuration-pull-ups">
-<h2>Configuration pull-ups<a class="headerlink" href="#configuration-pull-ups" title="Link to this heading">¶</a></h2>
+<h2>Configuration pull-ups<a class="headerlink" href="#configuration-pull-ups" title="Link to this heading"></a></h2>
 <p>Before the device is configured, all IOBs are configured with a very weak pull-up
 resistor (XC9500) or a bus keeper (XC9500XL/XV).  To disable this pull-up, a per-FB fuse
 is used which is set in the bitstream:</p>
@@ -578,7 +646,7 @@ is used which is set in the bitstream:</p>
 </ul>
 </section>
 <section id="xc9500xl-xv-bus-keeper">
-<h2>XC9500XL/XV bus keeper<a class="headerlink" href="#xc9500xl-xv-bus-keeper" title="Link to this heading">¶</a></h2>
+<h2>XC9500XL/XV bus keeper<a class="headerlink" href="#xc9500xl-xv-bus-keeper" title="Link to this heading"></a></h2>
 <p>The XC9500XL/XV have a weak bus keeper in each IOB.  The keeper functionality can only be enabled
 globally for all pads on the device, or not at all, via a global fuse:</p>
 <ul class="simple">
@@ -586,7 +654,7 @@ globally for all pads on the device, or not at all, via a global fuse:</p>
 </ul>
 </section>
 <section id="global-networks-xc9500">
-<h2>Global networks — XC9500<a class="headerlink" href="#global-networks-xc9500" title="Link to this heading">¶</a></h2>
+<h2>Global networks — XC9500<a class="headerlink" href="#global-networks-xc9500" title="Link to this heading"></a></h2>
 <p>The device has several global networks for fast control signals.  The networks are always driven by special pads
 on the device (which can also be used as normal I/O).  The networks are:</p>
 <ul class="simple">
@@ -643,7 +711,7 @@ on the device (which can also be used as normal I/O).  The networks are:</p>
 </div>
 </section>
 <section id="global-networks-xc9500xl-xv">
-<h2>Global networks — XC9500XL/XV<a class="headerlink" href="#global-networks-xc9500xl-xv" title="Link to this heading">¶</a></h2>
+<h2>Global networks — XC9500XL/XV<a class="headerlink" href="#global-networks-xc9500xl-xv" title="Link to this heading"></a></h2>
 <p>Global networks on XC9500XL/XV work similarly, except there are no muxes and no inversion (except for <code class="docutils literal notranslate"><span class="pre">FSR</span></code>).
 Thus the <code class="docutils literal notranslate"><span class="pre">GCLK[i]</span></code> and <code class="docutils literal notranslate"><span class="pre">GOE[i]</span></code> pads are mapped 1-1 directly to <code class="docutils literal notranslate"><span class="pre">FCLK[i]</span></code> and <code class="docutils literal notranslate"><span class="pre">FOE[i]</span></code> networks, with only
 an enable fuse.</p>
@@ -660,7 +728,7 @@ an enable fuse.</p>
 </div>
 </section>
 <section id="misc-configuration">
-<h2>Misc configuration<a class="headerlink" href="#misc-configuration" title="Link to this heading">¶</a></h2>
+<h2>Misc configuration<a class="headerlink" href="#misc-configuration" title="Link to this heading"></a></h2>
 <p>The devices also include the following misc fuses:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">USERCODE</span></code>: 32-bit fuse set, readable via the JTAG USERCODE instruction</p></li>
@@ -680,74 +748,34 @@ boot sequence and activate I/O buffers; otherwise, all output buffers will be di
 </section>
 
 
+           </div>
           </div>
-          
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="intro.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bitstream-xc9500.html" class="btn btn-neutral float-right" title="Bitstream structure - XC9500" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../index.html">Project Combine</a></h1>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
 
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">XC9500, XC9500XL, XC9500XV</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
-  <li><a href="index.html">XC9500, XC9500XL, XC9500XV</a><ul>
-      <li>Previous: <a href="intro.html" title="previous chapter">Introduction</a></li>
-      <li>Next: <a href="bitstream-xc9500.html" title="next chapter">Bitstream structure - XC9500</a></li>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2023, Wanda.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
-      
-      |
-      <a href="../_sources/xc9500/structure.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
-  </body>
+</body>
 </html>

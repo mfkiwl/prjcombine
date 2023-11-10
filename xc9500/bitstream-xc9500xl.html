@@ -1,38 +1,94 @@
 <!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-<html lang="en" data-content_root="../">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
-    <title>Bitstream structure — XC9500XL/XV &#8212; Project Combine  documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
-    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bitstream structure — XC9500XL/XV &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="JTAG interface" href="jtag.html" />
-    <link rel="prev" title="Bitstream structure - XC9500" href="bitstream-xc9500.html" />
-   
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <link rel="prev" title="Bitstream structure - XC9500" href="bitstream-xc9500.html" /> 
+</head>
 
-  </head><body>
-  
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
           
+          
+          <a href="../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">XC9500, XC9500XL, XC9500XV</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html">Device structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html">Bitstream structure - XC9500</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Bitstream structure — XC9500XL/XV</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#jed-format-mapping">JED format mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fuses-product-terms">Fuses — product terms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fuses-macrocells">Fuses — macrocells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fuses-fb-inputs">Fuses — FB inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fuses-per-fb-bits-and-globals">Fuses — per-FB bits and globals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fuses-protection-bits-done">Fuses — protection bits, DONE</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jtag.html">JTAG interface</a></li>
+</ul>
+</li>
+</ul>
 
-          <div class="body" role="main">
-            
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">XC9500, XC9500XL, XC9500XV</a></li>
+      <li class="breadcrumb-item active">Bitstream structure — XC9500XL/XV</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/xc9500/bitstream-xc9500xl.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
   <section id="bitstream-structure-xc9500xl-xv">
-<h1>Bitstream structure — XC9500XL/XV<a class="headerlink" href="#bitstream-structure-xc9500xl-xv" title="Link to this heading">¶</a></h1>
+<h1>Bitstream structure — XC9500XL/XV<a class="headerlink" href="#bitstream-structure-xc9500xl-xv" title="Link to this heading"></a></h1>
 <p>The main differences from XC9500 are:</p>
 <ol class="arabic simple">
 <li><p>The UIM wire-AND area is completely gone, only the main areas exist.</p></li>
@@ -65,7 +121,7 @@ The programmed state is <code class="docutils literal notranslate"><span class="
 in the documentation, the “true” value is actually represented as <code class="docutils literal notranslate"><span class="pre">1</span></code>
 in the bitstream.</p>
 <section id="jed-format-mapping">
-<h2>JED format mapping<a class="headerlink" href="#jed-format-mapping" title="Link to this heading">¶</a></h2>
+<h2>JED format mapping<a class="headerlink" href="#jed-format-mapping" title="Link to this heading"></a></h2>
 <p>In the JED format, all fuses of the device are simply concatenated in order,
 skipping over invalid addresses.  The bytes are <em>not</em> padded to 8 bits, but
 have their native size.  Thus, converting from JED fuse index to device
@@ -112,7 +168,7 @@ address involves some complex calculations:</p>
 </div>
 </section>
 <section id="fuses-product-terms">
-<h2>Fuses — product terms<a class="headerlink" href="#fuses-product-terms" title="Link to this heading">¶</a></h2>
+<h2>Fuses — product terms<a class="headerlink" href="#fuses-product-terms" title="Link to this heading"></a></h2>
 <p>The product term masks are stored in bits 0-5 of every column and every row of the main area.
 The formulas are as follows (unchanged from XC9500, but now with more rows):</p>
 <ol class="arabic simple">
@@ -133,7 +189,7 @@ The formulas are as follows (unchanged from XC9500, but now with more rows):</p>
 </ol>
 </section>
 <section id="fuses-macrocells">
-<h2>Fuses — macrocells<a class="headerlink" href="#fuses-macrocells" title="Link to this heading">¶</a></h2>
+<h2>Fuses — macrocells<a class="headerlink" href="#fuses-macrocells" title="Link to this heading"></a></h2>
 <p>Per-MC config fuses (that are not product term masks) are stored in bits 6-7 of
 columns 0-8 of rows 12-49 of the main area.  The formulas are as follows:</p>
 <ul class="simple">
@@ -254,7 +310,7 @@ columns 0-8 of rows 12-49 of the main area.  The formulas are as follows:</p>
 </ul>
 </section>
 <section id="fuses-fb-inputs">
-<h2>Fuses — FB inputs<a class="headerlink" href="#fuses-fb-inputs" title="Link to this heading">¶</a></h2>
+<h2>Fuses — FB inputs<a class="headerlink" href="#fuses-fb-inputs" title="Link to this heading"></a></h2>
 <p>The FB input mux configuraton is stored in rows 50-76, columns 0-8, bits 6-7.
 <code class="docutils literal notranslate"><span class="pre">FB[i].IM[j].MUX</span></code> has 9 bits and is stored at the following coordinates:</p>
 <ul class="simple">
@@ -265,7 +321,7 @@ columns 0-8 of rows 12-49 of the main area.  The formulas are as follows:</p>
 <p>The exact bit assignments are irregular and should be obtained from the database.</p>
 </section>
 <section id="fuses-per-fb-bits-and-globals">
-<h2>Fuses — per-FB bits and globals<a class="headerlink" href="#fuses-per-fb-bits-and-globals" title="Link to this heading">¶</a></h2>
+<h2>Fuses — per-FB bits and globals<a class="headerlink" href="#fuses-per-fb-bits-and-globals" title="Link to this heading"></a></h2>
 <p>Per-FB bits are stored in row 78, columns 0-8, bits 6-7.  The bits are (row, column, bit):</p>
 <ul class="simple">
 <li><p>(78, 0, 6): <code class="docutils literal notranslate"><span class="pre">ENABLE</span></code></p></li>
@@ -298,7 +354,7 @@ columns 0-8 of rows 12-49 of the main area.  The formulas are as follows:</p>
 </ul>
 </section>
 <section id="fuses-protection-bits-done">
-<h2>Fuses — protection bits, DONE<a class="headerlink" href="#fuses-protection-bits-done" title="Link to this heading">¶</a></h2>
+<h2>Fuses — protection bits, DONE<a class="headerlink" href="#fuses-protection-bits-done" title="Link to this heading"></a></h2>
 <p>The protection bits are stored as follows (row, column, bit) in every FB:</p>
 <ul class="simple">
 <li><p>(11, 0, 6): <code class="docutils literal notranslate"><span class="pre">WRITE_PROT</span></code></p></li>
@@ -312,74 +368,34 @@ columns 0-8 of rows 12-49 of the main area.  The formulas are as follows:</p>
 </section>
 
 
+           </div>
           </div>
-          
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bitstream-xc9500.html" class="btn btn-neutral float-left" title="Bitstream structure - XC9500" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="jtag.html" class="btn btn-neutral float-right" title="JTAG interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../index.html">Project Combine</a></h1>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
 
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">XC9500, XC9500XL, XC9500XV</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
-  <li><a href="index.html">XC9500, XC9500XL, XC9500XV</a><ul>
-      <li>Previous: <a href="bitstream-xc9500.html" title="previous chapter">Bitstream structure - XC9500</a></li>
-      <li>Next: <a href="jtag.html" title="next chapter">JTAG interface</a></li>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2023, Wanda.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
-      
-      |
-      <a href="../_sources/xc9500/bitstream-xc9500xl.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
-  </body>
+</body>
 </html>
