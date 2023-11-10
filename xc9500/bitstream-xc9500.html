@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bitstream structure - XC9500 &mdash; Project Combine  documentation</title>
+  <title>Bitstream structure — XC9500 &mdash; Project Combine  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -47,7 +47,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">XC9500, XC9500XL, XC9500XV</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structure.html">Device structure</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Bitstream structure - XC9500</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Bitstream structure — XC9500</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#jed-format-mapping">JED format mapping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fuses-product-terms">Fuses — product terms</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fuses-macrocells">Fuses — macrocells</a></li>
@@ -79,7 +79,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">XC9500, XC9500XL, XC9500XV</a></li>
-      <li class="breadcrumb-item active">Bitstream structure - XC9500</li>
+      <li class="breadcrumb-item active">Bitstream structure — XC9500</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/xc9500/bitstream-xc9500.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -90,7 +90,7 @@
            <div itemprop="articleBody">
              
   <section id="bitstream-structure-xc9500">
-<h1>Bitstream structure - XC9500<a class="headerlink" href="#bitstream-structure-xc9500" title="Link to this heading"></a></h1>
+<h1>Bitstream structure — XC9500<a class="headerlink" href="#bitstream-structure-xc9500" title="Link to this heading"></a></h1>
 <p>On a high level, the whole bitstream is split into “areas”.  Each FB
 of the device corresponds two areas, one of which contains the UIM wire-AND
 configuration, and the other (main area) contains everything else.</p>
@@ -234,7 +234,7 @@ The formulas are as follows:</p>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k].IM[l].N</span></code> is stored at:</p>
 <ul class="simple">
-<li><p>row: <code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">*</span> <span class="pre">2</span></code></p></li>
+<li><p>row: <code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">1</span></code></p></li>
 <li><p>column: <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">+</span> <span class="pre">(j</span> <span class="pre">%</span> <span class="pre">3)</span> <span class="pre">*</span> <span class="pre">5</span></code></p></li>
 <li><p>bit: <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">//</span> <span class="pre">3</span></code></p></li>
 </ul>

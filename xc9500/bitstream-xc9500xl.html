@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="JTAG interface" href="jtag.html" />
-    <link rel="prev" title="Bitstream structure - XC9500" href="bitstream-xc9500.html" /> 
+    <link rel="prev" title="Bitstream structure — XC9500" href="bitstream-xc9500.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,7 +47,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">XC9500, XC9500XL, XC9500XV</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structure.html">Device structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html">Bitstream structure - XC9500</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html">Bitstream structure — XC9500</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Bitstream structure — XC9500XL/XV</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#jed-format-mapping">JED format mapping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fuses-product-terms">Fuses — product terms</a></li>
@@ -181,7 +181,7 @@ The formulas are as follows (unchanged from XC9500, but now with more rows):</p>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k].IM[l].N</span></code> is stored at:</p>
 <ul class="simple">
-<li><p>row: <code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">*</span> <span class="pre">2</span></code></p></li>
+<li><p>row: <code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">1</span></code></p></li>
 <li><p>column: <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">+</span> <span class="pre">(j</span> <span class="pre">%</span> <span class="pre">3)</span> <span class="pre">*</span> <span class="pre">5</span></code></p></li>
 <li><p>bit: <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">//</span> <span class="pre">3</span></code></p></li>
 </ul>
@@ -371,7 +371,7 @@ columns 0-8 of rows 12-49 of the main area.  The formulas are as follows:</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="bitstream-xc9500.html" class="btn btn-neutral float-left" title="Bitstream structure - XC9500" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bitstream-xc9500.html" class="btn btn-neutral float-left" title="Bitstream structure — XC9500" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="jtag.html" class="btn btn-neutral float-right" title="JTAG interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
