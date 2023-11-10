@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Xilinx XC9500, XC9500XL, XC9500XV CPLDs &mdash; Project Combine  documentation</title>
+  <title>Xilinx XPLA3 CPLDs &mdash; Project Combine  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Introduction" href="intro.html" />
-    <link rel="prev" title="Project Combine" href="../index.html" /> 
+    <link rel="prev" title="JTAG interface" href="../xc9500/jtag.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,15 +44,14 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../xc9500/index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Xilinx XPLA3 CPLDs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structure.html">Device structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html">Bitstream structure — XC9500</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html">Bitstream structure — XC9500XL/XV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream.html">Bitstream structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jtag.html">JTAG interface</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
 </ul>
 
@@ -70,9 +69,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</li>
+      <li class="breadcrumb-item active">Xilinx XPLA3 CPLDs</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/xc9500/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/xpla3/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -80,8 +79,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="xilinx-xc9500-xc9500xl-xc9500xv-cplds">
-<h1>Xilinx XC9500, XC9500XL, XC9500XV CPLDs<a class="headerlink" href="#xilinx-xc9500-xc9500xl-xc9500xv-cplds" title="Link to this heading"></a></h1>
+  <section id="xilinx-xpla3-cplds">
+<h1>Xilinx XPLA3 CPLDs<a class="headerlink" href="#xilinx-xpla3-cplds" title="Link to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
@@ -93,42 +92,17 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="structure.html">Device structure</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="structure.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structure.html#uim-and-fb-inputs-xc9500">UIM and FB inputs — XC9500</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structure.html#uim-and-fb-inputs-xc9500xl-xv">UIM and FB inputs — XC9500XL/XV</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structure.html#fb-global-fuses">FB global fuses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#zia-and-fb-inputs">ZIA and FB inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#fclk-networks">FCLK networks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structure.html#product-terms">Product terms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structure.html#sum-term-xor-gate">Sum term, XOR gate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structure.html#flip-flop">Flip-flop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structure.html#macrocell-output-xc9500">Macrocell output — XC9500</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structure.html#macrocell-output-xc9500xl-xv">Macrocell output — XC9500XL/XV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#sum-term-lut2">Sum term, LUT2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#register">Register</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#macrocell-and-iob-outputs">Macrocell and IOB outputs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structure.html#input-output-buffer">Input/output buffer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structure.html#configuration-pull-ups">Configuration pull-ups</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structure.html#xc9500xl-xv-bus-keeper">XC9500XL/XV bus keeper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structure.html#global-networks-xc9500">Global networks — XC9500</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structure.html#global-networks-xc9500xl-xv">Global networks — XC9500XL/XV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structure.html#misc-configuration">Misc configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="bitstream-xc9500.html">Bitstream structure — XC9500</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html#jed-format-mapping">JED format mapping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html#fuses-product-terms">Fuses — product terms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html#fuses-macrocells">Fuses — macrocells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html#fuses-fb-inputs">Fuses — FB inputs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html#fuses-per-fb-bits-and-globals">Fuses — per-FB bits and globals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html#fuses-input-buffer-enable">Fuses — input buffer enable</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html#fuses-protection-bits">Fuses — protection bits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html#fuses-uim-wire-and">Fuses — UIM wire-AND</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="bitstream-xc9500xl.html">Bitstream structure — XC9500XL/XV</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html#jed-format-mapping">JED format mapping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html#fuses-product-terms">Fuses — product terms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html#fuses-macrocells">Fuses — macrocells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html#fuses-fb-inputs">Fuses — FB inputs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html#fuses-per-fb-bits-and-globals">Fuses — per-FB bits and globals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html#fuses-protection-bits-done">Fuses — protection bits, DONE</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="bitstream.html">Bitstream structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jtag.html">JTAG interface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="jtag.html#ir">IR</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jtag.html#boundary-scan-register">Boundary scan register</a></li>
@@ -144,7 +118,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../index.html" class="btn btn-neutral float-left" title="Project Combine" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../xc9500/jtag.html" class="btn btn-neutral float-left" title="JTAG interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="intro.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

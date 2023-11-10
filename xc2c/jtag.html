@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JTAG interface &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Bitstream structure" href="bitstream.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../xc9500/index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Xilinx Coolrunner II CPLDs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html">Device structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream.html">Bitstream structure</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">JTAG interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ir">IR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#boundary-scan-register">Boundary scan register</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#isp-instructions">ISP instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#programming-sequence">Programming sequence</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Xilinx Coolrunner II CPLDs</a></li>
+      <li class="breadcrumb-item active">JTAG interface</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/xc2c/jtag.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jtag-interface">
+<h1>JTAG interface<a class="headerlink" href="#jtag-interface" title="Link to this heading"></a></h1>
+<section id="ir">
+<h2>IR<a class="headerlink" href="#ir" title="Link to this heading"></a></h2>
+<p>The IR is 8 bits long.  The following instructions exist:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>IR</p></th>
+<th class="head"><p>Instruction</p></th>
+<th class="head"><p>Register</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">00000000</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">EXTEST</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">BOUNDARY</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">00000001</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">IDCODE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">IDCODE</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">00000010</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">INTEST</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">BOUNDARY</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">00000011</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SAMPLE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">BOUNDARY</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">00010001</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TEST_ENABLE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DATAREG</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">00010010</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">BULKPROG</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DATAREG</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">00010011</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">MVERIFY</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DATAREG</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">00010100</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ERASE_ALL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DATAREG</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">00010101</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TEST_DISABLE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DATAREG</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">00010110</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">STCTEST</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">STC</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">11000000</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ISC_DISABLE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DATAREG</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">11100000</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ISC_NOOP</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">BYPASS</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">11100100</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ISC_ENABLE_OTF</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DATAREG</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">11100110</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ISC_SRAM_WRITE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DATAREG</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">11100111</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ISC_SRAM_READ</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DATAREG</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">11101000</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ISC_ENABLE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DATAREG</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">11101001</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ISC_ENABLE_CLAMP</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DATAREG</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">11101010</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ISC_PROGRAM</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DATAREG</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">11101101</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ISC_ERASE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DATAREG</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">11101110</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ISC_READ</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DATAREG</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">11110000</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ISC_INIT</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DATAREG</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">11111100</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">HIGHZ</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">BYPASS</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">11111101</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">USERCODE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">USERCODE</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">11111111</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">BYPASS</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">BYPASS</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The IR status is:</p>
+<ul class="simple">
+<li><p>bit 0: const 1</p></li>
+<li><p>bit 1: const 0</p></li>
+<li><p>bits 2-7: ???</p></li>
+</ul>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>completely unverified from BSDL; DR assignments are suspect</p>
+</div>
+</section>
+<section id="boundary-scan-register">
+<h2>Boundary scan register<a class="headerlink" href="#boundary-scan-register" title="Link to this heading"></a></h2>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>write me</p>
+</div>
+</section>
+<section id="isp-instructions">
+<h2>ISP instructions<a class="headerlink" href="#isp-instructions" title="Link to this heading"></a></h2>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>write me</p>
+</div>
+</section>
+<section id="programming-sequence">
+<h2>Programming sequence<a class="headerlink" href="#programming-sequence" title="Link to this heading"></a></h2>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<p>write me</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bitstream.html" class="btn btn-neutral float-left" title="Bitstream structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
