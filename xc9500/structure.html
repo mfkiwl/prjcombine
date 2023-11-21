@@ -201,7 +201,7 @@ with the wire-AND path, but much faster.</p>
 <ul>
 <li><p>mux fuses (<code class="docutils literal notranslate"><span class="pre">FB[i].IM[j].MUX</span></code>) select what is routed to the input.  The combinations include:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">EMPTY</span></code>: the input is a constant ??? (for unused inputs)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: the input is a constant ??? (for unused inputs)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">UIM</span></code>: the input is a wire-AND of MC outputs (and the second set of fuses is relevant)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FBK_MC{k}</span></code>: the input is routed through fast feedback path from <code class="docutils literal notranslate"><span class="pre">FB[i].MC[k].OUT</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">PAD_FB{k}_MC{l}</span></code>: the input is routed from an input buffer <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].IOB.I</span></code></p></li>
@@ -216,7 +216,7 @@ in the product.  These fuses are only relevant when the mux fuse set is set to <
 </ul>
 <div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
-<p>check <code class="docutils literal notranslate"><span class="pre">EMPTY</span></code> semantics</p>
+<p>check <code class="docutils literal notranslate"><span class="pre">NONE</span></code> semantics</p>
 </div>
 <div class="admonition-todo admonition" id="id2">
 <p class="admonition-title">Todo</p>
@@ -231,7 +231,7 @@ is not really universal, and is much more of a classic CPLD design.</p>
 <ul>
 <li><p>mux fuses (<code class="docutils literal notranslate"><span class="pre">FB[i].IM[j].MUX</span></code>) select what is routed to the input.  The combinations include:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">EMPTY</span></code>: the input is a constant ??? (for unused inputs)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: the input is a constant ??? (for unused inputs)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FB{k}_MC{l}</span></code>: the input is routed from the macrocell output <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].OUT</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">PAD_FB{k}_MC{l}</span></code>: the input is routed from the input buffer <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].IOB.I</span></code></p></li>
 </ul>
@@ -242,7 +242,7 @@ depends only on the <code class="docutils literal notranslate"><span class="pre"
 </ul>
 <div class="admonition-todo admonition" id="id3">
 <p class="admonition-title">Todo</p>
-<p>check <code class="docutils literal notranslate"><span class="pre">EMPTY</span></code> semantics</p>
+<p>check <code class="docutils literal notranslate"><span class="pre">NONE</span></code> semantics</p>
 </div>
 </section>
 <section id="fb-global-fuses">
@@ -274,8 +274,8 @@ true and inverted forms.</p>
 <p>Each product term can be individually configured as low power or high performance.  This affects propagation time.</p>
 <p>Each product term can be routed to at most one of three destinations:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">OR_MAIN</span></code>: input to the MC’s sum term</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">OR_EXPORT</span></code>: input to the export OR gate</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SUM</span></code>: input to the MC’s sum term</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXPORT</span></code>: input to the export OR gate</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SPECIAL</span></code>: used for the dedicated function</p></li>
 </ul>
 <p>The fuses controlling a product term are:</p>
@@ -285,9 +285,9 @@ true and inverted forms.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k].HP</span></code>: if programmed, the product term is in high performance mode; otherwise, it is in low power mode</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k].ALLOC</span></code>: has one of four values:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">EMPTY</span></code>: product term is unused</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">OR_MAIN</span></code>: product term is used for MC’s sum term; dedicated function wired to 0</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">OR_EXPORT</span></code> product term is used for export sum term; dedicated function wired to 0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: product term is unused</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SUM</span></code>: product term is used for MC’s sum term; dedicated function wired to 0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXPORT</span></code> product term is used for export sum term; dedicated function wired to 0</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SPECIAL</span></code>: product term is used for the dedicated function</p></li>
 </ul>
 </li>
@@ -318,27 +318,27 @@ Imported terms from a given direction can be used for either the main sum term, 
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IMPORT_UP_ALLOC</span></code>: one of:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">OR_MAIN</span></code>: includes PTs imported upwards in the main sum term</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">OR_EXPORT</span></code>: includes PTs imported upwards in the export sum term</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SUM</span></code>: includes PTs imported upwards in the main sum term</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXPORT</span></code>: includes PTs imported upwards in the export sum term</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IMPORT_DOWN_ALLOC</span></code>: one of:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">OR_MAIN</span></code>: includes PTs imported downwards in the main sum term</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">OR_EXPORT</span></code>: includes PTs imported downwards in the export sum term</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SUM</span></code>: includes PTs imported downwards in the main sum term</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXPORT</span></code>: includes PTs imported downwards in the export sum term</p></li>
 </ul>
 </li>
 </ul>
 <p>Additionally, the per-FB <code class="docutils literal notranslate"><span class="pre">FB[i].EXPORT_ENABLE</span></code> fuse needs to be set if any term within a FB is exported or imported.</p>
 <p>Export works as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FB[i].MC[j].EXPORT =
-    (FB[i].MC[j].IMPORT_UP_ALLOC == OR_EXPORT ? FB[i].MC[j].IMPORT_UP : 0) |
-    (FB[i].MC[j].IMPORT_DOWN_ALLOC == OR_EXPORT ? FB[i].MC[j].IMPORT_DOWN : 0) |
-    (FB[i].MC[j].PT[0].ALLOC == OR_EXPORT ? FB[i].MC[j].PT[0] : 0) |
-    (FB[i].MC[j].PT[1].ALLOC == OR_EXPORT ? FB[i].MC[j].PT[1] : 0) |
-    (FB[i].MC[j].PT[2].ALLOC == OR_EXPORT ? FB[i].MC[j].PT[2] : 0) |
-    (FB[i].MC[j].PT[3].ALLOC == OR_EXPORT ? FB[i].MC[j].PT[3] : 0) |
-    (FB[i].MC[j].PT[4].ALLOC == OR_EXPORT ? FB[i].MC[j].PT[4] : 0);
+    (FB[i].MC[j].IMPORT_UP_ALLOC == EXPORT ? FB[i].MC[j].IMPORT_UP : 0) |
+    (FB[i].MC[j].IMPORT_DOWN_ALLOC == EXPORT ? FB[i].MC[j].IMPORT_DOWN : 0) |
+    (FB[i].MC[j].PT[0].ALLOC == EXPORT ? FB[i].MC[j].PT[0] : 0) |
+    (FB[i].MC[j].PT[1].ALLOC == EXPORT ? FB[i].MC[j].PT[1] : 0) |
+    (FB[i].MC[j].PT[2].ALLOC == EXPORT ? FB[i].MC[j].PT[2] : 0) |
+    (FB[i].MC[j].PT[3].ALLOC == EXPORT ? FB[i].MC[j].PT[3] : 0) |
+    (FB[i].MC[j].PT[4].ALLOC == EXPORT ? FB[i].MC[j].PT[4] : 0);
 
 FB[i].MC[j].EXPORT_UP = (FB[i].MC[j].EXPORT_DIR == UP ? FB[i].MC[j].EXPORT : 0);
 FB[i].MC[j].EXPORT_DOWN = (FB[i].MC[j].EXPORT_DIR == DOWN ? FB[i].MC[j].EXPORT : 0);
@@ -354,13 +354,13 @@ FB[i].MC[j].EXPORT_DOWN = (FB[i].MC[j].EXPORT_DIR == DOWN ? FB[i].MC[j].EXPORT :
 <h2>Sum term, XOR gate<a class="headerlink" href="#sum-term-xor-gate" title="Link to this heading"></a></h2>
 <p>Each macrocell has a main sum term, which includes all product terms and imports routed towards it:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FB[i].MC[j].SUM =
-    (FB[i].MC[j].IMPORT_UP_ALLOC == OR_MAIN ? FB[i].MC[j].IMPORT_UP : 0) |
-    (FB[i].MC[j].IMPORT_DOWN_ALLOC == OR_MAIN ? FB[i].MC[j].IMPORT_DOWN : 0) |
-    (FB[i].MC[j].PT[0].ALLOC == OR_MAIN ? FB[i].MC[j].PT[0] : 0) |
-    (FB[i].MC[j].PT[1].ALLOC == OR_MAIN ? FB[i].MC[j].PT[1] : 0) |
-    (FB[i].MC[j].PT[2].ALLOC == OR_MAIN ? FB[i].MC[j].PT[2] : 0) |
-    (FB[i].MC[j].PT[3].ALLOC == OR_MAIN ? FB[i].MC[j].PT[3] : 0) |
-    (FB[i].MC[j].PT[4].ALLOC == OR_MAIN ? FB[i].MC[j].PT[4] : 0);
+    (FB[i].MC[j].IMPORT_UP_ALLOC == SUM ? FB[i].MC[j].IMPORT_UP : 0) |
+    (FB[i].MC[j].IMPORT_DOWN_ALLOC == SUM ? FB[i].MC[j].IMPORT_DOWN : 0) |
+    (FB[i].MC[j].PT[0].ALLOC == SUM ? FB[i].MC[j].PT[0] : 0) |
+    (FB[i].MC[j].PT[1].ALLOC == SUM ? FB[i].MC[j].PT[1] : 0) |
+    (FB[i].MC[j].PT[2].ALLOC == SUM ? FB[i].MC[j].PT[2] : 0) |
+    (FB[i].MC[j].PT[3].ALLOC == SUM ? FB[i].MC[j].PT[3] : 0) |
+    (FB[i].MC[j].PT[4].ALLOC == SUM ? FB[i].MC[j].PT[4] : 0);
 </pre></div>
 </div>
 <p>The sum term then goes through a XOR gate (whose other input is either 0 or a dedicated PT) and a programmable inverter:</p>
@@ -624,14 +624,14 @@ regardless of the <code class="docutils literal notranslate"><span class="pre">I
 it is directly connected to the UIM.  On XC95288, there are additional enable fuses for this connection.</p>
 <p>Each I/O buffer has the following fuses:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].GND</span></code>: if programmed, this pin is “programmed ground” and will always output a const 0</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].SLEW</span></code>: selects slew rate, one of:</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IOB_GND</span></code>: if programmed, this pin is “programmed ground” and will always output a const 0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IOB_SLEW</span></code>: selects slew rate, one of:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">SLOW</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FAST</span></code></p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IBUF_ENABLE</span></code> (XC95288 only): when programmed, the input buffer is active and connected to UIM</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IBUF_UIM_ENABLE</span></code> (XC95288 only): when programmed, the input buffer is active and connected to UIM</p></li>
 </ul>
 <div class="admonition-todo admonition" id="id8">
 <p class="admonition-title">Todo</p>

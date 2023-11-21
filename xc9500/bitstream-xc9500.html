@@ -287,8 +287,8 @@ columns 0-8 of rows 12-54 of the main area.  The formulas are as follows:</p>
 <li><p>45: <code class="docutils literal notranslate"><span class="pre">UIM_OE_MUX</span></code> bit 1</p></li>
 <li><p>46: <code class="docutils literal notranslate"><span class="pre">UIM_OUT_INV</span></code></p></li>
 <li><p>47: unused</p></li>
-<li><p>48: <code class="docutils literal notranslate"><span class="pre">GND</span></code></p></li>
-<li><p>49: <code class="docutils literal notranslate"><span class="pre">SLEW</span></code></p></li>
+<li><p>48: <code class="docutils literal notranslate"><span class="pre">IOB_GND</span></code></p></li>
+<li><p>49: <code class="docutils literal notranslate"><span class="pre">IOB_SLEW</span></code></p></li>
 <li><p>50: <code class="docutils literal notranslate"><span class="pre">PT[0].HP</span></code></p></li>
 <li><p>51: <code class="docutils literal notranslate"><span class="pre">PT[1].HP</span></code></p></li>
 <li><p>52: <code class="docutils literal notranslate"><span class="pre">PT[2].HP</span></code></p></li>
@@ -300,15 +300,15 @@ columns 0-8 of rows 12-54 of the main area.  The formulas are as follows:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">PT[*].ALLOC</span></code>:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">11</span></code>: <code class="docutils literal notranslate"><span class="pre">NONE</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>: <code class="docutils literal notranslate"><span class="pre">OR_MAIN</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">01</span></code>: <code class="docutils literal notranslate"><span class="pre">OR_EXPORT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>: <code class="docutils literal notranslate"><span class="pre">SUM</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">01</span></code>: <code class="docutils literal notranslate"><span class="pre">EXPORT</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">00</span></code>: <code class="docutils literal notranslate"><span class="pre">SPECIAL</span></code></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">IMPORT_*_ALLOC</span></code>:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">OR_EXPORT</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: <code class="docutils literal notranslate"><span class="pre">OR_MAIN</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">EXPORT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: <code class="docutils literal notranslate"><span class="pre">SUM</span></code></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">EXPORT_DIR</span></code>:</p>
@@ -370,7 +370,7 @@ columns 0-8 of rows 12-54 of the main area.  The formulas are as follows:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">01</span></code>: <code class="docutils literal notranslate"><span class="pre">VCC</span></code></p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">SLEW</span></code>:</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">IOB_SLEW</span></code>:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">SLOW</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: <code class="docutils literal notranslate"><span class="pre">FAST</span></code></p></li>
@@ -500,7 +500,7 @@ The exact bit assignments are irregular and should be obtained from the database
 </section>
 <section id="fuses-input-buffer-enable">
 <h2>Fuses — input buffer enable<a class="headerlink" href="#fuses-input-buffer-enable" title="Link to this heading"></a></h2>
-<p>On XC95288, the <code class="docutils literal notranslate"><span class="pre">IBUF_ENABLE</span></code> fuses are stored in rows (1, 2, 5, 8, 9),
+<p>On XC95288, the <code class="docutils literal notranslate"><span class="pre">IBUF_UIM_ENABLE</span></code> fuses are stored in rows (1, 2, 5, 8, 9),
 columns 0-8, bits 6-7 of FBs (0, 1, 14, 15) in an irregular manner.  Each
 fuse is duplicated twice: once in FBs (0, 1) and once in FBs (14, 15).
 The purpose of this duplication is unknown.  Consult the database for exact
