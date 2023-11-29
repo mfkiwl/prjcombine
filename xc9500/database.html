@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Database schema &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="JTAG interface" href="jtag.html" />
+    <link rel="prev" title="Bitstream structure — XC9500XL/XV" href="bitstream-xc9500xl.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html">Device structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html">Bitstream structure — XC9500</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html">Bitstream structure — XC9500XL/XV</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Database schema</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#top-level">Top level</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#device">Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bond">Bond</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#speed">Speed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#part">Part</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tile">Tile</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jtag.html">JTAG interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+      <li class="breadcrumb-item active">Database schema</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/xc9500/database.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="database-schema">
+<h1>Database schema<a class="headerlink" href="#database-schema" title="Link to this heading"></a></h1>
+<p>The device database is provided in machine-readable form as three JSON files:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">xc9500.json</span></code>, describing all XC9500 devices</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xc9500xl.json</span></code>, describing all XC9500XL devices</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xc9500xv.json</span></code>, describing all XC9500XV devices</p></li>
+</ul>
+<p>All three files have the same schema.</p>
+<section id="top-level">
+<h2>Top level<a class="headerlink" href="#top-level" title="Link to this heading"></a></h2>
+<p>The top level of the database is an object, with the following fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">devices</span></code> (list of object): list of <a class="reference internal" href="#xc9500-db-device"><span class="std std-ref">device</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bonds</span></code> (list of object): list of <a class="reference internal" href="#xc9500-db-bond"><span class="std std-ref">bond</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">speeds</span></code> (list of object): list of <a class="reference internal" href="#xc9500-db-speed"><span class="std std-ref">speed</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">parts</span></code> (list of object): list of <span class="xref std std-ref">part</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mc_bits</span></code> (object): a <span class="xref std std-ref">tile</span> describing per-MC bits</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fb_bits</span></code> (object): a <span class="xref std std-ref">tile</span> describing per-FB bits</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">global_bits</span></code> (object): a <span class="xref std std-ref">tile</span> describing global bits</p></li>
+</ul>
+</section>
+<section id="device">
+<span id="xc9500-db-device"></span><h2>Device<a class="headerlink" href="#device" title="Link to this heading"></a></h2>
+<p>A device is a structure describing a particular device die.  A device is referenced
+from a <span class="xref std std-ref">part</span>.  A device is an object with the following fields:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">kind</span></code> (string): the kind of the device, one of:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;xc9500&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;xc9500xl&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;xc9500xv&quot;</span></code></p></li>
+</ul>
+<p>All devices within a single file will have the same kind.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">idcode</span></code> (number): the JTAG IDCODE of the device</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fbs</span></code> (number): the number of FBs in the device</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ios</span></code> (map from string to number): describes the I/O pads available on the device.
+The keys are of the form <code class="docutils literal notranslate"><span class="pre">&quot;&lt;fb_idx&gt;.&lt;mc_idx&gt;&quot;</span></code> and identify the MC that owns the IOB.
+The value corresponding to the key is the bank index that the IOB belongs to.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">banks</span></code> (number): the number of I/O banks in the device</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tdo_bank</span></code> (number): the I/O bank index that is used to drive the TDO special pin</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">io_special</span></code> (map from string to pair of numbers): describes the I/O pads with special functions on the device.
+The keys can be:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;GCLK[0-2]&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;GSR&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;GOE[0-3]&quot;</span></code></p></li>
+</ul>
+<p>The values are two-element lists of numbers.  The first number is FB index, and the second
+is MC index.  Note that sometimes items in this map are overriden by the bond.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">imux_bits</span></code> (object) : a <span class="xref std std-ref">tile</span> describing per-FB bits corresponding to IMUX</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uim_ibuf_bits</span></code> (object or null): for XC95288 device, a <span class="xref std std-ref">tile</span> describing the UIM IBUF bits; for every other device, <code class="docutils literal notranslate"><span class="pre">null</span></code></p></li>
+</ul>
+</section>
+<section id="bond">
+<span id="xc9500-db-bond"></span><h2>Bond<a class="headerlink" href="#bond" title="Link to this heading"></a></h2>
+<p>A bond is a structure describing the mapping of device pads to package pins.
+Bonds are referenced from <span class="xref std std-ref">part</span> packages.  A bond is an object
+with the following fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">io_special_override</span></code> (map from string to pair of numbers): a map like the device’s <code class="docutils literal notranslate"><span class="pre">io_special</span></code> map, containing per-bond overrides
+to the defaults (usually empty)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pins</span></code> (map from string to string): the pins of the package; they keys are package pin names, and the values are:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">NC</span></code>: unconnected pin</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GND</span></code>, <code class="docutils literal notranslate"><span class="pre">VCCINT</span></code>, <code class="docutils literal notranslate"><span class="pre">VCCIO{bank}</span></code>: power and ground pins</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MC_{fb}_{mc}</span></code>: an I/O pin</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TMS</span></code>, <code class="docutils literal notranslate"><span class="pre">TCK</span></code>, <code class="docutils literal notranslate"><span class="pre">TDI</span></code>, <code class="docutils literal notranslate"><span class="pre">TDO</span></code>: JTAG pins</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="speed">
+<span id="xc9500-db-speed"></span><h2>Speed<a class="headerlink" href="#speed" title="Link to this heading"></a></h2>
+<p>A speed is a structure describing the timings of a device.  They are referenced from
+<span class="xref std std-ref">part</span> speed grades.  A speed is an object with one field:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">timing</span></code> (map of string to number): a map from timing parameter name to timing data.
+All timing data is given in picoseconds, and is always an integer number.</p></li>
+</ul>
+</section>
+<section id="part">
+<span id="xc9500-db-part"></span><h2>Part<a class="headerlink" href="#part" title="Link to this heading"></a></h2>
+<p>A part is a structure describing a particular commercially available part number.
+Several parts may correspond to the same device.  A part is an object with the following fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> (string): the base name of the part, in lowercase</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">device</span></code> (number): the index of the corresponding device in the <code class="docutils literal notranslate"><span class="pre">devices</span></code> field
+of the database</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">packages</span></code> (map from string to int): the packages in which this part is available;
+the key is package name, and the value is the index of the corresponding bond in the <code class="docutils literal notranslate"><span class="pre">bonds</span></code> database field</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">speeds</span></code> (map from string to int): the speed grades in which this part is available;
+the key is speed grade name (including the leading <code class="docutils literal notranslate"><span class="pre">-</span></code>), and the value is the index of the corresponding speed in the <code class="docutils literal notranslate"><span class="pre">speeds</span></code> database field</p></li>
+</ul>
+</section>
+<section id="tile">
+<span id="id1"></span><h2>Tile<a class="headerlink" href="#tile" title="Link to this heading"></a></h2>
+<p>A tile is a structure describing a set of device fuses.  There are multiple kinds
+of tiles used to describe the bitstream.  The base structure of a tile is the same
+for all of these kinds.</p>
+<p>A tile is an object where the keys are fuse set names, and the values are objects
+with the following keys:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">bits</span></code> (list of coordinate): the list of fuse coordinates in this fuse set</p></li>
+<li><p>one of:
+- <code class="docutils literal notranslate"><span class="pre">values</span></code> (map of string to list of bool): used for an enumerated fuse set;</p>
+<blockquote>
+<div><p>the list of possible values for this fuse set; the value is a list of fuse values, corresponding one
+to one to the coordinates in <code class="docutils literal notranslate"><span class="pre">bits</span></code></p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">invert</span></code> (bool): used for a plain bool / bitvec fuse set; if true, it means
+that the value of this bitvec or bool is stored inverted in the datastream
+(0 means true, 1 means false); if false, the value is stored directly without
+inversion</p></li>
+</ul>
+</li>
+</ul>
+<p>The type and interpretation of coordinate depends on the tile kind.</p>
+<p>The following tile kinds exist:</p>
+<ul class="simple">
+<li><p>per-MC bits tile: identical for all devices in the database, the coordinate
+is a single number and corresponds to the row coordinate of the fuse</p></li>
+<li><p>per-FB bits tile: identical for all devices in the database, the coordinate
+is a list of 3 numbers, in order:</p>
+<ul>
+<li><p>row</p></li>
+<li><p>column</p></li>
+<li><p>bit</p></li>
+</ul>
+</li>
+<li><p>IMUX bits tile: device-specific, the coordinate is the same as for per-FB bits tile</p></li>
+<li><p>global bits tile: identical for all devices in the database, the coordinate
+is a list of 4 numbers, in order:</p>
+<ul>
+<li><p>fb</p></li>
+<li><p>row</p></li>
+<li><p>column</p></li>
+<li><p>bit</p></li>
+</ul>
+</li>
+<li><p>UIM IBUF bits tile: device-specific, only for XC995288, the coordinate is the same as for global bits tile</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bitstream-xc9500xl.html" class="btn btn-neutral float-left" title="Bitstream structure — XC9500XL/XV" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="jtag.html" class="btn btn-neutral float-right" title="JTAG interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

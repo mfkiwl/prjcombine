@@ -69,6 +69,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html">Bitstream structure — XC9500</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html">Bitstream structure — XC9500XL/XV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database schema</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jtag.html">JTAG interface</a></li>
 </ul>
 </li>
@@ -211,8 +212,8 @@ FBs within a single device.  In other words, the set of allowed values for these
 depends only on the <code class="docutils literal notranslate"><span class="pre">j</span></code> coordinate, but not on <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
 </li>
 <li><p>wire-AND fuses (<code class="docutils literal notranslate"><span class="pre">FB[i].IM[j].UIM.FB[k].MC[l]</span></code>) select which MC outputs participate in the
-wire-AND.  If a given fuse is programmed, it means that <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].OUT_UIM</span></code> is included
-in the product.  These fuses are only relevant when the mux fuse set is set to <code class="docutils literal notranslate"><span class="pre">UIM</span></code>.</p></li>
+wire-AND.  If a given fuse is set to 1 (ie. <em>not</em> programmed), it means that <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].OUT_UIM</span></code>
+is included in the product.  These fuses are only relevant when the mux fuse set is set to <code class="docutils literal notranslate"><span class="pre">UIM</span></code>.</p></li>
 </ul>
 <div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
@@ -280,8 +281,8 @@ true and inverted forms.</p>
 </ul>
 <p>The fuses controlling a product term are:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k].IM[l].P</span></code>: if programmed, <code class="docutils literal notranslate"><span class="pre">FB[i].IM[l]</span></code> is included in the product term (true polarity)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k].IM[l].N</span></code>: if programmed, <code class="docutils literal notranslate"><span class="pre">~FB[i].IM[l]</span></code> is included in the product term (inverted polarity)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k].IM[l].P</span></code>: if set to 1, <code class="docutils literal notranslate"><span class="pre">FB[i].IM[l]</span></code> is included in the product term (true polarity)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k].IM[l].N</span></code>: if set to 1, <code class="docutils literal notranslate"><span class="pre">~FB[i].IM[l]</span></code> is included in the product term (inverted polarity)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k].HP</span></code>: if programmed, the product term is in high performance mode; otherwise, it is in low power mode</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k].ALLOC</span></code>: has one of four values:</p>
 <ul>
@@ -294,6 +295,9 @@ true and inverted forms.</p>
 </ul>
 <p>The product term’s corresponding dedicated function is called <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k].SPECIAL</span></code>.
 It is equal to <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k]</span></code> if the dedicated function is enabled in <code class="docutils literal notranslate"><span class="pre">ALLOC</span></code>, 0 otherwise.</p>
+<p>Note that the main product term control fuses are active-high on both XC9500 and XC9500XL/XV.  This effectively
+means that an unprogrammed XC9500 chip has all product term inputs enabled, while an unprogrammed XC9500XL device
+has all product term inputs disabled.</p>
 <section id="pt-import-export">
 <h3>PT import/export<a class="headerlink" href="#pt-import-export" title="Link to this heading"></a></h3>
 <p>Product terms can be borrowed between neighbouring MCs within a FB.  To this end, each MC has two outputs,
