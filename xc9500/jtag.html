@@ -51,17 +51,26 @@
 <li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html">Bitstream structure — XC9500XL/XV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="database.html">Database schema</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">JTAG interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#frequency">Frequency</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ir">IR</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#idcode">IDCODE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#boundary-scan-register">Boundary scan register</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#isp-instructions">ISP instructions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#isp-instructions-xc9500">ISP instructions — XC9500</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#isp-dr-registers-xc9500">ISP DR registers — XC9500</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#entering-and-exiting-isp-mode-xc9500">Entering and exiting ISP mode — XC9500</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#write-protection-xc9500">Write protection — XC9500</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#erasing-fuses-xc9500">Erasing fuses — XC9500</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#programming-fuses-xc9500">Programming fuses — XC9500</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reading-fuses-xc9500">Reading fuses — XC9500</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#isp-instructions-xc9500xl-xv">ISP instructions — XC9500XL/XV</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#isp-dr-registers-xc9500xl-xv">ISP DR registers — XC9500XL/XV</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#entering-and-exiting-isp-mode">Entering and exiting ISP mode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#erasing-fuses">Erasing fuses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#programming-fuses">Programming fuses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#reading-fuses">Reading fuses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#blank-check">Blank check</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#entering-and-exiting-isp-mode-xc9500xl-xv">Entering and exiting ISP mode — XC9500XL/XV</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#erasing-fuses-xc9500xl-xv">Erasing fuses — XC9500XL/XV</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#programming-fuses-xc9500xl-xv">Programming fuses — XC9500XL/XV</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reading-fuses-xc9500xl-xv">Reading fuses — XC9500XL/XV</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#blank-check-xc9500xl-xv">Blank check — XC9500XL/XV</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#programming-sequence">Programming sequence</a></li>
@@ -100,6 +109,10 @@
              
   <section id="jtag-interface">
 <h1>JTAG interface<a class="headerlink" href="#jtag-interface" title="Link to this heading"></a></h1>
+<section id="frequency">
+<h2>Frequency<a class="headerlink" href="#frequency" title="Link to this heading"></a></h2>
+<p>The max TCK frequency for all XC9500 family devices is 10MHz.</p>
+</section>
 <section id="ir">
 <h2>IR<a class="headerlink" href="#ir" title="Link to this heading"></a></h2>
 <p>The IR is 8 bits long.  The following instructions exist:</p>
@@ -224,10 +237,9 @@
 <li><p>bit 5: <code class="docutils literal notranslate"><span class="pre">DONE</span></code> status (XC9500XV only, const 0 on other devices)</p></li>
 <li><p>bits 6-7: const 0</p></li>
 </ul>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>verify</p>
-</div>
+<p>Note that the protection and <code class="docutils literal notranslate"><span class="pre">DONE</span></code> status is latched when the device is reset and when
+<code class="docutils literal notranslate"><span class="pre">ISPEX</span></code> is executed — when erasing or programming the fuses, the new settings won’t take
+effect before exiting the ISP mode.</p>
 </section>
 <section id="idcode">
 <h2>IDCODE<a class="headerlink" href="#idcode" title="Link to this heading"></a></h2>
@@ -257,18 +269,24 @@ have a corresponding IOB.</p>
 <li><p>output enable: <code class="docutils literal notranslate"><span class="pre">(num_fbs</span> <span class="pre">-</span> <span class="pre">1</span> <span class="pre">-</span> <span class="pre">i)</span> <span class="pre">*</span> <span class="pre">18</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">+</span> <span class="pre">(17</span> <span class="pre">-</span> <span class="pre">j)</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">+</span> <span class="pre">0</span></code></p></li>
 </ul>
 <p>All bits of the register are <code class="docutils literal notranslate"><span class="pre">BC_1</span></code> type cells.</p>
-<div class="admonition-todo admonition" id="id2">
+<div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
 <p>details on the cell connection, EXTEST, INTEST semantics</p>
 </div>
 </section>
-<section id="isp-instructions">
-<h2>ISP instructions<a class="headerlink" href="#isp-instructions" title="Link to this heading"></a></h2>
+<section id="isp-instructions-xc9500">
+<h2>ISP instructions — XC9500<a class="headerlink" href="#isp-instructions-xc9500" title="Link to this heading"></a></h2>
 <section id="isp-dr-registers-xc9500">
 <h3>ISP DR registers — XC9500<a class="headerlink" href="#isp-dr-registers-xc9500" title="Link to this heading"></a></h3>
 <p>The following DR registers exist on XC9500:</p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ISPENABLE</span></code> (16 bits): function and contents unclear</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ISPENABLE</span></code> (<code class="docutils literal notranslate"><span class="pre">num_fbs</span> <span class="pre">+</span> <span class="pre">4</span></code> bits): used to power on the flash programming circuits</p>
+<ul class="simple">
+<li><p>bits 0-<code class="docutils literal notranslate"><span class="pre">num_fbs</span> <span class="pre">-</span> <span class="pre">1</span></code>: when set, powers up flash access circuitry for main areas, one bit per FB</p></li>
+<li><p>bit <code class="docutils literal notranslate"><span class="pre">num_fbs</span></code>: when set, powers up flash access circuitry for the UIM wire-AND area</p></li>
+<li><p>bits <code class="docutils literal notranslate"><span class="pre">num_fbs</span> <span class="pre">+</span> <span class="pre">1</span></code> - <code class="docutils literal notranslate"><span class="pre">num_fbs</span> <span class="pre">+</span> <span class="pre">3</span></code>: unknown, set to 0</p></li>
+</ul>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ISPCONFIGURATION</span></code> (27 bits): used to load and store bitstream bytes</p>
 <ul class="simple">
 <li><p>bit 0: valid bit</p></li>
@@ -285,11 +303,286 @@ have a corresponding IOB.</p>
 </ul>
 </li>
 </ol>
-<div class="admonition-todo admonition" id="id3">
-<p class="admonition-title">Todo</p>
-<p>ISPENABLE, describe valid &amp; strobe</p>
-</div>
+<p>Programming operations are triggered when the <code class="docutils literal notranslate"><span class="pre">ISPDATA</span></code> or <code class="docutils literal notranslate"><span class="pre">ISPCONFIGURATION</span></code> register
+is written with the strobe bit set and the valid bit unset (ie. with the bottom two bits set
+to <code class="docutils literal notranslate"><span class="pre">0b10</span></code>).  Once the operation succeeds, the valid bit will be set by the device, and the
+bottom two bits of the register will read as <code class="docutils literal notranslate"><span class="pre">0b11</span></code>.  This should be checked by the programmer.</p>
 </section>
+<section id="entering-and-exiting-isp-mode-xc9500">
+<h3>Entering and exiting ISP mode — XC9500<a class="headerlink" href="#entering-and-exiting-isp-mode-xc9500" title="Link to this heading"></a></h3>
+<p>Before any programming or readout can be done, the device needs to be put into ISP mode.
+For that purpose, the <code class="docutils literal notranslate"><span class="pre">ISPEN</span></code> instructions can be used.
+The instruction uses the <code class="docutils literal notranslate"><span class="pre">ISPENABLE</span></code> register, which is described above.</p>
+<p>To enter ISP mode:</p>
+<ul class="simple">
+<li><p>shift <code class="docutils literal notranslate"><span class="pre">ISPEN</span></code> into IR</p></li>
+<li><p>shift a value into DR, setting all bits except the top 3</p></li>
+<li><p>go to Run-Test/Idle state for at least 1 clock</p></li>
+</ul>
+<p>All outputs will be put in high-Z with weak pull-ups while ISP mode is active.</p>
+<p>To exit ISP mode:</p>
+<ul class="simple">
+<li><p>shift <code class="docutils literal notranslate"><span class="pre">ISPEX</span></code> into IR</p></li>
+<li><p>go to Run-Test/Idle state for at least 100µs</p></li>
+</ul>
+<p>When ISP mode is exited, the device will initialize itself and start normal operation.</p>
+<p>The reset value of <code class="docutils literal notranslate"><span class="pre">ISPENABLE</span></code> is:</p>
+<ul class="simple">
+<li><p>bits 0 - <code class="docutils literal notranslate"><span class="pre">num_fbs</span></code>: set to 1</p></li>
+<li><p>bits <code class="docutils literal notranslate"><span class="pre">num_fbs</span> <span class="pre">+</span> <span class="pre">1</span></code> - <code class="docutils literal notranslate"><span class="pre">num_fbs</span> <span class="pre">+</span> <span class="pre">3</span></code>: set to 0</p></li>
+</ul>
+<p>The step of shifting a value into DR above is thus optional if the default hasn’t been modified.</p>
+<p>When read, the <code class="docutils literal notranslate"><span class="pre">ISPENABLE</span></code> register always returns the reset value, regardless of the actual
+value that was last shifted in.</p>
+</section>
+<section id="write-protection-xc9500">
+<h3>Write protection — XC9500<a class="headerlink" href="#write-protection-xc9500" title="Link to this heading"></a></h3>
+<p>If the device is write protected (which can be determined by reading bit 2 of IR), it cannot
+be written (erased or programmed) without unlocking write protection first.</p>
+<p>To unlock write protection:</p>
+<ul class="simple">
+<li><p>enter ISP mode, if not already entered</p></li>
+<li><p>shift <code class="docutils literal notranslate"><span class="pre">FERASE</span></code> or <code class="docutils literal notranslate"><span class="pre">FBULK</span></code> to IR</p></li>
+<li><p>shift the following value to DR:</p>
+<ul>
+<li><p>bit 0 (valid): 0</p></li>
+<li><p>bit 1 (strobe): 1</p></li>
+<li><p>bits 2-9 (data): don’t care</p></li>
+<li><p>bits 10-26 (address): <code class="docutils literal notranslate"><span class="pre">0x1aa55</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Once that value is shifted in, the device is unlocked, and bit 2 of IR goes to 0.  However,
+this unlock only lasts for the duration of the current ISP mode session — once <code class="docutils literal notranslate"><span class="pre">ISPEX</span></code> is
+executed (or the device is reset), the write protection status will be reloaded from the flash.</p>
+</section>
+<section id="erasing-fuses-xc9500">
+<h3>Erasing fuses — XC9500<a class="headerlink" href="#erasing-fuses-xc9500" title="Link to this heading"></a></h3>
+<p>There are two instructions that erase fuses:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FERASE</span></code>: erases one area at a time (either a single FB main area, or a single FB UIM
+wire-AND area)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FBULK</span></code>: erases either all main areas on the device at once, or all UIM wire-AND areas
+at once</p></li>
+</ul>
+<p>An erase operation is triggered by the following sequence:</p>
+<ol class="arabic simple">
+<li><p>The DR is written in one of the above opcodes with strobe set to 1 and valid set to 0</p></li>
+<li><p>The Run-Test/Idle state is entered</p></li>
+</ol>
+<p>Once started, the erase operation is self-timed.  The maximum programming time can be obtained
+from the database.  When successful, the low two bits of
+DR will become <code class="docutils literal notranslate"><span class="pre">11</span></code>.  Note that shifting DR again before the operation is complete will
+abort it and return <code class="docutils literal notranslate"><span class="pre">00</span></code> in the low bits.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The timeout value of 1.3s present in the database is taken directly from ISE SVFs,
+but it appears to be too small for the two devices I (&#64;wanda-phi) personally possess,
+which require a timeout of 2s.  Since these devices came from random ebay listings, this
+may be due to age or mishandling.  Still, you may want to consider using a larger timeout
+in your programming software.</p>
+</div>
+<p>To erase fuses:</p>
+<ul>
+<li><p>enter ISP mode, if not already entered</p></li>
+<li><p>ensure the <code class="docutils literal notranslate"><span class="pre">ISPENABLE</span></code> bit corresponding to the area being erased is set</p></li>
+<li><p>shift a value into DR:</p>
+<ul class="simple">
+<li><p>bit 0 (valid): 0</p></li>
+<li><p>bit 1 (strobe): 1</p></li>
+<li><p>bits 2-9 (data): don’t care</p></li>
+<li><p>bits 10-27 (address):</p>
+<ul>
+<li><p>bits 0-11 (row, column): don’t care</p></li>
+<li><p>bit 12: 0 to erase main area, 1 to erase UIM wire-AND area</p></li>
+<li><p>bits 13-16:</p>
+<ul>
+<li><p>for <code class="docutils literal notranslate"><span class="pre">FERASE</span></code>: FB index</p></li>
+<li><p>for <code class="docutils literal notranslate"><span class="pre">FBULK</span></code>: don’t care</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>go to Run-Test/Idle state for at least the time specified in the database for this device</p></li>
+<li><p>shift a neutral value into DR:</p>
+<ul class="simple">
+<li><p>bits 0-1 (valid and strobe): 0</p></li>
+<li><p>all other bits: don’t care</p></li>
+</ul>
+<p>Verify that the low 2 bits of the value shifted out are <code class="docutils literal notranslate"><span class="pre">11</span></code>.  Any other value is an error.
+Value <code class="docutils literal notranslate"><span class="pre">00</span></code> could mean that the erase was still in progress.  Value <code class="docutils literal notranslate"><span class="pre">10</span></code> could mean that
+device is write protected.  Other values are unknown.</p>
+</li>
+</ul>
+</section>
+<section id="programming-fuses-xc9500">
+<h3>Programming fuses — XC9500<a class="headerlink" href="#programming-fuses-xc9500" title="Link to this heading"></a></h3>
+<p>Fuses are programmed a byte at a time in random-access fashion.  The <code class="docutils literal notranslate"><span class="pre">FPGM</span></code> and <code class="docutils literal notranslate"><span class="pre">FPGMI</span></code>
+opcodes are used for programming.  A program operation is triggered by the following sequence:</p>
+<ol class="arabic simple">
+<li><p>The DR is written in one of the above opcodes with strobe set to 1 and valid set to 0</p></li>
+<li><p>The Run-Test/Idle state is entered</p></li>
+</ol>
+<p>Once started, the programming operation is self-timed.  The maximum programming time depends
+on the device and can be obtained from the database.  When successful, the low two bits of
+DR will become <code class="docutils literal notranslate"><span class="pre">11</span></code>.  Note that shifting DR again before the operation is complete will
+abort it and return <code class="docutils literal notranslate"><span class="pre">01</span></code> in the low bits.</p>
+<p>As usual with flash devices, a program operation can only change a <code class="docutils literal notranslate"><span class="pre">1</span></code> bit to a <code class="docutils literal notranslate"><span class="pre">0</span></code> bit.
+Bits can be reset back to <code class="docutils literal notranslate"><span class="pre">1</span></code> only by an erase operation.  A programming operation
+that attempts to set an already-0 bit to 1 will fail, and result in <code class="docutils literal notranslate"><span class="pre">01</span></code> in the low DR bits.</p>
+<p>To program a single byte:</p>
+<ul>
+<li><p>enter ISP mode, if not already entered</p></li>
+<li><p>ensure the <code class="docutils literal notranslate"><span class="pre">ISPENABLE</span></code> bit corresponding to the area being programmed is set</p></li>
+<li><p>shift <code class="docutils literal notranslate"><span class="pre">FPGM</span></code> into IR</p></li>
+<li><p>shift a value into DR:</p>
+<ul class="simple">
+<li><p>bit 0 (valid): 0</p></li>
+<li><p>bit 1 (strobe): 1</p></li>
+<li><p>bits 2-9 (data): the data to be programmed</p></li>
+<li><p>bits 10-26 (address): the address to program</p></li>
+</ul>
+</li>
+<li><p>go to Run-Test/Idle state for at least the time specified in the database for this device</p></li>
+<li><p>shift a neutral value into DR:</p>
+<ul class="simple">
+<li><p>bits 0-1 (valid and strobe): 0</p></li>
+<li><p>all other bits: don’t care</p></li>
+</ul>
+<p>Verify that the low 2 bits of the value shifted out are <code class="docutils literal notranslate"><span class="pre">11</span></code>.  Any other value is an error.</p>
+</li>
+</ul>
+<p>When more than one byte is to be read, the DR shifts can be overlapped — instead of shifting
+in a neutral DR value when reading back the status, the shift can be used to
+trigger the second program:</p>
+<ul class="simple">
+<li><p>prepare ISP mode, shift <code class="docutils literal notranslate"><span class="pre">FPGM</span></code> into IR</p></li>
+<li><p>shift first address + data + strobe into DR</p></li>
+<li><p>go to RTI for programming time</p></li>
+<li><p>shift second address + data + strobe into DR, verify low 2 bits of the value shifted out</p></li>
+<li><p>go to RTI for programming time</p></li>
+<li><p>shift third address + data + strobe into DR, verify low 2 bits of the value shifted out</p></li>
+<li><p>…</p></li>
+<li><p>shift neutral value into DR, verify low 2 bits of the value shifted out</p></li>
+</ul>
+<p>When a block of sequential addresses is to be programmed (including programming the whole device),
+the <code class="docutils literal notranslate"><span class="pre">FPGMI</span></code> auto-incrementing instruction can be used as follows:</p>
+<ul>
+<li><p>prepare ISP mode, shift <code class="docutils literal notranslate"><span class="pre">FPGM</span></code> into IR</p></li>
+<li><p>shift first address + data + strobe into DR</p></li>
+<li><p>go to RTI for programming time</p></li>
+<li><p>shift <code class="docutils literal notranslate"><span class="pre">FPGMI</span></code> into IR</p></li>
+<li><p>shift second data + strobe into DR, ie. shift the following value into DR:</p>
+<ul class="simple">
+<li><p>bit 0 (valid): set to 0</p></li>
+<li><p>bit 1 (strobe): set to 1</p></li>
+<li><p>bits 2-9 (data): second data byte</p></li>
+</ul>
+<p>Verify low two bits of the value shifted out are <code class="docutils literal notranslate"><span class="pre">11</span></code></p>
+</li>
+<li><p>go to RTI for programming time</p></li>
+<li><p>shift third data + strobe into DR, verify status</p></li>
+<li><p>go to RTI for programming time</p></li>
+<li><p>…</p></li>
+<li><p>shift neutral value (strobe and valid 0) into DR, verify status of the last byte</p></li>
+</ul>
+<p>Since <code class="docutils literal notranslate"><span class="pre">FPGMI</span></code> skips over invalid addresses when auto-incrementing, the above sequence
+can be used to program the entire device in one go.</p>
+</section>
+<section id="reading-fuses-xc9500">
+<h3>Reading fuses — XC9500<a class="headerlink" href="#reading-fuses-xc9500" title="Link to this heading"></a></h3>
+<p>Fuses are read a byte at a time in random-access fashion.  The <code class="docutils literal notranslate"><span class="pre">FVFY</span></code> and <code class="docutils literal notranslate"><span class="pre">FVFYI</span></code> opcodes
+are used for reading.  A read is triggered by the following sequence:</p>
+<ol class="arabic simple">
+<li><p>The DR is written in one of the above opcodes with strobe set to 1 and valid set to 0</p></li>
+<li><p>The Run-Test/Idle state is entered</p></li>
+</ol>
+<p>The reads are immediate — they require only one TCK cycle to be spent in the Run-Test/Idle state.</p>
+<p>The data is read from the currently set address and placed in the <code class="docutils literal notranslate"><span class="pre">ISPCONFIGURATION</span></code> / <code class="docutils literal notranslate"><span class="pre">ISPDATA</span></code>
+data field.  If the <code class="docutils literal notranslate"><span class="pre">FVFYI</span></code> opcode was used, the address is then auto-incremented to the next
+valid address in the device.</p>
+<p>To read a single byte of fuses:</p>
+<ul>
+<li><p>enter ISP mode, if not already entered</p></li>
+<li><p>ensure the <code class="docutils literal notranslate"><span class="pre">ISPENABLE</span></code> bit corresponding to the area being read is set</p></li>
+<li><p>shift <code class="docutils literal notranslate"><span class="pre">FVFY</span></code> into IR</p></li>
+<li><p>shift a value into DR:</p>
+<ul class="simple">
+<li><p>bit 0 (valid): 0</p></li>
+<li><p>bit 1 (strobe): 1</p></li>
+<li><p>bits 2-9 (data): don’t care</p></li>
+<li><p>bits 10-26 (address): the address to read</p></li>
+</ul>
+</li>
+<li><p>go to Run-Test/Idle state for at least 1 clock</p></li>
+<li><p>shift a neutral value into DR:</p>
+<ul class="simple">
+<li><p>bits 0-1 (valid and strobe): 0</p></li>
+<li><p>all other bits: don’t care</p></li>
+</ul>
+<p>The data read will be:</p>
+<ul class="simple">
+<li><p>bit 0 (valid): 1 if operation succeeded (0 if error)</p></li>
+<li><p>bit 1 (strobe): always 1</p></li>
+<li><p>bits 2-9: the data byte read</p></li>
+<li><p>bits 10-26: the address</p></li>
+</ul>
+</li>
+</ul>
+<p>When more than one byte is to be read, the DR shifts can be overlapped — instead of shifting
+in a neutral DR value when reading back the first data byte, the shift can be used to
+trigger the second read:</p>
+<ul class="simple">
+<li><p>prepare ISP mode, shift <code class="docutils literal notranslate"><span class="pre">FVFY</span></code> into IR</p></li>
+<li><p>shift first address + strobe into DR</p></li>
+<li><p>go to RTI for one clock</p></li>
+<li><p>shift second address + strobe into DR, grab first data from the value shifted out</p></li>
+<li><p>go to RTI for one clock</p></li>
+<li><p>shift third address + strobe into DR, grab second data from the value shifted out</p></li>
+<li><p>…</p></li>
+<li><p>shift neutral value into DR, grab final data from the value shifted out</p></li>
+</ul>
+<p>When a block of sequential addresses is to be read (including reading the whole device),
+the <code class="docutils literal notranslate"><span class="pre">FVFYI</span></code> auto-incrementing instruction can be used as follows:</p>
+<ul>
+<li><p>prepare ISP mode, shift <code class="docutils literal notranslate"><span class="pre">FVFY</span></code> into IR</p></li>
+<li><p>shift first address + strobe into DR</p></li>
+<li><p>go to RTI for one clock</p></li>
+<li><p>shift <code class="docutils literal notranslate"><span class="pre">FVFYI</span></code> into IR</p></li>
+<li><p>shift second strobe into DR, ie. shift the following value into DR:</p>
+<ul class="simple">
+<li><p>bit 0 (valid): set to 0</p></li>
+<li><p>bit 1 (strobe): set to 1</p></li>
+<li><p>bits 2-9 (data): don’t care</p></li>
+</ul>
+<p>Grab first data byte from the value shifted out</p>
+</li>
+<li><p>go to RTI for one clock</p></li>
+<li><p>shift third strobe into DR, grab second data from the value shifted out</p></li>
+<li><p>go to RTI for one clock</p></li>
+<li><p>…</p></li>
+<li><p>shift neutral value (strobe and valid 0) into DR, grab final data from the value shifted out</p></li>
+</ul>
+<p>Since <code class="docutils literal notranslate"><span class="pre">FVFYI</span></code> skips over invalid addresses when auto-incrementing, the above sequence
+can be used to read the entire device in one go.</p>
+<p>If any read protection fuse was programmed in the device as of the time of last <code class="docutils literal notranslate"><span class="pre">ISPEN</span></code>,
+the device is considered read protected, and most addresses cannot be read (reads from them will
+return all-1 instead of the actual data).  The only readable fuses are:</p>
+<ul class="simple">
+<li><p>main area fuses, with</p></li>
+<li><p>row in range 0-7</p></li>
+<li><p>bit in range 6-7</p></li>
+</ul>
+<p>This corresponds (roughly) to global configuration bits, including the USERCODE.</p>
+<p>Note that read protection remains active until the ISP mode is exited even after the device has
+been completely erased — for that reason, one should perform ISP mode exit and re-entry after
+erasing the device.</p>
+</section>
+</section>
+<section id="isp-instructions-xc9500xl-xv">
+<h2>ISP instructions — XC9500XL/XV<a class="headerlink" href="#isp-instructions-xc9500xl-xv" title="Link to this heading"></a></h2>
 <section id="isp-dr-registers-xc9500xl-xv">
 <h3>ISP DR registers — XC9500XL/XV<a class="headerlink" href="#isp-dr-registers-xc9500xl-xv" title="Link to this heading"></a></h3>
 <p>The following DR registers exist on XC9500XL/XV:</p>
@@ -307,7 +600,7 @@ have a corresponding IOB.</p>
 <ul class="simple">
 <li><p>bit 0: valid bit</p></li>
 <li><p>bit 1: strobe bit</p></li>
-<li><p>bits 2-<code class="docutils literal notranslate"><span class="pre">(num_sbs</span> <span class="pre">*</span> <span class="pre">8</span> <span class="pre">+</span> <span class="pre">1)</span></code>: data word</p></li>
+<li><p>bits 2-<code class="docutils literal notranslate"><span class="pre">(num_fbs</span> <span class="pre">*</span> <span class="pre">8</span> <span class="pre">+</span> <span class="pre">1)</span></code>: data word</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ISPADDRESS</span></code> (18 bits): a subset of <code class="docutils literal notranslate"><span class="pre">ISPCONFIGURATION</span></code> used by some instructions:</p></li>
@@ -320,12 +613,12 @@ have a corresponding IOB.</p>
 </ul>
 </div></blockquote>
 </section>
-<section id="entering-and-exiting-isp-mode">
-<h3>Entering and exiting ISP mode<a class="headerlink" href="#entering-and-exiting-isp-mode" title="Link to this heading"></a></h3>
+<section id="entering-and-exiting-isp-mode-xc9500xl-xv">
+<h3>Entering and exiting ISP mode — XC9500XL/XV<a class="headerlink" href="#entering-and-exiting-isp-mode-xc9500xl-xv" title="Link to this heading"></a></h3>
 <p>Before any programming or readout can be done, the device needs to be put into ISP mode.
-For that purpose, the <code class="docutils literal notranslate"><span class="pre">ISPEN</span></code> or <code class="docutils literal notranslate"><span class="pre">ISPENC</span></code> (XC9500XL/XV only) instructions can be used.
-Both instructions use the <code class="docutils literal notranslate"><span class="pre">ISPENABLE</span></code> register, which is 16 bits on XC9500
-and 6 bits on XC9500XL/XV.  Its meaning, if any, is unknown.</p>
+For that purpose, the <code class="docutils literal notranslate"><span class="pre">ISPEN</span></code> or <code class="docutils literal notranslate"><span class="pre">ISPENC</span></code> instructions can be used.
+Both instructions use the <code class="docutils literal notranslate"><span class="pre">ISPENABLE</span></code> register, which is 6 bits long.  Its meaning, if any,
+is unknown.</p>
 <p>To enter ISP mode:</p>
 <ul class="simple">
 <li><p>shift <code class="docutils literal notranslate"><span class="pre">ISPEN</span></code> or <code class="docutils literal notranslate"><span class="pre">ISPENC</span></code> into IR</p></li>
@@ -338,38 +631,38 @@ and outputs will continue driving the last value while ISP mode is active.</p>
 <p>To exit ISP mode:</p>
 <ul class="simple">
 <li><p>shift <code class="docutils literal notranslate"><span class="pre">ISPEX</span></code> into IR</p></li>
-<li><p>go to Run-Test/Idle state for at least 1 clock</p></li>
+<li><p>go to Run-Test/Idle state for at least 100 µs</p></li>
 </ul>
 <p>When ISP mode is exitted, the device will initialize itself and start normal operation.</p>
-<div class="admonition-todo admonition" id="id4">
+<div class="admonition-todo admonition" id="id2">
 <p class="admonition-title">Todo</p>
 <p>verify, see if anything can be figured out about the DR</p>
 </div>
 </section>
-<section id="erasing-fuses">
-<h3>Erasing fuses<a class="headerlink" href="#erasing-fuses" title="Link to this heading"></a></h3>
+<section id="erasing-fuses-xc9500xl-xv">
+<h3>Erasing fuses — XC9500XL/XV<a class="headerlink" href="#erasing-fuses-xc9500xl-xv" title="Link to this heading"></a></h3>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>write me</p>
+</div>
+</section>
+<section id="programming-fuses-xc9500xl-xv">
+<h3>Programming fuses — XC9500XL/XV<a class="headerlink" href="#programming-fuses-xc9500xl-xv" title="Link to this heading"></a></h3>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<p>write me</p>
+</div>
+</section>
+<section id="reading-fuses-xc9500xl-xv">
+<h3>Reading fuses — XC9500XL/XV<a class="headerlink" href="#reading-fuses-xc9500xl-xv" title="Link to this heading"></a></h3>
 <div class="admonition-todo admonition" id="id5">
 <p class="admonition-title">Todo</p>
 <p>write me</p>
 </div>
 </section>
-<section id="programming-fuses">
-<h3>Programming fuses<a class="headerlink" href="#programming-fuses" title="Link to this heading"></a></h3>
+<section id="blank-check-xc9500xl-xv">
+<h3>Blank check — XC9500XL/XV<a class="headerlink" href="#blank-check-xc9500xl-xv" title="Link to this heading"></a></h3>
 <div class="admonition-todo admonition" id="id6">
-<p class="admonition-title">Todo</p>
-<p>write me</p>
-</div>
-</section>
-<section id="reading-fuses">
-<h3>Reading fuses<a class="headerlink" href="#reading-fuses" title="Link to this heading"></a></h3>
-<div class="admonition-todo admonition" id="id7">
-<p class="admonition-title">Todo</p>
-<p>write me</p>
-</div>
-</section>
-<section id="blank-check">
-<h3>Blank check<a class="headerlink" href="#blank-check" title="Link to this heading"></a></h3>
-<div class="admonition-todo admonition" id="id8">
 <p class="admonition-title">Todo</p>
 <p>write me</p>
 </div>
@@ -377,7 +670,7 @@ and outputs will continue driving the last value while ISP mode is active.</p>
 </section>
 <section id="programming-sequence">
 <h2>Programming sequence<a class="headerlink" href="#programming-sequence" title="Link to this heading"></a></h2>
-<div class="admonition-todo admonition" id="id9">
+<div class="admonition-todo admonition" id="id7">
 <p class="admonition-title">Todo</p>
 <p>write me</p>
 </div>
