@@ -144,6 +144,8 @@ is MC index.  Note that sometimes items in this map are overriden by the bond.</
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">imux_bits</span></code> (object) : a <span class="xref std std-ref">tile</span> describing per-FB bits corresponding to IMUX</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">uim_ibuf_bits</span></code> (object or null): for XC95288 device, a <span class="xref std std-ref">tile</span> describing the UIM IBUF bits; for every other device, <code class="docutils literal notranslate"><span class="pre">null</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">program_time</span></code> (number): number of TCK cycles to wait after a program operation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">erase_time</span></code> (number): number of TCK cycles to wait after an erase operation</p></li>
 </ul>
 </section>
 <section id="bond">
@@ -219,8 +221,8 @@ is a single number and corresponds to the row coordinate of the fuse</p></li>
 is a list of 3 numbers, in order:</p>
 <ul>
 <li><p>row</p></li>
-<li><p>column</p></li>
 <li><p>bit</p></li>
+<li><p>column</p></li>
 </ul>
 </li>
 <li><p>IMUX bits tile: device-specific, the coordinate is the same as for per-FB bits tile</p></li>
@@ -229,8 +231,8 @@ is a list of 4 numbers, in order:</p>
 <ul>
 <li><p>fb</p></li>
 <li><p>row</p></li>
-<li><p>column</p></li>
 <li><p>bit</p></li>
+<li><p>column</p></li>
 </ul>
 </li>
 <li><p>UIM IBUF bits tile: device-specific, only for XC995288, the coordinate is the same as for global bits tile</p></li>

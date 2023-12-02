@@ -59,6 +59,8 @@ from a :ref:`part <xc9500-db-part>`.  A device is an object with the following f
 
 - ``imux_bits`` (object) : a :ref:`tile <xc9500-db-tile>` describing per-FB bits corresponding to IMUX
 - ``uim_ibuf_bits`` (object or null): for XC95288 device, a :ref:`tile <xc9500-db-tile>` describing the UIM IBUF bits; for every other device, ``null``
+- ``program_time`` (number): number of TCK cycles to wait after a program operation
+- ``erase_time`` (number): number of TCK cycles to wait after an erase operation
 
 
 .. _xc9500-db-bond:
@@ -140,8 +142,8 @@ The following tile kinds exist:
   is a list of 3 numbers, in order:
 
   - row
-  - column
   - bit
+  - column
 
 - IMUX bits tile: device-specific, the coordinate is the same as for per-FB bits tile
 - global bits tile: identical for all devices in the database, the coordinate
@@ -149,7 +151,7 @@ The following tile kinds exist:
 
   - fb
   - row
-  - column
   - bit
+  - column
 
 - UIM IBUF bits tile: device-specific, only for XC995288, the coordinate is the same as for global bits tile
