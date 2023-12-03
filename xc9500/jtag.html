@@ -168,7 +168,7 @@
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">11101100</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">FERASE</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">ISPCONFIGURATION</span></code></p></td>
-<td><p>XC9500 only</p></td>
+<td><p>XC9500 revision 2 and up only</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">11101100</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">FERASE</span></code></p></td>
@@ -246,7 +246,7 @@ effect before exiting the ISP mode.</p>
 <p>The IDCODE for XC9500* devices can be determined as follows:</p>
 <ul class="simple">
 <li><p>bits 0-11: vendor code, <code class="docutils literal notranslate"><span class="pre">0x093</span></code></p></li>
-<li><p>bits 12-19: number of FBs in the device</p></li>
+<li><p>bits 12-19: number of FBs in the device encoded as BCD</p></li>
 <li><p>bits 20-27: device kind</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">0x95</span></code>: XC9500</p></li>
@@ -256,6 +256,8 @@ effect before exiting the ISP mode.</p>
 </li>
 <li><p>bits 28-31: device revision (varies)</p></li>
 </ul>
+<p>For XC9500, device revisions older than 2 do not support the <code class="docutils literal notranslate"><span class="pre">FBULK</span></code> instruction and
+require using <code class="docutils literal notranslate"><span class="pre">FERASE</span></code>.</p>
 </section>
 <section id="boundary-scan-register">
 <h2>Boundary scan register<a class="headerlink" href="#boundary-scan-register" title="Link to this heading"></a></h2>
@@ -365,6 +367,8 @@ wire-AND area)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FBULK</span></code>: erases either all main areas on the device at once, or all UIM wire-AND areas
 at once</p></li>
 </ul>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">FBULK</span></code> instruction is not supported on (rarely seen) XC9500 devices with
+revision older than 2.</p>
 <p>An erase operation is triggered by the following sequence:</p>
 <ol class="arabic simple">
 <li><p>The DR is written in one of the above opcodes with strobe set to 1 and valid set to 0</p></li>
