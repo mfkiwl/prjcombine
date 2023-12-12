@@ -197,15 +197,13 @@ of tiles used to describe the bitstream.  The base structure of a tile is the sa
 for all of these kinds.</p>
 <p>A tile is an object where the keys are fuse set names, and the values are objects
 with the following keys:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">bits</span></code> (list of coordinate): the list of fuse coordinates in this fuse set</p></li>
-<li><p>one of:
-- <code class="docutils literal notranslate"><span class="pre">values</span></code> (map of string to list of bool): used for an enumerated fuse set;</p>
-<blockquote>
-<div><p>the list of possible values for this fuse set; the value is a list of fuse values, corresponding one
-to one to the coordinates in <code class="docutils literal notranslate"><span class="pre">bits</span></code></p>
-</div></blockquote>
 <ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bits</span></code> (list of coordinate): the list of fuse coordinates in this fuse set</p></li>
+<li><p>one of:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">values</span></code> (map of string to list of bool): used for an enumerated fuse set;
+the list of possible values for this fuse set; the value is a list of fuse values, corresponding one
+to one to the coordinates in <code class="docutils literal notranslate"><span class="pre">bits</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">invert</span></code> (bool): used for a plain bool / bitvec fuse set; if true, it means
 that the value of this bitvec or bool is stored inverted in the datastream
 (0 means true, 1 means false); if false, the value is stored directly without
