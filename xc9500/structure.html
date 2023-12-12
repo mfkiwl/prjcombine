@@ -418,7 +418,7 @@ FB[i].MC[j].EXPORT_DOWN = (FB[i].MC[j].EXPORT_DIR == DOWN ? FB[i].MC[j].EXPORT :
 <li><p><code class="docutils literal notranslate"><span class="pre">PT3</span></code>: product term 3 dedicated function</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].INIT</span></code>: if programmed, the initial value of the FF is 1; otherwise, it is 0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].REG_INIT</span></code>: if programmed, the initial value of the FF is 1; otherwise, it is 0</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].REG_MODE</span></code>: selects FF mode</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">DFF</span></code></p></li>
@@ -444,7 +444,7 @@ FB[i].MC[j].EXPORT_DOWN = (FB[i].MC[j].EXPORT_DIR == DOWN ? FB[i].MC[j].EXPORT :
 <span class="n">FSR</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">SET</span> <span class="o">=</span> <span class="n">FSR</span><span class="p">;</span>
 <span class="n">endcase</span>
 
-<span class="n">initial</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">FF</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">INIT</span><span class="p">;</span>
+<span class="n">initial</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">FF</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG_INIT</span><span class="p">;</span>
 
 <span class="o">//</span> <span class="n">Pretend</span> <span class="n">the</span> <span class="n">usual</span> <span class="n">synth</span><span class="o">/</span><span class="n">sim</span> <span class="n">mismatch</span> <span class="n">doesn</span><span class="s1">&#39;t happen.</span>
 <span class="n">always</span> <span class="o">@</span><span class="p">(</span><span class="n">posedge</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span><span class="p">,</span> <span class="n">posedge</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">RST_MUX</span><span class="p">,</span> <span class="n">posedge</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">SET_MUX</span><span class="p">)</span>
@@ -480,7 +480,7 @@ PT3: FB[i].MC[j].CE = FB[i].MC[j].PT[3].SPECIAL;
 NONE: FB[i].MC[j].CE = 1;
 endcase
 
-initial FB[i].MC[j].FF = FB[i].MC[j].INIT;
+initial FB[i].MC[j].FF = FB[i].MC[j].REG_INIT;
 
 // Pretend the usual synth/sim mismatch doesn&#39;t happen.
 always @(posedge FB[i].MC[j].CLK, posedge FB[i].MC[j].RST_MUX, posedge FB[i].MC[j].SET_MUX)
@@ -657,7 +657,12 @@ is used which is set in the bitstream:</p>
 <p>The XC9500XL/XV have a weak bus keeper in each IOB.  The keeper functionality can only be enabled
 globally for all pads on the device, or not at all, via a global fuse:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">KEEPER</span></code>: if programmed, the bus keeper is enabled on all IOBs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TERM_MODE</span></code>: selects termination mode of all IOBs</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">KEEPER</span></code>: bus keeper is enabled</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FLOAT</span></code>: bus keeper is disabled, all inputs float</p></li>
+</ul>
+</li>
 </ul>
 </section>
 <section id="global-networks-xc9500">
@@ -691,18 +696,21 @@ on the device (which can also be used as normal I/O).  The networks are:</p>
 </ul>
 <p>Additionally, all networks can be inverted from their source pins.</p>
 <p>The fuses involved are:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">FCLK[i].MUX</span></code>: selects the input routed to <code class="docutils literal notranslate"><span class="pre">FCLK[i]</span></code></p>
 <ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">FCLK[i].MUX</span></code>: selects the input routed to <code class="docutils literal notranslate"><span class="pre">FCLK[i]</span></code></p>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: const ???</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">GCLK[i]</span></code>: the corresponding <code class="docutils literal notranslate"><span class="pre">GCLK</span></code> pad</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FOE[i].MUX</span></code>: selects the input routed to <code class="docutils literal notranslate"><span class="pre">FOE[i]</span></code></p>
-<ul>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: const ???</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FOE[i]</span></code>: the corresponding <code class="docutils literal notranslate"><span class="pre">FOE</span></code> pad</p></li>
 </ul>
+<p>These fuses have two variants in the database: the <code class="docutils literal notranslate"><span class="pre">SMALL</span></code> variant is applicable
+for devices with 2 GOE pins, and the <code class="docutils literal notranslate"><span class="pre">LARGE</span></code> variant is applicable for devices
+with 4 GOE pins.</p>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FCLK[i].INV</span></code>: if programmed, the <code class="docutils literal notranslate"><span class="pre">GCLK</span></code> pad is inverted before driving <code class="docutils literal notranslate"><span class="pre">FCLK[i]</span></code> network</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FSR.INV</span></code>: if programmed, the <code class="docutils literal notranslate"><span class="pre">GSR</span></code> pad is inverted before driving <code class="docutils literal notranslate"><span class="pre">FSR</span></code> network</p></li>
@@ -747,10 +755,6 @@ to program/erase)</p></li>
 boot sequence and activate I/O buffers; otherwise, all output buffers will be disabled</p></li>
 </ul>
 <p>Due to their special semantics, the protection fuses and the <code class="docutils literal notranslate"><span class="pre">DONE</span></code> fuse should be programmed last, after all other fuses in the bitstream.</p>
-<div class="admonition-todo admonition" id="id12">
-<p class="admonition-title">Todo</p>
-<p>exact semantics of protection fuses</p>
-</div>
 </section>
 </section>
 
