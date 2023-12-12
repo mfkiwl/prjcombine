@@ -1712,3 +1712,9 @@ Speed data
      - 6000
      - 6500
      - 7000
+
+IMUX bits
+=========
+
+.. raw:: html
+   :file: gen-tile-xc95288xv-imux.html

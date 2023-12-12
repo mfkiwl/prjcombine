@@ -54,7 +54,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#fuses-macrocells">Fuses — macrocells</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fuses-fb-inputs">Fuses — FB inputs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fuses-per-fb-bits-and-globals">Fuses — per-FB bits and globals</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fuses-protection-bits-done">Fuses — protection bits, DONE</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="database.html">Database schema</a></li>
@@ -202,117 +201,187 @@ columns 0-8 of rows 12-49 of the main area.  The formulas are as follows:</p>
 <li><p>column: <code class="docutils literal notranslate"><span class="pre">mc_idx</span> <span class="pre">%</span> <span class="pre">9</span></code></p></li>
 <li><p>bit: <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">+</span> <span class="pre">mc_idx</span> <span class="pre">//</span> <span class="pre">9</span></code></p></li>
 </ul>
-<p>The row is:</p>
-<ul class="simple">
-<li><p>12: <code class="docutils literal notranslate"><span class="pre">PT[0].ALLOC</span></code> bit 0</p></li>
-<li><p>13: <code class="docutils literal notranslate"><span class="pre">PT[0].ALLOC</span></code> bit 1</p></li>
-<li><p>14: <code class="docutils literal notranslate"><span class="pre">PT[1].ALLOC</span></code> bit 0</p></li>
-<li><p>15: <code class="docutils literal notranslate"><span class="pre">PT[1].ALLOC</span></code> bit 1</p></li>
-<li><p>16: <code class="docutils literal notranslate"><span class="pre">PT[2].ALLOC</span></code> bit 0</p></li>
-<li><p>17: <code class="docutils literal notranslate"><span class="pre">PT[2].ALLOC</span></code> bit 1</p></li>
-<li><p>18: <code class="docutils literal notranslate"><span class="pre">PT[3].ALLOC</span></code> bit 0</p></li>
-<li><p>19: <code class="docutils literal notranslate"><span class="pre">PT[3].ALLOC</span></code> bit 1</p></li>
-<li><p>20: <code class="docutils literal notranslate"><span class="pre">PT[4].ALLOC</span></code> bit 0</p></li>
-<li><p>21: <code class="docutils literal notranslate"><span class="pre">PT[5].ALLOC</span></code> bit 1</p></li>
-<li><p>22: <code class="docutils literal notranslate"><span class="pre">INV</span></code></p></li>
-<li><p>23: <code class="docutils literal notranslate"><span class="pre">IMPORT_UP_ALLOC</span></code></p></li>
-<li><p>24: <code class="docutils literal notranslate"><span class="pre">IMPORT_DOWN_ALLOC</span></code></p></li>
-<li><p>25: <code class="docutils literal notranslate"><span class="pre">EXPORT_DIR</span></code></p></li>
-<li><p>26: <code class="docutils literal notranslate"><span class="pre">SUM_HP</span></code></p></li>
-<li><p>27: <code class="docutils literal notranslate"><span class="pre">OE_MUX</span></code> bit 0</p></li>
-<li><p>28: <code class="docutils literal notranslate"><span class="pre">OE_MUX</span></code> bit 1</p></li>
-<li><p>29: <code class="docutils literal notranslate"><span class="pre">OE_MUX</span></code> bit 2</p></li>
-<li><p>30: <code class="docutils literal notranslate"><span class="pre">OE_INV</span></code></p></li>
-<li><p>31: unused</p></li>
-<li><p>32: <code class="docutils literal notranslate"><span class="pre">OUT_MUX</span></code></p></li>
-<li><p>33: <code class="docutils literal notranslate"><span class="pre">CLK_MUX</span></code> bit 0</p></li>
-<li><p>34: <code class="docutils literal notranslate"><span class="pre">CLK_MUX</span></code> bit 1</p></li>
-<li><p>35: <code class="docutils literal notranslate"><span class="pre">CLK_INV</span></code></p></li>
-<li><p>36: <code class="docutils literal notranslate"><span class="pre">CE_MUX</span></code> bit 0</p></li>
-<li><p>37: <code class="docutils literal notranslate"><span class="pre">CE_MUX</span></code> bit 1</p></li>
-<li><p>38: unused</p></li>
-<li><p>39: <code class="docutils literal notranslate"><span class="pre">REG_MODE</span></code></p></li>
-<li><p>40: <code class="docutils literal notranslate"><span class="pre">RST_MUX</span></code></p></li>
-<li><p>41: <code class="docutils literal notranslate"><span class="pre">SET_MUX</span></code></p></li>
-<li><p>42: <code class="docutils literal notranslate"><span class="pre">INIT</span></code></p></li>
-<li><p>43: <code class="docutils literal notranslate"><span class="pre">IOB_GND</span></code></p></li>
-<li><p>44: <code class="docutils literal notranslate"><span class="pre">IOB_SLEW</span></code></p></li>
-<li><p>45: <code class="docutils literal notranslate"><span class="pre">PT[0].HP</span></code></p></li>
-<li><p>46: <code class="docutils literal notranslate"><span class="pre">PT[1].HP</span></code></p></li>
-<li><p>47: <code class="docutils literal notranslate"><span class="pre">PT[2].HP</span></code></p></li>
-<li><p>48: <code class="docutils literal notranslate"><span class="pre">PT[3].HP</span></code></p></li>
-<li><p>49: <code class="docutils literal notranslate"><span class="pre">PT[4].HP</span></code></p></li>
-</ul>
-<p>The fuse combination assignments are:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">PT[*].ALLOC</span></code>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">00</span></code>: <code class="docutils literal notranslate"><span class="pre">NONE</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">01</span></code>: <code class="docutils literal notranslate"><span class="pre">SUM</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>: <code class="docutils literal notranslate"><span class="pre">EXPORT</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">11</span></code>: <code class="docutils literal notranslate"><span class="pre">SPECIAL</span></code></p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">IMPORT_*_ALLOC</span></code>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: <code class="docutils literal notranslate"><span class="pre">EXPORT</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">SUM</span></code></p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">EXPORT_DIR</span></code>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: <code class="docutils literal notranslate"><span class="pre">UP</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">DOWN</span></code></p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">OUT_MUX</span></code>:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: <code class="docutils literal notranslate"><span class="pre">COMB</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">FF</span></code></p></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">CLK_MUX</span></code>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">00</span></code>: <code class="docutils literal notranslate"><span class="pre">FCLK1</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">01</span></code>: <code class="docutils literal notranslate"><span class="pre">FCLK0</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>: <code class="docutils literal notranslate"><span class="pre">FCLK2</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">11</span></code>: <code class="docutils literal notranslate"><span class="pre">PT</span></code></p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">CE_MUX</span></code>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">00</span></code>: <code class="docutils literal notranslate"><span class="pre">NONE</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">01</span></code>: <code class="docutils literal notranslate"><span class="pre">PT2</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>: <code class="docutils literal notranslate"><span class="pre">PT3</span></code></p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">REG_MODE</span></code>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: <code class="docutils literal notranslate"><span class="pre">DFF</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">TFF</span></code></p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">RST_MUX</span></code>, <code class="docutils literal notranslate"><span class="pre">SET_MUX</span></code>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: <code class="docutils literal notranslate"><span class="pre">PT</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">FSR</span></code></p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">IOB_SLEW</span></code>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: <code class="docutils literal notranslate"><span class="pre">SLOW</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">FAST</span></code></p></li>
-</ul>
-</li>
-<li><p>everything else:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: false</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: true</p></li>
-</ul>
-</li>
-</ul>
+<table class="docutils align-default prjcombine-tile">
+<tr><th>Row</th><th>Bit</th></tr>
+<tr><td>12</td><td><a href="#bits-mc-PT.0.ALLOC">PT.0.ALLOC[0]</a></td></tr>
+<tr><td>13</td><td><a href="#bits-mc-PT.0.ALLOC">PT.0.ALLOC[1]</a></td></tr>
+<tr><td>14</td><td><a href="#bits-mc-PT.1.ALLOC">PT.1.ALLOC[0]</a></td></tr>
+<tr><td>15</td><td><a href="#bits-mc-PT.1.ALLOC">PT.1.ALLOC[1]</a></td></tr>
+<tr><td>16</td><td><a href="#bits-mc-PT.2.ALLOC">PT.2.ALLOC[0]</a></td></tr>
+<tr><td>17</td><td><a href="#bits-mc-PT.2.ALLOC">PT.2.ALLOC[1]</a></td></tr>
+<tr><td>18</td><td><a href="#bits-mc-PT.3.ALLOC">PT.3.ALLOC[0]</a></td></tr>
+<tr><td>19</td><td><a href="#bits-mc-PT.3.ALLOC">PT.3.ALLOC[1]</a></td></tr>
+<tr><td>20</td><td><a href="#bits-mc-PT.4.ALLOC">PT.4.ALLOC[0]</a></td></tr>
+<tr><td>21</td><td><a href="#bits-mc-PT.4.ALLOC">PT.4.ALLOC[1]</a></td></tr>
+<tr><td>22</td><td><a href="#bits-mc-INV">INV</a></td></tr>
+<tr><td>23</td><td><a href="#bits-mc-IMPORT_UP_ALLOC">IMPORT_UP_ALLOC</a></td></tr>
+<tr><td>24</td><td><a href="#bits-mc-IMPORT_DOWN_ALLOC">IMPORT_DOWN_ALLOC</a></td></tr>
+<tr><td>25</td><td><a href="#bits-mc-EXPORT_DIR">EXPORT_DIR</a></td></tr>
+<tr><td>26</td><td><a href="#bits-mc-SUM_HP">SUM_HP</a></td></tr>
+<tr><td>27</td><td><a href="#bits-mc-OE_MUX">OE_MUX[0]</a></td></tr>
+<tr><td>28</td><td><a href="#bits-mc-OE_MUX">OE_MUX[1]</a></td></tr>
+<tr><td>29</td><td><a href="#bits-mc-OE_MUX">OE_MUX[2]</a></td></tr>
+<tr><td>30</td><td><a href="#bits-mc-OE_INV">OE_INV</a></td></tr>
+<tr><td>31</td><td>-</td></tr>
+<tr><td>32</td><td><a href="#bits-mc-OUT_MUX">OUT_MUX</a></td></tr>
+<tr><td>33</td><td><a href="#bits-mc-CLK_MUX">CLK_MUX[0]</a></td></tr>
+<tr><td>34</td><td><a href="#bits-mc-CLK_MUX">CLK_MUX[1]</a></td></tr>
+<tr><td>35</td><td><a href="#bits-mc-CLK_INV">CLK_INV</a></td></tr>
+<tr><td>36</td><td><a href="#bits-mc-CE_MUX">CE_MUX[0]</a></td></tr>
+<tr><td>37</td><td><a href="#bits-mc-CE_MUX">CE_MUX[1]</a></td></tr>
+<tr><td>38</td><td>-</td></tr>
+<tr><td>39</td><td><a href="#bits-mc-REG_MODE">REG_MODE</a></td></tr>
+<tr><td>40</td><td><a href="#bits-mc-RST_MUX">RST_MUX</a></td></tr>
+<tr><td>41</td><td><a href="#bits-mc-SET_MUX">SET_MUX</a></td></tr>
+<tr><td>42</td><td><a href="#bits-mc-REG_INIT">REG_INIT</a></td></tr>
+<tr><td>43</td><td><a href="#bits-mc-IOB_GND">IOB_GND</a></td></tr>
+<tr><td>44</td><td><a href="#bits-mc-IOB_SLEW">IOB_SLEW</a></td></tr>
+<tr><td>45</td><td><a href="#bits-mc-PT.0.HP">PT.0.HP</a></td></tr>
+<tr><td>46</td><td><a href="#bits-mc-PT.1.HP">PT.1.HP</a></td></tr>
+<tr><td>47</td><td><a href="#bits-mc-PT.2.HP">PT.2.HP</a></td></tr>
+<tr><td>48</td><td><a href="#bits-mc-PT.3.HP">PT.3.HP</a></td></tr>
+<tr><td>49</td><td><a href="#bits-mc-PT.4.HP">PT.4.HP</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-CE_MUX">
+<tr><th>CE_MUX</th><th>37</th><th>36</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>PT2</td><td>0</td><td>1</td></tr>
+<tr><td>PT3</td><td>1</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-CLK_INV">
+<tr><th>CLK_INV</th><th>35</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-CLK_MUX">
+<tr><th>CLK_MUX</th><th>34</th><th>33</th></tr>
+<tr><td>FCLK1</td><td>0</td><td>0</td></tr>
+<tr><td>FCLK2</td><td>0</td><td>1</td></tr>
+<tr><td>FCLK0</td><td>1</td><td>0</td></tr>
+<tr><td>PT</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-EXPORT_DIR">
+<tr><th>EXPORT_DIR</th><th>25</th></tr>
+<tr><td>UP</td><td>0</td></tr>
+<tr><td>DOWN</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-IMPORT_DOWN_ALLOC">
+<tr><th>IMPORT_DOWN_ALLOC</th><th>24</th></tr>
+<tr><td>EXPORT</td><td>0</td></tr>
+<tr><td>SUM</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-IMPORT_UP_ALLOC">
+<tr><th>IMPORT_UP_ALLOC</th><th>23</th></tr>
+<tr><td>EXPORT</td><td>0</td></tr>
+<tr><td>SUM</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-INV">
+<tr><th>INV</th><th>22</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-IOB_GND">
+<tr><th>IOB_GND</th><th>43</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-IOB_SLEW">
+<tr><th>IOB_SLEW</th><th>44</th></tr>
+<tr><td>SLOW</td><td>0</td></tr>
+<tr><td>FAST</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-OE_INV">
+<tr><th>OE_INV</th><th>30</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-OE_MUX">
+<tr><th>OE_MUX</th><th>29</th><th>28</th><th>27</th></tr>
+<tr><td>PT</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>FOE0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>FOE1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>FOE2</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>FOE3</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-OUT_MUX">
+<tr><th>OUT_MUX</th><th>32</th></tr>
+<tr><td>FF</td><td>0</td></tr>
+<tr><td>COMB</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-PT.0.ALLOC">
+<tr><th>PT.0.ALLOC</th><th>13</th><th>12</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>SUM</td><td>0</td><td>1</td></tr>
+<tr><td>EXPORT</td><td>1</td><td>0</td></tr>
+<tr><td>SPECIAL</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-PT.0.HP">
+<tr><th>PT.0.HP</th><th>45</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-PT.1.ALLOC">
+<tr><th>PT.1.ALLOC</th><th>15</th><th>14</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>SUM</td><td>0</td><td>1</td></tr>
+<tr><td>EXPORT</td><td>1</td><td>0</td></tr>
+<tr><td>SPECIAL</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-PT.1.HP">
+<tr><th>PT.1.HP</th><th>46</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-PT.2.ALLOC">
+<tr><th>PT.2.ALLOC</th><th>17</th><th>16</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>SUM</td><td>0</td><td>1</td></tr>
+<tr><td>EXPORT</td><td>1</td><td>0</td></tr>
+<tr><td>SPECIAL</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-PT.2.HP">
+<tr><th>PT.2.HP</th><th>47</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-PT.3.ALLOC">
+<tr><th>PT.3.ALLOC</th><th>19</th><th>18</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>SUM</td><td>0</td><td>1</td></tr>
+<tr><td>EXPORT</td><td>1</td><td>0</td></tr>
+<tr><td>SPECIAL</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-PT.3.HP">
+<tr><th>PT.3.HP</th><th>48</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-PT.4.ALLOC">
+<tr><th>PT.4.ALLOC</th><th>21</th><th>20</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>SUM</td><td>0</td><td>1</td></tr>
+<tr><td>EXPORT</td><td>1</td><td>0</td></tr>
+<tr><td>SPECIAL</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-PT.4.HP">
+<tr><th>PT.4.HP</th><th>49</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-REG_INIT">
+<tr><th>REG_INIT</th><th>42</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-REG_MODE">
+<tr><th>REG_MODE</th><th>39</th></tr>
+<tr><td>DFF</td><td>0</td></tr>
+<tr><td>TFF</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-RST_MUX">
+<tr><th>RST_MUX</th><th>40</th></tr>
+<tr><td>PT</td><td>0</td></tr>
+<tr><td>FSR</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-SET_MUX">
+<tr><th>SET_MUX</th><th>41</th></tr>
+<tr><td>PT</td><td>0</td></tr>
+<tr><td>FSR</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-SUM_HP">
+<tr><th>SUM_HP</th><th>26</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
 </section>
 <section id="fuses-fb-inputs">
 <h2>Fuses — FB inputs<a class="headerlink" href="#fuses-fb-inputs" title="Link to this heading"></a></h2>
@@ -327,48 +396,96 @@ columns 0-8 of rows 12-49 of the main area.  The formulas are as follows:</p>
 </section>
 <section id="fuses-per-fb-bits-and-globals">
 <h2>Fuses — per-FB bits and globals<a class="headerlink" href="#fuses-per-fb-bits-and-globals" title="Link to this heading"></a></h2>
-<p>Per-FB bits are stored in row 78, columns 0-8, bits 6-7.  The bits are (row, column, bit):</p>
-<ul class="simple">
-<li><p>(78, 0, 6): <code class="docutils literal notranslate"><span class="pre">ENABLE</span></code></p></li>
-<li><p>(78, 1, 6): <code class="docutils literal notranslate"><span class="pre">EXPORT_ENABLE</span></code></p></li>
-<li><p>(78, 6, 6): <code class="docutils literal notranslate"><span class="pre">PULLUP_DISABLE</span></code></p></li>
-</ul>
-<p>Global bits are stored in rows (2, 6, 7), columns 0-8, bits 6-7 of FB 0.  The bits are (row, column, bit):</p>
-<ul class="simple">
-<li><p>(2, 0, 6): <code class="docutils literal notranslate"><span class="pre">FSR_INV</span></code></p></li>
-<li><p>(2, 1, 6): <code class="docutils literal notranslate"><span class="pre">FCLK[0].EN</span></code></p></li>
-<li><p>(2, 2, 6): <code class="docutils literal notranslate"><span class="pre">FCLK[1].EN</span></code></p></li>
-<li><p>(2, 3, 6): <code class="docutils literal notranslate"><span class="pre">FCLK[2].EN</span></code></p></li>
-<li><p>(2, 4, 6): <code class="docutils literal notranslate"><span class="pre">FOE[0].EN</span></code></p></li>
-<li><p>(2, 5, 6): <code class="docutils literal notranslate"><span class="pre">FOE[1].EN</span></code></p></li>
-<li><p>(2, 6, 6): <code class="docutils literal notranslate"><span class="pre">FOE[2].EN</span></code></p></li>
-<li><p>(2, 7, 6): <code class="docutils literal notranslate"><span class="pre">FOE[3].EN</span></code></p></li>
-<li><p>(2, 8, 6): <code class="docutils literal notranslate"><span class="pre">KEEPER</span></code></p></li>
-<li><p>(6, i, j) for i &lt; 8, j in (6, 7): <code class="docutils literal notranslate"><span class="pre">USERCODE</span></code> bit <code class="docutils literal notranslate"><span class="pre">16</span> <span class="pre">+</span> <span class="pre">(7</span> <span class="pre">-</span> <span class="pre">i)</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">(j</span> <span class="pre">-</span> <span class="pre">6)</span></code></p></li>
-<li><p>(7, i, j) for i &lt; 8, j in (6, 7): <code class="docutils literal notranslate"><span class="pre">USERCODE</span></code> bit <code class="docutils literal notranslate"><span class="pre">(7</span> <span class="pre">-</span> <span class="pre">i)</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">(j</span> <span class="pre">-</span> <span class="pre">6)</span></code></p></li>
-</ul>
-<p>The fuse combination assignments are:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">USERCODE</span></code>: each bit stored directly</p></li>
-<li><p>everything else:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: false</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: true</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="fuses-protection-bits-done">
-<h2>Fuses — protection bits, DONE<a class="headerlink" href="#fuses-protection-bits-done" title="Link to this heading"></a></h2>
-<p>The protection bits are stored as follows (row, column, bit) in every FB:</p>
-<ul class="simple">
-<li><p>(11, 0, 6): <code class="docutils literal notranslate"><span class="pre">WRITE_PROT</span></code></p></li>
-<li><p>(11, 3, 6): <code class="docutils literal notranslate"><span class="pre">READ_PROT</span></code></p></li>
-</ul>
-<p>The <code class="docutils literal notranslate"><span class="pre">DONE</span></code> bit is stored only once, in FB 0:</p>
-<ul class="simple">
-<li><p>(11, 6, 6): <code class="docutils literal notranslate"><span class="pre">DONE</span></code></p></li>
-</ul>
+<p>Per-FB bits are stored in row 78, columns 0-8, bits 6-7.  The bits are (row, bit, column):</p>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="3">Row</th><th colspan="18">Bit, column</th></tr>
+<tr><th colspan="9">6</th><th colspan="9">7</th></tr>
+<tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th></tr>
+<tr><td>11</td>
+<td><a href="#bits-fb-WRITE_PROT" title="WRITE_PROT">X</a></td><td>-</td><td>-</td><td><a href="#bits-fb-READ_PROT" title="READ_PROT">X</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>78</td>
+<td><a href="#bits-fb-ENABLE" title="ENABLE">X</a></td><td><a href="#bits-fb-EXPORT_ENABLE" title="EXPORT_ENABLE">X</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-fb-PULLUP_DISABLE" title="PULLUP_DISABLE">X</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-fb-ENABLE">
+<tr><th>ENABLE</th><th>[78, 6, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-fb-EXPORT_ENABLE">
+<tr><th>EXPORT_ENABLE</th><th>[78, 6, 1]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-fb-PULLUP_DISABLE">
+<tr><th>PULLUP_DISABLE</th><th>[78, 6, 6]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-fb-READ_PROT">
+<tr><th>READ_PROT</th><th>[11, 6, 3]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-fb-WRITE_PROT">
+<tr><th>WRITE_PROT</th><th>[11, 6, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<p>Global bits are stored in rows (2, 6, 7), columns 0-8, bits 6-7 of FB 0.  The bits are (fb, row, bit, column):</p>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="3">FB</th><th rowspan="3">Row</th><th colspan="18">Bit, column</th></tr>
+<tr><th colspan="9">6</th><th colspan="9">7</th></tr>
+<tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th></tr>
+<tr><td>0</td><td>2</td>
+<td><a href="#bits-global-FSR_INV" title="FSR_INV">X</a></td><td><a href="#bits-global-FCLK0_ENABLE" title="FCLK0_ENABLE">X</a></td><td><a href="#bits-global-FCLK1_ENABLE" title="FCLK1_ENABLE">X</a></td><td><a href="#bits-global-FCLK2_ENABLE" title="FCLK2_ENABLE">X</a></td><td><a href="#bits-global-FOE0_ENABLE" title="FOE0_ENABLE">X</a></td><td><a href="#bits-global-FOE1_ENABLE" title="FOE1_ENABLE">X</a></td><td><a href="#bits-global-FOE2_ENABLE" title="FOE2_ENABLE">X</a></td><td><a href="#bits-global-FOE3_ENABLE" title="FOE3_ENABLE">X</a></td><td><a href="#bits-global-TERM_MODE" title="TERM_MODE">X</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>0</td><td>6</td>
+<td><a href="#bits-global-USERCODE" title="USERCODE[30]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[28]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[26]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[24]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[22]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[20]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[18]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[16]">X</a></td><td>-</td><td><a href="#bits-global-USERCODE" title="USERCODE[31]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[29]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[27]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[25]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[23]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[21]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[19]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[17]">X</a></td><td>-</td></tr>
+<tr><td>0</td><td>7</td>
+<td><a href="#bits-global-USERCODE" title="USERCODE[14]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[12]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[10]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[8]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[6]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[4]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[2]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[0]">X</a></td><td>-</td><td><a href="#bits-global-USERCODE" title="USERCODE[15]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[13]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[11]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[9]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[7]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[5]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[3]">X</a></td><td><a href="#bits-global-USERCODE" title="USERCODE[1]">X</a></td><td>-</td></tr>
+<tr><td>0</td><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-global-DONE" title="DONE">X</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-global-DONE">
+<tr><th>DONE</th><th>[0, 11, 6, 6]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-global-FCLK0_ENABLE">
+<tr><th>FCLK0_ENABLE</th><th>[0, 2, 6, 1]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-global-FCLK1_ENABLE">
+<tr><th>FCLK1_ENABLE</th><th>[0, 2, 6, 2]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-global-FCLK2_ENABLE">
+<tr><th>FCLK2_ENABLE</th><th>[0, 2, 6, 3]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-global-FOE0_ENABLE">
+<tr><th>FOE0_ENABLE</th><th>[0, 2, 6, 4]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-global-FOE1_ENABLE">
+<tr><th>FOE1_ENABLE</th><th>[0, 2, 6, 5]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-global-FOE2_ENABLE">
+<tr><th>FOE2_ENABLE</th><th>[0, 2, 6, 6]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-global-FOE3_ENABLE">
+<tr><th>FOE3_ENABLE</th><th>[0, 2, 6, 7]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-global-FSR_INV">
+<tr><th>FSR_INV</th><th>[0, 2, 6, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-global-TERM_MODE">
+<tr><th>TERM_MODE</th><th>[0, 2, 6, 8]</th></tr>
+<tr><td>KEEPER</td><td>0</td></tr>
+<tr><td>FLOAT</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-global-USERCODE">
+<tr><th>USERCODE</th><th>[0, 6, 7, 0]</th><th>[0, 6, 6, 0]</th><th>[0, 6, 7, 1]</th><th>[0, 6, 6, 1]</th><th>[0, 6, 7, 2]</th><th>[0, 6, 6, 2]</th><th>[0, 6, 7, 3]</th><th>[0, 6, 6, 3]</th><th>[0, 6, 7, 4]</th><th>[0, 6, 6, 4]</th><th>[0, 6, 7, 5]</th><th>[0, 6, 6, 5]</th><th>[0, 6, 7, 6]</th><th>[0, 6, 6, 6]</th><th>[0, 6, 7, 7]</th><th>[0, 6, 6, 7]</th><th>[0, 7, 7, 0]</th><th>[0, 7, 6, 0]</th><th>[0, 7, 7, 1]</th><th>[0, 7, 6, 1]</th><th>[0, 7, 7, 2]</th><th>[0, 7, 6, 2]</th><th>[0, 7, 7, 3]</th><th>[0, 7, 6, 3]</th><th>[0, 7, 7, 4]</th><th>[0, 7, 6, 4]</th><th>[0, 7, 7, 5]</th><th>[0, 7, 6, 5]</th><th>[0, 7, 7, 6]</th><th>[0, 7, 6, 6]</th><th>[0, 7, 7, 7]</th><th>[0, 7, 6, 7]</th></tr>
+<tr><td>Non-inverted</td><td>[31]</td><td>[30]</td><td>[29]</td><td>[28]</td><td>[27]</td><td>[26]</td><td>[25]</td><td>[24]</td><td>[23]</td><td>[22]</td><td>[21]</td><td>[20]</td><td>[19]</td><td>[18]</td><td>[17]</td><td>[16]</td><td>[15]</td><td>[14]</td><td>[13]</td><td>[12]</td><td>[11]</td><td>[10]</td><td>[9]</td><td>[8]</td><td>[7]</td><td>[6]</td><td>[5]</td><td>[4]</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">DONE</span></code> bit is only applicable to XC9500XV.</p>
 </section>
 </section>
 

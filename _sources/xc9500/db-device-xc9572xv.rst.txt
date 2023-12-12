@@ -649,3 +649,9 @@ Speed data
    - - WIDTH_SR
      - 5000
      - 6500
+
+IMUX bits
+=========
+
+.. raw:: html
+   :file: gen-tile-xc9572xv-imux.html

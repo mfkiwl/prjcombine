@@ -914,3 +914,9 @@ Speed data
      - 7000
      - 7500
      - 8000
+
+IMUX bits
+=========
+
+.. raw:: html
+   :file: gen-tile-xc95144-imux.html
