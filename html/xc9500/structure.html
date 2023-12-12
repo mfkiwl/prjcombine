@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Device structure &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bitstream structure — XC9500" href="bitstream-xc9500.html" />
+    <link rel="prev" title="Introduction" href="intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Device structure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uim-and-fb-inputs-xc9500">UIM and FB inputs — XC9500</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uim-and-fb-inputs-xc9500xl-xv">UIM and FB inputs — XC9500XL/XV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fb-global-fuses">FB global fuses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#product-terms">Product terms</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pt-import-export">PT import/export</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sum-term-xor-gate">Sum term, XOR gate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flip-flop">Flip-flop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#macrocell-output-xc9500">Macrocell output — XC9500</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#macrocell-output-xc9500xl-xv">Macrocell output — XC9500XL/XV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#input-output-buffer">Input/output buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-pull-ups">Configuration pull-ups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#xc9500xl-xv-bus-keeper">XC9500XL/XV bus keeper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#global-networks-xc9500">Global networks — XC9500</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#global-networks-xc9500xl-xv">Global networks — XC9500XL/XV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#misc-configuration">Misc configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html">Bitstream structure — XC9500</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html">Bitstream structure — XC9500XL/XV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database schema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db-devices.html">Database — devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jtag.html">JTAG interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+      <li class="breadcrumb-item active">Device structure</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/xc9500/structure.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="device-structure">
+<h1>Device structure<a class="headerlink" href="#device-structure" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>An XC9500 family device is made of:</p>
+<ul class="simple">
+<li><p>the UIM (universal interconnect matrix), which routes MC and IOB outputs to FB inputs</p></li>
+<li><p>2-16 FBs (function blocks), each of which has:</p>
+<ul>
+<li><p>36 (XC9500) or 54 (XC9500XL/XV) routable inputs from UIM</p></li>
+<li><p>18 MCs (macrocells), each of which has:</p>
+<ul>
+<li><p>configurable low power / high performance mode</p></li>
+<li><p>5 PTs (product terms)</p></li>
+<li><p>PT router, which can route PTs to:</p>
+<ul>
+<li><p>the sum term for this MC</p></li>
+<li><p>the sum term for export into neighbouring MCs</p></li>
+<li><p>a special function (OE, RST, SET, CLK, CE, XOR depending on the PT)</p></li>
+</ul>
+</li>
+<li><p>PT export/import logic for borrowing PTs between neighbouring MCs</p></li>
+<li><p>a sum term</p></li>
+<li><p>a dedicated XOR gate</p></li>
+<li><p>optional inverter</p></li>
+<li><p>a flip-flop, with:</p>
+<ul>
+<li><p>configurable DFF or TFF function</p></li>
+<li><p>configurable initial value</p></li>
+<li><p>clock (freely invertible on XC9500XL/XV), routable from FCLK or PT</p></li>
+<li><p>async reset, routable from FSR or PT</p></li>
+<li><p>async set, routable from FSR or PT</p></li>
+<li><p>(XC9500XL/XV only) clock enable, routable from PT</p></li>
+</ul>
+</li>
+<li><p>a single output (selectable from combinatorial or FF output), routed to IOB and UIM</p></li>
+<li><p>(XC9500 only) UIM output enable and inversion</p></li>
+<li><p>IOB (input/output buffer) (on larger devices, not all macrocells have an IOB), with:</p>
+<ul>
+<li><p>input buffer (routed to UIM)</p></li>
+<li><p>output enable (freely invertible on XC9500XL/XV), routable from FOE or PT</p></li>
+<li><p>configurable slew rate (fast or slow)</p></li>
+<li><p>programmable ground</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>global signals</p>
+<ul>
+<li><p>3 FCLK (fast clock) signals</p>
+<ul>
+<li><p>(XC9500) freely invertible and routable from GCLK pins</p></li>
+<li><p>(XC9500XL/XV) hardwired 1-1 to GCLK pins</p></li>
+</ul>
+</li>
+<li><p>1 FSR (fast set/reset) signal</p>
+<ul>
+<li><p>freely invertible</p></li>
+<li><p>always routed from GSR pin</p></li>
+</ul>
+</li>
+<li><p>2-4 FOE (fast output enable) signals</p>
+<ul>
+<li><p>(XC9500) freely invertible and routable from GOE pins</p></li>
+<li><p>(XC9500XL/XV) hardwired 1-1 to GOE pins</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>global pull-up enable (only meant to be used in unconfigured devices)</p></li>
+<li><p>(XC9500XL/XV) global bus keeper enable</p></li>
+<li><p>special global configuration bits</p>
+<ul>
+<li><p>32-bit standard JTAG USERCODE</p></li>
+<li><p>read protection enable</p></li>
+<li><p>write protection enable</p></li>
+<li><p>(XC9500XV only) DONE bit</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="uim-and-fb-inputs-xc9500">
+<h2>UIM and FB inputs — XC9500<a class="headerlink" href="#uim-and-fb-inputs-xc9500" title="Link to this heading"></a></h2>
+<p>The core interconnect structure in XC9500 devices is the UIM, Universal Interconnect Matrix.
+The name is quite appropriate, at least for internal signals: any FB input can be routed
+to any MC output.  More than that, any FB input can be routed to a <em>wire-AND</em> of an arbitrary
+subset of MC outputs from the entire device.  Together with the UIM OE functionality within
+the MC, this can be used for emulated internal tri-state buses.</p>
+<p>The name is, however, less appropriate when it comes to external signals: a given FB input
+can only be routed to some subset of input signals from IOBs.  The set of routable IOBs
+depends on the FB input index and the device.</p>
+<p>Additionally, on devices other than XC9536, some FB inputs can be routed to “fast feedback”
+paths, which come straight from MC outputs within the same FB.  This is functionally redundant
+with the wire-AND path, but much faster.</p>
+<p>Each FB has 36 inputs, which we call <code class="docutils literal notranslate"><span class="pre">FB[i].IM[j]</span></code>.  Each FB input is controlled by two sets of fuses:</p>
+<ul>
+<li><p>mux fuses (<code class="docutils literal notranslate"><span class="pre">FB[i].IM[j].MUX</span></code>) select what is routed to the input.  The combinations include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: the input is a constant ??? (for unused inputs)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UIM</span></code>: the input is a wire-AND of MC outputs (and the second set of fuses is relevant)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FBK_MC{k}</span></code>: the input is routed through fast feedback path from <code class="docutils literal notranslate"><span class="pre">FB[i].MC[k].OUT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PAD_FB{k}_MC{l}</span></code>: the input is routed from an input buffer <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].IOB.I</span></code></p></li>
+</ul>
+<p>The allowable combinations differ between inputs within a single FB, but don’t differ across
+FBs within a single device.  In other words, the set of allowed values for these fuses
+depends only on the <code class="docutils literal notranslate"><span class="pre">j</span></code> coordinate, but not on <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
+</li>
+<li><p>wire-AND fuses (<code class="docutils literal notranslate"><span class="pre">FB[i].IM[j].UIM.FB[k].MC[l]</span></code>) select which MC outputs participate in the
+wire-AND.  If a given fuse is set to 1 (ie. <em>not</em> programmed), it means that <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].OUT_UIM</span></code>
+is included in the product.  These fuses are only relevant when the mux fuse set is set to <code class="docutils literal notranslate"><span class="pre">UIM</span></code>.</p></li>
+</ul>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>check <code class="docutils literal notranslate"><span class="pre">NONE</span></code> semantics</p>
+</div>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>verify <code class="docutils literal notranslate"><span class="pre">FBK</span></code> doesn’t go through OE and inversion</p>
+</div>
+</section>
+<section id="uim-and-fb-inputs-xc9500xl-xv">
+<h2>UIM and FB inputs — XC9500XL/XV<a class="headerlink" href="#uim-and-fb-inputs-xc9500xl-xv" title="Link to this heading"></a></h2>
+<p>The core interconnect structure in XC9500XL/XV devices is the UIM 2.  This version of the UIM
+is not really universal, and is much more of a classic CPLD design.</p>
+<p>Each FB has 54 inputs, which we call <code class="docutils literal notranslate"><span class="pre">FB[i].IM[j]</span></code>.  Each FB input is controlled by a set of fuses:</p>
+<ul>
+<li><p>mux fuses (<code class="docutils literal notranslate"><span class="pre">FB[i].IM[j].MUX</span></code>) select what is routed to the input.  The combinations include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: the input is a constant ??? (for unused inputs)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB{k}_MC{l}</span></code>: the input is routed from the macrocell output <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].OUT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PAD_FB{k}_MC{l}</span></code>: the input is routed from the input buffer <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].IOB.I</span></code></p></li>
+</ul>
+<p>The allowable combinations differ between inputs within a single FB, but don’t differ across
+FBs within a single device.  In other words, the set of allowed values for these fuses
+depends only on the <code class="docutils literal notranslate"><span class="pre">j</span></code> coordinate, but not on <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
+</li>
+</ul>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>check <code class="docutils literal notranslate"><span class="pre">NONE</span></code> semantics</p>
+</div>
+</section>
+<section id="fb-global-fuses">
+<h2>FB global fuses<a class="headerlink" href="#fb-global-fuses" title="Link to this heading"></a></h2>
+<p>Each function block has two fuses controlling the entire FB:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].ENABLE</span></code>: function block enable; needs to be programmed to use this function block</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].EXPORT_ENABLE</span></code>: function block PT export enable; needs to be programmed to use PT
+import/export within this function block</p></li>
+</ul>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<p>determine what these do exactly</p>
+</div>
+</section>
+<section id="product-terms">
+<h2>Product terms<a class="headerlink" href="#product-terms" title="Link to this heading"></a></h2>
+<p>Each function block has 90 product terms, 5 per macrocell.  We call them <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k]</span></code>.
+Each of the 5 PTs has a dedicated function, as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">*.PT[0]</span></code>: clock</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*.PT[1]</span></code>: output enable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*.PT[2]</span></code>: async reset (or clock enable on XC9500XL/XV)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*.PT[3]</span></code>: async set (or clock enable on XC9500XL/XV)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*.PT[4]</span></code>: second XOR input</p></li>
+</ul>
+<p>The inputs to all product terms within a FB are the same, and consist of all FB inputs, in both
+true and inverted forms.</p>
+<p>Each product term can be individually configured as low power or high performance.  This affects propagation time.</p>
+<p>Each product term can be routed to at most one of three destinations:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SUM</span></code>: input to the MC’s sum term</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXPORT</span></code>: input to the export OR gate</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SPECIAL</span></code>: used for the dedicated function</p></li>
+</ul>
+<p>The fuses controlling a product term are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k].IM[l].P</span></code>: if set to 1, <code class="docutils literal notranslate"><span class="pre">FB[i].IM[l]</span></code> is included in the product term (true polarity)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k].IM[l].N</span></code>: if set to 1, <code class="docutils literal notranslate"><span class="pre">~FB[i].IM[l]</span></code> is included in the product term (inverted polarity)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k].HP</span></code>: if programmed, the product term is in high performance mode; otherwise, it is in low power mode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k].ALLOC</span></code>: has one of four values:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: product term is unused</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SUM</span></code>: product term is used for MC’s sum term; dedicated function wired to 0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXPORT</span></code> product term is used for export sum term; dedicated function wired to 0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SPECIAL</span></code>: product term is used for the dedicated function</p></li>
+</ul>
+</li>
+</ul>
+<p>The product term’s corresponding dedicated function is called <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k].SPECIAL</span></code>.
+It is equal to <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k]</span></code> if the dedicated function is enabled in <code class="docutils literal notranslate"><span class="pre">ALLOC</span></code>, 0 otherwise.</p>
+<p>Note that the main product term control fuses are active-high on both XC9500 and XC9500XL/XV.  This effectively
+means that an unprogrammed XC9500 chip has all product term inputs enabled, while an unprogrammed XC9500XL device
+has all product term inputs disabled.</p>
+<section id="pt-import-export">
+<h3>PT import/export<a class="headerlink" href="#pt-import-export" title="Link to this heading"></a></h3>
+<p>Product terms can be borrowed between neighbouring MCs within a FB.  To this end, each MC has two outputs,
+<code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].EXPORT_{UP|DOWN}</span></code>, and two inputs, <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IMPORT_{UP|DOWN}</span></code>.  The “down” direction
+corresponds to exporting PTs toward lower-numbered MCs (with a wraparound from 0 to 17), and the “up”
+direction corresponds to exporting PTs towards higher-numbered MCs (with a wraparound from 17 to 0).
+Accordingly, we have:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">IMPORT_DOWN</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[(</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">18</span><span class="p">]</span><span class="o">.</span><span class="n">EXPORT_DOWN</span><span class="p">;</span>
+<span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">IMPORT_UP</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[(</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">18</span><span class="p">]</span><span class="o">.</span><span class="n">EXPORT_UP</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>A MC can only export product terms in one direction (up or down).
+Product terms can be imported from both directions at once.
+Imported terms from a given direction can be used for either the main sum term, or for further export, but not both at once.</p>
+<p>PT import/export is controlled by the following per-MC fuses:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].EXPORT_DIR</span></code>: one of:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOWN</span></code>: exports PTs downwards</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UP</span></code>: exports PTs upwards</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IMPORT_UP_ALLOC</span></code>: one of:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">SUM</span></code>: includes PTs imported upwards in the main sum term</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXPORT</span></code>: includes PTs imported upwards in the export sum term</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IMPORT_DOWN_ALLOC</span></code>: one of:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">SUM</span></code>: includes PTs imported downwards in the main sum term</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXPORT</span></code>: includes PTs imported downwards in the export sum term</p></li>
+</ul>
+</li>
+</ul>
+<p>Additionally, the per-FB <code class="docutils literal notranslate"><span class="pre">FB[i].EXPORT_ENABLE</span></code> fuse needs to be set if any term within a FB is exported or imported.</p>
+<p>Export works as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FB[i].MC[j].EXPORT =
+    (FB[i].MC[j].IMPORT_UP_ALLOC == EXPORT ? FB[i].MC[j].IMPORT_UP : 0) |
+    (FB[i].MC[j].IMPORT_DOWN_ALLOC == EXPORT ? FB[i].MC[j].IMPORT_DOWN : 0) |
+    (FB[i].MC[j].PT[0].ALLOC == EXPORT ? FB[i].MC[j].PT[0] : 0) |
+    (FB[i].MC[j].PT[1].ALLOC == EXPORT ? FB[i].MC[j].PT[1] : 0) |
+    (FB[i].MC[j].PT[2].ALLOC == EXPORT ? FB[i].MC[j].PT[2] : 0) |
+    (FB[i].MC[j].PT[3].ALLOC == EXPORT ? FB[i].MC[j].PT[3] : 0) |
+    (FB[i].MC[j].PT[4].ALLOC == EXPORT ? FB[i].MC[j].PT[4] : 0);
+
+FB[i].MC[j].EXPORT_UP = (FB[i].MC[j].EXPORT_DIR == UP ? FB[i].MC[j].EXPORT : 0);
+FB[i].MC[j].EXPORT_DOWN = (FB[i].MC[j].EXPORT_DIR == DOWN ? FB[i].MC[j].EXPORT : 0);
+</pre></div>
+</div>
+<div class="admonition-todo admonition" id="id5">
+<p class="admonition-title">Todo</p>
+<p>verify all of the above</p>
+</div>
+</section>
+</section>
+<section id="sum-term-xor-gate">
+<h2>Sum term, XOR gate<a class="headerlink" href="#sum-term-xor-gate" title="Link to this heading"></a></h2>
+<p>Each macrocell has a main sum term, which includes all product terms and imports routed towards it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FB[i].MC[j].SUM =
+    (FB[i].MC[j].IMPORT_UP_ALLOC == SUM ? FB[i].MC[j].IMPORT_UP : 0) |
+    (FB[i].MC[j].IMPORT_DOWN_ALLOC == SUM ? FB[i].MC[j].IMPORT_DOWN : 0) |
+    (FB[i].MC[j].PT[0].ALLOC == SUM ? FB[i].MC[j].PT[0] : 0) |
+    (FB[i].MC[j].PT[1].ALLOC == SUM ? FB[i].MC[j].PT[1] : 0) |
+    (FB[i].MC[j].PT[2].ALLOC == SUM ? FB[i].MC[j].PT[2] : 0) |
+    (FB[i].MC[j].PT[3].ALLOC == SUM ? FB[i].MC[j].PT[3] : 0) |
+    (FB[i].MC[j].PT[4].ALLOC == SUM ? FB[i].MC[j].PT[4] : 0);
+</pre></div>
+</div>
+<p>The sum term then goes through a XOR gate (whose other input is either 0 or a dedicated PT) and a programmable inverter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">XOR</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">SUM</span> <span class="o">^</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">PT</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">SPECIAL</span> <span class="o">^</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">INV</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The fuses involved are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].SUM_HP</span></code>: if programmed, the sum term is in high performance mode; otherwise, it’s in low power mode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].INV</span></code>: if programmed, the output of the XOR gate is further inverted</p></li>
+</ul>
+</section>
+<section id="flip-flop">
+<h2>Flip-flop<a class="headerlink" href="#flip-flop" title="Link to this heading"></a></h2>
+<p>Each macrocell includes a flip-flop.  It has:</p>
+<ul class="simple">
+<li><p>configurable DFF or TFF function</p></li>
+<li><p>D or T input connected to the (potentially inverted) XOR gate output</p></li>
+<li><p>configurable initial value</p></li>
+<li><p>clock (freely invertible on XC9500XL/XV), routable from FCLK or <code class="docutils literal notranslate"><span class="pre">PT[0]</span></code></p></li>
+<li><p>async reset, routable from FSR or <code class="docutils literal notranslate"><span class="pre">PT[2]</span></code></p></li>
+<li><p>async set, routable from FSR or <code class="docutils literal notranslate"><span class="pre">PT[3]</span></code></p></li>
+<li><p>(XC9500XL/XV only) clock enable, routable from <code class="docutils literal notranslate"><span class="pre">PT[2]</span></code> or <code class="docutils literal notranslate"><span class="pre">PT[3]</span></code></p></li>
+</ul>
+<p>The fuses involved are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].CLK_MUX</span></code>: selects CLK input</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">PT</span></code>: product term 0 dedicated function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FCLK[0-2]</span></code>: global <code class="docutils literal notranslate"><span class="pre">FCLK[0-2]</span></code> network</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].CLK_INV</span></code>: if programmed, the CLK input is inverted (ie. clock is negedge) (XC9500XL/XV only)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].RST_MUX</span></code>: selects RST input</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">PT</span></code>: product term 2 dedicated function or 0; if PT 2 is used for clock enable, it will not be routed to RST (0 will be substituted)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FSR</span></code>: global <code class="docutils literal notranslate"><span class="pre">FSR</span></code> network</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].SET_MUX</span></code>: selects SET input</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">PT</span></code>: product term 3 dedicated function or 0; if PT 3 is used for clock enable, it will not be routed to SET (0 will be substituted)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FSR</span></code>: global <code class="docutils literal notranslate"><span class="pre">FSR</span></code> network</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].CE_MUX</span></code>: selects CE input (XC9500XL/XV only)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: const 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PT2</span></code>: product term 2 dedicated function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PT3</span></code>: product term 3 dedicated function</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].INIT</span></code>: if programmed, the initial value of the FF is 1; otherwise, it is 0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].REG_MODE</span></code>: selects FF mode</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">DFF</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TFF</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>On XC9500, the FF works as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK_MUX</span><span class="p">)</span>
+<span class="n">PT</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">PT</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">SPECIAL</span><span class="p">;</span>
+<span class="n">FCLK0</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span> <span class="o">=</span> <span class="n">FCLK</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="n">FCLK1</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span> <span class="o">=</span> <span class="n">FCLK</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="n">FCLK2</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span> <span class="o">=</span> <span class="n">FCLK</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">endcase</span>
+
+<span class="k">case</span><span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">RST_MUX</span><span class="p">)</span>
+<span class="n">PT</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">RST</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">PT</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">SPECIAL</span><span class="p">;</span>
+<span class="n">FSR</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">RST</span> <span class="o">=</span> <span class="n">FSR</span><span class="p">;</span>
+<span class="n">endcase</span>
+
+<span class="k">case</span><span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">SET_MUX</span><span class="p">)</span>
+<span class="n">PT</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">SET</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">PT</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">SPECIAL</span><span class="p">;</span>
+<span class="n">FSR</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">SET</span> <span class="o">=</span> <span class="n">FSR</span><span class="p">;</span>
+<span class="n">endcase</span>
+
+<span class="n">initial</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">FF</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">INIT</span><span class="p">;</span>
+
+<span class="o">//</span> <span class="n">Pretend</span> <span class="n">the</span> <span class="n">usual</span> <span class="n">synth</span><span class="o">/</span><span class="n">sim</span> <span class="n">mismatch</span> <span class="n">doesn</span><span class="s1">&#39;t happen.</span>
+<span class="n">always</span> <span class="o">@</span><span class="p">(</span><span class="n">posedge</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span><span class="p">,</span> <span class="n">posedge</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">RST_MUX</span><span class="p">,</span> <span class="n">posedge</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">SET_MUX</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">RST_MUX</span><span class="p">)</span>
+        <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">FF</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">SET_MUX</span><span class="p">)</span>
+        <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">FF</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">FF</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">XOR</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>On XC9500XL/XV, the FF works as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>case(FB[i].MC[j].CLK_MUX)
+PT: FB[i].MC[j].CLK = FB[i].MC[j].PT[0].SPECIAL ^ FB[i].MC[j].CLK_INV;
+FCLK0: FB[i].MC[j].CLK = FCLK[0] ^ FB[i].MC[j].CLK_INV;
+FCLK1: FB[i].MC[j].CLK = FCLK[1] ^ FB[i].MC[j].CLK_INV;
+FCLK2: FB[i].MC[j].CLK = FCLK[2] ^ FB[i].MC[j].CLK_INV;
+endcase
+
+case(FB[i].MC[j].RST_MUX)
+PT: FB[i].MC[j].RST = (FB[i].MC[j].CE_MUX == PT2 ? 0 : FB[i].MC[j].PT[2].SPECIAL);
+FSR: FB[i].MC[j].RST = FSR;
+endcase
+
+case(FB[i].MC[j].SET_MUX)
+PT: FB[i].MC[j].SET = (FB[i].MC[j].CE_MUX == PT3 ? 0 : FB[i].MC[j].PT[3].SPECIAL);
+FSR: FB[i].MC[j].SET = FSR;
+endcase
+
+case(FB[i].MC[j].CE_MUX)
+PT2: FB[i].MC[j].CE = FB[i].MC[j].PT[2].SPECIAL;
+PT3: FB[i].MC[j].CE = FB[i].MC[j].PT[3].SPECIAL;
+NONE: FB[i].MC[j].CE = 1;
+endcase
+
+initial FB[i].MC[j].FF = FB[i].MC[j].INIT;
+
+// Pretend the usual synth/sim mismatch doesn&#39;t happen.
+always @(posedge FB[i].MC[j].CLK, posedge FB[i].MC[j].RST_MUX, posedge FB[i].MC[j].SET_MUX)
+    if (FB[i].MC[j].RST_MUX)
+        FB[i].MC[j].FF = 0;
+    else if (FB[i].MC[j].SET_MUX)
+        FB[i].MC[j].FF = 1;
+    else if (FB[i].MC[j].CE)
+        FB[i].MC[j].FF = FB[i].MC[j].XOR;
+</pre></div>
+</div>
+<div class="admonition-todo admonition" id="id6">
+<p class="admonition-title">Todo</p>
+<p>verify (in particular, CE vs RST/SET shenanigans)</p>
+</div>
+</section>
+<section id="macrocell-output-xc9500">
+<h2>Macrocell output — XC9500<a class="headerlink" href="#macrocell-output-xc9500" title="Link to this heading"></a></h2>
+<p>The output of the macrocell can be selected from combinatorial (XOR gate output) or registered (FF output):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FB[i].MC[j].OUT = (FB[i].MC[j].OUT_MUX == COMB ? FB[i].MC[j].XOR : FB[i].MC[j].FF);
+</pre></div>
+</div>
+<p>The macrocell also has an output enable, which can be from a product term, or a global network.
+It can be used for the IOB output buffer, for UIM output, or both:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">OE_MUX</span><span class="p">)</span>
+<span class="n">PT</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">OE</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">PT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">SPECIAL</span><span class="p">;</span>
+<span class="n">FOE0</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">OE</span> <span class="o">=</span> <span class="n">FOE</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="n">FOE1</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">OE</span> <span class="o">=</span> <span class="n">FOE</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="n">FOE2</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">OE</span> <span class="o">=</span> <span class="n">FOE</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">FOE3</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">OE</span> <span class="o">=</span> <span class="n">FOE</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+<span class="n">endcase</span>
+
+<span class="k">case</span><span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">UIM_OE_MUX</span><span class="p">)</span>
+<span class="n">GND</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">UIM_OE</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">VCC</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">UIM_OE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">OE_MUX</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">UIM_OE</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">OE</span><span class="p">;</span>
+<span class="n">endcase</span>
+
+<span class="k">case</span><span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">IOB_OE_MUX</span><span class="p">)</span>
+<span class="n">GND</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">IOB_OE</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">VCC</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">IOB_OE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">OE_MUX</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">IOB_OE</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">OE</span><span class="p">;</span>
+<span class="n">endcase</span>
+</pre></div>
+</div>
+<p>The output is routed to up to three places:</p>
+<ul class="simple">
+<li><p>this MC’s IOB (<code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].OUT</span></code>)</p></li>
+<li><p>this FB’s inputs via the feedback path (<code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].OUT</span></code>)</p></li>
+<li><p>the UIM (<code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].OUT_UIM</span></code>)</p></li>
+</ul>
+<p>The output to UIM additionally goes through (emulated) output enable logic, which can be used
+to implement emulated on-chip tristate buses in conjunction with the UIM wire-AND logic:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FB[i].MC[j].OUT_UIM = FB[i].MC[j].UIM_OE ? FB[i].MC[j].OUT ^ FB[i].MC[j].UIM_OUT_INV : 1;
+</pre></div>
+</div>
+<p>The fuses involved are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].OUT_MUX</span></code>: selects output mode</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">COMB</span></code>: combinatorial, the output is connected to XOR gate output</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FF</span></code>: registered, the output is connected to FF output</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].OE_MUX</span></code>: selects output enable source</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">PT</span></code>: product term 1 dedicated function or 0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE[0-3]</span></code>: global <code class="docutils literal notranslate"><span class="pre">FOE[0-3]</span></code> network</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].UIM_OE_MUX</span></code>: selects output enable for UIM output</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">GND</span></code>: const 0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VCC</span></code>: const 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OE_MUX</span></code>: the input selected by the <code class="docutils literal notranslate"><span class="pre">OE_MUX</span></code> fuses</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IOB_OE_MUX</span></code>: selects output enable for IOB output</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">GND</span></code>: const 0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VCC</span></code>: const 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OE_MUX</span></code>: the input selected by the <code class="docutils literal notranslate"><span class="pre">OE_MUX</span></code> fuses</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].UIM_OUT_INV</span></code>: if programmed, the output to UIM is inverted</p></li>
+</ul>
+<div class="admonition-todo admonition" id="id7">
+<p class="admonition-title">Todo</p>
+<p>verify all of the above (in particular, feedback path vs OE and UIM out)</p>
+</div>
+</section>
+<section id="macrocell-output-xc9500xl-xv">
+<h2>Macrocell output — XC9500XL/XV<a class="headerlink" href="#macrocell-output-xc9500xl-xv" title="Link to this heading"></a></h2>
+<p>The output of the macrocell can be selected from combinatorial (XOR gate output) or registered (FF output):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FB[i].MC[j].OUT = (FB[i].MC[j].OUT_MUX == COMB ? FB[i].MC[j].XOR : FB[i].MC[j].FF);
+</pre></div>
+</div>
+<p>The output is routed to the UIM and this MC’s IOB.</p>
+<p>The macrocell also has an output enable, which can be from a product term, or a global network, and can
+be freely inverted.  It is used for the IOB output buffer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">OE_MUX</span><span class="p">)</span>
+<span class="n">PT</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">IOB_OE</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">PT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">SPECIAL</span> <span class="o">^</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">OE_INV</span><span class="p">;</span>
+<span class="n">FOE0</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">IOB_OE</span> <span class="o">=</span> <span class="n">FOE</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">^</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">OE_INV</span><span class="p">;</span>
+<span class="n">FOE1</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">IOB_OE</span> <span class="o">=</span> <span class="n">FOE</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">^</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">OE_INV</span><span class="p">;</span>
+<span class="n">FOE2</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">IOB_OE</span> <span class="o">=</span> <span class="n">FOE</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">^</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">OE_INV</span><span class="p">;</span>
+<span class="n">FOE3</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">IOB_OE</span> <span class="o">=</span> <span class="n">FOE</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">^</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">OE_INV</span><span class="p">;</span>
+<span class="n">endcase</span>
+</pre></div>
+</div>
+<p>The fuses involved are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].OUT_MUX</span></code>: selects output mode</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">COMB</span></code>: combinatorial, the output is connected to XOR gate output</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FF</span></code>: registered, the output is connected to FF output</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].OE_MUX</span></code>: selects output enable source</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">PT</span></code>: product term 1 dedicated function or 0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE[0-3]</span></code>: global <code class="docutils literal notranslate"><span class="pre">FOE[0-3]</span></code> network</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].OE_INV</span></code>: if programmed, the output enable is inverted</p></li>
+</ul>
+</section>
+<section id="input-output-buffer">
+<h2>Input/output buffer<a class="headerlink" href="#input-output-buffer" title="Link to this heading"></a></h2>
+<p>All I/O buffers (except dedicated JTAG pins) are associated with a macrocell.  Not all MCs
+have associated IOBs.</p>
+<p>The output buffer is controlled by the <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].OUT</span></code> and <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IOB_OE</span></code> signals of the macrocell.
+If the pad is supposed to be input only, the OE signal should be programmed to be always 0:</p>
+<ul class="simple">
+<li><p>on XC9500, <code class="docutils literal notranslate"><span class="pre">IOB_OE_MUX</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">GND</span></code></p></li>
+<li><p>on XC9500XL/XV, <code class="docutils literal notranslate"><span class="pre">OE_MUX</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">PT</span></code>, <code class="docutils literal notranslate"><span class="pre">OE_INV</span></code> should be unset, and <code class="docutils literal notranslate"><span class="pre">PT[1]</span></code> should not be allocated to its dedicated function</p></li>
+</ul>
+<p>Likewise, if the pad is supposed to be always-on output, the OE signal should be programmed to be always 1:</p>
+<ul class="simple">
+<li><p>on XC9500, <code class="docutils literal notranslate"><span class="pre">IOB_OE_MUX</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">VCC</span></code></p></li>
+<li><p>on XC9500XL/XV, <code class="docutils literal notranslate"><span class="pre">OE_MUX</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">PT</span></code>, <code class="docutils literal notranslate"><span class="pre">OE_INV</span></code> should be set, and <code class="docutils literal notranslate"><span class="pre">PT[1]</span></code> should not be allocated to its dedicated function</p></li>
+</ul>
+<p>The output slew rate is programmable between two settings, “fast” and “slow”.</p>
+<p>Instead of being connected to MC output, an IOB can also be a “programmed ground”, ie be set to always output a const 0
+regardless of the <code class="docutils literal notranslate"><span class="pre">IOB_OE</span></code> and <code class="docutils literal notranslate"><span class="pre">OUT</span></code> signals.  In this case, <code class="docutils literal notranslate"><span class="pre">IOB_OE</span></code> should be 0.</p>
+<p>The input buffer is connected to the <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IOB.I</span></code> network.  On all devices other than XC95288 (non-XL/XV),
+it is directly connected to the UIM.  On XC95288, there are additional enable fuses for this connection.</p>
+<p>Each I/O buffer has the following fuses:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IOB_GND</span></code>: if programmed, this pin is “programmed ground” and will always output a const 0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IOB_SLEW</span></code>: selects slew rate, one of:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLOW</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FAST</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IBUF_UIM_ENABLE</span></code> (XC95288 only): when programmed, the input buffer is active and connected to UIM</p></li>
+</ul>
+<div class="admonition-todo admonition" id="id8">
+<p class="admonition-title">Todo</p>
+<p>figure out the IBUF_ENABLE thing</p>
+</div>
+</section>
+<section id="configuration-pull-ups">
+<h2>Configuration pull-ups<a class="headerlink" href="#configuration-pull-ups" title="Link to this heading"></a></h2>
+<p>Before the device is configured, all IOBs are configured with a very weak pull-up
+resistor (XC9500) or a bus keeper (XC9500XL/XV).  To disable this pull-up, a per-FB fuse
+is used which is set in the bitstream:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].PULLUP_DISABLE</span></code>: if programmed, disables the pre-configuration pull-ups / bus keepers for all IOBs in this FB</p></li>
+</ul>
+</section>
+<section id="xc9500xl-xv-bus-keeper">
+<h2>XC9500XL/XV bus keeper<a class="headerlink" href="#xc9500xl-xv-bus-keeper" title="Link to this heading"></a></h2>
+<p>The XC9500XL/XV have a weak bus keeper in each IOB.  The keeper functionality can only be enabled
+globally for all pads on the device, or not at all, via a global fuse:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">KEEPER</span></code>: if programmed, the bus keeper is enabled on all IOBs</p></li>
+</ul>
+</section>
+<section id="global-networks-xc9500">
+<h2>Global networks — XC9500<a class="headerlink" href="#global-networks-xc9500" title="Link to this heading"></a></h2>
+<p>The device has several global networks for fast control signals.  The networks are always driven by special pads
+on the device (which can also be used as normal I/O).  The networks are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FCLK[0-2]</span></code>: clock</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FSR</span></code>: async set or reset</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE[0-1]</span></code> (XC9536, XC9572, XC95108) or <code class="docutils literal notranslate"><span class="pre">FOE[0-3]</span></code> (XC95144, XC95216, XC95288): output enable</p></li>
+</ul>
+<p>The special pads are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GCLK[0-2]</span></code>: clock</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GSR</span></code>: async set or reset</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GOE[0-1]</span></code> (XC9536, XC9572, XC95108) or <code class="docutils literal notranslate"><span class="pre">GOE[0-3]</span></code> (XC95144, XC95216, XC95288): output enable</p></li>
+</ul>
+<p>The mapping of <code class="docutils literal notranslate"><span class="pre">G*</span></code> special pads to MCs depends on the device and, in at least one case, the package (!).</p>
+<p>The allowed mappings are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FCLK0</span></code>: <code class="docutils literal notranslate"><span class="pre">GCLK0</span></code>, <code class="docutils literal notranslate"><span class="pre">GCLK1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FCLK1</span></code>: <code class="docutils literal notranslate"><span class="pre">GCLK1</span></code>, <code class="docutils literal notranslate"><span class="pre">GCLK2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FCLK2</span></code>: <code class="docutils literal notranslate"><span class="pre">GCLK2</span></code>, <code class="docutils literal notranslate"><span class="pre">GCLK0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FSR</span></code>: <code class="docutils literal notranslate"><span class="pre">GSR</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE0</span></code> (XC9536, XC9572, XC95108): <code class="docutils literal notranslate"><span class="pre">GOE0</span></code>, <code class="docutils literal notranslate"><span class="pre">GOE1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE1</span></code> (XC9536, XC9572, XC95108): <code class="docutils literal notranslate"><span class="pre">GOE0</span></code>, <code class="docutils literal notranslate"><span class="pre">GOE1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE0</span></code> (XC95144, XC95216, XC95288): <code class="docutils literal notranslate"><span class="pre">GOE0</span></code>, <code class="docutils literal notranslate"><span class="pre">GOE1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE1</span></code> (XC95144, XC95216, XC95288): <code class="docutils literal notranslate"><span class="pre">GOE1</span></code>, <code class="docutils literal notranslate"><span class="pre">GOE2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE2</span></code> (XC95144, XC95216, XC95288): <code class="docutils literal notranslate"><span class="pre">GOE2</span></code>, <code class="docutils literal notranslate"><span class="pre">GOE3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE3</span></code> (XC95144, XC95216, XC95288): <code class="docutils literal notranslate"><span class="pre">GOE3</span></code>, <code class="docutils literal notranslate"><span class="pre">GOE0</span></code></p></li>
+</ul>
+<p>Additionally, all networks can be inverted from their source pins.</p>
+<p>The fuses involved are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FCLK[i].MUX</span></code>: selects the input routed to <code class="docutils literal notranslate"><span class="pre">FCLK[i]</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: const ???</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GCLK[i]</span></code>: the corresponding <code class="docutils literal notranslate"><span class="pre">GCLK</span></code> pad</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE[i].MUX</span></code>: selects the input routed to <code class="docutils literal notranslate"><span class="pre">FOE[i]</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: const ???</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE[i]</span></code>: the corresponding <code class="docutils literal notranslate"><span class="pre">FOE</span></code> pad</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FCLK[i].INV</span></code>: if programmed, the <code class="docutils literal notranslate"><span class="pre">GCLK</span></code> pad is inverted before driving <code class="docutils literal notranslate"><span class="pre">FCLK[i]</span></code> network</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FSR.INV</span></code>: if programmed, the <code class="docutils literal notranslate"><span class="pre">GSR</span></code> pad is inverted before driving <code class="docutils literal notranslate"><span class="pre">FSR</span></code> network</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE[i].INV</span></code>: if programmed, the <code class="docutils literal notranslate"><span class="pre">GOE</span></code> pad is inverted before driving <code class="docutils literal notranslate"><span class="pre">FOE[i]</span></code> network</p></li>
+</ul>
+<div class="admonition-todo admonition" id="id9">
+<p class="admonition-title">Todo</p>
+<p>consts</p>
+</div>
+<div class="admonition-todo admonition" id="id10">
+<p class="admonition-title">Todo</p>
+<p>no, really, what is it with the XC9572 GOE mapping varying between packages</p>
+</div>
+</section>
+<section id="global-networks-xc9500xl-xv">
+<h2>Global networks — XC9500XL/XV<a class="headerlink" href="#global-networks-xc9500xl-xv" title="Link to this heading"></a></h2>
+<p>Global networks on XC9500XL/XV work similarly, except there are no muxes and no inversion (except for <code class="docutils literal notranslate"><span class="pre">FSR</span></code>).
+Thus the <code class="docutils literal notranslate"><span class="pre">GCLK[i]</span></code> and <code class="docutils literal notranslate"><span class="pre">GOE[i]</span></code> pads are mapped 1-1 directly to <code class="docutils literal notranslate"><span class="pre">FCLK[i]</span></code> and <code class="docutils literal notranslate"><span class="pre">FOE[i]</span></code> networks, with only
+an enable fuse.</p>
+<p>The fuses involved are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FCLK[i].EN</span></code>: if programmed, the given <code class="docutils literal notranslate"><span class="pre">FCLK</span></code> network is active and connected to the <code class="docutils literal notranslate"><span class="pre">GCLK[i]</span></code> pad</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE[i].EN</span></code>: if programmed, the given <code class="docutils literal notranslate"><span class="pre">FOE</span></code> network is active and connected to the <code class="docutils literal notranslate"><span class="pre">GOE[i]</span></code> pad</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FSR.INV</span></code>: if programmed, the <code class="docutils literal notranslate"><span class="pre">GSR</span></code> pad is inverted before driving <code class="docutils literal notranslate"><span class="pre">FSR</span></code> network</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">FSR</span></code> network is always enabled.</p>
+<div class="admonition-todo admonition" id="id11">
+<p class="admonition-title">Todo</p>
+<p>what does disabled network do</p>
+</div>
+</section>
+<section id="misc-configuration">
+<h2>Misc configuration<a class="headerlink" href="#misc-configuration" title="Link to this heading"></a></h2>
+<p>The devices also include the following misc fuses:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">USERCODE</span></code>: 32-bit fuse set, readable via the JTAG USERCODE instruction</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].READ_PROT_{A|B}</span></code> (XC9500): if programmed, the device is read protected</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].READ_PROT</span></code> (XC9500XL/XV): if programmed, the device is read protected</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].WRITE_PROT</span></code>: if programmed, the device is write protected (needs a special JTAG instruction sequence
+to program/erase)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DONE</span></code> (XC9500XV only): used to mark a fully programmed device; if programmed, the device will complete its
+boot sequence and activate I/O buffers; otherwise, all output buffers will be disabled</p></li>
+</ul>
+<p>Due to their special semantics, the protection fuses and the <code class="docutils literal notranslate"><span class="pre">DONE</span></code> fuse should be programmed last, after all other fuses in the bitstream.</p>
+<div class="admonition-todo admonition" id="id12">
+<p class="admonition-title">Todo</p>
+<p>exact semantics of protection fuses</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="intro.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bitstream-xc9500.html" class="btn btn-neutral float-right" title="Bitstream structure — XC9500" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

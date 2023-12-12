@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XC95288XV &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="JTAG interface" href="jtag.html" />
+    <link rel="prev" title="XC95144XV" href="db-device-xc95144xv.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html">Device structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html">Bitstream structure — XC9500</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html">Bitstream structure — XC9500XL/XV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database schema</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="db-devices.html">Database — devices</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="db-device-xc9536.html">XC9536</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-device-xc9572.html">XC9572</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-device-xc95108.html">XC95108</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-device-xc95144.html">XC95144</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-device-xc95216.html">XC95216</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-device-xc95288.html">XC95288</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-device-xc9536xl.html">XC9536XL, XA9536XL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-device-xc9572xl.html">XC9572XL, XA9572XL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-device-xc95144xl.html">XC95144XL, XA95144XL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-device-xc95288xl.html">XC95288XL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-device-xc9536xv.html">XC9536XV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-device-xc9572xv.html">XC9572XV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-device-xc95144xv.html">XC95144XV</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">XC95288XV</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jtag.html">JTAG interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+          <li class="breadcrumb-item"><a href="db-devices.html">Database — devices</a></li>
+      <li class="breadcrumb-item active">XC95288XV</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/xc9500/db-device-xc95288xv.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="xc95288xv">
+<h1>XC95288XV<a class="headerlink" href="#xc95288xv" title="Link to this heading"></a></h1>
+<p>IDCODE: <code class="docutils literal notranslate"><span class="pre">0x09716093</span></code></p>
+<p>FB count: 16</p>
+<p>I/O bank count: 4</p>
+<p>FPGM/FPGMI time: 20000µs</p>
+<p>FERASE/FBULK time: 200000µs</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">I/O pins</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Bank</p></th>
+<th class="head"><p>xc95288xv-tq144</p></th>
+<th class="head"><p>xc95288xv-pq208</p></th>
+<th class="head"><p>xc95288xv-cs280</p></th>
+<th class="head"><p>xc95288xv-fg256</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MC_0_1</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>P28</p></td>
+<td><p>K2</p></td>
+<td><p>H1</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_0_2</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>P29</p></td>
+<td><p>K3</p></td>
+<td><p>H5</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_0_4</p></td>
+<td><p>0</p></td>
+<td><p>P20</p></td>
+<td><p>P30</p></td>
+<td><p>K4</p></td>
+<td><p>J1</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_0_5</p></td>
+<td><p>0</p></td>
+<td><p>P21</p></td>
+<td><p>P31</p></td>
+<td><p>L1</p></td>
+<td><p>J5</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_0_7</p></td>
+<td><p>0</p></td>
+<td><p>P22</p></td>
+<td><p>P32</p></td>
+<td><p>L2</p></td>
+<td><p>J2</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_0_8</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>L3</p></td>
+<td><p>J3</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_0_9</p></td>
+<td><p>0</p></td>
+<td><p>P23</p></td>
+<td><p>P33</p></td>
+<td><p>L4</p></td>
+<td><p>K1</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_0_10</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>M1</p></td>
+<td><p>J4</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_0_11</p></td>
+<td><p>0</p></td>
+<td><p>P24</p></td>
+<td><p>P34</p></td>
+<td><p>M2</p></td>
+<td><p>K2</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_0_13</p></td>
+<td><p>0</p></td>
+<td><p>P25</p></td>
+<td><p>P35</p></td>
+<td><p>M3</p></td>
+<td><p>K5</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_0_14</p></td>
+<td><p>0</p></td>
+<td><p>P26</p></td>
+<td><p>P36</p></td>
+<td><p>M4</p></td>
+<td><p>L1</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_0_16</p></td>
+<td><p>0</p></td>
+<td><p>P27</p></td>
+<td><p>P37</p></td>
+<td><p>N1</p></td>
+<td><p>K3</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_1_1</p></td>
+<td><p>1</p></td>
+<td><p>P9</p></td>
+<td><p>P15</p></td>
+<td><p>G3</p></td>
+<td><p>D1</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_1_2</p></td>
+<td><p>1</p></td>
+<td><p>P10</p></td>
+<td><p>P16</p></td>
+<td><p>G2</p></td>
+<td><p>G4</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_1_4</p></td>
+<td><p>1</p></td>
+<td><p>P11</p></td>
+<td><p>P17</p></td>
+<td><p>G1</p></td>
+<td><p>E1</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_1_5</p></td>
+<td><p>1</p></td>
+<td><p>P12</p></td>
+<td><p>P18</p></td>
+<td><p>G4</p></td>
+<td><p>G3</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_1_7</p></td>
+<td><p>1</p></td>
+<td><p>P13</p></td>
+<td><p>P19</p></td>
+<td><p>H1</p></td>
+<td><p>G2</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_1_8</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>H3</p></td>
+<td><p>F5</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_1_9</p></td>
+<td><p>1</p></td>
+<td><p>P14</p></td>
+<td><p>P20</p></td>
+<td><p>H2</p></td>
+<td><p>F1</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_1_10</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>H4</p></td>
+<td><p>G5</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_1_11</p></td>
+<td><p>1</p></td>
+<td><p>P15</p></td>
+<td><p>P21</p></td>
+<td><p>J1</p></td>
+<td><p>H2</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_1_13</p></td>
+<td><p>1</p></td>
+<td><p>P16</p></td>
+<td><p>P22</p></td>
+<td><p>J2</p></td>
+<td><p>H4</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_1_14</p></td>
+<td><p>1</p></td>
+<td><p>P17</p></td>
+<td><p>P23</p></td>
+<td><p>J3</p></td>
+<td><p>G1</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_1_16</p></td>
+<td><p>1</p></td>
+<td><p>P19</p></td>
+<td><p>P25</p></td>
+<td><p>J4</p></td>
+<td><p>H3</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_2_1</p></td>
+<td><p>0</p></td>
+<td><p>P28</p></td>
+<td><p>P38</p></td>
+<td><p>N2</p></td>
+<td><p>L2</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_2_2</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>P39</p></td>
+<td><p>P1</p></td>
+<td><p>L5</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_2_4</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>P40</p></td>
+<td><p>P2</p></td>
+<td><p>M1</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_2_5</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>P41</p></td>
+<td><p>P3</p></td>
+<td><p>L4</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_2_7</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>P43</p></td>
+<td><p>P4</p></td>
+<td><p>N1</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_2_8</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>R1</p></td>
+<td><p>L3</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_2_9</p></td>
+<td><p>0</p></td>
+<td><p>P30 (GCLK0)</p></td>
+<td><p>P44 (GCLK0)</p></td>
+<td><p>R3 (GCLK0)</p></td>
+<td><p>M2 (GCLK0)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_2_10</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>R2</p></td>
+<td><p>M4</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_2_11</p></td>
+<td><p>0</p></td>
+<td><p>P31</p></td>
+<td><p>P45</p></td>
+<td><p>R4</p></td>
+<td><p>P1</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_2_13</p></td>
+<td><p>0</p></td>
+<td><p>P32 (GCLK1)</p></td>
+<td><p>P46 (GCLK1)</p></td>
+<td><p>T1 (GCLK1)</p></td>
+<td><p>M3 (GCLK1)</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_2_14</p></td>
+<td><p>0</p></td>
+<td><p>P33</p></td>
+<td><p>P47</p></td>
+<td><p>T2</p></td>
+<td><p>N2</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_2_16</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>P48</p></td>
+<td><p>T3</p></td>
+<td><p>N4</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_3_1</p></td>
+<td><p>1</p></td>
+<td><p>P2 (GOE2)</p></td>
+<td><p>P3 (GOE2)</p></td>
+<td><p>C2 (GOE2)</p></td>
+<td><p>D3 (GOE2)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_3_2</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>P4</p></td>
+<td><p>B1</p></td>
+<td><p>D2</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_3_4</p></td>
+<td><p>1</p></td>
+<td><p>P3 (GOE3)</p></td>
+<td><p>P5 (GOE3)</p></td>
+<td><p>C1 (GOE3)</p></td>
+<td><p>E3 (GOE3)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_3_5</p></td>
+<td><p>1</p></td>
+<td><p>P4</p></td>
+<td><p>P6</p></td>
+<td><p>D4</p></td>
+<td><p>C2</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_3_7</p></td>
+<td><p>1</p></td>
+<td><p>P5 (GOE0)</p></td>
+<td><p>P7 (GOE0)</p></td>
+<td><p>D3 (GOE0)</p></td>
+<td><p>D4 (GOE0)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_3_8</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>D2</p></td>
+<td><p>B1</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_3_9</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>P8</p></td>
+<td><p>D1</p></td>
+<td><p>E4</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_3_10</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>E3</p></td>
+<td><p>C1</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_3_11</p></td>
+<td><p>1</p></td>
+<td><p>P6 (GOE1)</p></td>
+<td><p>P9 (GOE1)</p></td>
+<td><p>E2 (GOE1)</p></td>
+<td><p>E5 (GOE1)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_3_13</p></td>
+<td><p>1</p></td>
+<td><p>P7</p></td>
+<td><p>P10</p></td>
+<td><p>E4</p></td>
+<td><p>E2</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_3_14</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>P12</p></td>
+<td><p>F3</p></td>
+<td><p>F2</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_3_16</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>P14</p></td>
+<td><p>F4</p></td>
+<td><p>E6</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_4_1</p></td>
+<td><p>0</p></td>
+<td><p>P34</p></td>
+<td><p>P49</p></td>
+<td><p>U1</p></td>
+<td><p>R1</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_4_2</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>P50</p></td>
+<td><p>V1</p></td>
+<td><p>N3</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_4_4</p></td>
+<td><p>0</p></td>
+<td><p>P35</p></td>
+<td><p>P51</p></td>
+<td><p>U2</p></td>
+<td><p>P2</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_4_5</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>P54</p></td>
+<td><p>V3</p></td>
+<td><p>P4</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_4_7</p></td>
+<td><p>0</p></td>
+<td><p>P38 (GCLK2)</p></td>
+<td><p>P55 (GCLK2)</p></td>
+<td><p>W2 (GCLK2)</p></td>
+<td><p>P5 (GCLK2)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_4_8</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>W3</p></td>
+<td><p>T2</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_4_9</p></td>
+<td><p>0</p></td>
+<td><p>P39</p></td>
+<td><p>P56</p></td>
+<td><p>T4</p></td>
+<td><p>N5</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_4_10</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>U4</p></td>
+<td><p>R4</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_4_11</p></td>
+<td><p>0</p></td>
+<td><p>P40</p></td>
+<td><p>P57</p></td>
+<td><p>V4</p></td>
+<td><p>M5</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_4_13</p></td>
+<td><p>0</p></td>
+<td><p>P41</p></td>
+<td><p>P58</p></td>
+<td><p>W4</p></td>
+<td><p>R5</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_4_14</p></td>
+<td><p>0</p></td>
+<td><p>P43</p></td>
+<td><p>P60</p></td>
+<td><p>V5</p></td>
+<td><p>R6</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_4_16</p></td>
+<td><p>0</p></td>
+<td><p>P44</p></td>
+<td><p>P61</p></td>
+<td><p>T5</p></td>
+<td><p>N6</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_5_1</p></td>
+<td><p>1</p></td>
+<td><p>P135</p></td>
+<td><p>P197</p></td>
+<td><p>D7</p></td>
+<td><p>A5</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_5_2</p></td>
+<td><p>1</p></td>
+<td><p>P136</p></td>
+<td><p>P198</p></td>
+<td><p>A6</p></td>
+<td><p>D6</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_5_4</p></td>
+<td><p>1</p></td>
+<td><p>P137</p></td>
+<td><p>P199</p></td>
+<td><p>B6</p></td>
+<td><p>B5</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_5_5</p></td>
+<td><p>1</p></td>
+<td><p>P138</p></td>
+<td><p>P200</p></td>
+<td><p>C6</p></td>
+<td><p>C6</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_5_7</p></td>
+<td><p>1</p></td>
+<td><p>P139</p></td>
+<td><p>P201</p></td>
+<td><p>D6</p></td>
+<td><p>A4</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_5_8</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>A5</p></td>
+<td><p>E7</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_5_9</p></td>
+<td><p>1</p></td>
+<td><p>P140</p></td>
+<td><p>P202</p></td>
+<td><p>C5</p></td>
+<td><p>A3</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_5_10</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>B5</p></td>
+<td><p>C5</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_5_11</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>P203</p></td>
+<td><p>D5</p></td>
+<td><p>A2</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_5_13</p></td>
+<td><p>1</p></td>
+<td><p>P142</p></td>
+<td><p>P205</p></td>
+<td><p>B4</p></td>
+<td><p>B4</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_5_14</p></td>
+<td><p>1</p></td>
+<td><p>P143 (GSR)</p></td>
+<td><p>P206 (GSR)</p></td>
+<td><p>C4 (GSR)</p></td>
+<td><p>C4 (GSR)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_5_16</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>P208</p></td>
+<td><p>A3</p></td>
+<td><p>B3</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_6_1</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>P62</p></td>
+<td><p>W5</p></td>
+<td><p>R3</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_6_2</p></td>
+<td><p>0</p></td>
+<td><p>P45</p></td>
+<td><p>P63</p></td>
+<td><p>U6</p></td>
+<td><p>M6</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_6_4</p></td>
+<td><p>0</p></td>
+<td><p>P46</p></td>
+<td><p>P64</p></td>
+<td><p>V6</p></td>
+<td><p>T3</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_6_5</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>P66</p></td>
+<td><p>W6</p></td>
+<td><p>T4</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_6_7</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>P67</p></td>
+<td><p>U7</p></td>
+<td><p>P7</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_6_8</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>V7</p></td>
+<td><p>T5</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_6_9</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>P69</p></td>
+<td><p>W7</p></td>
+<td><p>N7</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_6_10</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>T7</p></td>
+<td><p>R7</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_6_11</p></td>
+<td><p>0</p></td>
+<td><p>P48</p></td>
+<td><p>P70</p></td>
+<td><p>W8</p></td>
+<td><p>M7</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_6_13</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>P71</p></td>
+<td><p>U8</p></td>
+<td><p>T6</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_6_14</p></td>
+<td><p>0</p></td>
+<td><p>P49</p></td>
+<td><p>P72</p></td>
+<td><p>V8</p></td>
+<td><p>N8</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_6_16</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>P73</p></td>
+<td><p>T8</p></td>
+<td><p>T7</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_7_1</p></td>
+<td><p>1</p></td>
+<td><p>P130</p></td>
+<td><p>P186</p></td>
+<td><p>B10</p></td>
+<td><p>E11</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_7_2</p></td>
+<td><p>1</p></td>
+<td><p>P131</p></td>
+<td><p>P187</p></td>
+<td><p>C10</p></td>
+<td><p>A8</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_7_4</p></td>
+<td><p>1</p></td>
+<td><p>P132</p></td>
+<td><p>P188</p></td>
+<td><p>D10</p></td>
+<td><p>C8</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_7_5</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>P189</p></td>
+<td><p>A9</p></td>
+<td><p>B8</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_7_7</p></td>
+<td><p>1</p></td>
+<td><p>P133</p></td>
+<td><p>P191</p></td>
+<td><p>B9</p></td>
+<td><p>D8</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_7_8</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>C9</p></td>
+<td><p>A7</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_7_9</p></td>
+<td><p>1</p></td>
+<td><p>P134</p></td>
+<td><p>P192</p></td>
+<td><p>D9</p></td>
+<td><p>E9</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_7_10</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>A8</p></td>
+<td><p>B7</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_7_11</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>P193</p></td>
+<td><p>B8</p></td>
+<td><p>D7</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_7_13</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>P194</p></td>
+<td><p>C8</p></td>
+<td><p>A6</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_7_14</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>P195</p></td>
+<td><p>B7</p></td>
+<td><p>B6</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_7_16</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>P196</p></td>
+<td><p>C7</p></td>
+<td><p>E8</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_8_1</p></td>
+<td><p>2</p></td>
+<td><p>P50</p></td>
+<td><p>P74</p></td>
+<td><p>U9</p></td>
+<td><p>R8</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_8_2</p></td>
+<td><p>2</p></td>
+<td><p>P51</p></td>
+<td><p>P75</p></td>
+<td><p>T9</p></td>
+<td><p>P8</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_8_4</p></td>
+<td><p>2</p></td>
+<td><p>P52</p></td>
+<td><p>P76</p></td>
+<td><p>W10</p></td>
+<td><p>T8</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_8_5</p></td>
+<td><p>2</p></td>
+<td><p>P53</p></td>
+<td><p>P77</p></td>
+<td><p>V10</p></td>
+<td><p>M8</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_8_7</p></td>
+<td><p>2</p></td>
+<td><p>P54</p></td>
+<td><p>P78</p></td>
+<td><p>U10</p></td>
+<td><p>T9</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_8_8</p></td>
+<td><p>2</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>W11</p></td>
+<td><p>P9</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_8_9</p></td>
+<td><p>2</p></td>
+<td><p>-</p></td>
+<td><p>P80</p></td>
+<td><p>V11</p></td>
+<td><p>R9</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_8_10</p></td>
+<td><p>2</p></td>
+<td><p>P56</p></td>
+<td><p>P82</p></td>
+<td><p>U11</p></td>
+<td><p>M9</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_8_11</p></td>
+<td><p>2</p></td>
+<td><p>P57</p></td>
+<td><p>P83</p></td>
+<td><p>T11</p></td>
+<td><p>T10</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_8_13</p></td>
+<td><p>2</p></td>
+<td><p>P58</p></td>
+<td><p>P84</p></td>
+<td><p>W12</p></td>
+<td><p>M10</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_8_14</p></td>
+<td><p>2</p></td>
+<td><p>-</p></td>
+<td><p>P85</p></td>
+<td><p>V12</p></td>
+<td><p>R10</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_8_16</p></td>
+<td><p>2</p></td>
+<td><p>P59</p></td>
+<td><p>P86</p></td>
+<td><p>T12</p></td>
+<td><p>T11</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_9_1</p></td>
+<td><p>3</p></td>
+<td><p>P117</p></td>
+<td><p>P170</p></td>
+<td><p>C14</p></td>
+<td><p>B11</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_9_2</p></td>
+<td><p>3</p></td>
+<td><p>P118</p></td>
+<td><p>P171</p></td>
+<td><p>B14</p></td>
+<td><p>D11</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_9_4</p></td>
+<td><p>3</p></td>
+<td><p>P119</p></td>
+<td><p>P173</p></td>
+<td><p>A14</p></td>
+<td><p>A11</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_9_5</p></td>
+<td><p>3</p></td>
+<td><p>P120</p></td>
+<td><p>P174</p></td>
+<td><p>C13</p></td>
+<td><p>D10</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_9_7</p></td>
+<td><p>3</p></td>
+<td><p>P121</p></td>
+<td><p>P175</p></td>
+<td><p>B13</p></td>
+<td><p>B10</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_9_8</p></td>
+<td><p>3</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>A13</p></td>
+<td><p>E12</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_9_9</p></td>
+<td><p>3</p></td>
+<td><p>P124</p></td>
+<td><p>P178</p></td>
+<td><p>A12</p></td>
+<td><p>F12</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_9_10</p></td>
+<td><p>3</p></td>
+<td><p>P125</p></td>
+<td><p>P179</p></td>
+<td><p>C12</p></td>
+<td><p>B9</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_9_11</p></td>
+<td><p>3</p></td>
+<td><p>P126</p></td>
+<td><p>P180</p></td>
+<td><p>B12</p></td>
+<td><p>C9</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_9_13</p></td>
+<td><p>3</p></td>
+<td><p>P128</p></td>
+<td><p>P182</p></td>
+<td><p>B11</p></td>
+<td><p>A9</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_9_14</p></td>
+<td><p>3</p></td>
+<td><p>-</p></td>
+<td><p>P183</p></td>
+<td><p>C11</p></td>
+<td><p>D9</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_9_16</p></td>
+<td><p>3</p></td>
+<td><p>P129</p></td>
+<td><p>P185</p></td>
+<td><p>A10</p></td>
+<td><p>E10</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_10_1</p></td>
+<td><p>2</p></td>
+<td><p>-</p></td>
+<td><p>P87</p></td>
+<td><p>W13</p></td>
+<td><p>P10</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_10_2</p></td>
+<td><p>2</p></td>
+<td><p>P60</p></td>
+<td><p>P88</p></td>
+<td><p>V13</p></td>
+<td><p>T12</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_10_4</p></td>
+<td><p>2</p></td>
+<td><p>P61</p></td>
+<td><p>P89</p></td>
+<td><p>U13</p></td>
+<td><p>N10</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_10_5</p></td>
+<td><p>2</p></td>
+<td><p>-</p></td>
+<td><p>P90</p></td>
+<td><p>T13</p></td>
+<td><p>T13</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_10_7</p></td>
+<td><p>2</p></td>
+<td><p>-</p></td>
+<td><p>P91</p></td>
+<td><p>W14</p></td>
+<td><p>M11</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_10_8</p></td>
+<td><p>2</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>T14</p></td>
+<td><p>N11</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_10_9</p></td>
+<td><p>2</p></td>
+<td><p>P64</p></td>
+<td><p>P95</p></td>
+<td><p>W15</p></td>
+<td><p>T14</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_10_10</p></td>
+<td><p>2</p></td>
+<td><p>P66</p></td>
+<td><p>P97</p></td>
+<td><p>V15</p></td>
+<td><p>R12</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_10_11</p></td>
+<td><p>2</p></td>
+<td><p>P68</p></td>
+<td><p>P99</p></td>
+<td><p>W16</p></td>
+<td><p>T15</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_10_13</p></td>
+<td><p>2</p></td>
+<td><p>P69</p></td>
+<td><p>P100</p></td>
+<td><p>U16</p></td>
+<td><p>R14</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_10_14</p></td>
+<td><p>2</p></td>
+<td><p>-</p></td>
+<td><p>P101</p></td>
+<td><p>W17</p></td>
+<td><p>N13</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_10_16</p></td>
+<td><p>2</p></td>
+<td><p>P70</p></td>
+<td><p>P102</p></td>
+<td><p>W18</p></td>
+<td><p>R13</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_11_1</p></td>
+<td><p>3</p></td>
+<td><p>P110</p></td>
+<td><p>P158</p></td>
+<td><p>B19</p></td>
+<td><p>B13</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_11_2</p></td>
+<td><p>3</p></td>
+<td><p>P111</p></td>
+<td><p>P159</p></td>
+<td><p>B18</p></td>
+<td><p>B14</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_11_4</p></td>
+<td><p>3</p></td>
+<td><p>P112</p></td>
+<td><p>P160</p></td>
+<td><p>B17</p></td>
+<td><p>C13</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_11_5</p></td>
+<td><p>3</p></td>
+<td><p>-</p></td>
+<td><p>P161</p></td>
+<td><p>A18</p></td>
+<td><p>A15</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_11_7</p></td>
+<td><p>3</p></td>
+<td><p>P113</p></td>
+<td><p>P162</p></td>
+<td><p>A17</p></td>
+<td><p>C12</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_11_8</p></td>
+<td><p>3</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>D16</p></td>
+<td><p>B12</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_11_9</p></td>
+<td><p>3</p></td>
+<td><p>P115</p></td>
+<td><p>P164</p></td>
+<td><p>C16</p></td>
+<td><p>D13</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_11_10</p></td>
+<td><p>3</p></td>
+<td><p>-</p></td>
+<td><p>P165</p></td>
+<td><p>B16</p></td>
+<td><p>A14</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_11_11</p></td>
+<td><p>3</p></td>
+<td><p>P116</p></td>
+<td><p>P166</p></td>
+<td><p>A16</p></td>
+<td><p>E13</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_11_13</p></td>
+<td><p>3</p></td>
+<td><p>-</p></td>
+<td><p>P167</p></td>
+<td><p>C15</p></td>
+<td><p>A13</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_11_14</p></td>
+<td><p>3</p></td>
+<td><p>-</p></td>
+<td><p>P168</p></td>
+<td><p>B15</p></td>
+<td><p>C11</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_11_16</p></td>
+<td><p>3</p></td>
+<td><p>-</p></td>
+<td><p>P169</p></td>
+<td><p>D15</p></td>
+<td><p>A12</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_12_1</p></td>
+<td><p>2</p></td>
+<td><p>P71</p></td>
+<td><p>P103</p></td>
+<td><p>V17</p></td>
+<td><p>P13</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_12_2</p></td>
+<td><p>2</p></td>
+<td><p>-</p></td>
+<td><p>P106</p></td>
+<td><p>U18</p></td>
+<td><p>P15</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_12_4</p></td>
+<td><p>2</p></td>
+<td><p>-</p></td>
+<td><p>P107</p></td>
+<td><p>V19</p></td>
+<td><p>N14</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_12_5</p></td>
+<td><p>2</p></td>
+<td><p>-</p></td>
+<td><p>P109</p></td>
+<td><p>U19</p></td>
+<td><p>R16</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_12_7</p></td>
+<td><p>2</p></td>
+<td><p>P74</p></td>
+<td><p>P110</p></td>
+<td><p>T16</p></td>
+<td><p>N15</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_12_8</p></td>
+<td><p>2</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>T17</p></td>
+<td><p>M15</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_12_9</p></td>
+<td><p>2</p></td>
+<td><p>-</p></td>
+<td><p>P111</p></td>
+<td><p>T18</p></td>
+<td><p>M13</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_12_10</p></td>
+<td><p>2</p></td>
+<td><p>P75</p></td>
+<td><p>P112</p></td>
+<td><p>T19</p></td>
+<td><p>P16</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_12_11</p></td>
+<td><p>2</p></td>
+<td><p>-</p></td>
+<td><p>P113</p></td>
+<td><p>R18</p></td>
+<td><p>N16</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_12_13</p></td>
+<td><p>2</p></td>
+<td><p>P76</p></td>
+<td><p>P114</p></td>
+<td><p>R16</p></td>
+<td><p>M14</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_12_14</p></td>
+<td><p>2</p></td>
+<td><p>P77</p></td>
+<td><p>P115</p></td>
+<td><p>R19</p></td>
+<td><p>L15</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_12_16</p></td>
+<td><p>2</p></td>
+<td><p>P78</p></td>
+<td><p>P116</p></td>
+<td><p>P17</p></td>
+<td><p>L13</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_13_1</p></td>
+<td><p>3</p></td>
+<td><p>-</p></td>
+<td><p>P144</p></td>
+<td><p>G19</p></td>
+<td><p>F15</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_13_2</p></td>
+<td><p>3</p></td>
+<td><p>P100</p></td>
+<td><p>P145</p></td>
+<td><p>G16</p></td>
+<td><p>E15</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_13_4</p></td>
+<td><p>3</p></td>
+<td><p>P101</p></td>
+<td><p>P146</p></td>
+<td><p>F19</p></td>
+<td><p>F13</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_13_5</p></td>
+<td><p>3</p></td>
+<td><p>P102</p></td>
+<td><p>P147</p></td>
+<td><p>F18</p></td>
+<td><p>D16</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_13_7</p></td>
+<td><p>3</p></td>
+<td><p>P103</p></td>
+<td><p>P148</p></td>
+<td><p>F17</p></td>
+<td><p>F14</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_13_8</p></td>
+<td><p>3</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>F16</p></td>
+<td><p>C16</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_13_9</p></td>
+<td><p>3</p></td>
+<td><p>P104</p></td>
+<td><p>P149</p></td>
+<td><p>E19</p></td>
+<td><p>E14</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_13_10</p></td>
+<td><p>3</p></td>
+<td><p>P105</p></td>
+<td><p>P150</p></td>
+<td><p>E17</p></td>
+<td><p>D15</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_13_11</p></td>
+<td><p>3</p></td>
+<td><p>-</p></td>
+<td><p>P151</p></td>
+<td><p>E18</p></td>
+<td><p>G12</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_13_13</p></td>
+<td><p>3</p></td>
+<td><p>P106</p></td>
+<td><p>P152</p></td>
+<td><p>E16</p></td>
+<td><p>C15</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_13_14</p></td>
+<td><p>3</p></td>
+<td><p>P107</p></td>
+<td><p>P154</p></td>
+<td><p>D18</p></td>
+<td><p>D14</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_13_16</p></td>
+<td><p>3</p></td>
+<td><p>-</p></td>
+<td><p>P155</p></td>
+<td><p>D17</p></td>
+<td><p>B16</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_14_1</p></td>
+<td><p>2</p></td>
+<td><p>P79</p></td>
+<td><p>P117</p></td>
+<td><p>P16</p></td>
+<td><p>M12</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_14_2</p></td>
+<td><p>2</p></td>
+<td><p>P80</p></td>
+<td><p>P118</p></td>
+<td><p>P19</p></td>
+<td><p>M16</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_14_4</p></td>
+<td><p>2</p></td>
+<td><p>-</p></td>
+<td><p>P119</p></td>
+<td><p>N17</p></td>
+<td><p>K14</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_14_5</p></td>
+<td><p>2</p></td>
+<td><p>-</p></td>
+<td><p>P120</p></td>
+<td><p>N18</p></td>
+<td><p>L16</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_14_7</p></td>
+<td><p>2</p></td>
+<td><p>P81</p></td>
+<td><p>P121</p></td>
+<td><p>N19</p></td>
+<td><p>K13</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_14_8</p></td>
+<td><p>2</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>N16</p></td>
+<td><p>K15</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_14_9</p></td>
+<td><p>2</p></td>
+<td><p>P82</p></td>
+<td><p>P122</p></td>
+<td><p>M19</p></td>
+<td><p>L12</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_14_10</p></td>
+<td><p>2</p></td>
+<td><p>P83</p></td>
+<td><p>P123</p></td>
+<td><p>M17</p></td>
+<td><p>K16</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_14_11</p></td>
+<td><p>2</p></td>
+<td><p>P85</p></td>
+<td><p>P125</p></td>
+<td><p>M16</p></td>
+<td><p>J14</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_14_13</p></td>
+<td><p>2</p></td>
+<td><p>P86</p></td>
+<td><p>P126</p></td>
+<td><p>L19</p></td>
+<td><p>J15</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_14_14</p></td>
+<td><p>2</p></td>
+<td><p>P87</p></td>
+<td><p>P127</p></td>
+<td><p>L18</p></td>
+<td><p>J13</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_14_16</p></td>
+<td><p>2</p></td>
+<td><p>P88</p></td>
+<td><p>P128</p></td>
+<td><p>L17</p></td>
+<td><p>J16</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_15_1</p></td>
+<td><p>3</p></td>
+<td><p>P91</p></td>
+<td><p>P131</p></td>
+<td><p>L16</p></td>
+<td><p>K12</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_15_2</p></td>
+<td><p>3</p></td>
+<td><p>P92</p></td>
+<td><p>P133</p></td>
+<td><p>K18</p></td>
+<td><p>J12</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_15_4</p></td>
+<td><p>3</p></td>
+<td><p>P93</p></td>
+<td><p>P134</p></td>
+<td><p>K17</p></td>
+<td><p>H15</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_15_5</p></td>
+<td><p>3</p></td>
+<td><p>P94</p></td>
+<td><p>P135</p></td>
+<td><p>K16</p></td>
+<td><p>H14</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_15_7</p></td>
+<td><p>3</p></td>
+<td><p>P95</p></td>
+<td><p>P136</p></td>
+<td><p>J19</p></td>
+<td><p>G16</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_15_8</p></td>
+<td><p>3</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>J18</p></td>
+<td><p>H13</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_15_9</p></td>
+<td><p>3</p></td>
+<td><p>P96</p></td>
+<td><p>P137</p></td>
+<td><p>J17</p></td>
+<td><p>G15</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_15_10</p></td>
+<td><p>3</p></td>
+<td><p>P97</p></td>
+<td><p>P138</p></td>
+<td><p>J16</p></td>
+<td><p>H16</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_15_11</p></td>
+<td><p>3</p></td>
+<td><p>P98</p></td>
+<td><p>P139</p></td>
+<td><p>H19</p></td>
+<td><p>F16</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_15_13</p></td>
+<td><p>3</p></td>
+<td><p>-</p></td>
+<td><p>P140</p></td>
+<td><p>H18</p></td>
+<td><p>H12</p></td>
+</tr>
+<tr class="row-even"><td><p>MC_15_14</p></td>
+<td><p>3</p></td>
+<td><p>-</p></td>
+<td><p>P142</p></td>
+<td><p>H17</p></td>
+<td><p>E16</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC_15_16</p></td>
+<td><p>3</p></td>
+<td><p>-</p></td>
+<td><p>P143</p></td>
+<td><p>H16</p></td>
+<td><p>G14</p></td>
+</tr>
+<tr class="row-even"><td><p>TCK</p></td>
+<td><p>-</p></td>
+<td><p>P67</p></td>
+<td><p>P98</p></td>
+<td><p>T15</p></td>
+<td><p>P12</p></td>
+</tr>
+<tr class="row-odd"><td><p>TMS</p></td>
+<td><p>-</p></td>
+<td><p>P65</p></td>
+<td><p>P96</p></td>
+<td><p>U15</p></td>
+<td><p>N12</p></td>
+</tr>
+<tr class="row-even"><td><p>TDI</p></td>
+<td><p>-</p></td>
+<td><p>P63</p></td>
+<td><p>P94</p></td>
+<td><p>U14</p></td>
+<td><p>R11</p></td>
+</tr>
+<tr class="row-odd"><td><p>TDO</p></td>
+<td><p>3</p></td>
+<td><p>P122</p></td>
+<td><p>P176</p></td>
+<td><p>D13</p></td>
+<td><p>A10</p></td>
+</tr>
+<tr class="row-even"><td><p>GND</p></td>
+<td><p>-</p></td>
+<td><p>P108</p>
+<p>P114</p>
+<p>P123</p>
+<p>P144</p>
+<p>P18</p>
+<p>P29</p>
+<p>P36</p>
+<p>P47</p>
+<p>P62</p>
+<p>P72</p>
+<p>P89</p>
+<p>P90</p>
+<p>P99</p>
+</td>
+<td><p>P104</p>
+<p>P108</p>
+<p>P129</p>
+<p>P13</p>
+<p>P130</p>
+<p>P141</p>
+<p>P156</p>
+<p>P163</p>
+<p>P177</p>
+<p>P190</p>
+<p>P2</p>
+<p>P207</p>
+<p>P24</p>
+<p>P27</p>
+<p>P42</p>
+<p>P52</p>
+<p>P68</p>
+<p>P81</p>
+<p>P93</p>
+</td>
+<td><p>E10</p>
+<p>E11</p>
+<p>E12</p>
+<p>E13</p>
+<p>E14</p>
+<p>E15</p>
+<p>E5</p>
+<p>E6</p>
+<p>E7</p>
+<p>E8</p>
+<p>E9</p>
+<p>F15</p>
+<p>F5</p>
+<p>G15</p>
+<p>G5</p>
+<p>H15</p>
+<p>H5</p>
+<p>J15</p>
+<p>J5</p>
+<p>K15</p>
+<p>K5</p>
+<p>L15</p>
+<p>L5</p>
+<p>M15</p>
+<p>M5</p>
+<p>N15</p>
+<p>N5</p>
+<p>P15</p>
+<p>P5</p>
+<p>R10</p>
+<p>R11</p>
+<p>R12</p>
+<p>R13</p>
+<p>R14</p>
+<p>R15</p>
+<p>R5</p>
+<p>R6</p>
+<p>R7</p>
+<p>R8</p>
+<p>R9</p>
+</td>
+<td><p>A1</p>
+<p>A16</p>
+<p>B15</p>
+<p>B2</p>
+<p>C14</p>
+<p>C3</p>
+<p>G10</p>
+<p>G7</p>
+<p>G8</p>
+<p>G9</p>
+<p>H10</p>
+<p>H7</p>
+<p>H8</p>
+<p>H9</p>
+<p>J10</p>
+<p>J7</p>
+<p>J8</p>
+<p>J9</p>
+<p>K10</p>
+<p>K7</p>
+<p>K8</p>
+<p>K9</p>
+<p>P14</p>
+<p>P3</p>
+<p>R15</p>
+<p>R2</p>
+<p>T1</p>
+<p>T16</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>VCCINT</p></td>
+<td><p>-</p></td>
+<td><p>P141</p>
+<p>P42</p>
+<p>P8</p>
+<p>P84</p>
+</td>
+<td><p>P11</p>
+<p>P124</p>
+<p>P153</p>
+<p>P204</p>
+<p>P59</p>
+</td>
+<td><p>A11</p>
+<p>A15</p>
+<p>A4</p>
+<p>C18</p>
+<p>D19</p>
+<p>D8</p>
+<p>E1</p>
+<p>F2</p>
+<p>G18</p>
+<p>M18</p>
+<p>N3</p>
+<p>R17</p>
+<p>U12</p>
+<p>U5</p>
+<p>V16</p>
+<p>V9</p>
+<p>W9</p>
+</td>
+<td><p>F10</p>
+<p>F4</p>
+<p>F7</p>
+<p>F8</p>
+<p>F9</p>
+<p>G11</p>
+<p>G6</p>
+<p>H11</p>
+<p>H6</p>
+<p>J11</p>
+<p>J6</p>
+<p>K11</p>
+<p>K6</p>
+<p>L10</p>
+<p>L7</p>
+<p>L8</p>
+<p>L9</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>VCCIO0</p></td>
+<td><p>0</p></td>
+<td><p>P37</p></td>
+<td><p>P53</p>
+<p>P65</p>
+</td>
+<td><p>N4</p>
+<p>T6</p>
+<p>V2</p>
+</td>
+<td><p>K4</p>
+<p>L6</p>
+<p>P6</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>VCCIO1</p></td>
+<td><p>1</p></td>
+<td><p>P1</p></td>
+<td><p>P1</p>
+<p>P26</p>
+</td>
+<td><p>A7</p>
+<p>C3</p>
+<p>F1</p>
+<p>K1</p>
+</td>
+<td><p>C7</p>
+<p>D5</p>
+<p>F3</p>
+<p>F6</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>VCCIO2</p></td>
+<td><p>2</p></td>
+<td><p>P55</p>
+<p>P73</p>
+</td>
+<td><p>P105</p>
+<p>P79</p>
+<p>P92</p>
+</td>
+<td><p>P18</p>
+<p>T10</p>
+<p>V14</p>
+<p>V18</p>
+</td>
+<td><p>L11</p>
+<p>L14</p>
+<p>N9</p>
+<p>P11</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>VCCIO3</p></td>
+<td><p>3</p></td>
+<td><p>P109</p>
+<p>P127</p>
+</td>
+<td><p>P132</p>
+<p>P157</p>
+<p>P172</p>
+<p>P181</p>
+<p>P184</p>
+</td>
+<td><p>C19</p>
+<p>D11</p>
+<p>D12</p>
+<p>D14</p>
+<p>G17</p>
+<p>K19</p>
+</td>
+<td><p>C10</p>
+<p>D12</p>
+<p>F11</p>
+<p>G13</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>NC</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>A1</p>
+<p>A19</p>
+<p>A2</p>
+<p>B2</p>
+<p>B3</p>
+<p>C17</p>
+<p>U17</p>
+<p>U3</p>
+<p>W1</p>
+<p>W19</p>
+</td>
+<td><p>-</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="db-device-xc95144xv.html" class="btn btn-neutral float-left" title="XC95144XV" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="jtag.html" class="btn btn-neutral float-right" title="JTAG interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

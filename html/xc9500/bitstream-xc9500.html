@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bitstream structure — XC9500 &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bitstream structure — XC9500XL/XV" href="bitstream-xc9500xl.html" />
+    <link rel="prev" title="Device structure" href="structure.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html">Device structure</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Bitstream structure — XC9500</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#jed-format-mapping">JED format mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fuses-product-terms">Fuses — product terms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fuses-macrocells">Fuses — macrocells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fuses-fb-inputs">Fuses — FB inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fuses-per-fb-bits-and-globals">Fuses — per-FB bits and globals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fuses-input-buffer-enable">Fuses — input buffer enable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fuses-protection-bits">Fuses — protection bits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fuses-uim-wire-and">Fuses — UIM wire-AND</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html">Bitstream structure — XC9500XL/XV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database schema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db-devices.html">Database — devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jtag.html">JTAG interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+      <li class="breadcrumb-item active">Bitstream structure — XC9500</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/xc9500/bitstream-xc9500.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bitstream-structure-xc9500">
+<h1>Bitstream structure — XC9500<a class="headerlink" href="#bitstream-structure-xc9500" title="Link to this heading"></a></h1>
+<p>On a high level, the whole bitstream is split into “areas”.  Each FB
+of the device corresponds two areas, one of which contains the UIM wire-AND
+configuration, and the other (main area) contains everything else.</p>
+<p>The main area of a FB is made of 72 “rows”.  Each row is made of 15 “columns”.
+Each column is made of 6 or 8 bits: columns 0-8 are made of 8 bits, while
+columns 9-14 are made of 6 bits.</p>
+<p>The low 6 bits of every column are used to store product term masks, and
+the high 2 bits of columns 0-8 are used to store everything else.</p>
+<p>The UIM wire-AND area of a FB is, in turn, made of “subareas”, one for each
+FB of the device.  Each subarea is in turn made of 18 rows.  Each row
+is made of 5 columns.  Column 0 is made of 8 bits, while columns 1-4 are made
+of 7 bits, making for 36 total bits per row.</p>
+<p>When programmed or read via JTAG, the bitstream is transmitted as bytes,
+which are 6-8 bits long.  Each byte of the bitstream has its address.
+Not all addresses are valid, and valid addresses are not contiguous.
+Address is 17 bits long, and is split to several fields:</p>
+<ul class="simple">
+<li><p>bits 13-16: FB index</p></li>
+<li><p>bit 12: area kind</p>
+<ul>
+<li><p>0: main FB config</p></li>
+<li><p>1: UIM wire-AND config</p></li>
+</ul>
+</li>
+<li><p>for main FB config area:</p>
+<ul>
+<li><p>bits 5-11: row</p></li>
+<li><p>bits 3-4: column / 5</p></li>
+<li><p>bits 0-2: column % 5</p></li>
+</ul>
+</li>
+<li><p>for UIM wire-AND config area:</p>
+<ul>
+<li><p>bits 8-11: subarea (source FB index)</p></li>
+<li><p>bits 3-7: row</p></li>
+<li><p>bits 0-2: column</p></li>
+</ul>
+</li>
+</ul>
+<p>The unprogrammed state of a bit on XC9500 is <code class="docutils literal notranslate"><span class="pre">1</span></code>.
+The programmed state is <code class="docutils literal notranslate"><span class="pre">0</span></code>.  Thus, whenever a boolean fuse is mentioned
+in the documentation, the “true” value is actually represented as <code class="docutils literal notranslate"><span class="pre">0</span></code>
+in the bitstream.  This includes the USERCODE bits.</p>
+<section id="jed-format-mapping">
+<h2>JED format mapping<a class="headerlink" href="#jed-format-mapping" title="Link to this heading"></a></h2>
+<p>In the JED format, all fuses of the device are simply concatenated in order,
+skipping over invalid addresses.  The bytes are <em>not</em> padded to 8 bits, but
+have their native size.  Thus, converting from JED fuse index to device
+address involves some complex calculations:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">main_row_bits</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">9</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">*</span> <span class="mi">6</span>
+<span class="n">uim_row_bits</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">+</span> <span class="mi">7</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="n">main_area_bits</span> <span class="o">=</span> <span class="n">main_row_bits</span> <span class="o">*</span> <span class="mi">72</span>
+<span class="n">uim_subarea_bits</span> <span class="o">=</span> <span class="n">uim_row_bits</span> <span class="o">*</span> <span class="mi">18</span>
+<span class="n">uim_area_bits</span> <span class="o">=</span> <span class="n">uim_subarea_bits</span> <span class="o">*</span> <span class="n">device</span><span class="o">.</span><span class="n">num_fbs</span>
+<span class="n">fb_bits</span> <span class="o">=</span> <span class="n">main_area_bits</span> <span class="o">+</span> <span class="n">uim_area_bits</span>
+<span class="n">total_bits</span> <span class="o">=</span> <span class="n">fb_bits</span> <span class="o">*</span> <span class="n">device</span><span class="o">.</span><span class="n">num_fbs</span>
+
+<span class="k">def</span> <span class="nf">jed_to_jtag</span><span class="p">(</span><span class="n">fuse</span><span class="p">):</span>
+    <span class="n">fb</span> <span class="o">=</span> <span class="n">fuse</span> <span class="o">//</span> <span class="n">fb_bits</span>
+    <span class="n">fuse</span> <span class="o">%=</span> <span class="n">fb_bits</span>
+    <span class="k">if</span> <span class="n">fuse</span> <span class="o">&lt;</span> <span class="n">main_area_bits</span><span class="p">:</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">fuse</span> <span class="o">//</span> <span class="n">main_row_bits</span>
+        <span class="n">fuse</span> <span class="o">%=</span> <span class="n">main_row_bits</span>
+        <span class="k">if</span> <span class="n">fuse</span> <span class="o">&lt;</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">9</span><span class="p">:</span>
+            <span class="n">column</span> <span class="o">=</span> <span class="n">fuse</span> <span class="o">//</span> <span class="mi">8</span>
+            <span class="n">bit</span> <span class="o">=</span> <span class="n">fuse</span> <span class="o">%</span> <span class="mi">8</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fuse</span> <span class="o">-=</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">9</span>
+            <span class="n">column</span> <span class="o">=</span> <span class="mi">9</span> <span class="o">+</span> <span class="n">fuse</span> <span class="o">//</span> <span class="mi">6</span>
+            <span class="n">bit</span> <span class="o">=</span> <span class="n">fuse</span> <span class="o">%</span> <span class="mi">6</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">fb</span> <span class="o">&lt;&lt;</span> <span class="mi">13</span> <span class="o">|</span>
+            <span class="mi">0</span> <span class="o">&lt;&lt;</span> <span class="mi">12</span> <span class="o">|</span>
+            <span class="n">row</span> <span class="o">&lt;&lt;</span> <span class="mi">5</span> <span class="o">|</span>
+            <span class="p">(</span><span class="n">column</span> <span class="o">//</span> <span class="mi">5</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span> <span class="o">|</span>
+            <span class="p">(</span><span class="n">column</span> <span class="o">%</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="p">),</span> <span class="n">bit</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">fuse</span> <span class="o">-=</span> <span class="n">main_area_bits</span>
+        <span class="n">subarea</span> <span class="o">=</span> <span class="n">fuse</span> <span class="o">//</span> <span class="n">uim_subarea_bits</span>
+        <span class="n">fuse</span> <span class="o">%=</span> <span class="n">uim_subarea_bits</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">fuse</span> <span class="o">//</span> <span class="n">uim_row_bits</span>
+        <span class="n">fuse</span> <span class="o">%=</span> <span class="n">uim_row_bits</span>
+        <span class="k">if</span> <span class="n">fuse</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">:</span>
+            <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">bit</span> <span class="o">=</span> <span class="n">fuse</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fuse</span> <span class="o">-=</span> <span class="mi">8</span>
+            <span class="n">column</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">fuse</span> <span class="o">//</span> <span class="mi">7</span>
+            <span class="n">bit</span> <span class="o">=</span> <span class="n">fuse</span> <span class="o">%</span> <span class="mi">7</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">fb</span> <span class="o">&lt;&lt;</span> <span class="mi">13</span> <span class="o">|</span>
+            <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">12</span> <span class="o">|</span>
+            <span class="n">subarea</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span> <span class="o">|</span>
+            <span class="n">row</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span> <span class="o">|</span>
+            <span class="n">column</span>
+        <span class="p">),</span> <span class="n">bit</span>
+
+<span class="k">def</span> <span class="nf">jtag_to_jed</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="n">bit</span><span class="p">):</span>
+    <span class="n">fb</span> <span class="o">=</span> <span class="n">addr</span> <span class="o">&gt;&gt;</span> <span class="mi">13</span> <span class="o">&amp;</span> <span class="mh">0xf</span>
+    <span class="k">assert</span> <span class="n">fb</span> <span class="o">&lt;</span> <span class="n">device</span><span class="o">.</span><span class="n">num_fbs</span>
+    <span class="k">if</span> <span class="n">addr</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">12</span><span class="p">):</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">addr</span> <span class="o">&gt;&gt;</span> <span class="mi">5</span> <span class="o">&amp;</span> <span class="mh">0x7f</span>
+        <span class="k">assert</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="mi">72</span>
+        <span class="n">col_hi</span> <span class="o">=</span> <span class="n">addr</span> <span class="o">&gt;&gt;</span> <span class="mi">3</span> <span class="o">&amp;</span> <span class="mi">3</span>
+        <span class="k">assert</span> <span class="n">col_hi</span> <span class="o">&lt;</span> <span class="mi">3</span>
+        <span class="n">col_lo</span> <span class="o">=</span> <span class="n">addr</span> <span class="o">&amp;</span> <span class="mi">7</span>
+        <span class="k">assert</span> <span class="n">col_lo</span> <span class="o">&lt;</span> <span class="mi">5</span>
+        <span class="n">column</span> <span class="o">=</span> <span class="n">col_hi</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="n">col_lo</span>
+        <span class="k">if</span> <span class="n">column</span> <span class="o">&lt;</span> <span class="mi">9</span><span class="p">:</span>
+            <span class="n">cfuse</span> <span class="o">=</span> <span class="n">column</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">+</span> <span class="n">bit</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cfuse</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">+</span> <span class="p">(</span><span class="n">column</span> <span class="o">-</span> <span class="mi">9</span><span class="p">)</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">+</span> <span class="n">bit</span>
+        <span class="k">return</span> <span class="n">fb</span> <span class="o">*</span> <span class="n">fb_bits</span> <span class="o">+</span> <span class="n">row</span> <span class="o">*</span> <span class="n">main_row_bits</span> <span class="o">+</span> <span class="n">cfuse</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">subarea</span> <span class="o">=</span> <span class="n">addr</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span> <span class="o">&amp;</span> <span class="mh">0xf</span>
+        <span class="k">assert</span> <span class="n">subarea</span> <span class="o">&lt;</span> <span class="n">device</span><span class="o">.</span><span class="n">num_fbs</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">addr</span> <span class="o">&gt;&gt;</span> <span class="mi">3</span> <span class="o">&amp;</span> <span class="mh">0x1f</span>
+        <span class="k">assert</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="mi">18</span>
+        <span class="n">column</span> <span class="o">=</span> <span class="n">addr</span> <span class="o">&amp;</span> <span class="mi">7</span>
+        <span class="k">assert</span> <span class="n">column</span> <span class="o">&lt;</span> <span class="mi">5</span>
+        <span class="k">if</span> <span class="n">column</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">cfuse</span> <span class="o">=</span> <span class="n">bit</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cfuse</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">+</span> <span class="p">(</span><span class="n">column</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">7</span> <span class="o">+</span> <span class="n">bit</span>
+        <span class="k">return</span> <span class="n">fb</span> <span class="o">*</span> <span class="n">fb_bits</span> <span class="o">+</span> <span class="n">main_area_bits</span> <span class="o">+</span> <span class="n">subarea</span> <span class="o">*</span> <span class="n">uim_subarea_bits</span> <span class="o">+</span> <span class="n">row</span> <span class="o">*</span> <span class="n">uim_row_bits</span> <span class="o">+</span> <span class="n">cfuse</span>
+</pre></div>
+</div>
+</section>
+<section id="fuses-product-terms">
+<h2>Fuses — product terms<a class="headerlink" href="#fuses-product-terms" title="Link to this heading"></a></h2>
+<p>The product term masks are stored in bits 0-5 of every column and every row of the main area.
+The formulas are as follows:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k].IM[l].P</span></code> is stored at:</p>
+<ul class="simple">
+<li><p>row: <code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">1</span></code></p></li>
+<li><p>column: <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">+</span> <span class="pre">(j</span> <span class="pre">%</span> <span class="pre">3)</span> <span class="pre">*</span> <span class="pre">5</span></code></p></li>
+<li><p>bit: <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">//</span> <span class="pre">3</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].PT[k].IM[l].N</span></code> is stored at:</p>
+<ul class="simple">
+<li><p>row: <code class="docutils literal notranslate"><span class="pre">l</span> <span class="pre">*</span> <span class="pre">2</span></code></p></li>
+<li><p>column: <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">+</span> <span class="pre">(j</span> <span class="pre">%</span> <span class="pre">3)</span> <span class="pre">*</span> <span class="pre">5</span></code></p></li>
+<li><p>bit: <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">//</span> <span class="pre">3</span></code></p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="fuses-macrocells">
+<h2>Fuses — macrocells<a class="headerlink" href="#fuses-macrocells" title="Link to this heading"></a></h2>
+<p>Per-MC config fuses (that are not product term masks) are stored in bits 6-7 of
+columns 0-8 of rows 12-54 of the main area.  The formulas are as follows:</p>
+<ul class="simple">
+<li><p>row: corresponds to fuse function</p></li>
+<li><p>column: <code class="docutils literal notranslate"><span class="pre">mc_idx</span> <span class="pre">%</span> <span class="pre">9</span></code></p></li>
+<li><p>bit: <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">+</span> <span class="pre">mc_idx</span> <span class="pre">//</span> <span class="pre">9</span></code></p></li>
+</ul>
+<p>The row is:</p>
+<ul class="simple">
+<li><p>12: <code class="docutils literal notranslate"><span class="pre">PT[0].ALLOC</span></code> bit 0</p></li>
+<li><p>13: <code class="docutils literal notranslate"><span class="pre">PT[0].ALLOC</span></code> bit 1</p></li>
+<li><p>14: <code class="docutils literal notranslate"><span class="pre">PT[1].ALLOC</span></code> bit 0</p></li>
+<li><p>15: <code class="docutils literal notranslate"><span class="pre">PT[1].ALLOC</span></code> bit 1</p></li>
+<li><p>16: <code class="docutils literal notranslate"><span class="pre">PT[2].ALLOC</span></code> bit 0</p></li>
+<li><p>17: <code class="docutils literal notranslate"><span class="pre">PT[2].ALLOC</span></code> bit 1</p></li>
+<li><p>18: <code class="docutils literal notranslate"><span class="pre">PT[3].ALLOC</span></code> bit 0</p></li>
+<li><p>19: <code class="docutils literal notranslate"><span class="pre">PT[3].ALLOC</span></code> bit 1</p></li>
+<li><p>20: <code class="docutils literal notranslate"><span class="pre">PT[4].ALLOC</span></code> bit 0</p></li>
+<li><p>21: <code class="docutils literal notranslate"><span class="pre">PT[5].ALLOC</span></code> bit 1</p></li>
+<li><p>22: <code class="docutils literal notranslate"><span class="pre">INV</span></code></p></li>
+<li><p>23: <code class="docutils literal notranslate"><span class="pre">IMPORT_UP_ALLOC</span></code></p></li>
+<li><p>24: <code class="docutils literal notranslate"><span class="pre">IMPORT_DOWN_ALLOC</span></code></p></li>
+<li><p>25: <code class="docutils literal notranslate"><span class="pre">EXPORT_DIR</span></code></p></li>
+<li><p>26: <code class="docutils literal notranslate"><span class="pre">SUM_HP</span></code></p></li>
+<li><p>27: <code class="docutils literal notranslate"><span class="pre">IOB_OE_MUX</span></code> bit 0</p></li>
+<li><p>28: <code class="docutils literal notranslate"><span class="pre">IOB_OE_MUX</span></code> bit 1</p></li>
+<li><p>29: <code class="docutils literal notranslate"><span class="pre">OE_MUX</span></code> bit 0</p></li>
+<li><p>30: <code class="docutils literal notranslate"><span class="pre">OE_MUX</span></code> bit 1</p></li>
+<li><p>31: <code class="docutils literal notranslate"><span class="pre">OE_MUX</span></code> bit 2</p></li>
+<li><p>32-34: unused?</p></li>
+<li><p>35: <code class="docutils literal notranslate"><span class="pre">OUT_MUX</span></code></p></li>
+<li><p>36: <code class="docutils literal notranslate"><span class="pre">CLK_MUX</span></code> bit 0</p></li>
+<li><p>37: <code class="docutils literal notranslate"><span class="pre">CLK_MUX</span></code> bit 1</p></li>
+<li><p>38-39: unused</p></li>
+<li><p>40: <code class="docutils literal notranslate"><span class="pre">REG_MODE</span></code></p></li>
+<li><p>41: <code class="docutils literal notranslate"><span class="pre">RST_MUX</span></code></p></li>
+<li><p>42: <code class="docutils literal notranslate"><span class="pre">SET_MUX</span></code></p></li>
+<li><p>43: <code class="docutils literal notranslate"><span class="pre">INIT</span></code></p></li>
+<li><p>44: <code class="docutils literal notranslate"><span class="pre">UIM_OE_MUX</span></code> bit 0</p></li>
+<li><p>45: <code class="docutils literal notranslate"><span class="pre">UIM_OE_MUX</span></code> bit 1</p></li>
+<li><p>46: <code class="docutils literal notranslate"><span class="pre">UIM_OUT_INV</span></code></p></li>
+<li><p>47: unused</p></li>
+<li><p>48: <code class="docutils literal notranslate"><span class="pre">IOB_GND</span></code></p></li>
+<li><p>49: <code class="docutils literal notranslate"><span class="pre">IOB_SLEW</span></code></p></li>
+<li><p>50: <code class="docutils literal notranslate"><span class="pre">PT[0].HP</span></code></p></li>
+<li><p>51: <code class="docutils literal notranslate"><span class="pre">PT[1].HP</span></code></p></li>
+<li><p>52: <code class="docutils literal notranslate"><span class="pre">PT[2].HP</span></code></p></li>
+<li><p>53: <code class="docutils literal notranslate"><span class="pre">PT[3].HP</span></code></p></li>
+<li><p>54: <code class="docutils literal notranslate"><span class="pre">PT[4].HP</span></code></p></li>
+</ul>
+<p>The fuse combination assignments are:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">PT[*].ALLOC</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">11</span></code>: <code class="docutils literal notranslate"><span class="pre">NONE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>: <code class="docutils literal notranslate"><span class="pre">SUM</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">01</span></code>: <code class="docutils literal notranslate"><span class="pre">EXPORT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">00</span></code>: <code class="docutils literal notranslate"><span class="pre">SPECIAL</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IMPORT_*_ALLOC</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">EXPORT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: <code class="docutils literal notranslate"><span class="pre">SUM</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXPORT_DIR</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">UP</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: <code class="docutils literal notranslate"><span class="pre">DOWN</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IOB_OE_MUX</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">11</span></code>: <code class="docutils literal notranslate"><span class="pre">GND</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>: <code class="docutils literal notranslate"><span class="pre">OE_MUX</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">01</span></code>: <code class="docutils literal notranslate"><span class="pre">VCC</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OUT_MUX</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">COMB</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: <code class="docutils literal notranslate"><span class="pre">FF</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OE_MUX</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">111</span></code>: <code class="docutils literal notranslate"><span class="pre">PT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">110</span></code>: <code class="docutils literal notranslate"><span class="pre">FOE0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">101</span></code>: <code class="docutils literal notranslate"><span class="pre">FOE1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">100</span></code>: <code class="docutils literal notranslate"><span class="pre">FOE2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">011</span></code>: <code class="docutils literal notranslate"><span class="pre">FOE3</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CLK_MUX</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">11</span></code>: <code class="docutils literal notranslate"><span class="pre">FCLK1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>: <code class="docutils literal notranslate"><span class="pre">FCLK2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">01</span></code>: <code class="docutils literal notranslate"><span class="pre">FCLK0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">00</span></code>: <code class="docutils literal notranslate"><span class="pre">PT</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REG_MODE</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">DFF</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: <code class="docutils literal notranslate"><span class="pre">TFF</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RST_MUX</span></code>, <code class="docutils literal notranslate"><span class="pre">SET_MUX</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">PT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: <code class="docutils literal notranslate"><span class="pre">FSR</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UIM_OE_MUX</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">11</span></code>: <code class="docutils literal notranslate"><span class="pre">OE_MUX</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>: <code class="docutils literal notranslate"><span class="pre">GND</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">01</span></code>: <code class="docutils literal notranslate"><span class="pre">VCC</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IOB_SLEW</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">SLOW</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: <code class="docutils literal notranslate"><span class="pre">FAST</span></code></p></li>
+</ul>
+</li>
+<li><p>everything else:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: false</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: true</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="fuses-fb-inputs">
+<h2>Fuses — FB inputs<a class="headerlink" href="#fuses-fb-inputs" title="Link to this heading"></a></h2>
+<p>The FB input mux configuraton is stored in rows 55-66, columns 0-8, bits 6-7.
+The exact bit assignments are irregular and should be obtained from the database.</p>
+</section>
+<section id="fuses-per-fb-bits-and-globals">
+<h2>Fuses — per-FB bits and globals<a class="headerlink" href="#fuses-per-fb-bits-and-globals" title="Link to this heading"></a></h2>
+<p>Per-FB bits are stored in rows 67-68, columns 0-8, bits 6-7.  The bits are (row, column, bit):</p>
+<ul class="simple">
+<li><p>(67, 0, 6): <code class="docutils literal notranslate"><span class="pre">ENABLE</span></code></p></li>
+<li><p>(67, 1, 6): <code class="docutils literal notranslate"><span class="pre">EXPORT_ENABLE</span></code></p></li>
+<li><p>(68, 6, 6): <code class="docutils literal notranslate"><span class="pre">PULLUP_DISABLE</span></code></p></li>
+</ul>
+<p>Global bits are stored in rows (0, 3, 4, 6, 7), columns 0-8, bits 6-7 of FB 0.  The bits are (row, column, bit):</p>
+<ul class="simple">
+<li><p>(0, 1, 6): <code class="docutils literal notranslate"><span class="pre">FSR_INV</span></code></p></li>
+<li><p>(0, 2, 6): <code class="docutils literal notranslate"><span class="pre">FCLK[0].INV</span></code></p></li>
+<li><p>(0, 3, 6): <code class="docutils literal notranslate"><span class="pre">FCLK[1].INV</span></code></p></li>
+<li><p>(0, 4, 6): <code class="docutils literal notranslate"><span class="pre">FCLK[2].INV</span></code></p></li>
+<li><p>(0, 5, 6): <code class="docutils literal notranslate"><span class="pre">FOE[0].INV</span></code></p></li>
+<li><p>(0, 6, 6): <code class="docutils literal notranslate"><span class="pre">FOE[1].INV</span></code></p></li>
+<li><p>(0, 7, 6): <code class="docutils literal notranslate"><span class="pre">FOE[2].INV</span></code></p></li>
+<li><p>(0, 8, 6): <code class="docutils literal notranslate"><span class="pre">FOE[3].INV</span></code></p></li>
+<li><p>(3, 2, 6): <code class="docutils literal notranslate"><span class="pre">FCLK[0].MUX</span></code> bit 0</p></li>
+<li><p>(3, 3, 6): <code class="docutils literal notranslate"><span class="pre">FCLK[1].MUX</span></code> bit 0</p></li>
+<li><p>(3, 4, 6): <code class="docutils literal notranslate"><span class="pre">FCLK[2].MUX</span></code> bit 0</p></li>
+<li><p>(3, 5, 6): <code class="docutils literal notranslate"><span class="pre">FOE[0].MUX</span></code> bit 0</p></li>
+<li><p>(3, 6, 6): <code class="docutils literal notranslate"><span class="pre">FOE[1].MUX</span></code> bit 0</p></li>
+<li><p>(3, 7, 6): <code class="docutils literal notranslate"><span class="pre">FOE[2].MUX</span></code> bit 0</p></li>
+<li><p>(3, 8, 6): <code class="docutils literal notranslate"><span class="pre">FOE[3].MUX</span></code> bit 0</p></li>
+<li><p>(4, 2, 6): <code class="docutils literal notranslate"><span class="pre">FCLK[0].MUX</span></code> bit 1</p></li>
+<li><p>(4, 3, 6): <code class="docutils literal notranslate"><span class="pre">FCLK[1].MUX</span></code> bit 1</p></li>
+<li><p>(4, 4, 6): <code class="docutils literal notranslate"><span class="pre">FCLK[2].MUX</span></code> bit 1</p></li>
+<li><p>(4, 5, 6): <code class="docutils literal notranslate"><span class="pre">FOE[0].MUX</span></code> bit 1</p></li>
+<li><p>(4, 6, 6): <code class="docutils literal notranslate"><span class="pre">FOE[1].MUX</span></code> bit 1</p></li>
+<li><p>(4, 7, 6): <code class="docutils literal notranslate"><span class="pre">FOE[2].MUX</span></code> bit 1</p></li>
+<li><p>(4, 8, 6): <code class="docutils literal notranslate"><span class="pre">FOE[3].MUX</span></code> bit 1</p></li>
+<li><p>(6, i, j) for i &lt; 8, j in (6, 7): <code class="docutils literal notranslate"><span class="pre">USERCODE</span></code> bit <code class="docutils literal notranslate"><span class="pre">16</span> <span class="pre">+</span> <span class="pre">(7</span> <span class="pre">-</span> <span class="pre">i)</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">(j</span> <span class="pre">-</span> <span class="pre">6)</span></code></p></li>
+<li><p>(7, i, j) for i &lt; 8, j in (6, 7): <code class="docutils literal notranslate"><span class="pre">USERCODE</span></code> bit <code class="docutils literal notranslate"><span class="pre">(7</span> <span class="pre">-</span> <span class="pre">i)</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">(j</span> <span class="pre">-</span> <span class="pre">6)</span></code></p></li>
+</ul>
+<p>The fuse combination assignments are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FCLK[0].MUX</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">11</span></code>: <code class="docutils literal notranslate"><span class="pre">NONE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>: <code class="docutils literal notranslate"><span class="pre">GCLK[1]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">01</span></code>: <code class="docutils literal notranslate"><span class="pre">GCLK[0]</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FCLK[1].MUX</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">11</span></code>: <code class="docutils literal notranslate"><span class="pre">NONE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>: <code class="docutils literal notranslate"><span class="pre">GCLK[2]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">01</span></code>: <code class="docutils literal notranslate"><span class="pre">GCLK[1]</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FCLK[2].MUX</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">11</span></code>: <code class="docutils literal notranslate"><span class="pre">NONE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>: <code class="docutils literal notranslate"><span class="pre">GCLK[0]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">01</span></code>: <code class="docutils literal notranslate"><span class="pre">GCLK[2]</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE[0].MUX</span></code> (small device):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">11</span></code>: <code class="docutils literal notranslate"><span class="pre">NONE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>: <code class="docutils literal notranslate"><span class="pre">GOE[1]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">01</span></code>: <code class="docutils literal notranslate"><span class="pre">GOE[0]</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE[1].MUX</span></code> (small device):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">11</span></code>: <code class="docutils literal notranslate"><span class="pre">NONE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>: <code class="docutils literal notranslate"><span class="pre">GOE[0]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">01</span></code>: <code class="docutils literal notranslate"><span class="pre">GOE[1]</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE[0].MUX</span></code> (large device):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">11</span></code>: <code class="docutils literal notranslate"><span class="pre">NONE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>: <code class="docutils literal notranslate"><span class="pre">GOE[1]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">01</span></code>: <code class="docutils literal notranslate"><span class="pre">GOE[0]</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE[1].MUX</span></code> (large device):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">11</span></code>: <code class="docutils literal notranslate"><span class="pre">NONE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>: <code class="docutils literal notranslate"><span class="pre">GOE[2]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">01</span></code>: <code class="docutils literal notranslate"><span class="pre">GOE[1]</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE[2].MUX</span></code> (large device):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">11</span></code>: <code class="docutils literal notranslate"><span class="pre">NONE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>: <code class="docutils literal notranslate"><span class="pre">GOE[3]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">01</span></code>: <code class="docutils literal notranslate"><span class="pre">GOE[2]</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE[3].MUX</span></code> (large device):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">11</span></code>: <code class="docutils literal notranslate"><span class="pre">NONE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10</span></code>: <code class="docutils literal notranslate"><span class="pre">GOE[0]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">01</span></code>: <code class="docutils literal notranslate"><span class="pre">GOE[3]</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">USERCODE</span></code>: each bit stored inverted</p></li>
+<li><p>everything else:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: false</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: true</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="fuses-input-buffer-enable">
+<h2>Fuses — input buffer enable<a class="headerlink" href="#fuses-input-buffer-enable" title="Link to this heading"></a></h2>
+<p>On XC95288, the <code class="docutils literal notranslate"><span class="pre">IBUF_UIM_ENABLE</span></code> fuses are stored in rows (1, 2, 5, 8, 9),
+columns 0-8, bits 6-7 of FBs (0, 1, 14, 15) in an irregular manner.  Each
+fuse is duplicated twice: once in FBs (0, 1) and once in FBs (14, 15).
+The purpose of this duplication is unknown.  Consult the database for exact
+bit assignments.</p>
+</section>
+<section id="fuses-protection-bits">
+<h2>Fuses — protection bits<a class="headerlink" href="#fuses-protection-bits" title="Link to this heading"></a></h2>
+<p>The protection bits are stored as follows (row, column, bit) in every FB:</p>
+<ul class="simple">
+<li><p>(11, 3, 6): <code class="docutils literal notranslate"><span class="pre">READ_PROT_A</span></code></p></li>
+<li><p>(68, 3, 6): <code class="docutils literal notranslate"><span class="pre">READ_PROT_B</span></code></p></li>
+<li><p>(68, 0, 6): <code class="docutils literal notranslate"><span class="pre">WRITE_PROT</span></code></p></li>
+</ul>
+</section>
+<section id="fuses-uim-wire-and">
+<h2>Fuses — UIM wire-AND<a class="headerlink" href="#fuses-uim-wire-and" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">FB[i].IM[j].UIM.FB[k].MC[l]</span></code> fuse is stored at:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>subarea: <code class="docutils literal notranslate"><span class="pre">k</span></code></p></li>
+<li><p>row: <code class="docutils literal notranslate"><span class="pre">l</span></code></p></li>
+<li><p>column: <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">%</span> <span class="pre">5</span></code></p></li>
+<li><p>bit: <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">//</span> <span class="pre">5</span></code></p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="structure.html" class="btn btn-neutral float-left" title="Device structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bitstream-xc9500xl.html" class="btn btn-neutral float-right" title="Bitstream structure — XC9500XL/XV" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
