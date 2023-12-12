@@ -11,7 +11,10 @@ FPGM/FPGMI time: 160µs
 
 FERASE/FBULK time: 1300000µs
 
-.. list-table:: I/O pins
+I/O pins
+========
+
+.. list-table::
    :header-rows: 1
 
    - - Function
@@ -1355,3 +1358,102 @@ FERASE/FBULK time: 1300000µs
        Y25
 
        Y3
+
+Speed data
+==========
+
+.. list-table::
+   :header-rows: 1
+
+   - - Timing parameter
+     - xc95216-10
+     - xc95216-15
+     - xc95216-20
+   - - DEL_CLK_Q
+     - 500
+     - 500
+     - 500
+   - - DEL_D_Q_COMB
+     - 1000
+     - 3000
+     - 4000
+   - - DEL_EXP_D
+     - 1000
+     - 1000
+     - 1500
+   - - DEL_EXP_EXP
+     - 1000
+     - 1000
+     - 1500
+   - - DEL_IBUF_FCLK
+     - 2500
+     - 3000
+     - 3000
+   - - DEL_IBUF_FOE
+     - 6000
+     - 11000
+     - 16000
+   - - DEL_IBUF_FSR
+     - 6000
+     - 7500
+     - 9500
+   - - DEL_IBUF_IMUX
+     - 3500
+     - 4500
+     - 6500
+   - - DEL_IMUX_D_HP
+     - 2500
+     - 3000
+     - 3000
+   - - DEL_IMUX_D_LP
+     - 11000
+     - 11500
+     - 11500
+   - - DEL_IMUX_PT_CLK
+     - 3000
+     - 2500
+     - 2500
+   - - DEL_IMUX_PT_OE
+     - 6500
+     - 9500
+     - 11500
+   - - DEL_OBUF_FAST
+     - 3000
+     - 4500
+     - 6500
+   - - DEL_OBUF_SLOW
+     - 7500
+     - 9500
+     - 12000
+   - - DEL_SR_Q
+     - 7000
+     - 8000
+     - 8000
+   - - DEL_UIM_IMUX
+     - 9500
+     - 11000
+     - 13000
+   - - HOLD_D_CLK
+     - 3500
+     - 4500
+     - 6500
+   - - RECOVERY_SR_CLK
+     - 10000
+     - 10000
+     - 10000
+   - - SETUP_D_CLK
+     - 2500
+     - 3500
+     - 3500
+   - - WIDTH_CLK
+     - 4500
+     - 5000
+     - 5500
+   - - WIDTH_CLK_PT
+     - 4500
+     - 5000
+     - 5500
+   - - WIDTH_SR
+     - 7500
+     - 8000
+     - 8000

@@ -11,7 +11,10 @@ FPGM/FPGMI time: 20000µs
 
 FERASE/FBULK time: 200000µs
 
-.. list-table:: I/O pins
+I/O pins
+========
+
+.. list-table::
    :header-rows: 1
 
    - - Function
@@ -748,3 +751,145 @@ FERASE/FBULK time: 200000µs
      - \-
      - \-
      - \-
+
+Speed data
+==========
+
+.. list-table::
+   :header-rows: 1
+
+   - - Timing parameter
+     - xc95144xl-5
+     - xc95144xl-7
+     - xc95144xl-10
+     - xa95144xl-15
+   - - DEL_CLK_Q
+     - 400
+     - 500
+     - 1000
+     - 1000
+   - - DEL_D_Q_COMB
+     - 500
+     - 1300
+     - 1700
+     - 1700
+   - - DEL_EXP_D
+     - 700
+     - 800
+     - 1000
+     - 1000
+   - - DEL_EXP_EXP
+     - 300
+     - 300
+     - 400
+     - 400
+   - - DEL_IBUF_FCLK
+     - 1100
+     - 1500
+     - 1800
+     - 1800
+   - - DEL_IBUF_FOE
+     - 4000
+     - 5000
+     - 7000
+     - 7000
+   - - DEL_IBUF_FSR
+     - 2000
+     - 3100
+     - 4500
+     - 4500
+   - - DEL_IBUF_IMUX
+     - 1500
+     - 2300
+     - 3500
+     - 3500
+   - - DEL_IMUX_D_HP
+     - 1000
+     - 1400
+     - 1800
+     - 7300
+   - - DEL_IMUX_D_LP
+     - 5000
+     - 6400
+     - 7300
+     - 7300
+   - - DEL_IMUX_PT_CE
+     - 1000
+     - 1400
+     - 1800
+     - 1800
+   - - DEL_IMUX_PT_CLK
+     - 1600
+     - 2400
+     - 2700
+     - 2700
+   - - DEL_IMUX_PT_OE
+     - 5500
+     - 7200
+     - 7500
+     - 7500
+   - - DEL_IMUX_PT_SR
+     - 1000
+     - 1400
+     - 1800
+     - 1800
+   - - DEL_OBUF_FAST
+     - 2000
+     - 2500
+     - 3000
+     - 3000
+   - - DEL_OBUF_SLOW
+     - 5000
+     - 6500
+     - 7500
+     - 7500
+   - - DEL_SR_Q
+     - 6000
+     - 6400
+     - 7000
+     - 7000
+   - - DEL_UIM_IMUX
+     - 1900
+     - 3500
+     - 4200
+     - 4200
+   - - HOLD_CE_CLK
+     - 1400
+     - 2200
+     - 3500
+     - 3500
+   - - HOLD_D_CLK
+     - 1400
+     - 2200
+     - 3500
+     - 3500
+   - - RECOVERY_SR_CLK
+     - 5000
+     - 7500
+     - 10000
+     - 10000
+   - - SETUP_CE_CLK
+     - 2300
+     - 2600
+     - 3000
+     - 3000
+   - - SETUP_D_CLK
+     - 2300
+     - 2600
+     - 3000
+     - 3000
+   - - WIDTH_CLK
+     - 2800
+     - 4000
+     - 4500
+     - 4500
+   - - WIDTH_CLK_PT
+     - 5000
+     - 6500
+     - 7000
+     - 7000
+   - - WIDTH_SR
+     - 5000
+     - 6500
+     - 7000
+     - 7000

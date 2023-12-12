@@ -53,7 +53,11 @@
 <li class="toctree-l2 current"><a class="reference internal" href="db-devices.html">Database — devices</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="db-device-xc9536.html">XC9536</a></li>
 <li class="toctree-l3"><a class="reference internal" href="db-device-xc9572.html">XC9572</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">XC95108</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">XC95108</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#i-o-pins">I/O pins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#speed-data">Speed data</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="db-device-xc95144.html">XC95144</a></li>
 <li class="toctree-l3"><a class="reference internal" href="db-device-xc95216.html">XC95216</a></li>
 <li class="toctree-l3"><a class="reference internal" href="db-device-xc95288.html">XC95288</a></li>
@@ -107,8 +111,9 @@
 <p>I/O bank count: 1</p>
 <p>FPGM/FPGMI time: 160µs</p>
 <p>FERASE/FBULK time: 1300000µs</p>
-<table class="docutils align-default" id="id1">
-<caption><span class="caption-text">I/O pins</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<section id="i-o-pins">
+<h2>I/O pins<a class="headerlink" href="#i-o-pins" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Function</p></th>
 <th class="head"><p>Bank</p></th>
@@ -1022,6 +1027,154 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section id="speed-data">
+<h2>Speed data<a class="headerlink" href="#speed-data" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Timing parameter</p></th>
+<th class="head"><p>xc95108-7</p></th>
+<th class="head"><p>xc95108-10</p></th>
+<th class="head"><p>xc95108-15</p></th>
+<th class="head"><p>xc95108-20</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DEL_CLK_Q</p></td>
+<td><p>500</p></td>
+<td><p>500</p></td>
+<td><p>500</p></td>
+<td><p>500</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEL_D_Q_COMB</p></td>
+<td><p>500</p></td>
+<td><p>1000</p></td>
+<td><p>3000</p></td>
+<td><p>4000</p></td>
+</tr>
+<tr class="row-even"><td><p>DEL_EXP_D</p></td>
+<td><p>1000</p></td>
+<td><p>1000</p></td>
+<td><p>1000</p></td>
+<td><p>1500</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEL_EXP_EXP</p></td>
+<td><p>1000</p></td>
+<td><p>1000</p></td>
+<td><p>1000</p></td>
+<td><p>1500</p></td>
+</tr>
+<tr class="row-even"><td><p>DEL_IBUF_FCLK</p></td>
+<td><p>1500</p></td>
+<td><p>2500</p></td>
+<td><p>3000</p></td>
+<td><p>3000</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEL_IBUF_FOE</p></td>
+<td><p>5500</p></td>
+<td><p>6000</p></td>
+<td><p>11000</p></td>
+<td><p>16000</p></td>
+</tr>
+<tr class="row-even"><td><p>DEL_IBUF_FSR</p></td>
+<td><p>4500</p></td>
+<td><p>6000</p></td>
+<td><p>7500</p></td>
+<td><p>9500</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEL_IBUF_IMUX</p></td>
+<td><p>2500</p></td>
+<td><p>3500</p></td>
+<td><p>4500</p></td>
+<td><p>6500</p></td>
+</tr>
+<tr class="row-even"><td><p>DEL_IMUX_D_HP</p></td>
+<td><p>2000</p></td>
+<td><p>2500</p></td>
+<td><p>3000</p></td>
+<td><p>3000</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEL_IMUX_D_LP</p></td>
+<td><p>10000</p></td>
+<td><p>11000</p></td>
+<td><p>11500</p></td>
+<td><p>11500</p></td>
+</tr>
+<tr class="row-even"><td><p>DEL_IMUX_PT_CLK</p></td>
+<td><p>3000</p></td>
+<td><p>3000</p></td>
+<td><p>2500</p></td>
+<td><p>2500</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEL_IMUX_PT_OE</p></td>
+<td><p>7000</p></td>
+<td><p>6500</p></td>
+<td><p>9500</p></td>
+<td><p>11500</p></td>
+</tr>
+<tr class="row-even"><td><p>DEL_OBUF_FAST</p></td>
+<td><p>2500</p></td>
+<td><p>3000</p></td>
+<td><p>4500</p></td>
+<td><p>6500</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEL_OBUF_SLOW</p></td>
+<td><p>6500</p></td>
+<td><p>7500</p></td>
+<td><p>9500</p></td>
+<td><p>12000</p></td>
+</tr>
+<tr class="row-even"><td><p>DEL_SR_Q</p></td>
+<td><p>6500</p></td>
+<td><p>7000</p></td>
+<td><p>8000</p></td>
+<td><p>8000</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEL_UIM_IMUX</p></td>
+<td><p>8000</p></td>
+<td><p>9500</p></td>
+<td><p>11000</p></td>
+<td><p>13000</p></td>
+</tr>
+<tr class="row-even"><td><p>HOLD_D_CLK</p></td>
+<td><p>3000</p></td>
+<td><p>3500</p></td>
+<td><p>4500</p></td>
+<td><p>6500</p></td>
+</tr>
+<tr class="row-odd"><td><p>RECOVERY_SR_CLK</p></td>
+<td><p>7500</p></td>
+<td><p>10000</p></td>
+<td><p>10000</p></td>
+<td><p>10000</p></td>
+</tr>
+<tr class="row-even"><td><p>SETUP_D_CLK</p></td>
+<td><p>1500</p></td>
+<td><p>2500</p></td>
+<td><p>3500</p></td>
+<td><p>3500</p></td>
+</tr>
+<tr class="row-odd"><td><p>WIDTH_CLK</p></td>
+<td><p>4000</p></td>
+<td><p>4500</p></td>
+<td><p>5000</p></td>
+<td><p>5500</p></td>
+</tr>
+<tr class="row-even"><td><p>WIDTH_CLK_PT</p></td>
+<td><p>4000</p></td>
+<td><p>4500</p></td>
+<td><p>5000</p></td>
+<td><p>5500</p></td>
+</tr>
+<tr class="row-odd"><td><p>WIDTH_SR</p></td>
+<td><p>7000</p></td>
+<td><p>7500</p></td>
+<td><p>8000</p></td>
+<td><p>8000</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 
 
