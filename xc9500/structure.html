@@ -203,7 +203,7 @@ with the wire-AND path, but much faster.</p>
 <ul>
 <li><p>mux fuses (<code class="docutils literal notranslate"><span class="pre">FB[i].IM[j].MUX</span></code>) select what is routed to the input.  The combinations include:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: the input is a constant ??? (for unused inputs)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: the input is a constant 0 (for unused inputs)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">UIM</span></code>: the input is a wire-AND of MC outputs (and the second set of fuses is relevant)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FBK_MC{k}</span></code>: the input is routed through fast feedback path from <code class="docutils literal notranslate"><span class="pre">FB[i].MC[k].OUT</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">PAD_FB{k}_MC{l}</span></code>: the input is routed from an input buffer <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].IOB.I</span></code></p></li>
@@ -216,14 +216,6 @@ depends only on the <code class="docutils literal notranslate"><span class="pre"
 wire-AND.  If a given fuse is set to 1 (ie. <em>not</em> programmed), it means that <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].OUT_UIM</span></code>
 is included in the product.  These fuses are only relevant when the mux fuse set is set to <code class="docutils literal notranslate"><span class="pre">UIM</span></code>.</p></li>
 </ul>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>check <code class="docutils literal notranslate"><span class="pre">NONE</span></code> semantics</p>
-</div>
-<div class="admonition-todo admonition" id="id2">
-<p class="admonition-title">Todo</p>
-<p>verify <code class="docutils literal notranslate"><span class="pre">FBK</span></code> doesn’t go through OE and inversion</p>
-</div>
 </section>
 <section id="uim-and-fb-inputs-xc9500xl-xv">
 <h2>UIM and FB inputs — XC9500XL/XV<a class="headerlink" href="#uim-and-fb-inputs-xc9500xl-xv" title="Link to this heading"></a></h2>
@@ -233,7 +225,7 @@ is not really universal, and is much more of a classic CPLD design.</p>
 <ul>
 <li><p>mux fuses (<code class="docutils literal notranslate"><span class="pre">FB[i].IM[j].MUX</span></code>) select what is routed to the input.  The combinations include:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: the input is a constant ??? (for unused inputs)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: the input is disabled and will have indeterminate state (for unused inputs)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FB{k}_MC{l}</span></code>: the input is routed from the macrocell output <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].OUT</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">PAD_FB{k}_MC{l}</span></code>: the input is routed from the input buffer <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].IOB.I</span></code></p></li>
 </ul>
@@ -242,23 +234,17 @@ FBs within a single device.  In other words, the set of allowed values for these
 depends only on the <code class="docutils literal notranslate"><span class="pre">j</span></code> coordinate, but not on <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
 </li>
 </ul>
-<div class="admonition-todo admonition" id="id3">
-<p class="admonition-title">Todo</p>
-<p>check <code class="docutils literal notranslate"><span class="pre">NONE</span></code> semantics</p>
-</div>
 </section>
 <section id="fb-global-fuses">
 <h2>FB global fuses<a class="headerlink" href="#fb-global-fuses" title="Link to this heading"></a></h2>
 <p>Each function block has two fuses controlling the entire FB:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].ENABLE</span></code>: function block enable; needs to be programmed to use this function block</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].EXPORT_ENABLE</span></code>: function block PT export enable; needs to be programmed to use PT
-import/export within this function block</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].ENABLE</span></code>: function block enable; needs to be programmed to use this function block;
+when not programmed, the product term circuitry will be powered off and all PTs will read as <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].EXPORT_ENABLE</span></code>: function block PT export enable; should be programmed to use PT
+import/export within this function block; disabling this masks MC 0 upwards chain export, breaking
+a combinatorial loop that would otherwise form when no exports are used within a FB</p></li>
 </ul>
-<div class="admonition-todo admonition" id="id4">
-<p class="admonition-title">Todo</p>
-<p>determine what these do exactly</p>
-</div>
 </section>
 <section id="product-terms">
 <h2>Product terms<a class="headerlink" href="#product-terms" title="Link to this heading"></a></h2>
@@ -301,24 +287,30 @@ means that an unprogrammed XC9500 chip has all product term inputs enabled, whil
 has all product term inputs disabled.</p>
 <section id="pt-import-export">
 <h3>PT import/export<a class="headerlink" href="#pt-import-export" title="Link to this heading"></a></h3>
-<p>Product terms can be borrowed between neighbouring MCs within a FB.  To this end, each MC has two outputs,
-<code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].EXPORT_{UP|DOWN}</span></code>, and two inputs, <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IMPORT_{UP|DOWN}</span></code>.  The “down” direction
+<p>Product terms can be borrowed between neighbouring MCs within a FB.  To this end, each MC has three outputs,
+<code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].EXPORT{_SUM|_CHAIN_UP|_CHAIN_DOWN}</span></code>, and four inputs, <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IMPORT_{CHAIN|SUM}_{UP|DOWN}</span></code>.  The “down” direction
 corresponds to exporting PTs toward lower-numbered MCs (with a wraparound from 0 to 17), and the “up”
 direction corresponds to exporting PTs towards higher-numbered MCs (with a wraparound from 17 to 0).
 Accordingly, we have:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">IMPORT_DOWN</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[(</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">18</span><span class="p">]</span><span class="o">.</span><span class="n">EXPORT_DOWN</span><span class="p">;</span>
-<span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">IMPORT_UP</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[(</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">18</span><span class="p">]</span><span class="o">.</span><span class="n">EXPORT_UP</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">IMPORT_CHAIN_DOWN</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[(</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">18</span><span class="p">]</span><span class="o">.</span><span class="n">EXPORT_CHAIN_DOWN</span><span class="p">;</span>
+<span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">IMPORT_CHAIN_UP</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[(</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">18</span><span class="p">]</span><span class="o">.</span><span class="n">EXPORT_CHAIN_UP</span><span class="p">;</span>
+<span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">IMPORT_SUM_DOWN</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[(</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">18</span><span class="p">]</span><span class="o">.</span><span class="n">EXPORT_SUM</span><span class="p">;</span>
+<span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">IMPORT_SUM_UP</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[(</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">18</span><span class="p">]</span><span class="o">.</span><span class="n">EXPORT_SUM</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>A MC can only export product terms in one direction (up or down).
+<p>For chaining purposes, a MC can only export product terms in one direction (up or down).
 Product terms can be imported from both directions at once.
 Imported terms from a given direction can be used for either the main sum term, or for further export, but not both at once.</p>
+<p>Note that export behavior is slightly different depending on whether the importing MC allocates the imported
+terms towards its own sum term or reexport: if <code class="docutils literal notranslate"><span class="pre">SUM</span></code> allocation is selected, the exporting MC’s PTs are always
+visible.  However, if <code class="docutils literal notranslate"><span class="pre">EXPORT</span></code> allocation is selected, the exporting MC’s PTs are visible only if its <code class="docutils literal notranslate"><span class="pre">EXPORT_DIR</span></code>
+matches the import direction.</p>
 <p>PT import/export is controlled by the following per-MC fuses:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].EXPORT_DIR</span></code>: one of:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">DOWN</span></code>: exports PTs downwards</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">UP</span></code>: exports PTs upwards</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOWN</span></code>: enables export through <code class="docutils literal notranslate"><span class="pre">EXPORT_CHAIN_DOWN</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UP</span></code>: enables export through <code class="docutils literal notranslate"><span class="pre">EXPORT_CHAIN_UP</span></code></p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IMPORT_UP_ALLOC</span></code>: one of:</p>
@@ -336,22 +328,18 @@ Imported terms from a given direction can be used for either the main sum term, 
 </ul>
 <p>Additionally, the per-FB <code class="docutils literal notranslate"><span class="pre">FB[i].EXPORT_ENABLE</span></code> fuse needs to be set if any term within a FB is exported or imported.</p>
 <p>Export works as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FB[i].MC[j].EXPORT =
-    (FB[i].MC[j].IMPORT_UP_ALLOC == EXPORT ? FB[i].MC[j].IMPORT_UP : 0) |
-    (FB[i].MC[j].IMPORT_DOWN_ALLOC == EXPORT ? FB[i].MC[j].IMPORT_DOWN : 0) |
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FB[i].MC[j].EXPORT_SUM =
+    (FB[i].MC[j].IMPORT_UP_ALLOC == EXPORT ? FB[i].MC[j].IMPORT_CHAIN_UP : 0) |
+    (FB[i].MC[j].IMPORT_DOWN_ALLOC == EXPORT ? FB[i].MC[j].IMPORT_CHAIN_DOWN : 0) |
     (FB[i].MC[j].PT[0].ALLOC == EXPORT ? FB[i].MC[j].PT[0] : 0) |
     (FB[i].MC[j].PT[1].ALLOC == EXPORT ? FB[i].MC[j].PT[1] : 0) |
     (FB[i].MC[j].PT[2].ALLOC == EXPORT ? FB[i].MC[j].PT[2] : 0) |
     (FB[i].MC[j].PT[3].ALLOC == EXPORT ? FB[i].MC[j].PT[3] : 0) |
     (FB[i].MC[j].PT[4].ALLOC == EXPORT ? FB[i].MC[j].PT[4] : 0);
 
-FB[i].MC[j].EXPORT_UP = (FB[i].MC[j].EXPORT_DIR == UP ? FB[i].MC[j].EXPORT : 0);
-FB[i].MC[j].EXPORT_DOWN = (FB[i].MC[j].EXPORT_DIR == DOWN ? FB[i].MC[j].EXPORT : 0);
+FB[i].MC[j].EXPORT_CHAIN_UP = ((FB[i].MC[j].EXPORT_DIR == UP &amp;&amp; (FB[i].EXPORT_ENABLE || j != 0)) ? FB[i].MC[j].EXPORT_SUM : 0);
+FB[i].MC[j].EXPORT_CHAIN_DOWN = (FB[i].MC[j].EXPORT_DIR == DOWN ? FB[i].MC[j].EXPORT_SUM : 0);
 </pre></div>
-</div>
-<div class="admonition-todo admonition" id="id5">
-<p class="admonition-title">Todo</p>
-<p>verify all of the above</p>
 </div>
 </section>
 </section>
@@ -359,8 +347,8 @@ FB[i].MC[j].EXPORT_DOWN = (FB[i].MC[j].EXPORT_DIR == DOWN ? FB[i].MC[j].EXPORT :
 <h2>Sum term, XOR gate<a class="headerlink" href="#sum-term-xor-gate" title="Link to this heading"></a></h2>
 <p>Each macrocell has a main sum term, which includes all product terms and imports routed towards it:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FB[i].MC[j].SUM =
-    (FB[i].MC[j].IMPORT_UP_ALLOC == SUM ? FB[i].MC[j].IMPORT_UP : 0) |
-    (FB[i].MC[j].IMPORT_DOWN_ALLOC == SUM ? FB[i].MC[j].IMPORT_DOWN : 0) |
+    (FB[i].MC[j].IMPORT_UP_ALLOC == SUM ? FB[i].MC[j].IMPORT_SUM_UP : 0) |
+    (FB[i].MC[j].IMPORT_DOWN_ALLOC == SUM ? FB[i].MC[j].IMPORT_SUM_DOWN : 0) |
     (FB[i].MC[j].PT[0].ALLOC == SUM ? FB[i].MC[j].PT[0] : 0) |
     (FB[i].MC[j].PT[1].ALLOC == SUM ? FB[i].MC[j].PT[1] : 0) |
     (FB[i].MC[j].PT[2].ALLOC == SUM ? FB[i].MC[j].PT[2] : 0) |
@@ -492,10 +480,6 @@ always @(posedge FB[i].MC[j].CLK, posedge FB[i].MC[j].RST_MUX, posedge FB[i].MC[
         FB[i].MC[j].FF = FB[i].MC[j].XOR;
 </pre></div>
 </div>
-<div class="admonition-todo admonition" id="id6">
-<p class="admonition-title">Todo</p>
-<p>verify (in particular, CE vs RST/SET shenanigans)</p>
-</div>
 </section>
 <section id="macrocell-output-xc9500">
 <h2>Macrocell output — XC9500<a class="headerlink" href="#macrocell-output-xc9500" title="Link to this heading"></a></h2>
@@ -534,7 +518,7 @@ It can be used for the IOB output buffer, for UIM output, or both:</p>
 </ul>
 <p>The output to UIM additionally goes through (emulated) output enable logic, which can be used
 to implement emulated on-chip tristate buses in conjunction with the UIM wire-AND logic:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FB[i].MC[j].OUT_UIM = FB[i].MC[j].UIM_OE ? FB[i].MC[j].OUT ^ FB[i].MC[j].UIM_OUT_INV : 1;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FB[i].MC[j].OUT_UIM = (FB[i].MC[j].UIM_OE ? FB[i].MC[j].OUT : 1) ^ FB[i].MC[j].UIM_OUT_INV;
 </pre></div>
 </div>
 <p>The fuses involved are:</p>
@@ -567,10 +551,6 @@ to implement emulated on-chip tristate buses in conjunction with the UIM wire-AN
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].UIM_OUT_INV</span></code>: if programmed, the output to UIM is inverted</p></li>
 </ul>
-<div class="admonition-todo admonition" id="id7">
-<p class="admonition-title">Todo</p>
-<p>verify all of the above (in particular, feedback path vs OE and UIM out)</p>
-</div>
 </section>
 <section id="macrocell-output-xc9500xl-xv">
 <h2>Macrocell output — XC9500XL/XV<a class="headerlink" href="#macrocell-output-xc9500xl-xv" title="Link to this heading"></a></h2>
@@ -638,7 +618,7 @@ it is directly connected to the UIM.  On XC95288, there are additional enable fu
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IBUF_UIM_ENABLE</span></code> (XC95288 only): when programmed, the input buffer is active and connected to UIM</p></li>
 </ul>
-<div class="admonition-todo admonition" id="id8">
+<div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
 <p>figure out the IBUF_ENABLE thing</p>
 </div>
@@ -699,13 +679,13 @@ on the device (which can also be used as normal I/O).  The networks are:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">FCLK[i].MUX</span></code>: selects the input routed to <code class="docutils literal notranslate"><span class="pre">FCLK[i]</span></code></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: const ???</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: const 0</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">GCLK[i]</span></code>: the corresponding <code class="docutils literal notranslate"><span class="pre">GCLK</span></code> pad</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FOE[i].MUX</span></code>: selects the input routed to <code class="docutils literal notranslate"><span class="pre">FOE[i]</span></code></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: const ???</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: const 0</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FOE[i]</span></code>: the corresponding <code class="docutils literal notranslate"><span class="pre">FOE</span></code> pad</p></li>
 </ul>
 <p>These fuses have two variants in the database: the <code class="docutils literal notranslate"><span class="pre">SMALL</span></code> variant is applicable
@@ -716,11 +696,7 @@ with 4 GOE pins.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">FSR.INV</span></code>: if programmed, the <code class="docutils literal notranslate"><span class="pre">GSR</span></code> pad is inverted before driving <code class="docutils literal notranslate"><span class="pre">FSR</span></code> network</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FOE[i].INV</span></code>: if programmed, the <code class="docutils literal notranslate"><span class="pre">GOE</span></code> pad is inverted before driving <code class="docutils literal notranslate"><span class="pre">FOE[i]</span></code> network</p></li>
 </ul>
-<div class="admonition-todo admonition" id="id9">
-<p class="admonition-title">Todo</p>
-<p>consts</p>
-</div>
-<div class="admonition-todo admonition" id="id10">
+<div class="admonition-todo admonition" id="id2">
 <p class="admonition-title">Todo</p>
 <p>no, really, what is it with the XC9572 GOE mapping varying between packages</p>
 </div>
@@ -732,15 +708,11 @@ Thus the <code class="docutils literal notranslate"><span class="pre">GCLK[i]</s
 an enable fuse.</p>
 <p>The fuses involved are:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">FCLK[i].EN</span></code>: if programmed, the given <code class="docutils literal notranslate"><span class="pre">FCLK</span></code> network is active and connected to the <code class="docutils literal notranslate"><span class="pre">GCLK[i]</span></code> pad</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FOE[i].EN</span></code>: if programmed, the given <code class="docutils literal notranslate"><span class="pre">FOE</span></code> network is active and connected to the <code class="docutils literal notranslate"><span class="pre">GOE[i]</span></code> pad</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FCLK[i].EN</span></code>: if programmed, the given <code class="docutils literal notranslate"><span class="pre">FCLK</span></code> network is active and connected to the <code class="docutils literal notranslate"><span class="pre">GCLK[i]</span></code> pad; otherwise, it’s const-0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE[i].EN</span></code>: if programmed, the given <code class="docutils literal notranslate"><span class="pre">FOE</span></code> network is active and connected to the <code class="docutils literal notranslate"><span class="pre">GOE[i]</span></code> pad; otherwise, it’s const-0</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FSR.INV</span></code>: if programmed, the <code class="docutils literal notranslate"><span class="pre">GSR</span></code> pad is inverted before driving <code class="docutils literal notranslate"><span class="pre">FSR</span></code> network</p></li>
 </ul>
 <p>The <code class="docutils literal notranslate"><span class="pre">FSR</span></code> network is always enabled.</p>
-<div class="admonition-todo admonition" id="id11">
-<p class="admonition-title">Todo</p>
-<p>what does disabled network do</p>
-</div>
 </section>
 <section id="misc-configuration">
 <h2>Misc configuration<a class="headerlink" href="#misc-configuration" title="Link to this heading"></a></h2>
