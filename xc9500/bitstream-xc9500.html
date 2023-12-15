@@ -255,20 +255,20 @@ columns 0-8 of rows 12-54 of the main area.  The formulas are as follows:</p>
 </ul>
 <table class="docutils align-default prjcombine-tile">
 <tr><th>Row</th><th>Bit</th></tr>
-<tr><td>12</td><td><a href="#bits-mc-PT.0.ALLOC">PT.0.ALLOC[0]</a></td></tr>
-<tr><td>13</td><td><a href="#bits-mc-PT.0.ALLOC">PT.0.ALLOC[1]</a></td></tr>
-<tr><td>14</td><td><a href="#bits-mc-PT.1.ALLOC">PT.1.ALLOC[0]</a></td></tr>
-<tr><td>15</td><td><a href="#bits-mc-PT.1.ALLOC">PT.1.ALLOC[1]</a></td></tr>
-<tr><td>16</td><td><a href="#bits-mc-PT.2.ALLOC">PT.2.ALLOC[0]</a></td></tr>
-<tr><td>17</td><td><a href="#bits-mc-PT.2.ALLOC">PT.2.ALLOC[1]</a></td></tr>
-<tr><td>18</td><td><a href="#bits-mc-PT.3.ALLOC">PT.3.ALLOC[0]</a></td></tr>
-<tr><td>19</td><td><a href="#bits-mc-PT.3.ALLOC">PT.3.ALLOC[1]</a></td></tr>
-<tr><td>20</td><td><a href="#bits-mc-PT.4.ALLOC">PT.4.ALLOC[0]</a></td></tr>
-<tr><td>21</td><td><a href="#bits-mc-PT.4.ALLOC">PT.4.ALLOC[1]</a></td></tr>
+<tr><td>12</td><td><a href="#bits-mc-PT[0].ALLOC">PT[0].ALLOC[0]</a></td></tr>
+<tr><td>13</td><td><a href="#bits-mc-PT[0].ALLOC">PT[0].ALLOC[1]</a></td></tr>
+<tr><td>14</td><td><a href="#bits-mc-PT[1].ALLOC">PT[1].ALLOC[0]</a></td></tr>
+<tr><td>15</td><td><a href="#bits-mc-PT[1].ALLOC">PT[1].ALLOC[1]</a></td></tr>
+<tr><td>16</td><td><a href="#bits-mc-PT[2].ALLOC">PT[2].ALLOC[0]</a></td></tr>
+<tr><td>17</td><td><a href="#bits-mc-PT[2].ALLOC">PT[2].ALLOC[1]</a></td></tr>
+<tr><td>18</td><td><a href="#bits-mc-PT[3].ALLOC">PT[3].ALLOC[0]</a></td></tr>
+<tr><td>19</td><td><a href="#bits-mc-PT[3].ALLOC">PT[3].ALLOC[1]</a></td></tr>
+<tr><td>20</td><td><a href="#bits-mc-PT[4].ALLOC">PT[4].ALLOC[0]</a></td></tr>
+<tr><td>21</td><td><a href="#bits-mc-PT[4].ALLOC">PT[4].ALLOC[1]</a></td></tr>
 <tr><td>22</td><td><a href="#bits-mc-INV">~INV</a></td></tr>
 <tr><td>23</td><td><a href="#bits-mc-IMPORT_UP_ALLOC">IMPORT_UP_ALLOC</a></td></tr>
 <tr><td>24</td><td><a href="#bits-mc-IMPORT_DOWN_ALLOC">IMPORT_DOWN_ALLOC</a></td></tr>
-<tr><td>25</td><td><a href="#bits-mc-EXPORT_DIR">EXPORT_DIR</a></td></tr>
+<tr><td>25</td><td><a href="#bits-mc-EXPORT_CHAIN_DIR">EXPORT_CHAIN_DIR</a></td></tr>
 <tr><td>26</td><td><a href="#bits-mc-SUM_HP">~SUM_HP</a></td></tr>
 <tr><td>27</td><td><a href="#bits-mc-IOB_OE_MUX">IOB_OE_MUX[0]</a></td></tr>
 <tr><td>28</td><td><a href="#bits-mc-IOB_OE_MUX">IOB_OE_MUX[1]</a></td></tr>
@@ -293,40 +293,68 @@ columns 0-8 of rows 12-54 of the main area.  The formulas are as follows:</p>
 <tr><td>47</td><td>-</td></tr>
 <tr><td>48</td><td><a href="#bits-mc-IOB_GND">~IOB_GND</a></td></tr>
 <tr><td>49</td><td><a href="#bits-mc-IOB_SLEW">IOB_SLEW</a></td></tr>
-<tr><td>50</td><td><a href="#bits-mc-PT.0.HP">~PT.0.HP</a></td></tr>
-<tr><td>51</td><td><a href="#bits-mc-PT.1.HP">~PT.1.HP</a></td></tr>
-<tr><td>52</td><td><a href="#bits-mc-PT.2.HP">~PT.2.HP</a></td></tr>
-<tr><td>53</td><td><a href="#bits-mc-PT.3.HP">~PT.3.HP</a></td></tr>
-<tr><td>54</td><td><a href="#bits-mc-PT.4.HP">~PT.4.HP</a></td></tr>
+<tr><td>50</td><td><a href="#bits-mc-PT[0].HP">~PT[0].HP</a></td></tr>
+<tr><td>51</td><td><a href="#bits-mc-PT[1].HP">~PT[1].HP</a></td></tr>
+<tr><td>52</td><td><a href="#bits-mc-PT[2].HP">~PT[2].HP</a></td></tr>
+<tr><td>53</td><td><a href="#bits-mc-PT[3].HP">~PT[3].HP</a></td></tr>
+<tr><td>54</td><td><a href="#bits-mc-PT[4].HP">~PT[4].HP</a></td></tr>
 </table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-CLK_MUX">
-<tr><th>CLK_MUX</th><th>37</th><th>36</th></tr>
-<tr><td>FCLK1</td><td>1</td><td>1</td></tr>
-<tr><td>FCLK2</td><td>1</td><td>0</td></tr>
-<tr><td>FCLK0</td><td>0</td><td>1</td></tr>
-<tr><td>PT</td><td>0</td><td>0</td></tr>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-PT[0].ALLOC">
+<tr><th>PT[0].ALLOC</th><th>13</th><th>12</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td></tr>
+<tr><td>SUM</td><td>1</td><td>0</td></tr>
+<tr><td>EXPORT</td><td>0</td><td>1</td></tr>
+<tr><td>SPECIAL</td><td>0</td><td>0</td></tr>
 </table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-EXPORT_DIR">
-<tr><th>EXPORT_DIR</th><th>25</th></tr>
-<tr><td>UP</td><td>1</td></tr>
-<tr><td>DOWN</td><td>0</td></tr>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-PT[1].ALLOC">
+<tr><th>PT[1].ALLOC</th><th>15</th><th>14</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td></tr>
+<tr><td>SUM</td><td>1</td><td>0</td></tr>
+<tr><td>EXPORT</td><td>0</td><td>1</td></tr>
+<tr><td>SPECIAL</td><td>0</td><td>0</td></tr>
 </table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-IMPORT_DOWN_ALLOC">
-<tr><th>IMPORT_DOWN_ALLOC</th><th>24</th></tr>
-<tr><td>EXPORT</td><td>1</td></tr>
-<tr><td>SUM</td><td>0</td></tr>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-PT[2].ALLOC">
+<tr><th>PT[2].ALLOC</th><th>17</th><th>16</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td></tr>
+<tr><td>SUM</td><td>1</td><td>0</td></tr>
+<tr><td>EXPORT</td><td>0</td><td>1</td></tr>
+<tr><td>SPECIAL</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-PT[3].ALLOC">
+<tr><th>PT[3].ALLOC</th><th>19</th><th>18</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td></tr>
+<tr><td>SUM</td><td>1</td><td>0</td></tr>
+<tr><td>EXPORT</td><td>0</td><td>1</td></tr>
+<tr><td>SPECIAL</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-PT[4].ALLOC">
+<tr><th>PT[4].ALLOC</th><th>21</th><th>20</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td></tr>
+<tr><td>SUM</td><td>1</td><td>0</td></tr>
+<tr><td>EXPORT</td><td>0</td><td>1</td></tr>
+<tr><td>SPECIAL</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-INV">
+<tr><th>INV</th><th>22</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-mc-IMPORT_UP_ALLOC">
 <tr><th>IMPORT_UP_ALLOC</th><th>23</th></tr>
 <tr><td>EXPORT</td><td>1</td></tr>
 <tr><td>SUM</td><td>0</td></tr>
 </table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-INV">
-<tr><th>INV</th><th>22</th></tr>
-<tr><td>Inverted</td><td>~[0]</td></tr>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-IMPORT_DOWN_ALLOC">
+<tr><th>IMPORT_DOWN_ALLOC</th><th>24</th></tr>
+<tr><td>EXPORT</td><td>1</td></tr>
+<tr><td>SUM</td><td>0</td></tr>
 </table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-IOB_GND">
-<tr><th>IOB_GND</th><th>48</th></tr>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-EXPORT_CHAIN_DIR">
+<tr><th>EXPORT_CHAIN_DIR</th><th>25</th></tr>
+<tr><td>UP</td><td>1</td></tr>
+<tr><td>DOWN</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-SUM_HP">
+<tr><th>SUM_HP</th><th>26</th></tr>
 <tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-mc-IOB_OE_MUX">
@@ -334,11 +362,6 @@ columns 0-8 of rows 12-54 of the main area.  The formulas are as follows:</p>
 <tr><td>GND</td><td>1</td><td>1</td></tr>
 <tr><td>OE_MUX</td><td>1</td><td>0</td></tr>
 <tr><td>VCC</td><td>0</td><td>1</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-IOB_SLEW">
-<tr><th>IOB_SLEW</th><th>49</th></tr>
-<tr><td>SLOW</td><td>1</td></tr>
-<tr><td>FAST</td><td>0</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-mc-OE_MUX">
 <tr><th>OE_MUX</th><th>31</th><th>30</th><th>29</th></tr>
@@ -353,64 +376,12 @@ columns 0-8 of rows 12-54 of the main area.  The formulas are as follows:</p>
 <tr><td>FF</td><td>1</td></tr>
 <tr><td>COMB</td><td>0</td></tr>
 </table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-PT.0.ALLOC">
-<tr><th>PT.0.ALLOC</th><th>13</th><th>12</th></tr>
-<tr><td>NONE</td><td>1</td><td>1</td></tr>
-<tr><td>SUM</td><td>1</td><td>0</td></tr>
-<tr><td>EXPORT</td><td>0</td><td>1</td></tr>
-<tr><td>SPECIAL</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-PT.0.HP">
-<tr><th>PT.0.HP</th><th>50</th></tr>
-<tr><td>Inverted</td><td>~[0]</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-PT.1.ALLOC">
-<tr><th>PT.1.ALLOC</th><th>15</th><th>14</th></tr>
-<tr><td>NONE</td><td>1</td><td>1</td></tr>
-<tr><td>SUM</td><td>1</td><td>0</td></tr>
-<tr><td>EXPORT</td><td>0</td><td>1</td></tr>
-<tr><td>SPECIAL</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-PT.1.HP">
-<tr><th>PT.1.HP</th><th>51</th></tr>
-<tr><td>Inverted</td><td>~[0]</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-PT.2.ALLOC">
-<tr><th>PT.2.ALLOC</th><th>17</th><th>16</th></tr>
-<tr><td>NONE</td><td>1</td><td>1</td></tr>
-<tr><td>SUM</td><td>1</td><td>0</td></tr>
-<tr><td>EXPORT</td><td>0</td><td>1</td></tr>
-<tr><td>SPECIAL</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-PT.2.HP">
-<tr><th>PT.2.HP</th><th>52</th></tr>
-<tr><td>Inverted</td><td>~[0]</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-PT.3.ALLOC">
-<tr><th>PT.3.ALLOC</th><th>19</th><th>18</th></tr>
-<tr><td>NONE</td><td>1</td><td>1</td></tr>
-<tr><td>SUM</td><td>1</td><td>0</td></tr>
-<tr><td>EXPORT</td><td>0</td><td>1</td></tr>
-<tr><td>SPECIAL</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-PT.3.HP">
-<tr><th>PT.3.HP</th><th>53</th></tr>
-<tr><td>Inverted</td><td>~[0]</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-PT.4.ALLOC">
-<tr><th>PT.4.ALLOC</th><th>21</th><th>20</th></tr>
-<tr><td>NONE</td><td>1</td><td>1</td></tr>
-<tr><td>SUM</td><td>1</td><td>0</td></tr>
-<tr><td>EXPORT</td><td>0</td><td>1</td></tr>
-<tr><td>SPECIAL</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-PT.4.HP">
-<tr><th>PT.4.HP</th><th>54</th></tr>
-<tr><td>Inverted</td><td>~[0]</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-REG_INIT">
-<tr><th>REG_INIT</th><th>43</th></tr>
-<tr><td>Inverted</td><td>~[0]</td></tr>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-CLK_MUX">
+<tr><th>CLK_MUX</th><th>37</th><th>36</th></tr>
+<tr><td>FCLK1</td><td>1</td><td>1</td></tr>
+<tr><td>FCLK2</td><td>1</td><td>0</td></tr>
+<tr><td>FCLK0</td><td>0</td><td>1</td></tr>
+<tr><td>PT</td><td>0</td><td>0</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-mc-REG_MODE">
 <tr><th>REG_MODE</th><th>40</th></tr>
@@ -427,8 +398,8 @@ columns 0-8 of rows 12-54 of the main area.  The formulas are as follows:</p>
 <tr><td>PT</td><td>1</td></tr>
 <tr><td>FSR</td><td>0</td></tr>
 </table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-SUM_HP">
-<tr><th>SUM_HP</th><th>26</th></tr>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-REG_INIT">
+<tr><th>REG_INIT</th><th>43</th></tr>
 <tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-mc-UIM_OE_MUX">
@@ -439,6 +410,35 @@ columns 0-8 of rows 12-54 of the main area.  The formulas are as follows:</p>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-mc-UIM_OUT_INV">
 <tr><th>UIM_OUT_INV</th><th>46</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-IOB_GND">
+<tr><th>IOB_GND</th><th>48</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-IOB_SLEW">
+<tr><th>IOB_SLEW</th><th>49</th></tr>
+<tr><td>SLOW</td><td>1</td></tr>
+<tr><td>FAST</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-PT[0].HP">
+<tr><th>PT[0].HP</th><th>50</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-PT[1].HP">
+<tr><th>PT[1].HP</th><th>51</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-PT[2].HP">
+<tr><th>PT[2].HP</th><th>52</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-PT[3].HP">
+<tr><th>PT[3].HP</th><th>53</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-PT[4].HP">
+<tr><th>PT[4].HP</th><th>54</th></tr>
 <tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 </section>
@@ -461,6 +461,10 @@ The exact bit assignments are irregular and should be obtained from the database
 <tr><td>68</td>
 <td><a href="#bits-fb-WRITE_PROT" title="~WRITE_PROT">X</a></td><td>-</td><td>-</td><td><a href="#bits-fb-READ_PROT_B" title="~READ_PROT_B">X</a></td><td>-</td><td>-</td><td><a href="#bits-fb-PULLUP_DISABLE" title="~PULLUP_DISABLE">X</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 </table>
+<table class="docutils align-default prjcombine-enum" id="bits-fb-READ_PROT_A">
+<tr><th>READ_PROT_A</th><th>[11, 6, 3]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
 <table class="docutils align-default prjcombine-enum" id="bits-fb-ENABLE">
 <tr><th>ENABLE</th><th>[67, 6, 0]</th></tr>
 <tr><td>Inverted</td><td>~[0]</td></tr>
@@ -469,20 +473,16 @@ The exact bit assignments are irregular and should be obtained from the database
 <tr><th>EXPORT_ENABLE</th><th>[67, 6, 1]</th></tr>
 <tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
-<table class="docutils align-default prjcombine-enum" id="bits-fb-PULLUP_DISABLE">
-<tr><th>PULLUP_DISABLE</th><th>[68, 6, 6]</th></tr>
-<tr><td>Inverted</td><td>~[0]</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-fb-READ_PROT_A">
-<tr><th>READ_PROT_A</th><th>[11, 6, 3]</th></tr>
+<table class="docutils align-default prjcombine-enum" id="bits-fb-WRITE_PROT">
+<tr><th>WRITE_PROT</th><th>[68, 6, 0]</th></tr>
 <tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-fb-READ_PROT_B">
 <tr><th>READ_PROT_B</th><th>[68, 6, 3]</th></tr>
 <tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
-<table class="docutils align-default prjcombine-enum" id="bits-fb-WRITE_PROT">
-<tr><th>WRITE_PROT</th><th>[68, 6, 0]</th></tr>
+<table class="docutils align-default prjcombine-enum" id="bits-fb-PULLUP_DISABLE">
+<tr><th>PULLUP_DISABLE</th><th>[68, 6, 6]</th></tr>
 <tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 <p>Global bits are stored in rows (0, 3, 4, 6, 7), columns 0-8, bits 6-7 of FB 0.  The bits are (fb, row, bit, column):</p>
@@ -501,8 +501,36 @@ The exact bit assignments are irregular and should be obtained from the database
 <tr><td>0</td><td>7</td>
 <td><a href="#bits-global-USERCODE" title="~USERCODE[14]">X</a></td><td><a href="#bits-global-USERCODE" title="~USERCODE[12]">X</a></td><td><a href="#bits-global-USERCODE" title="~USERCODE[10]">X</a></td><td><a href="#bits-global-USERCODE" title="~USERCODE[8]">X</a></td><td><a href="#bits-global-USERCODE" title="~USERCODE[6]">X</a></td><td><a href="#bits-global-USERCODE" title="~USERCODE[4]">X</a></td><td><a href="#bits-global-USERCODE" title="~USERCODE[2]">X</a></td><td><a href="#bits-global-USERCODE" title="~USERCODE[0]">X</a></td><td>-</td><td><a href="#bits-global-USERCODE" title="~USERCODE[15]">X</a></td><td><a href="#bits-global-USERCODE" title="~USERCODE[13]">X</a></td><td><a href="#bits-global-USERCODE" title="~USERCODE[11]">X</a></td><td><a href="#bits-global-USERCODE" title="~USERCODE[9]">X</a></td><td><a href="#bits-global-USERCODE" title="~USERCODE[7]">X</a></td><td><a href="#bits-global-USERCODE" title="~USERCODE[5]">X</a></td><td><a href="#bits-global-USERCODE" title="~USERCODE[3]">X</a></td><td><a href="#bits-global-USERCODE" title="~USERCODE[1]">X</a></td><td>-</td></tr>
 </table>
+<table class="docutils align-default prjcombine-enum" id="bits-global-FSR_INV">
+<tr><th>FSR_INV</th><th>[0, 0, 6, 1]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
 <table class="docutils align-default prjcombine-enum" id="bits-global-FCLK0_INV">
 <tr><th>FCLK0_INV</th><th>[0, 0, 6, 2]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-global-FCLK1_INV">
+<tr><th>FCLK1_INV</th><th>[0, 0, 6, 3]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-global-FCLK2_INV">
+<tr><th>FCLK2_INV</th><th>[0, 0, 6, 4]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-global-FOE0_INV">
+<tr><th>FOE0_INV</th><th>[0, 0, 6, 5]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-global-FOE1_INV">
+<tr><th>FOE1_INV</th><th>[0, 0, 6, 6]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-global-FOE2_INV">
+<tr><th>FOE2_INV</th><th>[0, 0, 6, 7]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-global-FOE3_INV">
+<tr><th>FOE3_INV</th><th>[0, 0, 6, 8]</th></tr>
 <tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-global-FCLK0_MUX">
@@ -511,29 +539,17 @@ The exact bit assignments are irregular and should be obtained from the database
 <tr><td>GCLK0</td><td>1</td><td>0</td></tr>
 <tr><td>GCLK1</td><td>0</td><td>1</td></tr>
 </table>
-<table class="docutils align-default prjcombine-enum" id="bits-global-FCLK1_INV">
-<tr><th>FCLK1_INV</th><th>[0, 0, 6, 3]</th></tr>
-<tr><td>Inverted</td><td>~[0]</td></tr>
-</table>
 <table class="docutils align-default prjcombine-enum" id="bits-global-FCLK1_MUX">
 <tr><th>FCLK1_MUX</th><th>[0, 4, 6, 3]</th><th>[0, 3, 6, 3]</th></tr>
 <tr><td>NONE</td><td>1</td><td>1</td></tr>
 <tr><td>GCLK1</td><td>1</td><td>0</td></tr>
 <tr><td>GCLK2</td><td>0</td><td>1</td></tr>
 </table>
-<table class="docutils align-default prjcombine-enum" id="bits-global-FCLK2_INV">
-<tr><th>FCLK2_INV</th><th>[0, 0, 6, 4]</th></tr>
-<tr><td>Inverted</td><td>~[0]</td></tr>
-</table>
 <table class="docutils align-default prjcombine-enum" id="bits-global-FCLK2_MUX">
 <tr><th>FCLK2_MUX</th><th>[0, 4, 6, 4]</th><th>[0, 3, 6, 4]</th></tr>
 <tr><td>NONE</td><td>1</td><td>1</td></tr>
 <tr><td>GCLK2</td><td>1</td><td>0</td></tr>
 <tr><td>GCLK0</td><td>0</td><td>1</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-global-FOE0_INV">
-<tr><th>FOE0_INV</th><th>[0, 0, 6, 5]</th></tr>
-<tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-global-FOE0_MUX.LARGE">
 <tr><th>FOE0_MUX.LARGE</th><th>[0, 4, 6, 5]</th><th>[0, 3, 6, 5]</th></tr>
@@ -547,10 +563,6 @@ The exact bit assignments are irregular and should be obtained from the database
 <tr><td>GOE0</td><td>1</td><td>0</td></tr>
 <tr><td>GOE1</td><td>0</td><td>1</td></tr>
 </table>
-<table class="docutils align-default prjcombine-enum" id="bits-global-FOE1_INV">
-<tr><th>FOE1_INV</th><th>[0, 0, 6, 6]</th></tr>
-<tr><td>Inverted</td><td>~[0]</td></tr>
-</table>
 <table class="docutils align-default prjcombine-enum" id="bits-global-FOE1_MUX.LARGE">
 <tr><th>FOE1_MUX.LARGE</th><th>[0, 4, 6, 6]</th><th>[0, 3, 6, 6]</th></tr>
 <tr><td>NONE</td><td>1</td><td>1</td></tr>
@@ -563,29 +575,17 @@ The exact bit assignments are irregular and should be obtained from the database
 <tr><td>GOE1</td><td>1</td><td>0</td></tr>
 <tr><td>GOE0</td><td>0</td><td>1</td></tr>
 </table>
-<table class="docutils align-default prjcombine-enum" id="bits-global-FOE2_INV">
-<tr><th>FOE2_INV</th><th>[0, 0, 6, 7]</th></tr>
-<tr><td>Inverted</td><td>~[0]</td></tr>
-</table>
 <table class="docutils align-default prjcombine-enum" id="bits-global-FOE2_MUX.LARGE">
 <tr><th>FOE2_MUX.LARGE</th><th>[0, 4, 6, 7]</th><th>[0, 3, 6, 7]</th></tr>
 <tr><td>NONE</td><td>1</td><td>1</td></tr>
 <tr><td>GOE2</td><td>1</td><td>0</td></tr>
 <tr><td>GOE3</td><td>0</td><td>1</td></tr>
 </table>
-<table class="docutils align-default prjcombine-enum" id="bits-global-FOE3_INV">
-<tr><th>FOE3_INV</th><th>[0, 0, 6, 8]</th></tr>
-<tr><td>Inverted</td><td>~[0]</td></tr>
-</table>
 <table class="docutils align-default prjcombine-enum" id="bits-global-FOE3_MUX.LARGE">
 <tr><th>FOE3_MUX.LARGE</th><th>[0, 4, 6, 8]</th><th>[0, 3, 6, 8]</th></tr>
 <tr><td>NONE</td><td>1</td><td>1</td></tr>
 <tr><td>GOE3</td><td>1</td><td>0</td></tr>
 <tr><td>GOE0</td><td>0</td><td>1</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-global-FSR_INV">
-<tr><th>FSR_INV</th><th>[0, 0, 6, 1]</th></tr>
-<tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-global-USERCODE">
 <tr><th>USERCODE</th><th>[0, 6, 7, 0]</th><th>[0, 6, 6, 0]</th><th>[0, 6, 7, 1]</th><th>[0, 6, 6, 1]</th><th>[0, 6, 7, 2]</th><th>[0, 6, 6, 2]</th><th>[0, 6, 7, 3]</th><th>[0, 6, 6, 3]</th><th>[0, 6, 7, 4]</th><th>[0, 6, 6, 4]</th><th>[0, 6, 7, 5]</th><th>[0, 6, 6, 5]</th><th>[0, 6, 7, 6]</th><th>[0, 6, 6, 6]</th><th>[0, 6, 7, 7]</th><th>[0, 6, 6, 7]</th><th>[0, 7, 7, 0]</th><th>[0, 7, 6, 0]</th><th>[0, 7, 7, 1]</th><th>[0, 7, 6, 1]</th><th>[0, 7, 7, 2]</th><th>[0, 7, 6, 2]</th><th>[0, 7, 7, 3]</th><th>[0, 7, 6, 3]</th><th>[0, 7, 7, 4]</th><th>[0, 7, 6, 4]</th><th>[0, 7, 7, 5]</th><th>[0, 7, 6, 5]</th><th>[0, 7, 7, 6]</th><th>[0, 7, 6, 6]</th><th>[0, 7, 7, 7]</th><th>[0, 7, 6, 7]</th></tr>

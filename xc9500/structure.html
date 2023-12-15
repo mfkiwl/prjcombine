@@ -205,8 +205,8 @@ with the wire-AND path, but much faster.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: the input is a constant 0 (for unused inputs)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">UIM</span></code>: the input is a wire-AND of MC outputs (and the second set of fuses is relevant)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FBK_MC{k}</span></code>: the input is routed through fast feedback path from <code class="docutils literal notranslate"><span class="pre">FB[i].MC[k].OUT</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PAD_FB{k}_MC{l}</span></code>: the input is routed from an input buffer <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].IOB.I</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FBK_{k}</span></code>: the input is routed through fast feedback path from <code class="docutils literal notranslate"><span class="pre">FB[i].MC[k].OUT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IOB_{k}_{l}</span></code>: the input is routed from an input buffer <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].IOB.I</span></code></p></li>
 </ul>
 <p>The allowable combinations differ between inputs within a single FB, but don’t differ across
 FBs within a single device.  In other words, the set of allowed values for these fuses
@@ -226,8 +226,8 @@ is not really universal, and is much more of a classic CPLD design.</p>
 <li><p>mux fuses (<code class="docutils literal notranslate"><span class="pre">FB[i].IM[j].MUX</span></code>) select what is routed to the input.  The combinations include:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: the input is disabled and will have indeterminate state (for unused inputs)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FB{k}_MC{l}</span></code>: the input is routed from the macrocell output <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].OUT</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PAD_FB{k}_MC{l}</span></code>: the input is routed from the input buffer <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].IOB.I</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MC_{k}_{l}</span></code>: the input is routed from the macrocell output <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].OUT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IOB_{k}_{l}</span></code>: the input is routed from the input buffer <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].IOB.I</span></code></p></li>
 </ul>
 <p>The allowable combinations differ between inputs within a single FB, but don’t differ across
 FBs within a single device.  In other words, the set of allowed values for these fuses
@@ -303,11 +303,11 @@ Product terms can be imported from both directions at once.
 Imported terms from a given direction can be used for either the main sum term, or for further export, but not both at once.</p>
 <p>Note that export behavior is slightly different depending on whether the importing MC allocates the imported
 terms towards its own sum term or reexport: if <code class="docutils literal notranslate"><span class="pre">SUM</span></code> allocation is selected, the exporting MC’s PTs are always
-visible.  However, if <code class="docutils literal notranslate"><span class="pre">EXPORT</span></code> allocation is selected, the exporting MC’s PTs are visible only if its <code class="docutils literal notranslate"><span class="pre">EXPORT_DIR</span></code>
+visible.  However, if <code class="docutils literal notranslate"><span class="pre">EXPORT</span></code> allocation is selected, the exporting MC’s PTs are visible only if its <code class="docutils literal notranslate"><span class="pre">EXPORT_CHAIN_DIR</span></code>
 matches the import direction.</p>
 <p>PT import/export is controlled by the following per-MC fuses:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].EXPORT_DIR</span></code>: one of:</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].EXPORT_CHAIN_DIR</span></code>: one of:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">DOWN</span></code>: enables export through <code class="docutils literal notranslate"><span class="pre">EXPORT_CHAIN_DOWN</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">UP</span></code>: enables export through <code class="docutils literal notranslate"><span class="pre">EXPORT_CHAIN_UP</span></code></p></li>
@@ -337,8 +337,8 @@ matches the import direction.</p>
     (FB[i].MC[j].PT[3].ALLOC == EXPORT ? FB[i].MC[j].PT[3] : 0) |
     (FB[i].MC[j].PT[4].ALLOC == EXPORT ? FB[i].MC[j].PT[4] : 0);
 
-FB[i].MC[j].EXPORT_CHAIN_UP = ((FB[i].MC[j].EXPORT_DIR == UP &amp;&amp; (FB[i].EXPORT_ENABLE || j != 0)) ? FB[i].MC[j].EXPORT_SUM : 0);
-FB[i].MC[j].EXPORT_CHAIN_DOWN = (FB[i].MC[j].EXPORT_DIR == DOWN ? FB[i].MC[j].EXPORT_SUM : 0);
+FB[i].MC[j].EXPORT_CHAIN_UP = ((FB[i].MC[j].EXPORT_CHAIN_DIR == UP &amp;&amp; (FB[i].EXPORT_ENABLE || j != 0)) ? FB[i].MC[j].EXPORT_SUM : 0);
+FB[i].MC[j].EXPORT_CHAIN_DOWN = (FB[i].MC[j].EXPORT_CHAIN_DIR == DOWN ? FB[i].MC[j].EXPORT_SUM : 0);
 </pre></div>
 </div>
 </section>
@@ -417,9 +417,9 @@ FB[i].MC[j].EXPORT_CHAIN_DOWN = (FB[i].MC[j].EXPORT_DIR == DOWN ? FB[i].MC[j].EX
 <p>On XC9500, the FF works as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK_MUX</span><span class="p">)</span>
 <span class="n">PT</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">PT</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">SPECIAL</span><span class="p">;</span>
-<span class="n">FCLK0</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span> <span class="o">=</span> <span class="n">FCLK</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-<span class="n">FCLK1</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span> <span class="o">=</span> <span class="n">FCLK</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-<span class="n">FCLK2</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span> <span class="o">=</span> <span class="n">FCLK</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">FCLK0</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span> <span class="o">=</span> <span class="n">FCLK0</span><span class="p">;</span>
+<span class="n">FCLK1</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span> <span class="o">=</span> <span class="n">FCLK1</span><span class="p">;</span>
+<span class="n">FCLK2</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span> <span class="o">=</span> <span class="n">FCLK2</span><span class="p">;</span>
 <span class="n">endcase</span>
 
 <span class="k">case</span><span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">RST_MUX</span><span class="p">)</span>
@@ -447,9 +447,9 @@ FB[i].MC[j].EXPORT_CHAIN_DOWN = (FB[i].MC[j].EXPORT_DIR == DOWN ? FB[i].MC[j].EX
 <p>On XC9500XL/XV, the FF works as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>case(FB[i].MC[j].CLK_MUX)
 PT: FB[i].MC[j].CLK = FB[i].MC[j].PT[0].SPECIAL ^ FB[i].MC[j].CLK_INV;
-FCLK0: FB[i].MC[j].CLK = FCLK[0] ^ FB[i].MC[j].CLK_INV;
-FCLK1: FB[i].MC[j].CLK = FCLK[1] ^ FB[i].MC[j].CLK_INV;
-FCLK2: FB[i].MC[j].CLK = FCLK[2] ^ FB[i].MC[j].CLK_INV;
+FCLK0: FB[i].MC[j].CLK = FCLK0 ^ FB[i].MC[j].CLK_INV;
+FCLK1: FB[i].MC[j].CLK = FCLK1 ^ FB[i].MC[j].CLK_INV;
+FCLK2: FB[i].MC[j].CLK = FCLK2 ^ FB[i].MC[j].CLK_INV;
 endcase
 
 case(FB[i].MC[j].RST_MUX)
@@ -677,24 +677,24 @@ on the device (which can also be used as normal I/O).  The networks are:</p>
 <p>Additionally, all networks can be inverted from their source pins.</p>
 <p>The fuses involved are:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">FCLK[i].MUX</span></code>: selects the input routed to <code class="docutils literal notranslate"><span class="pre">FCLK[i]</span></code></p>
+<li><p><code class="docutils literal notranslate"><span class="pre">FCLK{i}_MUX</span></code>: selects the input routed to <code class="docutils literal notranslate"><span class="pre">FCLK{i}</span></code></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: const 0</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GCLK[i]</span></code>: the corresponding <code class="docutils literal notranslate"><span class="pre">GCLK</span></code> pad</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GCLK{i}</span></code>: the corresponding <code class="docutils literal notranslate"><span class="pre">GCLK</span></code> pad</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FOE[i].MUX</span></code>: selects the input routed to <code class="docutils literal notranslate"><span class="pre">FOE[i]</span></code></p>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE{i}_MUX</span></code>: selects the input routed to <code class="docutils literal notranslate"><span class="pre">FOE{i}</span></code></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: const 0</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FOE[i]</span></code>: the corresponding <code class="docutils literal notranslate"><span class="pre">FOE</span></code> pad</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE{i}</span></code>: the corresponding <code class="docutils literal notranslate"><span class="pre">GOE</span></code> pad</p></li>
 </ul>
 <p>These fuses have two variants in the database: the <code class="docutils literal notranslate"><span class="pre">SMALL</span></code> variant is applicable
 for devices with 2 GOE pins, and the <code class="docutils literal notranslate"><span class="pre">LARGE</span></code> variant is applicable for devices
 with 4 GOE pins.</p>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FCLK[i].INV</span></code>: if programmed, the <code class="docutils literal notranslate"><span class="pre">GCLK</span></code> pad is inverted before driving <code class="docutils literal notranslate"><span class="pre">FCLK[i]</span></code> network</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FSR.INV</span></code>: if programmed, the <code class="docutils literal notranslate"><span class="pre">GSR</span></code> pad is inverted before driving <code class="docutils literal notranslate"><span class="pre">FSR</span></code> network</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FOE[i].INV</span></code>: if programmed, the <code class="docutils literal notranslate"><span class="pre">GOE</span></code> pad is inverted before driving <code class="docutils literal notranslate"><span class="pre">FOE[i]</span></code> network</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FCLK{i}_INV</span></code>: if programmed, the <code class="docutils literal notranslate"><span class="pre">GCLK</span></code> pad is inverted before driving <code class="docutils literal notranslate"><span class="pre">FCLK{i}</span></code> network</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FSR_INV</span></code>: if programmed, the <code class="docutils literal notranslate"><span class="pre">GSR</span></code> pad is inverted before driving <code class="docutils literal notranslate"><span class="pre">FSR</span></code> network</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE{i}_INV</span></code>: if programmed, the <code class="docutils literal notranslate"><span class="pre">GOE</span></code> pad is inverted before driving <code class="docutils literal notranslate"><span class="pre">FOE{i}</span></code> network</p></li>
 </ul>
 <div class="admonition-todo admonition" id="id2">
 <p class="admonition-title">Todo</p>
@@ -704,13 +704,13 @@ with 4 GOE pins.</p>
 <section id="global-networks-xc9500xl-xv">
 <h2>Global networks — XC9500XL/XV<a class="headerlink" href="#global-networks-xc9500xl-xv" title="Link to this heading"></a></h2>
 <p>Global networks on XC9500XL/XV work similarly, except there are no muxes and no inversion (except for <code class="docutils literal notranslate"><span class="pre">FSR</span></code>).
-Thus the <code class="docutils literal notranslate"><span class="pre">GCLK[i]</span></code> and <code class="docutils literal notranslate"><span class="pre">GOE[i]</span></code> pads are mapped 1-1 directly to <code class="docutils literal notranslate"><span class="pre">FCLK[i]</span></code> and <code class="docutils literal notranslate"><span class="pre">FOE[i]</span></code> networks, with only
+Thus the <code class="docutils literal notranslate"><span class="pre">GCLK{i}</span></code> and <code class="docutils literal notranslate"><span class="pre">GOE{i}</span></code> pads are mapped 1-1 directly to <code class="docutils literal notranslate"><span class="pre">FCLK{i}</span></code> and <code class="docutils literal notranslate"><span class="pre">FOE{i}</span></code> networks, with only
 an enable fuse.</p>
 <p>The fuses involved are:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">FCLK[i].EN</span></code>: if programmed, the given <code class="docutils literal notranslate"><span class="pre">FCLK</span></code> network is active and connected to the <code class="docutils literal notranslate"><span class="pre">GCLK[i]</span></code> pad; otherwise, it’s const-0</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FOE[i].EN</span></code>: if programmed, the given <code class="docutils literal notranslate"><span class="pre">FOE</span></code> network is active and connected to the <code class="docutils literal notranslate"><span class="pre">GOE[i]</span></code> pad; otherwise, it’s const-0</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">FSR.INV</span></code>: if programmed, the <code class="docutils literal notranslate"><span class="pre">GSR</span></code> pad is inverted before driving <code class="docutils literal notranslate"><span class="pre">FSR</span></code> network</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FCLK{i}.ENABLE</span></code>: if programmed, the given <code class="docutils literal notranslate"><span class="pre">FCLK</span></code> network is active and connected to the <code class="docutils literal notranslate"><span class="pre">GCLK{i}</span></code> pad; otherwise, it’s const-0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOE{i}_ENABLE</span></code>: if programmed, the given <code class="docutils literal notranslate"><span class="pre">FOE</span></code> network is active and connected to the <code class="docutils literal notranslate"><span class="pre">GOE{i}</span></code> pad; otherwise, it’s const-0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FSR_INV</span></code>: if programmed, the <code class="docutils literal notranslate"><span class="pre">GSR</span></code> pad is inverted before driving <code class="docutils literal notranslate"><span class="pre">FSR</span></code> network</p></li>
 </ul>
 <p>The <code class="docutils literal notranslate"><span class="pre">FSR</span></code> network is always enabled.</p>
 </section>
