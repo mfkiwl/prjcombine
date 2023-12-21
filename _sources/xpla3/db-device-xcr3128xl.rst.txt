@@ -13,6 +13,32 @@ FB rows: 2
 
 FB cols: 2
 
+.. list-table::
+   :header-rows: 1
+
+   - - Column range
+     - Bits
+   - - 0..5
+     - FB column 0 even MCs
+   - - 5..10
+     - FB column 0 odd MCs
+   - - 10..15
+     - FB column 1 even MCs
+   - - 15..20
+     - FB column 1 odd MCs
+   - - 20..47
+     - FB column 0 IMUX
+   - - 47..74
+     - FB column 1 IMUX
+   - - 74..122
+     - FB column 0 even PTs
+   - - 122..170
+     - FB column 0 odd PTs
+   - - 170..218
+     - FB column 1 even PTs
+   - - 218..266
+     - FB column 1 odd PTs
+
 I/O pins
 ========
 
