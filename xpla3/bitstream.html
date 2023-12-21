@@ -19,7 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="JTAG interface" href="jtag.html" />
+    <link rel="next" title="Database — devices" href="db-devices.html" />
     <link rel="prev" title="Device structure" href="structure.html" /> 
 </head>
 
@@ -48,7 +48,19 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Xilinx XPLA3 CPLDs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structure.html">Device structure</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Bitstream structure</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Bitstream structure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fuses-macrocells">Fuses — macrocells</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#jed-mapping-macrocells-with-iob">JED mapping — macrocells with IOB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jed-mapping-macrocells-without-iob">JED mapping — macrocells without IOB</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#fuses-fbs">Fuses — FBs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#jed-mapping">JED mapping</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="db-devices.html">Database — devices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jtag.html">JTAG interface</a></li>
 </ul>
 </li>
@@ -86,6 +98,257 @@
 <p class="admonition-title">Todo</p>
 <p>write me</p>
 </div>
+<section id="fuses-macrocells">
+<h2>Fuses — macrocells<a class="headerlink" href="#fuses-macrocells" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th rowspan="2">Plane</th><th colspan="5">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr>
+<tr><td>0</td><td>0</td>
+<td><a href="#bits-mc-IOB_SLEW" title="IOB_SLEW">X</a></td><td><a href="#bits-mc-OE_MUX" title="OE_MUX[0]">X</a></td><td><a href="#bits-mc-OE_MUX" title="OE_MUX[1]">X</a></td><td><a href="#bits-mc-OE_MUX" title="OE_MUX[2]">X</a></td><td>-</td></tr>
+<tr><td>0</td><td>1</td>
+<td><a href="#bits-mc-LUT" title="LUT[0]">X</a></td><td><a href="#bits-mc-LUT" title="LUT[1]">X</a></td><td><a href="#bits-mc-LUT" title="LUT[2]">X</a></td><td><a href="#bits-mc-LUT" title="LUT[3]">X</a></td><td><a href="#bits-mc-MC_IOB_MUX" title="MC_IOB_MUX">X</a></td></tr>
+<tr><td>1</td><td>0</td>
+<td><a href="#bits-mc-REG_D_MUX" title="REG_D_MUX">X</a></td><td><a href="#bits-mc-UNK_REG_Q" title="UNK_REG_Q">X</a></td><td><a href="#bits-mc-IOB_ZIA_MUX" title="IOB_ZIA_MUX">X</a></td><td><a href="#bits-mc-UNK_SHIFT" title="UNK_SHIFT">X</a></td><td>-</td></tr>
+<tr><td>1</td><td>1</td>
+<td><a href="#bits-mc-CLK_MUX" title="CLK_MUX[0]">X</a></td><td><a href="#bits-mc-CLK_MUX" title="CLK_MUX[1]">X</a></td><td><a href="#bits-mc-CLK_MUX" title="CLK_MUX[2]">X</a></td><td><a href="#bits-mc-CE_MUX" title="CE_MUX">X</a></td><td><a href="#bits-mc-CLK_INV" title="CLK_INV">X</a></td></tr>
+<tr><td>2</td><td>0</td>
+<td><a href="#bits-mc-SET_MUX" title="SET_MUX[0]">X</a></td><td><a href="#bits-mc-SET_MUX" title="SET_MUX[1]">X</a></td><td><a href="#bits-mc-SET_MUX" title="SET_MUX[2]">X</a></td><td><a href="#bits-mc-MC_ZIA_MUX" title="MC_ZIA_MUX">X</a></td><td>-</td></tr>
+<tr><td>2</td><td>1</td>
+<td><a href="#bits-mc-RST_MUX" title="RST_MUX[0]">X</a></td><td><a href="#bits-mc-RST_MUX" title="RST_MUX[1]">X</a></td><td><a href="#bits-mc-RST_MUX" title="RST_MUX[2]">X</a></td><td><a href="#bits-mc-REG_MODE" title="REG_MODE[0]">X</a></td><td><a href="#bits-mc-REG_MODE" title="REG_MODE[1]">X</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-IOB_SLEW">
+<tr><th>IOB_SLEW</th><th>[0, 0, 0]</th></tr>
+<tr><td>FAST</td><td>0</td></tr>
+<tr><td>SLOW</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-OE_MUX">
+<tr><th>OE_MUX</th><th>[0, 0, 3]</th><th>[0, 0, 2]</th><th>[0, 0, 1]</th></tr>
+<tr><td>GND</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LCT0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>LCT1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LCT2</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>LCT6</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>UCT0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>VCC</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>PULLUP</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-LUT">
+<tr><th>LUT</th><th>[0, 1, 3]</th><th>[0, 1, 2]</th><th>[0, 1, 1]</th><th>[0, 1, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-MC_IOB_MUX">
+<tr><th>MC_IOB_MUX</th><th>[0, 1, 4]</th></tr>
+<tr><td>REG</td><td>0</td></tr>
+<tr><td>LUT</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-REG_D_MUX">
+<tr><th>REG_D_MUX</th><th>[1, 0, 0]</th></tr>
+<tr><td>LUT</td><td>0</td></tr>
+<tr><td>IBUF</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-UNK_REG_Q">
+<tr><th>UNK_REG_Q</th><th>[1, 0, 1]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-IOB_ZIA_MUX">
+<tr><th>IOB_ZIA_MUX</th><th>[1, 0, 2]</th></tr>
+<tr><td>REG</td><td>0</td></tr>
+<tr><td>IBUF</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-UNK_SHIFT">
+<tr><th>UNK_SHIFT</th><th>[1, 0, 3]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-CLK_MUX">
+<tr><th>CLK_MUX</th><th>[1, 1, 2]</th><th>[1, 1, 1]</th><th>[1, 1, 0]</th></tr>
+<tr><td>FCLK0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>FCLK1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>PT</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LCT4</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>LCT5</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>LCT6</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>LCT7</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>UCT3</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-CE_MUX">
+<tr><th>CE_MUX</th><th>[1, 1, 3]</th></tr>
+<tr><td>LCT4</td><td>0</td></tr>
+<tr><td>PT</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-CLK_INV">
+<tr><th>CLK_INV</th><th>[1, 1, 4]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-SET_MUX">
+<tr><th>SET_MUX</th><th>[2, 0, 2]</th><th>[2, 0, 1]</th><th>[2, 0, 0]</th></tr>
+<tr><td>LCT0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LCT1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>LCT2</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LCT3</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>LCT4</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>LCT5</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>UCT2</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>GND</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-MC_ZIA_MUX">
+<tr><th>MC_ZIA_MUX</th><th>[2, 0, 3]</th></tr>
+<tr><td>REG</td><td>0</td></tr>
+<tr><td>LUT</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-RST_MUX">
+<tr><th>RST_MUX</th><th>[2, 1, 2]</th><th>[2, 1, 1]</th><th>[2, 1, 0]</th></tr>
+<tr><td>LCT0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LCT1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>LCT2</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LCT3</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>LCT4</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>LCT5</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>UCT1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>GND</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-REG_MODE">
+<tr><th>REG_MODE</th><th>[2, 1, 4]</th><th>[2, 1, 3]</th></tr>
+<tr><td>DFF</td><td>0</td><td>0</td></tr>
+<tr><td>TFF</td><td>0</td><td>1</td></tr>
+<tr><td>LATCH</td><td>1</td><td>0</td></tr>
+<tr><td>DFFCE</td><td>1</td><td>1</td></tr>
+</table>
+<section id="jed-mapping-macrocells-with-iob">
+<h3>JED mapping — macrocells with IOB<a class="headerlink" href="#jed-mapping-macrocells-with-iob" title="Link to this heading"></a></h3>
+<table class="docutils align-default prjcombine-tile">
+<tr><th>JED offset</th><th>Bit</th></tr>
+<tr><td>0</td><td><a href="#bits-mc-MC_IOB_MUX">MC_IOB_MUX</a></td></tr>
+<tr><td>1</td><td><a href="#bits-mc-LUT">LUT[0]</a></td></tr>
+<tr><td>2</td><td><a href="#bits-mc-LUT">LUT[1]</a></td></tr>
+<tr><td>3</td><td><a href="#bits-mc-LUT">LUT[2]</a></td></tr>
+<tr><td>4</td><td><a href="#bits-mc-LUT">LUT[3]</a></td></tr>
+<tr><td>5</td><td><a href="#bits-mc-IOB_SLEW">IOB_SLEW</a></td></tr>
+<tr><td>6</td><td><a href="#bits-mc-OE_MUX">OE_MUX[0]</a></td></tr>
+<tr><td>7</td><td><a href="#bits-mc-OE_MUX">OE_MUX[1]</a></td></tr>
+<tr><td>8</td><td><a href="#bits-mc-OE_MUX">OE_MUX[2]</a></td></tr>
+<tr><td>9</td><td><a href="#bits-mc-CE_MUX">CE_MUX</a></td></tr>
+<tr><td>10</td><td><a href="#bits-mc-CLK_INV">CLK_INV</a></td></tr>
+<tr><td>11</td><td><a href="#bits-mc-CLK_MUX">CLK_MUX[0]</a></td></tr>
+<tr><td>12</td><td><a href="#bits-mc-CLK_MUX">CLK_MUX[1]</a></td></tr>
+<tr><td>13</td><td><a href="#bits-mc-CLK_MUX">CLK_MUX[2]</a></td></tr>
+<tr><td>14</td><td><a href="#bits-mc-REG_D_MUX">REG_D_MUX</a></td></tr>
+<tr><td>15</td><td><a href="#bits-mc-UNK_REG_Q">UNK_REG_Q</a></td></tr>
+<tr><td>16</td><td><a href="#bits-mc-UNK_SHIFT">UNK_SHIFT</a></td></tr>
+<tr><td>17</td><td><a href="#bits-mc-IOB_ZIA_MUX">IOB_ZIA_MUX</a></td></tr>
+<tr><td>18</td><td><a href="#bits-mc-RST_MUX">RST_MUX[0]</a></td></tr>
+<tr><td>19</td><td><a href="#bits-mc-RST_MUX">RST_MUX[1]</a></td></tr>
+<tr><td>20</td><td><a href="#bits-mc-RST_MUX">RST_MUX[2]</a></td></tr>
+<tr><td>21</td><td><a href="#bits-mc-SET_MUX">SET_MUX[0]</a></td></tr>
+<tr><td>22</td><td><a href="#bits-mc-SET_MUX">SET_MUX[1]</a></td></tr>
+<tr><td>23</td><td><a href="#bits-mc-SET_MUX">SET_MUX[2]</a></td></tr>
+<tr><td>24</td><td><a href="#bits-mc-REG_MODE">REG_MODE[0]</a></td></tr>
+<tr><td>25</td><td><a href="#bits-mc-REG_MODE">REG_MODE[1]</a></td></tr>
+<tr><td>26</td><td><a href="#bits-mc-MC_ZIA_MUX">MC_ZIA_MUX</a></td></tr>
+</table>
+</section>
+<section id="jed-mapping-macrocells-without-iob">
+<h3>JED mapping — macrocells without IOB<a class="headerlink" href="#jed-mapping-macrocells-without-iob" title="Link to this heading"></a></h3>
+<table class="docutils align-default prjcombine-tile">
+<tr><th>JED offset</th><th>Bit</th></tr>
+<tr><td>0</td><td><a href="#bits-mc-LUT">LUT[0]</a></td></tr>
+<tr><td>1</td><td><a href="#bits-mc-LUT">LUT[1]</a></td></tr>
+<tr><td>2</td><td><a href="#bits-mc-LUT">LUT[2]</a></td></tr>
+<tr><td>3</td><td><a href="#bits-mc-LUT">LUT[3]</a></td></tr>
+<tr><td>4</td><td><a href="#bits-mc-CE_MUX">CE_MUX</a></td></tr>
+<tr><td>5</td><td><a href="#bits-mc-CLK_INV">CLK_INV</a></td></tr>
+<tr><td>6</td><td><a href="#bits-mc-CLK_MUX">CLK_MUX[0]</a></td></tr>
+<tr><td>7</td><td><a href="#bits-mc-CLK_MUX">CLK_MUX[1]</a></td></tr>
+<tr><td>8</td><td><a href="#bits-mc-CLK_MUX">CLK_MUX[2]</a></td></tr>
+<tr><td>9</td><td><a href="#bits-mc-REG_D_MUX">REG_D_MUX</a></td></tr>
+<tr><td>10</td><td><a href="#bits-mc-UNK_REG_Q">UNK_REG_Q</a></td></tr>
+<tr><td>11</td><td><a href="#bits-mc-UNK_SHIFT">UNK_SHIFT</a></td></tr>
+<tr><td>12</td><td><a href="#bits-mc-RST_MUX">RST_MUX[0]</a></td></tr>
+<tr><td>13</td><td><a href="#bits-mc-RST_MUX">RST_MUX[1]</a></td></tr>
+<tr><td>14</td><td><a href="#bits-mc-RST_MUX">RST_MUX[2]</a></td></tr>
+<tr><td>15</td><td><a href="#bits-mc-SET_MUX">SET_MUX[0]</a></td></tr>
+<tr><td>16</td><td><a href="#bits-mc-SET_MUX">SET_MUX[1]</a></td></tr>
+<tr><td>17</td><td><a href="#bits-mc-SET_MUX">SET_MUX[2]</a></td></tr>
+<tr><td>18</td><td><a href="#bits-mc-REG_MODE">REG_MODE[0]</a></td></tr>
+<tr><td>19</td><td><a href="#bits-mc-REG_MODE">REG_MODE[1]</a></td></tr>
+<tr><td>20</td><td><a href="#bits-mc-MC_ZIA_MUX">MC_ZIA_MUX</a></td></tr>
+</table>
+</section>
+</section>
+<section id="fuses-fbs">
+<h2>Fuses — FBs<a class="headerlink" href="#fuses-fbs" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th rowspan="2">Plane</th><th colspan="4">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th></tr>
+<tr><td>0</td><td>0</td>
+<td><a href="#bits-fb-LCT0_INV" title="~LCT0_INV">X</a></td><td><a href="#bits-fb-LCT1_INV" title="~LCT1_INV">X</a></td><td><a href="#bits-fb-LCT2_INV" title="~LCT2_INV">X</a></td><td><a href="#bits-fb-LCT3_INV" title="~LCT3_INV">X</a></td></tr>
+<tr><td>1</td><td>0</td>
+<td><a href="#bits-fb-LCT4_INV" title="~LCT4_INV">X</a></td><td><a href="#bits-fb-LCT5_INV" title="~LCT5_INV">X</a></td><td><a href="#bits-fb-LCT6_INV" title="~LCT6_INV">X</a></td><td><a href="#bits-fb-LCT7_INV" title="~LCT7_INV">X</a></td></tr>
+<tr><td>2</td><td>0</td>
+<td><a href="#bits-fb-FCLK_MUX" title="FCLK_MUX[0]">X</a></td><td><a href="#bits-fb-FCLK_MUX" title="FCLK_MUX[1]">X</a></td><td><a href="#bits-fb-FCLK_MUX" title="FCLK_MUX[2]">X</a></td><td><a href="#bits-fb-FCLK_MUX" title="FCLK_MUX[3]">X</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-fb-LCT0_INV">
+<tr><th>LCT0_INV</th><th>[0, 0, 0]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-fb-LCT1_INV">
+<tr><th>LCT1_INV</th><th>[0, 0, 1]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-fb-LCT2_INV">
+<tr><th>LCT2_INV</th><th>[0, 0, 2]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-fb-LCT3_INV">
+<tr><th>LCT3_INV</th><th>[0, 0, 3]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-fb-LCT4_INV">
+<tr><th>LCT4_INV</th><th>[1, 0, 0]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-fb-LCT5_INV">
+<tr><th>LCT5_INV</th><th>[1, 0, 1]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-fb-LCT6_INV">
+<tr><th>LCT6_INV</th><th>[1, 0, 2]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-fb-LCT7_INV">
+<tr><th>LCT7_INV</th><th>[1, 0, 3]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-fb-FCLK_MUX">
+<tr><th>FCLK_MUX</th><th>[2, 0, 3]</th><th>[2, 0, 2]</th><th>[2, 0, 1]</th><th>[2, 0, 0]</th></tr>
+<tr><td>GCLK0_GCLK1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GCLK0_GCLK2</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK0_NONE</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK0_GCLK3</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>NONE_GCLK1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>GCLK1_GCLK2</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>NONE</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK1_GCLK3</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>NONE_GCLK3</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GCLK2_NONE</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK2_GCLK3</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+<section id="jed-mapping">
+<h3>JED mapping<a class="headerlink" href="#jed-mapping" title="Link to this heading"></a></h3>
+<table class="docutils align-default prjcombine-tile">
+<tr><th>JED offset</th><th>Bit</th></tr>
+<tr><td>0</td><td><a href="#bits-fb-FCLK_MUX">FCLK_MUX[0]</a></td></tr>
+<tr><td>1</td><td><a href="#bits-fb-FCLK_MUX">FCLK_MUX[1]</a></td></tr>
+<tr><td>2</td><td><a href="#bits-fb-FCLK_MUX">FCLK_MUX[2]</a></td></tr>
+<tr><td>3</td><td><a href="#bits-fb-FCLK_MUX">FCLK_MUX[3]</a></td></tr>
+<tr><td>4</td><td><a href="#bits-fb-LCT0_INV">LCT0_INV</a></td></tr>
+<tr><td>5</td><td><a href="#bits-fb-LCT1_INV">LCT1_INV</a></td></tr>
+<tr><td>6</td><td><a href="#bits-fb-LCT2_INV">LCT2_INV</a></td></tr>
+<tr><td>7</td><td><a href="#bits-fb-LCT3_INV">LCT3_INV</a></td></tr>
+<tr><td>8</td><td><a href="#bits-fb-LCT4_INV">LCT4_INV</a></td></tr>
+<tr><td>9</td><td><a href="#bits-fb-LCT5_INV">LCT5_INV</a></td></tr>
+<tr><td>10</td><td><a href="#bits-fb-LCT6_INV">LCT6_INV</a></td></tr>
+<tr><td>11</td><td><a href="#bits-fb-LCT7_INV">LCT7_INV</a></td></tr>
+</table>
+</section>
+</section>
 </section>
 
 
@@ -93,7 +356,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="structure.html" class="btn btn-neutral float-left" title="Device structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="jtag.html" class="btn btn-neutral float-right" title="JTAG interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="db-devices.html" class="btn btn-neutral float-right" title="Database — devices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

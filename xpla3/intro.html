@@ -54,6 +54,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="structure.html">Device structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bitstream.html">Bitstream structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db-devices.html">Database — devices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jtag.html">JTAG interface</a></li>
 </ul>
 </li>
@@ -87,42 +88,41 @@
              
   <section id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
-<p>XPLA3 is a family of flash-based 3.3V CPLDs manufactured by Xilinx.  It is a derivative of the earlier XPLA architectures
-made by Phillips (whose CPLD division has been acquired by Xilinx).</p>
+<p>XPLA3 is a family of flash-based 3.3V CPLDs orignally designed by Philips, and later acquired by Xilinx (along with Philips entire CPLD division).  It is a derivative of Philips earlier XPLA and XPLA2 architectures.</p>
 <section id="devices">
 <h2>Devices<a class="headerlink" href="#devices" title="Link to this heading"></a></h2>
 <p>The following devices exist:</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Device</p></th>
+<th class="head"><p>IDCODE</p></th>
 <th class="head"><p>Function Blocks</p></th>
-<th class="head"><p>FB groups</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>XCR3032XL</p></td>
+<tr class="row-even"><td><p>xcr3032xl</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0xX4808XXX</span></code></p></td>
 <td><p>2</p></td>
-<td><p>1</p></td>
 </tr>
-<tr class="row-odd"><td><p>XCR3064XL</p></td>
+<tr class="row-odd"><td><p>xcr3064xl</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0xX4848XXX</span></code></p></td>
 <td><p>4</p></td>
-<td><p>1</p></td>
 </tr>
-<tr class="row-even"><td><p>XCR3128XL</p></td>
+<tr class="row-even"><td><p>xcr3128xl</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0xX4888XXX</span></code></p></td>
 <td><p>8</p></td>
-<td><p>2</p></td>
 </tr>
-<tr class="row-odd"><td><p>XCR3256XL</p></td>
+<tr class="row-odd"><td><p>xcr3256xl</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0xX4948XXX</span></code></p></td>
 <td><p>16</p></td>
-<td><p>2</p></td>
 </tr>
-<tr class="row-even"><td><p>XCR3384XL</p></td>
+<tr class="row-even"><td><p>xcr3384xl</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0xX4958XXX</span></code></p></td>
 <td><p>24</p></td>
-<td><p>3</p></td>
 </tr>
-<tr class="row-odd"><td><p>XCR3512XL</p></td>
+<tr class="row-odd"><td><p>xcr3512xl</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0xX4978XXX</span></code></p></td>
 <td><p>32</p></td>
-<td><p>4</p></td>
 </tr>
 </tbody>
 </table>
@@ -186,95 +186,95 @@ made by Phillips (whose CPLD division has been acquired by Xilinx).</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Device</p></th>
-<th class="head"><p>PC44</p></th>
-<th class="head"><p>VQ44</p></th>
-<th class="head"><p>VQ100</p></th>
-<th class="head"><p>TQ144</p></th>
-<th class="head"><p>PQ208</p></th>
-<th class="head"><p>CP56</p></th>
-<th class="head"><p>CS48</p></th>
-<th class="head"><p>CS144</p></th>
-<th class="head"><p>CS280</p></th>
-<th class="head"><p>FT256</p></th>
-<th class="head"><p>FG324</p></th>
+<th class="head"><p>cs48</p></th>
+<th class="head"><p>pc44</p></th>
+<th class="head"><p>vq44</p></th>
+<th class="head"><p>cp56</p></th>
+<th class="head"><p>vq100</p></th>
+<th class="head"><p>cs144</p></th>
+<th class="head"><p>tq144</p></th>
+<th class="head"><p>cs280</p></th>
+<th class="head"><p>ft256</p></th>
+<th class="head"><p>pq208</p></th>
+<th class="head"><p>fg324</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>XCR3032XL</p></td>
+<tr class="row-even"><td><p>xcr3032xl</p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 <td><p>X</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
 </tr>
-<tr class="row-odd"><td><p>XCR3064XL</p></td>
+<tr class="row-odd"><td><p>xcr3064xl</p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
-<td></td>
-<td></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
 </tr>
-<tr class="row-even"><td><p>XCR3128XL</p></td>
-<td></td>
-<td></td>
+<tr class="row-even"><td><p>xcr3128xl</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
-<td></td>
-<td></td>
-<td></td>
 <td><p>X</p></td>
-<td></td>
-<td></td>
-<td></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
 </tr>
-<tr class="row-odd"><td><p>XCR3256XL</p></td>
-<td></td>
-<td></td>
-<td></td>
+<tr class="row-odd"><td><p>xcr3256xl</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
-<td></td>
-<td></td>
-<td></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
-<td></td>
+<td><p>-</p></td>
 </tr>
-<tr class="row-even"><td><p>XCR3384XL</p></td>
-<td></td>
-<td></td>
-<td></td>
+<tr class="row-even"><td><p>xcr3384xl</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
 <td><p>X</p></td>
+<td><p>-</p></td>
 <td><p>X</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
 </tr>
-<tr class="row-odd"><td><p>XCR3512XL</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<tr class="row-odd"><td><p>xcr3512xl</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
 <td><p>X</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
 </tr>

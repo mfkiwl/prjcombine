@@ -1,0 +1,12 @@
+Database — devices
+##################
+
+.. toctree::
+   :caption: Contents:
+
+   db-device-xcr3032xl
+   db-device-xcr3064xl
+   db-device-xcr3128xl
+   db-device-xcr3256xl
+   db-device-xcr3384xl
+   db-device-xcr3512xl
