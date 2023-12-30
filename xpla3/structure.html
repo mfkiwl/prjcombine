@@ -49,6 +49,7 @@
 <li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Device structure</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fb-columns-and-rows">FB columns and rows</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#zia-and-fb-inputs">ZIA and FB inputs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fclk-networks">FCLK networks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#product-terms">Product terms</a><ul>
@@ -186,75 +187,541 @@ UCTs can be used to drive control signals throughout the whole device:</p>
 </li>
 </ul>
 </section>
+<section id="fb-columns-and-rows">
+<h2>FB columns and rows<a class="headerlink" href="#fb-columns-and-rows" title="Link to this heading"></a></h2>
+<p>The FBs in the device are organized in a 2D structure of columns and rows.</p>
+<p>Each FB column has its own branch of the ZIA, and actually contains two FBs per row:
+one on each side of the ZIA.  The FBs are nubered as follows:</p>
+<ul class="simple">
+<li><p>Even-numbered FBs are on one side of the ZIA branch of their column, and odd-numbered are on
+the other</p></li>
+<li><p>When increasing FB number from odd to even, move to the next FB row</p></li>
+<li><p>If already at the last FB row, move to the next FB column and first FB row</p></li>
+</ul>
+<p>For example, the xcr3384xl device is organized as follows:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Row</p></th>
+<th class="head" colspan="2"><p>Column 0</p></th>
+<th class="head" colspan="2"><p>Column 1</p></th>
+<th class="head" colspan="2"><p>Column 2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+<td><p>16</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>10</p></td>
+<td><p>11</p></td>
+<td><p>18</p></td>
+<td><p>19</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>12</p></td>
+<td><p>13</p></td>
+<td><p>20</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>14</p></td>
+<td><p>15</p></td>
+<td><p>22</p></td>
+<td><p>23</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="zia-and-fb-inputs">
 <h2>ZIA and FB inputs<a class="headerlink" href="#zia-and-fb-inputs" title="Link to this heading"></a></h2>
+<p>The core interconnect structure in XPLA3 devices is called ZIA, the Zero-power Interconnect Array.
+It is a classic CPLD design.</p>
+<p>Each FB has 40 inputs from ZIA, which we call <code class="docutils literal notranslate"><span class="pre">FB[i].IM[j]</span></code>.  Each FB input is controlled
+by a set of fuses:</p>
+<ul>
+<li><p>mux fuses (<code class="docutils literal notranslate"><span class="pre">FB[i].IM[j].MUX</span></code>) select what is routed to the input.  The combinations include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">VCC</span></code>: the input is const 1 (for unused inputs)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GND</span></code>: the input is const 0 (not very useful)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MC_{k}_{l}</span></code>: the input is routed from the macrocell output <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].MC_ZIA_OUT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IOB_{k}_{l}</span></code>: the input is routed from the macrocell output <code class="docutils literal notranslate"><span class="pre">FB[k].MC[l].IOB_ZIA_OUT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GCLK{i}</span></code>: the input is routed from the input buffer of dedicated <code class="docutils literal notranslate"><span class="pre">GCLK{i}</span></code> pin;
+for this choice to work, the relevant <code class="docutils literal notranslate"><span class="pre">FB_COL[*].ZIA_GCLK{i}_ENABLE</span></code> fuse has to be enabled</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STARTUP</span></code>: the input is routed to the special <code class="docutils literal notranslate"><span class="pre">STARTUP</span></code> network</p></li>
+</ul>
+<p>The allowable combinations differ between inputs within a single FB, but don’t differ across
+FBs within a single device.  In other words, the set of allowed values for these fuses
+depends only on the <code class="docutils literal notranslate"><span class="pre">j</span></code> coordinate, but not on <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
+</li>
+</ul>
+<p>The ZIA lines corresponding to <code class="docutils literal notranslate"><span class="pre">GCLK*</span></code> inputs are gated, for the purpose for power saving.
+The gating is per-FB column, and is controlled by the following fuses:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB_COL[i].ZIA_GCLK{j}_ENABLE</span></code>: if programmed, <code class="docutils literal notranslate"><span class="pre">GCLK{i}</span></code> can be routed through ZIA to FBs
+within this column.  Otherwise, the <code class="docutils literal notranslate"><span class="pre">GCLK{i}</span></code> option above is non-functional and will result
+in XXX.  Routing <code class="docutils literal notranslate"><span class="pre">GCLK*</span></code> to <code class="docutils literal notranslate"><span class="pre">FCLK*</span></code> is always possible, regardless of this fuse.</p></li>
+</ul>
 <div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
-<p>write me</p>
+<p>check semantics of disabled <code class="docutils literal notranslate"><span class="pre">GCLK*</span></code></p>
 </div>
+<p>The <code class="docutils literal notranslate"><span class="pre">STARTUP</span></code> net is a special device-wide net that is pulsed to <code class="docutils literal notranslate"><span class="pre">1</span></code> for a short time at device
+initialization, then remains at <code class="docutils literal notranslate"><span class="pre">0</span></code> afterwards.  It can be connected as the <code class="docutils literal notranslate"><span class="pre">SET</span></code> input
+to a register to effectively obtain a <code class="docutils literal notranslate"><span class="pre">1</span></code>-initialized register.</p>
 </section>
 <section id="fclk-networks">
 <h2>FCLK networks<a class="headerlink" href="#fclk-networks" title="Link to this heading"></a></h2>
+<p>Every FB has two fast clock nets, <code class="docutils literal notranslate"><span class="pre">FCLK[0-1]</span></code>.  They can be routed to the clock input
+of every MC within the FB.  They can be routed from <code class="docutils literal notranslate"><span class="pre">GCLK*</span></code> input pads in many combinations.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">FCLK*</span></code> routing is selected by a single fuse set per FB that selects both inputs
+at once:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].FCLK_MUX</span></code>: selects <code class="docutils literal notranslate"><span class="pre">FCLK*</span></code> routing for this FB.  The values are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GCLK{j}_GCLK{k}</span></code>: routes <code class="docutils literal notranslate"><span class="pre">FCLK0</span></code> to <code class="docutils literal notranslate"><span class="pre">GCLK{j}</span></code> and <code class="docutils literal notranslate"><span class="pre">FCLK1</span></code> to <code class="docutils literal notranslate"><span class="pre">GCLK{k}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GCLK{j}_NONE</span></code>: routes <code class="docutils literal notranslate"><span class="pre">FCLK0</span></code> to <code class="docutils literal notranslate"><span class="pre">GCLK{j}</span></code> and <code class="docutils literal notranslate"><span class="pre">FCLK1</span></code> to const XXX</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE_GCLK{j}</span></code>: routes <code class="docutils literal notranslate"><span class="pre">FCLK0</span></code> to const XXX and <code class="docutils literal notranslate"><span class="pre">FCLK1</span></code> to <code class="docutils literal notranslate"><span class="pre">GCLK{j}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: routes <code class="docutils literal notranslate"><span class="pre">FCLK[0-1]</span></code> to const XXX</p></li>
+</ul>
+<p>See the database for the exact set of allowed values.</p>
+</li>
+</ul>
 <div class="admonition-todo admonition" id="id2">
 <p class="admonition-title">Todo</p>
-<p>write me</p>
+<p>check exact semantics of <code class="docutils literal notranslate"><span class="pre">NONE</span></code></p>
 </div>
 </section>
 <section id="product-terms">
 <h2>Product terms<a class="headerlink" href="#product-terms" title="Link to this heading"></a></h2>
-<div class="admonition-todo admonition" id="id3">
-<p class="admonition-title">Todo</p>
-<p>write me</p>
-</div>
+<p>As the name suggests, XPLA3 has a PLA-like structure.  Each FB has 48 product terms, all of
+which are routable to sum terms of all MCs within that FB.  We call them <code class="docutils literal notranslate"><span class="pre">FB[i].PT[j]</span></code>. In addition, each product term
+also has a single dedicated function it can be used for:</p>
+<ul class="simple">
+<li><p>PTs 0-7 are used to derive Local Control Terms (LCTs), which can be routed to special inputs
+of all MCs within the FB</p></li>
+<li><p>PTs 8-38 (even) can be used as fast data input (D1) of MCs 0-15, respectively.  This data input
+can be combined with the slower sum term input via a programmable LUT2.</p></li>
+<li><p>PTs 9-39 (odd) can be used as dedicated clock or CE input to registers of MCs 0-15, respectively.</p></li>
+<li><p>PTs 40-47 can be used for foldback NAND: the output of these product term is inverted and can
+be further used as input to other product terms within the same FB.</p></li>
+</ul>
+<p>The inputs to all product terms within the FB are the same and include:</p>
+<ul class="simple">
+<li><p>the 40 <code class="docutils literal notranslate"><span class="pre">FB[i].IM[*]</span></code> signals, both true and negated</p></li>
+<li><p>the 8 foldback NAND signals from the same FB, <code class="docutils literal notranslate"><span class="pre">FB[i].PT[40-47]</span></code>, negated only</p></li>
+</ul>
+<p>The fuses controlling a product term are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].PT[j].IM[k].P</span></code>: if programmed (set to 0), <code class="docutils literal notranslate"><span class="pre">FB[i].IM[k]</span></code> is included in the product term (true polarity)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].PT[j].IM[k].N</span></code>: if programmed (set to 0), <code class="docutils literal notranslate"><span class="pre">~FB[i].IM[k]</span></code> is included in the product term (inverted polarity)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].PT[j].FBN[k]</span></code>: if programmed (set to 0), <code class="docutils literal notranslate"><span class="pre">~FB[i].PT[40+k]</span></code> is included in the product term (foldback NAND, inverted polarity)</p></li>
+</ul>
 <section id="local-control-terms">
 <h3>Local control terms<a class="headerlink" href="#local-control-terms" title="Link to this heading"></a></h3>
-<div class="admonition-todo admonition" id="id4">
-<p class="admonition-title">Todo</p>
-<p>write me</p>
+<p>Every FB has 8 LCTs (local control terms), which are derived from PT 0-7 respectively, via an optional inversion:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">LCT</span><span class="p">{</span><span class="n">j</span><span class="p">}</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">PT</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">^</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">LCT</span><span class="p">{</span><span class="n">j</span><span class="p">}</span><span class="n">_INV</span>
+</pre></div>
 </div>
+<p>The fuses controlling LCTs are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].LCT{j}_INV</span></code>: if programmed, LCT j is inverse of PT j; otherwise LCT j is equal to PT jed_to_jtag</p></li>
+</ul>
+<p>The LCTs can be used for the following purposes:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LCT</p></th>
+<th class="head"><p>CLK</p></th>
+<th class="head"><p>RST</p></th>
+<th class="head"><p>SET</p></th>
+<th class="head"><p>CE</p></th>
+<th class="head"><p>OE</p></th>
+<th class="head"><p>UCT</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>-</p></td>
+<td><p>X</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>-</p></td>
+<td><p>X</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>-</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>-</p></td>
+<td><p>X</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>-</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>X</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>X</p></td>
+<td><p>*</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>X</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>X</p></td>
+</tr>
+</tbody>
+</table>
+<p>*: on XCR3032XL only</p>
 </section>
 <section id="universal-control-terms">
 <h3>Universal control terms<a class="headerlink" href="#universal-control-terms" title="Link to this heading"></a></h3>
-<div class="admonition-todo admonition" id="id5">
+<p>The device has 4 UCTs (universal control terms).  On the XCR3032XL, all UCTs are routable
+from LCT6 and LCT7 of all FBs.  On other devices, all the UCTs are routaeble from only LCT7 off
+all FBs.</p>
+<p>The UCTs can be routed to special inputs of all macrocells on the device.  They have fixed functions:</p>
+<ul class="simple">
+<li><p>UCT 0: can be routed to OE of all MCs</p></li>
+<li><p>UCT 1: can be routed to RST of all MCs</p></li>
+<li><p>UCT 2: can be routed to SET of all MCs</p></li>
+<li><p>UCT 3: can be routed to CLK of all MCs</p></li>
+</ul>
+<p>The “universal” name is a slight misnomer.  On all devices other than XCR3512XL, the UCTs are truly
+universal and cover the entire device.  However, on XCR3512XL, the FBs of the device are
+divided into two FB groups, and each group has their own UCT muxes.  The vendor toolchain doesn’T
+make use of this functionality and always mirrors UCT mux setting between the two groups.</p>
+<p>The relevant fuse sets are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB_GROUP[i].UCT{j}</span></code>: selects the signal routed to <code class="docutils literal notranslate"><span class="pre">UCT{j}</span></code> of FB group <code class="docutils literal notranslate"><span class="pre">i</span></code> (all devices other than XCR3512XL have only FB group 0)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB{k}_LCT{l}</span></code>: the UCT is driven by the given LCT of the given FB</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: the UCT is unused and will be const-XXX</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition-todo admonition" id="id3">
 <p class="admonition-title">Todo</p>
-<p>write me</p>
+<p>const</p>
+</div>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<p>exact FB assignment to groups on XCR3512XL</p>
 </div>
 </section>
 </section>
 <section id="sum-term-lut2">
 <h2>Sum term, LUT2<a class="headerlink" href="#sum-term-lut2" title="Link to this heading"></a></h2>
-<div class="admonition-todo admonition" id="id6">
-<p class="admonition-title">Todo</p>
-<p>write me</p>
+<p>Every MC in the device has a sum term, <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].SUM</span></code>, which can be constructed from all
+product terms within the same FB.  Is is controlled by the following fuses:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].SUM.PT[k]</span></code>: if programmed (set to 0), <code class="docutils literal notranslate"><span class="pre">FB[i].PT[k]</span></code> is included in the sum term for <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j]</span></code></p></li>
+</ul>
+<p>The sum term, together with the fast input product term, are fed into a programmable LUT2 which
+determines the given macrocell’s combinatorial output and can also be routed to the register’s
+data input.  The LUT2 can be used for many purposes:</p>
+<ul class="simple">
+<li><p>select between the sum term and the fast product term</p></li>
+<li><p>serve as a XOR or AND gate between the sum term and fast product term</p></li>
+<li><p>perform inversion</p></li>
+</ul>
+<p>The LUT2 is controlled by a fuse set:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].LUT</span></code>: a 4-bit fuse set configuring the LUT2</p></li>
+</ul>
+<p>The LUT2 works as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">select</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">SUM</span> <span class="o">|</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">PT</span><span class="p">[</span><span class="mi">8</span> <span class="o">+</span> <span class="n">j</span> <span class="o">*</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span>
+<span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">LUT_OUT</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">LUT</span><span class="p">[</span><span class="n">select</span><span class="p">]</span>
+</pre></div>
 </div>
 </section>
 <section id="register">
 <h2>Register<a class="headerlink" href="#register" title="Link to this heading"></a></h2>
-<div class="admonition-todo admonition" id="id7">
+<p>Each macrocell has a register.  It has:</p>
+<ul class="simple">
+<li><p>four modes of operation:</p>
+<ul>
+<li><p>DFF</p></li>
+<li><p>TFF</p></li>
+<li><p>D latch</p></li>
+<li><p>DFF with clock enable</p></li>
+</ul>
+</li>
+<li><p>D or T input routable from one of:</p>
+<ul>
+<li><p>LUT output</p></li>
+<li><p>pad input buffer (so-called fast input register)</p></li>
+</ul>
+</li>
+<li><p>clock or gate input routable from one of:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">FCLK*</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LCT[4-7]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UCT3</span></code></p></li>
+<li><p>dedicated per-MC product term</p></li>
+</ul>
+</li>
+<li><p>configurable inversion on the clock or gate input</p></li>
+<li><p>(in DFF with clock enable mode only) clock enable input routable to one of:</p>
+<ul>
+<li><p>dedicated per-MC product term</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LCT4</span></code></p></li>
+</ul>
+</li>
+<li><p>asynchronous reset, routable from:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">LCT[0-5]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UCT1</span></code></p></li>
+<li><p>const-0</p></li>
+</ul>
+</li>
+<li><p>asynchronous set, routable from:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">LCT[0-5]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UCT2</span></code></p></li>
+<li><p>const-0</p></li>
+</ul>
+</li>
+<li><p>initial state of 0</p></li>
+</ul>
+<p>The fuses involved are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].CLK_MUX</span></code>: selects CLK input</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">PT</span></code>: dedicated product term <code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">+</span> <span class="pre">j</span> <span class="pre">*</span> <span class="pre">2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FCLK[0-1]</span></code>: per-FB <code class="docutils literal notranslate"><span class="pre">FCLK[0-1]</span></code> network</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LCTx</span></code>: per-FB local control term</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UCT3</span></code>: universal control term</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].CLK_INV</span></code>: if programmed, the CLK input is inverted (ie. clock is negedge)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].RST_MUX</span></code>: selects RST input</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">LCTx</span></code>: per-FB local control term</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UCT1</span></code>: universal control term</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GND</span></code>: const 0</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].SET_MUX</span></code>: selects SET input</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">LCTx</span></code>: per-FB local control term</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UCT1</span></code>: universal control term</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GND</span></code>: const 0</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].CE_MUX</span></code>: selects CE input (only relevant in <code class="docutils literal notranslate"><span class="pre">DFFCE</span></code> mode)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">PT</span></code>: dedicated product term <code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">+</span> <span class="pre">j</span> <span class="pre">*</span> <span class="pre">2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LCTx</span></code>: per-FB local control term</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].REG_MODE</span></code>: selects FF mode</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">DFF</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TFF</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LATCH</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DFFCE</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>The register works as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK_MUX</span><span class="p">)</span>
+<span class="n">PT</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">PT</span><span class="p">[</span><span class="mi">9</span> <span class="o">+</span> <span class="n">j</span> <span class="o">*</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span> <span class="o">^</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK_INV</span><span class="p">;</span>
+<span class="n">LCTx</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">LCTx</span> <span class="o">^</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK_INV</span><span class="p">;</span>
+<span class="n">UCT3</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span> <span class="o">=</span> <span class="n">FB_GROUP</span><span class="p">[</span><span class="n">fb_to_fb_group</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span><span class="o">.</span><span class="n">UCT3</span> <span class="o">^</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK_INV</span><span class="p">;</span>
+<span class="n">FCLKx</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">FCLKx</span> <span class="o">^</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK_INV</span><span class="p">;</span>
+<span class="n">endcase</span>
+
+<span class="k">case</span><span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">RST_MUX</span><span class="p">)</span>
+<span class="n">LCTx</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">RST</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">LCTx</span><span class="p">;</span>
+<span class="n">UCT1</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">RST</span> <span class="o">=</span> <span class="n">FB_GROUP</span><span class="p">[</span><span class="n">fb_to_fb_group</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span><span class="o">.</span><span class="n">UCT1</span><span class="p">;</span>
+<span class="n">GND</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">RST</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">endcase</span>
+
+<span class="k">case</span><span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">SET_MUX</span><span class="p">)</span>
+<span class="n">LCTx</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">SET</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">LCTx</span><span class="p">;</span>
+<span class="n">UCT2</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">SET</span> <span class="o">=</span> <span class="n">FB_GROUP</span><span class="p">[</span><span class="n">fb_to_fb_group</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span><span class="o">.</span><span class="n">UCT2</span><span class="p">;</span>
+<span class="n">GND</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">SET</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">endcase</span>
+
+<span class="k">case</span><span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CE_MUX</span><span class="p">)</span>
+<span class="n">PT</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CE</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">PT</span><span class="p">[</span><span class="mi">9</span> <span class="o">+</span> <span class="n">j</span> <span class="o">*</span> <span class="mi">2</span><span class="p">];</span>
+<span class="n">LCT4</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CE</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">LCT4</span><span class="p">;</span>
+<span class="n">endcase</span>
+
+<span class="k">case</span><span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG_D_MUX</span><span class="p">)</span>
+<span class="n">LUT</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG_D</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">LUT_OUT</span><span class="p">;</span>
+<span class="n">IBUF</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG_D</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">IOB</span><span class="o">.</span><span class="n">I</span><span class="p">;</span>
+<span class="n">endcase</span>
+
+<span class="n">initial</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">case</span><span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG_MODE</span><span class="p">)</span>
+<span class="o">//</span> <span class="n">Pretend</span> <span class="n">the</span> <span class="n">usual</span> <span class="n">synth</span><span class="o">/</span><span class="n">sim</span> <span class="n">mismatch</span> <span class="n">doesn</span><span class="s1">&#39;t happen.</span>
+<span class="n">DFF</span><span class="p">:</span>
+    <span class="n">always</span> <span class="o">@</span><span class="p">(</span><span class="n">posedge</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span><span class="p">,</span> <span class="n">posedge</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">RST</span><span class="p">,</span> <span class="n">posedge</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">SET</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">RST</span><span class="p">)</span>
+            <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">SET</span><span class="p">)</span>
+            <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG_D</span><span class="p">;</span>
+<span class="n">TFF</span><span class="p">:</span>
+    <span class="n">always</span> <span class="o">@</span><span class="p">(</span><span class="n">posedge</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span><span class="p">,</span> <span class="n">posedge</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">RST</span><span class="p">,</span> <span class="n">posedge</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">SET</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">RST</span><span class="p">)</span>
+            <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">SET</span><span class="p">)</span>
+            <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG</span> <span class="o">^=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG_D</span><span class="p">;</span>
+<span class="n">LATCH</span><span class="p">:</span>
+    <span class="n">always</span> <span class="o">@*</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">RST</span><span class="p">)</span>
+            <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">SET</span><span class="p">)</span>
+            <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span><span class="p">)</span>
+            <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG_D</span><span class="p">;</span>
+<span class="n">DFFCE</span><span class="p">:</span>
+    <span class="n">always</span> <span class="o">@</span><span class="p">(</span><span class="n">posedge</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK</span><span class="p">,</span> <span class="n">posedge</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">RST</span><span class="p">,</span> <span class="n">posedge</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">SET</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">RST</span><span class="p">)</span>
+            <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">SET</span><span class="p">)</span>
+            <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CE</span><span class="p">)</span>
+            <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG_D</span><span class="p">;</span>
+<span class="n">endcase</span>
+</pre></div>
+</div>
+<div class="admonition-todo admonition" id="id5">
 <p class="admonition-title">Todo</p>
-<p>write me</p>
+<p>there are unknown bits involved</p>
 </div>
 </section>
 <section id="macrocell-and-iob-outputs">
 <h2>Macrocell and IOB outputs<a class="headerlink" href="#macrocell-and-iob-outputs" title="Link to this heading"></a></h2>
-<div class="admonition-todo admonition" id="id8">
-<p class="admonition-title">Todo</p>
-<p>write me</p>
-</div>
+<p>Macrocells come in two variants: ones with IOBs and buried macrocells (without IOBs).</p>
+<p>A macrocell with IOB has two outputs to ZIA:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].MC_ZIA_OUT</span></code>: routable from the LUT2 or register output</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IOB_ZIA_OUT</span></code>: routable from the IOB’s input buffer or register output</p></li>
+</ul>
+<p>A macrocell with IOB also has an output to the IOB:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].MC_IOB_OUT</span></code>: routable from the LUT2 or register output</p></li>
+</ul>
+<p>The muxes for all three of the above signals are independent, allowing any two of
+IBUF, LUT2, and register output to be routed to the ZIA, and also independently connect
+either LUT2 or register output to the output buffer.</p>
+<p>A buried macrocell has only one output to ZIA, <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].MC_ZIA_OUT</span></code>.  It is thus
+not possible to use both its combinatorial and registered output at the same time.</p>
+<p>The fuses involved are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].MC_ZIA_MUX</span></code>: controls routing to <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].MC_ZIA_OUT</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">REG</span></code>: routes from <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].REG</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LUT</span></code>: routes from <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].LUT_OUT</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].MC_IOB_MUX</span></code>: controls routing to <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].MC_IOB_OUT</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">REG</span></code>: routes from <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].REG</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LUT</span></code>: routes from <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].LUT_OUT</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IOB_ZIA_MUX</span></code>: controls routing to <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IOB_ZIA_OUT</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">REG</span></code>: routes from <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].REG</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IBUF</span></code>: routes from <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IOB.I</span></code></p></li>
+</ul>
+</li>
+</ul>
 </section>
 <section id="input-output-buffer">
 <h2>Input/output buffer<a class="headerlink" href="#input-output-buffer" title="Link to this heading"></a></h2>
-<div class="admonition-todo admonition" id="id9">
-<p class="admonition-title">Todo</p>
-<p>write me</p>
-</div>
+<p>All I/O buffers (except <code class="docutils literal notranslate"><span class="pre">GCLK*</span></code> pins which are input-only) are associated with a macrocell.
+Not all MCs have associated IOBs.</p>
+<p>The output buffer is controlled by the <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].MC_IOB_OUT</span></code> and <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].OE</span></code> signals of the macrocell.</p>
+<p>The OE signal is routable from:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GND</span></code>: const-0 (input-only pin)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VCC</span></code>: const-1 (output-only pin)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LCT[0126]</span></code>: local control terms</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UCT0</span></code>: universal control term</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PULLUP</span></code>: special option; like <code class="docutils literal notranslate"><span class="pre">GND</span></code>, but also enables a weak pull-up on the pin</p></li>
+</ul>
+<p>The output slew rate is programmable between two settings, “fast” and “slow”.</p>
+<p>Each I/O buffer has the following fuses:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].OE_MUX</span></code>: selects output enable source</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">GND</span></code>: const-0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VCC</span></code>: const-1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LCTx</span></code>: per-FB local control term</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UCT1</span></code>: universal control term</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PULLUP</span></code>: const-0 and enable weak pull-up resistor</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IOB_SLEW</span></code>: selects slew rate, one of:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLOW</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FAST</span></code></p></li>
+</ul>
+</li>
+</ul>
 </section>
 <section id="misc-configuration">
 <h2>Misc configuration<a class="headerlink" href="#misc-configuration" title="Link to this heading"></a></h2>
-<div class="admonition-todo admonition" id="id10">
-<p class="admonition-title">Todo</p>
-<p>write me</p>
-</div>
+<p>The XPLA3 devices also have some global configuration fuses that affect the whole device:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">READ_PROT</span></code>: if programmed, the device is read-protected, and the bitstream cannot be read back (except for UES area)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ISP_DISABLE</span></code>: if programmed, and not overriden by <code class="docutils literal notranslate"><span class="pre">PORT_EN</span></code>, the special function of the JTAG pins is disabled, and the pins are controlled by the macrocells as normal I/O; if not programmed, the JTAG pins retain their special functions and the relevant IOBs are disconnected from macrocell control</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UES</span></code> (user electronic signature): this scratchpad multi-bit field can be used for any user-defined purpose; it is exempt from read protection; the exact size of this field varies with device</p></li>
+</ul>
+<p>When used by ISE, the UES field stores 8-bit ASCII data, with MSB-first bit numbering (ie. bit 0 of <code class="docutils literal notranslate"><span class="pre">UES</span></code> is the MSB of first character).</p>
 </section>
 </section>
 
