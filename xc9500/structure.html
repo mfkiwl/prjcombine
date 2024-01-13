@@ -602,7 +602,7 @@ If the pad is supposed to be input only, the OE signal should be programmed to b
 <li><p>on XC9500, <code class="docutils literal notranslate"><span class="pre">IOB_OE_MUX</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">GND</span></code></p></li>
 <li><p>on XC9500XL/XV, <code class="docutils literal notranslate"><span class="pre">OE_MUX</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">PT</span></code>, <code class="docutils literal notranslate"><span class="pre">OE_INV</span></code> should be unset, and <code class="docutils literal notranslate"><span class="pre">PT[1]</span></code> should not be allocated to its dedicated function</p></li>
 </ul>
-<p>Likewise, if the pad is supposed to be always-on output, the OE signal should be programmed to be always 1:</p>
+<p>Likewise, if the pad is supposed to be an always-on output, the OE signal should be programmed to be always 1:</p>
 <ul class="simple">
 <li><p>on XC9500, <code class="docutils literal notranslate"><span class="pre">IOB_OE_MUX</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">VCC</span></code></p></li>
 <li><p>on XC9500XL/XV, <code class="docutils literal notranslate"><span class="pre">OE_MUX</span></code> should be set to <code class="docutils literal notranslate"><span class="pre">PT</span></code>, <code class="docutils literal notranslate"><span class="pre">OE_INV</span></code> should be set, and <code class="docutils literal notranslate"><span class="pre">PT[1]</span></code> should not be allocated to its dedicated function</p></li>
