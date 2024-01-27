@@ -1,0 +1,650 @@
+XC2C32
+######
+
+IDCODE part: 0x6c18
+
+FB count: 2
+
+I/O banks: 1
+
+Input-only pads: 1
+
+Has VREF: False
+
+BS cols: 260
+
+IMUX width: 8
+
+BS layout: WIDE
+
+FB rows: 1
+
+MC width: 9
+
+FB rows: 1
+
+.. list-table::
+   :header-rows: 1
+
+   - - Column range
+     - Bits
+   - - 0..1
+     - transfer
+   - - 1..10
+     - FB column 0 even MCs
+   - - 10..122
+     - FB column 0 even PTs
+   - - 122..138
+     - FB column 0 IMUX
+   - - 138..250
+     - FB column 0 odd PTs
+   - - 250..259
+     - FB column 0 odd MCs
+   - - 259..260
+     - transfer
+
+I/O pins
+========
+
+.. list-table::
+   :header-rows: 1
+
+   - - Function
+     - Bank
+     - Pad distance
+     - xc2c32-pc44
+     - xc2c32-vq44
+     - xc2c32-cp56
+     - xc2c32-di44
+   - - IDCODE part
+     -
+     -
+     - 0x6c1d
+     - 0x6c1c
+     - 0x6c1b
+     - 0x6c18
+   - - IPAD0
+     - 0
+     - 23
+     - P24
+     - P18
+     - D10
+     - P29
+   - - IOB_0_0
+     - 0
+     - 43
+     - P44
+     - P38
+     - F1
+     - P5
+   - - IOB_0_1
+     - 0
+     - 42
+     - P43
+     - P37
+     - E3
+     - P4
+   - - IOB_0_2
+     - 0
+     - 41
+     - P42
+     - P36
+     - E1
+     - P3
+   - - IOB_0_3 (GOE1)
+     - 0
+     - 39
+     - P40
+     - P34
+     - D1
+     - P1
+   - - IOB_0_4 (GOE0)
+     - 0
+     - 38
+     - P39
+     - P33
+     - C1
+     - P44
+   - - IOB_0_5 (GOE3)
+     - 0
+     - 37
+     - P38
+     - P32
+     - A3
+     - P43
+   - - IOB_0_6 (GOE2)
+     - 0
+     - 36
+     - P37
+     - P31
+     - A2
+     - P42
+   - - IOB_0_7 (GSR)
+     - 0
+     - 35
+     - P36
+     - P30
+     - B1
+     - P41
+   - - IOB_0_8
+     - 0
+     - 34
+     - P35
+     - P29
+     - A1
+     - P40
+   - - IOB_0_9
+     - 0
+     - 33
+     - P34
+     - P28
+     - C4
+     - P39
+   - - IOB_0_10
+     - 0
+     - 32
+     - P33
+     - P27
+     - C5
+     - P38
+   - - IOB_0_11
+     - 0
+     - 28
+     - P29
+     - P23
+     - C8
+     - P34
+   - - IOB_0_12
+     - 0
+     - 27
+     - P28
+     - P22
+     - A10
+     - P33
+   - - IOB_0_13
+     - 0
+     - 26
+     - P27
+     - P21
+     - B10
+     - P32
+   - - IOB_0_14
+     - 0
+     - 25
+     - P26
+     - P20
+     - C10
+     - P31
+   - - IOB_0_15
+     - 0
+     - 24
+     - P25
+     - P19
+     - E8
+     - P30
+   - - IOB_1_0
+     - 0
+     - 0
+     - P1
+     - P39
+     - G1
+     - P6
+   - - IOB_1_1
+     - 0
+     - 1
+     - P2
+     - P40
+     - F3
+     - P7
+   - - IOB_1_2
+     - 0
+     - 2
+     - P3
+     - P41
+     - H1
+     - P8
+   - - IOB_1_3
+     - 0
+     - 3
+     - P4
+     - P42
+     - G3
+     - P9
+   - - IOB_1_4 (GCLK0)
+     - 0
+     - 4
+     - P5
+     - P43
+     - J1
+     - P10
+   - - IOB_1_5 (GCLK1)
+     - 0
+     - 5
+     - P6
+     - P44
+     - K1
+     - P11
+   - - IOB_1_6 (GCLK2)
+     - 0
+     - 6
+     - P7
+     - P1
+     - K2
+     - P12
+   - - IOB_1_7
+     - 0
+     - 7
+     - P8
+     - P2
+     - K3
+     - P13
+   - - IOB_1_8
+     - 0
+     - 8
+     - P9
+     - P3
+     - H3
+     - P14
+   - - IOB_1_9
+     - 0
+     - 10
+     - P11
+     - P5
+     - K5
+     - P16
+   - - IOB_1_10
+     - 0
+     - 11
+     - P12
+     - P6
+     - H5
+     - P17
+   - - IOB_1_11
+     - 0
+     - 13
+     - P14
+     - P8
+     - H8
+     - P19
+   - - IOB_1_12
+     - 0
+     - 17
+     - P18
+     - P12
+     - K8
+     - P23
+   - - IOB_1_13
+     - 0
+     - 18
+     - P19
+     - P13
+     - H10
+     - P24
+   - - IOB_1_14
+     - 0
+     - 19
+     - P20
+     - P14
+     - G10
+     - P25
+   - - IOB_1_15
+     - 0
+     - 21
+     - P22
+     - P16
+     - F10
+     - P27
+   - - TCK
+     - AUX
+     -
+     - P17
+     - P11
+     - K10
+     - P22
+   - - TMS
+     - AUX
+     -
+     - P16
+     - P10
+     - K9
+     - P21
+   - - TDI
+     - AUX
+     -
+     - P15
+     - P9
+     - J10
+     - P20
+   - - TDO
+     - AUX
+     -
+     - P30
+     - P24
+     - A6
+     - P35
+   - - GND
+     - \-
+     -
+     - P10
+
+       P23
+
+       P31
+     - P17
+
+       P25
+
+       P4
+     - C7
+
+       F8
+
+       H4
+     - P15
+
+       P28
+
+       P36
+   - - VCCINT
+     - \-
+     -
+     - P21
+     - P15
+     - G8
+     - P26
+   - - VCCIO0
+     - 0
+     -
+     - P13
+
+       P32
+     - P26
+
+       P7
+     - C6
+
+       H6
+     - P18
+
+       P37
+   - - VCCAUX
+     - \-
+     -
+     - P41
+     - P35
+     - D3
+     - P2
+   - - NC
+     - \-
+     -
+     - \-
+     - \-
+     - A4
+
+       A5
+
+       A7
+
+       A8
+
+       A9
+
+       C3
+
+       D8
+
+       E10
+
+       H7
+
+       K4
+
+       K6
+
+       K7
+     - \-
+
+Speed data
+==========
+
+.. list-table::
+   :header-rows: 1
+
+   - - Timing parameter
+     - xc2c32-3
+     - xc2c32-4
+     - xc2c32-6
+   - - DEL_CLK_Q
+     - 200
+     - 600
+     - 700
+   - - DEL_D_Q_COMB
+     - 200
+     - 300
+     - 700
+   - - DEL_D_Q_LATCH
+     - 1000
+     - 1500
+     - 2500
+   - - DEL_IBUF_D
+     - 1200
+     - 1500
+     - 2400
+   - - DEL_IBUF_FCLK
+     - 1200
+     - 1300
+     - 2000
+   - - DEL_IBUF_FOE
+     - 800
+     - 1300
+     - 2100
+   - - DEL_IBUF_FSR
+     - 1200
+     - 1600
+     - 2000
+   - - DEL_IBUF_IMUX
+     - 800
+     - 1300
+     - 1700
+   - - DEL_IBUF_PLAIN.LVCMOS18
+     - 0
+     - 0
+     - 0
+   - - DEL_IBUF_PLAIN.LVCMOS18_ANY
+     - 0
+     - 0
+     - 0
+   - - DEL_IBUF_PLAIN.LVCMOS25
+     - 700
+     - 800
+     - 1000
+   - - DEL_IBUF_PLAIN.LVCMOS33
+     - 700
+     - 800
+     - 1000
+   - - DEL_IBUF_PLAIN.LVTTL
+     - 700
+     - 800
+     - 1000
+   - - DEL_IBUF_SCHMITT.LVCMOS15
+     - 2500
+     - 3000
+     - 4000
+   - - DEL_IBUF_SCHMITT.LVCMOS18
+     - 2000
+     - 3000
+     - 4000
+   - - DEL_IBUF_SCHMITT.LVCMOS18_ANY
+     - 2000
+     - 3000
+     - 4000
+   - - DEL_IBUF_SCHMITT.LVCMOS25
+     - 2500
+     - 3000
+     - 4000
+   - - DEL_IBUF_SCHMITT.LVCMOS33
+     - 2500
+     - 3000
+     - 4000
+   - - DEL_IBUF_SCHMITT.LVTTL
+     - 2500
+     - 3000
+     - 4000
+   - - DEL_IMUX_CT
+     - 1300
+     - 1300
+     - 1600
+   - - DEL_IMUX_OR
+     - 600
+     - 600
+     - 1600
+   - - DEL_IMUX_PT
+     - 400
+     - 400
+     - 1100
+   - - DEL_MC_FOE
+     - 200
+     - 200
+     - 800
+   - - DEL_OBUF_FAST.LVCMOS15
+     - 1900
+     - 2600
+     - 3000
+   - - DEL_OBUF_FAST.LVCMOS18
+     - 1400
+     - 1800
+     - 2000
+   - - DEL_OBUF_FAST.LVCMOS18_ANY
+     - 1400
+     - 1800
+     - 2000
+   - - DEL_OBUF_FAST.LVCMOS25
+     - 2200
+     - 2800
+     - 4000
+   - - DEL_OBUF_FAST.LVCMOS33
+     - 2600
+     - 3300
+     - 4500
+   - - DEL_OBUF_FAST.LVTTL
+     - 2600
+     - 3300
+     - 4500
+   - - DEL_OBUF_OE
+     - 3200
+     - 2900
+     - 3400
+   - - DEL_OBUF_SLOW.LVCMOS15
+     - 4900
+     - 6600
+     - 8000
+   - - DEL_OBUF_SLOW.LVCMOS18
+     - 4400
+     - 5800
+     - 7000
+   - - DEL_OBUF_SLOW.LVCMOS18_ANY
+     - 4400
+     - 5800
+     - 7000
+   - - DEL_OBUF_SLOW.LVCMOS25
+     - 6200
+     - 7800
+     - 11000
+   - - DEL_OBUF_SLOW.LVCMOS33
+     - 6600
+     - 8300
+     - 11500
+   - - DEL_OBUF_SLOW.LVTTL
+     - 6600
+     - 8300
+     - 11500
+   - - DEL_SR_Q
+     - 1400
+     - 1100
+     - 1500
+   - - DEL_UIM_IMUX
+     - 300
+     - 600
+     - 1400
+   - - HOLD_CE_CLK
+     - 0
+     - 0
+     - 0
+   - - HOLD_D_CLK_IBUF_FCLK
+     - 0
+     - 200
+     - 200
+   - - HOLD_D_CLK_IBUF_PT
+     - 0
+     - 400
+     - 700
+   - - HOLD_D_CLK_PT_FCLK
+     - 0
+     - 200
+     - 200
+   - - HOLD_D_CLK_PT_PT
+     - 0
+     - 400
+     - 700
+   - - SETUP_CE_CLK
+     - 900
+     - 700
+     - 1700
+   - - SETUP_D_CLK_IBUF_FCLK
+     - 1500
+     - 1500
+     - 1800
+   - - SETUP_D_CLK_IBUF_PT
+     - 1500
+     - 1500
+     - 1800
+   - - SETUP_D_CLK_PT_FCLK
+     - 1500
+     - 1500
+     - 1800
+   - - SETUP_D_CLK_PT_PT
+     - 1500
+     - 1500
+     - 1800
+   - - WIDTH_CLK
+     - 900
+     - 1400
+     - 2200
+   - - WIDTH_CLK_PT
+     - 3000
+     - 4000
+     - 6000
+   - - WIDTH_SR
+     - 3000
+     - 4000
+     - 6000
+
+IMUX bits
+=========
+
+.. raw:: html
+   :file: gen-tile-xc2c32-imux.html
+
+MC bits
+=======
+
+.. raw:: html
+   :file: gen-tile-xc2c32-mc.html
+
+JED mapping
+-----------
+
+.. raw:: html
+   :file: gen-jed-xc2c32-mc.html
+
+Global bits
+===========
+
+.. raw:: html
+   :file: gen-tile-xc2c32-global.html
+
+JED mapping
+-----------
+
+.. raw:: html
+   :file: gen-jed-xc2c32-global.html
