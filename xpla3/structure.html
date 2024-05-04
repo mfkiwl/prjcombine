@@ -14,7 +14,7 @@
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -495,6 +495,8 @@ data input.  The LUT2 can be used for many purposes:</p>
 <ul>
 <li><p>LUT output</p></li>
 <li><p>pad input buffer (so-called fast input register)</p></li>
+<li><p>the Q output of the previous register in the FB (wrapping from 0 to 15) (so-called fast shift register)</p></li>
+<li><p>the Q output of the next register in the FB (wrapping from 15 to 0) (so-called fast shift register)</p></li>
 </ul>
 </li>
 <li><p>clock or gate input routable from one of:</p>
@@ -567,6 +569,14 @@ data input.  The LUT2 can be used for many purposes:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">DFFCE</span></code></p></li>
 </ul>
 </li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].REG_D_IREG</span></code>: if programmed, and the <code class="docutils literal notranslate"><span class="pre">REG_D_SHIFT</span></code> fuse is not programmed, the register D input is connected to <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].IOB.I</span></code>; if neither is programmed, the register D input is connected to <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].LUT_OUT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].REG_D_SHIFT</span></code>: if programmed, the register D input is connected to the previous or next MC’s register Q output; otherwise, the connection is determined by <code class="docutils literal notranslate"><span class="pre">REG_D_IREG</span></code> fuse</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].REG_D_SHIFT_DIR</span></code>: when the previous fuse is programmed, determines which MC’s register Q output is connected to this register’s D input</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">UP</span></code>: D input connected to <code class="docutils literal notranslate"><span class="pre">FB[i].MC[(j</span> <span class="pre">-</span> <span class="pre">1)</span> <span class="pre">%</span> <span class="pre">16].REG</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOWN</span></code>: D input connected to <code class="docutils literal notranslate"><span class="pre">FB[i].MC[(j</span> <span class="pre">+</span> <span class="pre">1)</span> <span class="pre">%</span> <span class="pre">16].REG</span></code></p></li>
+</ul>
+</li>
 </ul>
 <p>The register works as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CLK_MUX</span><span class="p">)</span>
@@ -593,10 +603,15 @@ data input.  The LUT2 can be used for many purposes:</p>
 <span class="n">LCT4</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">CE</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">LCT4</span><span class="p">;</span>
 <span class="n">endcase</span>
 
-<span class="k">case</span><span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG_D_MUX</span><span class="p">)</span>
-<span class="n">LUT</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG_D</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">LUT_OUT</span><span class="p">;</span>
-<span class="n">IBUF</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG_D</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">IOB</span><span class="o">.</span><span class="n">I</span><span class="p">;</span>
-<span class="n">endcase</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG_D_SHIFT</span><span class="p">)</span>
+    <span class="k">case</span><span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG_D_SHIFT_DIR</span><span class="p">)</span>
+    <span class="n">UP</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG_D</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[(</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">16</span><span class="p">]</span><span class="o">.</span><span class="n">REG</span><span class="p">;</span>
+    <span class="n">DOWN</span><span class="p">:</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG_D</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[(</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">16</span><span class="p">]</span><span class="o">.</span><span class="n">REG</span><span class="p">;</span>
+    <span class="n">endcase</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG_D_IREG</span><span class="p">)</span>
+    <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG_D</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">IOB</span><span class="o">.</span><span class="n">I</span><span class="p">;</span>
+<span class="k">else</span>
+    <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG_D</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">LUT_OUT</span><span class="p">;</span>
 
 <span class="n">initial</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
@@ -636,10 +651,6 @@ data input.  The LUT2 can be used for many purposes:</p>
             <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG</span> <span class="o">=</span> <span class="n">FB</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">MC</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">REG_D</span><span class="p">;</span>
 <span class="n">endcase</span>
 </pre></div>
-</div>
-<div class="admonition-todo admonition" id="id5">
-<p class="admonition-title">Todo</p>
-<p>there are unknown bits involved</p>
 </div>
 </section>
 <section id="macrocell-and-iob-outputs">

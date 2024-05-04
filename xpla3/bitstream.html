@@ -14,7 +14,7 @@
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -108,7 +108,7 @@
 <tr><td>0</td><td>1</td>
 <td><a href="#bits-mc-LUT" title="LUT[0]">X</a></td><td><a href="#bits-mc-LUT" title="LUT[1]">X</a></td><td><a href="#bits-mc-LUT" title="LUT[2]">X</a></td><td><a href="#bits-mc-LUT" title="LUT[3]">X</a></td><td><a href="#bits-mc-MC_IOB_MUX" title="MC_IOB_MUX">X</a></td></tr>
 <tr><td>1</td><td>0</td>
-<td><a href="#bits-mc-REG_D_MUX" title="REG_D_MUX">X</a></td><td><a href="#bits-mc-UNK_REG_Q" title="UNK_REG_Q">X</a></td><td><a href="#bits-mc-IOB_ZIA_MUX" title="IOB_ZIA_MUX">X</a></td><td><a href="#bits-mc-UNK_SHIFT" title="UNK_SHIFT">X</a></td><td>-</td></tr>
+<td><a href="#bits-mc-REG_D_IREG" title="REG_D_IREG">X</a></td><td><a href="#bits-mc-REG_D_SHIFT_DIR" title="REG_D_SHIFT_DIR">X</a></td><td><a href="#bits-mc-IOB_ZIA_MUX" title="IOB_ZIA_MUX">X</a></td><td><a href="#bits-mc-REG_D_SHIFT" title="REG_D_SHIFT">X</a></td><td>-</td></tr>
 <tr><td>1</td><td>1</td>
 <td><a href="#bits-mc-CLK_MUX" title="CLK_MUX[0]">X</a></td><td><a href="#bits-mc-CLK_MUX" title="CLK_MUX[1]">X</a></td><td><a href="#bits-mc-CLK_MUX" title="CLK_MUX[2]">X</a></td><td><a href="#bits-mc-CE_MUX" title="CE_MUX">X</a></td><td><a href="#bits-mc-CLK_INV" title="CLK_INV">X</a></td></tr>
 <tr><td>2</td><td>0</td>
@@ -141,22 +141,22 @@
 <tr><td>REG</td><td>0</td></tr>
 <tr><td>LUT</td><td>1</td></tr>
 </table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-REG_D_MUX">
-<tr><th>REG_D_MUX</th><th>[1, 0, 0]</th></tr>
-<tr><td>LUT</td><td>0</td></tr>
-<tr><td>IBUF</td><td>1</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-UNK_REG_Q">
-<tr><th>UNK_REG_Q</th><th>[1, 0, 1]</th></tr>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-REG_D_IREG">
+<tr><th>REG_D_IREG</th><th>[1, 0, 0]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-REG_D_SHIFT_DIR">
+<tr><th>REG_D_SHIFT_DIR</th><th>[1, 0, 1]</th></tr>
+<tr><td>UP</td><td>0</td></tr>
+<tr><td>DOWN</td><td>1</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-mc-IOB_ZIA_MUX">
 <tr><th>IOB_ZIA_MUX</th><th>[1, 0, 2]</th></tr>
 <tr><td>REG</td><td>0</td></tr>
 <tr><td>IBUF</td><td>1</td></tr>
 </table>
-<table class="docutils align-default prjcombine-enum" id="bits-mc-UNK_SHIFT">
-<tr><th>UNK_SHIFT</th><th>[1, 0, 3]</th></tr>
+<table class="docutils align-default prjcombine-enum" id="bits-mc-REG_D_SHIFT">
+<tr><th>REG_D_SHIFT</th><th>[1, 0, 3]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-mc-CLK_MUX">
@@ -231,9 +231,9 @@
 <tr><td>11</td><td><a href="#bits-mc-CLK_MUX">CLK_MUX[0]</a></td></tr>
 <tr><td>12</td><td><a href="#bits-mc-CLK_MUX">CLK_MUX[1]</a></td></tr>
 <tr><td>13</td><td><a href="#bits-mc-CLK_MUX">CLK_MUX[2]</a></td></tr>
-<tr><td>14</td><td><a href="#bits-mc-REG_D_MUX">REG_D_MUX</a></td></tr>
-<tr><td>15</td><td><a href="#bits-mc-UNK_REG_Q">UNK_REG_Q</a></td></tr>
-<tr><td>16</td><td><a href="#bits-mc-UNK_SHIFT">UNK_SHIFT</a></td></tr>
+<tr><td>14</td><td><a href="#bits-mc-REG_D_IREG">REG_D_IREG</a></td></tr>
+<tr><td>15</td><td><a href="#bits-mc-REG_D_SHIFT_DIR">REG_D_SHIFT_DIR</a></td></tr>
+<tr><td>16</td><td><a href="#bits-mc-REG_D_SHIFT">REG_D_SHIFT</a></td></tr>
 <tr><td>17</td><td><a href="#bits-mc-IOB_ZIA_MUX">IOB_ZIA_MUX</a></td></tr>
 <tr><td>18</td><td><a href="#bits-mc-RST_MUX">RST_MUX[0]</a></td></tr>
 <tr><td>19</td><td><a href="#bits-mc-RST_MUX">RST_MUX[1]</a></td></tr>
@@ -259,9 +259,9 @@
 <tr><td>6</td><td><a href="#bits-mc-CLK_MUX">CLK_MUX[0]</a></td></tr>
 <tr><td>7</td><td><a href="#bits-mc-CLK_MUX">CLK_MUX[1]</a></td></tr>
 <tr><td>8</td><td><a href="#bits-mc-CLK_MUX">CLK_MUX[2]</a></td></tr>
-<tr><td>9</td><td><a href="#bits-mc-REG_D_MUX">REG_D_MUX</a></td></tr>
-<tr><td>10</td><td><a href="#bits-mc-UNK_REG_Q">UNK_REG_Q</a></td></tr>
-<tr><td>11</td><td><a href="#bits-mc-UNK_SHIFT">UNK_SHIFT</a></td></tr>
+<tr><td>9</td><td><a href="#bits-mc-REG_D_IREG">REG_D_IREG</a></td></tr>
+<tr><td>10</td><td><a href="#bits-mc-REG_D_SHIFT_DIR">REG_D_SHIFT_DIR</a></td></tr>
+<tr><td>11</td><td><a href="#bits-mc-REG_D_SHIFT">REG_D_SHIFT</a></td></tr>
 <tr><td>12</td><td><a href="#bits-mc-RST_MUX">RST_MUX[0]</a></td></tr>
 <tr><td>13</td><td><a href="#bits-mc-RST_MUX">RST_MUX[1]</a></td></tr>
 <tr><td>14</td><td><a href="#bits-mc-RST_MUX">RST_MUX[2]</a></td></tr>
