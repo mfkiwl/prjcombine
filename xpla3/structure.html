@@ -291,17 +291,13 @@ at once:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">FB[i].FCLK_MUX</span></code>: selects <code class="docutils literal notranslate"><span class="pre">FCLK*</span></code> routing for this FB.  The values are:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">GCLK{j}_GCLK{k}</span></code>: routes <code class="docutils literal notranslate"><span class="pre">FCLK0</span></code> to <code class="docutils literal notranslate"><span class="pre">GCLK{j}</span></code> and <code class="docutils literal notranslate"><span class="pre">FCLK1</span></code> to <code class="docutils literal notranslate"><span class="pre">GCLK{k}</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GCLK{j}_NONE</span></code>: routes <code class="docutils literal notranslate"><span class="pre">FCLK0</span></code> to <code class="docutils literal notranslate"><span class="pre">GCLK{j}</span></code> and <code class="docutils literal notranslate"><span class="pre">FCLK1</span></code> to const XXX</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">NONE_GCLK{j}</span></code>: routes <code class="docutils literal notranslate"><span class="pre">FCLK0</span></code> to const XXX and <code class="docutils literal notranslate"><span class="pre">FCLK1</span></code> to <code class="docutils literal notranslate"><span class="pre">GCLK{j}</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: routes <code class="docutils literal notranslate"><span class="pre">FCLK[0-1]</span></code> to const XXX</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GCLK{j}_NONE</span></code>: routes <code class="docutils literal notranslate"><span class="pre">FCLK0</span></code> to <code class="docutils literal notranslate"><span class="pre">GCLK{j}</span></code> and <code class="docutils literal notranslate"><span class="pre">FCLK1</span></code> to const 0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE_GCLK{j}</span></code>: routes <code class="docutils literal notranslate"><span class="pre">FCLK0</span></code> to const 0 and <code class="docutils literal notranslate"><span class="pre">FCLK1</span></code> to <code class="docutils literal notranslate"><span class="pre">GCLK{j}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: routes <code class="docutils literal notranslate"><span class="pre">FCLK[0-1]</span></code> to const 0</p></li>
 </ul>
 <p>See the database for the exact set of allowed values.</p>
 </li>
 </ul>
-<div class="admonition-todo admonition" id="id2">
-<p class="admonition-title">Todo</p>
-<p>check exact semantics of <code class="docutils literal notranslate"><span class="pre">NONE</span></code></p>
-</div>
 </section>
 <section id="product-terms">
 <h2>Product terms<a class="headerlink" href="#product-terms" title="Link to this heading"></a></h2>
@@ -444,11 +440,11 @@ make use of this functionality and always mirrors UCT mux setting between the tw
 </ul>
 </li>
 </ul>
-<div class="admonition-todo admonition" id="id3">
+<div class="admonition-todo admonition" id="id2">
 <p class="admonition-title">Todo</p>
 <p>const</p>
 </div>
-<div class="admonition-todo admonition" id="id4">
+<div class="admonition-todo admonition" id="id3">
 <p class="admonition-title">Todo</p>
 <p>exact FB assignment to groups on XCR3512XL</p>
 </div>
