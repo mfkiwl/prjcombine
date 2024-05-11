@@ -275,7 +275,7 @@ in XXX.  Routing <code class="docutils literal notranslate"><span class="pre">GC
 </ul>
 <div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
-<p>check semantics of disabled <code class="docutils literal notranslate"><span class="pre">GCLK*</span></code></p>
+<p>while ISE sets the fuse as if the above is true, disabling the fuse doesn’t actually seem to make ZIA GCLK routing not work. what’s going on?</p>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">STARTUP</span></code> net is a special device-wide net that is pulsed to <code class="docutils literal notranslate"><span class="pre">1</span></code> for a short time at device
 initialization, then remains at <code class="docutils literal notranslate"><span class="pre">0</span></code> afterwards.  It can be connected as the <code class="docutils literal notranslate"><span class="pre">SET</span></code> input
@@ -436,15 +436,11 @@ make use of this functionality and always mirrors UCT mux setting between the tw
 <li><p><code class="docutils literal notranslate"><span class="pre">FB_GROUP[i].UCT{j}</span></code>: selects the signal routed to <code class="docutils literal notranslate"><span class="pre">UCT{j}</span></code> of FB group <code class="docutils literal notranslate"><span class="pre">i</span></code> (all devices other than XCR3512XL have only FB group 0)</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">FB{k}_LCT{l}</span></code>: the UCT is driven by the given LCT of the given FB</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: the UCT is unused and will be const-XXX</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE</span></code>: the UCT is unused and will be const-0</p></li>
 </ul>
 </li>
 </ul>
 <div class="admonition-todo admonition" id="id2">
-<p class="admonition-title">Todo</p>
-<p>const</p>
-</div>
-<div class="admonition-todo admonition" id="id3">
 <p class="admonition-title">Todo</p>
 <p>exact FB assignment to groups on XCR3512XL</p>
 </div>

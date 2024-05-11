@@ -49,6 +49,9 @@
 <li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="structure.html">Device structure</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Bitstream structure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#jed-structure">JED structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fuses-imux-bits">Fuses — IMUX bits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fuses-product-and-sum-terms">Fuses — product and sum terms</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fuses-macrocells">Fuses — macrocells</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#jed-mapping-macrocells-with-iob">JED mapping — macrocells with IOB</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#jed-mapping-macrocells-without-iob">JED mapping — macrocells without IOB</a></li>
@@ -58,6 +61,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#jed-mapping">JED mapping</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#fuses-global-bits">Fuses — global bits</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="database.html">Database schema</a></li>
@@ -95,12 +99,166 @@
              
   <section id="bitstream-structure">
 <h1>Bitstream structure<a class="headerlink" href="#bitstream-structure" title="Link to this heading"></a></h1>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>write me</p>
-</div>
+<p>The raw XPLA3 bitstream is a three-dimensional array of bits. The bitstream is arranged into:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fb_rows</span> <span class="pre">*</span> <span class="pre">52</span> <span class="pre">+</span> <span class="pre">2</span></code> rows</p></li>
+<li><p>2 planes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bs_cols</span></code> columns</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">fb_rows</span></code> and <code class="docutils literal notranslate"><span class="pre">bs_cols</span></code> variables are per-device and can be obtained from the database.</p>
+<p>The bitstream is roughly divided into areas as follows:</p>
+<ul>
+<li><p>the last row is used to store the UES (user electronic signature)</p></li>
+<li><p>the second to last row is used to store the <code class="docutils literal notranslate"><span class="pre">READ_PROT</span></code> and <code class="docutils literal notranslate"><span class="pre">ISP_DISABLE</span></code> bits, which should generally be programmed last in the sequence</p></li>
+<li><p>all other rows are used to store (mostly) per-FB data, with 52 bitstream rows per FB row
+- each FB column has three ranges of columns, the start of each range is stored in the database:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>IMUX bits (includes per-FB input multiplexers and the per-column <code class="docutils literal notranslate"><span class="pre">ZIA_GCLK*_ENABLE</span></code> bits)</p></li>
+<li><p>PT bits (includes product term bits and PLA sum term bits)</p></li>
+<li><p>MC bits (includes per-MC config bits and misc per-FB config bits; also includes global bits configuring UCT muxes)</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<section id="jed-structure">
+<h2>JED structure<a class="headerlink" href="#jed-structure" title="Link to this heading"></a></h2>
+<p>XPLA3 bitstreams are commonly stored in JED files. Bits in JED files are stored in a logical order completely unrelated to the physical structure of a bitstream. The order of bits in a JED file is as follows:</p>
+<ul>
+<li><p>per-FB bits, for every FB <code class="docutils literal notranslate"><span class="pre">i</span></code> in order:
+- IMUX bits, for every <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">&lt;</span> <span class="pre">40</span></code>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>every bit of <code class="docutils literal notranslate"><span class="pre">FB[i].IM[j].MUX</span></code> in order</p></li>
+</ul>
+</div></blockquote>
+<ul>
+<li><p>for every product term <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">&lt;</span> <span class="pre">48</span></code>, in order:
+- for every FB input <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">&lt;</span> <span class="pre">40</span></code>, in order:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].PT[i].IM[k].P</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].PT[i].IM[k].N</span></code></p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>for every feedback term <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">&lt;</span> <span class="pre">8</span></code>, in order:
+- <code class="docutils literal notranslate"><span class="pre">FB[i].PT[i].FBN[k]</span></code></p></li>
+</ul>
+</li>
+<li><p>for every product term <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">&lt;</span> <span class="pre">48</span></code>, in order:
+- for every macrocell <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">&lt;</span> <span class="pre">16</span></code>, in order:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[k].SUM.PT[j]</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>misc per-FB bits, in order <span class="xref std std-ref">given below</span></p></li>
+<li><p>for every macrocell with an IOB, in order (which macrocells have a IOB can be checked in the database <code class="docutils literal notranslate"><span class="pre">io_mcs</span></code> field):
+- misc per-MC bits, in order <span class="xref std std-ref">given below</span></p></li>
+<li><p>for every macrocell without an IOB, in order:
+- misc per-MC bits, in order <span class="xref std std-ref">given below</span></p></li>
+</ul>
+</li>
+<li><p>all global bits, in order given in the per-device database</p></li>
+</ul>
+<p>Note that the UES bits and read protection bit are not included in the JED file, and must be provided out of band.</p>
+</section>
+<section id="fuses-imux-bits">
+<h2>Fuses — IMUX bits<a class="headerlink" href="#fuses-imux-bits" title="Link to this heading"></a></h2>
+<p>The size of every <code class="docutils literal notranslate"><span class="pre">FB[i].IM[j].MUX</span></code> fuse set in the device is the same, and is given by the database <code class="docutils literal notranslate"><span class="pre">imux_width</span></code> field. The position of bit <code class="docutils literal notranslate"><span class="pre">k</span></code> of <code class="docutils literal notranslate"><span class="pre">FB[i].IM[j].MUX</span></code> in the fuse array can be computed as follows:</p>
+<ul class="simple">
+<li><p>row is:
+- if <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">&lt;</span> <span class="pre">20</span></code>: <code class="docutils literal notranslate"><span class="pre">fb_row(i)</span> <span class="pre">*</span> <span class="pre">52</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">j</span></code>
+- if <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">&gt;=</span> <span class="pre">20</span></code>: <code class="docutils literal notranslate"><span class="pre">fb_row(i)</span> <span class="pre">*</span> <span class="pre">52</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">j</span> <span class="pre">+</span> <span class="pre">8</span></code></p></li>
+<li><p>plane is: <code class="docutils literal notranslate"><span class="pre">(i</span> <span class="pre">&amp;</span> <span class="pre">1)</span> <span class="pre">^</span> <span class="pre">1</span></code></p></li>
+<li><p>column is <code class="docutils literal notranslate"><span class="pre">fb_cols[fb_col(i)].imux_col</span> <span class="pre">+</span> <span class="pre">imux_width</span> <span class="pre">-</span> <span class="pre">1</span> <span class="pre">-</span> <span class="pre">k</span></code></p></li>
+</ul>
+</section>
+<section id="fuses-product-and-sum-terms">
+<h2>Fuses — product and sum terms<a class="headerlink" href="#fuses-product-and-sum-terms" title="Link to this heading"></a></h2>
+<p>The position of <code class="docutils literal notranslate"><span class="pre">FB[i].PT[j].IM[k].P</span></code> and <code class="docutils literal notranslate"><span class="pre">FB[i].PT[j].IM[k].N</span></code> can be computed as follows:</p>
+<ul class="simple">
+<li><p>row is:
+- if <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">&lt;</span> <span class="pre">20</span></code>: <code class="docutils literal notranslate"><span class="pre">fb_row(i)</span> <span class="pre">*</span> <span class="pre">52</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">k</span></code>
+- if <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">&gt;=</span> <span class="pre">20</span></code>: <code class="docutils literal notranslate"><span class="pre">fb_row(i)</span> <span class="pre">*</span> <span class="pre">52</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">k</span> <span class="pre">+</span> <span class="pre">8</span></code></p></li>
+<li><p>plane is <code class="docutils literal notranslate"><span class="pre">0</span></code> for <code class="docutils literal notranslate"><span class="pre">.P</span></code> bit, <code class="docutils literal notranslate"><span class="pre">1</span></code> for <code class="docutils literal notranslate"><span class="pre">.N</span></code> bit</p></li>
+<li><p>column is:
+- if <code class="docutils literal notranslate"><span class="pre">i</span></code> is even: <code class="docutils literal notranslate"><span class="pre">fb_cols[fb_col(i)].pt_col</span> <span class="pre">+</span> <span class="pre">j</span></code>
+- if <code class="docutils literal notranslate"><span class="pre">i</span></code> is odd: <code class="docutils literal notranslate"><span class="pre">fb_cols[fb_col(i)].pt_col</span> <span class="pre">+</span> <span class="pre">95</span> <span class="pre">-</span> <span class="pre">j</span></code></p></li>
+</ul>
+<p>The position of <code class="docutils literal notranslate"><span class="pre">FB[i].PT[j].FBN[k]</span></code> can be computed as follows:</p>
+<ul class="simple">
+<li><p>row is <code class="docutils literal notranslate"><span class="pre">fb_row(i)</span> <span class="pre">*</span> <span class="pre">52</span> <span class="pre">+</span> <span class="pre">dr</span></code>, where <code class="docutils literal notranslate"><span class="pre">dr</span></code> is given in the table below</p></li>
+<li><p>plane is given in the table below</p></li>
+<li><p>column is:
+- if <code class="docutils literal notranslate"><span class="pre">i</span></code> is even: <code class="docutils literal notranslate"><span class="pre">fb_cols[fb_col(i)].pt_col</span> <span class="pre">+</span> <span class="pre">j</span></code>
+- if <code class="docutils literal notranslate"><span class="pre">i</span></code> is odd: <code class="docutils literal notranslate"><span class="pre">fb_cols[fb_col(i)].pt_col</span> <span class="pre">+</span> <span class="pre">95</span> <span class="pre">-</span> <span class="pre">j</span></code></p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">k</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">dr</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">plane</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>50</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>50</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>51</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>51</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>The position of <code class="docutils literal notranslate"><span class="pre">FB[i].MC[j].SUM.PT[k]</span></code> can be computed as follows:</p>
+<ul class="simple">
+<li><p>row is <code class="docutils literal notranslate"><span class="pre">fb_row(i)</span> <span class="pre">*</span> <span class="pre">52</span> <span class="pre">+</span> <span class="pre">22</span> <span class="pre">+</span> <span class="pre">(j</span> <span class="pre">//</span> <span class="pre">2)</span></code></p></li>
+<li><p>plane is <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">-</span> <span class="pre">(j</span> <span class="pre">%</span> <span class="pre">2)</span></code></p></li>
+<li><p>column is:
+- if <code class="docutils literal notranslate"><span class="pre">i</span></code> is even: <code class="docutils literal notranslate"><span class="pre">fb_cols[fb_col(i)].pt_col</span> <span class="pre">+</span> <span class="pre">k</span></code>
+- if <code class="docutils literal notranslate"><span class="pre">i</span></code> is odd: <code class="docutils literal notranslate"><span class="pre">fb_cols[fb_col(i)].pt_col</span> <span class="pre">+</span> <span class="pre">95</span> <span class="pre">-</span> <span class="pre">k</span></code></p></li>
+</ul>
+</section>
 <section id="fuses-macrocells">
 <h2>Fuses — macrocells<a class="headerlink" href="#fuses-macrocells" title="Link to this heading"></a></h2>
+<p>The per-MC bits are listed in the table below. The per-MC coordinates should be translated to global coordinates as follows:</p>
+<ul class="simple">
+<li><p>row is:
+if <code class="docutils literal notranslate"><span class="pre">mc</span> <span class="pre">&lt;</span> <span class="pre">8</span></code>: <code class="docutils literal notranslate"><span class="pre">fb_row(fb)</span> <span class="pre">*</span> <span class="pre">52</span> <span class="pre">+</span> <span class="pre">mc</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">+</span> <span class="pre">table_row</span></code>
+if <code class="docutils literal notranslate"><span class="pre">mc</span> <span class="pre">&gt;=</span> <span class="pre">8</span></code>: <code class="docutils literal notranslate"><span class="pre">fb_row(fb)</span> <span class="pre">*</span> <span class="pre">52</span> <span class="pre">+</span> <span class="pre">4</span> <span class="pre">+</span> <span class="pre">mc</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">+</span> <span class="pre">table_row</span></code></p></li>
+<li><p>plane is: <code class="docutils literal notranslate"><span class="pre">table_plane</span></code></p></li>
+<li><p>column is:
+- if <code class="docutils literal notranslate"><span class="pre">fb</span></code> is even: <code class="docutils literal notranslate"><span class="pre">fb_cols[fb_col(fb)].mc_col</span> <span class="pre">+</span> <span class="pre">table_column</span></code>
+- if <code class="docutils literal notranslate"><span class="pre">fb</span></code> is odd: <code class="docutils literal notranslate"><span class="pre">fb_cols[fb_col(fb)].mc_col</span> <span class="pre">+</span> <span class="pre">9</span> <span class="pre">-</span> <span class="pre">table_column</span></code></p></li>
+</ul>
 <table class="docutils align-default prjcombine-tile">
 <tr><th rowspan="2">Row</th><th rowspan="2">Plane</th><th colspan="5">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr>
 <tr><td>0</td><td>0</td>
@@ -276,6 +434,14 @@
 </section>
 <section id="fuses-fbs">
 <h2>Fuses — FBs<a class="headerlink" href="#fuses-fbs" title="Link to this heading"></a></h2>
+<p>The per-FB bits are listed in the table below. The per-FB coordinates should be translated to global coordinates as follows:</p>
+<ul class="simple">
+<li><p>row is: <code class="docutils literal notranslate"><span class="pre">fb_row(fb)</span> <span class="pre">*</span> <span class="pre">52</span> <span class="pre">+</span> <span class="pre">24</span> <span class="pre">+</span> <span class="pre">table_row</span></code></p></li>
+<li><p>plane is: <code class="docutils literal notranslate"><span class="pre">table_plane</span></code></p></li>
+<li><p>column is:
+- if <code class="docutils literal notranslate"><span class="pre">fb</span></code> is even: <code class="docutils literal notranslate"><span class="pre">fb_cols[fb_col(fb)].mc_col</span> <span class="pre">+</span> <span class="pre">table_column</span></code>
+- if <code class="docutils literal notranslate"><span class="pre">fb</span></code> is odd: <code class="docutils literal notranslate"><span class="pre">fb_cols[fb_col(fb)].mc_col</span> <span class="pre">+</span> <span class="pre">9</span> <span class="pre">-</span> <span class="pre">table_column</span></code></p></li>
+</ul>
 <table class="docutils align-default prjcombine-tile">
 <tr><th rowspan="2">Row</th><th rowspan="2">Plane</th><th colspan="4">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th></tr>
 <tr><td>0</td><td>0</td>
@@ -349,6 +515,10 @@
 <tr><td>11</td><td><a href="#bits-fb-LCT7_INV">LCT7_INV</a></td></tr>
 </table>
 </section>
+</section>
+<section id="fuses-global-bits">
+<h2>Fuses — global bits<a class="headerlink" href="#fuses-global-bits" title="Link to this heading"></a></h2>
+<p>The global bits are given by their raw position in the per-device database.</p>
 </section>
 </section>
 
