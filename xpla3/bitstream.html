@@ -107,58 +107,67 @@
 </ul>
 <p>The <code class="docutils literal notranslate"><span class="pre">fb_rows</span></code> and <code class="docutils literal notranslate"><span class="pre">bs_cols</span></code> variables are per-device and can be obtained from the database.</p>
 <p>The bitstream is roughly divided into areas as follows:</p>
-<ul>
+<ul class="simple">
 <li><p>the last row is used to store the UES (user electronic signature)</p></li>
 <li><p>the second to last row is used to store the <code class="docutils literal notranslate"><span class="pre">READ_PROT</span></code> and <code class="docutils literal notranslate"><span class="pre">ISP_DISABLE</span></code> bits, which should generally be programmed last in the sequence</p></li>
-<li><p>all other rows are used to store (mostly) per-FB data, with 52 bitstream rows per FB row
-- each FB column has three ranges of columns, the start of each range is stored in the database:</p>
-<blockquote>
-<div><ul class="simple">
+<li><p>all other rows are used to store (mostly) per-FB data, with 52 bitstream rows per FB row</p>
+<ul>
+<li><p>each FB column has three ranges of columns, the start of each range is stored in the database:</p>
+<ul>
 <li><p>IMUX bits (includes per-FB input multiplexers and the per-column <code class="docutils literal notranslate"><span class="pre">ZIA_GCLK*_ENABLE</span></code> bits)</p></li>
 <li><p>PT bits (includes product term bits and PLA sum term bits)</p></li>
 <li><p>MC bits (includes per-MC config bits and misc per-FB config bits; also includes global bits configuring UCT muxes)</p></li>
 </ul>
-</div></blockquote>
+</li>
+</ul>
 </li>
 </ul>
 <section id="jed-structure">
 <h2>JED structure<a class="headerlink" href="#jed-structure" title="Link to this heading"></a></h2>
 <p>XPLA3 bitstreams are commonly stored in JED files. Bits in JED files are stored in a logical order completely unrelated to the physical structure of a bitstream. The order of bits in a JED file is as follows:</p>
+<ul class="simple">
+<li><p>per-FB bits, for every FB <code class="docutils literal notranslate"><span class="pre">i</span></code> in order:</p>
 <ul>
-<li><p>per-FB bits, for every FB <code class="docutils literal notranslate"><span class="pre">i</span></code> in order:
-- IMUX bits, for every <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">&lt;</span> <span class="pre">40</span></code>:</p>
-<blockquote>
-<div><ul class="simple">
+<li><p>IMUX bits, for every <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">&lt;</span> <span class="pre">40</span></code>:</p>
+<ul>
 <li><p>every bit of <code class="docutils literal notranslate"><span class="pre">FB[i].IM[j].MUX</span></code> in order</p></li>
 </ul>
-</div></blockquote>
+</li>
+<li><p>for every product term <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">&lt;</span> <span class="pre">48</span></code>, in order:</p>
 <ul>
-<li><p>for every product term <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">&lt;</span> <span class="pre">48</span></code>, in order:
-- for every FB input <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">&lt;</span> <span class="pre">40</span></code>, in order:</p>
-<blockquote>
-<div><ul class="simple">
+<li><p>for every FB input <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">&lt;</span> <span class="pre">40</span></code>, in order:</p>
+<ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">FB[i].PT[i].IM[k].P</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">FB[i].PT[i].IM[k].N</span></code></p></li>
 </ul>
-</div></blockquote>
-<ul class="simple">
-<li><p>for every feedback term <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">&lt;</span> <span class="pre">8</span></code>, in order:
-- <code class="docutils literal notranslate"><span class="pre">FB[i].PT[i].FBN[k]</span></code></p></li>
+</li>
+<li><p>for every feedback term <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">&lt;</span> <span class="pre">8</span></code>, in order:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">FB[i].PT[i].FBN[k]</span></code></p></li>
 </ul>
 </li>
-<li><p>for every product term <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">&lt;</span> <span class="pre">48</span></code>, in order:
-- for every macrocell <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">&lt;</span> <span class="pre">16</span></code>, in order:</p>
-<blockquote>
-<div><ul class="simple">
+</ul>
+</li>
+<li><p>for every product term <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">&lt;</span> <span class="pre">48</span></code>, in order:</p>
+<ul>
+<li><p>for every macrocell <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">&lt;</span> <span class="pre">16</span></code>, in order:</p>
+<ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">FB[i].MC[k].SUM.PT[j]</span></code></p></li>
 </ul>
-</div></blockquote>
+</li>
+</ul>
 </li>
 <li><p>misc per-FB bits, in order <a class="reference internal" href="#xpla3-fb-bits-jed"><span class="std std-ref">given below</span></a></p></li>
-<li><p>for every macrocell with an IOB, in order (which macrocells have a IOB can be checked in the database <code class="docutils literal notranslate"><span class="pre">io_mcs</span></code> field):
-- misc per-MC bits, in order <a class="reference internal" href="#xpla3-mc-bits-jed-iob"><span class="std std-ref">given below</span></a></p></li>
-<li><p>for every macrocell without an IOB, in order:
-- misc per-MC bits, in order <a class="reference internal" href="#xpla3-mc-bits-jed-buried"><span class="std std-ref">given below</span></a></p></li>
+<li><p>for every macrocell with an IOB, in order (which macrocells have a IOB can be checked in the database <code class="docutils literal notranslate"><span class="pre">io_mcs</span></code> field):</p>
+<ul>
+<li><p>misc per-MC bits, in order <a class="reference internal" href="#xpla3-mc-bits-jed-iob"><span class="std std-ref">given below</span></a></p></li>
+</ul>
+</li>
+<li><p>for every macrocell without an IOB, in order:</p>
+<ul>
+<li><p>misc per-MC bits, in order <a class="reference internal" href="#xpla3-mc-bits-jed-buried"><span class="std std-ref">given below</span></a></p></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>all global bits, in order given in the per-device database</p></li>
