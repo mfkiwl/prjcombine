@@ -154,11 +154,11 @@
 </ul>
 </div></blockquote>
 </li>
-<li><p>misc per-FB bits, in order <span class="xref std std-ref">given below</span></p></li>
+<li><p>misc per-FB bits, in order <a class="reference internal" href="#xpla3-fb-bits-jed"><span class="std std-ref">given below</span></a></p></li>
 <li><p>for every macrocell with an IOB, in order (which macrocells have a IOB can be checked in the database <code class="docutils literal notranslate"><span class="pre">io_mcs</span></code> field):
-- misc per-MC bits, in order <span class="xref std std-ref">given below</span></p></li>
+- misc per-MC bits, in order <a class="reference internal" href="#xpla3-mc-bits-jed-iob"><span class="std std-ref">given below</span></a></p></li>
 <li><p>for every macrocell without an IOB, in order:
-- misc per-MC bits, in order <span class="xref std std-ref">given below</span></p></li>
+- misc per-MC bits, in order <a class="reference internal" href="#xpla3-mc-bits-jed-buried"><span class="std std-ref">given below</span></a></p></li>
 </ul>
 </li>
 <li><p>all global bits, in order given in the per-device database</p></li>
@@ -372,7 +372,7 @@ if <code class="docutils literal notranslate"><span class="pre">mc</span> <span 
 <tr><td>DFFCE</td><td>1</td><td>1</td></tr>
 </table>
 <section id="jed-mapping-macrocells-with-iob">
-<h3>JED mapping — macrocells with IOB<a class="headerlink" href="#jed-mapping-macrocells-with-iob" title="Link to this heading"></a></h3>
+<span id="xpla3-mc-bits-jed-iob"></span><h3>JED mapping — macrocells with IOB<a class="headerlink" href="#jed-mapping-macrocells-with-iob" title="Link to this heading"></a></h3>
 <table class="docutils align-default prjcombine-tile">
 <tr><th>JED offset</th><th>Bit</th></tr>
 <tr><td>0</td><td><a href="#bits-mc-MC_IOB_MUX">MC_IOB_MUX</a></td></tr>
@@ -405,7 +405,7 @@ if <code class="docutils literal notranslate"><span class="pre">mc</span> <span 
 </table>
 </section>
 <section id="jed-mapping-macrocells-without-iob">
-<h3>JED mapping — macrocells without IOB<a class="headerlink" href="#jed-mapping-macrocells-without-iob" title="Link to this heading"></a></h3>
+<span id="xpla3-mc-bits-jed-buried"></span><h3>JED mapping — macrocells without IOB<a class="headerlink" href="#jed-mapping-macrocells-without-iob" title="Link to this heading"></a></h3>
 <table class="docutils align-default prjcombine-tile">
 <tr><th>JED offset</th><th>Bit</th></tr>
 <tr><td>0</td><td><a href="#bits-mc-LUT">LUT[0]</a></td></tr>
@@ -498,7 +498,7 @@ if <code class="docutils literal notranslate"><span class="pre">mc</span> <span 
 <tr><td>GCLK2_GCLK3</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
 </table>
 <section id="jed-mapping">
-<h3>JED mapping<a class="headerlink" href="#jed-mapping" title="Link to this heading"></a></h3>
+<span id="xpla3-fb-bits-jed"></span><h3>JED mapping<a class="headerlink" href="#jed-mapping" title="Link to this heading"></a></h3>
 <table class="docutils align-default prjcombine-tile">
 <tr><th>JED offset</th><th>Bit</th></tr>
 <tr><td>0</td><td><a href="#bits-fb-FCLK_MUX">FCLK_MUX[0]</a></td></tr>
