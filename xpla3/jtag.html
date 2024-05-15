@@ -53,6 +53,7 @@
 <li class="toctree-l2"><a class="reference internal" href="db-devices.html">Database — devices</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">JTAG interface</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#ir">IR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#idcode">IDCODE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#boundary-scan-register">Boundary scan register</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#isp-instructions">ISP instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#programming-sequence">Programming sequence</a></li>
@@ -178,30 +179,64 @@
 <p>The IR status is:</p>
 <ul class="simple">
 <li><p>bit 0: const 1</p></li>
-<li><p>bits 1-4: const 0 [?]</p></li>
+<li><p>bit 1: const 0</p></li>
+<li><p>bits 2-4: const 0 [?]</p></li>
 </ul>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>completely unverified from BSDL</p>
-</div>
+</section>
+<section id="idcode">
+<h2>IDCODE<a class="headerlink" href="#idcode" title="Link to this heading"></a></h2>
+<p>The product ID part of idcode is given in the database in the per-package information. The low 3 bits of the product ID are the package, so if package is immaterial, only the high 13 bits should be used for matching the device. The vendor ID in the IDCODE can be either Philips (<code class="docutils literal notranslate"><span class="pre">0x02b</span></code> in the low 12 bits) or Xilinx (<code class="docutils literal notranslate"><span class="pre">0x93</span></code> in the low 12 bits), depending on when the device was manufactured.</p>
 </section>
 <section id="boundary-scan-register">
 <h2>Boundary scan register<a class="headerlink" href="#boundary-scan-register" title="Link to this heading"></a></h2>
-<div class="admonition-todo admonition" id="id2">
+<p>The boundary scan register contains the following bits, in order from <strong>MSB</strong>:</p>
+<ul class="simple">
+<li><p>for every FB column, in order:</p>
+<ul>
+<li><p>for every even-numbered FB in the column in order, and then for every odd-numbered FB in order:</p>
+<ul>
+<li><p>for every MC, in order:</p>
+<ul>
+<li><p>one unknown-purpose bit</p></li>
+<li><p>if the MC has an associated IOB (see <code class="docutils literal notranslate"><span class="pre">io_mcs</span></code> field in the database):</p>
+<ul>
+<li><p>the input bit for the IOB</p></li>
+<li><p>the output bit for the IOB</p></li>
+<li><p>the active-high output-enable bit for the IOB</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>for every GCLK pin, in order:</p>
+<ul>
+<li><p>the input bit for the pin</p></li>
+</ul>
+</li>
+</ul>
+<p>All bits of the register are <code class="docutils literal notranslate"><span class="pre">BC_1</span></code> type cells.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The GCLK cells can reliably capture pin state in EXTEST mode, but only partially override internal connections in INTEST mode: connections through ZIA are overriden by the boundary register value, but connections through per-FB <code class="docutils literal notranslate"><span class="pre">FCLK</span></code> lines are not.</p>
+</div>
+<div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
-<p>write me</p>
+<p>details on the cell connection, EXTEST, INTEST semantics</p>
 </div>
 </section>
 <section id="isp-instructions">
 <h2>ISP instructions<a class="headerlink" href="#isp-instructions" title="Link to this heading"></a></h2>
-<div class="admonition-todo admonition" id="id3">
+<div class="admonition-todo admonition" id="id2">
 <p class="admonition-title">Todo</p>
 <p>write me</p>
 </div>
 </section>
 <section id="programming-sequence">
 <h2>Programming sequence<a class="headerlink" href="#programming-sequence" title="Link to this heading"></a></h2>
-<div class="admonition-todo admonition" id="id4">
+<div class="admonition-todo admonition" id="id3">
 <p class="admonition-title">Todo</p>
 <p>write me</p>
 </div>
