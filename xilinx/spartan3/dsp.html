@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DSP — Spartan 3A DSP, Spartan 6 &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Xilinx Spartan 6 FPGAs" href="../spartan6/index.html" />
+    <link rel="prev" title="Configurable Logic Block — Spartan 3, Virtex 4" href="clb.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../xc9500/index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Xilinx FPGAs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Xilinx Virtex, Virtex E, Spartan 2, Spartan 2E FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Xilinx Virtex 2 FPGAs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Xilinx Spartan 3 FPGAs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="int.html">General interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block — Spartan 3, Virtex 4</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">DSP — Spartan 3A DSP, Spartan 6</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bitstream-spartan-3a-dsp">Bitstream — Spartan 3A DSP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bitstream-spartan-6">Bitstream — Spartan 6</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Xilinx Spartan 6 FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Xilinx Virtex 4 FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Xilinx Virtex 5 FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex6/index.html">Xilinx Virtex 6 FPGAs</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Xilinx FPGAs</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Xilinx Spartan 3 FPGAs</a></li>
+      <li class="breadcrumb-item active">DSP — Spartan 3A DSP, Spartan 6</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/xilinx/spartan3/dsp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dsp-spartan-3a-dsp-spartan-6">
+<h1>DSP — Spartan 3A DSP, Spartan 6<a class="headerlink" href="#dsp-spartan-3a-dsp-spartan-6" title="Link to this heading"></a></h1>
+<section id="bitstream-spartan-3a-dsp">
+<h2>Bitstream — Spartan 3A DSP<a class="headerlink" href="#bitstream-spartan-3a-dsp" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="6">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-DSP-DSP:RSTCINV" title="~DSP:RSTCINV">~DSP:RSTCINV</a></td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-DSP-DSP:RSTAINV" title="~DSP:RSTAINV">~DSP:RSTAINV</a></td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-DSP-DSP:RSTBINV" title="~DSP:RSTBINV">~DSP:RSTBINV</a></td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-DSP-DSP:RSTDINV" title="~DSP:RSTDINV">~DSP:RSTDINV</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="6">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-DSP-DSP:RSTMINV" title="~DSP:RSTMINV">~DSP:RSTMINV</a></td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-DSP-DSP:RSTOPMODEINV" title="~DSP:RSTOPMODEINV">~DSP:RSTOPMODEINV</a></td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-DSP-DSP:RSTPINV" title="~DSP:RSTPINV">~DSP:RSTPINV</a></td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-DSP-DSP:RSTCARRYININV" title="~DSP:RSTCARRYININV">~DSP:RSTCARRYININV</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="6">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>41</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>43</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>44</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-DSP-DSP:CLKINV" title="DSP:CLKINV">DSP:CLKINV</a></td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>50</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-DSP-DSP:CEMINV" title="~DSP:CEMINV">~DSP:CEMINV</a></td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>52</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>53</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>54</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>55</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>56</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-DSP-DSP:CEOPMODEINV" title="~DSP:CEOPMODEINV">~DSP:CEOPMODEINV</a></td></tr>
+<tr><td>57</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-DSP-DSP:CEPINV" title="~DSP:CEPINV">~DSP:CEPINV</a></td></tr>
+<tr><td>58</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>59</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>60</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>61</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>62</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>63</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-DSP-DSP:CECARRYININV" title="~DSP:CECARRYININV">~DSP:CECARRYININV</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="6">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>41</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>43</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>44</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>50</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-DSP-DSP:CECINV" title="~DSP:CECINV">~DSP:CECINV</a></td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>52</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>53</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>54</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>55</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>56</td>
+<td><a href="#bits-xc3s-DSP-DSP:CREG" title="DSP:CREG">DSP:CREG</a></td><td><a href="#bits-xc3s-DSP-DSP:MREG" title="DSP:MREG">DSP:MREG</a></td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-DSP-DSP:CEAINV" title="~DSP:CEAINV">~DSP:CEAINV</a></td></tr>
+<tr><td>57</td>
+<td><a href="#bits-xc3s-DSP-DSP:CARRYINREG" title="DSP:CARRYINREG">DSP:CARRYINREG</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-DSP-DSP:CEBINV" title="~DSP:CEBINV">~DSP:CEBINV</a></td></tr>
+<tr><td>58</td>
+<td><a href="#bits-xc3s-DSP-DSP:PREG" title="DSP:PREG">DSP:PREG</a></td><td><a href="#bits-xc3s-DSP-DSP:B1REG" title="DSP:B1REG">DSP:B1REG</a></td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>59</td>
+<td><a href="#bits-xc3s-DSP-DSP:CARRYINSEL" title="DSP:CARRYINSEL">DSP:CARRYINSEL</a></td><td><a href="#bits-xc3s-DSP-DSP:RSTTYPE" title="DSP:RSTTYPE">DSP:RSTTYPE</a></td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>60</td>
+<td><a href="#bits-xc3s-DSP-DSP:B_INPUT" title="DSP:B_INPUT">DSP:B_INPUT</a></td><td><a href="#bits-xc3s-DSP-DSP:B0REG" title="DSP:B0REG">DSP:B0REG</a></td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>61</td>
+<td><a href="#bits-xc3s-DSP-DSP:DREG" title="DSP:DREG">DSP:DREG</a></td><td><a href="#bits-xc3s-DSP-DSP:A0REG" title="DSP:A0REG">DSP:A0REG</a></td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>62</td>
+<td><a href="#bits-xc3s-DSP-DSP:OPMODEREG" title="DSP:OPMODEREG">DSP:OPMODEREG</a></td><td><a href="#bits-xc3s-DSP-DSP:A1REG" title="DSP:A1REG">DSP:A1REG</a></td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>63</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-DSP-DSP:CEDINV" title="~DSP:CEDINV">~DSP:CEDINV</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:RSTCINV">
+<tr><th>DSP:RSTCINV</th><th>[0, 5, 0]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:RSTAINV">
+<tr><th>DSP:RSTAINV</th><th>[0, 5, 6]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:RSTBINV">
+<tr><th>DSP:RSTBINV</th><th>[0, 5, 7]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:RSTDINV">
+<tr><th>DSP:RSTDINV</th><th>[0, 5, 13]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:RSTMINV">
+<tr><th>DSP:RSTMINV</th><th>[1, 5, 0]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:RSTOPMODEINV">
+<tr><th>DSP:RSTOPMODEINV</th><th>[1, 5, 6]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:RSTPINV">
+<tr><th>DSP:RSTPINV</th><th>[1, 5, 7]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:RSTCARRYININV">
+<tr><th>DSP:RSTCARRYININV</th><th>[1, 5, 13]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:CLKINV">
+<tr><th>DSP:CLKINV</th><th>[2, 5, 47]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:CEMINV">
+<tr><th>DSP:CEMINV</th><th>[2, 5, 50]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:CEOPMODEINV">
+<tr><th>DSP:CEOPMODEINV</th><th>[2, 5, 56]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:CEPINV">
+<tr><th>DSP:CEPINV</th><th>[2, 5, 57]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:CECARRYININV">
+<tr><th>DSP:CECARRYININV</th><th>[2, 5, 63]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:CREG">
+<tr><th>DSP:CREG</th><th>[3, 0, 56]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:CARRYINREG">
+<tr><th>DSP:CARRYINREG</th><th>[3, 0, 57]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:PREG">
+<tr><th>DSP:PREG</th><th>[3, 0, 58]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:CARRYINSEL">
+<tr><th>DSP:CARRYINSEL</th><th>[3, 0, 59]</th></tr>
+<tr><td>CARRYIN</td><td>0</td></tr>
+<tr><td>OPMODE5</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:B_INPUT">
+<tr><th>DSP:B_INPUT</th><th>[3, 0, 60]</th></tr>
+<tr><td>DIRECT</td><td>0</td></tr>
+<tr><td>CASCADE</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:DREG">
+<tr><th>DSP:DREG</th><th>[3, 0, 61]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:OPMODEREG">
+<tr><th>DSP:OPMODEREG</th><th>[3, 0, 62]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:MREG">
+<tr><th>DSP:MREG</th><th>[3, 1, 56]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:B1REG">
+<tr><th>DSP:B1REG</th><th>[3, 1, 58]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:RSTTYPE">
+<tr><th>DSP:RSTTYPE</th><th>[3, 1, 59]</th></tr>
+<tr><td>SYNC</td><td>0</td></tr>
+<tr><td>ASYNC</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:B0REG">
+<tr><th>DSP:B0REG</th><th>[3, 1, 60]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:A0REG">
+<tr><th>DSP:A0REG</th><th>[3, 1, 61]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:A1REG">
+<tr><th>DSP:A1REG</th><th>[3, 1, 62]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:CECINV">
+<tr><th>DSP:CECINV</th><th>[3, 5, 50]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:CEAINV">
+<tr><th>DSP:CEAINV</th><th>[3, 5, 56]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:CEBINV">
+<tr><th>DSP:CEBINV</th><th>[3, 5, 57]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc3s-DSP-DSP:CEDINV">
+<tr><th>DSP:CEDINV</th><th>[3, 5, 63]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+</section>
+<section id="bitstream-spartan-6">
+<h2>Bitstream — Spartan 6<a class="headerlink" href="#bitstream-spartan-6" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="0">Column</th></tr><tr></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="0">Column</th></tr><tr></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="24">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>41</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>43</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>44</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>50</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>52</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>53</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>54</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>55</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>56</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>57</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>58</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>59</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>60</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>61</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:OPMODEREG" title="DSP:OPMODEREG">DSP:OPMODEREG</a></td><td><a href="#bits-xc6s-DSP-DSP:A1REG" title="DSP:A1REG">DSP:A1REG</a></td></tr>
+<tr><td>62</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:CREG" title="DSP:CREG">DSP:CREG</a></td><td><a href="#bits-xc6s-DSP-DSP:MREG" title="DSP:MREG">DSP:MREG</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="24">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:DREG" title="DSP:DREG">DSP:DREG</a></td><td><a href="#bits-xc6s-DSP-DSP:RSTTYPE" title="DSP:RSTTYPE">DSP:RSTTYPE</a></td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:B_INPUT" title="DSP:B_INPUT">DSP:B_INPUT</a></td><td><a href="#bits-xc6s-DSP-DSP:B1REG" title="DSP:B1REG">DSP:B1REG</a></td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:CARRYINSEL" title="DSP:CARRYINSEL">DSP:CARRYINSEL</a></td><td><a href="#bits-xc6s-DSP-DSP:A0REG" title="DSP:A0REG">DSP:A0REG</a></td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:PREG" title="DSP:PREG">DSP:PREG</a></td><td><a href="#bits-xc6s-DSP-DSP:B0REG" title="DSP:B0REG">DSP:B0REG</a></td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:CARRYOUTREG" title="DSP:CARRYOUTREG">DSP:CARRYOUTREG</a></td><td><a href="#bits-xc6s-DSP-DSP:CEOPMODEINV" title="DSP:CEOPMODEINV">DSP:CEOPMODEINV</a></td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:CARRYINREG" title="DSP:CARRYINREG">DSP:CARRYINREG</a></td><td><a href="#bits-xc6s-DSP-DSP:CECINV" title="DSP:CECINV">DSP:CECINV</a></td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:CEDINV" title="DSP:CEDINV">DSP:CEDINV</a></td><td><a href="#bits-xc6s-DSP-DSP:RSTCINV" title="DSP:RSTCINV">DSP:RSTCINV</a></td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:CECARRYININV" title="DSP:CECARRYININV">DSP:CECARRYININV</a></td><td><a href="#bits-xc6s-DSP-DSP:CEBINV" title="DSP:CEBINV">DSP:CEBINV</a></td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:RSTCARRYININV" title="DSP:RSTCARRYININV">DSP:RSTCARRYININV</a></td><td><a href="#bits-xc6s-DSP-DSP:CEAINV" title="DSP:CEAINV">DSP:CEAINV</a></td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:RSTDINV" title="DSP:RSTDINV">DSP:RSTDINV</a></td><td><a href="#bits-xc6s-DSP-DSP:CEMINV" title="DSP:CEMINV">DSP:CEMINV</a></td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:RSTPINV" title="DSP:RSTPINV">DSP:RSTPINV</a></td><td><a href="#bits-xc6s-DSP-DSP:CLKINV" title="DSP:CLKINV">DSP:CLKINV</a></td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:CEPINV" title="DSP:CEPINV">DSP:CEPINV</a></td><td><a href="#bits-xc6s-DSP-DSP:RSTBINV" title="DSP:RSTBINV">DSP:RSTBINV</a></td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:RSTMINV" title="DSP:RSTMINV">DSP:RSTMINV</a></td><td><a href="#bits-xc6s-DSP-DSP:RSTAINV" title="DSP:RSTAINV">DSP:RSTAINV</a></td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:RSTOPMODEINV" title="DSP:RSTOPMODEINV">DSP:RSTOPMODEINV</a></td><td>-</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:OPMODEREG">
+<tr><th>DSP:OPMODEREG</th><th>[2, 22, 61]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:CREG">
+<tr><th>DSP:CREG</th><th>[2, 22, 62]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:A1REG">
+<tr><th>DSP:A1REG</th><th>[2, 23, 61]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:MREG">
+<tr><th>DSP:MREG</th><th>[2, 23, 62]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:DREG">
+<tr><th>DSP:DREG</th><th>[3, 22, 0]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:B_INPUT">
+<tr><th>DSP:B_INPUT</th><th>[3, 22, 3]</th></tr>
+<tr><td>DIRECT</td><td>0</td></tr>
+<tr><td>CASCADE</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:CARRYINSEL">
+<tr><th>DSP:CARRYINSEL</th><th>[3, 22, 4]</th></tr>
+<tr><td>CARRYIN</td><td>0</td></tr>
+<tr><td>OPMODE5</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:PREG">
+<tr><th>DSP:PREG</th><th>[3, 22, 5]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:CARRYOUTREG">
+<tr><th>DSP:CARRYOUTREG</th><th>[3, 22, 12]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:CARRYINREG">
+<tr><th>DSP:CARRYINREG</th><th>[3, 22, 13]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:CEDINV">
+<tr><th>DSP:CEDINV</th><th>[3, 22, 14]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:CECARRYININV">
+<tr><th>DSP:CECARRYININV</th><th>[3, 22, 15]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:RSTCARRYININV">
+<tr><th>DSP:RSTCARRYININV</th><th>[3, 22, 17]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:RSTDINV">
+<tr><th>DSP:RSTDINV</th><th>[3, 22, 18]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:RSTPINV">
+<tr><th>DSP:RSTPINV</th><th>[3, 22, 19]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:CEPINV">
+<tr><th>DSP:CEPINV</th><th>[3, 22, 20]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:RSTMINV">
+<tr><th>DSP:RSTMINV</th><th>[3, 22, 21]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:RSTOPMODEINV">
+<tr><th>DSP:RSTOPMODEINV</th><th>[3, 22, 23]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:RSTTYPE">
+<tr><th>DSP:RSTTYPE</th><th>[3, 23, 0]</th></tr>
+<tr><td>SYNC</td><td>0</td></tr>
+<tr><td>ASYNC</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:B1REG">
+<tr><th>DSP:B1REG</th><th>[3, 23, 3]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:A0REG">
+<tr><th>DSP:A0REG</th><th>[3, 23, 4]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:B0REG">
+<tr><th>DSP:B0REG</th><th>[3, 23, 5]</th></tr>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:CEOPMODEINV">
+<tr><th>DSP:CEOPMODEINV</th><th>[3, 23, 12]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:CECINV">
+<tr><th>DSP:CECINV</th><th>[3, 23, 13]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:RSTCINV">
+<tr><th>DSP:RSTCINV</th><th>[3, 23, 14]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:CEBINV">
+<tr><th>DSP:CEBINV</th><th>[3, 23, 15]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:CEAINV">
+<tr><th>DSP:CEAINV</th><th>[3, 23, 17]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:CEMINV">
+<tr><th>DSP:CEMINV</th><th>[3, 23, 18]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:CLKINV">
+<tr><th>DSP:CLKINV</th><th>[3, 23, 19]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:RSTBINV">
+<tr><th>DSP:RSTBINV</th><th>[3, 23, 20]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-DSP-DSP:RSTAINV">
+<tr><th>DSP:RSTAINV</th><th>[3, 23, 21]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="clb.html" class="btn btn-neutral float-left" title="Configurable Logic Block — Spartan 3, Virtex 4" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../spartan6/index.html" class="btn btn-neutral float-right" title="Xilinx Spartan 6 FPGAs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
