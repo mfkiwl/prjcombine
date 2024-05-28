@@ -58,6 +58,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP — Spartan 3A DSP, Spartan 6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clk.html">Clock interconnect</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Xilinx Spartan 6 FPGAs</a></li>
@@ -252,8 +253,8 @@
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc3s-CLB-SLICE0:XBMUX">
 <tr><th>SLICE0:XBMUX</th><th>[0, 1, 1]</th></tr>
-<tr><td>COUT</td><td>0</td></tr>
-<tr><td>SHIFTOUT</td><td>1</td></tr>
+<tr><td>FCY</td><td>0</td></tr>
+<tr><td>FMC15</td><td>1</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc3s-CLB-SLICE0:FXMUX">
 <tr><th>SLICE0:FXMUX</th><th>[0, 1, 16]</th><th>[0, 1, 2]</th></tr>
@@ -273,8 +274,8 @@
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc3s-CLB-SLICE0:YBMUX">
 <tr><th>SLICE0:YBMUX</th><th>[0, 1, 5]</th></tr>
-<tr><td>COUT</td><td>0</td></tr>
-<tr><td>SHIFTOUT</td><td>1</td></tr>
+<tr><td>GCY</td><td>0</td></tr>
+<tr><td>GMC15</td><td>1</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc3s-CLB-SLICE0:G_SHIFT">
 <tr><th>SLICE0:G_SHIFT</th><th>[0, 1, 6]</th></tr>
@@ -379,8 +380,8 @@
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc3s-CLB-SLICE2:XBMUX">
 <tr><th>SLICE2:XBMUX</th><th>[0, 1, 33]</th></tr>
-<tr><td>COUT</td><td>0</td></tr>
-<tr><td>SHIFTOUT</td><td>1</td></tr>
+<tr><td>FCY</td><td>0</td></tr>
+<tr><td>FMC15</td><td>1</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc3s-CLB-SLICE2:FXMUX">
 <tr><th>SLICE2:FXMUX</th><th>[0, 1, 48]</th><th>[0, 1, 34]</th></tr>
@@ -400,8 +401,8 @@
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc3s-CLB-SLICE2:YBMUX">
 <tr><th>SLICE2:YBMUX</th><th>[0, 1, 37]</th></tr>
-<tr><td>COUT</td><td>0</td></tr>
-<tr><td>SHIFTOUT</td><td>1</td></tr>
+<tr><td>GCY</td><td>0</td></tr>
+<tr><td>GMC15</td><td>1</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc3s-CLB-SLICE2:G_SHIFT">
 <tr><th>SLICE2:G_SHIFT</th><th>[0, 1, 38]</th></tr>
@@ -1412,8 +1413,8 @@
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc4v-CLB-SLICE0:XBMUX">
 <tr><th>SLICE0:XBMUX</th><th>[0, 21, 18]</th></tr>
-<tr><td>COUT</td><td>0</td></tr>
-<tr><td>SHIFTOUT</td><td>1</td></tr>
+<tr><td>FCY</td><td>0</td></tr>
+<tr><td>FMC15</td><td>1</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc4v-CLB-SLICE0:G_SLICEWE1USED">
 <tr><th>SLICE0:G_SLICEWE1USED</th><th>[0, 21, 19]</th></tr>
@@ -1425,8 +1426,8 @@
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc4v-CLB-SLICE0:YBMUX">
 <tr><th>SLICE0:YBMUX</th><th>[0, 21, 21]</th></tr>
-<tr><td>COUT</td><td>0</td></tr>
-<tr><td>SHIFTOUT</td><td>1</td></tr>
+<tr><td>GCY</td><td>0</td></tr>
+<tr><td>GMC15</td><td>1</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc4v-CLB-SLICE0:G">
 <tr><th>SLICE0:G</th><th>[0, 21, 23]</th><th>[0, 21, 24]</th><th>[0, 21, 25]</th><th>[0, 21, 26]</th><th>[0, 21, 27]</th><th>[0, 21, 28]</th><th>[0, 21, 29]</th><th>[0, 21, 30]</th><th>[0, 21, 31]</th><th>[0, 21, 32]</th><th>[0, 21, 33]</th><th>[0, 21, 34]</th><th>[0, 21, 35]</th><th>[0, 21, 36]</th><th>[0, 21, 37]</th><th>[0, 21, 38]</th></tr>
@@ -1443,8 +1444,8 @@
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc4v-CLB-SLICE2:XBMUX">
 <tr><th>SLICE2:XBMUX</th><th>[0, 21, 58]</th></tr>
-<tr><td>COUT</td><td>0</td></tr>
-<tr><td>SHIFTOUT</td><td>1</td></tr>
+<tr><td>FCY</td><td>0</td></tr>
+<tr><td>FMC15</td><td>1</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc4v-CLB-SLICE2:G_SLICEWE1USED">
 <tr><th>SLICE2:G_SLICEWE1USED</th><th>[0, 21, 59]</th></tr>
@@ -1456,8 +1457,8 @@
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc4v-CLB-SLICE2:YBMUX">
 <tr><th>SLICE2:YBMUX</th><th>[0, 21, 61]</th></tr>
-<tr><td>COUT</td><td>0</td></tr>
-<tr><td>SHIFTOUT</td><td>1</td></tr>
+<tr><td>GCY</td><td>0</td></tr>
+<tr><td>GMC15</td><td>1</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc4v-CLB-SLICE2:G">
 <tr><th>SLICE2:G</th><th>[0, 21, 63]</th><th>[0, 21, 64]</th><th>[0, 21, 65]</th><th>[0, 21, 66]</th><th>[0, 21, 67]</th><th>[0, 21, 68]</th><th>[0, 21, 69]</th><th>[0, 21, 70]</th><th>[0, 21, 71]</th><th>[0, 21, 72]</th><th>[0, 21, 73]</th><th>[0, 21, 74]</th><th>[0, 21, 75]</th><th>[0, 21, 76]</th><th>[0, 21, 77]</th><th>[0, 21, 78]</th></tr>

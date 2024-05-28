@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Block RAM — Virtex 2, Spartan 3" href="bram.html" />
-    <link rel="prev" title="General interconnect" href="int.html" /> 
+    <link rel="prev" title="General interconnect" href="interconnect.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,12 +50,22 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Xilinx FPGAs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Xilinx Virtex, Virtex E, Spartan 2, Spartan 2E FPGAs</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Xilinx Virtex 2 FPGAs</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="int.html">General interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="structure.html">Device structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interconnect.html">General interconnect</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Configurable Logic Block</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#luts">LUTs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wide-multiplexers">Wide multiplexers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#carry-logic">Carry logic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sum-of-products">Sum of products</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#output-multiplexers">Output multiplexers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#registers">Registers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tristate-buses-and-tbufs">Tristate buses and <code class="docutils literal notranslate"><span class="pre">TBUF</span></code>s</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#bitstream">Bitstream</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM — Virtex 2, Spartan 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../spartan3/index.html">Xilinx Spartan 3 FPGAs</a></li>
@@ -94,7 +104,565 @@
            <div itemprop="articleBody">
              
   <section id="configurable-logic-block">
-<h1>Configurable Logic Block<a class="headerlink" href="#configurable-logic-block" title="Link to this heading"></a></h1>
+<span id="virtex2-clb"></span><h1>Configurable Logic Block<a class="headerlink" href="#configurable-logic-block" title="Link to this heading"></a></h1>
+<p>The main logic resource in Virtex 2 devices is the CLB (Configurable Logic Block). It corresponds one-to-one with the <code class="docutils literal notranslate"><span class="pre">INT.CLB</span></code> interconnect tile.  Every CLB has:</p>
+<ul class="simple">
+<li><p>four <code class="docutils literal notranslate"><span class="pre">SLICE</span></code>s, numbered <code class="docutils literal notranslate"><span class="pre">SLICE0</span></code> through <code class="docutils literal notranslate"><span class="pre">SLICE3</span></code></p></li>
+<li><p>four horizontal tristate buses, going horizontally through the whole row of CLBs</p></li>
+<li><p>two tristate buffers, <code class="docutils literal notranslate"><span class="pre">TBUF0</span></code> and <code class="docutils literal notranslate"><span class="pre">TBUF1</span></code>, driving the tristate buses</p></li>
+</ul>
+<p>The slices are organized as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE0</span></code> is on the bottom left of the CLB</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE1</span></code> is above <code class="docutils literal notranslate"><span class="pre">SLICE0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE2</span></code> is to the right of <code class="docutils literal notranslate"><span class="pre">SLICE0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE3</span></code> is above <code class="docutils literal notranslate"><span class="pre">SLICE2</span></code> and to the right of <code class="docutils literal notranslate"><span class="pre">SLICE1</span></code></p></li>
+</ul>
+<p>Every slice has:</p>
+<ul class="simple">
+<li><p>two 4-input LUTs, named <code class="docutils literal notranslate"><span class="pre">F</span></code> and <code class="docutils literal notranslate"><span class="pre">G</span></code></p>
+<ul>
+<li><p>each of them has four inputs, named <code class="docutils literal notranslate"><span class="pre">F[1-4]</span></code> and <code class="docutils literal notranslate"><span class="pre">G[1-4]</span></code></p></li>
+<li><p>every LUT can be used as LUT RAM or shift register</p></li>
+</ul>
+</li>
+<li><p>two “bypass inputs” used for various purposes</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">BX</span></code>, associated with the <code class="docutils literal notranslate"><span class="pre">F</span></code> LUT</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BY</span></code>, associated with the <code class="docutils literal notranslate"><span class="pre">G</span></code> LUT</p></li>
+</ul>
+</li>
+<li><p>two wide multiplexers</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">F5</span></code>, associated with the <code class="docutils literal notranslate"><span class="pre">F</span></code> LUT, multiplexing <code class="docutils literal notranslate"><span class="pre">F</span></code> and <code class="docutils literal notranslate"><span class="pre">G</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FX</span></code>, associated with the <code class="docutils literal notranslate"><span class="pre">G</span></code> LUT, multiplexing <code class="docutils literal notranslate"><span class="pre">F5</span></code> and <code class="docutils literal notranslate"><span class="pre">FX</span></code> outputs of this and other <code class="docutils literal notranslate"><span class="pre">SLICE</span></code>s</p></li>
+</ul>
+</li>
+<li><p>carry logic with a carry chain, going vertically upwards through the CLB column</p></li>
+<li><p>sum of products logic, going horizontally rightwards through the CLB row</p></li>
+<li><p>two main combinational outputs</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">X</span></code>, associated with the <code class="docutils literal notranslate"><span class="pre">F</span></code> LUT</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Y</span></code>, associated with the <code class="docutils literal notranslate"><span class="pre">G</span></code> LUT</p></li>
+</ul>
+</li>
+<li><p>two “bypass” combinational outputs, used for long shift registers and carry chains</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">XB</span></code>, associated with the <code class="docutils literal notranslate"><span class="pre">F</span></code> LUT</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">YB</span></code>, associated with the <code class="docutils literal notranslate"><span class="pre">G</span></code> LUT</p></li>
+</ul>
+</li>
+<li><p>two registers and their outputs</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">FFX</span></code> and <code class="docutils literal notranslate"><span class="pre">XQ</span></code>, associated with the <code class="docutils literal notranslate"><span class="pre">F</span></code> LUT</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FFY</span></code> and <code class="docutils literal notranslate"><span class="pre">YQ</span></code>, associated with the <code class="docutils literal notranslate"><span class="pre">G</span></code> LUT</p></li>
+</ul>
+</li>
+<li><p>shared control inputs:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">CLK</span></code>, the clock input</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SR</span></code>, the set/reset input (also used as LUT RAM write enable)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CE</span></code>, the clock enable input</p></li>
+</ul>
+</li>
+</ul>
+<p>In summary, a single <code class="docutils literal notranslate"><span class="pre">SLICE</span></code> has the following pins:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F[1-4]</span></code> and <code class="docutils literal notranslate"><span class="pre">G[1-4]</span></code>: general interconnect inputs, used as LUT inputs and LUT RAM write address</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BX</span></code> and <code class="docutils literal notranslate"><span class="pre">BY</span></code>: general interconnect freely-invertible inputs, used for various purposes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CLK</span></code>, <code class="docutils literal notranslate"><span class="pre">SR</span></code>, <code class="docutils literal notranslate"><span class="pre">CE</span></code>: general interconnect freely-invertible inputs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">X</span></code>, <code class="docutils literal notranslate"><span class="pre">Y</span></code>, <code class="docutils literal notranslate"><span class="pre">XQ</span></code>, <code class="docutils literal notranslate"><span class="pre">YQ</span></code>, <code class="docutils literal notranslate"><span class="pre">XB</span></code>, <code class="docutils literal notranslate"><span class="pre">YB</span></code>: general interconnect outputs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">COUT</span></code>: dedicated output (carry output)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CIN</span></code>: dedicated input (carry input), routed from <code class="docutils literal notranslate"><span class="pre">COUT</span></code> of the slice below</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHIFTOUT</span></code>: dedicated output (shift register output)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SHIFTIN</span></code>: dedicated input (shift register input), routed from <code class="docutils literal notranslate"><span class="pre">SHIFTOUT</span></code> of the previous slice in sequence</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SOPOUT</span></code>: dedicated output (sum of products output)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SOPIN</span></code>: dedicated output (sum of products input), routed from <code class="docutils literal notranslate"><span class="pre">SOPOUT</span></code> of the slice to the left</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">F5</span></code> and <code class="docutils literal notranslate"><span class="pre">FX</span></code>: dedicated outputs (wide multiplexer outputs)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FXINA</span></code> and <code class="docutils literal notranslate"><span class="pre">FXINB</span></code>: dedicated inputs (wide multiplexer inputs), routed from <code class="docutils literal notranslate"><span class="pre">F5</span></code> and <code class="docutils literal notranslate"><span class="pre">FX</span></code> of neighbouring slices</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DIG</span></code>: dedicated output</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ALTDIG</span></code>: dedicated input</p></li>
+</ul>
+<p>Additionally, some pins and circuitry are shared between <code class="docutils literal notranslate"><span class="pre">SLICE</span></code>s within the same CLB.</p>
+<section id="luts">
+<h2>LUTs<a class="headerlink" href="#luts" title="Link to this heading"></a></h2>
+<p>There are two 4-input LUTs in each slice, <code class="docutils literal notranslate"><span class="pre">F</span></code> and <code class="docutils literal notranslate"><span class="pre">G</span></code>. The <code class="docutils literal notranslate"><span class="pre">F</span></code> LUT has inputs <code class="docutils literal notranslate"><span class="pre">F[1-4]</span></code>, with <code class="docutils literal notranslate"><span class="pre">F1</span></code> being the LSB and <code class="docutils literal notranslate"><span class="pre">F4</span></code> being the MSB. The <code class="docutils literal notranslate"><span class="pre">G</span></code> LUT likewise has inputs <code class="docutils literal notranslate"><span class="pre">G[1-4]</span></code>.</p>
+<p>The initial LUT contents are determined by the <code class="docutils literal notranslate"><span class="pre">F</span></code> and <code class="docutils literal notranslate"><span class="pre">G</span></code> attributes in the bitstream.</p>
+<p>The LUT outputs go to:</p>
+<ul class="simple">
+<li><p>the <code class="docutils literal notranslate"><span class="pre">FXMUX</span></code> and <code class="docutils literal notranslate"><span class="pre">GYMUX</span></code> multiplexers</p></li>
+<li><p>the carry logic</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">F5</span></code> wide multiplexer</p></li>
+</ul>
+<section id="lut-ram">
+<h3>LUT RAM<a class="headerlink" href="#lut-ram" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">F_RAM</span></code> and <code class="docutils literal notranslate"><span class="pre">G_RAM</span></code> attributes, when set, turn <code class="docutils literal notranslate"><span class="pre">F</span></code> and <code class="docutils literal notranslate"><span class="pre">G</span></code> (respectively) into LUT RAM mode.</p>
+<p>The signals used in RAM mode are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CLK</span></code> is the write clock</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SR</span></code> is the write enable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WF[1-4]</span></code> and <code class="docutils literal notranslate"><span class="pre">WG[1-4]</span></code> are write address for the <code class="docutils literal notranslate"><span class="pre">F</span></code> and <code class="docutils literal notranslate"><span class="pre">G</span></code> LUTs, respectively</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DIF</span></code> and <code class="docutils literal notranslate"><span class="pre">DIG</span></code> are the data input for the <code class="docutils literal notranslate"><span class="pre">F</span></code> and <code class="docutils literal notranslate"><span class="pre">G</span></code> LUTs, respectively</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICEWE0</span></code>: bit 4 of the write address, when enabled</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICEWE1</span></code>: bit 5 of the write address, when enabled</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICEWE2</span></code>: bit 6 of the write address, when enabled</p></li>
+</ul>
+<p>The write address is routed as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE0.W[FG][1-4]</span></code> is routed from <code class="docutils literal notranslate"><span class="pre">SLICE0.[FG][1-4]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE1.W[FG][1-4]</span></code> is routed from <code class="docutils literal notranslate"><span class="pre">SLICE1.[FG][1-4]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE2.W[FG][1-4]</span></code> is routed from <code class="docutils literal notranslate"><span class="pre">SLICE0.[FG][1-4]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE3.W[FG][1-4]</span></code> is routed from <code class="docutils literal notranslate"><span class="pre">SLICE1.[FG][1-4]</span></code></p></li>
+</ul>
+<p>Thus, <code class="docutils literal notranslate"><span class="pre">SLICE[01]</span></code> can be used alone to implement single-port RAM, or together with <code class="docutils literal notranslate"><span class="pre">SLICE[23]</span></code> to implement dual port or larger RAM.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">DIF_MUX</span></code> determines the value of <code class="docutils literal notranslate"><span class="pre">DIF</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BX</span></code>: use the <code class="docutils literal notranslate"><span class="pre">BX</span></code> pin</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ALT</span></code>: use the <code class="docutils literal notranslate"><span class="pre">DIG</span></code> value</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">DIG_MUX</span></code> determines the value of <code class="docutils literal notranslate"><span class="pre">DIG</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BY</span></code>: use the <code class="docutils literal notranslate"><span class="pre">BY</span></code> pin</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ALT</span></code>: use the <code class="docutils literal notranslate"><span class="pre">ALTDIG</span></code> value</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">ALTDIG</span></code> is determined as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE0.ALTDIG</span></code> is connected to <code class="docutils literal notranslate"><span class="pre">SLICE1.DIG</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE1.ALTDIG</span></code> is connected to <code class="docutils literal notranslate"><span class="pre">SLICE3.DIG</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE2.ALTDIG</span></code> is connected to <code class="docutils literal notranslate"><span class="pre">SLICE3.DIG</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE3.ALTDIG</span></code> is connected to <code class="docutils literal notranslate"><span class="pre">SLICE3.DIG</span></code> of the CLB above</p></li>
+</ul>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">DI[FG]_MUX</span></code> attributes are also used in the shift register mode, but with different meaning.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">SLICEWE0</span></code> signals are routed as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE0.SLICEWE0</span> <span class="pre">=</span> <span class="pre">SLICE0.BX</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE1.SLICEWE0</span> <span class="pre">=</span> <span class="pre">SLICE1.BX</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE2.SLICEWE0</span> <span class="pre">=</span> <span class="pre">SLICE0.BX</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE3.SLICEWE0</span> <span class="pre">=</span> <span class="pre">SLICE1.BX</span></code></p></li>
+</ul>
+<p>When <code class="docutils literal notranslate"><span class="pre">SLICEWE0USED</span></code> is set, the <code class="docutils literal notranslate"><span class="pre">SLICEWE0</span></code> signal is used within the slice. The <code class="docutils literal notranslate"><span class="pre">F</span></code> LUT is written when it is 1, the <code class="docutils literal notranslate"><span class="pre">G</span></code> LUT is written when it is 0. Otherwise, the signal is ignored, and both LUTs are written at the same time.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">SLICEWE1</span></code> and <code class="docutils literal notranslate"><span class="pre">SLICEWE2</span></code> signals are routed as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE0.SLICEWE1</span> <span class="pre">=</span> <span class="pre">SLICE0.BY</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE1.SLICEWE1</span> <span class="pre">=</span> <span class="pre">!SLICE0.BY</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE2.SLICEWE1</span> <span class="pre">=</span> <span class="pre">SLICE0.BY</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE3.SLICEWE1</span> <span class="pre">=</span> <span class="pre">!SLICE0.BY</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE0.SLICEWE2</span> <span class="pre">=</span> <span class="pre">SLICE1.BY</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE1.SLICEWE2</span> <span class="pre">=</span> <span class="pre">SLICE1.BY</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE2.SLICEWE2</span> <span class="pre">=</span> <span class="pre">!SLICE1.BY</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE3.SLICEWE2</span> <span class="pre">=</span> <span class="pre">!SLICE1.BY</span></code></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">SLICE0.BYOUTUSED</span></code> is set, all <code class="docutils literal notranslate"><span class="pre">SLICE</span></code>s within the CLB will use their <code class="docutils literal notranslate"><span class="pre">SLICEWE1</span></code> signal as a write enable — the LUTs are only written when <code class="docutils literal notranslate"><span class="pre">SLICEWE1</span></code> is 1. Otherwise, all <code class="docutils literal notranslate"><span class="pre">SLICEWE1</span></code> signals are ignored.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">SLICE1.BYOUTUSED</span></code> is set, all <code class="docutils literal notranslate"><span class="pre">SLICE</span></code>s within the CLB will use their <code class="docutils literal notranslate"><span class="pre">SLICEWE2</span></code> signal as a write enable — the LUTs are only written when <code class="docutils literal notranslate"><span class="pre">SLICEWE2</span></code> is 1. Otherwise, all <code class="docutils literal notranslate"><span class="pre">SLICEWE2</span></code> signals are ignored.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p><code class="docutils literal notranslate"><span class="pre">SLICE2</span></code> and <code class="docutils literal notranslate"><span class="pre">SLICE3</span></code> also have <code class="docutils literal notranslate"><span class="pre">BYOUTUSED</span></code> bits — what do they do, if anything?</p>
+</div>
+<section id="single-port-16x-ram">
+<h4>Single-port 16×X RAM<a class="headerlink" href="#single-port-16x-ram" title="Link to this heading"></a></h4>
+<p>Single-port 16×X RAM can be implemented as follows:</p>
+<ul class="simple">
+<li><p>pick a slice</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE0</span></code> and <code class="docutils literal notranslate"><span class="pre">SLICE1</span></code> can always be used</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE2</span></code> can be used if <code class="docutils literal notranslate"><span class="pre">SLICE0</span></code> is also used with the same address</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE3</span></code> can be used if <code class="docutils literal notranslate"><span class="pre">SLICE1</span></code> is also used with the same address</p></li>
+</ul>
+</li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">CLK</span></code> to write clock</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SR</span></code> to write enable</p></li>
+<li><p>for the 16×1 slice in <code class="docutils literal notranslate"><span class="pre">F</span></code> LUT:</p>
+<ul>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">F[1-4]</span></code> to the read/write address</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">BX</span></code> to write data</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">DIF_MUX</span></code> to <code class="docutils literal notranslate"><span class="pre">BX</span></code></p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">F</span></code> output as read data</p></li>
+</ul>
+</li>
+<li><p>for the 16×1 slice in <code class="docutils literal notranslate"><span class="pre">G</span></code> LUT:</p>
+<ul>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">G[1-4]</span></code> to the read/write address</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">BY</span></code> to write data</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">DIG_MUX</span></code> to <code class="docutils literal notranslate"><span class="pre">BY</span></code></p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">G</span></code> output as read data</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="dual-port-16x-ram">
+<h4>Dual-port 16×X RAM<a class="headerlink" href="#dual-port-16x-ram" title="Link to this heading"></a></h4>
+<p>Dual-port 16×X RAM can be implemented as follows:</p>
+<ul class="simple">
+<li><p>pick a pair of slices: either <code class="docutils literal notranslate"><span class="pre">SLICE0</span></code> and <code class="docutils literal notranslate"><span class="pre">SLICE2</span></code> or <code class="docutils literal notranslate"><span class="pre">SLICE1</span></code> and <code class="docutils literal notranslate"><span class="pre">SLICE3</span></code></p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">CLK</span></code> to write clock</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SR</span></code> to write enable</p></li>
+<li><p>for the 16×1 slice in <code class="docutils literal notranslate"><span class="pre">F</span></code> LUTs:</p>
+<ul>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">F[1-4]</span></code> on <code class="docutils literal notranslate"><span class="pre">SLICE[01]</span></code> to the write address</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">F[1-4]</span></code> on <code class="docutils literal notranslate"><span class="pre">SLICE[23]</span></code> to the read address</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">BX</span></code> of both slices to write data</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">DIF_MUX</span></code> to <code class="docutils literal notranslate"><span class="pre">BX</span></code></p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">F</span></code> outputs as read data</p></li>
+</ul>
+</li>
+<li><p>for the 16×1 slice in <code class="docutils literal notranslate"><span class="pre">G</span></code> LUTs:</p>
+<ul>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">G[1-4]</span></code> on <code class="docutils literal notranslate"><span class="pre">SLICE[01]</span></code> to the write address</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">G[1-4]</span></code> on <code class="docutils literal notranslate"><span class="pre">SLICE[23]</span></code> to the read address</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">BY</span></code> of both slices to write data</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">DIG_MUX</span></code> to <code class="docutils literal notranslate"><span class="pre">BY</span></code></p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">G</span></code> outputs as read data</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="single-port-32x-ram">
+<h4>Single-port 32×X RAM<a class="headerlink" href="#single-port-32x-ram" title="Link to this heading"></a></h4>
+<p>Single-port 32×X RAM can be implemented as follows:</p>
+<ul class="simple">
+<li><p>pick a slice</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE0</span></code> and <code class="docutils literal notranslate"><span class="pre">SLICE1</span></code> can always be used</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE2</span></code> can be used if <code class="docutils literal notranslate"><span class="pre">SLICE0</span></code> is also used with the same address</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE3</span></code> can be used if <code class="docutils literal notranslate"><span class="pre">SLICE1</span></code> is also used with the same address</p></li>
+</ul>
+</li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">CLK</span></code> to write clock</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SR</span></code> to write enable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code> LUT corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x0X</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G</span></code> LUT corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x1X</span></code></p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">F[1-4]</span></code> and <code class="docutils literal notranslate"><span class="pre">G[1-4]</span></code> to low 4 bits of the read/write address</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">BX</span></code> to bit 4 of read/write address</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">SLICEWE0USED</span></code></p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">BY</span></code> to write data</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">DIF_MUX</span></code> to <code class="docutils literal notranslate"><span class="pre">ALT</span></code></p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">DIG_MUX</span></code> to <code class="docutils literal notranslate"><span class="pre">BY</span></code></p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">F5</span></code> output as read data</p></li>
+</ul>
+</section>
+<section id="dual-port-32x-ram">
+<h4>Dual-port 32×X RAM<a class="headerlink" href="#dual-port-32x-ram" title="Link to this heading"></a></h4>
+<p>Dual-port 32×X RAM can be implemented as follows:</p>
+<ul class="simple">
+<li><p>pick a pair of slices: either <code class="docutils literal notranslate"><span class="pre">SLICE0+SLICE2</span></code> or <code class="docutils literal notranslate"><span class="pre">SLICE1+SLICE3</span></code></p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">CLK</span></code> to write clock</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SR</span></code> to write enable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code> LUTs correspond to addresses <code class="docutils literal notranslate"><span class="pre">0x0X</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G</span></code> LUTs correspond to addresses <code class="docutils literal notranslate"><span class="pre">0x1X</span></code></p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">F[1-4]</span></code> and <code class="docutils literal notranslate"><span class="pre">G[1-4]</span></code> of <code class="docutils literal notranslate"><span class="pre">SLICE[01]</span></code> to low 4 bits of the write address</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">F[1-4]</span></code> and <code class="docutils literal notranslate"><span class="pre">G[1-4]</span></code> of <code class="docutils literal notranslate"><span class="pre">SLICE[23]</span></code> to low 4 bits of the read address</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SLICE[01].BX</span></code> to bit 4 of write address</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SLICE[23].BX</span></code> to bit 4 of read address</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">SLICEWE0USED</span></code></p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">BY</span></code> of both slices to write data</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">DIF_MUX</span></code> to <code class="docutils literal notranslate"><span class="pre">ALT</span></code></p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">DIG_MUX</span></code> to <code class="docutils literal notranslate"><span class="pre">BY</span></code></p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">F5</span></code> outputs as read data</p></li>
+</ul>
+</section>
+<section id="single-port-64x-ram">
+<h4>Single-port 64×X RAM<a class="headerlink" href="#single-port-64x-ram" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>pick a pair of slices</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE0+SLICE1</span></code> can always be used</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE2+SLICE3</span></code> can also be used if <code class="docutils literal notranslate"><span class="pre">SLICE0+SLICE1</span></code> is used with the same address</p></li>
+</ul>
+</li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">CLK</span></code> to write clock</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SR</span></code> to write enable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE[13].G</span></code> corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x0X</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE[13].F</span></code> corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x1X</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE[02].G</span></code> corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x2X</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE[02].F</span></code> corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x3X</span></code></p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">F[1-4]</span></code> and <code class="docutils literal notranslate"><span class="pre">G[1-4]</span></code> to low 4 bits of the address</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">BX</span></code> to bit 4 of the address</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">SLICEWE0USED</span></code></p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SLICE[02].BY</span></code> to bit 5 of the address</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">SLICE0.BYOUTUSED</span></code></p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SLICE[13].BY</span></code> to write data</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">DIF_MUX</span></code> to <code class="docutils literal notranslate"><span class="pre">ALT</span></code></p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">SLICE[02].DIG_MUX</span></code> to <code class="docutils literal notranslate"><span class="pre">ALT</span></code></p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">SLICE[13].DIG_MUX</span></code> to <code class="docutils literal notranslate"><span class="pre">BY</span></code></p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">SLICE[02].FX</span></code> as read data</p></li>
+</ul>
+</section>
+<section id="dual-port-641-ram">
+<h4>Dual-port 64×1 RAM<a class="headerlink" href="#dual-port-641-ram" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>use the whole CLB</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">CLK</span></code> to write clock</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SR</span></code> to write enable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE[13].G</span></code> corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x0X</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE[13].F</span></code> corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x1X</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE[02].G</span></code> corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x2X</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE[02].F</span></code> corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x3X</span></code></p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SLICE[01].F[1-4]</span></code> and <code class="docutils literal notranslate"><span class="pre">SLICE[01].G[1-4]</span></code> to low 4 bits of the write address</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SLICE[23].F[1-4]</span></code> and <code class="docutils literal notranslate"><span class="pre">SLICE[23].G[1-4]</span></code> to low 4 bits of the read address</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SLICE[01].BX</span></code> to bit 4 of the write address</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SLICE[23].BX</span></code> to bit 4 of the read address</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">SLICEWE0USED</span></code></p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SLICE0.BY</span></code> to bit 5 of the write address</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SLICE2.BY</span></code> to bit 5 of the read address</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">SLICE0.BYOUTUSED</span></code></p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SLICE[13].BY</span></code> to write data</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">DIF_MUX</span></code> to <code class="docutils literal notranslate"><span class="pre">ALT</span></code></p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">SLICE[02].DIG_MUX</span></code> to <code class="docutils literal notranslate"><span class="pre">ALT</span></code></p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">SLICE[13].DIG_MUX</span></code> to <code class="docutils literal notranslate"><span class="pre">BY</span></code></p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">SLICE[02].FX</span></code> as read data</p></li>
+</ul>
+</section>
+<section id="single-port-1281-ram">
+<h4>Single-port 128×1 RAM<a class="headerlink" href="#single-port-1281-ram" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>use the whole CLB</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">CLK</span></code> to write clock</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SR</span></code> to write enable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE3.G</span></code> corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x0X</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE3.F</span></code> corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x1X</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE2.G</span></code> corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x2X</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE2.F</span></code> corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x3X</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE1.G</span></code> corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x4X</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE1.F</span></code> corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x5X</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE0.G</span></code> corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x6X</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE0.F</span></code> corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x7X</span></code></p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">F[1-4]</span></code> and <code class="docutils literal notranslate"><span class="pre">G[1-4]</span></code> to low 4 bits of the address</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">BX</span></code> to bit 4 of the address</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">SLICEWE0USED</span></code></p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SLICE[02].BY</span></code> to bit 5 of the address</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">SLICE0.BYOUTUSED</span></code></p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SLICE1.BY</span></code> to bit 6 of the address</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">SLICE1.BYOUTUSED</span></code></p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">SLICE3.BY</span></code> to write data</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">DIF_MUX</span></code> to <code class="docutils literal notranslate"><span class="pre">ALT</span></code></p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">SLICE[012].DIG_MUX</span></code> to <code class="docutils literal notranslate"><span class="pre">ALT</span></code></p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">SLICE3.DIG_MUX</span></code> to <code class="docutils literal notranslate"><span class="pre">BY</span></code></p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">SLICE1.FX</span></code> as read data</p></li>
+</ul>
+</section>
+</section>
+<section id="shift-registers">
+<h3>Shift registers<a class="headerlink" href="#shift-registers" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">F_SHIFT</span></code> and <code class="docutils literal notranslate"><span class="pre">G_SHIFT</span></code> attributes, when set, turn <code class="docutils literal notranslate"><span class="pre">F</span></code> and <code class="docutils literal notranslate"><span class="pre">G</span></code> (respectively) into shift register mode.</p>
+<p>The signals used in shift register mode are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CLK</span></code> is the write clock</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SR</span></code> is the write enable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DIF</span></code> and <code class="docutils literal notranslate"><span class="pre">DIG</span></code> are the data input for the <code class="docutils literal notranslate"><span class="pre">F</span></code> and <code class="docutils literal notranslate"><span class="pre">G</span></code> LUTs, respectively</p></li>
+</ul>
+<p>The LUTs in shift register mode have shift-out outputs, <code class="docutils literal notranslate"><span class="pre">FMC15</span></code> and <code class="docutils literal notranslate"><span class="pre">GMC15</span></code>, which are the next bit to be shifted out. They can be connected to another LUT’s data input to assemble larger shift registers.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">DIF_MUX</span></code> determines the value of <code class="docutils literal notranslate"><span class="pre">DIF</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BX</span></code>: use the <code class="docutils literal notranslate"><span class="pre">BX</span></code> pin</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ALT</span></code>: use the <code class="docutils literal notranslate"><span class="pre">GMC15</span></code> value</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">DIG_MUX</span></code> determines the value of <code class="docutils literal notranslate"><span class="pre">DIG</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BY</span></code>: use the <code class="docutils literal notranslate"><span class="pre">BY</span></code> pin</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ALT</span></code>: use the <code class="docutils literal notranslate"><span class="pre">SHIFTIN</span></code> pin</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">SHIFTIN</span></code> is routed as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE0.SHIFTIN</span> <span class="pre">=</span> <span class="pre">SLICE1.SHIFTOUT</span> <span class="pre">=</span> <span class="pre">SLICE1.FMC15</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE1.SHIFTIN</span> <span class="pre">=</span> <span class="pre">SLICE2.SHIFTOUT</span> <span class="pre">=</span> <span class="pre">SLICE2.FMC15</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE2.SHIFTIN</span> <span class="pre">=</span> <span class="pre">SLICE3.SHIFTOUT</span> <span class="pre">=</span> <span class="pre">SLICE3.FMC15</span></code></p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">SLICE3.SHIFTIN</span></code> is indeterminate.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">DI[FG]_MUX</span></code> attributes are also used in the LUT RAM mode, but with different meaning.</p>
+<p>The external write data is written to bit 0 of the LUT. Bit 15 is shifted out.</p>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>do LUT RAM and shift register modes interfere within a <code class="docutils literal notranslate"><span class="pre">SLICE</span></code>?</p>
+</div>
+</section>
+</section>
+<section id="wide-multiplexers">
+<h2>Wide multiplexers<a class="headerlink" href="#wide-multiplexers" title="Link to this heading"></a></h2>
+<p>Every <code class="docutils literal notranslate"><span class="pre">SLICE</span></code> has two wide multiplexers: <code class="docutils literal notranslate"><span class="pre">F5</span></code> and <code class="docutils literal notranslate"><span class="pre">FX</span></code>, used to combine smaller LUTs into larger LUTs. Their function is hardwired:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F5</span> <span class="pre">=</span> <span class="pre">BX</span> <span class="pre">?</span> <span class="pre">F</span> <span class="pre">:</span> <span class="pre">G</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FX</span> <span class="pre">=</span> <span class="pre">BY</span> <span class="pre">?</span> <span class="pre">FXINA</span> <span class="pre">:</span> <span class="pre">FXINB</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">F5</span></code> output goes to the <code class="docutils literal notranslate"><span class="pre">FXMUX</span></code> multiplexer, and further wide multiplexers. The <code class="docutils literal notranslate"><span class="pre">FX</span></code> output goes to the <code class="docutils literal notranslate"><span class="pre">GYMUX</span></code> multiplexer, and further wide multiplexers.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">FXINA</span></code> and <code class="docutils literal notranslate"><span class="pre">FXINB</span></code> inputs are routed as follows:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">SLICE</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">FXINA</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">FXINB</span></code></p></th>
+<th class="head"><p>effective primitive</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SLICE0</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SLICE0.F5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SLICE1.F5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">MUXF6</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SLICE1</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SLICE0.FX</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SLICE2.FX</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">MUXF7</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SLICE2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SLICE2.F5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SLICE3.F5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">MUXF6</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SLICE3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SLICE1.FX</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SLICE1.FX</span></code>, from CLB above</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">MUXF8</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">FX</span></code> output isn’t connected across the PowerPC hole — a <code class="docutils literal notranslate"><span class="pre">MUXF8</span></code> cannot be made of two CLBs separated by a PowerPC.</p>
+</section>
+<section id="carry-logic">
+<h2>Carry logic<a class="headerlink" href="#carry-logic" title="Link to this heading"></a></h2>
+<p>The carry logic implements the <code class="docutils literal notranslate"><span class="pre">MUXCY</span></code> and <code class="docutils literal notranslate"><span class="pre">XORCY</span></code> primitives described in Xilinx documentation. There are several bitstream attributes controlling carry logic operation.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">CYINIT</span></code> mux determines the start of the carry chain in the slice:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CIN</span></code>: connected from <code class="docutils literal notranslate"><span class="pre">COUT</span></code> of the <code class="docutils literal notranslate"><span class="pre">SLICE</span></code> below</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BX</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">CYSELF</span></code> mux determines the “propagate” (or select) input of the lower <code class="docutils literal notranslate"><span class="pre">MUXCY</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>: propagate is connected to <code class="docutils literal notranslate"><span class="pre">F</span></code> LUT output</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: propagate is connected to const-1 (ie. the <code class="docutils literal notranslate"><span class="pre">MUXCY</span></code> is effectively skipped from the chain)</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">CY0F</span></code> mux determines the “generate” input of the lower <code class="docutils literal notranslate"><span class="pre">MUXCY</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> (constant)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> (constant)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">F1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">F2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BX</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PROD</span></code>: equal to <code class="docutils literal notranslate"><span class="pre">F1</span> <span class="pre">&amp;</span> <span class="pre">F2</span></code>, implementing the <code class="docutils literal notranslate"><span class="pre">MULT_AND</span></code> primitive</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">CYSELG</span></code> mux determines the “propagate” (or select) input of the upper <code class="docutils literal notranslate"><span class="pre">MUXCY</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">G</span></code>: propagate is connected to <code class="docutils literal notranslate"><span class="pre">G</span></code> LUT output</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: propagate is connected to const-1 (ie. the <code class="docutils literal notranslate"><span class="pre">MUXCY</span></code> is effectively skipped from the chain)</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">CY0G</span></code> mux determines the “generate” input of the upper <code class="docutils literal notranslate"><span class="pre">MUXCY</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> (constant)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> (constant)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BY</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PROD</span></code>: equal to <code class="docutils literal notranslate"><span class="pre">G1</span> <span class="pre">&amp;</span> <span class="pre">G2</span></code>, implementing the <code class="docutils literal notranslate"><span class="pre">MULT_AND</span></code> primitive</p></li>
+</ul>
+<p>The hardwired logic implemented is:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FCY</span> <span class="pre">=</span> <span class="pre">CYSELF</span> <span class="pre">?</span> <span class="pre">CY0F</span> <span class="pre">:</span> <span class="pre">CIN</span></code> (lower <code class="docutils literal notranslate"><span class="pre">MUXCY</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">COUT</span> <span class="pre">=</span> <span class="pre">GCY</span> <span class="pre">=</span> <span class="pre">CYSELG</span> <span class="pre">?</span> <span class="pre">CY0G</span> <span class="pre">:</span> <span class="pre">FCY</span></code> (upper <code class="docutils literal notranslate"><span class="pre">MUXCY</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FXOR</span> <span class="pre">=</span> <span class="pre">F</span> <span class="pre">^</span> <span class="pre">CIN</span></code> (lower <code class="docutils literal notranslate"><span class="pre">XORCY</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GXOR</span> <span class="pre">=</span> <span class="pre">G</span> <span class="pre">^</span> <span class="pre">FCY</span></code> (upper <code class="docutils literal notranslate"><span class="pre">XORCY</span></code>)</p></li>
+</ul>
+<p>The dedicated <code class="docutils literal notranslate"><span class="pre">CIN</span></code> input is routed from:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE0.CIN</span></code>: from <code class="docutils literal notranslate"><span class="pre">SLICE1.COUT</span></code> of CLB below</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE1.CIN</span></code>: from <code class="docutils literal notranslate"><span class="pre">SLICE0.COUT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE2.CIN</span></code>: from <code class="docutils literal notranslate"><span class="pre">SLICE3.COUT</span></code> of CLB below</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE3.CIN</span></code>: from <code class="docutils literal notranslate"><span class="pre">SLICE2.COUT</span></code></p></li>
+</ul>
+<p>The carry chains are not connected over PowerPC holes. The <code class="docutils literal notranslate"><span class="pre">SLICE[02].CIN</span></code> inputs in the row above bottom IOI and in tiles directly above PowerPC are indeterminate.</p>
+</section>
+<section id="sum-of-products">
+<h2>Sum of products<a class="headerlink" href="#sum-of-products" title="Link to this heading"></a></h2>
+<p>The carry logic can be used to implement fast wide AND gates (ie. products). Each <code class="docutils literal notranslate"><span class="pre">SLICE</span></code> also contains a dedicated <code class="docutils literal notranslate"><span class="pre">ORCY</span></code> primitive that allows combining multiple carry chains into a sum-of-products function.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">SOPEXTSEL</span></code> mux determines the starting point of the <code class="docutils literal notranslate"><span class="pre">ORCY</span></code> chain:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: const 0 (this is the first <code class="docutils literal notranslate"><span class="pre">SLICE</span></code> in the chain)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SOPIN</span></code> (this is not the first <code class="docutils literal notranslate"><span class="pre">SLICE</span></code>)</p></li>
+</ul>
+<p>The dedicated <code class="docutils literal notranslate"><span class="pre">ORCY</span></code> primitive implements simple hardwired logic:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SOPOUT</span> <span class="pre">=</span> <span class="pre">SOPEXTSEL</span> <span class="pre">|</span> <span class="pre">COUT</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">SOPIN</span></code> pin is routed as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE0.SOPIN</span></code>: <code class="docutils literal notranslate"><span class="pre">SLICE2.SOPOUT</span></code> of the CLB to the left</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE1.SOPIN</span></code>: <code class="docutils literal notranslate"><span class="pre">SLICE3.SOPOUT</span></code> of the CLB to the left</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE2.SOPIN</span></code>: <code class="docutils literal notranslate"><span class="pre">SLICE0.SOPOUT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SLICE3.SOPIN</span></code>: <code class="docutils literal notranslate"><span class="pre">SLICE1.SOPOUT</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">SOPOUT</span></code> chain is connected across BRAM columns, but is not connected over PowerPC holes.</p>
+</section>
+<section id="output-multiplexers">
+<h2>Output multiplexers<a class="headerlink" href="#output-multiplexers" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">FXMUX</span></code> multiplexer controls the <code class="docutils literal notranslate"><span class="pre">X</span></code> output. It has three inputs:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code> (the LUT output)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">F5</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FXOR</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">GYMUX</span></code> multiplexer controls the <code class="docutils literal notranslate"><span class="pre">Y</span></code> output. It has four inputs:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">G</span></code> (the LUT output)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FX</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GXOR</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SOPOUT</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">XBMUX</span></code> multiplexer controls the <code class="docutils literal notranslate"><span class="pre">XB</span></code> output. It has two inputs:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FCY</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FMC15</span></code>: shift register output of <code class="docutils literal notranslate"><span class="pre">F</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">YBMUX</span></code> multiplexer controls the <code class="docutils literal notranslate"><span class="pre">YB</span></code> output. It has two inputs:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GCY</span></code> (equal to <code class="docutils literal notranslate"><span class="pre">COUT</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GMC15</span></code>: shift register output of <code class="docutils literal notranslate"><span class="pre">G</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">DXMUX</span></code> mulitplexer controls the <code class="docutils literal notranslate"><span class="pre">FFX</span></code> data input. It has two inputs:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">X</span></code> (the <code class="docutils literal notranslate"><span class="pre">FXMUX</span></code> output)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BX</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">DYMUX</span></code> mulitplexer controls the <code class="docutils literal notranslate"><span class="pre">FFY</span></code> data input. It has two inputs:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Y</span></code> (the <code class="docutils literal notranslate"><span class="pre">GYMUX</span></code> output)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BY</span></code></p></li>
+</ul>
+</section>
+<section id="registers">
+<h2>Registers<a class="headerlink" href="#registers" title="Link to this heading"></a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">SLICE</span></code> contains two registers:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FFX</span></code>, with input determined by <code class="docutils literal notranslate"><span class="pre">DXMUX</span></code> and output connected to <code class="docutils literal notranslate"><span class="pre">XQ</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FFY</span></code>, with input determined by <code class="docutils literal notranslate"><span class="pre">DYMUX</span></code> and output connected to <code class="docutils literal notranslate"><span class="pre">YQ</span></code></p></li>
+</ul>
+<p>Both registers share the same control signals:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CLK</span></code>: posedge-triggered clock in FF mode or <strong>active-low</strong> gate in latch mode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CE</span></code>: active-high clock or gate enable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SR</span></code>: if <code class="docutils literal notranslate"><span class="pre">FF_SR_EN</span></code>, the set/reset signal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BY</span></code>: if <code class="docutils literal notranslate"><span class="pre">FF_REV_EN</span></code>, the alternate set/reset signal</p></li>
+</ul>
+<p>The following attributes determine register function:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">FF_LATCH</span></code>: if set, the registers are latches and <code class="docutils literal notranslate"><span class="pre">CLK</span></code> behaves as <strong>active-low</strong> gate; otherwise, the registers are flip-flops and <code class="docutils literal notranslate"><span class="pre">CLK</span></code> is a posedge-triggered clock</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FF_SYNC</span></code>: if set, the <code class="docutils literal notranslate"><span class="pre">SR</span></code> and <code class="docutils literal notranslate"><span class="pre">BY</span></code> (if enabled) implement synchronous set/reset (with priority over <code class="docutils literal notranslate"><span class="pre">CE</span></code>); otherwise, they implement asynchronous set/reset; should not be set together with <code class="docutils literal notranslate"><span class="pre">FF_LATCH</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FF[XY]_INIT</span></code>: determines the initial or captured value of given register</p>
+<ul>
+<li><p>when the global <code class="docutils literal notranslate"><span class="pre">GSR</span></code> signal is pulsed (for example, as part of the configuration process), the register is set to the value of this bit</p></li>
+<li><p>when the global <code class="docutils literal notranslate"><span class="pre">GCAP</span></code> signal is pulsed (for example, by the <code class="docutils literal notranslate"><span class="pre">CAPTURE</span></code> primitive), this bit captures the current state of the register</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FF[XY]_SRVAL</span></code>: determines the set/reset value of given register</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FF_SR_EN</span></code>: if set, <code class="docutils literal notranslate"><span class="pre">SR</span></code> is used as the set/reset signal for both registers, setting them to their <code class="docutils literal notranslate"><span class="pre">FF[XY]_SRVAL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FF_REV_EN</span></code>: if set, <code class="docutils literal notranslate"><span class="pre">BY</span></code> behaves as secondary set/reset signal for both registers, setting them to the <strong>opposite</strong> of their <code class="docutils literal notranslate"><span class="pre">FF[XY]_SRVAL</span></code></p></li>
+</ul>
+</section>
+<section id="tristate-buses-and-tbufs">
+<h2>Tristate buses and <code class="docutils literal notranslate"><span class="pre">TBUF</span></code>s<a class="headerlink" href="#tristate-buses-and-tbufs" title="Link to this heading"></a></h2>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>document this insanity</p>
+</div>
+</section>
 <section id="bitstream">
 <h2>Bitstream<a class="headerlink" href="#bitstream" title="Link to this heading"></a></h2>
 <table class="docutils align-default prjcombine-tile">
@@ -339,8 +907,8 @@
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLB-SLICE0:XBMUX">
 <tr><th>SLICE0:XBMUX</th><th>[0, 0, 21]</th></tr>
-<tr><td>COUT</td><td>0</td></tr>
-<tr><td>SHIFTOUT</td><td>1</td></tr>
+<tr><td>FCY</td><td>0</td></tr>
+<tr><td>FMC15</td><td>1</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLB-SLICE0:BYOUTUSED">
 <tr><th>SLICE0:BYOUTUSED</th><th>[0, 0, 22]</th></tr>
@@ -357,7 +925,7 @@
 <table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLB-SLICE0:GYMUX">
 <tr><th>SLICE0:GYMUX</th><th>[0, 0, 33]</th><th>[0, 0, 25]</th></tr>
 <tr><td>G</td><td>0</td><td>0</td></tr>
-<tr><td>SOPEXT</td><td>0</td><td>1</td></tr>
+<tr><td>SOPOUT</td><td>0</td><td>1</td></tr>
 <tr><td>FX</td><td>1</td><td>0</td></tr>
 <tr><td>GXOR</td><td>1</td><td>1</td></tr>
 </table>
@@ -391,8 +959,8 @@
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLB-SLICE0:YBMUX">
 <tr><th>SLICE0:YBMUX</th><th>[0, 0, 34]</th></tr>
-<tr><td>COUT</td><td>0</td></tr>
-<tr><td>SHIFTOUT</td><td>1</td></tr>
+<tr><td>GCY</td><td>0</td></tr>
+<tr><td>GMC15</td><td>1</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLB-SLICE2:FF_LATCH">
 <tr><th>SLICE2:FF_LATCH</th><th>[0, 0, 35]</th></tr>
@@ -491,8 +1059,8 @@
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLB-SLICE1:XBMUX">
 <tr><th>SLICE1:XBMUX</th><th>[0, 0, 61]</th></tr>
-<tr><td>COUT</td><td>0</td></tr>
-<tr><td>SHIFTOUT</td><td>1</td></tr>
+<tr><td>FCY</td><td>0</td></tr>
+<tr><td>FMC15</td><td>1</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLB-SLICE1:BYOUTUSED">
 <tr><th>SLICE1:BYOUTUSED</th><th>[0, 0, 62]</th></tr>
@@ -509,7 +1077,7 @@
 <table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLB-SLICE1:GYMUX">
 <tr><th>SLICE1:GYMUX</th><th>[0, 0, 73]</th><th>[0, 0, 65]</th></tr>
 <tr><td>G</td><td>0</td><td>0</td></tr>
-<tr><td>SOPEXT</td><td>0</td><td>1</td></tr>
+<tr><td>SOPOUT</td><td>0</td><td>1</td></tr>
 <tr><td>FX</td><td>1</td><td>0</td></tr>
 <tr><td>GXOR</td><td>1</td><td>1</td></tr>
 </table>
@@ -543,8 +1111,8 @@
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLB-SLICE1:YBMUX">
 <tr><th>SLICE1:YBMUX</th><th>[0, 0, 74]</th></tr>
-<tr><td>COUT</td><td>0</td></tr>
-<tr><td>SHIFTOUT</td><td>1</td></tr>
+<tr><td>GCY</td><td>0</td></tr>
+<tr><td>GMC15</td><td>1</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLB-SLICE3:FF_LATCH">
 <tr><th>SLICE3:FF_LATCH</th><th>[0, 0, 75]</th></tr>
@@ -749,8 +1317,8 @@
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLB-SLICE2:XBMUX">
 <tr><th>SLICE2:XBMUX</th><th>[0, 3, 21]</th></tr>
-<tr><td>COUT</td><td>0</td></tr>
-<tr><td>SHIFTOUT</td><td>1</td></tr>
+<tr><td>FCY</td><td>0</td></tr>
+<tr><td>FMC15</td><td>1</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLB-SLICE2:BYOUTUSED">
 <tr><th>SLICE2:BYOUTUSED</th><th>[0, 3, 22]</th></tr>
@@ -759,7 +1327,7 @@
 <table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLB-SLICE2:GYMUX">
 <tr><th>SLICE2:GYMUX</th><th>[0, 3, 33]</th><th>[0, 3, 25]</th></tr>
 <tr><td>G</td><td>0</td><td>0</td></tr>
-<tr><td>SOPEXT</td><td>0</td><td>1</td></tr>
+<tr><td>SOPOUT</td><td>0</td><td>1</td></tr>
 <tr><td>FX</td><td>1</td><td>0</td></tr>
 <tr><td>GXOR</td><td>1</td><td>1</td></tr>
 </table>
@@ -774,8 +1342,8 @@
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLB-SLICE2:YBMUX">
 <tr><th>SLICE2:YBMUX</th><th>[0, 3, 34]</th></tr>
-<tr><td>COUT</td><td>0</td></tr>
-<tr><td>SHIFTOUT</td><td>1</td></tr>
+<tr><td>GCY</td><td>0</td></tr>
+<tr><td>GMC15</td><td>1</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLB-SLICE2:DIG_MUX">
 <tr><th>SLICE2:DIG_MUX</th><th>[0, 3, 38]</th></tr>
@@ -823,8 +1391,8 @@
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLB-SLICE3:XBMUX">
 <tr><th>SLICE3:XBMUX</th><th>[0, 3, 61]</th></tr>
-<tr><td>COUT</td><td>0</td></tr>
-<tr><td>SHIFTOUT</td><td>1</td></tr>
+<tr><td>FCY</td><td>0</td></tr>
+<tr><td>FMC15</td><td>1</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLB-SLICE3:BYOUTUSED">
 <tr><th>SLICE3:BYOUTUSED</th><th>[0, 3, 62]</th></tr>
@@ -833,7 +1401,7 @@
 <table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLB-SLICE3:GYMUX">
 <tr><th>SLICE3:GYMUX</th><th>[0, 3, 73]</th><th>[0, 3, 65]</th></tr>
 <tr><td>G</td><td>0</td><td>0</td></tr>
-<tr><td>SOPEXT</td><td>0</td><td>1</td></tr>
+<tr><td>SOPOUT</td><td>0</td><td>1</td></tr>
 <tr><td>FX</td><td>1</td><td>0</td></tr>
 <tr><td>GXOR</td><td>1</td><td>1</td></tr>
 </table>
@@ -848,8 +1416,8 @@
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLB-SLICE3:YBMUX">
 <tr><th>SLICE3:YBMUX</th><th>[0, 3, 74]</th></tr>
-<tr><td>COUT</td><td>0</td></tr>
-<tr><td>SHIFTOUT</td><td>1</td></tr>
+<tr><td>GCY</td><td>0</td></tr>
+<tr><td>GMC15</td><td>1</td></tr>
 </table>
 <table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLB-SLICE3:DIG_MUX">
 <tr><th>SLICE3:DIG_MUX</th><th>[0, 3, 78]</th></tr>
@@ -959,7 +1527,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="int.html" class="btn btn-neutral float-left" title="General interconnect" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="interconnect.html" class="btn btn-neutral float-left" title="General interconnect" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="bram.html" class="btn btn-neutral float-right" title="Block RAM — Virtex 2, Spartan 3" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clock interconnect &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Xilinx Virtex 4 FPGAs" href="../virtex4/index.html" />
+    <link rel="prev" title="General interconnect" href="int.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../xc9500/index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Xilinx FPGAs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Xilinx Virtex, Virtex E, Spartan 2, Spartan 2E FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Xilinx Virtex 2 FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan3/index.html">Xilinx Spartan 3 FPGAs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Xilinx Spartan 6 FPGAs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="int.html">General interconnect</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Clock interconnect</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bitstream-bottom-tile">Bitstream — bottom tile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bitstream-top-tile">Bitstream — top tile</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Xilinx Virtex 4 FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Xilinx Virtex 5 FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex6/index.html">Xilinx Virtex 6 FPGAs</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Xilinx FPGAs</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Xilinx Spartan 6 FPGAs</a></li>
+      <li class="breadcrumb-item active">Clock interconnect</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/xilinx/spartan6/clk.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="clock-interconnect">
+<h1>Clock interconnect<a class="headerlink" href="#clock-interconnect" title="Link to this heading"></a></h1>
+<section id="bitstream-bottom-tile">
+<h2>Bitstream — bottom tile<a class="headerlink" href="#bitstream-bottom-tile" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td>-</td></tr>
+<tr><td>1</td>
+<td>-</td></tr>
+<tr><td>2</td>
+<td>-</td></tr>
+<tr><td>3</td>
+<td>-</td></tr>
+<tr><td>4</td>
+<td>-</td></tr>
+<tr><td>5</td>
+<td>-</td></tr>
+<tr><td>6</td>
+<td>-</td></tr>
+<tr><td>7</td>
+<td>-</td></tr>
+<tr><td>8</td>
+<td>-</td></tr>
+<tr><td>9</td>
+<td>-</td></tr>
+<tr><td>10</td>
+<td>-</td></tr>
+<tr><td>11</td>
+<td>-</td></tr>
+<tr><td>12</td>
+<td>-</td></tr>
+<tr><td>13</td>
+<td>-</td></tr>
+<tr><td>14</td>
+<td>-</td></tr>
+<tr><td>15</td>
+<td>-</td></tr>
+<tr><td>16</td>
+<td>-</td></tr>
+<tr><td>17</td>
+<td>-</td></tr>
+<tr><td>18</td>
+<td>-</td></tr>
+<tr><td>19</td>
+<td>-</td></tr>
+<tr><td>20</td>
+<td>-</td></tr>
+<tr><td>21</td>
+<td>-</td></tr>
+<tr><td>22</td>
+<td>-</td></tr>
+<tr><td>23</td>
+<td>-</td></tr>
+<tr><td>24</td>
+<td>-</td></tr>
+<tr><td>25</td>
+<td>-</td></tr>
+<tr><td>26</td>
+<td>-</td></tr>
+<tr><td>27</td>
+<td>-</td></tr>
+<tr><td>28</td>
+<td>-</td></tr>
+<tr><td>29</td>
+<td>-</td></tr>
+<tr><td>30</td>
+<td>-</td></tr>
+<tr><td>31</td>
+<td>-</td></tr>
+<tr><td>32</td>
+<td>-</td></tr>
+<tr><td>33</td>
+<td>-</td></tr>
+<tr><td>34</td>
+<td>-</td></tr>
+<tr><td>35</td>
+<td>-</td></tr>
+<tr><td>36</td>
+<td>-</td></tr>
+<tr><td>37</td>
+<td>-</td></tr>
+<tr><td>38</td>
+<td>-</td></tr>
+<tr><td>39</td>
+<td><a href="#bits-xc6s-REG_B-INT:MUX.IMUX.REGB.GCLK1" title="INT:MUX.IMUX.REGB.GCLK1[0]">INT:MUX.IMUX.REGB.GCLK1[0]</a></td></tr>
+<tr><td>40</td>
+<td><a href="#bits-xc6s-REG_B-INT:MUX.IMUX.REGB.GCLK1" title="INT:MUX.IMUX.REGB.GCLK1[1]">INT:MUX.IMUX.REGB.GCLK1[1]</a></td></tr>
+<tr><td>41</td>
+<td><a href="#bits-xc6s-REG_B-INT:MUX.IMUX.REGB.GCLK1" title="INT:MUX.IMUX.REGB.GCLK1[2]">INT:MUX.IMUX.REGB.GCLK1[2]</a></td></tr>
+<tr><td>42</td>
+<td><a href="#bits-xc6s-REG_B-INT:MUX.IMUX.REGB.GCLK1" title="INT:MUX.IMUX.REGB.GCLK1[3]">INT:MUX.IMUX.REGB.GCLK1[3]</a></td></tr>
+<tr><td>43</td>
+<td><a href="#bits-xc6s-REG_B-INT:MUX.IMUX.REGB.GCLK1" title="INT:MUX.IMUX.REGB.GCLK1[4]">INT:MUX.IMUX.REGB.GCLK1[4]</a></td></tr>
+<tr><td>44</td>
+<td><a href="#bits-xc6s-REG_B-INT:MUX.IMUX.REGB.GCLK1" title="INT:MUX.IMUX.REGB.GCLK1[5]">INT:MUX.IMUX.REGB.GCLK1[5]</a></td></tr>
+<tr><td>45</td>
+<td><a href="#bits-xc6s-REG_B-INT:MUX.IMUX.REGB.GCLK1" title="INT:MUX.IMUX.REGB.GCLK1[6]">INT:MUX.IMUX.REGB.GCLK1[6]</a></td></tr>
+<tr><td>46</td>
+<td><a href="#bits-xc6s-REG_B-INT:MUX.IMUX.REGB.GCLK1" title="INT:MUX.IMUX.REGB.GCLK1[7]">INT:MUX.IMUX.REGB.GCLK1[7]</a></td></tr>
+<tr><td>47</td>
+<td><a href="#bits-xc6s-REG_B-INT:MUX.IMUX.REGB.GCLK0" title="INT:MUX.IMUX.REGB.GCLK0[0]">INT:MUX.IMUX.REGB.GCLK0[0]</a></td></tr>
+<tr><td>48</td>
+<td>-</td></tr>
+<tr><td>49</td>
+<td>-</td></tr>
+<tr><td>50</td>
+<td>-</td></tr>
+<tr><td>51</td>
+<td>-</td></tr>
+<tr><td>52</td>
+<td>-</td></tr>
+<tr><td>53</td>
+<td>-</td></tr>
+<tr><td>54</td>
+<td>-</td></tr>
+<tr><td>55</td>
+<td>-</td></tr>
+<tr><td>56</td>
+<td>-</td></tr>
+<tr><td>57</td>
+<td>-</td></tr>
+<tr><td>58</td>
+<td>-</td></tr>
+<tr><td>59</td>
+<td>-</td></tr>
+<tr><td>60</td>
+<td>-</td></tr>
+<tr><td>61</td>
+<td>-</td></tr>
+<tr><td>62</td>
+<td>-</td></tr>
+<tr><td>63</td>
+<td>-</td></tr>
+<tr><td>64</td>
+<td>-</td></tr>
+<tr><td>65</td>
+<td>-</td></tr>
+<tr><td>66</td>
+<td>-</td></tr>
+<tr><td>67</td>
+<td>-</td></tr>
+<tr><td>68</td>
+<td>-</td></tr>
+<tr><td>69</td>
+<td>-</td></tr>
+<tr><td>70</td>
+<td>-</td></tr>
+<tr><td>71</td>
+<td>-</td></tr>
+<tr><td>72</td>
+<td>-</td></tr>
+<tr><td>73</td>
+<td>-</td></tr>
+<tr><td>74</td>
+<td>-</td></tr>
+<tr><td>75</td>
+<td>-</td></tr>
+<tr><td>76</td>
+<td>-</td></tr>
+<tr><td>77</td>
+<td>-</td></tr>
+<tr><td>78</td>
+<td>-</td></tr>
+<tr><td>79</td>
+<td>-</td></tr>
+<tr><td>80</td>
+<td>-</td></tr>
+<tr><td>81</td>
+<td>-</td></tr>
+<tr><td>82</td>
+<td>-</td></tr>
+<tr><td>83</td>
+<td>-</td></tr>
+<tr><td>84</td>
+<td>-</td></tr>
+<tr><td>85</td>
+<td>-</td></tr>
+<tr><td>86</td>
+<td>-</td></tr>
+<tr><td>87</td>
+<td><a href="#bits-xc6s-REG_B-INT:MUX.IMUX.REGB.GCLK0" title="INT:MUX.IMUX.REGB.GCLK0[1]">INT:MUX.IMUX.REGB.GCLK0[1]</a></td></tr>
+<tr><td>88</td>
+<td><a href="#bits-xc6s-REG_B-INT:MUX.IMUX.REGB.GCLK0" title="INT:MUX.IMUX.REGB.GCLK0[2]">INT:MUX.IMUX.REGB.GCLK0[2]</a></td></tr>
+<tr><td>89</td>
+<td><a href="#bits-xc6s-REG_B-INT:MUX.IMUX.REGB.GCLK0" title="INT:MUX.IMUX.REGB.GCLK0[3]">INT:MUX.IMUX.REGB.GCLK0[3]</a></td></tr>
+<tr><td>90</td>
+<td><a href="#bits-xc6s-REG_B-INT:MUX.IMUX.REGB.GCLK0" title="INT:MUX.IMUX.REGB.GCLK0[4]">INT:MUX.IMUX.REGB.GCLK0[4]</a></td></tr>
+<tr><td>91</td>
+<td><a href="#bits-xc6s-REG_B-INT:MUX.IMUX.REGB.GCLK0" title="INT:MUX.IMUX.REGB.GCLK0[5]">INT:MUX.IMUX.REGB.GCLK0[5]</a></td></tr>
+<tr><td>92</td>
+<td><a href="#bits-xc6s-REG_B-INT:MUX.IMUX.REGB.GCLK0" title="INT:MUX.IMUX.REGB.GCLK0[6]">INT:MUX.IMUX.REGB.GCLK0[6]</a></td></tr>
+<tr><td>93</td>
+<td><a href="#bits-xc6s-REG_B-INT:MUX.IMUX.REGB.GCLK0" title="INT:MUX.IMUX.REGB.GCLK0[7]">INT:MUX.IMUX.REGB.GCLK0[7]</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-REG_B-INT:MUX.IMUX.REGB.GCLK1">
+<tr><th>INT:MUX.IMUX.REGB.GCLK1</th><th>[0, 0, 46]</th><th>[0, 0, 45]</th><th>[0, 0, 44]</th><th>[0, 0, 43]</th><th>[0, 0, 42]</th><th>[0, 0, 41]</th><th>[0, 0, 40]</th><th>[0, 0, 39]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GCLK0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK8</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK4</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK12</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK9</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK5</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK13</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK2</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK10</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK6</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK14</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK11</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK7</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK15</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-REG_B-INT:MUX.IMUX.REGB.GCLK0">
+<tr><th>INT:MUX.IMUX.REGB.GCLK0</th><th>[0, 0, 93]</th><th>[0, 0, 92]</th><th>[0, 0, 91]</th><th>[0, 0, 90]</th><th>[0, 0, 89]</th><th>[0, 0, 88]</th><th>[0, 0, 87]</th><th>[0, 0, 47]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GCLK15</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK14</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK13</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>GCLK12</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GCLK11</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK10</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK9</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>GCLK8</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GCLK7</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK6</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK5</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>GCLK4</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GCLK3</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>GCLK0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+</section>
+<section id="bitstream-top-tile">
+<h2>Bitstream — top tile<a class="headerlink" href="#bitstream-top-tile" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td>-</td></tr>
+<tr><td>1</td>
+<td>-</td></tr>
+<tr><td>2</td>
+<td>-</td></tr>
+<tr><td>3</td>
+<td>-</td></tr>
+<tr><td>4</td>
+<td>-</td></tr>
+<tr><td>5</td>
+<td>-</td></tr>
+<tr><td>6</td>
+<td>-</td></tr>
+<tr><td>7</td>
+<td>-</td></tr>
+<tr><td>8</td>
+<td>-</td></tr>
+<tr><td>9</td>
+<td>-</td></tr>
+<tr><td>10</td>
+<td>-</td></tr>
+<tr><td>11</td>
+<td>-</td></tr>
+<tr><td>12</td>
+<td>-</td></tr>
+<tr><td>13</td>
+<td>-</td></tr>
+<tr><td>14</td>
+<td>-</td></tr>
+<tr><td>15</td>
+<td>-</td></tr>
+<tr><td>16</td>
+<td>-</td></tr>
+<tr><td>17</td>
+<td>-</td></tr>
+<tr><td>18</td>
+<td>-</td></tr>
+<tr><td>19</td>
+<td>-</td></tr>
+<tr><td>20</td>
+<td>-</td></tr>
+<tr><td>21</td>
+<td>-</td></tr>
+<tr><td>22</td>
+<td>-</td></tr>
+<tr><td>23</td>
+<td>-</td></tr>
+<tr><td>24</td>
+<td>-</td></tr>
+<tr><td>25</td>
+<td>-</td></tr>
+<tr><td>26</td>
+<td>-</td></tr>
+<tr><td>27</td>
+<td>-</td></tr>
+<tr><td>28</td>
+<td>-</td></tr>
+<tr><td>29</td>
+<td>-</td></tr>
+<tr><td>30</td>
+<td>-</td></tr>
+<tr><td>31</td>
+<td>-</td></tr>
+<tr><td>32</td>
+<td>-</td></tr>
+<tr><td>33</td>
+<td>-</td></tr>
+<tr><td>34</td>
+<td>-</td></tr>
+<tr><td>35</td>
+<td>-</td></tr>
+<tr><td>36</td>
+<td>-</td></tr>
+<tr><td>37</td>
+<td>-</td></tr>
+<tr><td>38</td>
+<td>-</td></tr>
+<tr><td>39</td>
+<td><a href="#bits-xc6s-REG_T-INT:MUX.IMUX.REGT.GCLK1" title="INT:MUX.IMUX.REGT.GCLK1[0]">INT:MUX.IMUX.REGT.GCLK1[0]</a></td></tr>
+<tr><td>40</td>
+<td><a href="#bits-xc6s-REG_T-INT:MUX.IMUX.REGT.GCLK1" title="INT:MUX.IMUX.REGT.GCLK1[1]">INT:MUX.IMUX.REGT.GCLK1[1]</a></td></tr>
+<tr><td>41</td>
+<td><a href="#bits-xc6s-REG_T-INT:MUX.IMUX.REGT.GCLK1" title="INT:MUX.IMUX.REGT.GCLK1[2]">INT:MUX.IMUX.REGT.GCLK1[2]</a></td></tr>
+<tr><td>42</td>
+<td><a href="#bits-xc6s-REG_T-INT:MUX.IMUX.REGT.GCLK1" title="INT:MUX.IMUX.REGT.GCLK1[3]">INT:MUX.IMUX.REGT.GCLK1[3]</a></td></tr>
+<tr><td>43</td>
+<td><a href="#bits-xc6s-REG_T-INT:MUX.IMUX.REGT.GCLK1" title="INT:MUX.IMUX.REGT.GCLK1[4]">INT:MUX.IMUX.REGT.GCLK1[4]</a></td></tr>
+<tr><td>44</td>
+<td><a href="#bits-xc6s-REG_T-INT:MUX.IMUX.REGT.GCLK1" title="INT:MUX.IMUX.REGT.GCLK1[5]">INT:MUX.IMUX.REGT.GCLK1[5]</a></td></tr>
+<tr><td>45</td>
+<td><a href="#bits-xc6s-REG_T-INT:MUX.IMUX.REGT.GCLK1" title="INT:MUX.IMUX.REGT.GCLK1[6]">INT:MUX.IMUX.REGT.GCLK1[6]</a></td></tr>
+<tr><td>46</td>
+<td><a href="#bits-xc6s-REG_T-INT:MUX.IMUX.REGT.GCLK1" title="INT:MUX.IMUX.REGT.GCLK1[7]">INT:MUX.IMUX.REGT.GCLK1[7]</a></td></tr>
+<tr><td>47</td>
+<td><a href="#bits-xc6s-REG_T-INT:MUX.IMUX.REGT.GCLK0" title="INT:MUX.IMUX.REGT.GCLK0[0]">INT:MUX.IMUX.REGT.GCLK0[0]</a></td></tr>
+<tr><td>48</td>
+<td>-</td></tr>
+<tr><td>49</td>
+<td>-</td></tr>
+<tr><td>50</td>
+<td>-</td></tr>
+<tr><td>51</td>
+<td>-</td></tr>
+<tr><td>52</td>
+<td>-</td></tr>
+<tr><td>53</td>
+<td>-</td></tr>
+<tr><td>54</td>
+<td>-</td></tr>
+<tr><td>55</td>
+<td>-</td></tr>
+<tr><td>56</td>
+<td>-</td></tr>
+<tr><td>57</td>
+<td>-</td></tr>
+<tr><td>58</td>
+<td>-</td></tr>
+<tr><td>59</td>
+<td>-</td></tr>
+<tr><td>60</td>
+<td>-</td></tr>
+<tr><td>61</td>
+<td>-</td></tr>
+<tr><td>62</td>
+<td>-</td></tr>
+<tr><td>63</td>
+<td>-</td></tr>
+<tr><td>64</td>
+<td>-</td></tr>
+<tr><td>65</td>
+<td>-</td></tr>
+<tr><td>66</td>
+<td>-</td></tr>
+<tr><td>67</td>
+<td>-</td></tr>
+<tr><td>68</td>
+<td>-</td></tr>
+<tr><td>69</td>
+<td>-</td></tr>
+<tr><td>70</td>
+<td>-</td></tr>
+<tr><td>71</td>
+<td>-</td></tr>
+<tr><td>72</td>
+<td>-</td></tr>
+<tr><td>73</td>
+<td>-</td></tr>
+<tr><td>74</td>
+<td>-</td></tr>
+<tr><td>75</td>
+<td>-</td></tr>
+<tr><td>76</td>
+<td>-</td></tr>
+<tr><td>77</td>
+<td>-</td></tr>
+<tr><td>78</td>
+<td>-</td></tr>
+<tr><td>79</td>
+<td>-</td></tr>
+<tr><td>80</td>
+<td>-</td></tr>
+<tr><td>81</td>
+<td>-</td></tr>
+<tr><td>82</td>
+<td>-</td></tr>
+<tr><td>83</td>
+<td>-</td></tr>
+<tr><td>84</td>
+<td>-</td></tr>
+<tr><td>85</td>
+<td>-</td></tr>
+<tr><td>86</td>
+<td>-</td></tr>
+<tr><td>87</td>
+<td><a href="#bits-xc6s-REG_T-INT:MUX.IMUX.REGT.GCLK0" title="INT:MUX.IMUX.REGT.GCLK0[1]">INT:MUX.IMUX.REGT.GCLK0[1]</a></td></tr>
+<tr><td>88</td>
+<td><a href="#bits-xc6s-REG_T-INT:MUX.IMUX.REGT.GCLK0" title="INT:MUX.IMUX.REGT.GCLK0[2]">INT:MUX.IMUX.REGT.GCLK0[2]</a></td></tr>
+<tr><td>89</td>
+<td><a href="#bits-xc6s-REG_T-INT:MUX.IMUX.REGT.GCLK0" title="INT:MUX.IMUX.REGT.GCLK0[3]">INT:MUX.IMUX.REGT.GCLK0[3]</a></td></tr>
+<tr><td>90</td>
+<td><a href="#bits-xc6s-REG_T-INT:MUX.IMUX.REGT.GCLK0" title="INT:MUX.IMUX.REGT.GCLK0[4]">INT:MUX.IMUX.REGT.GCLK0[4]</a></td></tr>
+<tr><td>91</td>
+<td><a href="#bits-xc6s-REG_T-INT:MUX.IMUX.REGT.GCLK0" title="INT:MUX.IMUX.REGT.GCLK0[5]">INT:MUX.IMUX.REGT.GCLK0[5]</a></td></tr>
+<tr><td>92</td>
+<td><a href="#bits-xc6s-REG_T-INT:MUX.IMUX.REGT.GCLK0" title="INT:MUX.IMUX.REGT.GCLK0[6]">INT:MUX.IMUX.REGT.GCLK0[6]</a></td></tr>
+<tr><td>93</td>
+<td><a href="#bits-xc6s-REG_T-INT:MUX.IMUX.REGT.GCLK0" title="INT:MUX.IMUX.REGT.GCLK0[7]">INT:MUX.IMUX.REGT.GCLK0[7]</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-REG_T-INT:MUX.IMUX.REGT.GCLK1">
+<tr><th>INT:MUX.IMUX.REGT.GCLK1</th><th>[0, 0, 46]</th><th>[0, 0, 45]</th><th>[0, 0, 44]</th><th>[0, 0, 43]</th><th>[0, 0, 42]</th><th>[0, 0, 41]</th><th>[0, 0, 40]</th><th>[0, 0, 39]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GCLK0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK8</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK4</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK12</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK9</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK5</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK13</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK2</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK10</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK6</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK14</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK11</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK7</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK15</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc6s-REG_T-INT:MUX.IMUX.REGT.GCLK0">
+<tr><th>INT:MUX.IMUX.REGT.GCLK0</th><th>[0, 0, 93]</th><th>[0, 0, 92]</th><th>[0, 0, 91]</th><th>[0, 0, 90]</th><th>[0, 0, 89]</th><th>[0, 0, 88]</th><th>[0, 0, 87]</th><th>[0, 0, 47]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GCLK15</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK14</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK13</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>GCLK12</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GCLK11</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK10</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK9</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>GCLK8</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GCLK7</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK6</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK5</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>GCLK4</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GCLK3</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GCLK2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>GCLK1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>GCLK0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="int.html" class="btn btn-neutral float-left" title="General interconnect" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../virtex4/index.html" class="btn btn-neutral float-right" title="Xilinx Virtex 4 FPGAs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
