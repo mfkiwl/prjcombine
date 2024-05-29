@@ -19,7 +19,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="General interconnect" href="int.html" />
+    <link rel="next" title="General interconnect" href="interconnect.html" />
     <link rel="prev" title="Clock interconnect" href="../virtex2/clock.html" /> 
 </head>
 
@@ -51,10 +51,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Xilinx Virtex, Virtex E, Spartan 2, Spartan 2E FPGAs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Xilinx Virtex 2 FPGAs</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Xilinx Spartan 3 FPGAs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="int.html">General interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interconnect.html">General interconnect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block — Spartan 3, Virtex 4</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP — Spartan 3A DSP, Spartan 6</a></li>
-<li class="toctree-l3"><a class="reference internal" href="clk.html">Clock interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Xilinx Spartan 6 FPGAs</a></li>
@@ -99,19 +99,24 @@
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="int.html">General interconnect</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="int.html#bitstream-clb">Bitstream — CLB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="int.html#bitstream-spartan-3-ioi">Bitstream — Spartan 3 IOI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="int.html#bitstream-spartan-3e-ioi">Bitstream — Spartan 3E IOI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="int.html#bitstream-spartan-3a-l-r-ioi">Bitstream — Spartan 3A L/R IOI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="int.html#bitstream-spartan-3a-t-b-ioi">Bitstream — Spartan 3A T/B IOI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="int.html#bitstream-spartan-3-bram">Bitstream — Spartan 3 BRAM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="int.html#bitstream-spartan-3e-bram">Bitstream — Spartan 3E BRAM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="int.html#bitstream-spartan-3a-bram-outer">Bitstream — Spartan 3A BRAM outer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="int.html#bitstream-spartan-3a-bram-inner">Bitstream — Spartan 3A BRAM inner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="int.html#bitstream-spartan-3a-dsp-bram">Bitstream — Spartan 3A DSP BRAM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="int.html#bitstream-dcm">Bitstream — DCM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="int.html#bitstream-dummy-dcm">Bitstream — dummy DCM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interconnect.html">General interconnect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-clb">Bitstream — CLB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-spartan-3-ioi">Bitstream — Spartan 3 IOI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-spartan-3e-ioi">Bitstream — Spartan 3E IOI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-spartan-3a-l-r-ioi">Bitstream — Spartan 3A L/R IOI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-spartan-3a-t-b-ioi">Bitstream — Spartan 3A T/B IOI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-spartan-3-bram">Bitstream — Spartan 3 BRAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-spartan-3e-bram">Bitstream — Spartan 3E BRAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-spartan-3a-bram-outer">Bitstream — Spartan 3A BRAM outer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-spartan-3a-bram-inner">Bitstream — Spartan 3A BRAM inner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-spartan-3a-dsp-bram">Bitstream — Spartan 3A DSP BRAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-dcm">Bitstream — DCM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-dummy-dcm">Bitstream — dummy DCM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-llh">Bitstream — LLH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-spartan-3a-bottom-llh">Bitstream — Spartan 3A bottom LLH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-spartan-3a-top-llh">Bitstream — Spartan 3A top LLH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-spartan-3e-llv">Bitstream — Spartan 3E LLV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-spartan-3a-llv">Bitstream — Spartan 3A LLV</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="clb.html">Configurable Logic Block — Spartan 3, Virtex 4</a><ul>
@@ -124,8 +129,8 @@
 <li class="toctree-l2"><a class="reference internal" href="dsp.html#bitstream-spartan-6">Bitstream — Spartan 6</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="clk.html">Clock interconnect</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="clk.html#clock-source-spine-bottom-and-top">Clock source — spine bottom and top</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clock.html">Clock interconnect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#clock-source-spine-bottom-and-top">Clock source — spine bottom and top</a></li>
 </ul>
 </li>
 </ul>
@@ -137,7 +142,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../virtex2/clock.html" class="btn btn-neutral float-left" title="Clock interconnect" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="int.html" class="btn btn-neutral float-right" title="General interconnect" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="interconnect.html" class="btn btn-neutral float-right" title="General interconnect" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
