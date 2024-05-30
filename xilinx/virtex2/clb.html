@@ -217,8 +217,8 @@
 <p>Thus, <code class="docutils literal notranslate"><span class="pre">SLICE[01]</span></code> can be used alone to implement single-port RAM, or together with <code class="docutils literal notranslate"><span class="pre">SLICE[23]</span></code> to implement dual port or larger RAM.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">DIF_MUX</span></code> determines the value of <code class="docutils literal notranslate"><span class="pre">DIF</span></code>:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BX</span></code>: use the <code class="docutils literal notranslate"><span class="pre">BX</span></code> pin</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ALT</span></code>: use the <code class="docutils literal notranslate"><span class="pre">DIG</span></code> value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BX</span></code>: use the <code class="docutils literal notranslate"><span class="pre">BX</span></code> pin (used for 16×X RAMs)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ALT</span></code>: use the <code class="docutils literal notranslate"><span class="pre">DIG</span></code> value (used for 32×X and larger RAMs)</p></li>
 </ul>
 <p>The <code class="docutils literal notranslate"><span class="pre">DIG_MUX</span></code> determines the value of <code class="docutils literal notranslate"><span class="pre">DIG</span></code>:</p>
 <ul class="simple">
@@ -329,8 +329,8 @@
 </li>
 <li><p>connect <code class="docutils literal notranslate"><span class="pre">CLK</span></code> to write clock</p></li>
 <li><p>connect <code class="docutils literal notranslate"><span class="pre">SR</span></code> to write enable</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code> LUT corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x0X</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">G</span></code> LUT corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x1X</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code> LUT corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x1X</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G</span></code> LUT corresponds to addresses <code class="docutils literal notranslate"><span class="pre">0x0X</span></code></p></li>
 <li><p>connect <code class="docutils literal notranslate"><span class="pre">F[1-4]</span></code> and <code class="docutils literal notranslate"><span class="pre">G[1-4]</span></code> to low 4 bits of the read/write address</p></li>
 <li><p>connect <code class="docutils literal notranslate"><span class="pre">BX</span></code> to bit 4 of read/write address</p></li>
 <li><p>set <code class="docutils literal notranslate"><span class="pre">SLICEWE0USED</span></code></p></li>
@@ -347,8 +347,8 @@
 <li><p>pick a pair of slices: either <code class="docutils literal notranslate"><span class="pre">SLICE0+SLICE2</span></code> or <code class="docutils literal notranslate"><span class="pre">SLICE1+SLICE3</span></code></p></li>
 <li><p>connect <code class="docutils literal notranslate"><span class="pre">CLK</span></code> to write clock</p></li>
 <li><p>connect <code class="docutils literal notranslate"><span class="pre">SR</span></code> to write enable</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code> LUTs correspond to addresses <code class="docutils literal notranslate"><span class="pre">0x0X</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">G</span></code> LUTs correspond to addresses <code class="docutils literal notranslate"><span class="pre">0x1X</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code> LUTs correspond to addresses <code class="docutils literal notranslate"><span class="pre">0x1X</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G</span></code> LUTs correspond to addresses <code class="docutils literal notranslate"><span class="pre">0x0X</span></code></p></li>
 <li><p>connect <code class="docutils literal notranslate"><span class="pre">F[1-4]</span></code> and <code class="docutils literal notranslate"><span class="pre">G[1-4]</span></code> of <code class="docutils literal notranslate"><span class="pre">SLICE[01]</span></code> to low 4 bits of the write address</p></li>
 <li><p>connect <code class="docutils literal notranslate"><span class="pre">F[1-4]</span></code> and <code class="docutils literal notranslate"><span class="pre">G[1-4]</span></code> of <code class="docutils literal notranslate"><span class="pre">SLICE[23]</span></code> to low 4 bits of the read address</p></li>
 <li><p>connect <code class="docutils literal notranslate"><span class="pre">SLICE[01].BX</span></code> to bit 4 of write address</p></li>
