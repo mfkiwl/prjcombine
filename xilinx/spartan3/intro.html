@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Device geomerey" href="structure.html" />
+    <link rel="prev" title="Xilinx Spartan 3 FPGAs" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../xc9500/index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Xilinx FPGAs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Xilinx Virtex, Virtex E, Spartan 2, Spartan 2E FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Xilinx Virtex 2 FPGAs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Xilinx Spartan 3 FPGAs</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#device-table">Device table</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="structure.html">Device geomerey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interconnect.html">General interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block — Spartan 3, Virtex 4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP — Spartan 3A DSP, Spartan 6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html#clock-source-spine-bottom-and-top">Clock source — spine bottom and top</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html#clock-source-left-and-right">Clock source — left and right</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html#the-clkc-clock-center-tile">The <code class="docutils literal notranslate"><span class="pre">CLKC</span></code> clock center tile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html#the-gclkvm-secondary-clock-center-tiles">The <code class="docutils literal notranslate"><span class="pre">GCLKVM</span></code> secondary clock center tiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html#the-gclkvc-clock-spine-distribution-tiles">The <code class="docutils literal notranslate"><span class="pre">GCLKVC</span></code> clock spine distribution tiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html#the-gclkh-clock-row-distribution-tiles">The <code class="docutils literal notranslate"><span class="pre">GCLKH</span></code> clock row distribution tiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Xilinx Spartan 6 FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Xilinx Virtex 4 FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Xilinx Virtex 5 FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex6/index.html">Xilinx Virtex 6 FPGAs</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Xilinx FPGAs</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Xilinx Spartan 3 FPGAs</a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/xilinx/spartan3/intro.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<span id="spartan3"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<p>Spartan 3 is a family of SRAM-based FPGAs, based on a cut-down version of <a class="reference internal" href="../virtex2/intro.html#virtex2"><span class="std std-ref">Virtex 2</span></a>.</p>
+<p>There are several kinds of Spartan 3 FPGAs:</p>
+<ul class="simple">
+<li><p>Spartan 3, the base version</p></li>
+<li><p>Spartan 3E, an updated version of Spartan 3, with higher logic-to-IO ratio</p></li>
+<li><p>Spartan 3A, an updated version of Spartan 3E</p></li>
+<li><p>Spartan 3AN, non-volatile version of Spartan 3A; it is literally Spartan 3A and stock SPI flash in a trenchcoat, with the FPGA die being exactly identical to Spartan 3A</p></li>
+<li><p>Spartan 3A DSP, an updated version of Spartan 3A with added hard DSP blocks</p></li>
+</ul>
+<p>The base Spartan 3 FPGAs feature:</p>
+<ul class="simple">
+<li><p>a <a class="reference internal" href="interconnect.html#spartan3-interconnect"><span class="std std-ref">general interconnect structure</span></a> derived from Virtex 2</p></li>
+<li><p>a dedicated <a class="reference internal" href="clock.html#spartan3-clock"><span class="std std-ref">clock interconnect</span></a> with 8 global clocks and <code class="docutils literal notranslate"><span class="pre">BUFGMUX</span></code> primitives with clock multiplexing</p></li>
+<li><p><a class="reference internal" href="clb.html#spartan3-clb"><span class="std std-ref">configurable logic blocks</span></a>, derived from the Virtex 2 ones</p></li>
+<li><p><a class="reference internal" href="../virtex2/bram.html#virtex2-bram"><span class="std std-ref">block RAM tiles</span></a>, essentially identical to Virtex 2, containing:</p>
+<ul>
+<li><p>18-kbit block RAM</p></li>
+<li><p>18×18 multiplier blocks</p></li>
+</ul>
+</li>
+<li><p><span class="xref std std-ref">input-output tiles</span>, similar to Virtex 2</p></li>
+<li><p><span class="xref std std-ref">digital clock managers</span>, essentially identical to Virtex 2</p></li>
+<li><p><span class="xref std std-ref">corner tiles</span>, with various global bits of logic:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">BSCAN</span></code> primitive, allowing access to FPGA fabric via dedicated JTAG instructions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STARTUP</span></code> primitive, controlling the startup process</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CAPTURE</span></code> primitive, for user-triggered FF state capture</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ICAP</span></code> primitive, allowing access to the internal configuration port</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PMV</span></code> primitive, an internal oscillator used for configuration</p></li>
+<li><p>per-IO bank:</p>
+<ul>
+<li><p>DCI control blocks</p></li>
+<li><p>LVDS bias generators</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Spartan 3E brings the following changes:</p>
+<ul class="simple">
+<li><p>improved clock interconnect, with 24 global clock buffers that can be multiplexed to 8 clocks per region</p></li>
+<li><p>improved hard multiplier blocks, with pipeline registers</p></li>
+<li><p><span class="xref std std-ref">a new version of DCM</span></p></li>
+<li><p>IO tile changes</p>
+<ul>
+<li><p>new set of IO standards supported</p></li>
+<li><p>improved DDR registers</p></li>
+<li><p>removed DCI support</p></li>
+<li><p>4 banks per device, instead of 8</p></li>
+</ul>
+</li>
+<li><p>a new bit of <span class="xref std std-ref">hard PCI logic</span></p></li>
+<li><p>support for SPI and BPI configuration modes</p></li>
+</ul>
+<p>Spartan 3A brings the following changes:</p>
+<ul class="simple">
+<li><p>improved block RAM, with per-byte write enables</p></li>
+<li><p>IO tile changes</p>
+<ul>
+<li><p>new set of IO standards supported</p></li>
+<li><p>improved DDR registers</p></li>
+<li><p>the IO banks are now specialized (top and bottom banks have differential termination support, left and right banks have higher drive strength)</p></li>
+</ul>
+</li>
+<li><p>more singleton special primitives in the corners:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">DNA_PORT</span></code> allows access to unique per-device identifier</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SPI_ACCESS</span></code> allows access to the SPI flash included in-package on Spartan 3AN devices</p></li>
+</ul>
+</li>
+</ul>
+<p>Spartan 3A DSP brings the following changes:</p>
+<ul class="simple">
+<li><p>improved block RAM, with pipeline registers and asynchronous reset</p></li>
+<li><p>the hard multiplier blocks are removed and replaced with <a class="reference internal" href="dsp.html#spartan3-dsp"><span class="std std-ref">a new DSP block</span></a></p></li>
+</ul>
+<section id="device-table">
+<h2>Device table<a class="headerlink" href="#device-table" title="Link to this heading"></a></h2>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>generate this</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Xilinx Spartan 3 FPGAs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="structure.html" class="btn btn-neutral float-right" title="Device geomerey" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

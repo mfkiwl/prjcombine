@@ -57,6 +57,8 @@
 <li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM — Virtex 2, Spartan 3</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Clock interconnect</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#clock-source-spine-bottom-and-top">Clock source — spine bottom and top</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-gclkc-clock-spine-distribution-tiles">The <code class="docutils literal notranslate"><span class="pre">GCLKC</span></code> clock spine distribution tiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-clock-row-distribution-tiles">The clock row distribution tiles</a></li>
 </ul>
 </li>
 </ul>
@@ -104,8 +106,20 @@
 </div>
 <section id="clock-source-spine-bottom-and-top">
 <h2>Clock source — spine bottom and top<a class="headerlink" href="#clock-source-spine-bottom-and-top" title="Link to this heading"></a></h2>
-<section id="bitstream-virtex-2-bottom">
-<h3>Bitstream — Virtex 2 bottom<a class="headerlink" href="#bitstream-virtex-2-bottom" title="Link to this heading"></a></h3>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>document</p>
+</div>
+<section id="bitstream-bottom-tiles">
+<h3>Bitstream — bottom tiles<a class="headerlink" href="#bitstream-bottom-tiles" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">CLKB.*</span></code> tiles use two bitstream tiles:</p>
+<ul class="simple">
+<li><p>tile 0: 4×80 tile located in the clock spine column, in the bits corresponding to the bottom interconnect row</p></li>
+<li><p>tile 1: 4×16 tile located in the clock spine column, in the bits corresponding to the low special area (used for bottom <code class="docutils literal notranslate"><span class="pre">IOB</span></code> tiles and clock rows in normal columns)</p></li>
+</ul>
+<section id="clkb-v2">
+<h4><code class="docutils literal notranslate"><span class="pre">CLKB.V2</span></code><a class="headerlink" href="#clkb-v2" title="Link to this heading"></a></h4>
+<p>This tile is used on Virtex 2 devices.</p>
 <table class="docutils align-default prjcombine-tile">
 <tr><th rowspan="2">Row</th><th colspan="4">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th></tr>
 <tr><td>0</td>
@@ -584,464 +598,9 @@
 <tr><td>0.DBL.E9.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
 </table>
 </section>
-<section id="bitstream-virtex-2-top">
-<h3>Bitstream — Virtex 2 top<a class="headerlink" href="#bitstream-virtex-2-top" title="Link to this heading"></a></h3>
-<table class="docutils align-default prjcombine-tile">
-<tr><th rowspan="2">Row</th><th colspan="4">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th></tr>
-<tr><td>0</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>1</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>2</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[5]">INT:MUX.0.CLK.IMUX.CLK0[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[0]">INT:MUX.0.CLK.IMUX.SEL0[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[0]">INT:MUX.0.CLK.IMUX.SEL4[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[5]">INT:MUX.0.CLK.IMUX.CLK4[5]</a></td></tr>
-<tr><td>3</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[0]">INT:MUX.0.CLK.IMUX.CLK0[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[1]">INT:MUX.0.CLK.IMUX.SEL0[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[1]">INT:MUX.0.CLK.IMUX.SEL4[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[0]">INT:MUX.0.CLK.IMUX.CLK4[0]</a></td></tr>
-<tr><td>4</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[1]">INT:MUX.0.CLK.IMUX.CLK0[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[2]">INT:MUX.0.CLK.IMUX.SEL0[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[2]">INT:MUX.0.CLK.IMUX.SEL4[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[1]">INT:MUX.0.CLK.IMUX.CLK4[1]</a></td></tr>
-<tr><td>5</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[2]">INT:MUX.0.CLK.IMUX.CLK0[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[3]">INT:MUX.0.CLK.IMUX.SEL0[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[3]">INT:MUX.0.CLK.IMUX.SEL4[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[2]">INT:MUX.0.CLK.IMUX.CLK4[2]</a></td></tr>
-<tr><td>6</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[3]">INT:MUX.0.CLK.IMUX.CLK0[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[4]">INT:MUX.0.CLK.IMUX.SEL0[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[4]">INT:MUX.0.CLK.IMUX.SEL4[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[3]">INT:MUX.0.CLK.IMUX.CLK4[3]</a></td></tr>
-<tr><td>7</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[4]">INT:MUX.0.CLK.IMUX.CLK0[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[5]">INT:MUX.0.CLK.IMUX.SEL0[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[5]">INT:MUX.0.CLK.IMUX.SEL4[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[4]">INT:MUX.0.CLK.IMUX.CLK4[4]</a></td></tr>
-<tr><td>8</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>9</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>10</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>11</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>12</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>13</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>14</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[5]">INT:MUX.0.CLK.IMUX.CLK1[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[0]">INT:MUX.0.CLK.IMUX.SEL1[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[0]">INT:MUX.0.CLK.IMUX.SEL5[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[5]">INT:MUX.0.CLK.IMUX.CLK5[5]</a></td></tr>
-<tr><td>15</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[0]">INT:MUX.0.CLK.IMUX.CLK1[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[1]">INT:MUX.0.CLK.IMUX.SEL1[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[1]">INT:MUX.0.CLK.IMUX.SEL5[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[0]">INT:MUX.0.CLK.IMUX.CLK5[0]</a></td></tr>
-<tr><td>16</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[1]">INT:MUX.0.CLK.IMUX.CLK1[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[2]">INT:MUX.0.CLK.IMUX.SEL1[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[2]">INT:MUX.0.CLK.IMUX.SEL5[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[1]">INT:MUX.0.CLK.IMUX.CLK5[1]</a></td></tr>
-<tr><td>17</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[2]">INT:MUX.0.CLK.IMUX.CLK1[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[3]">INT:MUX.0.CLK.IMUX.SEL1[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[3]">INT:MUX.0.CLK.IMUX.SEL5[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[2]">INT:MUX.0.CLK.IMUX.CLK5[2]</a></td></tr>
-<tr><td>18</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[3]">INT:MUX.0.CLK.IMUX.CLK1[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[4]">INT:MUX.0.CLK.IMUX.SEL1[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[4]">INT:MUX.0.CLK.IMUX.SEL5[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[3]">INT:MUX.0.CLK.IMUX.CLK5[3]</a></td></tr>
-<tr><td>19</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[4]">INT:MUX.0.CLK.IMUX.CLK1[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[5]">INT:MUX.0.CLK.IMUX.SEL1[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[5]">INT:MUX.0.CLK.IMUX.SEL5[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[4]">INT:MUX.0.CLK.IMUX.CLK5[4]</a></td></tr>
-<tr><td>20</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>21</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>22</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>23</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>24</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>25</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>26</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[5]">INT:MUX.0.CLK.IMUX.CLK2[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[0]">INT:MUX.0.CLK.IMUX.SEL2[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[0]">INT:MUX.0.CLK.IMUX.SEL6[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[5]">INT:MUX.0.CLK.IMUX.CLK6[5]</a></td></tr>
-<tr><td>27</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[0]">INT:MUX.0.CLK.IMUX.CLK2[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[1]">INT:MUX.0.CLK.IMUX.SEL2[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[1]">INT:MUX.0.CLK.IMUX.SEL6[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[0]">INT:MUX.0.CLK.IMUX.CLK6[0]</a></td></tr>
-<tr><td>28</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[1]">INT:MUX.0.CLK.IMUX.CLK2[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[2]">INT:MUX.0.CLK.IMUX.SEL2[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[2]">INT:MUX.0.CLK.IMUX.SEL6[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[1]">INT:MUX.0.CLK.IMUX.CLK6[1]</a></td></tr>
-<tr><td>29</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[2]">INT:MUX.0.CLK.IMUX.CLK2[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[3]">INT:MUX.0.CLK.IMUX.SEL2[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[3]">INT:MUX.0.CLK.IMUX.SEL6[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[2]">INT:MUX.0.CLK.IMUX.CLK6[2]</a></td></tr>
-<tr><td>30</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[3]">INT:MUX.0.CLK.IMUX.CLK2[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[4]">INT:MUX.0.CLK.IMUX.SEL2[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[4]">INT:MUX.0.CLK.IMUX.SEL6[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[3]">INT:MUX.0.CLK.IMUX.CLK6[3]</a></td></tr>
-<tr><td>31</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[4]">INT:MUX.0.CLK.IMUX.CLK2[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[5]">INT:MUX.0.CLK.IMUX.SEL2[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[5]">INT:MUX.0.CLK.IMUX.SEL6[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[4]">INT:MUX.0.CLK.IMUX.CLK6[4]</a></td></tr>
-<tr><td>32</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>33</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>34</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>35</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>36</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>37</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>38</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[5]">INT:MUX.0.CLK.IMUX.CLK3[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[0]">INT:MUX.0.CLK.IMUX.SEL3[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[0]">INT:MUX.0.CLK.IMUX.SEL7[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[5]">INT:MUX.0.CLK.IMUX.CLK7[5]</a></td></tr>
-<tr><td>39</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[0]">INT:MUX.0.CLK.IMUX.CLK3[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[1]">INT:MUX.0.CLK.IMUX.SEL3[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[1]">INT:MUX.0.CLK.IMUX.SEL7[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[0]">INT:MUX.0.CLK.IMUX.CLK7[0]</a></td></tr>
-<tr><td>40</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[1]">INT:MUX.0.CLK.IMUX.CLK3[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[2]">INT:MUX.0.CLK.IMUX.SEL3[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[2]">INT:MUX.0.CLK.IMUX.SEL7[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[1]">INT:MUX.0.CLK.IMUX.CLK7[1]</a></td></tr>
-<tr><td>41</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[2]">INT:MUX.0.CLK.IMUX.CLK3[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[3]">INT:MUX.0.CLK.IMUX.SEL3[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[3]">INT:MUX.0.CLK.IMUX.SEL7[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[2]">INT:MUX.0.CLK.IMUX.CLK7[2]</a></td></tr>
-<tr><td>42</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[3]">INT:MUX.0.CLK.IMUX.CLK3[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[4]">INT:MUX.0.CLK.IMUX.SEL3[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[4]">INT:MUX.0.CLK.IMUX.SEL7[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[3]">INT:MUX.0.CLK.IMUX.CLK7[3]</a></td></tr>
-<tr><td>43</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[4]">INT:MUX.0.CLK.IMUX.CLK3[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[5]">INT:MUX.0.CLK.IMUX.SEL3[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[5]">INT:MUX.0.CLK.IMUX.SEL7[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[4]">INT:MUX.0.CLK.IMUX.CLK7[4]</a></td></tr>
-<tr><td>44</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>45</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>46</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>47</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>48</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>49</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>50</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX0.S" title="INT:MUX.1.OMUX0.S[4]">INT:MUX.1.OMUX0.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX3.S" title="INT:MUX.1.OMUX3.S[0]">INT:MUX.1.OMUX3.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX3.S" title="INT:MUX.0.OMUX3.S[0]">INT:MUX.0.OMUX3.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX0.S" title="INT:MUX.0.OMUX0.S[4]">INT:MUX.0.OMUX0.S[4]</a></td></tr>
-<tr><td>51</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX0.S" title="INT:MUX.1.OMUX0.S[0]">INT:MUX.1.OMUX0.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX3.S" title="INT:MUX.1.OMUX3.S[1]">INT:MUX.1.OMUX3.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX3.S" title="INT:MUX.0.OMUX3.S[1]">INT:MUX.0.OMUX3.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX0.S" title="INT:MUX.0.OMUX0.S[0]">INT:MUX.0.OMUX0.S[0]</a></td></tr>
-<tr><td>52</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX0.S" title="INT:MUX.1.OMUX0.S[1]">INT:MUX.1.OMUX0.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX3.S" title="INT:MUX.1.OMUX3.S[2]">INT:MUX.1.OMUX3.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX3.S" title="INT:MUX.0.OMUX3.S[2]">INT:MUX.0.OMUX3.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX0.S" title="INT:MUX.0.OMUX0.S[1]">INT:MUX.0.OMUX0.S[1]</a></td></tr>
-<tr><td>53</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX0.S" title="INT:MUX.1.OMUX0.S[2]">INT:MUX.1.OMUX0.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX3.S" title="INT:MUX.1.OMUX3.S[3]">INT:MUX.1.OMUX3.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX3.S" title="INT:MUX.0.OMUX3.S[3]">INT:MUX.0.OMUX3.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX0.S" title="INT:MUX.0.OMUX0.S[2]">INT:MUX.0.OMUX0.S[2]</a></td></tr>
-<tr><td>54</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX0.S" title="INT:MUX.1.OMUX0.S[3]">INT:MUX.1.OMUX0.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX3.S" title="INT:MUX.1.OMUX3.S[4]">INT:MUX.1.OMUX3.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX3.S" title="INT:MUX.0.OMUX3.S[4]">INT:MUX.0.OMUX3.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX0.S" title="INT:MUX.0.OMUX0.S[3]">INT:MUX.0.OMUX0.S[3]</a></td></tr>
-<tr><td>55</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>56</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>57</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>58</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>59</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>60</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX4.S" title="INT:MUX.1.OMUX4.S[4]">INT:MUX.1.OMUX4.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX5.S" title="INT:MUX.1.OMUX5.S[0]">INT:MUX.1.OMUX5.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX5.S" title="INT:MUX.0.OMUX5.S[0]">INT:MUX.0.OMUX5.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX4.S" title="INT:MUX.0.OMUX4.S[4]">INT:MUX.0.OMUX4.S[4]</a></td></tr>
-<tr><td>61</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX4.S" title="INT:MUX.1.OMUX4.S[0]">INT:MUX.1.OMUX4.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX5.S" title="INT:MUX.1.OMUX5.S[1]">INT:MUX.1.OMUX5.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX5.S" title="INT:MUX.0.OMUX5.S[1]">INT:MUX.0.OMUX5.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX4.S" title="INT:MUX.0.OMUX4.S[0]">INT:MUX.0.OMUX4.S[0]</a></td></tr>
-<tr><td>62</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX4.S" title="INT:MUX.1.OMUX4.S[1]">INT:MUX.1.OMUX4.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX5.S" title="INT:MUX.1.OMUX5.S[2]">INT:MUX.1.OMUX5.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX5.S" title="INT:MUX.0.OMUX5.S[2]">INT:MUX.0.OMUX5.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX4.S" title="INT:MUX.0.OMUX4.S[1]">INT:MUX.0.OMUX4.S[1]</a></td></tr>
-<tr><td>63</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX4.S" title="INT:MUX.1.OMUX4.S[2]">INT:MUX.1.OMUX4.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX5.S" title="INT:MUX.1.OMUX5.S[3]">INT:MUX.1.OMUX5.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX5.S" title="INT:MUX.0.OMUX5.S[3]">INT:MUX.0.OMUX5.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX4.S" title="INT:MUX.0.OMUX4.S[2]">INT:MUX.0.OMUX4.S[2]</a></td></tr>
-<tr><td>64</td>
-<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX4.S" title="INT:MUX.1.OMUX4.S[3]">INT:MUX.1.OMUX4.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX5.S" title="INT:MUX.1.OMUX5.S[4]">INT:MUX.1.OMUX5.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX5.S" title="INT:MUX.0.OMUX5.S[4]">INT:MUX.0.OMUX5.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX4.S" title="INT:MUX.0.OMUX4.S[3]">INT:MUX.0.OMUX4.S[3]</a></td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK0">
-<tr><th>INT:MUX.0.CLK.IMUX.CLK0</th><th>[0, 0, 2]</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th><th>[0, 0, 3]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W1.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.W2.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W0.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W1.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E0.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E2.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E0.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E1.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK1">
-<tr><th>INT:MUX.0.CLK.IMUX.CLK1</th><th>[0, 0, 14]</th><th>[0, 0, 19]</th><th>[0, 0, 18]</th><th>[0, 0, 17]</th><th>[0, 0, 16]</th><th>[0, 0, 15]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W3.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W4.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>1.DBL.W2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W3.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W4.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E3.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E4.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E2.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E3.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E4.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK2">
-<tr><th>INT:MUX.0.CLK.IMUX.CLK2</th><th>[0, 0, 26]</th><th>[0, 0, 31]</th><th>[0, 0, 30]</th><th>[0, 0, 29]</th><th>[0, 0, 28]</th><th>[0, 0, 27]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W5.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W6.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.W7.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W5.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W6.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E5.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E6.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E7.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E5.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E6.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK3">
-<tr><th>INT:MUX.0.CLK.IMUX.CLK3</th><th>[0, 0, 38]</th><th>[0, 0, 43]</th><th>[0, 0, 42]</th><th>[0, 0, 41]</th><th>[0, 0, 40]</th><th>[0, 0, 39]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W8.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W9.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>1.DBL.W7.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W8.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W9.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E8.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E9.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E7.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E8.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E9.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.1.OMUX0.S">
-<tr><th>INT:MUX.1.OMUX0.S</th><th>[0, 0, 50]</th><th>[0, 0, 54]</th><th>[0, 0, 53]</th><th>[0, 0, 52]</th><th>[0, 0, 51]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.5</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.6</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.1.OMUX4.S">
-<tr><th>INT:MUX.1.OMUX4.S</th><th>[0, 0, 60]</th><th>[0, 0, 64]</th><th>[0, 0, 63]</th><th>[0, 0, 62]</th><th>[0, 0, 61]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.5</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.6</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL0">
-<tr><th>INT:MUX.0.CLK.IMUX.SEL0</th><th>[0, 1, 7]</th><th>[0, 1, 6]</th><th>[0, 1, 5]</th><th>[0, 1, 4]</th><th>[0, 1, 3]</th><th>[0, 1, 2]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W1.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.W2.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W0.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W1.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E0.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E2.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E0.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E1.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL1">
-<tr><th>INT:MUX.0.CLK.IMUX.SEL1</th><th>[0, 1, 19]</th><th>[0, 1, 18]</th><th>[0, 1, 17]</th><th>[0, 1, 16]</th><th>[0, 1, 15]</th><th>[0, 1, 14]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W3.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W4.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>1.DBL.W2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W3.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W4.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E3.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E4.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E2.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E3.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E4.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL2">
-<tr><th>INT:MUX.0.CLK.IMUX.SEL2</th><th>[0, 1, 31]</th><th>[0, 1, 30]</th><th>[0, 1, 29]</th><th>[0, 1, 28]</th><th>[0, 1, 27]</th><th>[0, 1, 26]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W5.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W6.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.W7.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W5.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W6.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E5.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E6.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E7.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E5.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E6.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL3">
-<tr><th>INT:MUX.0.CLK.IMUX.SEL3</th><th>[0, 1, 43]</th><th>[0, 1, 42]</th><th>[0, 1, 41]</th><th>[0, 1, 40]</th><th>[0, 1, 39]</th><th>[0, 1, 38]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W8.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W9.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>1.DBL.W7.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W8.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W9.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E8.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E9.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E7.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E8.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E9.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.1.OMUX3.S">
-<tr><th>INT:MUX.1.OMUX3.S</th><th>[0, 1, 54]</th><th>[0, 1, 53]</th><th>[0, 1, 52]</th><th>[0, 1, 51]</th><th>[0, 1, 50]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.5</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.6</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.1.OMUX5.S">
-<tr><th>INT:MUX.1.OMUX5.S</th><th>[0, 1, 64]</th><th>[0, 1, 63]</th><th>[0, 1, 62]</th><th>[0, 1, 61]</th><th>[0, 1, 60]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.5</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.6</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL4">
-<tr><th>INT:MUX.0.CLK.IMUX.SEL4</th><th>[0, 2, 7]</th><th>[0, 2, 6]</th><th>[0, 2, 5]</th><th>[0, 2, 4]</th><th>[0, 2, 3]</th><th>[0, 2, 2]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W1.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.W2.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W0.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W1.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E0.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E2.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E0.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E1.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL5">
-<tr><th>INT:MUX.0.CLK.IMUX.SEL5</th><th>[0, 2, 19]</th><th>[0, 2, 18]</th><th>[0, 2, 17]</th><th>[0, 2, 16]</th><th>[0, 2, 15]</th><th>[0, 2, 14]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W3.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W4.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>1.DBL.W2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W3.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W4.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E3.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E4.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E2.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E3.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E4.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL6">
-<tr><th>INT:MUX.0.CLK.IMUX.SEL6</th><th>[0, 2, 31]</th><th>[0, 2, 30]</th><th>[0, 2, 29]</th><th>[0, 2, 28]</th><th>[0, 2, 27]</th><th>[0, 2, 26]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W5.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W6.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.W7.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W5.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W6.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E5.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E6.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E7.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E5.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E6.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL7">
-<tr><th>INT:MUX.0.CLK.IMUX.SEL7</th><th>[0, 2, 43]</th><th>[0, 2, 42]</th><th>[0, 2, 41]</th><th>[0, 2, 40]</th><th>[0, 2, 39]</th><th>[0, 2, 38]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W8.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W9.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>1.DBL.W7.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W8.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W9.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E8.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E9.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E7.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E8.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E9.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.OMUX3.S">
-<tr><th>INT:MUX.0.OMUX3.S</th><th>[0, 2, 54]</th><th>[0, 2, 53]</th><th>[0, 2, 52]</th><th>[0, 2, 51]</th><th>[0, 2, 50]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.3</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.5</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.6</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.7</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.OMUX5.S">
-<tr><th>INT:MUX.0.OMUX5.S</th><th>[0, 2, 64]</th><th>[0, 2, 63]</th><th>[0, 2, 62]</th><th>[0, 2, 61]</th><th>[0, 2, 60]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.3</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.5</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.6</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.7</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK4">
-<tr><th>INT:MUX.0.CLK.IMUX.CLK4</th><th>[0, 3, 2]</th><th>[0, 3, 7]</th><th>[0, 3, 6]</th><th>[0, 3, 5]</th><th>[0, 3, 4]</th><th>[0, 3, 3]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W1.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.W2.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W0.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W1.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E0.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E2.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E0.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E1.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK5">
-<tr><th>INT:MUX.0.CLK.IMUX.CLK5</th><th>[0, 3, 14]</th><th>[0, 3, 19]</th><th>[0, 3, 18]</th><th>[0, 3, 17]</th><th>[0, 3, 16]</th><th>[0, 3, 15]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W3.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W4.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>1.DBL.W2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W3.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W4.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E3.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E4.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E2.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E3.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E4.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK6">
-<tr><th>INT:MUX.0.CLK.IMUX.CLK6</th><th>[0, 3, 26]</th><th>[0, 3, 31]</th><th>[0, 3, 30]</th><th>[0, 3, 29]</th><th>[0, 3, 28]</th><th>[0, 3, 27]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W5.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W6.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.W7.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W5.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W6.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E5.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E6.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E7.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E5.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E6.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK7">
-<tr><th>INT:MUX.0.CLK.IMUX.CLK7</th><th>[0, 3, 38]</th><th>[0, 3, 43]</th><th>[0, 3, 42]</th><th>[0, 3, 41]</th><th>[0, 3, 40]</th><th>[0, 3, 39]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W8.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W9.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>1.DBL.W7.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W8.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W9.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E8.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E9.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E7.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E8.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E9.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.OMUX0.S">
-<tr><th>INT:MUX.0.OMUX0.S</th><th>[0, 3, 50]</th><th>[0, 3, 54]</th><th>[0, 3, 53]</th><th>[0, 3, 52]</th><th>[0, 3, 51]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.3</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.5</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.6</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.7</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.OMUX4.S">
-<tr><th>INT:MUX.0.OMUX4.S</th><th>[0, 3, 60]</th><th>[0, 3, 64]</th><th>[0, 3, 63]</th><th>[0, 3, 62]</th><th>[0, 3, 61]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.3</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.5</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.6</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.7</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-</section>
-<section id="bitstream-virtex-2-pro-bottom">
-<h3>Bitstream — Virtex 2 Pro bottom<a class="headerlink" href="#bitstream-virtex-2-pro-bottom" title="Link to this heading"></a></h3>
+<section id="clkb-v2p">
+<h4><code class="docutils literal notranslate"><span class="pre">CLKB.V2P</span></code><a class="headerlink" href="#clkb-v2p" title="Link to this heading"></a></h4>
+<p>This tile is used on Virtex 2 Pro devices.</p>
 <table class="docutils align-default prjcombine-tile">
 <tr><th rowspan="2">Row</th><th colspan="4">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th></tr>
 <tr><td>0</td>
@@ -1520,464 +1079,9 @@
 <tr><td>0.DBL.E9.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
 </table>
 </section>
-<section id="bitstream-virtex-2-pro-top">
-<h3>Bitstream — Virtex 2 Pro top<a class="headerlink" href="#bitstream-virtex-2-pro-top" title="Link to this heading"></a></h3>
-<table class="docutils align-default prjcombine-tile">
-<tr><th rowspan="2">Row</th><th colspan="4">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th></tr>
-<tr><td>0</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>1</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>2</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[5]">INT:MUX.0.CLK.IMUX.CLK0[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[0]">INT:MUX.0.CLK.IMUX.SEL0[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[0]">INT:MUX.0.CLK.IMUX.SEL4[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[5]">INT:MUX.0.CLK.IMUX.CLK4[5]</a></td></tr>
-<tr><td>3</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[0]">INT:MUX.0.CLK.IMUX.CLK0[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[1]">INT:MUX.0.CLK.IMUX.SEL0[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[1]">INT:MUX.0.CLK.IMUX.SEL4[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[0]">INT:MUX.0.CLK.IMUX.CLK4[0]</a></td></tr>
-<tr><td>4</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[1]">INT:MUX.0.CLK.IMUX.CLK0[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[2]">INT:MUX.0.CLK.IMUX.SEL0[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[2]">INT:MUX.0.CLK.IMUX.SEL4[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[1]">INT:MUX.0.CLK.IMUX.CLK4[1]</a></td></tr>
-<tr><td>5</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[2]">INT:MUX.0.CLK.IMUX.CLK0[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[3]">INT:MUX.0.CLK.IMUX.SEL0[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[3]">INT:MUX.0.CLK.IMUX.SEL4[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[2]">INT:MUX.0.CLK.IMUX.CLK4[2]</a></td></tr>
-<tr><td>6</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[3]">INT:MUX.0.CLK.IMUX.CLK0[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[4]">INT:MUX.0.CLK.IMUX.SEL0[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[4]">INT:MUX.0.CLK.IMUX.SEL4[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[3]">INT:MUX.0.CLK.IMUX.CLK4[3]</a></td></tr>
-<tr><td>7</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[4]">INT:MUX.0.CLK.IMUX.CLK0[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[5]">INT:MUX.0.CLK.IMUX.SEL0[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[5]">INT:MUX.0.CLK.IMUX.SEL4[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[4]">INT:MUX.0.CLK.IMUX.CLK4[4]</a></td></tr>
-<tr><td>8</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>9</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>10</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>11</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>12</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>13</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>14</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[5]">INT:MUX.0.CLK.IMUX.CLK1[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[0]">INT:MUX.0.CLK.IMUX.SEL1[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[0]">INT:MUX.0.CLK.IMUX.SEL5[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[5]">INT:MUX.0.CLK.IMUX.CLK5[5]</a></td></tr>
-<tr><td>15</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[0]">INT:MUX.0.CLK.IMUX.CLK1[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[1]">INT:MUX.0.CLK.IMUX.SEL1[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[1]">INT:MUX.0.CLK.IMUX.SEL5[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[0]">INT:MUX.0.CLK.IMUX.CLK5[0]</a></td></tr>
-<tr><td>16</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[1]">INT:MUX.0.CLK.IMUX.CLK1[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[2]">INT:MUX.0.CLK.IMUX.SEL1[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[2]">INT:MUX.0.CLK.IMUX.SEL5[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[1]">INT:MUX.0.CLK.IMUX.CLK5[1]</a></td></tr>
-<tr><td>17</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[2]">INT:MUX.0.CLK.IMUX.CLK1[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[3]">INT:MUX.0.CLK.IMUX.SEL1[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[3]">INT:MUX.0.CLK.IMUX.SEL5[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[2]">INT:MUX.0.CLK.IMUX.CLK5[2]</a></td></tr>
-<tr><td>18</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[3]">INT:MUX.0.CLK.IMUX.CLK1[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[4]">INT:MUX.0.CLK.IMUX.SEL1[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[4]">INT:MUX.0.CLK.IMUX.SEL5[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[3]">INT:MUX.0.CLK.IMUX.CLK5[3]</a></td></tr>
-<tr><td>19</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[4]">INT:MUX.0.CLK.IMUX.CLK1[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[5]">INT:MUX.0.CLK.IMUX.SEL1[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[5]">INT:MUX.0.CLK.IMUX.SEL5[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[4]">INT:MUX.0.CLK.IMUX.CLK5[4]</a></td></tr>
-<tr><td>20</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>21</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>22</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>23</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>24</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>25</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>26</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[5]">INT:MUX.0.CLK.IMUX.CLK2[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[0]">INT:MUX.0.CLK.IMUX.SEL2[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[0]">INT:MUX.0.CLK.IMUX.SEL6[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[5]">INT:MUX.0.CLK.IMUX.CLK6[5]</a></td></tr>
-<tr><td>27</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[0]">INT:MUX.0.CLK.IMUX.CLK2[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[1]">INT:MUX.0.CLK.IMUX.SEL2[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[1]">INT:MUX.0.CLK.IMUX.SEL6[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[0]">INT:MUX.0.CLK.IMUX.CLK6[0]</a></td></tr>
-<tr><td>28</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[1]">INT:MUX.0.CLK.IMUX.CLK2[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[2]">INT:MUX.0.CLK.IMUX.SEL2[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[2]">INT:MUX.0.CLK.IMUX.SEL6[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[1]">INT:MUX.0.CLK.IMUX.CLK6[1]</a></td></tr>
-<tr><td>29</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[2]">INT:MUX.0.CLK.IMUX.CLK2[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[3]">INT:MUX.0.CLK.IMUX.SEL2[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[3]">INT:MUX.0.CLK.IMUX.SEL6[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[2]">INT:MUX.0.CLK.IMUX.CLK6[2]</a></td></tr>
-<tr><td>30</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[3]">INT:MUX.0.CLK.IMUX.CLK2[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[4]">INT:MUX.0.CLK.IMUX.SEL2[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[4]">INT:MUX.0.CLK.IMUX.SEL6[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[3]">INT:MUX.0.CLK.IMUX.CLK6[3]</a></td></tr>
-<tr><td>31</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[4]">INT:MUX.0.CLK.IMUX.CLK2[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[5]">INT:MUX.0.CLK.IMUX.SEL2[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[5]">INT:MUX.0.CLK.IMUX.SEL6[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[4]">INT:MUX.0.CLK.IMUX.CLK6[4]</a></td></tr>
-<tr><td>32</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>33</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>34</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>35</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>36</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>37</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>38</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[5]">INT:MUX.0.CLK.IMUX.CLK3[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[0]">INT:MUX.0.CLK.IMUX.SEL3[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[0]">INT:MUX.0.CLK.IMUX.SEL7[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[5]">INT:MUX.0.CLK.IMUX.CLK7[5]</a></td></tr>
-<tr><td>39</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[0]">INT:MUX.0.CLK.IMUX.CLK3[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[1]">INT:MUX.0.CLK.IMUX.SEL3[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[1]">INT:MUX.0.CLK.IMUX.SEL7[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[0]">INT:MUX.0.CLK.IMUX.CLK7[0]</a></td></tr>
-<tr><td>40</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[1]">INT:MUX.0.CLK.IMUX.CLK3[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[2]">INT:MUX.0.CLK.IMUX.SEL3[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[2]">INT:MUX.0.CLK.IMUX.SEL7[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[1]">INT:MUX.0.CLK.IMUX.CLK7[1]</a></td></tr>
-<tr><td>41</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[2]">INT:MUX.0.CLK.IMUX.CLK3[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[3]">INT:MUX.0.CLK.IMUX.SEL3[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[3]">INT:MUX.0.CLK.IMUX.SEL7[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[2]">INT:MUX.0.CLK.IMUX.CLK7[2]</a></td></tr>
-<tr><td>42</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[3]">INT:MUX.0.CLK.IMUX.CLK3[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[4]">INT:MUX.0.CLK.IMUX.SEL3[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[4]">INT:MUX.0.CLK.IMUX.SEL7[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[3]">INT:MUX.0.CLK.IMUX.CLK7[3]</a></td></tr>
-<tr><td>43</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[4]">INT:MUX.0.CLK.IMUX.CLK3[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[5]">INT:MUX.0.CLK.IMUX.SEL3[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[5]">INT:MUX.0.CLK.IMUX.SEL7[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[4]">INT:MUX.0.CLK.IMUX.CLK7[4]</a></td></tr>
-<tr><td>44</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>45</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>46</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>47</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>48</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>49</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>50</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX0.S" title="INT:MUX.1.OMUX0.S[4]">INT:MUX.1.OMUX0.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX3.S" title="INT:MUX.1.OMUX3.S[0]">INT:MUX.1.OMUX3.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX3.S" title="INT:MUX.0.OMUX3.S[0]">INT:MUX.0.OMUX3.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX0.S" title="INT:MUX.0.OMUX0.S[4]">INT:MUX.0.OMUX0.S[4]</a></td></tr>
-<tr><td>51</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX0.S" title="INT:MUX.1.OMUX0.S[0]">INT:MUX.1.OMUX0.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX3.S" title="INT:MUX.1.OMUX3.S[1]">INT:MUX.1.OMUX3.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX3.S" title="INT:MUX.0.OMUX3.S[1]">INT:MUX.0.OMUX3.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX0.S" title="INT:MUX.0.OMUX0.S[0]">INT:MUX.0.OMUX0.S[0]</a></td></tr>
-<tr><td>52</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX0.S" title="INT:MUX.1.OMUX0.S[1]">INT:MUX.1.OMUX0.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX3.S" title="INT:MUX.1.OMUX3.S[2]">INT:MUX.1.OMUX3.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX3.S" title="INT:MUX.0.OMUX3.S[2]">INT:MUX.0.OMUX3.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX0.S" title="INT:MUX.0.OMUX0.S[1]">INT:MUX.0.OMUX0.S[1]</a></td></tr>
-<tr><td>53</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX0.S" title="INT:MUX.1.OMUX0.S[2]">INT:MUX.1.OMUX0.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX3.S" title="INT:MUX.1.OMUX3.S[3]">INT:MUX.1.OMUX3.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX3.S" title="INT:MUX.0.OMUX3.S[3]">INT:MUX.0.OMUX3.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX0.S" title="INT:MUX.0.OMUX0.S[2]">INT:MUX.0.OMUX0.S[2]</a></td></tr>
-<tr><td>54</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX0.S" title="INT:MUX.1.OMUX0.S[3]">INT:MUX.1.OMUX0.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX3.S" title="INT:MUX.1.OMUX3.S[4]">INT:MUX.1.OMUX3.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX3.S" title="INT:MUX.0.OMUX3.S[4]">INT:MUX.0.OMUX3.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX0.S" title="INT:MUX.0.OMUX0.S[3]">INT:MUX.0.OMUX0.S[3]</a></td></tr>
-<tr><td>55</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>56</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>57</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>58</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>59</td>
-<td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td>60</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX4.S" title="INT:MUX.1.OMUX4.S[4]">INT:MUX.1.OMUX4.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX5.S" title="INT:MUX.1.OMUX5.S[0]">INT:MUX.1.OMUX5.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX5.S" title="INT:MUX.0.OMUX5.S[0]">INT:MUX.0.OMUX5.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX4.S" title="INT:MUX.0.OMUX4.S[4]">INT:MUX.0.OMUX4.S[4]</a></td></tr>
-<tr><td>61</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX4.S" title="INT:MUX.1.OMUX4.S[0]">INT:MUX.1.OMUX4.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX5.S" title="INT:MUX.1.OMUX5.S[1]">INT:MUX.1.OMUX5.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX5.S" title="INT:MUX.0.OMUX5.S[1]">INT:MUX.0.OMUX5.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX4.S" title="INT:MUX.0.OMUX4.S[0]">INT:MUX.0.OMUX4.S[0]</a></td></tr>
-<tr><td>62</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX4.S" title="INT:MUX.1.OMUX4.S[1]">INT:MUX.1.OMUX4.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX5.S" title="INT:MUX.1.OMUX5.S[2]">INT:MUX.1.OMUX5.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX5.S" title="INT:MUX.0.OMUX5.S[2]">INT:MUX.0.OMUX5.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX4.S" title="INT:MUX.0.OMUX4.S[1]">INT:MUX.0.OMUX4.S[1]</a></td></tr>
-<tr><td>63</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX4.S" title="INT:MUX.1.OMUX4.S[2]">INT:MUX.1.OMUX4.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX5.S" title="INT:MUX.1.OMUX5.S[3]">INT:MUX.1.OMUX5.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX5.S" title="INT:MUX.0.OMUX5.S[3]">INT:MUX.0.OMUX5.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX4.S" title="INT:MUX.0.OMUX4.S[2]">INT:MUX.0.OMUX4.S[2]</a></td></tr>
-<tr><td>64</td>
-<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX4.S" title="INT:MUX.1.OMUX4.S[3]">INT:MUX.1.OMUX4.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX5.S" title="INT:MUX.1.OMUX5.S[4]">INT:MUX.1.OMUX5.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX5.S" title="INT:MUX.0.OMUX5.S[4]">INT:MUX.0.OMUX5.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX4.S" title="INT:MUX.0.OMUX4.S[3]">INT:MUX.0.OMUX4.S[3]</a></td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK0">
-<tr><th>INT:MUX.0.CLK.IMUX.CLK0</th><th>[0, 0, 2]</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th><th>[0, 0, 3]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W1.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.W2.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W0.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W1.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E0.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E2.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E0.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E1.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK1">
-<tr><th>INT:MUX.0.CLK.IMUX.CLK1</th><th>[0, 0, 14]</th><th>[0, 0, 19]</th><th>[0, 0, 18]</th><th>[0, 0, 17]</th><th>[0, 0, 16]</th><th>[0, 0, 15]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W3.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W4.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>1.DBL.W2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W3.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W4.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E3.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E4.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E2.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E3.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E4.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK2">
-<tr><th>INT:MUX.0.CLK.IMUX.CLK2</th><th>[0, 0, 26]</th><th>[0, 0, 31]</th><th>[0, 0, 30]</th><th>[0, 0, 29]</th><th>[0, 0, 28]</th><th>[0, 0, 27]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W5.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W6.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.W7.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W5.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W6.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E5.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E6.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E7.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E5.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E6.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK3">
-<tr><th>INT:MUX.0.CLK.IMUX.CLK3</th><th>[0, 0, 38]</th><th>[0, 0, 43]</th><th>[0, 0, 42]</th><th>[0, 0, 41]</th><th>[0, 0, 40]</th><th>[0, 0, 39]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W8.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W9.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>1.DBL.W7.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W8.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W9.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E8.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E9.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E7.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E8.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E9.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX0.S">
-<tr><th>INT:MUX.1.OMUX0.S</th><th>[0, 0, 50]</th><th>[0, 0, 54]</th><th>[0, 0, 53]</th><th>[0, 0, 52]</th><th>[0, 0, 51]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.5</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.6</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX4.S">
-<tr><th>INT:MUX.1.OMUX4.S</th><th>[0, 0, 60]</th><th>[0, 0, 64]</th><th>[0, 0, 63]</th><th>[0, 0, 62]</th><th>[0, 0, 61]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.5</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.6</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL0">
-<tr><th>INT:MUX.0.CLK.IMUX.SEL0</th><th>[0, 1, 7]</th><th>[0, 1, 6]</th><th>[0, 1, 5]</th><th>[0, 1, 4]</th><th>[0, 1, 3]</th><th>[0, 1, 2]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W1.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.W2.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W0.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W1.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E0.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E2.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E0.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E1.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL1">
-<tr><th>INT:MUX.0.CLK.IMUX.SEL1</th><th>[0, 1, 19]</th><th>[0, 1, 18]</th><th>[0, 1, 17]</th><th>[0, 1, 16]</th><th>[0, 1, 15]</th><th>[0, 1, 14]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W3.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W4.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>1.DBL.W2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W3.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W4.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E3.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E4.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E2.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E3.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E4.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL2">
-<tr><th>INT:MUX.0.CLK.IMUX.SEL2</th><th>[0, 1, 31]</th><th>[0, 1, 30]</th><th>[0, 1, 29]</th><th>[0, 1, 28]</th><th>[0, 1, 27]</th><th>[0, 1, 26]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W5.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W6.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.W7.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W5.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W6.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E5.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E6.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E7.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E5.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E6.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL3">
-<tr><th>INT:MUX.0.CLK.IMUX.SEL3</th><th>[0, 1, 43]</th><th>[0, 1, 42]</th><th>[0, 1, 41]</th><th>[0, 1, 40]</th><th>[0, 1, 39]</th><th>[0, 1, 38]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W8.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W9.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>1.DBL.W7.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W8.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W9.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E8.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E9.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E7.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E8.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E9.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX3.S">
-<tr><th>INT:MUX.1.OMUX3.S</th><th>[0, 1, 54]</th><th>[0, 1, 53]</th><th>[0, 1, 52]</th><th>[0, 1, 51]</th><th>[0, 1, 50]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.5</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.6</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX5.S">
-<tr><th>INT:MUX.1.OMUX5.S</th><th>[0, 1, 64]</th><th>[0, 1, 63]</th><th>[0, 1, 62]</th><th>[0, 1, 61]</th><th>[0, 1, 60]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.5</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.6</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL4">
-<tr><th>INT:MUX.0.CLK.IMUX.SEL4</th><th>[0, 2, 7]</th><th>[0, 2, 6]</th><th>[0, 2, 5]</th><th>[0, 2, 4]</th><th>[0, 2, 3]</th><th>[0, 2, 2]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W1.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.W2.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W0.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W1.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E0.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E2.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E0.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E1.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL5">
-<tr><th>INT:MUX.0.CLK.IMUX.SEL5</th><th>[0, 2, 19]</th><th>[0, 2, 18]</th><th>[0, 2, 17]</th><th>[0, 2, 16]</th><th>[0, 2, 15]</th><th>[0, 2, 14]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W3.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W4.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>1.DBL.W2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W3.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W4.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E3.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E4.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E2.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E3.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E4.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL6">
-<tr><th>INT:MUX.0.CLK.IMUX.SEL6</th><th>[0, 2, 31]</th><th>[0, 2, 30]</th><th>[0, 2, 29]</th><th>[0, 2, 28]</th><th>[0, 2, 27]</th><th>[0, 2, 26]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W5.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W6.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.W7.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W5.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W6.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E5.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E6.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E7.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E5.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E6.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL7">
-<tr><th>INT:MUX.0.CLK.IMUX.SEL7</th><th>[0, 2, 43]</th><th>[0, 2, 42]</th><th>[0, 2, 41]</th><th>[0, 2, 40]</th><th>[0, 2, 39]</th><th>[0, 2, 38]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W8.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W9.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>1.DBL.W7.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W8.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W9.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E8.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E9.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E7.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E8.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E9.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX3.S">
-<tr><th>INT:MUX.0.OMUX3.S</th><th>[0, 2, 54]</th><th>[0, 2, 53]</th><th>[0, 2, 52]</th><th>[0, 2, 51]</th><th>[0, 2, 50]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.3</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.5</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.6</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.7</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX5.S">
-<tr><th>INT:MUX.0.OMUX5.S</th><th>[0, 2, 64]</th><th>[0, 2, 63]</th><th>[0, 2, 62]</th><th>[0, 2, 61]</th><th>[0, 2, 60]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.3</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.5</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.6</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.7</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK4">
-<tr><th>INT:MUX.0.CLK.IMUX.CLK4</th><th>[0, 3, 2]</th><th>[0, 3, 7]</th><th>[0, 3, 6]</th><th>[0, 3, 5]</th><th>[0, 3, 4]</th><th>[0, 3, 3]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W1.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.W2.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W0.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W1.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E0.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E2.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E0.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E1.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK5">
-<tr><th>INT:MUX.0.CLK.IMUX.CLK5</th><th>[0, 3, 14]</th><th>[0, 3, 19]</th><th>[0, 3, 18]</th><th>[0, 3, 17]</th><th>[0, 3, 16]</th><th>[0, 3, 15]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W3.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W4.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>1.DBL.W2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W3.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W4.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E3.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E4.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E2.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E3.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E4.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK6">
-<tr><th>INT:MUX.0.CLK.IMUX.CLK6</th><th>[0, 3, 26]</th><th>[0, 3, 31]</th><th>[0, 3, 30]</th><th>[0, 3, 29]</th><th>[0, 3, 28]</th><th>[0, 3, 27]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W5.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W6.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.W7.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W5.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W6.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E5.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E6.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E7.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E5.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E6.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK7">
-<tr><th>INT:MUX.0.CLK.IMUX.CLK7</th><th>[0, 3, 38]</th><th>[0, 3, 43]</th><th>[0, 3, 42]</th><th>[0, 3, 41]</th><th>[0, 3, 40]</th><th>[0, 3, 39]</th></tr>
-<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.W8.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.W9.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>1.DBL.W7.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W8.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1.DBL.W9.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E8.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.DBL.E9.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.DBL.E7.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E8.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.DBL.E9.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX0.S">
-<tr><th>INT:MUX.0.OMUX0.S</th><th>[0, 3, 50]</th><th>[0, 3, 54]</th><th>[0, 3, 53]</th><th>[0, 3, 52]</th><th>[0, 3, 51]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.3</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.5</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.6</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.7</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX4.S">
-<tr><th>INT:MUX.0.OMUX4.S</th><th>[0, 3, 60]</th><th>[0, 3, 64]</th><th>[0, 3, 63]</th><th>[0, 3, 62]</th><th>[0, 3, 61]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.3</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>0.CLK.OUT.5</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.6</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>0.CLK.OUT.7</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-</table>
-</section>
-<section id="bitstream-virtex-2-pro-x-bottom">
-<h3>Bitstream — Virtex 2 Pro X bottom<a class="headerlink" href="#bitstream-virtex-2-pro-x-bottom" title="Link to this heading"></a></h3>
+<section id="clkb-v2px">
+<h4><code class="docutils literal notranslate"><span class="pre">CLKB.V2PX</span></code><a class="headerlink" href="#clkb-v2px" title="Link to this heading"></a></h4>
+<p>This tile is used on Virtex 2 Pro X devices.</p>
 <table class="docutils align-default prjcombine-tile">
 <tr><th rowspan="2">Row</th><th colspan="4">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th></tr>
 <tr><td>0</td>
@@ -2456,8 +1560,931 @@
 <tr><td>0.DBL.E9.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
 </table>
 </section>
-<section id="bitstream-virtex-2-pro-x-top">
-<h3>Bitstream — Virtex 2 Pro X top<a class="headerlink" href="#bitstream-virtex-2-pro-x-top" title="Link to this heading"></a></h3>
+</section>
+<section id="bitstream-top-tiles">
+<h3>Bitstream — top tiles<a class="headerlink" href="#bitstream-top-tiles" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">CLKT.*</span></code> tiles use two bitstream tiles:</p>
+<ul class="simple">
+<li><p>tile 0: 4×80 tile located in the clock spine column, in the bits corresponding to the top interconnect row</p></li>
+<li><p>tile 1: 4×16 tile located in the clock spine column, in the bits corresponding to the high special area (used for top <code class="docutils literal notranslate"><span class="pre">IOB</span></code> tiles and clock rows in normal columns)</p></li>
+</ul>
+<section id="clkt-v2">
+<h4><code class="docutils literal notranslate"><span class="pre">CLKT.V2</span></code><a class="headerlink" href="#clkt-v2" title="Link to this heading"></a></h4>
+<p>This tile is used on Virtex 2 devices.</p>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="4">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[5]">INT:MUX.0.CLK.IMUX.CLK0[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[0]">INT:MUX.0.CLK.IMUX.SEL0[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[0]">INT:MUX.0.CLK.IMUX.SEL4[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[5]">INT:MUX.0.CLK.IMUX.CLK4[5]</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[0]">INT:MUX.0.CLK.IMUX.CLK0[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[1]">INT:MUX.0.CLK.IMUX.SEL0[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[1]">INT:MUX.0.CLK.IMUX.SEL4[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[0]">INT:MUX.0.CLK.IMUX.CLK4[0]</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[1]">INT:MUX.0.CLK.IMUX.CLK0[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[2]">INT:MUX.0.CLK.IMUX.SEL0[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[2]">INT:MUX.0.CLK.IMUX.SEL4[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[1]">INT:MUX.0.CLK.IMUX.CLK4[1]</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[2]">INT:MUX.0.CLK.IMUX.CLK0[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[3]">INT:MUX.0.CLK.IMUX.SEL0[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[3]">INT:MUX.0.CLK.IMUX.SEL4[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[2]">INT:MUX.0.CLK.IMUX.CLK4[2]</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[3]">INT:MUX.0.CLK.IMUX.CLK0[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[4]">INT:MUX.0.CLK.IMUX.SEL0[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[4]">INT:MUX.0.CLK.IMUX.SEL4[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[3]">INT:MUX.0.CLK.IMUX.CLK4[3]</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[4]">INT:MUX.0.CLK.IMUX.CLK0[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[5]">INT:MUX.0.CLK.IMUX.SEL0[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[5]">INT:MUX.0.CLK.IMUX.SEL4[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[4]">INT:MUX.0.CLK.IMUX.CLK4[4]</a></td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[5]">INT:MUX.0.CLK.IMUX.CLK1[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[0]">INT:MUX.0.CLK.IMUX.SEL1[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[0]">INT:MUX.0.CLK.IMUX.SEL5[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[5]">INT:MUX.0.CLK.IMUX.CLK5[5]</a></td></tr>
+<tr><td>15</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[0]">INT:MUX.0.CLK.IMUX.CLK1[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[1]">INT:MUX.0.CLK.IMUX.SEL1[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[1]">INT:MUX.0.CLK.IMUX.SEL5[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[0]">INT:MUX.0.CLK.IMUX.CLK5[0]</a></td></tr>
+<tr><td>16</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[1]">INT:MUX.0.CLK.IMUX.CLK1[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[2]">INT:MUX.0.CLK.IMUX.SEL1[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[2]">INT:MUX.0.CLK.IMUX.SEL5[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[1]">INT:MUX.0.CLK.IMUX.CLK5[1]</a></td></tr>
+<tr><td>17</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[2]">INT:MUX.0.CLK.IMUX.CLK1[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[3]">INT:MUX.0.CLK.IMUX.SEL1[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[3]">INT:MUX.0.CLK.IMUX.SEL5[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[2]">INT:MUX.0.CLK.IMUX.CLK5[2]</a></td></tr>
+<tr><td>18</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[3]">INT:MUX.0.CLK.IMUX.CLK1[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[4]">INT:MUX.0.CLK.IMUX.SEL1[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[4]">INT:MUX.0.CLK.IMUX.SEL5[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[3]">INT:MUX.0.CLK.IMUX.CLK5[3]</a></td></tr>
+<tr><td>19</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[4]">INT:MUX.0.CLK.IMUX.CLK1[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[5]">INT:MUX.0.CLK.IMUX.SEL1[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[5]">INT:MUX.0.CLK.IMUX.SEL5[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[4]">INT:MUX.0.CLK.IMUX.CLK5[4]</a></td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[5]">INT:MUX.0.CLK.IMUX.CLK2[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[0]">INT:MUX.0.CLK.IMUX.SEL2[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[0]">INT:MUX.0.CLK.IMUX.SEL6[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[5]">INT:MUX.0.CLK.IMUX.CLK6[5]</a></td></tr>
+<tr><td>27</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[0]">INT:MUX.0.CLK.IMUX.CLK2[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[1]">INT:MUX.0.CLK.IMUX.SEL2[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[1]">INT:MUX.0.CLK.IMUX.SEL6[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[0]">INT:MUX.0.CLK.IMUX.CLK6[0]</a></td></tr>
+<tr><td>28</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[1]">INT:MUX.0.CLK.IMUX.CLK2[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[2]">INT:MUX.0.CLK.IMUX.SEL2[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[2]">INT:MUX.0.CLK.IMUX.SEL6[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[1]">INT:MUX.0.CLK.IMUX.CLK6[1]</a></td></tr>
+<tr><td>29</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[2]">INT:MUX.0.CLK.IMUX.CLK2[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[3]">INT:MUX.0.CLK.IMUX.SEL2[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[3]">INT:MUX.0.CLK.IMUX.SEL6[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[2]">INT:MUX.0.CLK.IMUX.CLK6[2]</a></td></tr>
+<tr><td>30</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[3]">INT:MUX.0.CLK.IMUX.CLK2[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[4]">INT:MUX.0.CLK.IMUX.SEL2[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[4]">INT:MUX.0.CLK.IMUX.SEL6[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[3]">INT:MUX.0.CLK.IMUX.CLK6[3]</a></td></tr>
+<tr><td>31</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[4]">INT:MUX.0.CLK.IMUX.CLK2[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[5]">INT:MUX.0.CLK.IMUX.SEL2[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[5]">INT:MUX.0.CLK.IMUX.SEL6[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[4]">INT:MUX.0.CLK.IMUX.CLK6[4]</a></td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>38</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[5]">INT:MUX.0.CLK.IMUX.CLK3[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[0]">INT:MUX.0.CLK.IMUX.SEL3[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[0]">INT:MUX.0.CLK.IMUX.SEL7[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[5]">INT:MUX.0.CLK.IMUX.CLK7[5]</a></td></tr>
+<tr><td>39</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[0]">INT:MUX.0.CLK.IMUX.CLK3[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[1]">INT:MUX.0.CLK.IMUX.SEL3[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[1]">INT:MUX.0.CLK.IMUX.SEL7[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[0]">INT:MUX.0.CLK.IMUX.CLK7[0]</a></td></tr>
+<tr><td>40</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[1]">INT:MUX.0.CLK.IMUX.CLK3[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[2]">INT:MUX.0.CLK.IMUX.SEL3[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[2]">INT:MUX.0.CLK.IMUX.SEL7[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[1]">INT:MUX.0.CLK.IMUX.CLK7[1]</a></td></tr>
+<tr><td>41</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[2]">INT:MUX.0.CLK.IMUX.CLK3[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[3]">INT:MUX.0.CLK.IMUX.SEL3[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[3]">INT:MUX.0.CLK.IMUX.SEL7[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[2]">INT:MUX.0.CLK.IMUX.CLK7[2]</a></td></tr>
+<tr><td>42</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[3]">INT:MUX.0.CLK.IMUX.CLK3[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[4]">INT:MUX.0.CLK.IMUX.SEL3[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[4]">INT:MUX.0.CLK.IMUX.SEL7[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[3]">INT:MUX.0.CLK.IMUX.CLK7[3]</a></td></tr>
+<tr><td>43</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[4]">INT:MUX.0.CLK.IMUX.CLK3[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[5]">INT:MUX.0.CLK.IMUX.SEL3[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[5]">INT:MUX.0.CLK.IMUX.SEL7[5]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[4]">INT:MUX.0.CLK.IMUX.CLK7[4]</a></td></tr>
+<tr><td>44</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>50</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX0.S" title="INT:MUX.1.OMUX0.S[4]">INT:MUX.1.OMUX0.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX3.S" title="INT:MUX.1.OMUX3.S[0]">INT:MUX.1.OMUX3.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX3.S" title="INT:MUX.0.OMUX3.S[0]">INT:MUX.0.OMUX3.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX0.S" title="INT:MUX.0.OMUX0.S[4]">INT:MUX.0.OMUX0.S[4]</a></td></tr>
+<tr><td>51</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX0.S" title="INT:MUX.1.OMUX0.S[0]">INT:MUX.1.OMUX0.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX3.S" title="INT:MUX.1.OMUX3.S[1]">INT:MUX.1.OMUX3.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX3.S" title="INT:MUX.0.OMUX3.S[1]">INT:MUX.0.OMUX3.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX0.S" title="INT:MUX.0.OMUX0.S[0]">INT:MUX.0.OMUX0.S[0]</a></td></tr>
+<tr><td>52</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX0.S" title="INT:MUX.1.OMUX0.S[1]">INT:MUX.1.OMUX0.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX3.S" title="INT:MUX.1.OMUX3.S[2]">INT:MUX.1.OMUX3.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX3.S" title="INT:MUX.0.OMUX3.S[2]">INT:MUX.0.OMUX3.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX0.S" title="INT:MUX.0.OMUX0.S[1]">INT:MUX.0.OMUX0.S[1]</a></td></tr>
+<tr><td>53</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX0.S" title="INT:MUX.1.OMUX0.S[2]">INT:MUX.1.OMUX0.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX3.S" title="INT:MUX.1.OMUX3.S[3]">INT:MUX.1.OMUX3.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX3.S" title="INT:MUX.0.OMUX3.S[3]">INT:MUX.0.OMUX3.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX0.S" title="INT:MUX.0.OMUX0.S[2]">INT:MUX.0.OMUX0.S[2]</a></td></tr>
+<tr><td>54</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX0.S" title="INT:MUX.1.OMUX0.S[3]">INT:MUX.1.OMUX0.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX3.S" title="INT:MUX.1.OMUX3.S[4]">INT:MUX.1.OMUX3.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX3.S" title="INT:MUX.0.OMUX3.S[4]">INT:MUX.0.OMUX3.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX0.S" title="INT:MUX.0.OMUX0.S[3]">INT:MUX.0.OMUX0.S[3]</a></td></tr>
+<tr><td>55</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>56</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>57</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>58</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>59</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>60</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX4.S" title="INT:MUX.1.OMUX4.S[4]">INT:MUX.1.OMUX4.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX5.S" title="INT:MUX.1.OMUX5.S[0]">INT:MUX.1.OMUX5.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX5.S" title="INT:MUX.0.OMUX5.S[0]">INT:MUX.0.OMUX5.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX4.S" title="INT:MUX.0.OMUX4.S[4]">INT:MUX.0.OMUX4.S[4]</a></td></tr>
+<tr><td>61</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX4.S" title="INT:MUX.1.OMUX4.S[0]">INT:MUX.1.OMUX4.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX5.S" title="INT:MUX.1.OMUX5.S[1]">INT:MUX.1.OMUX5.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX5.S" title="INT:MUX.0.OMUX5.S[1]">INT:MUX.0.OMUX5.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX4.S" title="INT:MUX.0.OMUX4.S[0]">INT:MUX.0.OMUX4.S[0]</a></td></tr>
+<tr><td>62</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX4.S" title="INT:MUX.1.OMUX4.S[1]">INT:MUX.1.OMUX4.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX5.S" title="INT:MUX.1.OMUX5.S[2]">INT:MUX.1.OMUX5.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX5.S" title="INT:MUX.0.OMUX5.S[2]">INT:MUX.0.OMUX5.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX4.S" title="INT:MUX.0.OMUX4.S[1]">INT:MUX.0.OMUX4.S[1]</a></td></tr>
+<tr><td>63</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX4.S" title="INT:MUX.1.OMUX4.S[2]">INT:MUX.1.OMUX4.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX5.S" title="INT:MUX.1.OMUX5.S[3]">INT:MUX.1.OMUX5.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX5.S" title="INT:MUX.0.OMUX5.S[3]">INT:MUX.0.OMUX5.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX4.S" title="INT:MUX.0.OMUX4.S[2]">INT:MUX.0.OMUX4.S[2]</a></td></tr>
+<tr><td>64</td>
+<td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX4.S" title="INT:MUX.1.OMUX4.S[3]">INT:MUX.1.OMUX4.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.1.OMUX5.S" title="INT:MUX.1.OMUX5.S[4]">INT:MUX.1.OMUX5.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX5.S" title="INT:MUX.0.OMUX5.S[4]">INT:MUX.0.OMUX5.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2-INT:MUX.0.OMUX4.S" title="INT:MUX.0.OMUX4.S[3]">INT:MUX.0.OMUX4.S[3]</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK0">
+<tr><th>INT:MUX.0.CLK.IMUX.CLK0</th><th>[0, 0, 2]</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th><th>[0, 0, 3]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W1.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.W2.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W0.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W1.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E0.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E2.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E0.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E1.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK1">
+<tr><th>INT:MUX.0.CLK.IMUX.CLK1</th><th>[0, 0, 14]</th><th>[0, 0, 19]</th><th>[0, 0, 18]</th><th>[0, 0, 17]</th><th>[0, 0, 16]</th><th>[0, 0, 15]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W3.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W4.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.DBL.W2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W3.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W4.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E3.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E4.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E2.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E3.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E4.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK2">
+<tr><th>INT:MUX.0.CLK.IMUX.CLK2</th><th>[0, 0, 26]</th><th>[0, 0, 31]</th><th>[0, 0, 30]</th><th>[0, 0, 29]</th><th>[0, 0, 28]</th><th>[0, 0, 27]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W5.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W6.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.W7.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W5.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W6.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E5.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E6.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E7.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E5.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E6.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK3">
+<tr><th>INT:MUX.0.CLK.IMUX.CLK3</th><th>[0, 0, 38]</th><th>[0, 0, 43]</th><th>[0, 0, 42]</th><th>[0, 0, 41]</th><th>[0, 0, 40]</th><th>[0, 0, 39]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W8.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W9.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.DBL.W7.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W8.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W9.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E8.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E9.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E7.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E8.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E9.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.1.OMUX0.S">
+<tr><th>INT:MUX.1.OMUX0.S</th><th>[0, 0, 50]</th><th>[0, 0, 54]</th><th>[0, 0, 53]</th><th>[0, 0, 52]</th><th>[0, 0, 51]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.5</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.6</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.1.OMUX4.S">
+<tr><th>INT:MUX.1.OMUX4.S</th><th>[0, 0, 60]</th><th>[0, 0, 64]</th><th>[0, 0, 63]</th><th>[0, 0, 62]</th><th>[0, 0, 61]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.5</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.6</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL0">
+<tr><th>INT:MUX.0.CLK.IMUX.SEL0</th><th>[0, 1, 7]</th><th>[0, 1, 6]</th><th>[0, 1, 5]</th><th>[0, 1, 4]</th><th>[0, 1, 3]</th><th>[0, 1, 2]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W1.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.W2.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W0.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W1.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E0.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E2.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E0.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E1.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL1">
+<tr><th>INT:MUX.0.CLK.IMUX.SEL1</th><th>[0, 1, 19]</th><th>[0, 1, 18]</th><th>[0, 1, 17]</th><th>[0, 1, 16]</th><th>[0, 1, 15]</th><th>[0, 1, 14]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W3.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W4.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.DBL.W2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W3.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W4.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E3.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E4.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E2.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E3.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E4.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL2">
+<tr><th>INT:MUX.0.CLK.IMUX.SEL2</th><th>[0, 1, 31]</th><th>[0, 1, 30]</th><th>[0, 1, 29]</th><th>[0, 1, 28]</th><th>[0, 1, 27]</th><th>[0, 1, 26]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W5.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W6.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.W7.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W5.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W6.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E5.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E6.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E7.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E5.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E6.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL3">
+<tr><th>INT:MUX.0.CLK.IMUX.SEL3</th><th>[0, 1, 43]</th><th>[0, 1, 42]</th><th>[0, 1, 41]</th><th>[0, 1, 40]</th><th>[0, 1, 39]</th><th>[0, 1, 38]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W8.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W9.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.DBL.W7.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W8.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W9.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E8.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E9.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E7.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E8.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E9.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.1.OMUX3.S">
+<tr><th>INT:MUX.1.OMUX3.S</th><th>[0, 1, 54]</th><th>[0, 1, 53]</th><th>[0, 1, 52]</th><th>[0, 1, 51]</th><th>[0, 1, 50]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.5</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.6</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.1.OMUX5.S">
+<tr><th>INT:MUX.1.OMUX5.S</th><th>[0, 1, 64]</th><th>[0, 1, 63]</th><th>[0, 1, 62]</th><th>[0, 1, 61]</th><th>[0, 1, 60]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.5</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.6</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL4">
+<tr><th>INT:MUX.0.CLK.IMUX.SEL4</th><th>[0, 2, 7]</th><th>[0, 2, 6]</th><th>[0, 2, 5]</th><th>[0, 2, 4]</th><th>[0, 2, 3]</th><th>[0, 2, 2]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W1.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.W2.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W0.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W1.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E0.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E2.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E0.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E1.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL5">
+<tr><th>INT:MUX.0.CLK.IMUX.SEL5</th><th>[0, 2, 19]</th><th>[0, 2, 18]</th><th>[0, 2, 17]</th><th>[0, 2, 16]</th><th>[0, 2, 15]</th><th>[0, 2, 14]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W3.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W4.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.DBL.W2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W3.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W4.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E3.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E4.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E2.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E3.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E4.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL6">
+<tr><th>INT:MUX.0.CLK.IMUX.SEL6</th><th>[0, 2, 31]</th><th>[0, 2, 30]</th><th>[0, 2, 29]</th><th>[0, 2, 28]</th><th>[0, 2, 27]</th><th>[0, 2, 26]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W5.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W6.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.W7.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W5.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W6.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E5.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E6.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E7.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E5.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E6.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.SEL7">
+<tr><th>INT:MUX.0.CLK.IMUX.SEL7</th><th>[0, 2, 43]</th><th>[0, 2, 42]</th><th>[0, 2, 41]</th><th>[0, 2, 40]</th><th>[0, 2, 39]</th><th>[0, 2, 38]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W8.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W9.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.DBL.W7.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W8.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W9.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E8.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E9.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E7.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E8.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E9.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.OMUX3.S">
+<tr><th>INT:MUX.0.OMUX3.S</th><th>[0, 2, 54]</th><th>[0, 2, 53]</th><th>[0, 2, 52]</th><th>[0, 2, 51]</th><th>[0, 2, 50]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.3</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.5</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.6</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.7</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.OMUX5.S">
+<tr><th>INT:MUX.0.OMUX5.S</th><th>[0, 2, 64]</th><th>[0, 2, 63]</th><th>[0, 2, 62]</th><th>[0, 2, 61]</th><th>[0, 2, 60]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.3</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.5</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.6</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.7</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK4">
+<tr><th>INT:MUX.0.CLK.IMUX.CLK4</th><th>[0, 3, 2]</th><th>[0, 3, 7]</th><th>[0, 3, 6]</th><th>[0, 3, 5]</th><th>[0, 3, 4]</th><th>[0, 3, 3]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W1.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.W2.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W0.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W1.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E0.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E2.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E0.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E1.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK5">
+<tr><th>INT:MUX.0.CLK.IMUX.CLK5</th><th>[0, 3, 14]</th><th>[0, 3, 19]</th><th>[0, 3, 18]</th><th>[0, 3, 17]</th><th>[0, 3, 16]</th><th>[0, 3, 15]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W3.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W4.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.DBL.W2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W3.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W4.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E3.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E4.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E2.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E3.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E4.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK6">
+<tr><th>INT:MUX.0.CLK.IMUX.CLK6</th><th>[0, 3, 26]</th><th>[0, 3, 31]</th><th>[0, 3, 30]</th><th>[0, 3, 29]</th><th>[0, 3, 28]</th><th>[0, 3, 27]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W5.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W6.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.W7.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W5.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W6.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E5.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E6.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E7.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E5.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E6.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.CLK.IMUX.CLK7">
+<tr><th>INT:MUX.0.CLK.IMUX.CLK7</th><th>[0, 3, 38]</th><th>[0, 3, 43]</th><th>[0, 3, 42]</th><th>[0, 3, 41]</th><th>[0, 3, 40]</th><th>[0, 3, 39]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W8.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W9.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.DBL.W7.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W8.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W9.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E8.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E9.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E7.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E8.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E9.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.OMUX0.S">
+<tr><th>INT:MUX.0.OMUX0.S</th><th>[0, 3, 50]</th><th>[0, 3, 54]</th><th>[0, 3, 53]</th><th>[0, 3, 52]</th><th>[0, 3, 51]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.3</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.5</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.6</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.7</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2-INT:MUX.0.OMUX4.S">
+<tr><th>INT:MUX.0.OMUX4.S</th><th>[0, 3, 60]</th><th>[0, 3, 64]</th><th>[0, 3, 63]</th><th>[0, 3, 62]</th><th>[0, 3, 61]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.3</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.5</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.6</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.7</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+</section>
+<section id="clkt-v2p">
+<h4><code class="docutils literal notranslate"><span class="pre">CLKT.V2P</span></code><a class="headerlink" href="#clkt-v2p" title="Link to this heading"></a></h4>
+<p>This tile is used on Virtex 2 Pro devices.</p>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="4">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[5]">INT:MUX.0.CLK.IMUX.CLK0[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[0]">INT:MUX.0.CLK.IMUX.SEL0[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[0]">INT:MUX.0.CLK.IMUX.SEL4[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[5]">INT:MUX.0.CLK.IMUX.CLK4[5]</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[0]">INT:MUX.0.CLK.IMUX.CLK0[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[1]">INT:MUX.0.CLK.IMUX.SEL0[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[1]">INT:MUX.0.CLK.IMUX.SEL4[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[0]">INT:MUX.0.CLK.IMUX.CLK4[0]</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[1]">INT:MUX.0.CLK.IMUX.CLK0[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[2]">INT:MUX.0.CLK.IMUX.SEL0[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[2]">INT:MUX.0.CLK.IMUX.SEL4[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[1]">INT:MUX.0.CLK.IMUX.CLK4[1]</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[2]">INT:MUX.0.CLK.IMUX.CLK0[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[3]">INT:MUX.0.CLK.IMUX.SEL0[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[3]">INT:MUX.0.CLK.IMUX.SEL4[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[2]">INT:MUX.0.CLK.IMUX.CLK4[2]</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[3]">INT:MUX.0.CLK.IMUX.CLK0[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[4]">INT:MUX.0.CLK.IMUX.SEL0[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[4]">INT:MUX.0.CLK.IMUX.SEL4[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[3]">INT:MUX.0.CLK.IMUX.CLK4[3]</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK0" title="INT:MUX.0.CLK.IMUX.CLK0[4]">INT:MUX.0.CLK.IMUX.CLK0[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL0" title="INT:MUX.0.CLK.IMUX.SEL0[5]">INT:MUX.0.CLK.IMUX.SEL0[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL4" title="INT:MUX.0.CLK.IMUX.SEL4[5]">INT:MUX.0.CLK.IMUX.SEL4[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK4" title="INT:MUX.0.CLK.IMUX.CLK4[4]">INT:MUX.0.CLK.IMUX.CLK4[4]</a></td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[5]">INT:MUX.0.CLK.IMUX.CLK1[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[0]">INT:MUX.0.CLK.IMUX.SEL1[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[0]">INT:MUX.0.CLK.IMUX.SEL5[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[5]">INT:MUX.0.CLK.IMUX.CLK5[5]</a></td></tr>
+<tr><td>15</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[0]">INT:MUX.0.CLK.IMUX.CLK1[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[1]">INT:MUX.0.CLK.IMUX.SEL1[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[1]">INT:MUX.0.CLK.IMUX.SEL5[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[0]">INT:MUX.0.CLK.IMUX.CLK5[0]</a></td></tr>
+<tr><td>16</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[1]">INT:MUX.0.CLK.IMUX.CLK1[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[2]">INT:MUX.0.CLK.IMUX.SEL1[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[2]">INT:MUX.0.CLK.IMUX.SEL5[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[1]">INT:MUX.0.CLK.IMUX.CLK5[1]</a></td></tr>
+<tr><td>17</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[2]">INT:MUX.0.CLK.IMUX.CLK1[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[3]">INT:MUX.0.CLK.IMUX.SEL1[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[3]">INT:MUX.0.CLK.IMUX.SEL5[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[2]">INT:MUX.0.CLK.IMUX.CLK5[2]</a></td></tr>
+<tr><td>18</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[3]">INT:MUX.0.CLK.IMUX.CLK1[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[4]">INT:MUX.0.CLK.IMUX.SEL1[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[4]">INT:MUX.0.CLK.IMUX.SEL5[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[3]">INT:MUX.0.CLK.IMUX.CLK5[3]</a></td></tr>
+<tr><td>19</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK1" title="INT:MUX.0.CLK.IMUX.CLK1[4]">INT:MUX.0.CLK.IMUX.CLK1[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL1" title="INT:MUX.0.CLK.IMUX.SEL1[5]">INT:MUX.0.CLK.IMUX.SEL1[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL5" title="INT:MUX.0.CLK.IMUX.SEL5[5]">INT:MUX.0.CLK.IMUX.SEL5[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK5" title="INT:MUX.0.CLK.IMUX.CLK5[4]">INT:MUX.0.CLK.IMUX.CLK5[4]</a></td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[5]">INT:MUX.0.CLK.IMUX.CLK2[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[0]">INT:MUX.0.CLK.IMUX.SEL2[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[0]">INT:MUX.0.CLK.IMUX.SEL6[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[5]">INT:MUX.0.CLK.IMUX.CLK6[5]</a></td></tr>
+<tr><td>27</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[0]">INT:MUX.0.CLK.IMUX.CLK2[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[1]">INT:MUX.0.CLK.IMUX.SEL2[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[1]">INT:MUX.0.CLK.IMUX.SEL6[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[0]">INT:MUX.0.CLK.IMUX.CLK6[0]</a></td></tr>
+<tr><td>28</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[1]">INT:MUX.0.CLK.IMUX.CLK2[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[2]">INT:MUX.0.CLK.IMUX.SEL2[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[2]">INT:MUX.0.CLK.IMUX.SEL6[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[1]">INT:MUX.0.CLK.IMUX.CLK6[1]</a></td></tr>
+<tr><td>29</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[2]">INT:MUX.0.CLK.IMUX.CLK2[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[3]">INT:MUX.0.CLK.IMUX.SEL2[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[3]">INT:MUX.0.CLK.IMUX.SEL6[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[2]">INT:MUX.0.CLK.IMUX.CLK6[2]</a></td></tr>
+<tr><td>30</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[3]">INT:MUX.0.CLK.IMUX.CLK2[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[4]">INT:MUX.0.CLK.IMUX.SEL2[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[4]">INT:MUX.0.CLK.IMUX.SEL6[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[3]">INT:MUX.0.CLK.IMUX.CLK6[3]</a></td></tr>
+<tr><td>31</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK2" title="INT:MUX.0.CLK.IMUX.CLK2[4]">INT:MUX.0.CLK.IMUX.CLK2[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL2" title="INT:MUX.0.CLK.IMUX.SEL2[5]">INT:MUX.0.CLK.IMUX.SEL2[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL6" title="INT:MUX.0.CLK.IMUX.SEL6[5]">INT:MUX.0.CLK.IMUX.SEL6[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK6" title="INT:MUX.0.CLK.IMUX.CLK6[4]">INT:MUX.0.CLK.IMUX.CLK6[4]</a></td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>38</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[5]">INT:MUX.0.CLK.IMUX.CLK3[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[0]">INT:MUX.0.CLK.IMUX.SEL3[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[0]">INT:MUX.0.CLK.IMUX.SEL7[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[5]">INT:MUX.0.CLK.IMUX.CLK7[5]</a></td></tr>
+<tr><td>39</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[0]">INT:MUX.0.CLK.IMUX.CLK3[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[1]">INT:MUX.0.CLK.IMUX.SEL3[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[1]">INT:MUX.0.CLK.IMUX.SEL7[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[0]">INT:MUX.0.CLK.IMUX.CLK7[0]</a></td></tr>
+<tr><td>40</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[1]">INT:MUX.0.CLK.IMUX.CLK3[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[2]">INT:MUX.0.CLK.IMUX.SEL3[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[2]">INT:MUX.0.CLK.IMUX.SEL7[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[1]">INT:MUX.0.CLK.IMUX.CLK7[1]</a></td></tr>
+<tr><td>41</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[2]">INT:MUX.0.CLK.IMUX.CLK3[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[3]">INT:MUX.0.CLK.IMUX.SEL3[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[3]">INT:MUX.0.CLK.IMUX.SEL7[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[2]">INT:MUX.0.CLK.IMUX.CLK7[2]</a></td></tr>
+<tr><td>42</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[3]">INT:MUX.0.CLK.IMUX.CLK3[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[4]">INT:MUX.0.CLK.IMUX.SEL3[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[4]">INT:MUX.0.CLK.IMUX.SEL7[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[3]">INT:MUX.0.CLK.IMUX.CLK7[3]</a></td></tr>
+<tr><td>43</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK3" title="INT:MUX.0.CLK.IMUX.CLK3[4]">INT:MUX.0.CLK.IMUX.CLK3[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL3" title="INT:MUX.0.CLK.IMUX.SEL3[5]">INT:MUX.0.CLK.IMUX.SEL3[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL7" title="INT:MUX.0.CLK.IMUX.SEL7[5]">INT:MUX.0.CLK.IMUX.SEL7[5]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK7" title="INT:MUX.0.CLK.IMUX.CLK7[4]">INT:MUX.0.CLK.IMUX.CLK7[4]</a></td></tr>
+<tr><td>44</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>50</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX0.S" title="INT:MUX.1.OMUX0.S[4]">INT:MUX.1.OMUX0.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX3.S" title="INT:MUX.1.OMUX3.S[0]">INT:MUX.1.OMUX3.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX3.S" title="INT:MUX.0.OMUX3.S[0]">INT:MUX.0.OMUX3.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX0.S" title="INT:MUX.0.OMUX0.S[4]">INT:MUX.0.OMUX0.S[4]</a></td></tr>
+<tr><td>51</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX0.S" title="INT:MUX.1.OMUX0.S[0]">INT:MUX.1.OMUX0.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX3.S" title="INT:MUX.1.OMUX3.S[1]">INT:MUX.1.OMUX3.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX3.S" title="INT:MUX.0.OMUX3.S[1]">INT:MUX.0.OMUX3.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX0.S" title="INT:MUX.0.OMUX0.S[0]">INT:MUX.0.OMUX0.S[0]</a></td></tr>
+<tr><td>52</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX0.S" title="INT:MUX.1.OMUX0.S[1]">INT:MUX.1.OMUX0.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX3.S" title="INT:MUX.1.OMUX3.S[2]">INT:MUX.1.OMUX3.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX3.S" title="INT:MUX.0.OMUX3.S[2]">INT:MUX.0.OMUX3.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX0.S" title="INT:MUX.0.OMUX0.S[1]">INT:MUX.0.OMUX0.S[1]</a></td></tr>
+<tr><td>53</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX0.S" title="INT:MUX.1.OMUX0.S[2]">INT:MUX.1.OMUX0.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX3.S" title="INT:MUX.1.OMUX3.S[3]">INT:MUX.1.OMUX3.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX3.S" title="INT:MUX.0.OMUX3.S[3]">INT:MUX.0.OMUX3.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX0.S" title="INT:MUX.0.OMUX0.S[2]">INT:MUX.0.OMUX0.S[2]</a></td></tr>
+<tr><td>54</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX0.S" title="INT:MUX.1.OMUX0.S[3]">INT:MUX.1.OMUX0.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX3.S" title="INT:MUX.1.OMUX3.S[4]">INT:MUX.1.OMUX3.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX3.S" title="INT:MUX.0.OMUX3.S[4]">INT:MUX.0.OMUX3.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX0.S" title="INT:MUX.0.OMUX0.S[3]">INT:MUX.0.OMUX0.S[3]</a></td></tr>
+<tr><td>55</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>56</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>57</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>58</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>59</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>60</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX4.S" title="INT:MUX.1.OMUX4.S[4]">INT:MUX.1.OMUX4.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX5.S" title="INT:MUX.1.OMUX5.S[0]">INT:MUX.1.OMUX5.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX5.S" title="INT:MUX.0.OMUX5.S[0]">INT:MUX.0.OMUX5.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX4.S" title="INT:MUX.0.OMUX4.S[4]">INT:MUX.0.OMUX4.S[4]</a></td></tr>
+<tr><td>61</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX4.S" title="INT:MUX.1.OMUX4.S[0]">INT:MUX.1.OMUX4.S[0]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX5.S" title="INT:MUX.1.OMUX5.S[1]">INT:MUX.1.OMUX5.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX5.S" title="INT:MUX.0.OMUX5.S[1]">INT:MUX.0.OMUX5.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX4.S" title="INT:MUX.0.OMUX4.S[0]">INT:MUX.0.OMUX4.S[0]</a></td></tr>
+<tr><td>62</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX4.S" title="INT:MUX.1.OMUX4.S[1]">INT:MUX.1.OMUX4.S[1]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX5.S" title="INT:MUX.1.OMUX5.S[2]">INT:MUX.1.OMUX5.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX5.S" title="INT:MUX.0.OMUX5.S[2]">INT:MUX.0.OMUX5.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX4.S" title="INT:MUX.0.OMUX4.S[1]">INT:MUX.0.OMUX4.S[1]</a></td></tr>
+<tr><td>63</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX4.S" title="INT:MUX.1.OMUX4.S[2]">INT:MUX.1.OMUX4.S[2]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX5.S" title="INT:MUX.1.OMUX5.S[3]">INT:MUX.1.OMUX5.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX5.S" title="INT:MUX.0.OMUX5.S[3]">INT:MUX.0.OMUX5.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX4.S" title="INT:MUX.0.OMUX4.S[2]">INT:MUX.0.OMUX4.S[2]</a></td></tr>
+<tr><td>64</td>
+<td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX4.S" title="INT:MUX.1.OMUX4.S[3]">INT:MUX.1.OMUX4.S[3]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX5.S" title="INT:MUX.1.OMUX5.S[4]">INT:MUX.1.OMUX5.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX5.S" title="INT:MUX.0.OMUX5.S[4]">INT:MUX.0.OMUX5.S[4]</a></td><td><a href="#bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX4.S" title="INT:MUX.0.OMUX4.S[3]">INT:MUX.0.OMUX4.S[3]</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK0">
+<tr><th>INT:MUX.0.CLK.IMUX.CLK0</th><th>[0, 0, 2]</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th><th>[0, 0, 3]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W1.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.W2.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W0.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W1.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E0.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E2.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E0.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E1.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK1">
+<tr><th>INT:MUX.0.CLK.IMUX.CLK1</th><th>[0, 0, 14]</th><th>[0, 0, 19]</th><th>[0, 0, 18]</th><th>[0, 0, 17]</th><th>[0, 0, 16]</th><th>[0, 0, 15]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W3.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W4.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.DBL.W2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W3.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W4.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E3.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E4.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E2.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E3.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E4.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK2">
+<tr><th>INT:MUX.0.CLK.IMUX.CLK2</th><th>[0, 0, 26]</th><th>[0, 0, 31]</th><th>[0, 0, 30]</th><th>[0, 0, 29]</th><th>[0, 0, 28]</th><th>[0, 0, 27]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W5.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W6.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.W7.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W5.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W6.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E5.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E6.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E7.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E5.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E6.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK3">
+<tr><th>INT:MUX.0.CLK.IMUX.CLK3</th><th>[0, 0, 38]</th><th>[0, 0, 43]</th><th>[0, 0, 42]</th><th>[0, 0, 41]</th><th>[0, 0, 40]</th><th>[0, 0, 39]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W8.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W9.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.DBL.W7.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W8.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W9.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E8.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E9.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E7.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E8.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E9.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX0.S">
+<tr><th>INT:MUX.1.OMUX0.S</th><th>[0, 0, 50]</th><th>[0, 0, 54]</th><th>[0, 0, 53]</th><th>[0, 0, 52]</th><th>[0, 0, 51]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.5</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.6</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX4.S">
+<tr><th>INT:MUX.1.OMUX4.S</th><th>[0, 0, 60]</th><th>[0, 0, 64]</th><th>[0, 0, 63]</th><th>[0, 0, 62]</th><th>[0, 0, 61]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.5</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.6</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL0">
+<tr><th>INT:MUX.0.CLK.IMUX.SEL0</th><th>[0, 1, 7]</th><th>[0, 1, 6]</th><th>[0, 1, 5]</th><th>[0, 1, 4]</th><th>[0, 1, 3]</th><th>[0, 1, 2]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W1.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.W2.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W0.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W1.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E0.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E2.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E0.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E1.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL1">
+<tr><th>INT:MUX.0.CLK.IMUX.SEL1</th><th>[0, 1, 19]</th><th>[0, 1, 18]</th><th>[0, 1, 17]</th><th>[0, 1, 16]</th><th>[0, 1, 15]</th><th>[0, 1, 14]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W3.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W4.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.DBL.W2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W3.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W4.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E3.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E4.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E2.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E3.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E4.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL2">
+<tr><th>INT:MUX.0.CLK.IMUX.SEL2</th><th>[0, 1, 31]</th><th>[0, 1, 30]</th><th>[0, 1, 29]</th><th>[0, 1, 28]</th><th>[0, 1, 27]</th><th>[0, 1, 26]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W5.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W6.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.W7.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W5.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W6.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E5.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E6.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E7.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E5.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E6.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL3">
+<tr><th>INT:MUX.0.CLK.IMUX.SEL3</th><th>[0, 1, 43]</th><th>[0, 1, 42]</th><th>[0, 1, 41]</th><th>[0, 1, 40]</th><th>[0, 1, 39]</th><th>[0, 1, 38]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W8.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W9.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.DBL.W7.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W8.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W9.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E8.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E9.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E7.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E8.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E9.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX3.S">
+<tr><th>INT:MUX.1.OMUX3.S</th><th>[0, 1, 54]</th><th>[0, 1, 53]</th><th>[0, 1, 52]</th><th>[0, 1, 51]</th><th>[0, 1, 50]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.5</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.6</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.1.OMUX5.S">
+<tr><th>INT:MUX.1.OMUX5.S</th><th>[0, 1, 64]</th><th>[0, 1, 63]</th><th>[0, 1, 62]</th><th>[0, 1, 61]</th><th>[0, 1, 60]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.5</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.6</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL4">
+<tr><th>INT:MUX.0.CLK.IMUX.SEL4</th><th>[0, 2, 7]</th><th>[0, 2, 6]</th><th>[0, 2, 5]</th><th>[0, 2, 4]</th><th>[0, 2, 3]</th><th>[0, 2, 2]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W1.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.W2.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W0.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W1.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E0.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E2.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E0.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E1.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL5">
+<tr><th>INT:MUX.0.CLK.IMUX.SEL5</th><th>[0, 2, 19]</th><th>[0, 2, 18]</th><th>[0, 2, 17]</th><th>[0, 2, 16]</th><th>[0, 2, 15]</th><th>[0, 2, 14]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W3.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W4.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.DBL.W2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W3.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W4.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E3.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E4.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E2.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E3.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E4.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL6">
+<tr><th>INT:MUX.0.CLK.IMUX.SEL6</th><th>[0, 2, 31]</th><th>[0, 2, 30]</th><th>[0, 2, 29]</th><th>[0, 2, 28]</th><th>[0, 2, 27]</th><th>[0, 2, 26]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W5.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W6.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.W7.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W5.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W6.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E5.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E6.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E7.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E5.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E6.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.SEL7">
+<tr><th>INT:MUX.0.CLK.IMUX.SEL7</th><th>[0, 2, 43]</th><th>[0, 2, 42]</th><th>[0, 2, 41]</th><th>[0, 2, 40]</th><th>[0, 2, 39]</th><th>[0, 2, 38]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W8.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W9.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.DBL.W7.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W8.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W9.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E8.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E9.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E7.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E8.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E9.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX3.S">
+<tr><th>INT:MUX.0.OMUX3.S</th><th>[0, 2, 54]</th><th>[0, 2, 53]</th><th>[0, 2, 52]</th><th>[0, 2, 51]</th><th>[0, 2, 50]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.3</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.5</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.6</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.7</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX5.S">
+<tr><th>INT:MUX.0.OMUX5.S</th><th>[0, 2, 64]</th><th>[0, 2, 63]</th><th>[0, 2, 62]</th><th>[0, 2, 61]</th><th>[0, 2, 60]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.3</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.5</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.6</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.7</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK4">
+<tr><th>INT:MUX.0.CLK.IMUX.CLK4</th><th>[0, 3, 2]</th><th>[0, 3, 7]</th><th>[0, 3, 6]</th><th>[0, 3, 5]</th><th>[0, 3, 4]</th><th>[0, 3, 3]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W1.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.W2.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W0.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W1.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E0.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E2.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E0.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E1.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK5">
+<tr><th>INT:MUX.0.CLK.IMUX.CLK5</th><th>[0, 3, 14]</th><th>[0, 3, 19]</th><th>[0, 3, 18]</th><th>[0, 3, 17]</th><th>[0, 3, 16]</th><th>[0, 3, 15]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W3.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W4.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.DBL.W2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W3.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W4.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E3.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E4.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E2.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E3.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E4.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK6">
+<tr><th>INT:MUX.0.CLK.IMUX.CLK6</th><th>[0, 3, 26]</th><th>[0, 3, 31]</th><th>[0, 3, 30]</th><th>[0, 3, 29]</th><th>[0, 3, 28]</th><th>[0, 3, 27]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W5.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W6.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.W7.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W5.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W6.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E5.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E6.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E7.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E5.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E6.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.CLK.IMUX.CLK7">
+<tr><th>INT:MUX.0.CLK.IMUX.CLK7</th><th>[0, 3, 38]</th><th>[0, 3, 43]</th><th>[0, 3, 42]</th><th>[0, 3, 41]</th><th>[0, 3, 40]</th><th>[0, 3, 39]</th></tr>
+<tr><td>0.PULLUP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.W8.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.W9.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.DBL.W7.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W8.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.DBL.W9.0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E8.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.DBL.E9.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.DBL.E7.1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E8.1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.DBL.E9.1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX0.S">
+<tr><th>INT:MUX.0.OMUX0.S</th><th>[0, 3, 50]</th><th>[0, 3, 54]</th><th>[0, 3, 53]</th><th>[0, 3, 52]</th><th>[0, 3, 51]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.3</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.5</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.6</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.7</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-xc2v-CLKT.V2P-INT:MUX.0.OMUX4.S">
+<tr><th>INT:MUX.0.OMUX4.S</th><th>[0, 3, 60]</th><th>[0, 3, 64]</th><th>[0, 3, 63]</th><th>[0, 3, 62]</th><th>[0, 3, 61]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.3</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.CLK.OUT.5</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.6</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.CLK.OUT.7</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+</section>
+<section id="clkt-v2px">
+<h4><code class="docutils literal notranslate"><span class="pre">CLKT.V2PX</span></code><a class="headerlink" href="#clkt-v2px" title="Link to this heading"></a></h4>
+<p>This tile is used on Virtex 2 Pro X devices.</p>
 <table class="docutils align-default prjcombine-tile">
 <tr><th rowspan="2">Row</th><th colspan="4">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th></tr>
 <tr><td>0</td>
@@ -2912,6 +2939,21 @@
 <tr><td>0.CLK.OUT.7</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
 </table>
 </section>
+</section>
+</section>
+<section id="the-gclkc-clock-spine-distribution-tiles">
+<h2>The <code class="docutils literal notranslate"><span class="pre">GCLKC</span></code> clock spine distribution tiles<a class="headerlink" href="#the-gclkc-clock-spine-distribution-tiles" title="Link to this heading"></a></h2>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>document</p>
+</div>
+</section>
+<section id="the-clock-row-distribution-tiles">
+<h2>The clock row distribution tiles<a class="headerlink" href="#the-clock-row-distribution-tiles" title="Link to this heading"></a></h2>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<p>document</p>
+</div>
 </section>
 </section>
 
