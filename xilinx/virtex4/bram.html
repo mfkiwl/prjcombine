@@ -55,6 +55,8 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Xilinx Virtex 4 FPGAs</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="int.html">Interconnect</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Block RAM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fifo-mode">FIFO mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ecc-mode">ECC mode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#bitstream">Bitstream</a></li>
 </ul>
 </li>
@@ -94,9 +96,206 @@
            <div itemprop="articleBody">
              
   <section id="block-ram">
-<h1>Block RAM<a class="headerlink" href="#block-ram" title="Link to this heading"></a></h1>
+<span id="virtex4-bram"></span><h1>Block RAM<a class="headerlink" href="#block-ram" title="Link to this heading"></a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">BRAM</span></code> tile contains one bel, the block RAM. It corresponds to four vertically stacked interconnect tiles. The <code class="docutils literal notranslate"><span class="pre">BRAM</span></code> bel is a significantly improved version of the Virtex 2 block RAM, introducing:</p>
+<ul class="simple">
+<li><p>optional data output pipeline registers</p></li>
+<li><p>hardware ECC encoder and decoder (with error correction)</p></li>
+<li><p>per-byte write enable</p></li>
+<li><p>cascade capability, for chaining two vertically adjacent BRAMs into one 32768×1 RAM</p></li>
+<li><p>independent read and write width for a port</p></li>
+<li><p>hardware FIFO controller</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">BRAM</span></code> bel can be used in three ways:</p>
+<ul class="simple">
+<li><p>plain RAM mode, corresponding to <code class="docutils literal notranslate"><span class="pre">RAMB16</span></code> library primitive</p></li>
+<li><p>ECC RAM mode, corresponding to <code class="docutils literal notranslate"><span class="pre">RAMB32_S64_ECC</span></code> library primitive; this requires a pair of <code class="docutils literal notranslate"><span class="pre">BRAM</span></code> tiles, aligned to a multiple of 8 rows</p></li>
+<li><p>FIFO mode, corresponding to <code class="docutils literal notranslate"><span class="pre">FIFO16</span></code> library primitive</p></li>
+</ul>
+<p>The bel has the following inputs connected via general interconnect:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CLK[AB]</span></code> (freely invertible through the interconnect): clocks for port A and port B</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EN[AB]</span></code> (freely invertible through the interconnect): enable for port A and port B</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SSR[AB]</span></code> (freely invertible through the interconnect): synchronous set/reset for the read ports</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REGCE[AB]</span></code> (freely invertible through the interconnect): pipeline register clock enable for read ports</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WE[AB][0-3]</span></code> (freely invertible through the bel): per-byte write enable for port A and port B</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ADDR[AB]0</span></code> through <code class="docutils literal notranslate"><span class="pre">ADDR[AB]14</span></code>, the address buses for port A and port B; <code class="docutils literal notranslate"><span class="pre">ADDR[AB]14</span></code> is used only for cascade mode, and must be tied high otherwise</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DI[AB]0</span></code> through <code class="docutils literal notranslate"><span class="pre">DI[AB]31</span></code>: the main data input for port A and port B</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DIP[AB]0</span></code> through <code class="docutils literal notranslate"><span class="pre">DIP[AB]3</span></code>: the parity data input for port A and port B</p></li>
+</ul>
+<p>The bel has the following output pins connected via general interconnect:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DO[AB]0</span></code> through <code class="docutils literal notranslate"><span class="pre">DO[AB]31</span></code>: the main data output for port A and port B</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOP[AB]0</span></code> through <code class="docutils literal notranslate"><span class="pre">DOP[AB]3</span></code>: the parity data output for port A and port B</p></li>
+</ul>
+<p>The bel also has special pins routed through dedicated interconnect:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CASCADEOUT[AB]</span></code>: cascade outputs, used to implement the cascade function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CASCADEIN[AB]</span></code>: cascade inputs, connected to the <code class="docutils literal notranslate"><span class="pre">CASCADEOUT[AB]</span></code> pins of the BRAM in the tile immediately below</p></li>
+</ul>
+<p>The cascade is not routed across PowerPC holes — cascade functionality cannot be used between BRAMs on two sides of the PowerPC hole.</p>
+<p>The attributes of the <code class="docutils literal notranslate"><span class="pre">BRAM</span></code> bel are:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">MODE</span></code>: selects the operating mode of the bel</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RAM</span></code>: implements a RAM</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FIFO</span></code>: implements a FIFO</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WE[AB][0-3]INV</span></code>: when set, the corresponding pin is inverted</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EN_ECC_READ</span></code> (4-bit value) and <code class="docutils literal notranslate"><span class="pre">EN_ECC_WRITE</span></code> (4-bit value): must all be set when in ECC mode, exact workings unknown</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">READ_WIDTH_[AB]</span></code> selects the read width of the given port; the values are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">DO[AB]0</span></code> is used for data, <code class="docutils literal notranslate"><span class="pre">ADDR[AB][0-14]</span></code> is used for address</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code>: <code class="docutils literal notranslate"><span class="pre">DO[AB][01]</span></code> is used for data, <code class="docutils literal notranslate"><span class="pre">ADDR[AB][1-14]</span></code> is used for address</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">4</span></code>: <code class="docutils literal notranslate"><span class="pre">DO[AB][0-3]</span></code> is used for data, <code class="docutils literal notranslate"><span class="pre">ADDR[AB][2-14]</span></code> is used for address</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">9</span></code>: <code class="docutils literal notranslate"><span class="pre">DO[AB][0-7]</span></code> and <code class="docutils literal notranslate"><span class="pre">DOP[AB]0</span></code> are used for data, <code class="docutils literal notranslate"><span class="pre">ADDR[AB][3-14]</span></code> is used for address</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">18</span></code>: <code class="docutils literal notranslate"><span class="pre">DO[AB][0-15]</span></code> and <code class="docutils literal notranslate"><span class="pre">DOP[AB][01]</span></code> are used for data, <code class="docutils literal notranslate"><span class="pre">ADDR[AB][4-14]</span></code> is used for address</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">36</span></code>: <code class="docutils literal notranslate"><span class="pre">DO[AB][0-31]</span></code> and <code class="docutils literal notranslate"><span class="pre">DOP[AB][0-3]</span></code> are used for data, <code class="docutils literal notranslate"><span class="pre">ADDR[AB][5-14]</span></code> is used for address</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WRITE_WIDTH_[AB]</span></code> selects the write width of the given port; the values are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: <code class="docutils literal notranslate"><span class="pre">DI[AB]0</span></code> is used for data, <code class="docutils literal notranslate"><span class="pre">ADDR[AB][0-14]</span></code> is used for address</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code>: <code class="docutils literal notranslate"><span class="pre">DI[AB][01]</span></code> is used for data, <code class="docutils literal notranslate"><span class="pre">ADDR[AB][1-14]</span></code> is used for address</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">4</span></code>: <code class="docutils literal notranslate"><span class="pre">DI[AB][0-3]</span></code> is used for data, <code class="docutils literal notranslate"><span class="pre">ADDR[AB][2-14]</span></code> is used for address</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">9</span></code>: <code class="docutils literal notranslate"><span class="pre">DI[AB][0-7]</span></code> and <code class="docutils literal notranslate"><span class="pre">DIP[AB]0</span></code> are used for data, <code class="docutils literal notranslate"><span class="pre">ADDR[AB][3-14]</span></code> is used for address</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">18</span></code>: <code class="docutils literal notranslate"><span class="pre">DI[AB][0-15]</span></code> and <code class="docutils literal notranslate"><span class="pre">DIP[AB][01]</span></code> are used for data, <code class="docutils literal notranslate"><span class="pre">ADDR[AB][4-14]</span></code> is used for address</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">36</span></code>: <code class="docutils literal notranslate"><span class="pre">DI[AB][0-31]</span></code> and <code class="docutils literal notranslate"><span class="pre">DIP[AB][0-3]</span></code> are used for data, <code class="docutils literal notranslate"><span class="pre">ADDR[AB][5-14]</span></code> is used for address</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FIFO_DATA_WIDTH</span></code>: selects the data width when in FIFO mode; must be equal to <code class="docutils literal notranslate"><span class="pre">READ_WIDTH_A</span></code> and <code class="docutils literal notranslate"><span class="pre">WRITE_WIDTH_B</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WRITE_MODE_[AB]</span></code>: selects behavior of the read port when writing, the values are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">WRITE_FIRST</span></code>: data output shows just-written data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">READ_FIRST</span></code>: data output shows data previously in memory at the given address</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NO_CHANGE</span></code>: the data output is unchanged from previous cycle</p></li>
+</ul>
+<p>Both of these attributes must be set to <code class="docutils literal notranslate"><span class="pre">WRITE_FIRST</span></code> in FIFO mode.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SRVAL_[AB]</span></code> (36-bit value): selects the set/reset value of the read port; the low 32 bits correspond to <code class="docutils literal notranslate"><span class="pre">DO[AB][0-31]</span></code> while the high 4 bits correspond to <code class="docutils literal notranslate"><span class="pre">DOP[AB][0-3]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INIT_[AB]</span></code> (36-bit value): selects the initial value of the read port; the low 32 bits correspond to <code class="docutils literal notranslate"><span class="pre">DO[AB][0-31]</span></code> while the high 4 bits correspond to <code class="docutils literal notranslate"><span class="pre">DOP[AB][0-3]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DO[AB]_REG</span></code> : selects number of pipeline registers for read port</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: no pipeline registers, just output latches; same behavior as older FPGAs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: one additional pipeline register on the read port</p></li>
+</ul>
+<p>Both of these attributes must be set to <code class="docutils literal notranslate"><span class="pre">WRITE_FIRST</span></code> in FIFO mode.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RAM_EXTENSION_[AB]</span></code>: controls the cascade mode for the given port</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">NONE_UPPER</span></code>: the port is not in cascade mode, or it is the upper BRAM in cascade mode</p>
+<ul class="simple">
+<li><p>when <code class="docutils literal notranslate"><span class="pre">ADDR[AB]14</span></code> is high, data is written to BRAM and/or read from BRAM</p></li>
+<li><p>when <code class="docutils literal notranslate"><span class="pre">ADDR[AB]14</span></code> is low, data is not written to BRAM; read data is forwarded from <code class="docutils literal notranslate"><span class="pre">CASCADEIN[AB]</span></code></p></li>
+</ul>
+<p>If the BRAM is not part of cascade, <code class="docutils literal notranslate"><span class="pre">ADDR[AB]14</span></code> should be tied high.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LOWER</span></code>: the port is the lower BRAM in cascade mode</p>
+<ul class="simple">
+<li><p>when <code class="docutils literal notranslate"><span class="pre">ADDR[AB]14</span></code> is high, data is not written to BRAM</p></li>
+<li><p>when <code class="docutils literal notranslate"><span class="pre">ADDR[AB]14</span></code> is low, data is written to BRAM</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INVERT_CLK_DO[AB]_REG</span></code>: if set, the clock controlling the pipeline register is inverted from <code class="docutils literal notranslate"><span class="pre">CLK[AB]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DATA</span></code> (16384-bit value): the initial data for the BRAM main plane; corresponds to concatenation of <code class="docutils literal notranslate"><span class="pre">INIT_xx</span></code> primitive attributes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DATAP</span></code> (2048-bit value): the initial data for the BRAM parity plane; corresponds to concatenation of <code class="docutils literal notranslate"><span class="pre">INITP_xx</span></code> primitive attributes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SAVEDATA</span></code> (64-bit value): if set, the BRAM data will not be written during partial reconfiguration; the attribute has one bit per frame of the bitstream BRAM data tile</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FIRST_WORD_FALL_THROUGH</span></code>: like the corresponding <code class="docutils literal notranslate"><span class="pre">FIFO16</span></code> attribute</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ALMOST_FULL_OFFSET</span></code> (12-bit value): like the corresponding <code class="docutils literal notranslate"><span class="pre">FIFO16</span></code> attribute</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ALMOST_EMPTY_OFFSET</span></code> (12-bit value): like the corresponding <code class="docutils literal notranslate"><span class="pre">FIFO16</span></code> attribute, except the bitstream value is:</p>
+<ul class="simple">
+<li><p>1 smaller then primitive attribute when not in FWFT mode</p></li>
+<li><p>2 smaller then primitive attribute when in FWFT mode</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WW_VALUE</span></code>: unknown purpose, must be set to <code class="docutils literal notranslate"><span class="pre">NONE</span></code></p></li>
+</ul>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>details of <code class="docutils literal notranslate"><span class="pre">SAVEDATA</span></code></p>
+</div>
+<section id="fifo-mode">
+<h2>FIFO mode<a class="headerlink" href="#fifo-mode" title="Link to this heading"></a></h2>
+<p>When used in FIFO mode, the pins are repurposed as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CLKA</span></code>: becomes <code class="docutils literal notranslate"><span class="pre">RDCLK</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CLKB</span></code>: becomes <code class="docutils literal notranslate"><span class="pre">WRCLK</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ENA</span></code>: becomes <code class="docutils literal notranslate"><span class="pre">RDEN</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ENB</span></code>: becomes <code class="docutils literal notranslate"><span class="pre">WREN</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SSRA</span></code>: becomes <code class="docutils literal notranslate"><span class="pre">RST</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SSRB</span></code>: unused</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REGCE[AB]</span></code>: unused</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WE[AB]*</span></code>: unused</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ADDR[AB]*</span></code>: unused; address generation is done internally by FIFO logic</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DIB*</span></code> and <code class="docutils literal notranslate"><span class="pre">DIPB*</span></code>: used as <code class="docutils literal notranslate"><span class="pre">DI*</span></code> and <code class="docutils literal notranslate"><span class="pre">DIP*</span></code>, the data input</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DIA*</span></code> and <code class="docutils literal notranslate"><span class="pre">DIPA*</span></code>: unused</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOA*</span></code> and <code class="docutils literal notranslate"><span class="pre">DOPA*</span></code>: used as <code class="docutils literal notranslate"><span class="pre">DO*</span></code> and <code class="docutils literal notranslate"><span class="pre">DOP*</span></code>, the data output</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOB[0-3]</span></code>: becomes <code class="docutils literal notranslate"><span class="pre">RDCOUNT[0-3]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOB4</span></code>: unused</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOB5</span></code>: becomes <code class="docutils literal notranslate"><span class="pre">RDERR</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOB6</span></code>: becomes <code class="docutils literal notranslate"><span class="pre">ALMOSTEMPTY</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOB7</span></code>: becomes <code class="docutils literal notranslate"><span class="pre">EMPTY</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOB8</span></code>: becomes <code class="docutils literal notranslate"><span class="pre">FULL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOB9</span></code>: becomes <code class="docutils literal notranslate"><span class="pre">ALMOSTFULL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOB10</span></code>: becomes <code class="docutils literal notranslate"><span class="pre">WRERR</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOB11</span></code>: unused</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOB[12-15]</span></code>: becomes <code class="docutils literal notranslate"><span class="pre">RDCOUNT[8-11]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOB[16-23]</span></code>: becomes <code class="docutils literal notranslate"><span class="pre">WRCOUNT[0-7]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOB[24-27]</span></code>: becomes <code class="docutils literal notranslate"><span class="pre">RDCOUNT[4-7]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOB[28-31]</span></code>: becomes <code class="docutils literal notranslate"><span class="pre">WRCOUNT[8-11]</span></code></p></li>
+</ul>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>details of FIFO mode</p>
+</div>
+</section>
+<section id="ecc-mode">
+<h2>ECC mode<a class="headerlink" href="#ecc-mode" title="Link to this heading"></a></h2>
+<p>To use the ECC mode an implement a <code class="docutils literal notranslate"><span class="pre">RAMB32_S64_ECC</span></code> primitive, do the following:</p>
+<ul class="simple">
+<li><p>pick a pair of aligned adjacent BRAM tiles (the lower one having bottom row index divisible by 8)</p></li>
+<li><p>use the <code class="docutils literal notranslate"><span class="pre">A</span></code> port for reading, <code class="docutils literal notranslate"><span class="pre">B</span></code> port for writing</p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">CLK[AB]</span></code>, <code class="docutils literal notranslate"><span class="pre">EN[AB]</span></code>, <code class="docutils literal notranslate"><span class="pre">ADDR[AB]</span></code> appropriately, mirroring them across both BRAMs</p></li>
+<li><p>tie <code class="docutils literal notranslate"><span class="pre">WEA*</span></code> low, <code class="docutils literal notranslate"><span class="pre">WEB*</span></code> high</p></li>
+<li><p>tie <code class="docutils literal notranslate"><span class="pre">REGCEA</span></code> high</p></li>
+<li><p>tie <code class="docutils literal notranslate"><span class="pre">SSR[AB]</span></code> low</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">DOA_REG</span></code> appropriately</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">EN_ECC_READ</span></code> and <code class="docutils literal notranslate"><span class="pre">EN_ECC_WRITE</span></code> to all-1</p></li>
+<li><p>set <code class="docutils literal notranslate"><span class="pre">READ_WIDTH_[AB]</span></code> and <code class="docutils literal notranslate"><span class="pre">WRITE_WIDTH_[AB]</span></code> to <code class="docutils literal notranslate"><span class="pre">36</span></code></p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">DI</span></code> and <code class="docutils literal notranslate"><span class="pre">DO</span></code> of the primitive as follows:</p>
+<ul>
+<li><p>bits 0-13 to lower <code class="docutils literal notranslate"><span class="pre">D{IB|OA}[0-13]</span></code></p></li>
+<li><p>bit 14 to lower <code class="docutils literal notranslate"><span class="pre">D{IB|OA}P1</span></code></p></li>
+<li><p>bit 15 to lower <code class="docutils literal notranslate"><span class="pre">D{IB|OA}P3</span></code></p></li>
+<li><p>bits 16-29 to lower <code class="docutils literal notranslate"><span class="pre">D{IB|OA}[16-19]</span></code></p></li>
+<li><p>bit 30 to lower <code class="docutils literal notranslate"><span class="pre">D{IB|OA}P0</span></code></p></li>
+<li><p>bit 31 to lower <code class="docutils literal notranslate"><span class="pre">D{IB|OA}P2</span></code></p></li>
+<li><p>bits 32-45 to upper <code class="docutils literal notranslate"><span class="pre">D{IB|OA}[0-13]</span></code></p></li>
+<li><p>bit 46 to upper <code class="docutils literal notranslate"><span class="pre">D{IB|OA}P1</span></code></p></li>
+<li><p>bit 47 to upper <code class="docutils literal notranslate"><span class="pre">D{IB|OA}P3</span></code></p></li>
+<li><p>bits 48-61 to upper <code class="docutils literal notranslate"><span class="pre">D{IB|OA}[16-19]</span></code></p></li>
+<li><p>bit 62 to upper <code class="docutils literal notranslate"><span class="pre">D{IB|OA}P0</span></code></p></li>
+<li><p>bit 63 to upper <code class="docutils literal notranslate"><span class="pre">D{IB|OA}P2</span></code></p></li>
+</ul>
+</li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">STATUS[0]</span></code> of the primitive to lower <code class="docutils literal notranslate"><span class="pre">DOA31</span></code></p></li>
+<li><p>connect <code class="docutils literal notranslate"><span class="pre">STATUS[0]</span></code> of the primitive to upper <code class="docutils literal notranslate"><span class="pre">DOA0</span></code></p></li>
+</ul>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>details of ECC mode</p>
+</div>
+</section>
 <section id="bitstream">
 <h2>Bitstream<a class="headerlink" href="#bitstream" title="Link to this heading"></a></h2>
+<p>The data for a BRAM is spread across 5 bitstream tiles:</p>
+<ul class="simple">
+<li><p>tiles 0-3: the 4 bitstream tiles that are shared with the <code class="docutils literal notranslate"><span class="pre">INT</span></code> interconnect tiles (starting from the bottom)</p></li>
+<li><p>tile 4: the dedicated BRAM data tile located in the BRAM data area; this tile is 64×320 bits; it contains solely the <code class="docutils literal notranslate"><span class="pre">DATA</span></code> and <code class="docutils literal notranslate"><span class="pre">DATAP</span></code> attributes and the <code class="docutils literal notranslate"><span class="pre">SAVEDATA</span></code> attribute</p></li>
+</ul>
 <table class="docutils align-default prjcombine-tile">
 <tr><th rowspan="2">Row</th><th colspan="20">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th></tr>
 <tr><td>0</td>

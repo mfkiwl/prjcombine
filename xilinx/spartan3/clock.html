@@ -56,17 +56,15 @@
 <li class="toctree-l3"><a class="reference internal" href="interconnect.html">General interconnect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block — Spartan 3, Virtex 4</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP — Spartan 3A DSP, Spartan 6</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Clock interconnect</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#clock-source-spine-bottom-and-top">Clock source — spine bottom and top</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#bitstream-bottom-tiles">Bitstream — bottom tiles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#bitstream-top-tiles">Bitstream — top tiles</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Clock interconnect</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#clock-source-spine-bottom-and-top">Clock source — spine bottom and top</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#clock-source-left-and-right">Clock source — left and right</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-clkc-clock-center-tile">The <code class="docutils literal notranslate"><span class="pre">CLKC</span></code> clock center tile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-gclkvm-secondary-clock-center-tiles">The <code class="docutils literal notranslate"><span class="pre">GCLKVM</span></code> secondary clock center tiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-gclkvc-clock-spine-distribution-tiles">The <code class="docutils literal notranslate"><span class="pre">GCLKVC</span></code> clock spine distribution tiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-gclkh-clock-row-distribution-tiles">The <code class="docutils literal notranslate"><span class="pre">GCLKH</span></code> clock row distribution tiles</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#clock-source-left-and-right">Clock source — left and right</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-clkc-clock-center-tile">The <code class="docutils literal notranslate"><span class="pre">CLKC</span></code> clock center tile</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-gclkvm-secondary-clock-center-tiles">The <code class="docutils literal notranslate"><span class="pre">GCLKVM</span></code> secondary clock center tiles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-gclkvc-clock-spine-distribution-tiles">The <code class="docutils literal notranslate"><span class="pre">GCLKVC</span></code> clock spine distribution tiles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-gclkh-clock-row-distribution-tiles">The <code class="docutils literal notranslate"><span class="pre">GCLKH</span></code> clock row distribution tiles</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Xilinx Spartan 6 FPGAs</a></li>
@@ -109,15 +107,14 @@
 <p class="admonition-title">Todo</p>
 <p>document</p>
 </div>
-</section>
 <section id="clock-source-spine-bottom-and-top">
-<h1>Clock source — spine bottom and top<a class="headerlink" href="#clock-source-spine-bottom-and-top" title="Link to this heading"></a></h1>
+<h2>Clock source — spine bottom and top<a class="headerlink" href="#clock-source-spine-bottom-and-top" title="Link to this heading"></a></h2>
 <div class="admonition-todo admonition" id="id2">
 <p class="admonition-title">Todo</p>
 <p>document</p>
 </div>
 <section id="bitstream-bottom-tiles">
-<h2>Bitstream — bottom tiles<a class="headerlink" href="#bitstream-bottom-tiles" title="Link to this heading"></a></h2>
+<h3>Bitstream — bottom tiles<a class="headerlink" href="#bitstream-bottom-tiles" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">CLKB.*</span></code> tiles use two bitstream tiles:</p>
 <ul class="simple">
 <li><p>tile 0: 1×64 (Spartan 3, 3E) or 2×64 (Spartan 3A) tile located in the primary clock spine column, in the bits corresponding to the bottom interconnect row</p></li>
@@ -125,7 +122,7 @@
 </ul>
 <p>On Spartan 3A devices that have long line splitters, bitstream tile 0 is shared with the <code class="docutils literal notranslate"><span class="pre">LLH.CLKB.S3A</span></code> tile.</p>
 <section id="clkb-s3">
-<h3><code class="docutils literal notranslate"><span class="pre">CLKB.S3</span></code><a class="headerlink" href="#clkb-s3" title="Link to this heading"></a></h3>
+<h4><code class="docutils literal notranslate"><span class="pre">CLKB.S3</span></code><a class="headerlink" href="#clkb-s3" title="Link to this heading"></a></h4>
 <p>This tile is used on Spartan 3.</p>
 <table class="docutils align-default prjcombine-tile">
 <tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
@@ -409,7 +406,7 @@
 </table>
 </section>
 <section id="clkb-s3e">
-<h3><code class="docutils literal notranslate"><span class="pre">CLKB.S3E</span></code><a class="headerlink" href="#clkb-s3e" title="Link to this heading"></a></h3>
+<h4><code class="docutils literal notranslate"><span class="pre">CLKB.S3E</span></code><a class="headerlink" href="#clkb-s3e" title="Link to this heading"></a></h4>
 <p>This tile is used on Spartan 3E.</p>
 <table class="docutils align-default prjcombine-tile">
 <tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
@@ -701,7 +698,7 @@
 </table>
 </section>
 <section id="clkb-s3a">
-<h3><code class="docutils literal notranslate"><span class="pre">CLKB.S3A</span></code><a class="headerlink" href="#clkb-s3a" title="Link to this heading"></a></h3>
+<h4><code class="docutils literal notranslate"><span class="pre">CLKB.S3A</span></code><a class="headerlink" href="#clkb-s3a" title="Link to this heading"></a></h4>
 <p>This tile is used on Spartan 3A and 3A DSP.</p>
 <table class="docutils align-default prjcombine-tile">
 <tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
@@ -974,7 +971,7 @@
 </section>
 </section>
 <section id="bitstream-top-tiles">
-<h2>Bitstream — top tiles<a class="headerlink" href="#bitstream-top-tiles" title="Link to this heading"></a></h2>
+<h3>Bitstream — top tiles<a class="headerlink" href="#bitstream-top-tiles" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">CLKT.*</span></code> tiles use two bitstream tiles:</p>
 <ul class="simple">
 <li><p>tile 0: 1×64 (Spartan 3, 3E) or 2×64 (Spartan 3A) tile located in the primary clock spine column, in the bits corresponding to the top interconnect row</p></li>
@@ -982,7 +979,7 @@
 </ul>
 <p>On Spartan 3A devices that have long line splitters, bitstream tile 0 is shared with the <code class="docutils literal notranslate"><span class="pre">LLH.CLKT.S3A</span></code> tile.</p>
 <section id="clkt-s3">
-<h3><code class="docutils literal notranslate"><span class="pre">CLKT.S3</span></code><a class="headerlink" href="#clkt-s3" title="Link to this heading"></a></h3>
+<h4><code class="docutils literal notranslate"><span class="pre">CLKT.S3</span></code><a class="headerlink" href="#clkt-s3" title="Link to this heading"></a></h4>
 <p>This tile is used on Spartan 3.</p>
 <table class="docutils align-default prjcombine-tile">
 <tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
@@ -1258,7 +1255,7 @@
 </table>
 </section>
 <section id="clkt-s3e">
-<h3><code class="docutils literal notranslate"><span class="pre">CLKT.S3E</span></code><a class="headerlink" href="#clkt-s3e" title="Link to this heading"></a></h3>
+<h4><code class="docutils literal notranslate"><span class="pre">CLKT.S3E</span></code><a class="headerlink" href="#clkt-s3e" title="Link to this heading"></a></h4>
 <p>This tile is used on Spartan 3E.</p>
 <table class="docutils align-default prjcombine-tile">
 <tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
@@ -1542,7 +1539,7 @@
 </table>
 </section>
 <section id="clkt-s3a">
-<h3><code class="docutils literal notranslate"><span class="pre">CLKT.S3A</span></code><a class="headerlink" href="#clkt-s3a" title="Link to this heading"></a></h3>
+<h4><code class="docutils literal notranslate"><span class="pre">CLKT.S3A</span></code><a class="headerlink" href="#clkt-s3a" title="Link to this heading"></a></h4>
 <p>This tile is used on Spartan 3A and 3A DSP.</p>
 <table class="docutils align-default prjcombine-tile">
 <tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
@@ -1822,14 +1819,14 @@
 </section>
 </section>
 <section id="clock-source-left-and-right">
-<h1>Clock source — left and right<a class="headerlink" href="#clock-source-left-and-right" title="Link to this heading"></a></h1>
+<h2>Clock source — left and right<a class="headerlink" href="#clock-source-left-and-right" title="Link to this heading"></a></h2>
 <div class="admonition-todo admonition" id="id3">
 <p class="admonition-title">Todo</p>
 <p>document</p>
 </div>
 </section>
 <section id="the-clkc-clock-center-tile">
-<h1>The <code class="docutils literal notranslate"><span class="pre">CLKC</span></code> clock center tile<a class="headerlink" href="#the-clkc-clock-center-tile" title="Link to this heading"></a></h1>
+<h2>The <code class="docutils literal notranslate"><span class="pre">CLKC</span></code> clock center tile<a class="headerlink" href="#the-clkc-clock-center-tile" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">CLKC</span></code> tile is located in the center of the FPGA (intersection of primary vertical and horizontal clock spines) of all devices except <code class="docutils literal notranslate"><span class="pre">xc3s50a</span></code>. It has permanent buffers forwarding the clock signals from <code class="docutils literal notranslate"><span class="pre">CLKB</span></code> and <code class="docutils literal notranslate"><span class="pre">CLKT</span></code> to <code class="docutils literal notranslate"><span class="pre">GCLKVM</span></code>. It has no configuration.</p>
 <div class="admonition-todo admonition" id="id4">
 <p class="admonition-title">Todo</p>
@@ -1837,7 +1834,7 @@
 </div>
 </section>
 <section id="the-gclkvm-secondary-clock-center-tiles">
-<h1>The <code class="docutils literal notranslate"><span class="pre">GCLKVM</span></code> secondary clock center tiles<a class="headerlink" href="#the-gclkvm-secondary-clock-center-tiles" title="Link to this heading"></a></h1>
+<h2>The <code class="docutils literal notranslate"><span class="pre">GCLKVM</span></code> secondary clock center tiles<a class="headerlink" href="#the-gclkvm-secondary-clock-center-tiles" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">GCLKVM</span></code> tiles are located on the intersection of secondary vertical clock spines and the horizontal clock spine.</p>
 <p>The Spartan 3 version has permanent buffers forwarding the clock signals from <code class="docutils literal notranslate"><span class="pre">CLKC</span></code> to <code class="docutils literal notranslate"><span class="pre">GCLKVC</span></code> tiles. It has no configuration.</p>
 <p>The Spartan 3E and 3A versions multiplex clock signals from <code class="docutils literal notranslate"><span class="pre">CLK[LR]</span></code> and <code class="docutils literal notranslate"><span class="pre">CLKC</span></code> tiles.</p>
@@ -1847,18 +1844,19 @@
 </div>
 </section>
 <section id="the-gclkvc-clock-spine-distribution-tiles">
-<h1>The <code class="docutils literal notranslate"><span class="pre">GCLKVC</span></code> clock spine distribution tiles<a class="headerlink" href="#the-gclkvc-clock-spine-distribution-tiles" title="Link to this heading"></a></h1>
+<h2>The <code class="docutils literal notranslate"><span class="pre">GCLKVC</span></code> clock spine distribution tiles<a class="headerlink" href="#the-gclkvc-clock-spine-distribution-tiles" title="Link to this heading"></a></h2>
 <div class="admonition-todo admonition" id="id6">
 <p class="admonition-title">Todo</p>
 <p>document</p>
 </div>
 </section>
 <section id="the-gclkh-clock-row-distribution-tiles">
-<h1>The <code class="docutils literal notranslate"><span class="pre">GCLKH</span></code> clock row distribution tiles<a class="headerlink" href="#the-gclkh-clock-row-distribution-tiles" title="Link to this heading"></a></h1>
+<h2>The <code class="docutils literal notranslate"><span class="pre">GCLKH</span></code> clock row distribution tiles<a class="headerlink" href="#the-gclkh-clock-row-distribution-tiles" title="Link to this heading"></a></h2>
 <div class="admonition-todo admonition" id="id7">
 <p class="admonition-title">Todo</p>
 <p>document</p>
 </div>
+</section>
 </section>
 
 
