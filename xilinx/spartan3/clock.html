@@ -60,6 +60,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#clock-source-spine-bottom-and-top">Clock source — spine bottom and top</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#clock-source-left-and-right">Clock source — left and right</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#the-clkc-clock-center-tile">The <code class="docutils literal notranslate"><span class="pre">CLKC</span></code> clock center tile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-clkc-50a-clock-center-tile">The <code class="docutils literal notranslate"><span class="pre">CLKC_50A</span></code> clock center tile</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#the-gclkvm-secondary-clock-center-tiles">The <code class="docutils literal notranslate"><span class="pre">GCLKVM</span></code> secondary clock center tiles</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#the-gclkvc-clock-spine-distribution-tiles">The <code class="docutils literal notranslate"><span class="pre">GCLKVC</span></code> clock spine distribution tiles</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#the-gclkh-clock-row-distribution-tiles">The <code class="docutils literal notranslate"><span class="pre">GCLKH</span></code> clock row distribution tiles</a></li>
@@ -129,7 +130,7 @@
 <tr><td>0</td>
 <td><a href="#bits-xc3s-CLKB.S3-INT:MUX.OMUX10.N" title="INT:MUX.OMUX10.N[0]">INT:MUX.OMUX10.N[0]</a></td></tr>
 <tr><td>1</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-INT:INV.0.CLK.IMUX.SEL0" title="~INT:INV.0.CLK.IMUX.SEL0">~INT:INV.0.CLK.IMUX.SEL0</a></td></tr>
 <tr><td>2</td>
 <td><a href="#bits-xc3s-CLKB.S3-INT:MUX.CLK.IMUX.SEL0" title="INT:MUX.CLK.IMUX.SEL0[3]">INT:MUX.CLK.IMUX.SEL0[3]</a></td></tr>
 <tr><td>3</td>
@@ -147,23 +148,23 @@
 <tr><td>9</td>
 <td><a href="#bits-xc3s-CLKB.S3-INT:MUX.CLK.IMUX.CLK0" title="INT:MUX.CLK.IMUX.CLK0[3]">INT:MUX.CLK.IMUX.CLK0[3]</a></td></tr>
 <tr><td>10</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[0]">BUFGMUX0:CLKMUX[0]</a></td></tr>
 <tr><td>11</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[3]">BUFGMUX0:CLKMUX[3]</a></td></tr>
 <tr><td>12</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[2]">BUFGMUX0:CLKMUX[2]</a></td></tr>
 <tr><td>13</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[1]">BUFGMUX0:CLKMUX[1]</a></td></tr>
 <tr><td>14</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[0]">BUFGMUX1:CLKMUX[0]</a></td></tr>
 <tr><td>15</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[3]">BUFGMUX1:CLKMUX[3]</a></td></tr>
 <tr><td>16</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[2]">BUFGMUX1:CLKMUX[2]</a></td></tr>
 <tr><td>17</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[1]">BUFGMUX1:CLKMUX[1]</a></td></tr>
 <tr><td>18</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-BUFGMUX1:DISABLE_ATTR" title="BUFGMUX1:DISABLE_ATTR">BUFGMUX1:DISABLE_ATTR</a></td></tr>
 <tr><td>19</td>
 <td><a href="#bits-xc3s-CLKB.S3-INT:MUX.CLK.IMUX.CLK1" title="INT:MUX.CLK.IMUX.CLK1[2]">INT:MUX.CLK.IMUX.CLK1[2]</a></td></tr>
 <tr><td>20</td>
@@ -181,17 +182,17 @@
 <tr><td>26</td>
 <td><a href="#bits-xc3s-CLKB.S3-INT:MUX.CLK.IMUX.SEL1" title="INT:MUX.CLK.IMUX.SEL1[2]">INT:MUX.CLK.IMUX.SEL1[2]</a></td></tr>
 <tr><td>27</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-INT:INV.0.CLK.IMUX.SEL1" title="~INT:INV.0.CLK.IMUX.SEL1">~INT:INV.0.CLK.IMUX.SEL1</a></td></tr>
 <tr><td>28</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[0]">BUFGMUX2:CLKMUX[0]</a></td></tr>
 <tr><td>29</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[3]">BUFGMUX2:CLKMUX[3]</a></td></tr>
 <tr><td>30</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[2]">BUFGMUX2:CLKMUX[2]</a></td></tr>
 <tr><td>31</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[1]">BUFGMUX2:CLKMUX[1]</a></td></tr>
 <tr><td>32</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-BUFGMUX2:DISABLE_ATTR" title="BUFGMUX2:DISABLE_ATTR">BUFGMUX2:DISABLE_ATTR</a></td></tr>
 <tr><td>33</td>
 <td><a href="#bits-xc3s-CLKB.S3-INT:MUX.CLK.IMUX.CLK2" title="INT:MUX.CLK.IMUX.CLK2[2]">INT:MUX.CLK.IMUX.CLK2[2]</a></td></tr>
 <tr><td>34</td>
@@ -209,7 +210,7 @@
 <tr><td>40</td>
 <td><a href="#bits-xc3s-CLKB.S3-INT:MUX.CLK.IMUX.SEL2" title="INT:MUX.CLK.IMUX.SEL2[2]">INT:MUX.CLK.IMUX.SEL2[2]</a></td></tr>
 <tr><td>41</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-INT:INV.0.CLK.IMUX.SEL2" title="~INT:INV.0.CLK.IMUX.SEL2">~INT:INV.0.CLK.IMUX.SEL2</a></td></tr>
 <tr><td>42</td>
 <td><a href="#bits-xc3s-CLKB.S3-INT:MUX.OMUX12.N" title="INT:MUX.OMUX12.N[0]">INT:MUX.OMUX12.N[0]</a></td></tr>
 <tr><td>43</td>
@@ -223,15 +224,15 @@
 <tr><td>47</td>
 <td><a href="#bits-xc3s-CLKB.S3-INT:MUX.OMUX15.N" title="INT:MUX.OMUX15.N[2]">INT:MUX.OMUX15.N[2]</a></td></tr>
 <tr><td>48</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[0]">BUFGMUX3:CLKMUX[0]</a></td></tr>
 <tr><td>49</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[3]">BUFGMUX3:CLKMUX[3]</a></td></tr>
 <tr><td>50</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[2]">BUFGMUX3:CLKMUX[2]</a></td></tr>
 <tr><td>51</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[1]">BUFGMUX3:CLKMUX[1]</a></td></tr>
 <tr><td>52</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3-BUFGMUX3:DISABLE_ATTR" title="BUFGMUX3:DISABLE_ATTR">BUFGMUX3:DISABLE_ATTR</a></td></tr>
 <tr><td>53</td>
 <td><a href="#bits-xc3s-CLKB.S3-INT:MUX.CLK.IMUX.CLK3" title="INT:MUX.CLK.IMUX.CLK3[2]">INT:MUX.CLK.IMUX.CLK3[2]</a></td></tr>
 <tr><td>54</td>
@@ -248,6 +249,10 @@
 <td><a href="#bits-xc3s-CLKB.S3-INT:MUX.CLK.IMUX.SEL3" title="INT:MUX.CLK.IMUX.SEL3[3]">INT:MUX.CLK.IMUX.SEL3[3]</a></td></tr>
 <tr><td>60</td>
 <td><a href="#bits-xc3s-CLKB.S3-INT:MUX.CLK.IMUX.SEL3" title="INT:MUX.CLK.IMUX.SEL3[2]">INT:MUX.CLK.IMUX.SEL3[2]</a></td></tr>
+<tr><td>61</td>
+<td><a href="#bits-xc3s-CLKB.S3-INT:INV.0.CLK.IMUX.SEL3" title="~INT:INV.0.CLK.IMUX.SEL3">~INT:INV.0.CLK.IMUX.SEL3</a></td></tr>
+<tr><td>62</td>
+<td><a href="#bits-xc3s-CLKB.S3-BUFGMUX0:DISABLE_ATTR" title="BUFGMUX0:DISABLE_ATTR">BUFGMUX0:DISABLE_ATTR</a></td></tr>
 </table>
 <table class="docutils align-default prjcombine-tile">
 <tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
@@ -291,6 +296,17 @@
 <tr><td>CLK.OUT.0</td><td>1</td><td>0</td><td>1</td></tr>
 <tr><td>CLK.OUT.1</td><td>1</td><td>1</td><td>0</td></tr>
 </table>
+<div id="bits-xc3s-CLKB.S3-INT:INV.0.CLK.IMUX.SEL0"></div>
+<div id="bits-xc3s-CLKB.S3-INT:INV.0.CLK.IMUX.SEL1"></div>
+<div id="bits-xc3s-CLKB.S3-INT:INV.0.CLK.IMUX.SEL2"></div>
+<div id="bits-xc3s-CLKB.S3-INT:INV.0.CLK.IMUX.SEL3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:INV.0.CLK.IMUX.SEL0</th><th>[0, 0, 1]</th></tr>
+<tr><th>INT:INV.0.CLK.IMUX.SEL1</th><th>[0, 0, 27]</th></tr>
+<tr><th>INT:INV.0.CLK.IMUX.SEL2</th><th>[0, 0, 41]</th></tr>
+<tr><th>INT:INV.0.CLK.IMUX.SEL3</th><th>[0, 0, 61]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
 <div id="bits-xc3s-CLKB.S3-INT:MUX.CLK.IMUX.CLK0"></div>
 <div id="bits-xc3s-CLKB.S3-INT:MUX.CLK.IMUX.SEL0"></div>
 <table class="docutils align-default prjcombine-enum">
@@ -305,6 +321,32 @@
 <tr><td>DBL.E1.1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
 <tr><td>DBL.E0.0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
 <tr><td>DBL.E1.0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-CLKB.S3-BUFGMUX0:CLKMUX"></div>
+<div id="bits-xc3s-CLKB.S3-BUFGMUX1:CLKMUX"></div>
+<div id="bits-xc3s-CLKB.S3-BUFGMUX2:CLKMUX"></div>
+<div id="bits-xc3s-CLKB.S3-BUFGMUX3:CLKMUX"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:CLKMUX</th><th>[0, 0, 11]</th><th>[0, 0, 12]</th><th>[0, 0, 13]</th><th>[0, 0, 10]</th></tr>
+<tr><th>BUFGMUX1:CLKMUX</th><th>[0, 0, 15]</th><th>[0, 0, 16]</th><th>[0, 0, 17]</th><th>[0, 0, 14]</th></tr>
+<tr><th>BUFGMUX2:CLKMUX</th><th>[0, 0, 29]</th><th>[0, 0, 30]</th><th>[0, 0, 31]</th><th>[0, 0, 28]</th></tr>
+<tr><th>BUFGMUX3:CLKMUX</th><th>[0, 0, 49]</th><th>[0, 0, 50]</th><th>[0, 0, 51]</th><th>[0, 0, 48]</th></tr>
+<tr><td>INT</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKI</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>DCM_OUT_L</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>DCM_OUT_R</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-CLKB.S3-BUFGMUX0:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKB.S3-BUFGMUX1:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKB.S3-BUFGMUX2:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKB.S3-BUFGMUX3:DISABLE_ATTR"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:DISABLE_ATTR</th><th>[0, 0, 62]</th></tr>
+<tr><th>BUFGMUX1:DISABLE_ATTR</th><th>[0, 0, 18]</th></tr>
+<tr><th>BUFGMUX2:DISABLE_ATTR</th><th>[0, 0, 32]</th></tr>
+<tr><th>BUFGMUX3:DISABLE_ATTR</th><th>[0, 0, 52]</th></tr>
+<tr><td>LOW</td><td>0</td></tr>
+<tr><td>HIGH</td><td>1</td></tr>
 </table>
 <div id="bits-xc3s-CLKB.S3-INT:MUX.CLK.IMUX.CLK1"></div>
 <div id="bits-xc3s-CLKB.S3-INT:MUX.CLK.IMUX.SEL1"></div>
@@ -370,25 +412,25 @@
 <tr><td>5</td>
 <td><a href="#bits-xc3s-CLKB.S3E-INT:MUX.CLK.IMUX.CLK3" title="INT:MUX.CLK.IMUX.CLK3[3]">INT:MUX.CLK.IMUX.CLK3[3]</a></td></tr>
 <tr><td>6</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[0]">BUFGMUX3:CLKMUX[0]</a></td></tr>
 <tr><td>7</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[4]">BUFGMUX3:CLKMUX[4]</a></td></tr>
 <tr><td>8</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[3]">BUFGMUX3:CLKMUX[3]</a></td></tr>
 <tr><td>9</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[1]">BUFGMUX3:CLKMUX[1]</a></td></tr>
 <tr><td>10</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[2]">BUFGMUX3:CLKMUX[2]</a></td></tr>
 <tr><td>11</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[0]">BUFGMUX2:CLKMUX[0]</a></td></tr>
 <tr><td>12</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[4]">BUFGMUX2:CLKMUX[4]</a></td></tr>
 <tr><td>13</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[3]">BUFGMUX2:CLKMUX[3]</a></td></tr>
 <tr><td>14</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[1]">BUFGMUX2:CLKMUX[1]</a></td></tr>
 <tr><td>15</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[2]">BUFGMUX2:CLKMUX[2]</a></td></tr>
 <tr><td>16</td>
 <td><a href="#bits-xc3s-CLKB.S3E-INT:MUX.CLK.IMUX.CLK2" title="INT:MUX.CLK.IMUX.CLK2[3]">INT:MUX.CLK.IMUX.CLK2[3]</a></td></tr>
 <tr><td>17</td>
@@ -406,21 +448,21 @@
 <tr><td>23</td>
 <td><a href="#bits-xc3s-CLKB.S3E-INT:MUX.CLK.IMUX.SEL2" title="INT:MUX.CLK.IMUX.SEL2[3]">INT:MUX.CLK.IMUX.SEL2[3]</a></td></tr>
 <tr><td>24</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-INT:INV.0.CLK.IMUX.SEL2" title="~INT:INV.0.CLK.IMUX.SEL2">~INT:INV.0.CLK.IMUX.SEL2</a></td></tr>
 <tr><td>25</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX2:DISABLE_ATTR" title="BUFGMUX2:DISABLE_ATTR">BUFGMUX2:DISABLE_ATTR</a></td></tr>
 <tr><td>26</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[0]">BUFGMUX1:CLKMUX[0]</a></td></tr>
 <tr><td>27</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[4]">BUFGMUX1:CLKMUX[4]</a></td></tr>
 <tr><td>28</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[3]">BUFGMUX1:CLKMUX[3]</a></td></tr>
 <tr><td>29</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[1]">BUFGMUX1:CLKMUX[1]</a></td></tr>
 <tr><td>30</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[2]">BUFGMUX1:CLKMUX[2]</a></td></tr>
 <tr><td>31</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX1:DISABLE_ATTR" title="BUFGMUX1:DISABLE_ATTR">BUFGMUX1:DISABLE_ATTR</a></td></tr>
 <tr><td>32</td>
 <td><a href="#bits-xc3s-CLKB.S3E-INT:MUX.CLK.IMUX.CLK1" title="INT:MUX.CLK.IMUX.CLK1[3]">INT:MUX.CLK.IMUX.CLK1[3]</a></td></tr>
 <tr><td>33</td>
@@ -438,7 +480,7 @@
 <tr><td>39</td>
 <td><a href="#bits-xc3s-CLKB.S3E-INT:MUX.CLK.IMUX.SEL1" title="INT:MUX.CLK.IMUX.SEL1[3]">INT:MUX.CLK.IMUX.SEL1[3]</a></td></tr>
 <tr><td>40</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-INT:INV.0.CLK.IMUX.SEL1" title="~INT:INV.0.CLK.IMUX.SEL1">~INT:INV.0.CLK.IMUX.SEL1</a></td></tr>
 <tr><td>41</td>
 <td><a href="#bits-xc3s-CLKB.S3E-INT:MUX.OMUX12.N" title="INT:MUX.OMUX12.N[0]">INT:MUX.OMUX12.N[0]</a></td></tr>
 <tr><td>42</td>
@@ -452,17 +494,17 @@
 <tr><td>46</td>
 <td><a href="#bits-xc3s-CLKB.S3E-INT:MUX.OMUX15.N" title="INT:MUX.OMUX15.N[2]">INT:MUX.OMUX15.N[2]</a></td></tr>
 <tr><td>47</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[0]">BUFGMUX0:CLKMUX[0]</a></td></tr>
 <tr><td>48</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[4]">BUFGMUX0:CLKMUX[4]</a></td></tr>
 <tr><td>49</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[3]">BUFGMUX0:CLKMUX[3]</a></td></tr>
 <tr><td>50</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[1]">BUFGMUX0:CLKMUX[1]</a></td></tr>
 <tr><td>51</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[2]">BUFGMUX0:CLKMUX[2]</a></td></tr>
 <tr><td>52</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX0:DISABLE_ATTR" title="BUFGMUX0:DISABLE_ATTR">BUFGMUX0:DISABLE_ATTR</a></td></tr>
 <tr><td>53</td>
 <td><a href="#bits-xc3s-CLKB.S3E-INT:MUX.CLK.IMUX.CLK0" title="INT:MUX.CLK.IMUX.CLK0[3]">INT:MUX.CLK.IMUX.CLK0[3]</a></td></tr>
 <tr><td>54</td>
@@ -479,6 +521,10 @@
 <td><a href="#bits-xc3s-CLKB.S3E-INT:MUX.CLK.IMUX.SEL0" title="INT:MUX.CLK.IMUX.SEL0[2]">INT:MUX.CLK.IMUX.SEL0[2]</a></td></tr>
 <tr><td>60</td>
 <td><a href="#bits-xc3s-CLKB.S3E-INT:MUX.CLK.IMUX.SEL0" title="INT:MUX.CLK.IMUX.SEL0[3]">INT:MUX.CLK.IMUX.SEL0[3]</a></td></tr>
+<tr><td>61</td>
+<td><a href="#bits-xc3s-CLKB.S3E-INT:INV.0.CLK.IMUX.SEL0" title="~INT:INV.0.CLK.IMUX.SEL0">~INT:INV.0.CLK.IMUX.SEL0</a></td></tr>
+<tr><td>62</td>
+<td><a href="#bits-xc3s-CLKB.S3E-BUFGMUX3:DISABLE_ATTR" title="BUFGMUX3:DISABLE_ATTR">BUFGMUX3:DISABLE_ATTR</a></td></tr>
 </table>
 <table class="docutils align-default prjcombine-tile">
 <tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
@@ -501,7 +547,7 @@
 <tr><td>8</td>
 <td><a href="#bits-xc3s-CLKB.S3E-INT:MUX.OMUX10.N" title="INT:MUX.OMUX10.N[0]">INT:MUX.OMUX10.N[0]</a></td></tr>
 <tr><td>9</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3E-INT:INV.0.CLK.IMUX.SEL3" title="~INT:INV.0.CLK.IMUX.SEL3">~INT:INV.0.CLK.IMUX.SEL3</a></td></tr>
 <tr><td>10</td>
 <td><a href="#bits-xc3s-CLKB.S3E-INT:MUX.CLK.IMUX.SEL3" title="INT:MUX.CLK.IMUX.SEL3[3]">INT:MUX.CLK.IMUX.SEL3[3]</a></td></tr>
 <tr><td>11</td>
@@ -530,6 +576,21 @@
 <tr><td>DBL.E0.0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
 <tr><td>DBL.E1.0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
 </table>
+<div id="bits-xc3s-CLKB.S3E-BUFGMUX0:CLKMUX"></div>
+<div id="bits-xc3s-CLKB.S3E-BUFGMUX1:CLKMUX"></div>
+<div id="bits-xc3s-CLKB.S3E-BUFGMUX2:CLKMUX"></div>
+<div id="bits-xc3s-CLKB.S3E-BUFGMUX3:CLKMUX"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:CLKMUX</th><th>[0, 0, 48]</th><th>[0, 0, 49]</th><th>[0, 0, 51]</th><th>[0, 0, 50]</th><th>[0, 0, 47]</th></tr>
+<tr><th>BUFGMUX1:CLKMUX</th><th>[0, 0, 27]</th><th>[0, 0, 28]</th><th>[0, 0, 30]</th><th>[0, 0, 29]</th><th>[0, 0, 26]</th></tr>
+<tr><th>BUFGMUX2:CLKMUX</th><th>[0, 0, 12]</th><th>[0, 0, 13]</th><th>[0, 0, 15]</th><th>[0, 0, 14]</th><th>[0, 0, 11]</th></tr>
+<tr><th>BUFGMUX3:CLKMUX</th><th>[0, 0, 7]</th><th>[0, 0, 8]</th><th>[0, 0, 10]</th><th>[0, 0, 9]</th><th>[0, 0, 6]</th></tr>
+<tr><td>INT</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKIL</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>CKIR</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>DCM_OUT_L</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>DCM_OUT_R</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
 <div id="bits-xc3s-CLKB.S3E-INT:MUX.CLK.IMUX.CLK2"></div>
 <div id="bits-xc3s-CLKB.S3E-INT:MUX.CLK.IMUX.SEL2"></div>
 <table class="docutils align-default prjcombine-enum">
@@ -544,6 +605,29 @@
 <tr><td>DBL.E3.1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
 <tr><td>DBL.E2.0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
 <tr><td>DBL.E3.0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-CLKB.S3E-INT:INV.0.CLK.IMUX.SEL0"></div>
+<div id="bits-xc3s-CLKB.S3E-INT:INV.0.CLK.IMUX.SEL1"></div>
+<div id="bits-xc3s-CLKB.S3E-INT:INV.0.CLK.IMUX.SEL2"></div>
+<div id="bits-xc3s-CLKB.S3E-INT:INV.0.CLK.IMUX.SEL3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:INV.0.CLK.IMUX.SEL0</th><th>[0, 0, 61]</th></tr>
+<tr><th>INT:INV.0.CLK.IMUX.SEL1</th><th>[0, 0, 40]</th></tr>
+<tr><th>INT:INV.0.CLK.IMUX.SEL2</th><th>[0, 0, 24]</th></tr>
+<tr><th>INT:INV.0.CLK.IMUX.SEL3</th><th>[1, 0, 9]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<div id="bits-xc3s-CLKB.S3E-BUFGMUX0:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKB.S3E-BUFGMUX1:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKB.S3E-BUFGMUX2:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKB.S3E-BUFGMUX3:DISABLE_ATTR"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:DISABLE_ATTR</th><th>[0, 0, 52]</th></tr>
+<tr><th>BUFGMUX1:DISABLE_ATTR</th><th>[0, 0, 31]</th></tr>
+<tr><th>BUFGMUX2:DISABLE_ATTR</th><th>[0, 0, 25]</th></tr>
+<tr><th>BUFGMUX3:DISABLE_ATTR</th><th>[0, 0, 62]</th></tr>
+<tr><td>LOW</td><td>0</td></tr>
+<tr><td>HIGH</td><td>1</td></tr>
 </table>
 <div id="bits-xc3s-CLKB.S3E-INT:MUX.CLK.IMUX.CLK1"></div>
 <div id="bits-xc3s-CLKB.S3E-INT:MUX.CLK.IMUX.SEL1"></div>
@@ -609,25 +693,25 @@
 <tr><td>5</td>
 <td><a href="#bits-xc3s-CLKB.S3A-INT:MUX.CLK.IMUX.CLK3" title="INT:MUX.CLK.IMUX.CLK3[3]">INT:MUX.CLK.IMUX.CLK3[3]</a></td></tr>
 <tr><td>6</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[0]">BUFGMUX3:CLKMUX[0]</a></td></tr>
 <tr><td>7</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[4]">BUFGMUX3:CLKMUX[4]</a></td></tr>
 <tr><td>8</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[3]">BUFGMUX3:CLKMUX[3]</a></td></tr>
 <tr><td>9</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[1]">BUFGMUX3:CLKMUX[1]</a></td></tr>
 <tr><td>10</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[2]">BUFGMUX3:CLKMUX[2]</a></td></tr>
 <tr><td>11</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[0]">BUFGMUX2:CLKMUX[0]</a></td></tr>
 <tr><td>12</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[4]">BUFGMUX2:CLKMUX[4]</a></td></tr>
 <tr><td>13</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[3]">BUFGMUX2:CLKMUX[3]</a></td></tr>
 <tr><td>14</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[1]">BUFGMUX2:CLKMUX[1]</a></td></tr>
 <tr><td>15</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[2]">BUFGMUX2:CLKMUX[2]</a></td></tr>
 <tr><td>16</td>
 <td><a href="#bits-xc3s-CLKB.S3A-INT:MUX.CLK.IMUX.CLK2" title="INT:MUX.CLK.IMUX.CLK2[3]">INT:MUX.CLK.IMUX.CLK2[3]</a></td></tr>
 <tr><td>17</td>
@@ -645,21 +729,21 @@
 <tr><td>23</td>
 <td><a href="#bits-xc3s-CLKB.S3A-INT:MUX.CLK.IMUX.SEL2" title="INT:MUX.CLK.IMUX.SEL2[3]">INT:MUX.CLK.IMUX.SEL2[3]</a></td></tr>
 <tr><td>24</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-INT:INV.0.CLK.IMUX.SEL2" title="~INT:INV.0.CLK.IMUX.SEL2">~INT:INV.0.CLK.IMUX.SEL2</a></td></tr>
 <tr><td>25</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX2:DISABLE_ATTR" title="BUFGMUX2:DISABLE_ATTR">BUFGMUX2:DISABLE_ATTR</a></td></tr>
 <tr><td>26</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[0]">BUFGMUX1:CLKMUX[0]</a></td></tr>
 <tr><td>27</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[4]">BUFGMUX1:CLKMUX[4]</a></td></tr>
 <tr><td>28</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[3]">BUFGMUX1:CLKMUX[3]</a></td></tr>
 <tr><td>29</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[1]">BUFGMUX1:CLKMUX[1]</a></td></tr>
 <tr><td>30</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[2]">BUFGMUX1:CLKMUX[2]</a></td></tr>
 <tr><td>31</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX1:DISABLE_ATTR" title="BUFGMUX1:DISABLE_ATTR">BUFGMUX1:DISABLE_ATTR</a></td></tr>
 <tr><td>32</td>
 <td><a href="#bits-xc3s-CLKB.S3A-INT:MUX.CLK.IMUX.CLK1" title="INT:MUX.CLK.IMUX.CLK1[3]">INT:MUX.CLK.IMUX.CLK1[3]</a></td></tr>
 <tr><td>33</td>
@@ -677,7 +761,7 @@
 <tr><td>39</td>
 <td><a href="#bits-xc3s-CLKB.S3A-INT:MUX.CLK.IMUX.SEL1" title="INT:MUX.CLK.IMUX.SEL1[3]">INT:MUX.CLK.IMUX.SEL1[3]</a></td></tr>
 <tr><td>40</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-INT:INV.0.CLK.IMUX.SEL1" title="~INT:INV.0.CLK.IMUX.SEL1">~INT:INV.0.CLK.IMUX.SEL1</a></td></tr>
 <tr><td>41</td>
 <td><a href="#bits-xc3s-CLKB.S3A-INT:MUX.OMUX12.N" title="INT:MUX.OMUX12.N[0]">INT:MUX.OMUX12.N[0]</a></td></tr>
 <tr><td>42</td>
@@ -691,17 +775,17 @@
 <tr><td>46</td>
 <td><a href="#bits-xc3s-CLKB.S3A-INT:MUX.OMUX15.N" title="INT:MUX.OMUX15.N[2]">INT:MUX.OMUX15.N[2]</a></td></tr>
 <tr><td>47</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[0]">BUFGMUX0:CLKMUX[0]</a></td></tr>
 <tr><td>48</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[4]">BUFGMUX0:CLKMUX[4]</a></td></tr>
 <tr><td>49</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[3]">BUFGMUX0:CLKMUX[3]</a></td></tr>
 <tr><td>50</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[1]">BUFGMUX0:CLKMUX[1]</a></td></tr>
 <tr><td>51</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[2]">BUFGMUX0:CLKMUX[2]</a></td></tr>
 <tr><td>52</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX0:DISABLE_ATTR" title="BUFGMUX0:DISABLE_ATTR">BUFGMUX0:DISABLE_ATTR</a></td></tr>
 <tr><td>53</td>
 <td><a href="#bits-xc3s-CLKB.S3A-INT:MUX.CLK.IMUX.CLK0" title="INT:MUX.CLK.IMUX.CLK0[3]">INT:MUX.CLK.IMUX.CLK0[3]</a></td></tr>
 <tr><td>54</td>
@@ -718,6 +802,10 @@
 <td><a href="#bits-xc3s-CLKB.S3A-INT:MUX.CLK.IMUX.SEL0" title="INT:MUX.CLK.IMUX.SEL0[2]">INT:MUX.CLK.IMUX.SEL0[2]</a></td></tr>
 <tr><td>60</td>
 <td><a href="#bits-xc3s-CLKB.S3A-INT:MUX.CLK.IMUX.SEL0" title="INT:MUX.CLK.IMUX.SEL0[3]">INT:MUX.CLK.IMUX.SEL0[3]</a></td></tr>
+<tr><td>61</td>
+<td><a href="#bits-xc3s-CLKB.S3A-INT:INV.0.CLK.IMUX.SEL0" title="~INT:INV.0.CLK.IMUX.SEL0">~INT:INV.0.CLK.IMUX.SEL0</a></td></tr>
+<tr><td>62</td>
+<td><a href="#bits-xc3s-CLKB.S3A-BUFGMUX3:DISABLE_ATTR" title="BUFGMUX3:DISABLE_ATTR">BUFGMUX3:DISABLE_ATTR</a></td></tr>
 </table>
 <table class="docutils align-default prjcombine-tile">
 <tr><th rowspan="2">Row</th><th colspan="2">Column</th></tr><tr><th>0</th><th>1</th></tr>
@@ -726,7 +814,7 @@
 <tr><td>1</td>
 <td>-</td><td><a href="#bits-xc3s-CLKB.S3A-INT:MUX.OMUX10.N" title="INT:MUX.OMUX10.N[0]">INT:MUX.OMUX10.N[0]</a></td></tr>
 <tr><td>2</td>
-<td>-</td><td><a href="#bits-xc3s-CLKB.S3A-INT:MUX.OMUX10.N" title="INT:MUX.OMUX10.N[1]">INT:MUX.OMUX10.N[1]</a></td></tr>
+<td><a href="#bits-xc3s-CLKB.S3A-INT:INV.0.CLK.IMUX.SEL3" title="~INT:INV.0.CLK.IMUX.SEL3">~INT:INV.0.CLK.IMUX.SEL3</a></td><td><a href="#bits-xc3s-CLKB.S3A-INT:MUX.OMUX10.N" title="INT:MUX.OMUX10.N[1]">INT:MUX.OMUX10.N[1]</a></td></tr>
 <tr><td>3</td>
 <td><a href="#bits-xc3s-CLKB.S3A-INT:MUX.CLK.IMUX.SEL3" title="INT:MUX.CLK.IMUX.SEL3[3]">INT:MUX.CLK.IMUX.SEL3[3]</a></td><td><a href="#bits-xc3s-CLKB.S3A-INT:MUX.OMUX11.N" title="INT:MUX.OMUX11.N[1]">INT:MUX.OMUX11.N[1]</a></td></tr>
 <tr><td>4</td>
@@ -749,6 +837,21 @@
 <tr><td>DBL.E0.0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
 <tr><td>DBL.E1.0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
 </table>
+<div id="bits-xc3s-CLKB.S3A-BUFGMUX0:CLKMUX"></div>
+<div id="bits-xc3s-CLKB.S3A-BUFGMUX1:CLKMUX"></div>
+<div id="bits-xc3s-CLKB.S3A-BUFGMUX2:CLKMUX"></div>
+<div id="bits-xc3s-CLKB.S3A-BUFGMUX3:CLKMUX"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:CLKMUX</th><th>[0, 0, 48]</th><th>[0, 0, 49]</th><th>[0, 0, 51]</th><th>[0, 0, 50]</th><th>[0, 0, 47]</th></tr>
+<tr><th>BUFGMUX1:CLKMUX</th><th>[0, 0, 27]</th><th>[0, 0, 28]</th><th>[0, 0, 30]</th><th>[0, 0, 29]</th><th>[0, 0, 26]</th></tr>
+<tr><th>BUFGMUX2:CLKMUX</th><th>[0, 0, 12]</th><th>[0, 0, 13]</th><th>[0, 0, 15]</th><th>[0, 0, 14]</th><th>[0, 0, 11]</th></tr>
+<tr><th>BUFGMUX3:CLKMUX</th><th>[0, 0, 7]</th><th>[0, 0, 8]</th><th>[0, 0, 10]</th><th>[0, 0, 9]</th><th>[0, 0, 6]</th></tr>
+<tr><td>INT</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKIL</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>CKIR</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>DCM_OUT_L</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>DCM_OUT_R</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
 <div id="bits-xc3s-CLKB.S3A-INT:MUX.CLK.IMUX.CLK2"></div>
 <div id="bits-xc3s-CLKB.S3A-INT:MUX.CLK.IMUX.SEL2"></div>
 <table class="docutils align-default prjcombine-enum">
@@ -763,6 +866,29 @@
 <tr><td>DBL.E3.1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
 <tr><td>DBL.E2.0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
 <tr><td>DBL.E3.0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-CLKB.S3A-INT:INV.0.CLK.IMUX.SEL0"></div>
+<div id="bits-xc3s-CLKB.S3A-INT:INV.0.CLK.IMUX.SEL1"></div>
+<div id="bits-xc3s-CLKB.S3A-INT:INV.0.CLK.IMUX.SEL2"></div>
+<div id="bits-xc3s-CLKB.S3A-INT:INV.0.CLK.IMUX.SEL3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:INV.0.CLK.IMUX.SEL0</th><th>[0, 0, 61]</th></tr>
+<tr><th>INT:INV.0.CLK.IMUX.SEL1</th><th>[0, 0, 40]</th></tr>
+<tr><th>INT:INV.0.CLK.IMUX.SEL2</th><th>[0, 0, 24]</th></tr>
+<tr><th>INT:INV.0.CLK.IMUX.SEL3</th><th>[1, 0, 2]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<div id="bits-xc3s-CLKB.S3A-BUFGMUX0:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKB.S3A-BUFGMUX1:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKB.S3A-BUFGMUX2:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKB.S3A-BUFGMUX3:DISABLE_ATTR"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:DISABLE_ATTR</th><th>[0, 0, 52]</th></tr>
+<tr><th>BUFGMUX1:DISABLE_ATTR</th><th>[0, 0, 31]</th></tr>
+<tr><th>BUFGMUX2:DISABLE_ATTR</th><th>[0, 0, 25]</th></tr>
+<tr><th>BUFGMUX3:DISABLE_ATTR</th><th>[0, 0, 62]</th></tr>
+<tr><td>LOW</td><td>0</td></tr>
+<tr><td>HIGH</td><td>1</td></tr>
 </table>
 <div id="bits-xc3s-CLKB.S3A-INT:MUX.CLK.IMUX.CLK1"></div>
 <div id="bits-xc3s-CLKB.S3A-INT:MUX.CLK.IMUX.SEL1"></div>
@@ -827,9 +953,9 @@
 <tr><td>0</td>
 <td>-</td></tr>
 <tr><td>1</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-BUFGMUX3:DISABLE_ATTR" title="BUFGMUX3:DISABLE_ATTR">BUFGMUX3:DISABLE_ATTR</a></td></tr>
 <tr><td>2</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-INT:INV.0.CLK.IMUX.SEL0" title="~INT:INV.0.CLK.IMUX.SEL0">~INT:INV.0.CLK.IMUX.SEL0</a></td></tr>
 <tr><td>3</td>
 <td><a href="#bits-xc3s-CLKT.S3-INT:MUX.CLK.IMUX.SEL0" title="INT:MUX.CLK.IMUX.SEL0[2]">INT:MUX.CLK.IMUX.SEL0[2]</a></td></tr>
 <tr><td>4</td>
@@ -847,15 +973,15 @@
 <tr><td>10</td>
 <td><a href="#bits-xc3s-CLKT.S3-INT:MUX.CLK.IMUX.CLK0" title="INT:MUX.CLK.IMUX.CLK0[2]">INT:MUX.CLK.IMUX.CLK0[2]</a></td></tr>
 <tr><td>11</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-BUFGMUX0:DISABLE_ATTR" title="BUFGMUX0:DISABLE_ATTR">BUFGMUX0:DISABLE_ATTR</a></td></tr>
 <tr><td>12</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[1]">BUFGMUX0:CLKMUX[1]</a></td></tr>
 <tr><td>13</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[2]">BUFGMUX0:CLKMUX[2]</a></td></tr>
 <tr><td>14</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[3]">BUFGMUX0:CLKMUX[3]</a></td></tr>
 <tr><td>15</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[0]">BUFGMUX0:CLKMUX[0]</a></td></tr>
 <tr><td>16</td>
 <td><a href="#bits-xc3s-CLKT.S3-INT:MUX.OMUX5.S" title="INT:MUX.OMUX5.S[2]">INT:MUX.OMUX5.S[2]</a></td></tr>
 <tr><td>17</td>
@@ -869,7 +995,7 @@
 <tr><td>21</td>
 <td><a href="#bits-xc3s-CLKT.S3-INT:MUX.OMUX4.S" title="INT:MUX.OMUX4.S[0]">INT:MUX.OMUX4.S[0]</a></td></tr>
 <tr><td>22</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-INT:INV.0.CLK.IMUX.SEL1" title="~INT:INV.0.CLK.IMUX.SEL1">~INT:INV.0.CLK.IMUX.SEL1</a></td></tr>
 <tr><td>23</td>
 <td><a href="#bits-xc3s-CLKT.S3-INT:MUX.CLK.IMUX.SEL1" title="INT:MUX.CLK.IMUX.SEL1[2]">INT:MUX.CLK.IMUX.SEL1[2]</a></td></tr>
 <tr><td>24</td>
@@ -887,17 +1013,17 @@
 <tr><td>30</td>
 <td><a href="#bits-xc3s-CLKT.S3-INT:MUX.CLK.IMUX.CLK1" title="INT:MUX.CLK.IMUX.CLK1[2]">INT:MUX.CLK.IMUX.CLK1[2]</a></td></tr>
 <tr><td>31</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-BUFGMUX1:DISABLE_ATTR" title="BUFGMUX1:DISABLE_ATTR">BUFGMUX1:DISABLE_ATTR</a></td></tr>
 <tr><td>32</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[1]">BUFGMUX1:CLKMUX[1]</a></td></tr>
 <tr><td>33</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[2]">BUFGMUX1:CLKMUX[2]</a></td></tr>
 <tr><td>34</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[3]">BUFGMUX1:CLKMUX[3]</a></td></tr>
 <tr><td>35</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[0]">BUFGMUX1:CLKMUX[0]</a></td></tr>
 <tr><td>36</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-INT:INV.0.CLK.IMUX.SEL2" title="~INT:INV.0.CLK.IMUX.SEL2">~INT:INV.0.CLK.IMUX.SEL2</a></td></tr>
 <tr><td>37</td>
 <td><a href="#bits-xc3s-CLKT.S3-INT:MUX.CLK.IMUX.SEL2" title="INT:MUX.CLK.IMUX.SEL2[2]">INT:MUX.CLK.IMUX.SEL2[2]</a></td></tr>
 <tr><td>38</td>
@@ -915,23 +1041,23 @@
 <tr><td>44</td>
 <td><a href="#bits-xc3s-CLKT.S3-INT:MUX.CLK.IMUX.CLK2" title="INT:MUX.CLK.IMUX.CLK2[2]">INT:MUX.CLK.IMUX.CLK2[2]</a></td></tr>
 <tr><td>45</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-BUFGMUX2:DISABLE_ATTR" title="BUFGMUX2:DISABLE_ATTR">BUFGMUX2:DISABLE_ATTR</a></td></tr>
 <tr><td>46</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[1]">BUFGMUX2:CLKMUX[1]</a></td></tr>
 <tr><td>47</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[2]">BUFGMUX2:CLKMUX[2]</a></td></tr>
 <tr><td>48</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[3]">BUFGMUX2:CLKMUX[3]</a></td></tr>
 <tr><td>49</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[0]">BUFGMUX2:CLKMUX[0]</a></td></tr>
 <tr><td>50</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[1]">BUFGMUX3:CLKMUX[1]</a></td></tr>
 <tr><td>51</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[2]">BUFGMUX3:CLKMUX[2]</a></td></tr>
 <tr><td>52</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[3]">BUFGMUX3:CLKMUX[3]</a></td></tr>
 <tr><td>53</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[0]">BUFGMUX3:CLKMUX[0]</a></td></tr>
 <tr><td>54</td>
 <td><a href="#bits-xc3s-CLKT.S3-INT:MUX.CLK.IMUX.CLK3" title="INT:MUX.CLK.IMUX.CLK3[3]">INT:MUX.CLK.IMUX.CLK3[3]</a></td></tr>
 <tr><td>55</td>
@@ -949,7 +1075,7 @@
 <tr><td>61</td>
 <td><a href="#bits-xc3s-CLKT.S3-INT:MUX.CLK.IMUX.SEL3" title="INT:MUX.CLK.IMUX.SEL3[3]">INT:MUX.CLK.IMUX.SEL3[3]</a></td></tr>
 <tr><td>62</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3-INT:INV.0.CLK.IMUX.SEL3" title="~INT:INV.0.CLK.IMUX.SEL3">~INT:INV.0.CLK.IMUX.SEL3</a></td></tr>
 <tr><td>63</td>
 <td><a href="#bits-xc3s-CLKT.S3-INT:MUX.OMUX0.S" title="INT:MUX.OMUX0.S[0]">INT:MUX.OMUX0.S[0]</a></td></tr>
 </table>
@@ -966,6 +1092,29 @@
 <tr><td>4</td>
 <td><a href="#bits-xc3s-CLKT.S3-INT:MUX.OMUX3.S" title="INT:MUX.OMUX3.S[1]">INT:MUX.OMUX3.S[1]</a></td></tr>
 </table>
+<div id="bits-xc3s-CLKT.S3-BUFGMUX0:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKT.S3-BUFGMUX1:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKT.S3-BUFGMUX2:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKT.S3-BUFGMUX3:DISABLE_ATTR"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:DISABLE_ATTR</th><th>[0, 0, 11]</th></tr>
+<tr><th>BUFGMUX1:DISABLE_ATTR</th><th>[0, 0, 31]</th></tr>
+<tr><th>BUFGMUX2:DISABLE_ATTR</th><th>[0, 0, 45]</th></tr>
+<tr><th>BUFGMUX3:DISABLE_ATTR</th><th>[0, 0, 1]</th></tr>
+<tr><td>LOW</td><td>0</td></tr>
+<tr><td>HIGH</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKT.S3-INT:INV.0.CLK.IMUX.SEL0"></div>
+<div id="bits-xc3s-CLKT.S3-INT:INV.0.CLK.IMUX.SEL1"></div>
+<div id="bits-xc3s-CLKT.S3-INT:INV.0.CLK.IMUX.SEL2"></div>
+<div id="bits-xc3s-CLKT.S3-INT:INV.0.CLK.IMUX.SEL3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:INV.0.CLK.IMUX.SEL0</th><th>[0, 0, 2]</th></tr>
+<tr><th>INT:INV.0.CLK.IMUX.SEL1</th><th>[0, 0, 22]</th></tr>
+<tr><th>INT:INV.0.CLK.IMUX.SEL2</th><th>[0, 0, 36]</th></tr>
+<tr><th>INT:INV.0.CLK.IMUX.SEL3</th><th>[0, 0, 62]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
 <div id="bits-xc3s-CLKT.S3-INT:MUX.CLK.IMUX.CLK0"></div>
 <div id="bits-xc3s-CLKT.S3-INT:MUX.CLK.IMUX.SEL0"></div>
 <table class="docutils align-default prjcombine-enum">
@@ -980,6 +1129,20 @@
 <tr><td>DBL.E1.1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
 <tr><td>DBL.E0.0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
 <tr><td>DBL.E1.0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-CLKT.S3-BUFGMUX0:CLKMUX"></div>
+<div id="bits-xc3s-CLKT.S3-BUFGMUX1:CLKMUX"></div>
+<div id="bits-xc3s-CLKT.S3-BUFGMUX2:CLKMUX"></div>
+<div id="bits-xc3s-CLKT.S3-BUFGMUX3:CLKMUX"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:CLKMUX</th><th>[0, 0, 14]</th><th>[0, 0, 13]</th><th>[0, 0, 12]</th><th>[0, 0, 15]</th></tr>
+<tr><th>BUFGMUX1:CLKMUX</th><th>[0, 0, 34]</th><th>[0, 0, 33]</th><th>[0, 0, 32]</th><th>[0, 0, 35]</th></tr>
+<tr><th>BUFGMUX2:CLKMUX</th><th>[0, 0, 48]</th><th>[0, 0, 47]</th><th>[0, 0, 46]</th><th>[0, 0, 49]</th></tr>
+<tr><th>BUFGMUX3:CLKMUX</th><th>[0, 0, 52]</th><th>[0, 0, 51]</th><th>[0, 0, 50]</th><th>[0, 0, 53]</th></tr>
+<tr><td>INT</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKI</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>DCM_OUT_L</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>DCM_OUT_R</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
 </table>
 <div id="bits-xc3s-CLKT.S3-INT:MUX.OMUX0.S"></div>
 <div id="bits-xc3s-CLKT.S3-INT:MUX.OMUX3.S"></div>
@@ -1050,9 +1213,9 @@
 <tr><td>0</td>
 <td>-</td></tr>
 <tr><td>1</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX3:DISABLE_ATTR" title="BUFGMUX3:DISABLE_ATTR">BUFGMUX3:DISABLE_ATTR</a></td></tr>
 <tr><td>2</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-INT:INV.0.CLK.IMUX.SEL0" title="~INT:INV.0.CLK.IMUX.SEL0">~INT:INV.0.CLK.IMUX.SEL0</a></td></tr>
 <tr><td>3</td>
 <td><a href="#bits-xc3s-CLKT.S3E-INT:MUX.CLK.IMUX.SEL0" title="INT:MUX.CLK.IMUX.SEL0[3]">INT:MUX.CLK.IMUX.SEL0[3]</a></td></tr>
 <tr><td>4</td>
@@ -1070,17 +1233,17 @@
 <tr><td>10</td>
 <td><a href="#bits-xc3s-CLKT.S3E-INT:MUX.CLK.IMUX.CLK0" title="INT:MUX.CLK.IMUX.CLK0[3]">INT:MUX.CLK.IMUX.CLK0[3]</a></td></tr>
 <tr><td>11</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX0:DISABLE_ATTR" title="BUFGMUX0:DISABLE_ATTR">BUFGMUX0:DISABLE_ATTR</a></td></tr>
 <tr><td>12</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[2]">BUFGMUX0:CLKMUX[2]</a></td></tr>
 <tr><td>13</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[1]">BUFGMUX0:CLKMUX[1]</a></td></tr>
 <tr><td>14</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[3]">BUFGMUX0:CLKMUX[3]</a></td></tr>
 <tr><td>15</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[4]">BUFGMUX0:CLKMUX[4]</a></td></tr>
 <tr><td>16</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[0]">BUFGMUX0:CLKMUX[0]</a></td></tr>
 <tr><td>17</td>
 <td><a href="#bits-xc3s-CLKT.S3E-INT:MUX.OMUX5.S" title="INT:MUX.OMUX5.S[2]">INT:MUX.OMUX5.S[2]</a></td></tr>
 <tr><td>18</td>
@@ -1094,7 +1257,7 @@
 <tr><td>22</td>
 <td><a href="#bits-xc3s-CLKT.S3E-INT:MUX.OMUX4.S" title="INT:MUX.OMUX4.S[0]">INT:MUX.OMUX4.S[0]</a></td></tr>
 <tr><td>23</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-INT:INV.0.CLK.IMUX.SEL1" title="~INT:INV.0.CLK.IMUX.SEL1">~INT:INV.0.CLK.IMUX.SEL1</a></td></tr>
 <tr><td>24</td>
 <td><a href="#bits-xc3s-CLKT.S3E-INT:MUX.CLK.IMUX.SEL1" title="INT:MUX.CLK.IMUX.SEL1[3]">INT:MUX.CLK.IMUX.SEL1[3]</a></td></tr>
 <tr><td>25</td>
@@ -1112,21 +1275,21 @@
 <tr><td>31</td>
 <td><a href="#bits-xc3s-CLKT.S3E-INT:MUX.CLK.IMUX.CLK1" title="INT:MUX.CLK.IMUX.CLK1[3]">INT:MUX.CLK.IMUX.CLK1[3]</a></td></tr>
 <tr><td>32</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX1:DISABLE_ATTR" title="BUFGMUX1:DISABLE_ATTR">BUFGMUX1:DISABLE_ATTR</a></td></tr>
 <tr><td>33</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[2]">BUFGMUX1:CLKMUX[2]</a></td></tr>
 <tr><td>34</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[1]">BUFGMUX1:CLKMUX[1]</a></td></tr>
 <tr><td>35</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[3]">BUFGMUX1:CLKMUX[3]</a></td></tr>
 <tr><td>36</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[4]">BUFGMUX1:CLKMUX[4]</a></td></tr>
 <tr><td>37</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[0]">BUFGMUX1:CLKMUX[0]</a></td></tr>
 <tr><td>38</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX2:DISABLE_ATTR" title="BUFGMUX2:DISABLE_ATTR">BUFGMUX2:DISABLE_ATTR</a></td></tr>
 <tr><td>39</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-INT:INV.0.CLK.IMUX.SEL2" title="~INT:INV.0.CLK.IMUX.SEL2">~INT:INV.0.CLK.IMUX.SEL2</a></td></tr>
 <tr><td>40</td>
 <td><a href="#bits-xc3s-CLKT.S3E-INT:MUX.CLK.IMUX.SEL2" title="INT:MUX.CLK.IMUX.SEL2[3]">INT:MUX.CLK.IMUX.SEL2[3]</a></td></tr>
 <tr><td>41</td>
@@ -1144,25 +1307,25 @@
 <tr><td>47</td>
 <td><a href="#bits-xc3s-CLKT.S3E-INT:MUX.CLK.IMUX.CLK2" title="INT:MUX.CLK.IMUX.CLK2[3]">INT:MUX.CLK.IMUX.CLK2[3]</a></td></tr>
 <tr><td>48</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[2]">BUFGMUX2:CLKMUX[2]</a></td></tr>
 <tr><td>49</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[1]">BUFGMUX2:CLKMUX[1]</a></td></tr>
 <tr><td>50</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[3]">BUFGMUX2:CLKMUX[3]</a></td></tr>
 <tr><td>51</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[4]">BUFGMUX2:CLKMUX[4]</a></td></tr>
 <tr><td>52</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[0]">BUFGMUX2:CLKMUX[0]</a></td></tr>
 <tr><td>53</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[2]">BUFGMUX3:CLKMUX[2]</a></td></tr>
 <tr><td>54</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[1]">BUFGMUX3:CLKMUX[1]</a></td></tr>
 <tr><td>55</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[3]">BUFGMUX3:CLKMUX[3]</a></td></tr>
 <tr><td>56</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[4]">BUFGMUX3:CLKMUX[4]</a></td></tr>
 <tr><td>57</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[0]">BUFGMUX3:CLKMUX[0]</a></td></tr>
 <tr><td>58</td>
 <td><a href="#bits-xc3s-CLKT.S3E-INT:MUX.CLK.IMUX.CLK3" title="INT:MUX.CLK.IMUX.CLK3[3]">INT:MUX.CLK.IMUX.CLK3[3]</a></td></tr>
 <tr><td>59</td>
@@ -1183,7 +1346,7 @@
 <tr><td>1</td>
 <td><a href="#bits-xc3s-CLKT.S3E-INT:MUX.CLK.IMUX.SEL3" title="INT:MUX.CLK.IMUX.SEL3[3]">INT:MUX.CLK.IMUX.SEL3[3]</a></td></tr>
 <tr><td>2</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3E-INT:INV.0.CLK.IMUX.SEL3" title="~INT:INV.0.CLK.IMUX.SEL3">~INT:INV.0.CLK.IMUX.SEL3</a></td></tr>
 <tr><td>3</td>
 <td><a href="#bits-xc3s-CLKT.S3E-INT:MUX.OMUX0.S" title="INT:MUX.OMUX0.S[0]">INT:MUX.OMUX0.S[0]</a></td></tr>
 <tr><td>4</td>
@@ -1196,6 +1359,29 @@
 <td><a href="#bits-xc3s-CLKT.S3E-INT:MUX.OMUX0.S" title="INT:MUX.OMUX0.S[1]">INT:MUX.OMUX0.S[1]</a></td></tr>
 <tr><td>8</td>
 <td><a href="#bits-xc3s-CLKT.S3E-INT:MUX.OMUX3.S" title="INT:MUX.OMUX3.S[0]">INT:MUX.OMUX3.S[0]</a></td></tr>
+</table>
+<div id="bits-xc3s-CLKT.S3E-BUFGMUX0:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKT.S3E-BUFGMUX1:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKT.S3E-BUFGMUX2:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKT.S3E-BUFGMUX3:DISABLE_ATTR"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:DISABLE_ATTR</th><th>[0, 0, 11]</th></tr>
+<tr><th>BUFGMUX1:DISABLE_ATTR</th><th>[0, 0, 32]</th></tr>
+<tr><th>BUFGMUX2:DISABLE_ATTR</th><th>[0, 0, 38]</th></tr>
+<tr><th>BUFGMUX3:DISABLE_ATTR</th><th>[0, 0, 1]</th></tr>
+<tr><td>LOW</td><td>0</td></tr>
+<tr><td>HIGH</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKT.S3E-INT:INV.0.CLK.IMUX.SEL0"></div>
+<div id="bits-xc3s-CLKT.S3E-INT:INV.0.CLK.IMUX.SEL1"></div>
+<div id="bits-xc3s-CLKT.S3E-INT:INV.0.CLK.IMUX.SEL2"></div>
+<div id="bits-xc3s-CLKT.S3E-INT:INV.0.CLK.IMUX.SEL3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:INV.0.CLK.IMUX.SEL0</th><th>[0, 0, 2]</th></tr>
+<tr><th>INT:INV.0.CLK.IMUX.SEL1</th><th>[0, 0, 23]</th></tr>
+<tr><th>INT:INV.0.CLK.IMUX.SEL2</th><th>[0, 0, 39]</th></tr>
+<tr><th>INT:INV.0.CLK.IMUX.SEL3</th><th>[1, 0, 2]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 <div id="bits-xc3s-CLKT.S3E-INT:MUX.CLK.IMUX.CLK0"></div>
 <div id="bits-xc3s-CLKT.S3E-INT:MUX.CLK.IMUX.SEL0"></div>
@@ -1211,6 +1397,21 @@
 <tr><td>DBL.E1.1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
 <tr><td>DBL.E0.0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
 <tr><td>DBL.E1.0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-CLKT.S3E-BUFGMUX0:CLKMUX"></div>
+<div id="bits-xc3s-CLKT.S3E-BUFGMUX1:CLKMUX"></div>
+<div id="bits-xc3s-CLKT.S3E-BUFGMUX2:CLKMUX"></div>
+<div id="bits-xc3s-CLKT.S3E-BUFGMUX3:CLKMUX"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:CLKMUX</th><th>[0, 0, 15]</th><th>[0, 0, 14]</th><th>[0, 0, 12]</th><th>[0, 0, 13]</th><th>[0, 0, 16]</th></tr>
+<tr><th>BUFGMUX1:CLKMUX</th><th>[0, 0, 36]</th><th>[0, 0, 35]</th><th>[0, 0, 33]</th><th>[0, 0, 34]</th><th>[0, 0, 37]</th></tr>
+<tr><th>BUFGMUX2:CLKMUX</th><th>[0, 0, 51]</th><th>[0, 0, 50]</th><th>[0, 0, 48]</th><th>[0, 0, 49]</th><th>[0, 0, 52]</th></tr>
+<tr><th>BUFGMUX3:CLKMUX</th><th>[0, 0, 56]</th><th>[0, 0, 55]</th><th>[0, 0, 53]</th><th>[0, 0, 54]</th><th>[0, 0, 57]</th></tr>
+<tr><td>INT</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKIL</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>CKIR</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>DCM_OUT_L</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>DCM_OUT_R</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
 </table>
 <div id="bits-xc3s-CLKT.S3E-INT:MUX.OMUX0.S"></div>
 <div id="bits-xc3s-CLKT.S3E-INT:MUX.OMUX3.S"></div>
@@ -1281,9 +1482,9 @@
 <tr><td>0</td>
 <td>-</td></tr>
 <tr><td>1</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX3:DISABLE_ATTR" title="BUFGMUX3:DISABLE_ATTR">BUFGMUX3:DISABLE_ATTR</a></td></tr>
 <tr><td>2</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-INT:INV.0.CLK.IMUX.SEL0" title="~INT:INV.0.CLK.IMUX.SEL0">~INT:INV.0.CLK.IMUX.SEL0</a></td></tr>
 <tr><td>3</td>
 <td><a href="#bits-xc3s-CLKT.S3A-INT:MUX.CLK.IMUX.SEL0" title="INT:MUX.CLK.IMUX.SEL0[3]">INT:MUX.CLK.IMUX.SEL0[3]</a></td></tr>
 <tr><td>4</td>
@@ -1301,17 +1502,17 @@
 <tr><td>10</td>
 <td><a href="#bits-xc3s-CLKT.S3A-INT:MUX.CLK.IMUX.CLK0" title="INT:MUX.CLK.IMUX.CLK0[3]">INT:MUX.CLK.IMUX.CLK0[3]</a></td></tr>
 <tr><td>11</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX0:DISABLE_ATTR" title="BUFGMUX0:DISABLE_ATTR">BUFGMUX0:DISABLE_ATTR</a></td></tr>
 <tr><td>12</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[2]">BUFGMUX0:CLKMUX[2]</a></td></tr>
 <tr><td>13</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[1]">BUFGMUX0:CLKMUX[1]</a></td></tr>
 <tr><td>14</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[3]">BUFGMUX0:CLKMUX[3]</a></td></tr>
 <tr><td>15</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[4]">BUFGMUX0:CLKMUX[4]</a></td></tr>
 <tr><td>16</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[0]">BUFGMUX0:CLKMUX[0]</a></td></tr>
 <tr><td>17</td>
 <td><a href="#bits-xc3s-CLKT.S3A-INT:MUX.OMUX5.S" title="INT:MUX.OMUX5.S[2]">INT:MUX.OMUX5.S[2]</a></td></tr>
 <tr><td>18</td>
@@ -1325,7 +1526,7 @@
 <tr><td>22</td>
 <td><a href="#bits-xc3s-CLKT.S3A-INT:MUX.OMUX4.S" title="INT:MUX.OMUX4.S[0]">INT:MUX.OMUX4.S[0]</a></td></tr>
 <tr><td>23</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-INT:INV.0.CLK.IMUX.SEL1" title="~INT:INV.0.CLK.IMUX.SEL1">~INT:INV.0.CLK.IMUX.SEL1</a></td></tr>
 <tr><td>24</td>
 <td><a href="#bits-xc3s-CLKT.S3A-INT:MUX.CLK.IMUX.SEL1" title="INT:MUX.CLK.IMUX.SEL1[3]">INT:MUX.CLK.IMUX.SEL1[3]</a></td></tr>
 <tr><td>25</td>
@@ -1343,21 +1544,21 @@
 <tr><td>31</td>
 <td><a href="#bits-xc3s-CLKT.S3A-INT:MUX.CLK.IMUX.CLK1" title="INT:MUX.CLK.IMUX.CLK1[3]">INT:MUX.CLK.IMUX.CLK1[3]</a></td></tr>
 <tr><td>32</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX1:DISABLE_ATTR" title="BUFGMUX1:DISABLE_ATTR">BUFGMUX1:DISABLE_ATTR</a></td></tr>
 <tr><td>33</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[2]">BUFGMUX1:CLKMUX[2]</a></td></tr>
 <tr><td>34</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[1]">BUFGMUX1:CLKMUX[1]</a></td></tr>
 <tr><td>35</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[3]">BUFGMUX1:CLKMUX[3]</a></td></tr>
 <tr><td>36</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[4]">BUFGMUX1:CLKMUX[4]</a></td></tr>
 <tr><td>37</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[0]">BUFGMUX1:CLKMUX[0]</a></td></tr>
 <tr><td>38</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX2:DISABLE_ATTR" title="BUFGMUX2:DISABLE_ATTR">BUFGMUX2:DISABLE_ATTR</a></td></tr>
 <tr><td>39</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-INT:INV.0.CLK.IMUX.SEL2" title="~INT:INV.0.CLK.IMUX.SEL2">~INT:INV.0.CLK.IMUX.SEL2</a></td></tr>
 <tr><td>40</td>
 <td><a href="#bits-xc3s-CLKT.S3A-INT:MUX.CLK.IMUX.SEL2" title="INT:MUX.CLK.IMUX.SEL2[3]">INT:MUX.CLK.IMUX.SEL2[3]</a></td></tr>
 <tr><td>41</td>
@@ -1375,25 +1576,25 @@
 <tr><td>47</td>
 <td><a href="#bits-xc3s-CLKT.S3A-INT:MUX.CLK.IMUX.CLK2" title="INT:MUX.CLK.IMUX.CLK2[3]">INT:MUX.CLK.IMUX.CLK2[3]</a></td></tr>
 <tr><td>48</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[2]">BUFGMUX2:CLKMUX[2]</a></td></tr>
 <tr><td>49</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[1]">BUFGMUX2:CLKMUX[1]</a></td></tr>
 <tr><td>50</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[3]">BUFGMUX2:CLKMUX[3]</a></td></tr>
 <tr><td>51</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[4]">BUFGMUX2:CLKMUX[4]</a></td></tr>
 <tr><td>52</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[0]">BUFGMUX2:CLKMUX[0]</a></td></tr>
 <tr><td>53</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[2]">BUFGMUX3:CLKMUX[2]</a></td></tr>
 <tr><td>54</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[1]">BUFGMUX3:CLKMUX[1]</a></td></tr>
 <tr><td>55</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[3]">BUFGMUX3:CLKMUX[3]</a></td></tr>
 <tr><td>56</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[4]">BUFGMUX3:CLKMUX[4]</a></td></tr>
 <tr><td>57</td>
-<td>-</td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[0]">BUFGMUX3:CLKMUX[0]</a></td></tr>
 <tr><td>58</td>
 <td><a href="#bits-xc3s-CLKT.S3A-INT:MUX.CLK.IMUX.CLK3" title="INT:MUX.CLK.IMUX.CLK3[3]">INT:MUX.CLK.IMUX.CLK3[3]</a></td></tr>
 <tr><td>59</td>
@@ -1414,13 +1615,36 @@
 <tr><td>1</td>
 <td><a href="#bits-xc3s-CLKT.S3A-INT:MUX.CLK.IMUX.SEL3" title="INT:MUX.CLK.IMUX.SEL3[3]">INT:MUX.CLK.IMUX.SEL3[3]</a></td><td><a href="#bits-xc3s-CLKT.S3A-INT:MUX.OMUX3.S" title="INT:MUX.OMUX3.S[0]">INT:MUX.OMUX3.S[0]</a></td></tr>
 <tr><td>2</td>
-<td>-</td><td><a href="#bits-xc3s-CLKT.S3A-INT:MUX.OMUX0.S" title="INT:MUX.OMUX0.S[2]">INT:MUX.OMUX0.S[2]</a></td></tr>
+<td><a href="#bits-xc3s-CLKT.S3A-INT:INV.0.CLK.IMUX.SEL3" title="~INT:INV.0.CLK.IMUX.SEL3">~INT:INV.0.CLK.IMUX.SEL3</a></td><td><a href="#bits-xc3s-CLKT.S3A-INT:MUX.OMUX0.S" title="INT:MUX.OMUX0.S[2]">INT:MUX.OMUX0.S[2]</a></td></tr>
 <tr><td>3</td>
 <td>-</td><td><a href="#bits-xc3s-CLKT.S3A-INT:MUX.OMUX0.S" title="INT:MUX.OMUX0.S[0]">INT:MUX.OMUX0.S[0]</a></td></tr>
 <tr><td>4</td>
 <td>-</td><td><a href="#bits-xc3s-CLKT.S3A-INT:MUX.OMUX3.S" title="INT:MUX.OMUX3.S[2]">INT:MUX.OMUX3.S[2]</a></td></tr>
 <tr><td>5</td>
 <td>-</td><td><a href="#bits-xc3s-CLKT.S3A-INT:MUX.OMUX3.S" title="INT:MUX.OMUX3.S[1]">INT:MUX.OMUX3.S[1]</a></td></tr>
+</table>
+<div id="bits-xc3s-CLKT.S3A-BUFGMUX0:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKT.S3A-BUFGMUX1:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKT.S3A-BUFGMUX2:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKT.S3A-BUFGMUX3:DISABLE_ATTR"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:DISABLE_ATTR</th><th>[0, 0, 11]</th></tr>
+<tr><th>BUFGMUX1:DISABLE_ATTR</th><th>[0, 0, 32]</th></tr>
+<tr><th>BUFGMUX2:DISABLE_ATTR</th><th>[0, 0, 38]</th></tr>
+<tr><th>BUFGMUX3:DISABLE_ATTR</th><th>[0, 0, 1]</th></tr>
+<tr><td>LOW</td><td>0</td></tr>
+<tr><td>HIGH</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKT.S3A-INT:INV.0.CLK.IMUX.SEL0"></div>
+<div id="bits-xc3s-CLKT.S3A-INT:INV.0.CLK.IMUX.SEL1"></div>
+<div id="bits-xc3s-CLKT.S3A-INT:INV.0.CLK.IMUX.SEL2"></div>
+<div id="bits-xc3s-CLKT.S3A-INT:INV.0.CLK.IMUX.SEL3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:INV.0.CLK.IMUX.SEL0</th><th>[0, 0, 2]</th></tr>
+<tr><th>INT:INV.0.CLK.IMUX.SEL1</th><th>[0, 0, 23]</th></tr>
+<tr><th>INT:INV.0.CLK.IMUX.SEL2</th><th>[0, 0, 39]</th></tr>
+<tr><th>INT:INV.0.CLK.IMUX.SEL3</th><th>[1, 0, 2]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 <div id="bits-xc3s-CLKT.S3A-INT:MUX.CLK.IMUX.CLK0"></div>
 <div id="bits-xc3s-CLKT.S3A-INT:MUX.CLK.IMUX.SEL0"></div>
@@ -1436,6 +1660,21 @@
 <tr><td>DBL.E1.1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
 <tr><td>DBL.E0.0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
 <tr><td>DBL.E1.0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-CLKT.S3A-BUFGMUX0:CLKMUX"></div>
+<div id="bits-xc3s-CLKT.S3A-BUFGMUX1:CLKMUX"></div>
+<div id="bits-xc3s-CLKT.S3A-BUFGMUX2:CLKMUX"></div>
+<div id="bits-xc3s-CLKT.S3A-BUFGMUX3:CLKMUX"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:CLKMUX</th><th>[0, 0, 15]</th><th>[0, 0, 14]</th><th>[0, 0, 12]</th><th>[0, 0, 13]</th><th>[0, 0, 16]</th></tr>
+<tr><th>BUFGMUX1:CLKMUX</th><th>[0, 0, 36]</th><th>[0, 0, 35]</th><th>[0, 0, 33]</th><th>[0, 0, 34]</th><th>[0, 0, 37]</th></tr>
+<tr><th>BUFGMUX2:CLKMUX</th><th>[0, 0, 51]</th><th>[0, 0, 50]</th><th>[0, 0, 48]</th><th>[0, 0, 49]</th><th>[0, 0, 52]</th></tr>
+<tr><th>BUFGMUX3:CLKMUX</th><th>[0, 0, 56]</th><th>[0, 0, 55]</th><th>[0, 0, 53]</th><th>[0, 0, 54]</th><th>[0, 0, 57]</th></tr>
+<tr><td>INT</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKIL</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>CKIR</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>DCM_OUT_L</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>DCM_OUT_R</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
 </table>
 <div id="bits-xc3s-CLKT.S3A-INT:MUX.OMUX0.S"></div>
 <div id="bits-xc3s-CLKT.S3A-INT:MUX.OMUX3.S"></div>
@@ -1506,38 +1745,3267 @@
 <p class="admonition-title">Todo</p>
 <p>document</p>
 </div>
+<section id="bitstream-left-tiles">
+<h3>Bitstream — left tiles<a class="headerlink" href="#bitstream-left-tiles" title="Link to this heading"></a></h3>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<p>write</p>
+</div>
+<section id="clkl-s3e">
+<h4><code class="docutils literal notranslate"><span class="pre">CLKL.S3E</span></code><a class="headerlink" href="#clkl-s3e" title="Link to this heading"></a></h4>
+<p>This tile is used on Spartan 3E.</p>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="4">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX4:SINV" title="~BUFGMUX4:SINV">~BUFGMUX4:SINV</a></td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX6:SINV" title="~BUFGMUX6:SINV">~BUFGMUX6:SINV</a></td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>41</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>43</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>44</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>50</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>52</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>53</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>54</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>55</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>56</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>57</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>58</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>59</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>60</td>
+<td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX7:SINV" title="~BUFGMUX7:SINV">~BUFGMUX7:SINV</a></td></tr>
+<tr><td>61</td>
+<td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX5:SINV" title="~BUFGMUX5:SINV">~BUFGMUX5:SINV</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="4">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX0:SINV" title="~BUFGMUX0:SINV">~BUFGMUX0:SINV</a></td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX2:SINV" title="~BUFGMUX2:SINV">~BUFGMUX2:SINV</a></td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>41</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>43</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>44</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>50</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>52</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>53</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>54</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>55</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>56</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>57</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>58</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>59</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>60</td>
+<td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX3:SINV" title="~BUFGMUX3:SINV">~BUFGMUX3:SINV</a></td></tr>
+<tr><td>61</td>
+<td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX1:SINV" title="~BUFGMUX1:SINV">~BUFGMUX1:SINV</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="0">Column</th></tr><tr></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="2">Column</th></tr><tr><th>0</th><th>1</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td></tr>
+<tr><td>37</td>
+<td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX4:CLKMUX" title="BUFGMUX4:CLKMUX[0]">BUFGMUX4:CLKMUX[0]</a></td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td></tr>
+<tr><td>41</td>
+<td>-</td><td>-</td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td></tr>
+<tr><td>43</td>
+<td>-</td><td>-</td></tr>
+<tr><td>44</td>
+<td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX4:CLKMUX" title="BUFGMUX4:CLKMUX[2]">BUFGMUX4:CLKMUX[2]</a></td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td></tr>
+<tr><td>47</td>
+<td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX4:CLKMUX" title="BUFGMUX4:CLKMUX[1]">BUFGMUX4:CLKMUX[1]</a></td></tr>
+<tr><td>48</td>
+<td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX5:CLKMUX" title="BUFGMUX5:CLKMUX[2]">BUFGMUX5:CLKMUX[2]</a></td></tr>
+<tr><td>49</td>
+<td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX5:CLKMUX" title="BUFGMUX5:CLKMUX[1]">BUFGMUX5:CLKMUX[1]</a></td></tr>
+<tr><td>50</td>
+<td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX5:CLKMUX" title="BUFGMUX5:CLKMUX[0]">BUFGMUX5:CLKMUX[0]</a></td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td></tr>
+<tr><td>52</td>
+<td>-</td><td>-</td></tr>
+<tr><td>53</td>
+<td>-</td><td>-</td></tr>
+<tr><td>54</td>
+<td>-</td><td>-</td></tr>
+<tr><td>55</td>
+<td>-</td><td>-</td></tr>
+<tr><td>56</td>
+<td>-</td><td>-</td></tr>
+<tr><td>57</td>
+<td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX6:CLKMUX" title="BUFGMUX6:CLKMUX[2]">BUFGMUX6:CLKMUX[2]</a></td></tr>
+<tr><td>58</td>
+<td>-</td><td>-</td></tr>
+<tr><td>59</td>
+<td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX4:DISABLE_ATTR" title="BUFGMUX4:DISABLE_ATTR">BUFGMUX4:DISABLE_ATTR</a></td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX6:CLKMUX" title="BUFGMUX6:CLKMUX[1]">BUFGMUX6:CLKMUX[1]</a></td></tr>
+<tr><td>60</td>
+<td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX5:DISABLE_ATTR" title="BUFGMUX5:DISABLE_ATTR">BUFGMUX5:DISABLE_ATTR</a></td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX6:CLKMUX" title="BUFGMUX6:CLKMUX[0]">BUFGMUX6:CLKMUX[0]</a></td></tr>
+<tr><td>61</td>
+<td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX6:DISABLE_ATTR" title="BUFGMUX6:DISABLE_ATTR">BUFGMUX6:DISABLE_ATTR</a></td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX7:CLKMUX" title="BUFGMUX7:CLKMUX[0]">BUFGMUX7:CLKMUX[0]</a></td></tr>
+<tr><td>62</td>
+<td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX7:DISABLE_ATTR" title="BUFGMUX7:DISABLE_ATTR">BUFGMUX7:DISABLE_ATTR</a></td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX7:CLKMUX" title="BUFGMUX7:CLKMUX[2]">BUFGMUX7:CLKMUX[2]</a></td></tr>
+<tr><td>63</td>
+<td><a href="#bits-xc3s-CLKL.S3E-PCILOGICSE:ENABLE" title="PCILOGICSE:ENABLE">PCILOGICSE:ENABLE</a></td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX7:CLKMUX" title="BUFGMUX7:CLKMUX[1]">BUFGMUX7:CLKMUX[1]</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="2">Column</th></tr><tr><th>0</th><th>1</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[0]">BUFGMUX2:CLKMUX[0]</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX0:DISABLE_ATTR" title="BUFGMUX0:DISABLE_ATTR">BUFGMUX0:DISABLE_ATTR</a></td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[2]">BUFGMUX2:CLKMUX[2]</a></td></tr>
+<tr><td>3</td>
+<td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[1]">BUFGMUX2:CLKMUX[1]</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX1:DISABLE_ATTR" title="BUFGMUX1:DISABLE_ATTR">BUFGMUX1:DISABLE_ATTR</a></td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[2]">BUFGMUX0:CLKMUX[2]</a></td></tr>
+<tr><td>5</td>
+<td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[1]">BUFGMUX0:CLKMUX[1]</a></td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[2]">BUFGMUX1:CLKMUX[2]</a></td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX2:DISABLE_ATTR" title="BUFGMUX2:DISABLE_ATTR">BUFGMUX2:DISABLE_ATTR</a></td><td>-</td></tr>
+<tr><td>10</td>
+<td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX3:DISABLE_ATTR" title="BUFGMUX3:DISABLE_ATTR">BUFGMUX3:DISABLE_ATTR</a></td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[1]">BUFGMUX1:CLKMUX[1]</a></td></tr>
+<tr><td>16</td>
+<td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[0]">BUFGMUX0:CLKMUX[0]</a></td></tr>
+<tr><td>17</td>
+<td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[0]">BUFGMUX1:CLKMUX[0]</a></td></tr>
+<tr><td>18</td>
+<td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[0]">BUFGMUX3:CLKMUX[0]</a></td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[2]">BUFGMUX3:CLKMUX[2]</a></td></tr>
+<tr><td>22</td>
+<td>-</td><td><a href="#bits-xc3s-CLKL.S3E-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[1]">BUFGMUX3:CLKMUX[1]</a></td></tr>
+</table>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX0:SINV"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX1:SINV"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX2:SINV"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX3:SINV"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX4:SINV"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX5:SINV"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX6:SINV"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX7:SINV"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:SINV</th><th>[1, 2, 19]</th></tr>
+<tr><th>BUFGMUX1:SINV</th><th>[1, 3, 61]</th></tr>
+<tr><th>BUFGMUX2:SINV</th><th>[1, 2, 20]</th></tr>
+<tr><th>BUFGMUX3:SINV</th><th>[1, 3, 60]</th></tr>
+<tr><th>BUFGMUX4:SINV</th><th>[0, 2, 19]</th></tr>
+<tr><th>BUFGMUX5:SINV</th><th>[0, 3, 61]</th></tr>
+<tr><th>BUFGMUX6:SINV</th><th>[0, 2, 20]</th></tr>
+<tr><th>BUFGMUX7:SINV</th><th>[0, 3, 60]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX0:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX1:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX2:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX3:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX4:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX5:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX6:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX7:DISABLE_ATTR"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:DISABLE_ATTR</th><th>[4, 0, 2]</th></tr>
+<tr><th>BUFGMUX1:DISABLE_ATTR</th><th>[4, 0, 4]</th></tr>
+<tr><th>BUFGMUX2:DISABLE_ATTR</th><th>[4, 0, 9]</th></tr>
+<tr><th>BUFGMUX3:DISABLE_ATTR</th><th>[4, 0, 10]</th></tr>
+<tr><th>BUFGMUX4:DISABLE_ATTR</th><th>[3, 0, 59]</th></tr>
+<tr><th>BUFGMUX5:DISABLE_ATTR</th><th>[3, 0, 60]</th></tr>
+<tr><th>BUFGMUX6:DISABLE_ATTR</th><th>[3, 0, 61]</th></tr>
+<tr><th>BUFGMUX7:DISABLE_ATTR</th><th>[3, 0, 62]</th></tr>
+<tr><td>LOW</td><td>0</td></tr>
+<tr><td>HIGH</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKL.S3E-PCILOGICSE:ENABLE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>PCILOGICSE:ENABLE</th><th>[3, 0, 63]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX0:CLKMUX"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX1:CLKMUX"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX2:CLKMUX"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX3:CLKMUX"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX4:CLKMUX"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX5:CLKMUX"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX6:CLKMUX"></div>
+<div id="bits-xc3s-CLKL.S3E-BUFGMUX7:CLKMUX"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:CLKMUX</th><th>[4, 1, 4]</th><th>[4, 1, 5]</th><th>[4, 1, 16]</th></tr>
+<tr><th>BUFGMUX1:CLKMUX</th><th>[4, 1, 8]</th><th>[4, 1, 15]</th><th>[4, 1, 17]</th></tr>
+<tr><th>BUFGMUX2:CLKMUX</th><th>[4, 1, 2]</th><th>[4, 1, 3]</th><th>[4, 1, 1]</th></tr>
+<tr><th>BUFGMUX3:CLKMUX</th><th>[4, 1, 21]</th><th>[4, 1, 22]</th><th>[4, 1, 18]</th></tr>
+<tr><th>BUFGMUX4:CLKMUX</th><th>[3, 1, 44]</th><th>[3, 1, 47]</th><th>[3, 1, 37]</th></tr>
+<tr><th>BUFGMUX5:CLKMUX</th><th>[3, 1, 48]</th><th>[3, 1, 49]</th><th>[3, 1, 50]</th></tr>
+<tr><th>BUFGMUX6:CLKMUX</th><th>[3, 1, 57]</th><th>[3, 1, 59]</th><th>[3, 1, 60]</th></tr>
+<tr><th>BUFGMUX7:CLKMUX</th><th>[3, 1, 62]</th><th>[3, 1, 63]</th><th>[3, 1, 61]</th></tr>
+<tr><td>INT</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKI</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>DCM_OUT</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+</section>
+<section id="clkl-s3a">
+<h4><code class="docutils literal notranslate"><span class="pre">CLKL.S3A</span></code><a class="headerlink" href="#clkl-s3a" title="Link to this heading"></a></h4>
+<p>This tile is used on Spartan 3A.</p>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="4">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX4:SINV" title="~BUFGMUX4:SINV">~BUFGMUX4:SINV</a></td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX6:SINV" title="~BUFGMUX6:SINV">~BUFGMUX6:SINV</a></td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>41</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>43</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>44</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>50</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>52</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>53</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>54</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>55</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>56</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>57</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>58</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>59</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>60</td>
+<td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX7:SINV" title="~BUFGMUX7:SINV">~BUFGMUX7:SINV</a></td></tr>
+<tr><td>61</td>
+<td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX5:SINV" title="~BUFGMUX5:SINV">~BUFGMUX5:SINV</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="4">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX0:SINV" title="~BUFGMUX0:SINV">~BUFGMUX0:SINV</a></td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX2:SINV" title="~BUFGMUX2:SINV">~BUFGMUX2:SINV</a></td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>41</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>43</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>44</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>50</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>52</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>53</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>54</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>55</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>56</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>57</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>58</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>59</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>60</td>
+<td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX3:SINV" title="~BUFGMUX3:SINV">~BUFGMUX3:SINV</a></td></tr>
+<tr><td>61</td>
+<td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX1:SINV" title="~BUFGMUX1:SINV">~BUFGMUX1:SINV</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td>-</td></tr>
+<tr><td>1</td>
+<td>-</td></tr>
+<tr><td>2</td>
+<td>-</td></tr>
+<tr><td>3</td>
+<td>-</td></tr>
+<tr><td>4</td>
+<td>-</td></tr>
+<tr><td>5</td>
+<td>-</td></tr>
+<tr><td>6</td>
+<td>-</td></tr>
+<tr><td>7</td>
+<td>-</td></tr>
+<tr><td>8</td>
+<td>-</td></tr>
+<tr><td>9</td>
+<td>-</td></tr>
+<tr><td>10</td>
+<td>-</td></tr>
+<tr><td>11</td>
+<td>-</td></tr>
+<tr><td>12</td>
+<td>-</td></tr>
+<tr><td>13</td>
+<td>-</td></tr>
+<tr><td>14</td>
+<td>-</td></tr>
+<tr><td>15</td>
+<td>-</td></tr>
+<tr><td>16</td>
+<td>-</td></tr>
+<tr><td>17</td>
+<td>-</td></tr>
+<tr><td>18</td>
+<td>-</td></tr>
+<tr><td>19</td>
+<td>-</td></tr>
+<tr><td>20</td>
+<td>-</td></tr>
+<tr><td>21</td>
+<td>-</td></tr>
+<tr><td>22</td>
+<td>-</td></tr>
+<tr><td>23</td>
+<td>-</td></tr>
+<tr><td>24</td>
+<td>-</td></tr>
+<tr><td>25</td>
+<td>-</td></tr>
+<tr><td>26</td>
+<td>-</td></tr>
+<tr><td>27</td>
+<td>-</td></tr>
+<tr><td>28</td>
+<td>-</td></tr>
+<tr><td>29</td>
+<td>-</td></tr>
+<tr><td>30</td>
+<td>-</td></tr>
+<tr><td>31</td>
+<td>-</td></tr>
+<tr><td>32</td>
+<td>-</td></tr>
+<tr><td>33</td>
+<td>-</td></tr>
+<tr><td>34</td>
+<td>-</td></tr>
+<tr><td>35</td>
+<td>-</td></tr>
+<tr><td>36</td>
+<td>-</td></tr>
+<tr><td>37</td>
+<td>-</td></tr>
+<tr><td>38</td>
+<td>-</td></tr>
+<tr><td>39</td>
+<td>-</td></tr>
+<tr><td>40</td>
+<td>-</td></tr>
+<tr><td>41</td>
+<td>-</td></tr>
+<tr><td>42</td>
+<td>-</td></tr>
+<tr><td>43</td>
+<td>-</td></tr>
+<tr><td>44</td>
+<td>-</td></tr>
+<tr><td>45</td>
+<td>-</td></tr>
+<tr><td>46</td>
+<td>-</td></tr>
+<tr><td>47</td>
+<td>-</td></tr>
+<tr><td>48</td>
+<td>-</td></tr>
+<tr><td>49</td>
+<td>-</td></tr>
+<tr><td>50</td>
+<td>-</td></tr>
+<tr><td>51</td>
+<td>-</td></tr>
+<tr><td>52</td>
+<td>-</td></tr>
+<tr><td>53</td>
+<td>-</td></tr>
+<tr><td>54</td>
+<td><a href="#bits-xc3s-CLKL.S3A-PCILOGICSE:ENABLE" title="PCILOGICSE:ENABLE">PCILOGICSE:ENABLE</a></td></tr>
+<tr><td>55</td>
+<td>-</td></tr>
+<tr><td>56</td>
+<td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX7:DISABLE_ATTR" title="BUFGMUX7:DISABLE_ATTR">BUFGMUX7:DISABLE_ATTR</a></td></tr>
+<tr><td>57</td>
+<td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX6:DISABLE_ATTR" title="BUFGMUX6:DISABLE_ATTR">BUFGMUX6:DISABLE_ATTR</a></td></tr>
+<tr><td>58</td>
+<td>-</td></tr>
+<tr><td>59</td>
+<td>-</td></tr>
+<tr><td>60</td>
+<td>-</td></tr>
+<tr><td>61</td>
+<td>-</td></tr>
+<tr><td>62</td>
+<td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX4:DISABLE_ATTR" title="BUFGMUX4:DISABLE_ATTR">BUFGMUX4:DISABLE_ATTR</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="2">Column</th></tr><tr><th>0</th><th>1</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td></tr>
+<tr><td>41</td>
+<td>-</td><td>-</td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td></tr>
+<tr><td>43</td>
+<td>-</td><td>-</td></tr>
+<tr><td>44</td>
+<td>-</td><td>-</td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td></tr>
+<tr><td>50</td>
+<td>-</td><td>-</td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td></tr>
+<tr><td>52</td>
+<td>-</td><td>-</td></tr>
+<tr><td>53</td>
+<td>-</td><td>-</td></tr>
+<tr><td>54</td>
+<td>-</td><td>-</td></tr>
+<tr><td>55</td>
+<td>-</td><td>-</td></tr>
+<tr><td>56</td>
+<td>-</td><td>-</td></tr>
+<tr><td>57</td>
+<td>-</td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX5:DISABLE_ATTR" title="BUFGMUX5:DISABLE_ATTR">BUFGMUX5:DISABLE_ATTR</a></td></tr>
+<tr><td>58</td>
+<td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[1]">BUFGMUX3:CLKMUX[1]</a></td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX7:CLKMUX" title="BUFGMUX7:CLKMUX[0]">BUFGMUX7:CLKMUX[0]</a></td></tr>
+<tr><td>59</td>
+<td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[2]">BUFGMUX3:CLKMUX[2]</a></td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX7:CLKMUX" title="BUFGMUX7:CLKMUX[2]">BUFGMUX7:CLKMUX[2]</a></td></tr>
+<tr><td>60</td>
+<td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[0]">BUFGMUX3:CLKMUX[0]</a></td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX7:CLKMUX" title="BUFGMUX7:CLKMUX[1]">BUFGMUX7:CLKMUX[1]</a></td></tr>
+<tr><td>61</td>
+<td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[1]">BUFGMUX2:CLKMUX[1]</a></td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX6:CLKMUX" title="BUFGMUX6:CLKMUX[0]">BUFGMUX6:CLKMUX[0]</a></td></tr>
+<tr><td>62</td>
+<td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[2]">BUFGMUX2:CLKMUX[2]</a></td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX6:CLKMUX" title="BUFGMUX6:CLKMUX[2]">BUFGMUX6:CLKMUX[2]</a></td></tr>
+<tr><td>63</td>
+<td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[0]">BUFGMUX2:CLKMUX[0]</a></td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX6:CLKMUX" title="BUFGMUX6:CLKMUX[1]">BUFGMUX6:CLKMUX[1]</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="2">Column</th></tr><tr><th>0</th><th>1</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[1]">BUFGMUX1:CLKMUX[1]</a></td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX5:CLKMUX" title="BUFGMUX5:CLKMUX[0]">BUFGMUX5:CLKMUX[0]</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[2]">BUFGMUX1:CLKMUX[2]</a></td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX5:CLKMUX" title="BUFGMUX5:CLKMUX[2]">BUFGMUX5:CLKMUX[2]</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[0]">BUFGMUX1:CLKMUX[0]</a></td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX5:CLKMUX" title="BUFGMUX5:CLKMUX[1]">BUFGMUX5:CLKMUX[1]</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[1]">BUFGMUX0:CLKMUX[1]</a></td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX4:CLKMUX" title="BUFGMUX4:CLKMUX[0]">BUFGMUX4:CLKMUX[0]</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[2]">BUFGMUX0:CLKMUX[2]</a></td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX4:CLKMUX" title="BUFGMUX4:CLKMUX[2]">BUFGMUX4:CLKMUX[2]</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[0]">BUFGMUX0:CLKMUX[0]</a></td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX4:CLKMUX" title="BUFGMUX4:CLKMUX[1]">BUFGMUX4:CLKMUX[1]</a></td></tr>
+<tr><td>6</td>
+<td>-</td><td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX1:DISABLE_ATTR" title="BUFGMUX1:DISABLE_ATTR">BUFGMUX1:DISABLE_ATTR</a></td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td><a href="#bits-xc3s-CLKL.S3A-PCILOGICSE:DELAY" title="PCILOGICSE:DELAY[0]">PCILOGICSE:DELAY[0]</a></td><td>-</td></tr>
+<tr><td>19</td>
+<td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX3:DISABLE_ATTR" title="BUFGMUX3:DISABLE_ATTR">BUFGMUX3:DISABLE_ATTR</a></td><td>-</td></tr>
+<tr><td>20</td>
+<td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX2:DISABLE_ATTR" title="BUFGMUX2:DISABLE_ATTR">BUFGMUX2:DISABLE_ATTR</a></td><td>-</td></tr>
+<tr><td>21</td>
+<td><a href="#bits-xc3s-CLKL.S3A-PCILOGICSE:DELAY" title="PCILOGICSE:DELAY[1]">PCILOGICSE:DELAY[1]</a></td><td>-</td></tr>
+<tr><td>22</td>
+<td><a href="#bits-xc3s-CLKL.S3A-BUFGMUX0:DISABLE_ATTR" title="BUFGMUX0:DISABLE_ATTR">BUFGMUX0:DISABLE_ATTR</a></td><td>-</td></tr>
+</table>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX0:SINV"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX1:SINV"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX2:SINV"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX3:SINV"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX4:SINV"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX5:SINV"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX6:SINV"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX7:SINV"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:SINV</th><th>[1, 2, 19]</th></tr>
+<tr><th>BUFGMUX1:SINV</th><th>[1, 3, 61]</th></tr>
+<tr><th>BUFGMUX2:SINV</th><th>[1, 2, 20]</th></tr>
+<tr><th>BUFGMUX3:SINV</th><th>[1, 3, 60]</th></tr>
+<tr><th>BUFGMUX4:SINV</th><th>[0, 2, 19]</th></tr>
+<tr><th>BUFGMUX5:SINV</th><th>[0, 3, 61]</th></tr>
+<tr><th>BUFGMUX6:SINV</th><th>[0, 2, 20]</th></tr>
+<tr><th>BUFGMUX7:SINV</th><th>[0, 3, 60]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<div id="bits-xc3s-CLKL.S3A-PCILOGICSE:ENABLE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>PCILOGICSE:ENABLE</th><th>[2, 0, 54]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX0:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX1:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX2:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX3:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX4:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX5:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX6:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX7:DISABLE_ATTR"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:DISABLE_ATTR</th><th>[4, 0, 22]</th></tr>
+<tr><th>BUFGMUX1:DISABLE_ATTR</th><th>[4, 1, 6]</th></tr>
+<tr><th>BUFGMUX2:DISABLE_ATTR</th><th>[4, 0, 20]</th></tr>
+<tr><th>BUFGMUX3:DISABLE_ATTR</th><th>[4, 0, 19]</th></tr>
+<tr><th>BUFGMUX4:DISABLE_ATTR</th><th>[2, 0, 62]</th></tr>
+<tr><th>BUFGMUX5:DISABLE_ATTR</th><th>[3, 1, 57]</th></tr>
+<tr><th>BUFGMUX6:DISABLE_ATTR</th><th>[2, 0, 57]</th></tr>
+<tr><th>BUFGMUX7:DISABLE_ATTR</th><th>[2, 0, 56]</th></tr>
+<tr><td>LOW</td><td>0</td></tr>
+<tr><td>HIGH</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX0:CLKMUX"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX1:CLKMUX"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX2:CLKMUX"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX3:CLKMUX"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX4:CLKMUX"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX5:CLKMUX"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX6:CLKMUX"></div>
+<div id="bits-xc3s-CLKL.S3A-BUFGMUX7:CLKMUX"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:CLKMUX</th><th>[4, 0, 4]</th><th>[4, 0, 3]</th><th>[4, 0, 5]</th></tr>
+<tr><th>BUFGMUX1:CLKMUX</th><th>[4, 0, 1]</th><th>[4, 0, 0]</th><th>[4, 0, 2]</th></tr>
+<tr><th>BUFGMUX2:CLKMUX</th><th>[3, 0, 62]</th><th>[3, 0, 61]</th><th>[3, 0, 63]</th></tr>
+<tr><th>BUFGMUX3:CLKMUX</th><th>[3, 0, 59]</th><th>[3, 0, 58]</th><th>[3, 0, 60]</th></tr>
+<tr><th>BUFGMUX4:CLKMUX</th><th>[4, 1, 4]</th><th>[4, 1, 5]</th><th>[4, 1, 3]</th></tr>
+<tr><th>BUFGMUX5:CLKMUX</th><th>[4, 1, 1]</th><th>[4, 1, 2]</th><th>[4, 1, 0]</th></tr>
+<tr><th>BUFGMUX6:CLKMUX</th><th>[3, 1, 62]</th><th>[3, 1, 63]</th><th>[3, 1, 61]</th></tr>
+<tr><th>BUFGMUX7:CLKMUX</th><th>[3, 1, 59]</th><th>[3, 1, 60]</th><th>[3, 1, 58]</th></tr>
+<tr><td>INT</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKI</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>DCM_OUT</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-CLKL.S3A-PCILOGICSE:DELAY"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>PCILOGICSE:DELAY</th><th>[4, 0, 21]</th><th>[4, 0, 18]</th></tr>
+<tr><td>NILL</td><td>0</td><td>0</td></tr>
+<tr><td>MED</td><td>0</td><td>1</td></tr>
+<tr><td>HIGH</td><td>1</td><td>0</td></tr>
+<tr><td>LOW</td><td>1</td><td>1</td></tr>
+</table>
+</section>
+</section>
+<section id="bitstream-right-tiles">
+<h3>Bitstream — right tiles<a class="headerlink" href="#bitstream-right-tiles" title="Link to this heading"></a></h3>
+<div class="admonition-todo admonition" id="id5">
+<p class="admonition-title">Todo</p>
+<p>write</p>
+</div>
+<section id="clkr-s3e">
+<h4><code class="docutils literal notranslate"><span class="pre">CLKR.S3E</span></code><a class="headerlink" href="#clkr-s3e" title="Link to this heading"></a></h4>
+<p>This tile is used on Spartan 3E.</p>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="4">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX4:SINV" title="~BUFGMUX4:SINV">~BUFGMUX4:SINV</a></td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX6:SINV" title="~BUFGMUX6:SINV">~BUFGMUX6:SINV</a></td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>41</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>43</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>44</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>50</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>52</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>53</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>54</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>55</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>56</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>57</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>58</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>59</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>60</td>
+<td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX7:SINV" title="~BUFGMUX7:SINV">~BUFGMUX7:SINV</a></td></tr>
+<tr><td>61</td>
+<td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX5:SINV" title="~BUFGMUX5:SINV">~BUFGMUX5:SINV</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="4">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX0:SINV" title="~BUFGMUX0:SINV">~BUFGMUX0:SINV</a></td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX2:SINV" title="~BUFGMUX2:SINV">~BUFGMUX2:SINV</a></td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>41</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>43</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>44</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>50</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>52</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>53</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>54</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>55</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>56</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>57</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>58</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>59</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>60</td>
+<td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX3:SINV" title="~BUFGMUX3:SINV">~BUFGMUX3:SINV</a></td></tr>
+<tr><td>61</td>
+<td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX1:SINV" title="~BUFGMUX1:SINV">~BUFGMUX1:SINV</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="0">Column</th></tr><tr></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="2">Column</th></tr><tr><th>0</th><th>1</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td></tr>
+<tr><td>41</td>
+<td>-</td><td>-</td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td></tr>
+<tr><td>43</td>
+<td>-</td><td>-</td></tr>
+<tr><td>44</td>
+<td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX4:CLKMUX" title="BUFGMUX4:CLKMUX[0]">BUFGMUX4:CLKMUX[0]</a></td></tr>
+<tr><td>45</td>
+<td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX4:CLKMUX" title="BUFGMUX4:CLKMUX[2]">BUFGMUX4:CLKMUX[2]</a></td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td></tr>
+<tr><td>47</td>
+<td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX4:CLKMUX" title="BUFGMUX4:CLKMUX[1]">BUFGMUX4:CLKMUX[1]</a></td></tr>
+<tr><td>48</td>
+<td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX5:CLKMUX" title="BUFGMUX5:CLKMUX[0]">BUFGMUX5:CLKMUX[0]</a></td></tr>
+<tr><td>49</td>
+<td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX5:CLKMUX" title="BUFGMUX5:CLKMUX[2]">BUFGMUX5:CLKMUX[2]</a></td></tr>
+<tr><td>50</td>
+<td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX5:CLKMUX" title="BUFGMUX5:CLKMUX[1]">BUFGMUX5:CLKMUX[1]</a></td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td></tr>
+<tr><td>52</td>
+<td>-</td><td>-</td></tr>
+<tr><td>53</td>
+<td>-</td><td>-</td></tr>
+<tr><td>54</td>
+<td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX5:DISABLE_ATTR" title="BUFGMUX5:DISABLE_ATTR">BUFGMUX5:DISABLE_ATTR</a></td><td>-</td></tr>
+<tr><td>55</td>
+<td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX4:DISABLE_ATTR" title="BUFGMUX4:DISABLE_ATTR">BUFGMUX4:DISABLE_ATTR</a></td><td>-</td></tr>
+<tr><td>56</td>
+<td>-</td><td>-</td></tr>
+<tr><td>57</td>
+<td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX6:CLKMUX" title="BUFGMUX6:CLKMUX[0]">BUFGMUX6:CLKMUX[0]</a></td></tr>
+<tr><td>58</td>
+<td>-</td><td>-</td></tr>
+<tr><td>59</td>
+<td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX6:CLKMUX" title="BUFGMUX6:CLKMUX[2]">BUFGMUX6:CLKMUX[2]</a></td></tr>
+<tr><td>60</td>
+<td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX6:DISABLE_ATTR" title="BUFGMUX6:DISABLE_ATTR">BUFGMUX6:DISABLE_ATTR</a></td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX6:CLKMUX" title="BUFGMUX6:CLKMUX[1]">BUFGMUX6:CLKMUX[1]</a></td></tr>
+<tr><td>61</td>
+<td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX7:DISABLE_ATTR" title="BUFGMUX7:DISABLE_ATTR">BUFGMUX7:DISABLE_ATTR</a></td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX7:CLKMUX" title="BUFGMUX7:CLKMUX[0]">BUFGMUX7:CLKMUX[0]</a></td></tr>
+<tr><td>62</td>
+<td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX7:CLKMUX" title="BUFGMUX7:CLKMUX[2]">BUFGMUX7:CLKMUX[2]</a></td></tr>
+<tr><td>63</td>
+<td><a href="#bits-xc3s-CLKR.S3E-PCILOGICSE:ENABLE" title="PCILOGICSE:ENABLE">PCILOGICSE:ENABLE</a></td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX7:CLKMUX" title="BUFGMUX7:CLKMUX[1]">BUFGMUX7:CLKMUX[1]</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="2">Column</th></tr><tr><th>0</th><th>1</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX0:DISABLE_ATTR" title="BUFGMUX0:DISABLE_ATTR">BUFGMUX0:DISABLE_ATTR</a></td><td>-</td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX1:DISABLE_ATTR" title="BUFGMUX1:DISABLE_ATTR">BUFGMUX1:DISABLE_ATTR</a></td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[0]">BUFGMUX0:CLKMUX[0]</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX2:DISABLE_ATTR" title="BUFGMUX2:DISABLE_ATTR">BUFGMUX2:DISABLE_ATTR</a></td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[2]">BUFGMUX0:CLKMUX[2]</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX3:DISABLE_ATTR" title="BUFGMUX3:DISABLE_ATTR">BUFGMUX3:DISABLE_ATTR</a></td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[1]">BUFGMUX0:CLKMUX[1]</a></td></tr>
+<tr><td>4</td>
+<td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[0]">BUFGMUX1:CLKMUX[0]</a></td></tr>
+<tr><td>5</td>
+<td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[2]">BUFGMUX1:CLKMUX[2]</a></td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[1]">BUFGMUX1:CLKMUX[1]</a></td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[0]">BUFGMUX2:CLKMUX[0]</a></td></tr>
+<tr><td>16</td>
+<td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[2]">BUFGMUX2:CLKMUX[2]</a></td></tr>
+<tr><td>17</td>
+<td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[1]">BUFGMUX2:CLKMUX[1]</a></td></tr>
+<tr><td>18</td>
+<td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[0]">BUFGMUX3:CLKMUX[0]</a></td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[2]">BUFGMUX3:CLKMUX[2]</a></td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td><a href="#bits-xc3s-CLKR.S3E-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[1]">BUFGMUX3:CLKMUX[1]</a></td></tr>
+</table>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX0:SINV"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX1:SINV"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX2:SINV"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX3:SINV"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX4:SINV"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX5:SINV"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX6:SINV"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX7:SINV"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:SINV</th><th>[1, 2, 19]</th></tr>
+<tr><th>BUFGMUX1:SINV</th><th>[1, 3, 61]</th></tr>
+<tr><th>BUFGMUX2:SINV</th><th>[1, 2, 20]</th></tr>
+<tr><th>BUFGMUX3:SINV</th><th>[1, 3, 60]</th></tr>
+<tr><th>BUFGMUX4:SINV</th><th>[0, 2, 19]</th></tr>
+<tr><th>BUFGMUX5:SINV</th><th>[0, 3, 61]</th></tr>
+<tr><th>BUFGMUX6:SINV</th><th>[0, 2, 20]</th></tr>
+<tr><th>BUFGMUX7:SINV</th><th>[0, 3, 60]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX0:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX1:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX2:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX3:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX4:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX5:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX6:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX7:DISABLE_ATTR"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:DISABLE_ATTR</th><th>[4, 0, 0]</th></tr>
+<tr><th>BUFGMUX1:DISABLE_ATTR</th><th>[4, 0, 1]</th></tr>
+<tr><th>BUFGMUX2:DISABLE_ATTR</th><th>[4, 0, 2]</th></tr>
+<tr><th>BUFGMUX3:DISABLE_ATTR</th><th>[4, 0, 3]</th></tr>
+<tr><th>BUFGMUX4:DISABLE_ATTR</th><th>[3, 0, 55]</th></tr>
+<tr><th>BUFGMUX5:DISABLE_ATTR</th><th>[3, 0, 54]</th></tr>
+<tr><th>BUFGMUX6:DISABLE_ATTR</th><th>[3, 0, 60]</th></tr>
+<tr><th>BUFGMUX7:DISABLE_ATTR</th><th>[3, 0, 61]</th></tr>
+<tr><td>LOW</td><td>0</td></tr>
+<tr><td>HIGH</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKR.S3E-PCILOGICSE:ENABLE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>PCILOGICSE:ENABLE</th><th>[3, 0, 63]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX0:CLKMUX"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX1:CLKMUX"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX2:CLKMUX"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX3:CLKMUX"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX4:CLKMUX"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX5:CLKMUX"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX6:CLKMUX"></div>
+<div id="bits-xc3s-CLKR.S3E-BUFGMUX7:CLKMUX"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:CLKMUX</th><th>[4, 1, 2]</th><th>[4, 1, 3]</th><th>[4, 1, 1]</th></tr>
+<tr><th>BUFGMUX1:CLKMUX</th><th>[4, 1, 5]</th><th>[4, 1, 8]</th><th>[4, 1, 4]</th></tr>
+<tr><th>BUFGMUX2:CLKMUX</th><th>[4, 1, 16]</th><th>[4, 1, 17]</th><th>[4, 1, 15]</th></tr>
+<tr><th>BUFGMUX3:CLKMUX</th><th>[4, 1, 21]</th><th>[4, 1, 23]</th><th>[4, 1, 18]</th></tr>
+<tr><th>BUFGMUX4:CLKMUX</th><th>[3, 1, 45]</th><th>[3, 1, 47]</th><th>[3, 1, 44]</th></tr>
+<tr><th>BUFGMUX5:CLKMUX</th><th>[3, 1, 49]</th><th>[3, 1, 50]</th><th>[3, 1, 48]</th></tr>
+<tr><th>BUFGMUX6:CLKMUX</th><th>[3, 1, 59]</th><th>[3, 1, 60]</th><th>[3, 1, 57]</th></tr>
+<tr><th>BUFGMUX7:CLKMUX</th><th>[3, 1, 62]</th><th>[3, 1, 63]</th><th>[3, 1, 61]</th></tr>
+<tr><td>INT</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKI</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>DCM_OUT</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+</section>
+<section id="clkr-s3a">
+<h4><code class="docutils literal notranslate"><span class="pre">CLKR.S3A</span></code><a class="headerlink" href="#clkr-s3a" title="Link to this heading"></a></h4>
+<p>This tile is used on Spartan 3A.</p>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="4">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX4:SINV" title="~BUFGMUX4:SINV">~BUFGMUX4:SINV</a></td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX6:SINV" title="~BUFGMUX6:SINV">~BUFGMUX6:SINV</a></td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>41</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>43</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>44</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>50</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>52</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>53</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>54</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>55</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>56</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>57</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>58</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>59</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>60</td>
+<td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX7:SINV" title="~BUFGMUX7:SINV">~BUFGMUX7:SINV</a></td></tr>
+<tr><td>61</td>
+<td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX5:SINV" title="~BUFGMUX5:SINV">~BUFGMUX5:SINV</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="4">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX0:SINV" title="~BUFGMUX0:SINV">~BUFGMUX0:SINV</a></td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX2:SINV" title="~BUFGMUX2:SINV">~BUFGMUX2:SINV</a></td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>41</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>43</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>44</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>50</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>52</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>53</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>54</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>55</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>56</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>57</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>58</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>59</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>60</td>
+<td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX3:SINV" title="~BUFGMUX3:SINV">~BUFGMUX3:SINV</a></td></tr>
+<tr><td>61</td>
+<td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX1:SINV" title="~BUFGMUX1:SINV">~BUFGMUX1:SINV</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="0">Column</th></tr><tr></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="2">Column</th></tr><tr><th>0</th><th>1</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td></tr>
+<tr><td>41</td>
+<td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX4:DISABLE_ATTR" title="BUFGMUX4:DISABLE_ATTR">BUFGMUX4:DISABLE_ATTR</a></td><td>-</td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td></tr>
+<tr><td>43</td>
+<td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX6:DISABLE_ATTR" title="BUFGMUX6:DISABLE_ATTR">BUFGMUX6:DISABLE_ATTR</a></td><td>-</td></tr>
+<tr><td>44</td>
+<td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX7:DISABLE_ATTR" title="BUFGMUX7:DISABLE_ATTR">BUFGMUX7:DISABLE_ATTR</a></td><td>-</td></tr>
+<tr><td>45</td>
+<td><a href="#bits-xc3s-CLKR.S3A-PCILOGICSE:ENABLE" title="PCILOGICSE:ENABLE">PCILOGICSE:ENABLE</a></td><td>-</td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td></tr>
+<tr><td>50</td>
+<td>-</td><td>-</td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td></tr>
+<tr><td>52</td>
+<td>-</td><td>-</td></tr>
+<tr><td>53</td>
+<td>-</td><td>-</td></tr>
+<tr><td>54</td>
+<td>-</td><td>-</td></tr>
+<tr><td>55</td>
+<td>-</td><td>-</td></tr>
+<tr><td>56</td>
+<td>-</td><td>-</td></tr>
+<tr><td>57</td>
+<td>-</td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX5:DISABLE_ATTR" title="BUFGMUX5:DISABLE_ATTR">BUFGMUX5:DISABLE_ATTR</a></td></tr>
+<tr><td>58</td>
+<td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[1]">BUFGMUX3:CLKMUX[1]</a></td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX7:CLKMUX" title="BUFGMUX7:CLKMUX[0]">BUFGMUX7:CLKMUX[0]</a></td></tr>
+<tr><td>59</td>
+<td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[2]">BUFGMUX3:CLKMUX[2]</a></td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX7:CLKMUX" title="BUFGMUX7:CLKMUX[2]">BUFGMUX7:CLKMUX[2]</a></td></tr>
+<tr><td>60</td>
+<td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX3:CLKMUX" title="BUFGMUX3:CLKMUX[0]">BUFGMUX3:CLKMUX[0]</a></td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX7:CLKMUX" title="BUFGMUX7:CLKMUX[1]">BUFGMUX7:CLKMUX[1]</a></td></tr>
+<tr><td>61</td>
+<td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[1]">BUFGMUX2:CLKMUX[1]</a></td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX6:CLKMUX" title="BUFGMUX6:CLKMUX[0]">BUFGMUX6:CLKMUX[0]</a></td></tr>
+<tr><td>62</td>
+<td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[2]">BUFGMUX2:CLKMUX[2]</a></td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX6:CLKMUX" title="BUFGMUX6:CLKMUX[2]">BUFGMUX6:CLKMUX[2]</a></td></tr>
+<tr><td>63</td>
+<td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX2:CLKMUX" title="BUFGMUX2:CLKMUX[0]">BUFGMUX2:CLKMUX[0]</a></td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX6:CLKMUX" title="BUFGMUX6:CLKMUX[1]">BUFGMUX6:CLKMUX[1]</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="2">Column</th></tr><tr><th>0</th><th>1</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[1]">BUFGMUX1:CLKMUX[1]</a></td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX5:CLKMUX" title="BUFGMUX5:CLKMUX[0]">BUFGMUX5:CLKMUX[0]</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[2]">BUFGMUX1:CLKMUX[2]</a></td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX5:CLKMUX" title="BUFGMUX5:CLKMUX[2]">BUFGMUX5:CLKMUX[2]</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX1:CLKMUX" title="BUFGMUX1:CLKMUX[0]">BUFGMUX1:CLKMUX[0]</a></td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX5:CLKMUX" title="BUFGMUX5:CLKMUX[1]">BUFGMUX5:CLKMUX[1]</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[1]">BUFGMUX0:CLKMUX[1]</a></td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX4:CLKMUX" title="BUFGMUX4:CLKMUX[0]">BUFGMUX4:CLKMUX[0]</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[2]">BUFGMUX0:CLKMUX[2]</a></td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX4:CLKMUX" title="BUFGMUX4:CLKMUX[2]">BUFGMUX4:CLKMUX[2]</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX0:CLKMUX" title="BUFGMUX0:CLKMUX[0]">BUFGMUX0:CLKMUX[0]</a></td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX4:CLKMUX" title="BUFGMUX4:CLKMUX[1]">BUFGMUX4:CLKMUX[1]</a></td></tr>
+<tr><td>6</td>
+<td>-</td><td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX1:DISABLE_ATTR" title="BUFGMUX1:DISABLE_ATTR">BUFGMUX1:DISABLE_ATTR</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td>-</td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX0:DISABLE_ATTR" title="BUFGMUX0:DISABLE_ATTR">BUFGMUX0:DISABLE_ATTR</a></td></tr>
+<tr><td>2</td>
+<td>-</td></tr>
+<tr><td>3</td>
+<td>-</td></tr>
+<tr><td>4</td>
+<td>-</td></tr>
+<tr><td>5</td>
+<td>-</td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX2:DISABLE_ATTR" title="BUFGMUX2:DISABLE_ATTR">BUFGMUX2:DISABLE_ATTR</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc3s-CLKR.S3A-BUFGMUX3:DISABLE_ATTR" title="BUFGMUX3:DISABLE_ATTR">BUFGMUX3:DISABLE_ATTR</a></td></tr>
+<tr><td>8</td>
+<td>-</td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc3s-CLKR.S3A-PCILOGICSE:DELAY" title="PCILOGICSE:DELAY[1]">PCILOGICSE:DELAY[1]</a></td></tr>
+<tr><td>10</td>
+<td>-</td></tr>
+<tr><td>11</td>
+<td>-</td></tr>
+<tr><td>12</td>
+<td>-</td></tr>
+<tr><td>13</td>
+<td>-</td></tr>
+<tr><td>14</td>
+<td><a href="#bits-xc3s-CLKR.S3A-PCILOGICSE:DELAY" title="PCILOGICSE:DELAY[0]">PCILOGICSE:DELAY[0]</a></td></tr>
+</table>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX0:SINV"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX1:SINV"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX2:SINV"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX3:SINV"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX4:SINV"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX5:SINV"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX6:SINV"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX7:SINV"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:SINV</th><th>[1, 2, 19]</th></tr>
+<tr><th>BUFGMUX1:SINV</th><th>[1, 3, 61]</th></tr>
+<tr><th>BUFGMUX2:SINV</th><th>[1, 2, 20]</th></tr>
+<tr><th>BUFGMUX3:SINV</th><th>[1, 3, 60]</th></tr>
+<tr><th>BUFGMUX4:SINV</th><th>[0, 2, 19]</th></tr>
+<tr><th>BUFGMUX5:SINV</th><th>[0, 3, 61]</th></tr>
+<tr><th>BUFGMUX6:SINV</th><th>[0, 2, 20]</th></tr>
+<tr><th>BUFGMUX7:SINV</th><th>[0, 3, 60]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX0:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX1:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX2:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX3:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX4:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX5:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX6:DISABLE_ATTR"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX7:DISABLE_ATTR"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:DISABLE_ATTR</th><th>[5, 0, 1]</th></tr>
+<tr><th>BUFGMUX1:DISABLE_ATTR</th><th>[4, 1, 6]</th></tr>
+<tr><th>BUFGMUX2:DISABLE_ATTR</th><th>[5, 0, 6]</th></tr>
+<tr><th>BUFGMUX3:DISABLE_ATTR</th><th>[5, 0, 7]</th></tr>
+<tr><th>BUFGMUX4:DISABLE_ATTR</th><th>[3, 0, 41]</th></tr>
+<tr><th>BUFGMUX5:DISABLE_ATTR</th><th>[3, 1, 57]</th></tr>
+<tr><th>BUFGMUX6:DISABLE_ATTR</th><th>[3, 0, 43]</th></tr>
+<tr><th>BUFGMUX7:DISABLE_ATTR</th><th>[3, 0, 44]</th></tr>
+<tr><td>LOW</td><td>0</td></tr>
+<tr><td>HIGH</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKR.S3A-PCILOGICSE:ENABLE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>PCILOGICSE:ENABLE</th><th>[3, 0, 45]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX0:CLKMUX"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX1:CLKMUX"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX2:CLKMUX"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX3:CLKMUX"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX4:CLKMUX"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX5:CLKMUX"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX6:CLKMUX"></div>
+<div id="bits-xc3s-CLKR.S3A-BUFGMUX7:CLKMUX"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFGMUX0:CLKMUX</th><th>[4, 0, 4]</th><th>[4, 0, 3]</th><th>[4, 0, 5]</th></tr>
+<tr><th>BUFGMUX1:CLKMUX</th><th>[4, 0, 1]</th><th>[4, 0, 0]</th><th>[4, 0, 2]</th></tr>
+<tr><th>BUFGMUX2:CLKMUX</th><th>[3, 0, 62]</th><th>[3, 0, 61]</th><th>[3, 0, 63]</th></tr>
+<tr><th>BUFGMUX3:CLKMUX</th><th>[3, 0, 59]</th><th>[3, 0, 58]</th><th>[3, 0, 60]</th></tr>
+<tr><th>BUFGMUX4:CLKMUX</th><th>[4, 1, 4]</th><th>[4, 1, 5]</th><th>[4, 1, 3]</th></tr>
+<tr><th>BUFGMUX5:CLKMUX</th><th>[4, 1, 1]</th><th>[4, 1, 2]</th><th>[4, 1, 0]</th></tr>
+<tr><th>BUFGMUX6:CLKMUX</th><th>[3, 1, 62]</th><th>[3, 1, 63]</th><th>[3, 1, 61]</th></tr>
+<tr><th>BUFGMUX7:CLKMUX</th><th>[3, 1, 59]</th><th>[3, 1, 60]</th><th>[3, 1, 58]</th></tr>
+<tr><td>INT</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKI</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>DCM_OUT</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-CLKR.S3A-PCILOGICSE:DELAY"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>PCILOGICSE:DELAY</th><th>[5, 0, 9]</th><th>[5, 0, 14]</th></tr>
+<tr><td>NILL</td><td>0</td><td>0</td></tr>
+<tr><td>MED</td><td>0</td><td>1</td></tr>
+<tr><td>HIGH</td><td>1</td><td>0</td></tr>
+<tr><td>LOW</td><td>1</td><td>1</td></tr>
+</table>
+</section>
+</section>
+<section id="default-option-attributes">
+<h3>Default option attributes<a class="headerlink" href="#default-option-attributes" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<tr><th>Device</th><th>Value</th></tr>
+<tr><td>xa3s1400a</td><td>LOW</td</tr>
+<tr><td>xa3s200a</td><td>LOW</td</tr>
+<tr><td>xa3s400a</td><td>LOW</td</tr>
+<tr><td>xa3s700a</td><td>LOW</td</tr>
+<tr><td>xa3sd1800a</td><td>LOW</td</tr>
+<tr><td>xa3sd3400a</td><td>LOW</td</tr>
+<tr><td>xc3s1400a</td><td>LOW</td</tr>
+<tr><td>xc3s1400an</td><td>LOW</td</tr>
+<tr><td>xc3s200a</td><td>LOW</td</tr>
+<tr><td>xc3s200an</td><td>LOW</td</tr>
+<tr><td>xc3s400a</td><td>LOW</td</tr>
+<tr><td>xc3s400an</td><td>LOW</td</tr>
+<tr><td>xc3s50a</td><td>MED</td</tr>
+<tr><td>xc3s50an</td><td>MED</td</tr>
+<tr><td>xc3s700a</td><td>LOW</td</tr>
+<tr><td>xc3s700an</td><td>LOW</td</tr>
+<tr><td>xc3sd1800a</td><td>LOW</td</tr>
+<tr><td>xc3sd3400a</td><td>LOW</td</tr>
+</table>
+</section>
 </section>
 <section id="the-clkc-clock-center-tile">
 <h2>The <code class="docutils literal notranslate"><span class="pre">CLKC</span></code> clock center tile<a class="headerlink" href="#the-clkc-clock-center-tile" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">CLKC</span></code> tile is located in the center of the FPGA (intersection of primary vertical and horizontal clock spines) of all devices except <code class="docutils literal notranslate"><span class="pre">xc3s50a</span></code>. It has permanent buffers forwarding the clock signals from <code class="docutils literal notranslate"><span class="pre">CLKB</span></code> and <code class="docutils literal notranslate"><span class="pre">CLKT</span></code> to <code class="docutils literal notranslate"><span class="pre">GCLKVM</span></code>. It has no configuration.</p>
-<div class="admonition-todo admonition" id="id4">
+<div class="admonition-todo admonition" id="id6">
 <p class="admonition-title">Todo</p>
 <p>describe exact forwarding</p>
 </div>
 </section>
+<section id="the-clkc-50a-clock-center-tile">
+<h2>The <code class="docutils literal notranslate"><span class="pre">CLKC_50A</span></code> clock center tile<a class="headerlink" href="#the-clkc-50a-clock-center-tile" title="Link to this heading"></a></h2>
+<div class="admonition-todo admonition" id="id7">
+<p class="admonition-title">Todo</p>
+<p>document</p>
+</div>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="2">Column</th></tr><tr><th>0</th><th>1</th></tr>
+<tr><td>0</td>
+<td>-</td><td><a href="#bits-xc3s-CLKC_50A-CLKC_50A:OUT_L0" title="CLKC_50A:OUT_L0">CLKC_50A:OUT_L0</a></td></tr>
+<tr><td>1</td>
+<td>-</td><td><a href="#bits-xc3s-CLKC_50A-CLKC_50A:OUT_L1" title="CLKC_50A:OUT_L1">CLKC_50A:OUT_L1</a></td></tr>
+<tr><td>2</td>
+<td>-</td><td><a href="#bits-xc3s-CLKC_50A-CLKC_50A:OUT_L2" title="CLKC_50A:OUT_L2">CLKC_50A:OUT_L2</a></td></tr>
+<tr><td>3</td>
+<td>-</td><td><a href="#bits-xc3s-CLKC_50A-CLKC_50A:OUT_L3" title="CLKC_50A:OUT_L3">CLKC_50A:OUT_L3</a></td></tr>
+<tr><td>4</td>
+<td>-</td><td><a href="#bits-xc3s-CLKC_50A-CLKC_50A:OUT_L4" title="CLKC_50A:OUT_L4">CLKC_50A:OUT_L4</a></td></tr>
+<tr><td>5</td>
+<td>-</td><td><a href="#bits-xc3s-CLKC_50A-CLKC_50A:OUT_L5" title="CLKC_50A:OUT_L5">CLKC_50A:OUT_L5</a></td></tr>
+<tr><td>6</td>
+<td>-</td><td><a href="#bits-xc3s-CLKC_50A-CLKC_50A:OUT_L6" title="CLKC_50A:OUT_L6">CLKC_50A:OUT_L6</a></td></tr>
+<tr><td>7</td>
+<td>-</td><td><a href="#bits-xc3s-CLKC_50A-CLKC_50A:OUT_L7" title="CLKC_50A:OUT_L7">CLKC_50A:OUT_L7</a></td></tr>
+<tr><td>8</td>
+<td>-</td><td><a href="#bits-xc3s-CLKC_50A-CLKC_50A:OUT_R0" title="CLKC_50A:OUT_R0">CLKC_50A:OUT_R0</a></td></tr>
+<tr><td>9</td>
+<td>-</td><td><a href="#bits-xc3s-CLKC_50A-CLKC_50A:OUT_R1" title="CLKC_50A:OUT_R1">CLKC_50A:OUT_R1</a></td></tr>
+<tr><td>10</td>
+<td>-</td><td><a href="#bits-xc3s-CLKC_50A-CLKC_50A:OUT_R2" title="CLKC_50A:OUT_R2">CLKC_50A:OUT_R2</a></td></tr>
+<tr><td>11</td>
+<td>-</td><td><a href="#bits-xc3s-CLKC_50A-CLKC_50A:OUT_R3" title="CLKC_50A:OUT_R3">CLKC_50A:OUT_R3</a></td></tr>
+<tr><td>12</td>
+<td>-</td><td><a href="#bits-xc3s-CLKC_50A-CLKC_50A:OUT_R4" title="CLKC_50A:OUT_R4">CLKC_50A:OUT_R4</a></td></tr>
+<tr><td>13</td>
+<td>-</td><td><a href="#bits-xc3s-CLKC_50A-CLKC_50A:OUT_R5" title="CLKC_50A:OUT_R5">CLKC_50A:OUT_R5</a></td></tr>
+<tr><td>14</td>
+<td>-</td><td><a href="#bits-xc3s-CLKC_50A-CLKC_50A:OUT_R6" title="CLKC_50A:OUT_R6">CLKC_50A:OUT_R6</a></td></tr>
+<tr><td>15</td>
+<td>-</td><td><a href="#bits-xc3s-CLKC_50A-CLKC_50A:OUT_R7" title="CLKC_50A:OUT_R7">CLKC_50A:OUT_R7</a></td></tr>
+</table>
+<div id="bits-xc3s-CLKC_50A-CLKC_50A:OUT_L0"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>CLKC_50A:OUT_L0</th><th>[0, 1, 0]</th></tr>
+<tr><td>IN_B0</td><td>0</td></tr>
+<tr><td>IN_L0</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKC_50A-CLKC_50A:OUT_L1"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>CLKC_50A:OUT_L1</th><th>[0, 1, 1]</th></tr>
+<tr><td>IN_B1</td><td>0</td></tr>
+<tr><td>IN_L1</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKC_50A-CLKC_50A:OUT_L2"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>CLKC_50A:OUT_L2</th><th>[0, 1, 2]</th></tr>
+<tr><td>IN_B2</td><td>0</td></tr>
+<tr><td>IN_L2</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKC_50A-CLKC_50A:OUT_L3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>CLKC_50A:OUT_L3</th><th>[0, 1, 3]</th></tr>
+<tr><td>IN_B3</td><td>0</td></tr>
+<tr><td>IN_L3</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKC_50A-CLKC_50A:OUT_L4"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>CLKC_50A:OUT_L4</th><th>[0, 1, 4]</th></tr>
+<tr><td>IN_T0</td><td>0</td></tr>
+<tr><td>IN_L4</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKC_50A-CLKC_50A:OUT_L5"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>CLKC_50A:OUT_L5</th><th>[0, 1, 5]</th></tr>
+<tr><td>IN_T1</td><td>0</td></tr>
+<tr><td>IN_L5</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKC_50A-CLKC_50A:OUT_L6"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>CLKC_50A:OUT_L6</th><th>[0, 1, 6]</th></tr>
+<tr><td>IN_T2</td><td>0</td></tr>
+<tr><td>IN_L6</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKC_50A-CLKC_50A:OUT_L7"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>CLKC_50A:OUT_L7</th><th>[0, 1, 7]</th></tr>
+<tr><td>IN_T3</td><td>0</td></tr>
+<tr><td>IN_L7</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKC_50A-CLKC_50A:OUT_R0"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>CLKC_50A:OUT_R0</th><th>[0, 1, 8]</th></tr>
+<tr><td>IN_B0</td><td>0</td></tr>
+<tr><td>IN_R0</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKC_50A-CLKC_50A:OUT_R1"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>CLKC_50A:OUT_R1</th><th>[0, 1, 9]</th></tr>
+<tr><td>IN_B1</td><td>0</td></tr>
+<tr><td>IN_R1</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKC_50A-CLKC_50A:OUT_R2"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>CLKC_50A:OUT_R2</th><th>[0, 1, 10]</th></tr>
+<tr><td>IN_B2</td><td>0</td></tr>
+<tr><td>IN_R2</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKC_50A-CLKC_50A:OUT_R3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>CLKC_50A:OUT_R3</th><th>[0, 1, 11]</th></tr>
+<tr><td>IN_B3</td><td>0</td></tr>
+<tr><td>IN_R3</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKC_50A-CLKC_50A:OUT_R4"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>CLKC_50A:OUT_R4</th><th>[0, 1, 12]</th></tr>
+<tr><td>IN_T0</td><td>0</td></tr>
+<tr><td>IN_R4</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKC_50A-CLKC_50A:OUT_R5"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>CLKC_50A:OUT_R5</th><th>[0, 1, 13]</th></tr>
+<tr><td>IN_T1</td><td>0</td></tr>
+<tr><td>IN_R5</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKC_50A-CLKC_50A:OUT_R6"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>CLKC_50A:OUT_R6</th><th>[0, 1, 14]</th></tr>
+<tr><td>IN_T2</td><td>0</td></tr>
+<tr><td>IN_R6</td><td>1</td></tr>
+</table>
+<div id="bits-xc3s-CLKC_50A-CLKC_50A:OUT_R7"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>CLKC_50A:OUT_R7</th><th>[0, 1, 15]</th></tr>
+<tr><td>IN_T3</td><td>0</td></tr>
+<tr><td>IN_R7</td><td>1</td></tr>
+</table>
+</section>
 <section id="the-gclkvm-secondary-clock-center-tiles">
 <h2>The <code class="docutils literal notranslate"><span class="pre">GCLKVM</span></code> secondary clock center tiles<a class="headerlink" href="#the-gclkvm-secondary-clock-center-tiles" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">GCLKVM</span></code> tiles are located on the intersection of secondary vertical clock spines and the horizontal clock spine.</p>
-<p>The Spartan 3 version has permanent buffers forwarding the clock signals from <code class="docutils literal notranslate"><span class="pre">CLKC</span></code> to <code class="docutils literal notranslate"><span class="pre">GCLKVC</span></code> tiles. It has no configuration.</p>
-<p>The Spartan 3E and 3A versions multiplex clock signals from <code class="docutils literal notranslate"><span class="pre">CLK[LR]</span></code> and <code class="docutils literal notranslate"><span class="pre">CLKC</span></code> tiles.</p>
-<div class="admonition-todo admonition" id="id5">
+<div class="admonition-todo admonition" id="id8">
 <p class="admonition-title">Todo</p>
-<p>document Spartan 3E/3A version</p>
+<p>document</p>
 </div>
+<section id="gclkvm-s3">
+<h3><code class="docutils literal notranslate"><span class="pre">GCLKVM.S3</span></code><a class="headerlink" href="#gclkvm-s3" title="Link to this heading"></a></h3>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td>-</td></tr>
+<tr><td>1</td>
+<td>-</td></tr>
+<tr><td>2</td>
+<td>-</td></tr>
+<tr><td>3</td>
+<td>-</td></tr>
+<tr><td>4</td>
+<td>-</td></tr>
+<tr><td>5</td>
+<td>-</td></tr>
+<tr><td>6</td>
+<td>-</td></tr>
+<tr><td>7</td>
+<td>-</td></tr>
+<tr><td>8</td>
+<td>-</td></tr>
+<tr><td>9</td>
+<td>-</td></tr>
+<tr><td>10</td>
+<td>-</td></tr>
+<tr><td>11</td>
+<td>-</td></tr>
+<tr><td>12</td>
+<td>-</td></tr>
+<tr><td>13</td>
+<td>-</td></tr>
+<tr><td>14</td>
+<td>-</td></tr>
+<tr><td>15</td>
+<td>-</td></tr>
+<tr><td>16</td>
+<td>-</td></tr>
+<tr><td>17</td>
+<td>-</td></tr>
+<tr><td>18</td>
+<td>-</td></tr>
+<tr><td>19</td>
+<td>-</td></tr>
+<tr><td>20</td>
+<td>-</td></tr>
+<tr><td>21</td>
+<td>-</td></tr>
+<tr><td>22</td>
+<td>-</td></tr>
+<tr><td>23</td>
+<td>-</td></tr>
+<tr><td>24</td>
+<td>-</td></tr>
+<tr><td>25</td>
+<td>-</td></tr>
+<tr><td>26</td>
+<td>-</td></tr>
+<tr><td>27</td>
+<td>-</td></tr>
+<tr><td>28</td>
+<td>-</td></tr>
+<tr><td>29</td>
+<td>-</td></tr>
+<tr><td>30</td>
+<td><a href="#bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B3" title="GCLKVM:OUT_B3">GCLKVM:OUT_B3</a></td></tr>
+<tr><td>31</td>
+<td><a href="#bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B4" title="GCLKVM:OUT_B4">GCLKVM:OUT_B4</a></td></tr>
+<tr><td>32</td>
+<td><a href="#bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B5" title="GCLKVM:OUT_B5">GCLKVM:OUT_B5</a></td></tr>
+<tr><td>33</td>
+<td><a href="#bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B6" title="GCLKVM:OUT_B6">GCLKVM:OUT_B6</a></td></tr>
+<tr><td>34</td>
+<td><a href="#bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B2" title="GCLKVM:OUT_B2">GCLKVM:OUT_B2</a></td></tr>
+<tr><td>35</td>
+<td><a href="#bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B7" title="GCLKVM:OUT_B7">GCLKVM:OUT_B7</a></td></tr>
+<tr><td>36</td>
+<td><a href="#bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B1" title="GCLKVM:OUT_B1">GCLKVM:OUT_B1</a></td></tr>
+<tr><td>37</td>
+<td>-</td></tr>
+<tr><td>38</td>
+<td><a href="#bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B0" title="GCLKVM:OUT_B0">GCLKVM:OUT_B0</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td>-</td></tr>
+<tr><td>1</td>
+<td>-</td></tr>
+<tr><td>2</td>
+<td>-</td></tr>
+<tr><td>3</td>
+<td>-</td></tr>
+<tr><td>4</td>
+<td>-</td></tr>
+<tr><td>5</td>
+<td>-</td></tr>
+<tr><td>6</td>
+<td>-</td></tr>
+<tr><td>7</td>
+<td>-</td></tr>
+<tr><td>8</td>
+<td>-</td></tr>
+<tr><td>9</td>
+<td>-</td></tr>
+<tr><td>10</td>
+<td>-</td></tr>
+<tr><td>11</td>
+<td>-</td></tr>
+<tr><td>12</td>
+<td>-</td></tr>
+<tr><td>13</td>
+<td>-</td></tr>
+<tr><td>14</td>
+<td>-</td></tr>
+<tr><td>15</td>
+<td>-</td></tr>
+<tr><td>16</td>
+<td>-</td></tr>
+<tr><td>17</td>
+<td>-</td></tr>
+<tr><td>18</td>
+<td>-</td></tr>
+<tr><td>19</td>
+<td>-</td></tr>
+<tr><td>20</td>
+<td>-</td></tr>
+<tr><td>21</td>
+<td>-</td></tr>
+<tr><td>22</td>
+<td>-</td></tr>
+<tr><td>23</td>
+<td>-</td></tr>
+<tr><td>24</td>
+<td>-</td></tr>
+<tr><td>25</td>
+<td><a href="#bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T0" title="GCLKVM:OUT_T0">GCLKVM:OUT_T0</a></td></tr>
+<tr><td>26</td>
+<td>-</td></tr>
+<tr><td>27</td>
+<td><a href="#bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T1" title="GCLKVM:OUT_T1">GCLKVM:OUT_T1</a></td></tr>
+<tr><td>28</td>
+<td><a href="#bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T7" title="GCLKVM:OUT_T7">GCLKVM:OUT_T7</a></td></tr>
+<tr><td>29</td>
+<td><a href="#bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T2" title="GCLKVM:OUT_T2">GCLKVM:OUT_T2</a></td></tr>
+<tr><td>30</td>
+<td><a href="#bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T6" title="GCLKVM:OUT_T6">GCLKVM:OUT_T6</a></td></tr>
+<tr><td>31</td>
+<td><a href="#bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T5" title="GCLKVM:OUT_T5">GCLKVM:OUT_T5</a></td></tr>
+<tr><td>32</td>
+<td><a href="#bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T4" title="GCLKVM:OUT_T4">GCLKVM:OUT_T4</a></td></tr>
+<tr><td>33</td>
+<td><a href="#bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T3" title="GCLKVM:OUT_T3">GCLKVM:OUT_T3</a></td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B3</th><th>[0, 0, 30]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B4"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B4</th><th>[0, 0, 31]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B5"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B5</th><th>[0, 0, 32]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B6"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B6</th><th>[0, 0, 33]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B2"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B2</th><th>[0, 0, 34]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B7"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B7</th><th>[0, 0, 35]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B1"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B1</th><th>[0, 0, 36]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B0"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B0</th><th>[0, 0, 38]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T0"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_T0</th><th>[1, 0, 25]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T1"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_T1</th><th>[1, 0, 27]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T7"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_T7</th><th>[1, 0, 28]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T2"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_T2</th><th>[1, 0, 29]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T6"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_T6</th><th>[1, 0, 30]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T5"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_T5</th><th>[1, 0, 31]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T4"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_T4</th><th>[1, 0, 32]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_T3</th><th>[1, 0, 33]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="gclkvm-s3e">
+<h3><code class="docutils literal notranslate"><span class="pre">GCLKVM.S3E</span></code><a class="headerlink" href="#gclkvm-s3e" title="Link to this heading"></a></h3>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td>-</td></tr>
+<tr><td>1</td>
+<td>-</td></tr>
+<tr><td>2</td>
+<td>-</td></tr>
+<tr><td>3</td>
+<td>-</td></tr>
+<tr><td>4</td>
+<td>-</td></tr>
+<tr><td>5</td>
+<td>-</td></tr>
+<tr><td>6</td>
+<td>-</td></tr>
+<tr><td>7</td>
+<td>-</td></tr>
+<tr><td>8</td>
+<td>-</td></tr>
+<tr><td>9</td>
+<td>-</td></tr>
+<tr><td>10</td>
+<td>-</td></tr>
+<tr><td>11</td>
+<td>-</td></tr>
+<tr><td>12</td>
+<td>-</td></tr>
+<tr><td>13</td>
+<td>-</td></tr>
+<tr><td>14</td>
+<td>-</td></tr>
+<tr><td>15</td>
+<td>-</td></tr>
+<tr><td>16</td>
+<td>-</td></tr>
+<tr><td>17</td>
+<td>-</td></tr>
+<tr><td>18</td>
+<td>-</td></tr>
+<tr><td>19</td>
+<td>-</td></tr>
+<tr><td>20</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B7" title="GCLKVM:OUT_B7[1]">GCLKVM:OUT_B7[1]</a></td></tr>
+<tr><td>21</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B7" title="GCLKVM:OUT_B7[0]">GCLKVM:OUT_B7[0]</a></td></tr>
+<tr><td>22</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B6" title="GCLKVM:OUT_B6[1]">GCLKVM:OUT_B6[1]</a></td></tr>
+<tr><td>23</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B6" title="GCLKVM:OUT_B6[0]">GCLKVM:OUT_B6[0]</a></td></tr>
+<tr><td>24</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B5" title="GCLKVM:OUT_B5[1]">GCLKVM:OUT_B5[1]</a></td></tr>
+<tr><td>25</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B5" title="GCLKVM:OUT_B5[0]">GCLKVM:OUT_B5[0]</a></td></tr>
+<tr><td>26</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B4" title="GCLKVM:OUT_B4[1]">GCLKVM:OUT_B4[1]</a></td></tr>
+<tr><td>27</td>
+<td>-</td></tr>
+<tr><td>28</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B4" title="GCLKVM:OUT_B4[0]">GCLKVM:OUT_B4[0]</a></td></tr>
+<tr><td>29</td>
+<td>-</td></tr>
+<tr><td>30</td>
+<td>-</td></tr>
+<tr><td>31</td>
+<td>-</td></tr>
+<tr><td>32</td>
+<td>-</td></tr>
+<tr><td>33</td>
+<td>-</td></tr>
+<tr><td>34</td>
+<td>-</td></tr>
+<tr><td>35</td>
+<td>-</td></tr>
+<tr><td>36</td>
+<td>-</td></tr>
+<tr><td>37</td>
+<td>-</td></tr>
+<tr><td>38</td>
+<td>-</td></tr>
+<tr><td>39</td>
+<td>-</td></tr>
+<tr><td>40</td>
+<td>-</td></tr>
+<tr><td>41</td>
+<td>-</td></tr>
+<tr><td>42</td>
+<td>-</td></tr>
+<tr><td>43</td>
+<td>-</td></tr>
+<tr><td>44</td>
+<td>-</td></tr>
+<tr><td>45</td>
+<td>-</td></tr>
+<tr><td>46</td>
+<td>-</td></tr>
+<tr><td>47</td>
+<td>-</td></tr>
+<tr><td>48</td>
+<td>-</td></tr>
+<tr><td>49</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B3" title="GCLKVM:OUT_B3[1]">GCLKVM:OUT_B3[1]</a></td></tr>
+<tr><td>50</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B3" title="GCLKVM:OUT_B3[0]">GCLKVM:OUT_B3[0]</a></td></tr>
+<tr><td>51</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B2" title="GCLKVM:OUT_B2[1]">GCLKVM:OUT_B2[1]</a></td></tr>
+<tr><td>52</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B2" title="GCLKVM:OUT_B2[0]">GCLKVM:OUT_B2[0]</a></td></tr>
+<tr><td>53</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B1" title="GCLKVM:OUT_B1[1]">GCLKVM:OUT_B1[1]</a></td></tr>
+<tr><td>54</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B1" title="GCLKVM:OUT_B1[0]">GCLKVM:OUT_B1[0]</a></td></tr>
+<tr><td>55</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B0" title="GCLKVM:OUT_B0[1]">GCLKVM:OUT_B0[1]</a></td></tr>
+<tr><td>56</td>
+<td>-</td></tr>
+<tr><td>57</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B0" title="GCLKVM:OUT_B0[0]">GCLKVM:OUT_B0[0]</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td>-</td></tr>
+<tr><td>1</td>
+<td>-</td></tr>
+<tr><td>2</td>
+<td>-</td></tr>
+<tr><td>3</td>
+<td>-</td></tr>
+<tr><td>4</td>
+<td>-</td></tr>
+<tr><td>5</td>
+<td>-</td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T7" title="GCLKVM:OUT_T7[1]">GCLKVM:OUT_T7[1]</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T7" title="GCLKVM:OUT_T7[0]">GCLKVM:OUT_T7[0]</a></td></tr>
+<tr><td>8</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T6" title="GCLKVM:OUT_T6[1]">GCLKVM:OUT_T6[1]</a></td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T6" title="GCLKVM:OUT_T6[0]">GCLKVM:OUT_T6[0]</a></td></tr>
+<tr><td>10</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T5" title="GCLKVM:OUT_T5[1]">GCLKVM:OUT_T5[1]</a></td></tr>
+<tr><td>11</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T5" title="GCLKVM:OUT_T5[0]">GCLKVM:OUT_T5[0]</a></td></tr>
+<tr><td>12</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T4" title="GCLKVM:OUT_T4[1]">GCLKVM:OUT_T4[1]</a></td></tr>
+<tr><td>13</td>
+<td>-</td></tr>
+<tr><td>14</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T4" title="GCLKVM:OUT_T4[0]">GCLKVM:OUT_T4[0]</a></td></tr>
+<tr><td>15</td>
+<td>-</td></tr>
+<tr><td>16</td>
+<td>-</td></tr>
+<tr><td>17</td>
+<td>-</td></tr>
+<tr><td>18</td>
+<td>-</td></tr>
+<tr><td>19</td>
+<td>-</td></tr>
+<tr><td>20</td>
+<td>-</td></tr>
+<tr><td>21</td>
+<td>-</td></tr>
+<tr><td>22</td>
+<td>-</td></tr>
+<tr><td>23</td>
+<td>-</td></tr>
+<tr><td>24</td>
+<td>-</td></tr>
+<tr><td>25</td>
+<td>-</td></tr>
+<tr><td>26</td>
+<td>-</td></tr>
+<tr><td>27</td>
+<td>-</td></tr>
+<tr><td>28</td>
+<td>-</td></tr>
+<tr><td>29</td>
+<td>-</td></tr>
+<tr><td>30</td>
+<td>-</td></tr>
+<tr><td>31</td>
+<td>-</td></tr>
+<tr><td>32</td>
+<td>-</td></tr>
+<tr><td>33</td>
+<td>-</td></tr>
+<tr><td>34</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T3" title="GCLKVM:OUT_T3[1]">GCLKVM:OUT_T3[1]</a></td></tr>
+<tr><td>35</td>
+<td>-</td></tr>
+<tr><td>36</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T3" title="GCLKVM:OUT_T3[0]">GCLKVM:OUT_T3[0]</a></td></tr>
+<tr><td>37</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T2" title="GCLKVM:OUT_T2[1]">GCLKVM:OUT_T2[1]</a></td></tr>
+<tr><td>38</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T2" title="GCLKVM:OUT_T2[0]">GCLKVM:OUT_T2[0]</a></td></tr>
+<tr><td>39</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T1" title="GCLKVM:OUT_T1[1]">GCLKVM:OUT_T1[1]</a></td></tr>
+<tr><td>40</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T1" title="GCLKVM:OUT_T1[0]">GCLKVM:OUT_T1[0]</a></td></tr>
+<tr><td>41</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T0" title="GCLKVM:OUT_T0[1]">GCLKVM:OUT_T0[1]</a></td></tr>
+<tr><td>42</td>
+<td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T0" title="GCLKVM:OUT_T0[0]">GCLKVM:OUT_T0[0]</a></td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B7"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B7</th><th>[0, 0, 20]</th><th>[0, 0, 21]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>IN_LR7</td><td>0</td><td>1</td></tr>
+<tr><td>IN_CORE7</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B6"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B6</th><th>[0, 0, 22]</th><th>[0, 0, 23]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>IN_LR6</td><td>0</td><td>1</td></tr>
+<tr><td>IN_CORE6</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B5"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B5</th><th>[0, 0, 24]</th><th>[0, 0, 25]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>IN_LR5</td><td>0</td><td>1</td></tr>
+<tr><td>IN_CORE5</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B4"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B4</th><th>[0, 0, 26]</th><th>[0, 0, 28]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>IN_LR4</td><td>0</td><td>1</td></tr>
+<tr><td>IN_CORE4</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B3</th><th>[0, 0, 49]</th><th>[0, 0, 50]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>IN_LR3</td><td>0</td><td>1</td></tr>
+<tr><td>IN_CORE3</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B2"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B2</th><th>[0, 0, 51]</th><th>[0, 0, 52]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>IN_LR2</td><td>0</td><td>1</td></tr>
+<tr><td>IN_CORE2</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B1"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B1</th><th>[0, 0, 53]</th><th>[0, 0, 54]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>IN_LR1</td><td>0</td><td>1</td></tr>
+<tr><td>IN_CORE1</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B0"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B0</th><th>[0, 0, 55]</th><th>[0, 0, 57]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>IN_LR0</td><td>0</td><td>1</td></tr>
+<tr><td>IN_CORE0</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T7"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_T7</th><th>[1, 0, 6]</th><th>[1, 0, 7]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>IN_LR7</td><td>0</td><td>1</td></tr>
+<tr><td>IN_CORE7</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T6"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_T6</th><th>[1, 0, 8]</th><th>[1, 0, 9]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>IN_LR6</td><td>0</td><td>1</td></tr>
+<tr><td>IN_CORE6</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T5"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_T5</th><th>[1, 0, 10]</th><th>[1, 0, 11]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>IN_LR5</td><td>0</td><td>1</td></tr>
+<tr><td>IN_CORE5</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T4"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_T4</th><th>[1, 0, 12]</th><th>[1, 0, 14]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>IN_LR4</td><td>0</td><td>1</td></tr>
+<tr><td>IN_CORE4</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_T3</th><th>[1, 0, 34]</th><th>[1, 0, 36]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>IN_LR3</td><td>0</td><td>1</td></tr>
+<tr><td>IN_CORE3</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T2"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_T2</th><th>[1, 0, 37]</th><th>[1, 0, 38]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>IN_LR2</td><td>0</td><td>1</td></tr>
+<tr><td>IN_CORE2</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T1"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_T1</th><th>[1, 0, 39]</th><th>[1, 0, 40]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>IN_LR1</td><td>0</td><td>1</td></tr>
+<tr><td>IN_CORE1</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T0"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_T0</th><th>[1, 0, 41]</th><th>[1, 0, 42]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>IN_LR0</td><td>0</td><td>1</td></tr>
+<tr><td>IN_CORE0</td><td>1</td><td>0</td></tr>
+</table>
+</section>
 </section>
 <section id="the-gclkvc-clock-spine-distribution-tiles">
 <h2>The <code class="docutils literal notranslate"><span class="pre">GCLKVC</span></code> clock spine distribution tiles<a class="headerlink" href="#the-gclkvc-clock-spine-distribution-tiles" title="Link to this heading"></a></h2>
-<div class="admonition-todo admonition" id="id6">
+<div class="admonition-todo admonition" id="id9">
 <p class="admonition-title">Todo</p>
 <p>document</p>
 </div>
 </section>
 <section id="the-gclkh-clock-row-distribution-tiles">
 <h2>The <code class="docutils literal notranslate"><span class="pre">GCLKH</span></code> clock row distribution tiles<a class="headerlink" href="#the-gclkh-clock-row-distribution-tiles" title="Link to this heading"></a></h2>
-<div class="admonition-todo admonition" id="id7">
+<div class="admonition-todo admonition" id="id10">
 <p class="admonition-title">Todo</p>
 <p>document</p>
 </div>
+<section id="gclkh">
+<h3><code class="docutils literal notranslate"><span class="pre">GCLKH</span></code><a class="headerlink" href="#gclkh" title="Link to this heading"></a></h3>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="17">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th></tr>
+<tr><td>0</td>
+<td>-</td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_B7" title="GCLKH:OUT_B7">GCLKH:OUT_B7</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_T7" title="GCLKH:OUT_T7">GCLKH:OUT_T7</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_B6" title="GCLKH:OUT_B6">GCLKH:OUT_B6</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_T6" title="GCLKH:OUT_T6">GCLKH:OUT_T6</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_B5" title="GCLKH:OUT_B5">GCLKH:OUT_B5</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_T5" title="GCLKH:OUT_T5">GCLKH:OUT_T5</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_B4" title="GCLKH:OUT_B4">GCLKH:OUT_B4</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_T4" title="GCLKH:OUT_T4">GCLKH:OUT_T4</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_B3" title="GCLKH:OUT_B3">GCLKH:OUT_B3</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_T3" title="GCLKH:OUT_T3">GCLKH:OUT_T3</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_B2" title="GCLKH:OUT_B2">GCLKH:OUT_B2</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_T2" title="GCLKH:OUT_T2">GCLKH:OUT_T2</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_B1" title="GCLKH:OUT_B1">GCLKH:OUT_B1</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_T1" title="GCLKH:OUT_T1">GCLKH:OUT_T1</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_B0" title="GCLKH:OUT_B0">GCLKH:OUT_B0</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_T0" title="GCLKH:OUT_T0">GCLKH:OUT_T0</a></td></tr>
+</table>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_B7"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_B7</th><th>[0, 1, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_T7"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_T7</th><th>[0, 2, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_B6"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_B6</th><th>[0, 3, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_T6"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_T6</th><th>[0, 4, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_B5"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_B5</th><th>[0, 5, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_T5"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_T5</th><th>[0, 6, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_B4"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_B4</th><th>[0, 7, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_T4"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_T4</th><th>[0, 8, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_B3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_B3</th><th>[0, 9, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_T3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_T3</th><th>[0, 10, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_B2"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_B2</th><th>[0, 11, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_T2"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_T2</th><th>[0, 12, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_B1"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_B1</th><th>[0, 13, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_T1"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_T1</th><th>[0, 14, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_B0"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_B0</th><th>[0, 15, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_T0"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_T0</th><th>[0, 16, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="gclkh-s">
+<h3><code class="docutils literal notranslate"><span class="pre">GCLKH.S</span></code><a class="headerlink" href="#gclkh-s" title="Link to this heading"></a></h3>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="16">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th></tr>
+<tr><td>0</td>
+<td>-</td><td><a href="#bits-xc3s-GCLKH.S-GCLKH:OUT_B7" title="GCLKH:OUT_B7">GCLKH:OUT_B7</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.S-GCLKH:OUT_B6" title="GCLKH:OUT_B6">GCLKH:OUT_B6</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.S-GCLKH:OUT_B5" title="GCLKH:OUT_B5">GCLKH:OUT_B5</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.S-GCLKH:OUT_B4" title="GCLKH:OUT_B4">GCLKH:OUT_B4</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.S-GCLKH:OUT_B3" title="GCLKH:OUT_B3">GCLKH:OUT_B3</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.S-GCLKH:OUT_B2" title="GCLKH:OUT_B2">GCLKH:OUT_B2</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.S-GCLKH:OUT_B1" title="GCLKH:OUT_B1">GCLKH:OUT_B1</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.S-GCLKH:OUT_B0" title="GCLKH:OUT_B0">GCLKH:OUT_B0</a></td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B7"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_B7</th><th>[0, 1, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B6"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_B6</th><th>[0, 3, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B5"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_B5</th><th>[0, 5, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B4"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_B4</th><th>[0, 7, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_B3</th><th>[0, 9, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B2"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_B2</th><th>[0, 11, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B1"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_B1</th><th>[0, 13, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B0"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_B0</th><th>[0, 15, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="gclkh-n">
+<h3><code class="docutils literal notranslate"><span class="pre">GCLKH.N</span></code><a class="headerlink" href="#gclkh-n" title="Link to this heading"></a></h3>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="17">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td><a href="#bits-xc3s-GCLKH.N-GCLKH:OUT_T7" title="GCLKH:OUT_T7">GCLKH:OUT_T7</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.N-GCLKH:OUT_T6" title="GCLKH:OUT_T6">GCLKH:OUT_T6</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.N-GCLKH:OUT_T5" title="GCLKH:OUT_T5">GCLKH:OUT_T5</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.N-GCLKH:OUT_T4" title="GCLKH:OUT_T4">GCLKH:OUT_T4</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.N-GCLKH:OUT_T3" title="GCLKH:OUT_T3">GCLKH:OUT_T3</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.N-GCLKH:OUT_T2" title="GCLKH:OUT_T2">GCLKH:OUT_T2</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.N-GCLKH:OUT_T1" title="GCLKH:OUT_T1">GCLKH:OUT_T1</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.N-GCLKH:OUT_T0" title="GCLKH:OUT_T0">GCLKH:OUT_T0</a></td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T7"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_T7</th><th>[0, 2, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T6"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_T6</th><th>[0, 4, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T5"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_T5</th><th>[0, 6, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T4"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_T4</th><th>[0, 8, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_T3</th><th>[0, 10, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T2"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_T2</th><th>[0, 12, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T1"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_T1</th><th>[0, 14, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T0"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_T0</th><th>[0, 16, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="gclkh-uni">
+<h3><code class="docutils literal notranslate"><span class="pre">GCLKH.UNI</span></code><a class="headerlink" href="#gclkh-uni" title="Link to this heading"></a></h3>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="16">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th></tr>
+<tr><td>0</td>
+<td>-</td><td><a href="#bits-xc3s-GCLKH.UNI-GCLKH:OUT7" title="GCLKH:OUT7">GCLKH:OUT7</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI-GCLKH:OUT6" title="GCLKH:OUT6">GCLKH:OUT6</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI-GCLKH:OUT5" title="GCLKH:OUT5">GCLKH:OUT5</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI-GCLKH:OUT4" title="GCLKH:OUT4">GCLKH:OUT4</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI-GCLKH:OUT3" title="GCLKH:OUT3">GCLKH:OUT3</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI-GCLKH:OUT2" title="GCLKH:OUT2">GCLKH:OUT2</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI-GCLKH:OUT1" title="GCLKH:OUT1">GCLKH:OUT1</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI-GCLKH:OUT0" title="GCLKH:OUT0">GCLKH:OUT0</a></td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT7"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT7</th><th>[0, 1, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT6"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT6</th><th>[0, 3, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT5"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT5</th><th>[0, 5, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT4"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT4</th><th>[0, 7, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT3</th><th>[0, 9, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT2"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT2</th><th>[0, 11, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT1"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT1</th><th>[0, 13, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT0"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT0</th><th>[0, 15, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="gclkh-uni-s">
+<h3><code class="docutils literal notranslate"><span class="pre">GCLKH.UNI.S</span></code><a class="headerlink" href="#gclkh-uni-s" title="Link to this heading"></a></h3>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="16">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th></tr>
+<tr><td>0</td>
+<td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.S-GCLKH:OUT7" title="GCLKH:OUT7">GCLKH:OUT7</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.S-GCLKH:OUT6" title="GCLKH:OUT6">GCLKH:OUT6</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.S-GCLKH:OUT5" title="GCLKH:OUT5">GCLKH:OUT5</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.S-GCLKH:OUT4" title="GCLKH:OUT4">GCLKH:OUT4</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.S-GCLKH:OUT3" title="GCLKH:OUT3">GCLKH:OUT3</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.S-GCLKH:OUT2" title="GCLKH:OUT2">GCLKH:OUT2</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.S-GCLKH:OUT1" title="GCLKH:OUT1">GCLKH:OUT1</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.S-GCLKH:OUT0" title="GCLKH:OUT0">GCLKH:OUT0</a></td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT7"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT7</th><th>[0, 1, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT6"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT6</th><th>[0, 3, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT5"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT5</th><th>[0, 5, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT4"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT4</th><th>[0, 7, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT3</th><th>[0, 9, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT2"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT2</th><th>[0, 11, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT1"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT1</th><th>[0, 13, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT0"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT0</th><th>[0, 15, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="gclkh-uni-n">
+<h3><code class="docutils literal notranslate"><span class="pre">GCLKH.UNI.N</span></code><a class="headerlink" href="#gclkh-uni-n" title="Link to this heading"></a></h3>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="16">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th></tr>
+<tr><td>0</td>
+<td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.N-GCLKH:OUT7" title="GCLKH:OUT7">GCLKH:OUT7</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.N-GCLKH:OUT6" title="GCLKH:OUT6">GCLKH:OUT6</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.N-GCLKH:OUT5" title="GCLKH:OUT5">GCLKH:OUT5</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.N-GCLKH:OUT4" title="GCLKH:OUT4">GCLKH:OUT4</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.N-GCLKH:OUT3" title="GCLKH:OUT3">GCLKH:OUT3</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.N-GCLKH:OUT2" title="GCLKH:OUT2">GCLKH:OUT2</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.N-GCLKH:OUT1" title="GCLKH:OUT1">GCLKH:OUT1</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.N-GCLKH:OUT0" title="GCLKH:OUT0">GCLKH:OUT0</a></td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT7"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT7</th><th>[0, 1, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT6"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT6</th><th>[0, 3, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT5"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT5</th><th>[0, 5, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT4"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT4</th><th>[0, 7, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT3</th><th>[0, 9, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT2"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT2</th><th>[0, 11, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT1"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT1</th><th>[0, 13, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT0"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT0</th><th>[0, 15, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
 </section>
 </section>
 
