@@ -57,7 +57,13 @@
 <li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM — Virtex 2, Spartan 3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="io.html">Input / Output — Virtex 2, Spartan 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcm.html">Digital Clock Managers — Virtex 2, Spartan 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ppc.html">Hard PowerPC 405 cores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gt.html">Multi-gigabit transceivers — Virtex 2 Pro</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gt10.html">Multi-gigabit transceivers — Virtex 2 Pro X</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pcilogic.html">Hard PCI logic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="corner.html">Corners — Virtex 2, Spartan 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers — Virtex 2, Spartan 3, Spartan 3E</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../spartan3/index.html">Xilinx Spartan 3 FPGAs</a></li>
@@ -157,14 +163,43 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="io.html">Input / Output — Virtex 2, Spartan 3</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="io.html#i-o-interface">I/O interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="io.html#i-o-buffers">I/O buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#i-o-buffers-virtex-2">I/O buffers — Virtex 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#i-o-buffers-virtex-2-pro">I/O buffers — Virtex 2 Pro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#i-o-buffers-spartan-3">I/O buffers — Spartan 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#i-o-buffers-spartan-3e">I/O buffers — Spartan 3E</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#i-o-buffers-spartan-3a">I/O buffers — Spartan 3A</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="dcm.html">Digital Clock Managers — Virtex 2, Spartan 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ppc.html">Hard PowerPC 405 cores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gt.html">Multi-gigabit transceivers — Virtex 2 Pro</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gt.html#bitstream">Bitstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gt10.html">Multi-gigabit transceivers — Virtex 2 Pro X</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gt10.html#bitstream">Bitstream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gt10.html#pma-speed-values"><code class="docutils literal notranslate"><span class="pre">PMA_SPEED</span></code> values</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pcilogic.html">Hard PCI logic</a></li>
 <li class="toctree-l1"><a class="reference internal" href="corner.html">Corners — Virtex 2, Spartan 3</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="corner.html#lower-left">Lower left</a></li>
 <li class="toctree-l2"><a class="reference internal" href="corner.html#upper-left">Upper left</a></li>
 <li class="toctree-l2"><a class="reference internal" href="corner.html#lower-right">Lower right</a></li>
 <li class="toctree-l2"><a class="reference internal" href="corner.html#upper-right">Upper right</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corner.html#i-o-data-virtex-2">I/O data — Virtex 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corner.html#i-o-data-virtex-2-pro">I/O data — Virtex 2 Pro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corner.html#i-o-data-spartan-3">I/O data — Spartan 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corner.html#i-o-data-spartan-3e">I/O data — Spartan 3E</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corner.html#i-o-data-spartan-3a">I/O data — Spartan 3A</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration registers — Virtex 2, Spartan 3, Spartan 3E</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config.html#cor-virtex-2"><code class="docutils literal notranslate"><span class="pre">COR</span></code> — Virtex 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#cor-s3"><code class="docutils literal notranslate"><span class="pre">COR.S3</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#cor-s3e"><code class="docutils literal notranslate"><span class="pre">COR.S3E</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#ctl-virtex-2"><code class="docutils literal notranslate"><span class="pre">CTL</span></code> — Virtex 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#ctl-s3"><code class="docutils literal notranslate"><span class="pre">CTL.S3</span></code></a></li>
 </ul>
 </li>
 </ul>

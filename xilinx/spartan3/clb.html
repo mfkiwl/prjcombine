@@ -62,10 +62,12 @@
 <li class="toctree-l4"><a class="reference internal" href="#output-multiplexers-virtex-4">Output multiplexers — Virtex 4</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#registers">Registers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#bitstream">Bitstream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reserved-andor"><code class="docutils literal notranslate"><span class="pre">RESERVED_ANDOR</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP — Spartan 3A DSP, Spartan 6</a></li>
 <li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config-xc3sa.html">Configuration registers — Spartan 3A and 3A DSP</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Xilinx Spartan 6 FPGAs</a></li>
@@ -619,7 +621,7 @@
 <tr><td>16</td>
 <td><a href="#bits-xc3s-CLB-SLICE0:G" title="~SLICE0:G[15]">~SLICE0:G[15]</a></td><td><a href="#bits-xc3s-CLB-SLICE0:FXMUX" title="SLICE0:FXMUX[1]">SLICE0:FXMUX[1]</a></td><td><a href="#bits-xc3s-CLB-SLICE1:FXMUX" title="SLICE1:FXMUX[1]">SLICE1:FXMUX[1]</a></td><td><a href="#bits-xc3s-CLB-SLICE1:G" title="~SLICE1:G[15]">~SLICE1:G[15]</a></td><td>-</td><td>-</td></tr>
 <tr><td>17</td>
-<td><a href="#bits-xc3s-CLB-SLICE0:G" title="~SLICE0:G[14]">~SLICE0:G[14]</a></td><td><a href="#bits-xc3s-CLB-SLICE0:FF_SR_EN" title="~SLICE0:FF_SR_EN">~SLICE0:FF_SR_EN</a></td><td><a href="#bits-xc3s-CLB-SLICE0:SLICEWE0USED" title="SLICE0:SLICEWE0USED">SLICE0:SLICEWE0USED</a></td><td><a href="#bits-xc3s-CLB-SLICE1:G" title="~SLICE1:G[14]">~SLICE1:G[14]</a></td><td>-</td><td>-</td></tr>
+<td><a href="#bits-xc3s-CLB-SLICE0:G" title="~SLICE0:G[14]">~SLICE0:G[14]</a></td><td><a href="#bits-xc3s-CLB-SLICE0:FF_SR_ENABLE" title="~SLICE0:FF_SR_ENABLE">~SLICE0:FF_SR_ENABLE</a></td><td><a href="#bits-xc3s-CLB-SLICE0:SLICEWE0USED" title="SLICE0:SLICEWE0USED">SLICE0:SLICEWE0USED</a></td><td><a href="#bits-xc3s-CLB-SLICE1:G" title="~SLICE1:G[14]">~SLICE1:G[14]</a></td><td>-</td><td>-</td></tr>
 <tr><td>18</td>
 <td><a href="#bits-xc3s-CLB-SLICE0:G" title="~SLICE0:G[13]">~SLICE0:G[13]</a></td><td><a href="#bits-xc3s-CLB-SLICE0:FFX_INIT" title="~SLICE0:FFX_INIT">~SLICE0:FFX_INIT</a></td><td><a href="#bits-xc3s-CLB-SLICE1:FFX_INIT" title="~SLICE1:FFX_INIT">~SLICE1:FFX_INIT</a></td><td><a href="#bits-xc3s-CLB-SLICE1:G" title="~SLICE1:G[13]">~SLICE1:G[13]</a></td><td>-</td><td>-</td></tr>
 <tr><td>19</td>
@@ -631,7 +633,7 @@
 <tr><td>22</td>
 <td><a href="#bits-xc3s-CLB-SLICE0:G" title="~SLICE0:G[9]">~SLICE0:G[9]</a></td><td><a href="#bits-xc3s-CLB-SLICE0:FF_LATCH" title="SLICE0:FF_LATCH">SLICE0:FF_LATCH</a></td><td><a href="#bits-xc3s-CLB-SLICE1:FF_LATCH" title="SLICE1:FF_LATCH">SLICE1:FF_LATCH</a></td><td><a href="#bits-xc3s-CLB-SLICE1:G" title="~SLICE1:G[9]">~SLICE1:G[9]</a></td><td>-</td><td>-</td></tr>
 <tr><td>23</td>
-<td><a href="#bits-xc3s-CLB-SLICE0:G" title="~SLICE0:G[8]">~SLICE0:G[8]</a></td><td><a href="#bits-xc3s-CLB-SLICE0:FF_REV_EN" title="SLICE0:FF_REV_EN">SLICE0:FF_REV_EN</a></td><td><a href="#bits-xc3s-CLB-SLICE1:FF_REV_EN" title="SLICE1:FF_REV_EN">SLICE1:FF_REV_EN</a></td><td><a href="#bits-xc3s-CLB-SLICE1:G" title="~SLICE1:G[8]">~SLICE1:G[8]</a></td><td>-</td><td>-</td></tr>
+<td><a href="#bits-xc3s-CLB-SLICE0:G" title="~SLICE0:G[8]">~SLICE0:G[8]</a></td><td><a href="#bits-xc3s-CLB-SLICE0:FF_REV_ENABLE" title="SLICE0:FF_REV_ENABLE">SLICE0:FF_REV_ENABLE</a></td><td><a href="#bits-xc3s-CLB-SLICE1:FF_REV_ENABLE" title="SLICE1:FF_REV_ENABLE">SLICE1:FF_REV_ENABLE</a></td><td><a href="#bits-xc3s-CLB-SLICE1:G" title="~SLICE1:G[8]">~SLICE1:G[8]</a></td><td>-</td><td>-</td></tr>
 <tr><td>24</td>
 <td><a href="#bits-xc3s-CLB-SLICE0:G" title="~SLICE0:G[7]">~SLICE0:G[7]</a></td><td><a href="#bits-xc3s-CLB-SLICE0:FFY_SRVAL" title="~SLICE0:FFY_SRVAL">~SLICE0:FFY_SRVAL</a></td><td><a href="#bits-xc3s-CLB-SLICE1:FFY_SRVAL" title="~SLICE1:FFY_SRVAL">~SLICE1:FFY_SRVAL</a></td><td><a href="#bits-xc3s-CLB-SLICE1:G" title="~SLICE1:G[7]">~SLICE1:G[7]</a></td><td>-</td><td>-</td></tr>
 <tr><td>25</td>
@@ -683,7 +685,7 @@
 <tr><td>48</td>
 <td><a href="#bits-xc3s-CLB-SLICE2:G" title="~SLICE2:G[15]">~SLICE2:G[15]</a></td><td><a href="#bits-xc3s-CLB-SLICE2:FXMUX" title="SLICE2:FXMUX[1]">SLICE2:FXMUX[1]</a></td><td><a href="#bits-xc3s-CLB-SLICE3:FXMUX" title="SLICE3:FXMUX[1]">SLICE3:FXMUX[1]</a></td><td><a href="#bits-xc3s-CLB-SLICE3:G" title="~SLICE3:G[15]">~SLICE3:G[15]</a></td><td>-</td><td>-</td></tr>
 <tr><td>49</td>
-<td><a href="#bits-xc3s-CLB-SLICE2:G" title="~SLICE2:G[14]">~SLICE2:G[14]</a></td><td><a href="#bits-xc3s-CLB-SLICE2:FF_SR_EN" title="~SLICE2:FF_SR_EN">~SLICE2:FF_SR_EN</a></td><td><a href="#bits-xc3s-CLB-SLICE2:SLICEWE0USED" title="SLICE2:SLICEWE0USED">SLICE2:SLICEWE0USED</a></td><td><a href="#bits-xc3s-CLB-SLICE3:G" title="~SLICE3:G[14]">~SLICE3:G[14]</a></td><td>-</td><td><a href="#bits-xc3s-CLB-SLICE3:BYINV" title="SLICE3:BYINV">SLICE3:BYINV</a></td></tr>
+<td><a href="#bits-xc3s-CLB-SLICE2:G" title="~SLICE2:G[14]">~SLICE2:G[14]</a></td><td><a href="#bits-xc3s-CLB-SLICE2:FF_SR_ENABLE" title="~SLICE2:FF_SR_ENABLE">~SLICE2:FF_SR_ENABLE</a></td><td><a href="#bits-xc3s-CLB-SLICE2:SLICEWE0USED" title="SLICE2:SLICEWE0USED">SLICE2:SLICEWE0USED</a></td><td><a href="#bits-xc3s-CLB-SLICE3:G" title="~SLICE3:G[14]">~SLICE3:G[14]</a></td><td>-</td><td><a href="#bits-xc3s-CLB-SLICE3:BYINV" title="SLICE3:BYINV">SLICE3:BYINV</a></td></tr>
 <tr><td>50</td>
 <td><a href="#bits-xc3s-CLB-SLICE2:G" title="~SLICE2:G[13]">~SLICE2:G[13]</a></td><td><a href="#bits-xc3s-CLB-SLICE2:FFX_INIT" title="~SLICE2:FFX_INIT">~SLICE2:FFX_INIT</a></td><td><a href="#bits-xc3s-CLB-SLICE3:FFX_INIT" title="~SLICE3:FFX_INIT">~SLICE3:FFX_INIT</a></td><td><a href="#bits-xc3s-CLB-SLICE3:G" title="~SLICE3:G[13]">~SLICE3:G[13]</a></td><td>-</td><td>-</td></tr>
 <tr><td>51</td>
@@ -695,7 +697,7 @@
 <tr><td>54</td>
 <td><a href="#bits-xc3s-CLB-SLICE2:G" title="~SLICE2:G[9]">~SLICE2:G[9]</a></td><td><a href="#bits-xc3s-CLB-SLICE2:FF_LATCH" title="SLICE2:FF_LATCH">SLICE2:FF_LATCH</a></td><td><a href="#bits-xc3s-CLB-SLICE3:FF_LATCH" title="SLICE3:FF_LATCH">SLICE3:FF_LATCH</a></td><td><a href="#bits-xc3s-CLB-SLICE3:G" title="~SLICE3:G[9]">~SLICE3:G[9]</a></td><td>-</td><td>-</td></tr>
 <tr><td>55</td>
-<td><a href="#bits-xc3s-CLB-SLICE2:G" title="~SLICE2:G[8]">~SLICE2:G[8]</a></td><td><a href="#bits-xc3s-CLB-SLICE2:FF_REV_EN" title="SLICE2:FF_REV_EN">SLICE2:FF_REV_EN</a></td><td><a href="#bits-xc3s-CLB-SLICE3:FF_REV_EN" title="SLICE3:FF_REV_EN">SLICE3:FF_REV_EN</a></td><td><a href="#bits-xc3s-CLB-SLICE3:G" title="~SLICE3:G[8]">~SLICE3:G[8]</a></td><td>-</td><td>-</td></tr>
+<td><a href="#bits-xc3s-CLB-SLICE2:G" title="~SLICE2:G[8]">~SLICE2:G[8]</a></td><td><a href="#bits-xc3s-CLB-SLICE2:FF_REV_ENABLE" title="SLICE2:FF_REV_ENABLE">SLICE2:FF_REV_ENABLE</a></td><td><a href="#bits-xc3s-CLB-SLICE3:FF_REV_ENABLE" title="SLICE3:FF_REV_ENABLE">SLICE3:FF_REV_ENABLE</a></td><td><a href="#bits-xc3s-CLB-SLICE3:G" title="~SLICE3:G[8]">~SLICE3:G[8]</a></td><td>-</td><td>-</td></tr>
 <tr><td>56</td>
 <td><a href="#bits-xc3s-CLB-SLICE2:G" title="~SLICE2:G[7]">~SLICE2:G[7]</a></td><td><a href="#bits-xc3s-CLB-SLICE2:FFY_SRVAL" title="~SLICE2:FFY_SRVAL">~SLICE2:FFY_SRVAL</a></td><td><a href="#bits-xc3s-CLB-SLICE3:FFY_SRVAL" title="~SLICE3:FFY_SRVAL">~SLICE3:FFY_SRVAL</a></td><td><a href="#bits-xc3s-CLB-SLICE3:G" title="~SLICE3:G[7]">~SLICE3:G[7]</a></td><td>-</td><td>-</td></tr>
 <tr><td>57</td>
@@ -874,11 +876,11 @@
 <tr><td>ALT</td><td>0</td></tr>
 <tr><td>BX</td><td>1</td></tr>
 </table>
-<div id="bits-xc3s-CLB-SLICE0:FF_SR_EN"></div>
-<div id="bits-xc3s-CLB-SLICE2:FF_SR_EN"></div>
+<div id="bits-xc3s-CLB-SLICE0:FF_SR_ENABLE"></div>
+<div id="bits-xc3s-CLB-SLICE2:FF_SR_ENABLE"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>SLICE0:FF_SR_EN</th><th>[0, 1, 17]</th></tr>
-<tr><th>SLICE2:FF_SR_EN</th><th>[0, 1, 49]</th></tr>
+<tr><th>SLICE0:FF_SR_ENABLE</th><th>[0, 1, 17]</th></tr>
+<tr><th>SLICE2:FF_SR_ENABLE</th><th>[0, 1, 49]</th></tr>
 <tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 <div id="bits-xc3s-CLB-SLICE0:FFX_INIT"></div>
@@ -927,15 +929,15 @@
 <tr><th>SLICE3:FF_LATCH</th><th>[0, 2, 54]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
-<div id="bits-xc3s-CLB-SLICE0:FF_REV_EN"></div>
-<div id="bits-xc3s-CLB-SLICE1:FF_REV_EN"></div>
-<div id="bits-xc3s-CLB-SLICE2:FF_REV_EN"></div>
-<div id="bits-xc3s-CLB-SLICE3:FF_REV_EN"></div>
+<div id="bits-xc3s-CLB-SLICE0:FF_REV_ENABLE"></div>
+<div id="bits-xc3s-CLB-SLICE1:FF_REV_ENABLE"></div>
+<div id="bits-xc3s-CLB-SLICE2:FF_REV_ENABLE"></div>
+<div id="bits-xc3s-CLB-SLICE3:FF_REV_ENABLE"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>SLICE0:FF_REV_EN</th><th>[0, 1, 23]</th></tr>
-<tr><th>SLICE1:FF_REV_EN</th><th>[0, 2, 23]</th></tr>
-<tr><th>SLICE2:FF_REV_EN</th><th>[0, 1, 55]</th></tr>
-<tr><th>SLICE3:FF_REV_EN</th><th>[0, 2, 55]</th></tr>
+<tr><th>SLICE0:FF_REV_ENABLE</th><th>[0, 1, 23]</th></tr>
+<tr><th>SLICE1:FF_REV_ENABLE</th><th>[0, 2, 23]</th></tr>
+<tr><th>SLICE2:FF_REV_ENABLE</th><th>[0, 1, 55]</th></tr>
+<tr><th>SLICE3:FF_REV_ENABLE</th><th>[0, 2, 55]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 <div id="bits-xc3s-CLB-SLICE0:GYMUX"></div>
@@ -1074,9 +1076,9 @@
 <tr><td>26</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE1:G" title="SLICE1:G[12]">SLICE1:G[12]</a></td><td><a href="#bits-xc4v-CLB-SLICE0:FF_SYNC" title="SLICE0:FF_SYNC">SLICE0:FF_SYNC</a></td><td><a href="#bits-xc4v-CLB-SLICE0:G" title="SLICE0:G[12]">SLICE0:G[12]</a></td></tr>
 <tr><td>27</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE1:G" title="SLICE1:G[11]">SLICE1:G[11]</a></td><td><a href="#bits-xc4v-CLB-SLICE0:FF_REV_EN" title="SLICE0:FF_REV_EN">SLICE0:FF_REV_EN</a></td><td><a href="#bits-xc4v-CLB-SLICE0:G" title="SLICE0:G[11]">SLICE0:G[11]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE1:G" title="SLICE1:G[11]">SLICE1:G[11]</a></td><td><a href="#bits-xc4v-CLB-SLICE0:FF_REV_ENABLE" title="SLICE0:FF_REV_ENABLE">SLICE0:FF_REV_ENABLE</a></td><td><a href="#bits-xc4v-CLB-SLICE0:G" title="SLICE0:G[11]">SLICE0:G[11]</a></td></tr>
 <tr><td>28</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE1:G" title="SLICE1:G[10]">SLICE1:G[10]</a></td><td><a href="#bits-xc4v-CLB-SLICE1:FF_REV_EN" title="SLICE1:FF_REV_EN">SLICE1:FF_REV_EN</a></td><td><a href="#bits-xc4v-CLB-SLICE0:G" title="SLICE0:G[10]">SLICE0:G[10]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE1:G" title="SLICE1:G[10]">SLICE1:G[10]</a></td><td><a href="#bits-xc4v-CLB-SLICE1:FF_REV_ENABLE" title="SLICE1:FF_REV_ENABLE">SLICE1:FF_REV_ENABLE</a></td><td><a href="#bits-xc4v-CLB-SLICE0:G" title="SLICE0:G[10]">SLICE0:G[10]</a></td></tr>
 <tr><td>29</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE1:G" title="SLICE1:G[9]">SLICE1:G[9]</a></td><td><a href="#bits-xc4v-CLB-SLICE1:FFY_SRVAL" title="~SLICE1:FFY_SRVAL">~SLICE1:FFY_SRVAL</a></td><td><a href="#bits-xc4v-CLB-SLICE0:G" title="SLICE0:G[9]">SLICE0:G[9]</a></td></tr>
 <tr><td>30</td>
@@ -1096,7 +1098,7 @@
 <tr><td>37</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE1:G" title="SLICE1:G[1]">SLICE1:G[1]</a></td><td><a href="#bits-xc4v-CLB-SLICE0:F_SHIFT" title="SLICE0:F_SHIFT">SLICE0:F_SHIFT</a></td><td><a href="#bits-xc4v-CLB-SLICE0:G" title="SLICE0:G[1]">SLICE0:G[1]</a></td></tr>
 <tr><td>38</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE1:G" title="SLICE1:G[0]">SLICE1:G[0]</a></td><td><a href="#bits-xc4v-CLB-SLICE0:FF_SR_EN" title="~SLICE0:FF_SR_EN">~SLICE0:FF_SR_EN</a></td><td><a href="#bits-xc4v-CLB-SLICE0:G" title="SLICE0:G[0]">SLICE0:G[0]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE1:G" title="SLICE1:G[0]">SLICE1:G[0]</a></td><td><a href="#bits-xc4v-CLB-SLICE0:FF_SR_ENABLE" title="~SLICE0:FF_SR_ENABLE">~SLICE0:FF_SR_ENABLE</a></td><td><a href="#bits-xc4v-CLB-SLICE0:G" title="SLICE0:G[0]">SLICE0:G[0]</a></td></tr>
 <tr><td>39</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE2:DIF_MUX" title="SLICE2:DIF_MUX">SLICE2:DIF_MUX</a></td><td>-</td></tr>
 <tr><td>40</td>
@@ -1154,9 +1156,9 @@
 <tr><td>66</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE3:DYMUX" title="SLICE3:DYMUX[4]">SLICE3:DYMUX[4]</a></td><td><a href="#bits-xc4v-CLB-SLICE3:G" title="SLICE3:G[12]">SLICE3:G[12]</a></td><td><a href="#bits-xc4v-CLB-SLICE2:FF_SYNC" title="SLICE2:FF_SYNC">SLICE2:FF_SYNC</a></td><td><a href="#bits-xc4v-CLB-SLICE2:G" title="SLICE2:G[12]">SLICE2:G[12]</a></td></tr>
 <tr><td>67</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE2:DYMUX" title="SLICE2:DYMUX[3]">SLICE2:DYMUX[3]</a></td><td><a href="#bits-xc4v-CLB-SLICE3:G" title="SLICE3:G[11]">SLICE3:G[11]</a></td><td><a href="#bits-xc4v-CLB-SLICE2:FF_REV_EN" title="SLICE2:FF_REV_EN">SLICE2:FF_REV_EN</a></td><td><a href="#bits-xc4v-CLB-SLICE2:G" title="SLICE2:G[11]">SLICE2:G[11]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE2:DYMUX" title="SLICE2:DYMUX[3]">SLICE2:DYMUX[3]</a></td><td><a href="#bits-xc4v-CLB-SLICE3:G" title="SLICE3:G[11]">SLICE3:G[11]</a></td><td><a href="#bits-xc4v-CLB-SLICE2:FF_REV_ENABLE" title="SLICE2:FF_REV_ENABLE">SLICE2:FF_REV_ENABLE</a></td><td><a href="#bits-xc4v-CLB-SLICE2:G" title="SLICE2:G[11]">SLICE2:G[11]</a></td></tr>
 <tr><td>68</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE2:DXMUX" title="SLICE2:DXMUX[1]">SLICE2:DXMUX[1]</a></td><td><a href="#bits-xc4v-CLB-SLICE3:G" title="SLICE3:G[10]">SLICE3:G[10]</a></td><td><a href="#bits-xc4v-CLB-SLICE3:FF_REV_EN" title="SLICE3:FF_REV_EN">SLICE3:FF_REV_EN</a></td><td><a href="#bits-xc4v-CLB-SLICE2:G" title="SLICE2:G[10]">SLICE2:G[10]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE2:DXMUX" title="SLICE2:DXMUX[1]">SLICE2:DXMUX[1]</a></td><td><a href="#bits-xc4v-CLB-SLICE3:G" title="SLICE3:G[10]">SLICE3:G[10]</a></td><td><a href="#bits-xc4v-CLB-SLICE3:FF_REV_ENABLE" title="SLICE3:FF_REV_ENABLE">SLICE3:FF_REV_ENABLE</a></td><td><a href="#bits-xc4v-CLB-SLICE2:G" title="SLICE2:G[10]">SLICE2:G[10]</a></td></tr>
 <tr><td>69</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE2:DYMUX" title="SLICE2:DYMUX[2]">SLICE2:DYMUX[2]</a></td><td><a href="#bits-xc4v-CLB-SLICE3:G" title="SLICE3:G[9]">SLICE3:G[9]</a></td><td><a href="#bits-xc4v-CLB-SLICE3:FFY_SRVAL" title="~SLICE3:FFY_SRVAL">~SLICE3:FFY_SRVAL</a></td><td><a href="#bits-xc4v-CLB-SLICE2:G" title="SLICE2:G[9]">SLICE2:G[9]</a></td></tr>
 <tr><td>70</td>
@@ -1178,7 +1180,7 @@
 <tr><td>78</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE3:G" title="SLICE3:G[0]">SLICE3:G[0]</a></td><td><a href="#bits-xc4v-CLB-SLICE2:F_SHIFT" title="SLICE2:F_SHIFT">SLICE2:F_SHIFT</a></td><td><a href="#bits-xc4v-CLB-SLICE2:G" title="SLICE2:G[0]">SLICE2:G[0]</a></td></tr>
 <tr><td>79</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE3:DYMUX" title="SLICE3:DYMUX[3]">SLICE3:DYMUX[3]</a></td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE2:FF_SR_EN" title="~SLICE2:FF_SR_EN">~SLICE2:FF_SR_EN</a></td><td>-</td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE3:DYMUX" title="SLICE3:DYMUX[3]">SLICE3:DYMUX[3]</a></td><td>-</td><td><a href="#bits-xc4v-CLB-SLICE2:FF_SR_ENABLE" title="~SLICE2:FF_SR_ENABLE">~SLICE2:FF_SR_ENABLE</a></td><td>-</td></tr>
 </table>
 <div id="bits-xc4v-CLB-SLICE0:BXINV"></div>
 <div id="bits-xc4v-CLB-SLICE0:BYINV"></div>
@@ -1402,15 +1404,15 @@
 <tr><th>SLICE3:FF_SYNC</th><th>[0, 20, 65]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
-<div id="bits-xc4v-CLB-SLICE0:FF_REV_EN"></div>
-<div id="bits-xc4v-CLB-SLICE1:FF_REV_EN"></div>
-<div id="bits-xc4v-CLB-SLICE2:FF_REV_EN"></div>
-<div id="bits-xc4v-CLB-SLICE3:FF_REV_EN"></div>
+<div id="bits-xc4v-CLB-SLICE0:FF_REV_ENABLE"></div>
+<div id="bits-xc4v-CLB-SLICE1:FF_REV_ENABLE"></div>
+<div id="bits-xc4v-CLB-SLICE2:FF_REV_ENABLE"></div>
+<div id="bits-xc4v-CLB-SLICE3:FF_REV_ENABLE"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>SLICE0:FF_REV_EN</th><th>[0, 20, 27]</th></tr>
-<tr><th>SLICE1:FF_REV_EN</th><th>[0, 20, 28]</th></tr>
-<tr><th>SLICE2:FF_REV_EN</th><th>[0, 20, 67]</th></tr>
-<tr><th>SLICE3:FF_REV_EN</th><th>[0, 20, 68]</th></tr>
+<tr><th>SLICE0:FF_REV_ENABLE</th><th>[0, 20, 27]</th></tr>
+<tr><th>SLICE1:FF_REV_ENABLE</th><th>[0, 20, 28]</th></tr>
+<tr><th>SLICE2:FF_REV_ENABLE</th><th>[0, 20, 67]</th></tr>
+<tr><th>SLICE3:FF_REV_ENABLE</th><th>[0, 20, 68]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 <div id="bits-xc4v-CLB-SLICE0:DYMUX"></div>
@@ -1447,11 +1449,11 @@
 <tr><th>SLICE2:G_SHIFT</th><th>[0, 20, 77]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
-<div id="bits-xc4v-CLB-SLICE0:FF_SR_EN"></div>
-<div id="bits-xc4v-CLB-SLICE2:FF_SR_EN"></div>
+<div id="bits-xc4v-CLB-SLICE0:FF_SR_ENABLE"></div>
+<div id="bits-xc4v-CLB-SLICE2:FF_SR_ENABLE"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>SLICE0:FF_SR_EN</th><th>[0, 20, 38]</th></tr>
-<tr><th>SLICE2:FF_SR_EN</th><th>[0, 20, 79]</th></tr>
+<tr><th>SLICE0:FF_SR_ENABLE</th><th>[0, 20, 38]</th></tr>
+<tr><th>SLICE2:FF_SR_ENABLE</th><th>[0, 20, 79]</th></tr>
 <tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 <div id="bits-xc4v-CLB-SLICE0:XBMUX"></div>
@@ -1469,6 +1471,78 @@
 <tr><th>SLICE2:YBMUX</th><th>[0, 21, 61]</th></tr>
 <tr><td>GCY</td><td>0</td></tr>
 <tr><td>GMC15</td><td>1</td></tr>
+</table>
+</section>
+</section>
+<section id="reserved-andor">
+<h2><code class="docutils literal notranslate"><span class="pre">RESERVED_ANDOR</span></code><a class="headerlink" href="#reserved-andor" title="Link to this heading"></a></h2>
+<p>TODO: wtf is this even</p>
+<section id="randor">
+<h3><code class="docutils literal notranslate"><span class="pre">RANDOR</span></code><a class="headerlink" href="#randor" title="Link to this heading"></a></h3>
+<p>This tile overlaps <code class="docutils literal notranslate"><span class="pre">IOI.*</span></code>.</p>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="4">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3s-RANDOR-RANDOR:MODE" title="RANDOR:MODE">RANDOR:MODE</a></td></tr>
+</table>
+<div id="bits-xc3s-RANDOR-RANDOR:MODE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>RANDOR:MODE</th><th>[0, 3, 19]</th></tr>
+<tr><td>OR</td><td>0</td></tr>
+<tr><td>AND</td><td>1</td></tr>
+</table>
+</section>
+<section id="randor-init">
+<h3><code class="docutils literal notranslate"><span class="pre">RANDOR_INIT</span></code><a class="headerlink" href="#randor-init" title="Link to this heading"></a></h3>
+<p>This tile overlaps top-left interconnect tile.</p>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc3s-RANDOR_INIT-RANDOR_INIT:MODE" title="RANDOR_INIT:MODE">RANDOR_INIT:MODE</a></td></tr>
+</table>
+<div id="bits-xc3s-RANDOR_INIT-RANDOR_INIT:MODE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>RANDOR_INIT:MODE</th><th>[0, 0, 0]</th></tr>
+<tr><td>OR</td><td>0</td></tr>
+<tr><td>AND</td><td>1</td></tr>
 </table>
 </section>
 </section>

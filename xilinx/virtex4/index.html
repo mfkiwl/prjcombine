@@ -19,7 +19,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Interconnect" href="int.html" />
+    <link rel="next" title="General Interconnect" href="interconnect.html" />
     <link rel="prev" title="Clock interconnect" href="../spartan6/clk.html" /> 
 </head>
 
@@ -53,9 +53,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../spartan3/index.html">Xilinx Spartan 3 FPGAs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Xilinx Spartan 6 FPGAs</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Xilinx Virtex 4 FPGAs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="int.html">Interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interconnect.html">General Interconnect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="center.html">Configuration Center</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Xilinx Virtex 5 FPGAs</a></li>
@@ -98,9 +101,9 @@
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="int.html">Interconnect</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="int.html#bitstream">Bitstream</a></li>
-<li class="toctree-l2"><a class="reference internal" href="int.html#bitstream-interface-tile">Bitstream — interface tile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interconnect.html">General Interconnect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream">Bitstream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-interface-tile">Bitstream — interface tile</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="bram.html">Block RAM</a><ul>
@@ -113,6 +116,26 @@
 <li class="toctree-l2"><a class="reference internal" href="dsp.html#bitstream">Bitstream</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="center.html">Configuration Center</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="center.html#bitstream">Bitstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="clock.html">Clock interconnect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#clk-hrow"><code class="docutils literal notranslate"><span class="pre">CLK_HROW</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#hclk"><code class="docutils literal notranslate"><span class="pre">HCLK</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#spine-clock-terminators">Spine clock terminators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#spine-muxes-iob">Spine muxes — IOB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#spine-muxes-dcm">Spine muxes — DCM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#mgt-clock-repeater">MGT clock repeater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#row-clock-terminators">Row clock terminators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#io-clock-nodes">IO clock nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration registers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config.html#cor"><code class="docutils literal notranslate"><span class="pre">COR</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#ctl"><code class="docutils literal notranslate"><span class="pre">CTL</span></code></a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
@@ -122,7 +145,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../spartan6/clk.html" class="btn btn-neutral float-left" title="Clock interconnect" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="int.html" class="btn btn-neutral float-right" title="Interconnect" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="interconnect.html" class="btn btn-neutral float-right" title="General Interconnect" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

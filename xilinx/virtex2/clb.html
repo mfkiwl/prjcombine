@@ -67,7 +67,13 @@
 <li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM — Virtex 2, Spartan 3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="io.html">Input / Output — Virtex 2, Spartan 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcm.html">Digital Clock Managers — Virtex 2, Spartan 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ppc.html">Hard PowerPC 405 cores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gt.html">Multi-gigabit transceivers — Virtex 2 Pro</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gt10.html">Multi-gigabit transceivers — Virtex 2 Pro X</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pcilogic.html">Hard PCI logic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="corner.html">Corners — Virtex 2, Spartan 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers — Virtex 2, Spartan 3, Spartan 3E</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../spartan3/index.html">Xilinx Spartan 3 FPGAs</a></li>
@@ -694,7 +700,7 @@
 <tr><td>10</td>
 <td><a href="#bits-xc2v-CLB-SLICE0:CY0F" title="SLICE0:CY0F[2]">SLICE0:CY0F[2]</a></td><td><a href="#bits-xc2v-CLB-SLICE0:F" title="~SLICE0:F[5]">~SLICE0:F[5]</a></td><td><a href="#bits-xc2v-CLB-SLICE2:F" title="~SLICE2:F[5]">~SLICE2:F[5]</a></td><td><a href="#bits-xc2v-CLB-SLICE2:CY0F" title="SLICE2:CY0F[2]">SLICE2:CY0F[2]</a></td></tr>
 <tr><td>11</td>
-<td><a href="#bits-xc2v-CLB-SLICE0:FF_REV_EN" title="SLICE0:FF_REV_EN">SLICE0:FF_REV_EN</a></td><td><a href="#bits-xc2v-CLB-SLICE0:F" title="~SLICE0:F[4]">~SLICE0:F[4]</a></td><td><a href="#bits-xc2v-CLB-SLICE2:F" title="~SLICE2:F[4]">~SLICE2:F[4]</a></td><td>-</td></tr>
+<td><a href="#bits-xc2v-CLB-SLICE0:FF_REV_ENABLE" title="SLICE0:FF_REV_ENABLE">SLICE0:FF_REV_ENABLE</a></td><td><a href="#bits-xc2v-CLB-SLICE0:F" title="~SLICE0:F[4]">~SLICE0:F[4]</a></td><td><a href="#bits-xc2v-CLB-SLICE2:F" title="~SLICE2:F[4]">~SLICE2:F[4]</a></td><td>-</td></tr>
 <tr><td>12</td>
 <td><a href="#bits-xc2v-CLB-SLICE0:DYMUX" title="SLICE0:DYMUX">SLICE0:DYMUX</a></td><td><a href="#bits-xc2v-CLB-SLICE0:F" title="~SLICE0:F[3]">~SLICE0:F[3]</a></td><td><a href="#bits-xc2v-CLB-SLICE2:F" title="~SLICE2:F[3]">~SLICE2:F[3]</a></td><td>-</td></tr>
 <tr><td>13</td>
@@ -716,7 +722,7 @@
 <tr><td>21</td>
 <td><a href="#bits-xc2v-CLB-SLICE0:XBMUX" title="SLICE0:XBMUX">SLICE0:XBMUX</a></td><td><a href="#bits-xc2v-CLB-SLICE0:G_SHIFT" title="SLICE0:G_SHIFT">SLICE0:G_SHIFT</a></td><td><a href="#bits-xc2v-CLB-SLICE2:G_SHIFT" title="SLICE2:G_SHIFT">SLICE2:G_SHIFT</a></td><td><a href="#bits-xc2v-CLB-SLICE2:XBMUX" title="SLICE2:XBMUX">SLICE2:XBMUX</a></td></tr>
 <tr><td>22</td>
-<td><a href="#bits-xc2v-CLB-SLICE0:BYOUTUSED" title="SLICE0:BYOUTUSED">SLICE0:BYOUTUSED</a></td><td><a href="#bits-xc2v-CLB-SLICE0:FF_SR_EN" title="~SLICE0:FF_SR_EN">~SLICE0:FF_SR_EN</a></td><td><a href="#bits-xc2v-CLB-SLICE2:FF_SR_EN" title="~SLICE2:FF_SR_EN">~SLICE2:FF_SR_EN</a></td><td><a href="#bits-xc2v-CLB-SLICE2:BYOUTUSED" title="SLICE2:BYOUTUSED">SLICE2:BYOUTUSED</a></td></tr>
+<td><a href="#bits-xc2v-CLB-SLICE0:BYOUTUSED" title="SLICE0:BYOUTUSED">SLICE0:BYOUTUSED</a></td><td><a href="#bits-xc2v-CLB-SLICE0:FF_SR_ENABLE" title="~SLICE0:FF_SR_ENABLE">~SLICE0:FF_SR_ENABLE</a></td><td><a href="#bits-xc2v-CLB-SLICE2:FF_SR_ENABLE" title="~SLICE2:FF_SR_ENABLE">~SLICE2:FF_SR_ENABLE</a></td><td><a href="#bits-xc2v-CLB-SLICE2:BYOUTUSED" title="SLICE2:BYOUTUSED">SLICE2:BYOUTUSED</a></td></tr>
 <tr><td>23</td>
 <td><a href="#bits-xc2v-CLB-SLICE2:FF_SYNC" title="SLICE2:FF_SYNC">SLICE2:FF_SYNC</a></td><td>-</td><td>-</td><td>-</td></tr>
 <tr><td>24</td>
@@ -728,7 +734,7 @@
 <tr><td>27</td>
 <td><a href="#bits-xc2v-CLB-SLICE2:DYMUX" title="SLICE2:DYMUX">SLICE2:DYMUX</a></td><td><a href="#bits-xc2v-CLB-SLICE0:G" title="~SLICE0:G[3]">~SLICE0:G[3]</a></td><td><a href="#bits-xc2v-CLB-SLICE2:G" title="~SLICE2:G[3]">~SLICE2:G[3]</a></td><td>-</td></tr>
 <tr><td>28</td>
-<td><a href="#bits-xc2v-CLB-SLICE2:FF_REV_EN" title="SLICE2:FF_REV_EN">SLICE2:FF_REV_EN</a></td><td><a href="#bits-xc2v-CLB-SLICE0:G" title="~SLICE0:G[4]">~SLICE0:G[4]</a></td><td><a href="#bits-xc2v-CLB-SLICE2:G" title="~SLICE2:G[4]">~SLICE2:G[4]</a></td><td>-</td></tr>
+<td><a href="#bits-xc2v-CLB-SLICE2:FF_REV_ENABLE" title="SLICE2:FF_REV_ENABLE">SLICE2:FF_REV_ENABLE</a></td><td><a href="#bits-xc2v-CLB-SLICE0:G" title="~SLICE0:G[4]">~SLICE0:G[4]</a></td><td><a href="#bits-xc2v-CLB-SLICE2:G" title="~SLICE2:G[4]">~SLICE2:G[4]</a></td><td>-</td></tr>
 <tr><td>29</td>
 <td><a href="#bits-xc2v-CLB-SLICE0:CY0G" title="SLICE0:CY0G[2]">SLICE0:CY0G[2]</a></td><td><a href="#bits-xc2v-CLB-SLICE0:G" title="~SLICE0:G[5]">~SLICE0:G[5]</a></td><td><a href="#bits-xc2v-CLB-SLICE2:G" title="~SLICE2:G[5]">~SLICE2:G[5]</a></td><td><a href="#bits-xc2v-CLB-SLICE2:CY0G" title="SLICE2:CY0G[2]">SLICE2:CY0G[2]</a></td></tr>
 <tr><td>30</td>
@@ -774,7 +780,7 @@
 <tr><td>50</td>
 <td><a href="#bits-xc2v-CLB-SLICE1:CY0F" title="SLICE1:CY0F[2]">SLICE1:CY0F[2]</a></td><td><a href="#bits-xc2v-CLB-SLICE1:F" title="~SLICE1:F[5]">~SLICE1:F[5]</a></td><td><a href="#bits-xc2v-CLB-SLICE3:F" title="~SLICE3:F[5]">~SLICE3:F[5]</a></td><td><a href="#bits-xc2v-CLB-SLICE3:CY0F" title="SLICE3:CY0F[2]">SLICE3:CY0F[2]</a></td></tr>
 <tr><td>51</td>
-<td><a href="#bits-xc2v-CLB-SLICE1:FF_REV_EN" title="SLICE1:FF_REV_EN">SLICE1:FF_REV_EN</a></td><td><a href="#bits-xc2v-CLB-SLICE1:F" title="~SLICE1:F[4]">~SLICE1:F[4]</a></td><td><a href="#bits-xc2v-CLB-SLICE3:F" title="~SLICE3:F[4]">~SLICE3:F[4]</a></td><td>-</td></tr>
+<td><a href="#bits-xc2v-CLB-SLICE1:FF_REV_ENABLE" title="SLICE1:FF_REV_ENABLE">SLICE1:FF_REV_ENABLE</a></td><td><a href="#bits-xc2v-CLB-SLICE1:F" title="~SLICE1:F[4]">~SLICE1:F[4]</a></td><td><a href="#bits-xc2v-CLB-SLICE3:F" title="~SLICE3:F[4]">~SLICE3:F[4]</a></td><td>-</td></tr>
 <tr><td>52</td>
 <td><a href="#bits-xc2v-CLB-SLICE1:DYMUX" title="SLICE1:DYMUX">SLICE1:DYMUX</a></td><td><a href="#bits-xc2v-CLB-SLICE1:F" title="~SLICE1:F[3]">~SLICE1:F[3]</a></td><td><a href="#bits-xc2v-CLB-SLICE3:F" title="~SLICE3:F[3]">~SLICE3:F[3]</a></td><td>-</td></tr>
 <tr><td>53</td>
@@ -796,7 +802,7 @@
 <tr><td>61</td>
 <td><a href="#bits-xc2v-CLB-SLICE1:XBMUX" title="SLICE1:XBMUX">SLICE1:XBMUX</a></td><td><a href="#bits-xc2v-CLB-SLICE1:G_SHIFT" title="SLICE1:G_SHIFT">SLICE1:G_SHIFT</a></td><td><a href="#bits-xc2v-CLB-SLICE3:G_SHIFT" title="SLICE3:G_SHIFT">SLICE3:G_SHIFT</a></td><td><a href="#bits-xc2v-CLB-SLICE3:XBMUX" title="SLICE3:XBMUX">SLICE3:XBMUX</a></td></tr>
 <tr><td>62</td>
-<td><a href="#bits-xc2v-CLB-SLICE1:BYOUTUSED" title="SLICE1:BYOUTUSED">SLICE1:BYOUTUSED</a></td><td><a href="#bits-xc2v-CLB-SLICE1:FF_SR_EN" title="~SLICE1:FF_SR_EN">~SLICE1:FF_SR_EN</a></td><td><a href="#bits-xc2v-CLB-SLICE3:FF_SR_EN" title="~SLICE3:FF_SR_EN">~SLICE3:FF_SR_EN</a></td><td><a href="#bits-xc2v-CLB-SLICE3:BYOUTUSED" title="SLICE3:BYOUTUSED">SLICE3:BYOUTUSED</a></td></tr>
+<td><a href="#bits-xc2v-CLB-SLICE1:BYOUTUSED" title="SLICE1:BYOUTUSED">SLICE1:BYOUTUSED</a></td><td><a href="#bits-xc2v-CLB-SLICE1:FF_SR_ENABLE" title="~SLICE1:FF_SR_ENABLE">~SLICE1:FF_SR_ENABLE</a></td><td><a href="#bits-xc2v-CLB-SLICE3:FF_SR_ENABLE" title="~SLICE3:FF_SR_ENABLE">~SLICE3:FF_SR_ENABLE</a></td><td><a href="#bits-xc2v-CLB-SLICE3:BYOUTUSED" title="SLICE3:BYOUTUSED">SLICE3:BYOUTUSED</a></td></tr>
 <tr><td>63</td>
 <td><a href="#bits-xc2v-CLB-SLICE3:FF_SYNC" title="SLICE3:FF_SYNC">SLICE3:FF_SYNC</a></td><td>-</td><td>-</td><td>-</td></tr>
 <tr><td>64</td>
@@ -808,7 +814,7 @@
 <tr><td>67</td>
 <td><a href="#bits-xc2v-CLB-SLICE3:DYMUX" title="SLICE3:DYMUX">SLICE3:DYMUX</a></td><td><a href="#bits-xc2v-CLB-SLICE1:G" title="~SLICE1:G[3]">~SLICE1:G[3]</a></td><td><a href="#bits-xc2v-CLB-SLICE3:G" title="~SLICE3:G[3]">~SLICE3:G[3]</a></td><td>-</td></tr>
 <tr><td>68</td>
-<td><a href="#bits-xc2v-CLB-SLICE3:FF_REV_EN" title="SLICE3:FF_REV_EN">SLICE3:FF_REV_EN</a></td><td><a href="#bits-xc2v-CLB-SLICE1:G" title="~SLICE1:G[4]">~SLICE1:G[4]</a></td><td><a href="#bits-xc2v-CLB-SLICE3:G" title="~SLICE3:G[4]">~SLICE3:G[4]</a></td><td>-</td></tr>
+<td><a href="#bits-xc2v-CLB-SLICE3:FF_REV_ENABLE" title="SLICE3:FF_REV_ENABLE">SLICE3:FF_REV_ENABLE</a></td><td><a href="#bits-xc2v-CLB-SLICE1:G" title="~SLICE1:G[4]">~SLICE1:G[4]</a></td><td><a href="#bits-xc2v-CLB-SLICE3:G" title="~SLICE3:G[4]">~SLICE3:G[4]</a></td><td>-</td></tr>
 <tr><td>69</td>
 <td><a href="#bits-xc2v-CLB-SLICE1:CY0G" title="SLICE1:CY0G[2]">SLICE1:CY0G[2]</a></td><td><a href="#bits-xc2v-CLB-SLICE1:G" title="~SLICE1:G[5]">~SLICE1:G[5]</a></td><td><a href="#bits-xc2v-CLB-SLICE3:G" title="~SLICE3:G[5]">~SLICE3:G[5]</a></td><td><a href="#bits-xc2v-CLB-SLICE3:CY0G" title="SLICE3:CY0G[2]">SLICE3:CY0G[2]</a></td></tr>
 <tr><td>70</td>
@@ -923,15 +929,15 @@
 <tr><td>F5</td><td>0</td><td>1</td></tr>
 <tr><td>FXOR</td><td>1</td><td>1</td></tr>
 </table>
-<div id="bits-xc2v-CLB-SLICE0:FF_REV_EN"></div>
-<div id="bits-xc2v-CLB-SLICE1:FF_REV_EN"></div>
-<div id="bits-xc2v-CLB-SLICE2:FF_REV_EN"></div>
-<div id="bits-xc2v-CLB-SLICE3:FF_REV_EN"></div>
+<div id="bits-xc2v-CLB-SLICE0:FF_REV_ENABLE"></div>
+<div id="bits-xc2v-CLB-SLICE1:FF_REV_ENABLE"></div>
+<div id="bits-xc2v-CLB-SLICE2:FF_REV_ENABLE"></div>
+<div id="bits-xc2v-CLB-SLICE3:FF_REV_ENABLE"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>SLICE0:FF_REV_EN</th><th>[0, 0, 11]</th></tr>
-<tr><th>SLICE1:FF_REV_EN</th><th>[0, 0, 51]</th></tr>
-<tr><th>SLICE2:FF_REV_EN</th><th>[0, 0, 28]</th></tr>
-<tr><th>SLICE3:FF_REV_EN</th><th>[0, 0, 68]</th></tr>
+<tr><th>SLICE0:FF_REV_ENABLE</th><th>[0, 0, 11]</th></tr>
+<tr><th>SLICE1:FF_REV_ENABLE</th><th>[0, 0, 51]</th></tr>
+<tr><th>SLICE2:FF_REV_ENABLE</th><th>[0, 0, 28]</th></tr>
+<tr><th>SLICE3:FF_REV_ENABLE</th><th>[0, 0, 68]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 <div id="bits-xc2v-CLB-SLICE0:DYMUX"></div>
@@ -1180,15 +1186,15 @@
 <tr><th>SLICE3:G_RAM</th><th>[0, 2, 60]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
-<div id="bits-xc2v-CLB-SLICE0:FF_SR_EN"></div>
-<div id="bits-xc2v-CLB-SLICE1:FF_SR_EN"></div>
-<div id="bits-xc2v-CLB-SLICE2:FF_SR_EN"></div>
-<div id="bits-xc2v-CLB-SLICE3:FF_SR_EN"></div>
+<div id="bits-xc2v-CLB-SLICE0:FF_SR_ENABLE"></div>
+<div id="bits-xc2v-CLB-SLICE1:FF_SR_ENABLE"></div>
+<div id="bits-xc2v-CLB-SLICE2:FF_SR_ENABLE"></div>
+<div id="bits-xc2v-CLB-SLICE3:FF_SR_ENABLE"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>SLICE0:FF_SR_EN</th><th>[0, 1, 22]</th></tr>
-<tr><th>SLICE1:FF_SR_EN</th><th>[0, 1, 62]</th></tr>
-<tr><th>SLICE2:FF_SR_EN</th><th>[0, 2, 22]</th></tr>
-<tr><th>SLICE3:FF_SR_EN</th><th>[0, 2, 62]</th></tr>
+<tr><th>SLICE0:FF_SR_ENABLE</th><th>[0, 1, 22]</th></tr>
+<tr><th>SLICE1:FF_SR_ENABLE</th><th>[0, 1, 62]</th></tr>
+<tr><th>SLICE2:FF_SR_ENABLE</th><th>[0, 2, 22]</th></tr>
+<tr><th>SLICE3:FF_SR_ENABLE</th><th>[0, 2, 62]</th></tr>
 <tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 </section>
