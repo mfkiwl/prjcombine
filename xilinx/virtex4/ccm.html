@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CCM &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Configuration registers" href="config.html" />
+    <link rel="prev" title="DCM" href="dcm.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../xc9500/index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Xilinx FPGAs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Xilinx Virtex, Virtex E, Spartan 2, Spartan 2E FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Xilinx Virtex 2 FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan3/index.html">Xilinx Spartan 3 FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Xilinx Spartan 6 FPGAs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Xilinx Virtex 4 FPGAs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="interconnect.html">General Interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="center.html">Configuration Center</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcm.html">DCM</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">CCM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bitstream">Bitstream</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sysmon.html">System monitor</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Xilinx Virtex 5 FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex6/index.html">Xilinx Virtex 6 FPGAs</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Xilinx FPGAs</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Xilinx Virtex 4 FPGAs</a></li>
+      <li class="breadcrumb-item active">CCM</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/xilinx/virtex4/ccm.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ccm">
+<h1>CCM<a class="headerlink" href="#ccm" title="Link to this heading"></a></h1>
+<section id="bitstream">
+<h2>Bitstream<a class="headerlink" href="#bitstream" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="22">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG0" title="CCM:TO_BUFG0[4]">CCM:TO_BUFG0[4]</a></td><td><a href="#bits-xc4v-CCM-DPM:REFCLK" title="DPM:REFCLK[4]">DPM:REFCLK[4]</a></td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG0" title="CCM:TO_BUFG0[3]">CCM:TO_BUFG0[3]</a></td><td><a href="#bits-xc4v-CCM-DPM:REFCLK" title="DPM:REFCLK[5]">DPM:REFCLK[5]</a></td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-DPM:ENOSC0INV" title="~DPM:ENOSC0INV">~DPM:ENOSC0INV</a></td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG0" title="CCM:TO_BUFG0[5]">CCM:TO_BUFG0[5]</a></td><td><a href="#bits-xc4v-CCM-DPM:REFCLK" title="DPM:REFCLK[6]">DPM:REFCLK[6]</a></td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:RELINV" title="~PMCD0:RELINV">~PMCD0:RELINV</a></td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG0" title="CCM:TO_BUFG0[1]">CCM:TO_BUFG0[1]</a></td><td><a href="#bits-xc4v-CCM-DPM:REFCLK" title="DPM:REFCLK[7]">DPM:REFCLK[7]</a></td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG0" title="CCM:TO_BUFG0[2]">CCM:TO_BUFG0[2]</a></td><td><a href="#bits-xc4v-CCM-DPM:REFCLK" title="DPM:REFCLK[8]">DPM:REFCLK[8]</a></td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-DPM:OUTSEL1INV" title="~DPM:OUTSEL1INV">~DPM:OUTSEL1INV</a></td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG0" title="CCM:TO_BUFG0[0]">CCM:TO_BUFG0[0]</a></td><td><a href="#bits-xc4v-CCM-DPM:REFCLK" title="DPM:REFCLK[9]">DPM:REFCLK[9]</a></td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-DPM:ENOSC2INV" title="~DPM:ENOSC2INV">~DPM:ENOSC2INV</a></td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG0" title="CCM:TO_BUFG0[6]">CCM:TO_BUFG0[6]</a></td><td><a href="#bits-xc4v-CCM-DPM:REFCLK" title="DPM:REFCLK[10]">DPM:REFCLK[10]</a></td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG0" title="CCM:TO_BUFG0[7]">CCM:TO_BUFG0[7]</a></td><td><a href="#bits-xc4v-CCM-DPM:REFCLK" title="DPM:REFCLK[11]">DPM:REFCLK[11]</a></td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG0" title="CCM:TO_BUFG0[8]">CCM:TO_BUFG0[8]</a></td><td><a href="#bits-xc4v-CCM-DPM:REFCLK" title="DPM:REFCLK[1]">DPM:REFCLK[1]</a></td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG0" title="CCM:TO_BUFG0[9]">CCM:TO_BUFG0[9]</a></td><td><a href="#bits-xc4v-CCM-DPM:REFCLK" title="DPM:REFCLK[2]">DPM:REFCLK[2]</a></td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG1" title="CCM:TO_BUFG1[4]">CCM:TO_BUFG1[4]</a></td><td><a href="#bits-xc4v-CCM-DPM:REFCLK" title="DPM:REFCLK[3]">DPM:REFCLK[3]</a></td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG1" title="CCM:TO_BUFG1[3]">CCM:TO_BUFG1[3]</a></td><td><a href="#bits-xc4v-CCM-DPM:REFCLK" title="DPM:REFCLK[0]">DPM:REFCLK[0]</a></td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG1" title="CCM:TO_BUFG1[5]">CCM:TO_BUFG1[5]</a></td><td><a href="#bits-xc4v-CCM-DPM:REFCLK" title="DPM:REFCLK[12]">DPM:REFCLK[12]</a></td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG1" title="CCM:TO_BUFG1[1]">CCM:TO_BUFG1[1]</a></td><td><a href="#bits-xc4v-CCM-CCM:GIOB0_USED" title="CCM:GIOB0_USED">CCM:GIOB0_USED</a></td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG1" title="CCM:TO_BUFG1[2]">CCM:TO_BUFG1[2]</a></td><td><a href="#bits-xc4v-CCM-CCM:GIOB1_USED" title="CCM:GIOB1_USED">CCM:GIOB1_USED</a></td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG1" title="CCM:TO_BUFG1[0]">CCM:TO_BUFG1[0]</a></td><td><a href="#bits-xc4v-CCM-CCM:GIOB2_USED" title="CCM:GIOB2_USED">CCM:GIOB2_USED</a></td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG1" title="CCM:TO_BUFG1[6]">CCM:TO_BUFG1[6]</a></td><td><a href="#bits-xc4v-CCM-CCM:GIOB3_USED" title="CCM:GIOB3_USED">CCM:GIOB3_USED</a></td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG1" title="CCM:TO_BUFG1[7]">CCM:TO_BUFG1[7]</a></td><td><a href="#bits-xc4v-CCM-CCM:GIOB4_USED" title="CCM:GIOB4_USED">CCM:GIOB4_USED</a></td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG1" title="CCM:TO_BUFG1[8]">CCM:TO_BUFG1[8]</a></td><td><a href="#bits-xc4v-CCM-CCM:GIOB5_USED" title="CCM:GIOB5_USED">CCM:GIOB5_USED</a></td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG1" title="CCM:TO_BUFG1[9]">CCM:TO_BUFG1[9]</a></td><td><a href="#bits-xc4v-CCM-CCM:GIOB6_USED" title="CCM:GIOB6_USED">CCM:GIOB6_USED</a></td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG2" title="CCM:TO_BUFG2[4]">CCM:TO_BUFG2[4]</a></td><td><a href="#bits-xc4v-CCM-CCM:GIOB7_USED" title="CCM:GIOB7_USED">CCM:GIOB7_USED</a></td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG2" title="CCM:TO_BUFG2[3]">CCM:TO_BUFG2[3]</a></td><td><a href="#bits-xc4v-CCM-CCM:GIOB8_USED" title="CCM:GIOB8_USED">CCM:GIOB8_USED</a></td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG2" title="CCM:TO_BUFG2[5]">CCM:TO_BUFG2[5]</a></td><td><a href="#bits-xc4v-CCM-CCM:GIOB9_USED" title="CCM:GIOB9_USED">CCM:GIOB9_USED</a></td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG2" title="CCM:TO_BUFG2[1]">CCM:TO_BUFG2[1]</a></td><td><a href="#bits-xc4v-CCM-CCM:GIOB10_USED" title="CCM:GIOB10_USED">CCM:GIOB10_USED</a></td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG2" title="CCM:TO_BUFG2[2]">CCM:TO_BUFG2[2]</a></td><td><a href="#bits-xc4v-CCM-CCM:GIOB11_USED" title="CCM:GIOB11_USED">CCM:GIOB11_USED</a></td></tr>
+<tr><td>41</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG2" title="CCM:TO_BUFG2[0]">CCM:TO_BUFG2[0]</a></td><td><a href="#bits-xc4v-CCM-CCM:GIOB12_USED" title="CCM:GIOB12_USED">CCM:GIOB12_USED</a></td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG2" title="CCM:TO_BUFG2[6]">CCM:TO_BUFG2[6]</a></td><td><a href="#bits-xc4v-CCM-CCM:GIOB13_USED" title="CCM:GIOB13_USED">CCM:GIOB13_USED</a></td></tr>
+<tr><td>43</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG2" title="CCM:TO_BUFG2[7]">CCM:TO_BUFG2[7]</a></td><td><a href="#bits-xc4v-CCM-CCM:GIOB14_USED" title="CCM:GIOB14_USED">CCM:GIOB14_USED</a></td></tr>
+<tr><td>44</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG2" title="CCM:TO_BUFG2[8]">CCM:TO_BUFG2[8]</a></td><td><a href="#bits-xc4v-CCM-CCM:GIOB15_USED" title="CCM:GIOB15_USED">CCM:GIOB15_USED</a></td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG2" title="CCM:TO_BUFG2[9]">CCM:TO_BUFG2[9]</a></td><td><a href="#bits-xc4v-CCM-CCM:HCLK0_USED" title="CCM:HCLK0_USED">CCM:HCLK0_USED</a></td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG3" title="CCM:TO_BUFG3[4]">CCM:TO_BUFG3[4]</a></td><td><a href="#bits-xc4v-CCM-CCM:HCLK1_USED" title="CCM:HCLK1_USED">CCM:HCLK1_USED</a></td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG3" title="CCM:TO_BUFG3[3]">CCM:TO_BUFG3[3]</a></td><td><a href="#bits-xc4v-CCM-CCM:HCLK2_USED" title="CCM:HCLK2_USED">CCM:HCLK2_USED</a></td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG3" title="CCM:TO_BUFG3[5]">CCM:TO_BUFG3[5]</a></td><td><a href="#bits-xc4v-CCM-CCM:HCLK3_USED" title="CCM:HCLK3_USED">CCM:HCLK3_USED</a></td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG3" title="CCM:TO_BUFG3[1]">CCM:TO_BUFG3[1]</a></td><td><a href="#bits-xc4v-CCM-CCM:HCLK4_USED" title="CCM:HCLK4_USED">CCM:HCLK4_USED</a></td></tr>
+<tr><td>50</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG3" title="CCM:TO_BUFG3[2]">CCM:TO_BUFG3[2]</a></td><td><a href="#bits-xc4v-CCM-CCM:HCLK5_USED" title="CCM:HCLK5_USED">CCM:HCLK5_USED</a></td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG3" title="CCM:TO_BUFG3[0]">CCM:TO_BUFG3[0]</a></td><td><a href="#bits-xc4v-CCM-CCM:HCLK6_USED" title="CCM:HCLK6_USED">CCM:HCLK6_USED</a></td></tr>
+<tr><td>52</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG3" title="CCM:TO_BUFG3[6]">CCM:TO_BUFG3[6]</a></td><td><a href="#bits-xc4v-CCM-CCM:HCLK7_USED" title="CCM:HCLK7_USED">CCM:HCLK7_USED</a></td></tr>
+<tr><td>53</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG3" title="CCM:TO_BUFG3[7]">CCM:TO_BUFG3[7]</a></td><td><a href="#bits-xc4v-CCM-CCM:MGT0_USED" title="CCM:MGT0_USED">CCM:MGT0_USED</a></td></tr>
+<tr><td>54</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG3" title="CCM:TO_BUFG3[8]">CCM:TO_BUFG3[8]</a></td><td><a href="#bits-xc4v-CCM-CCM:MGT1_USED" title="CCM:MGT1_USED">CCM:MGT1_USED</a></td></tr>
+<tr><td>55</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG3" title="CCM:TO_BUFG3[9]">CCM:TO_BUFG3[9]</a></td><td><a href="#bits-xc4v-CCM-CCM:MGT2_USED" title="CCM:MGT2_USED">CCM:MGT2_USED</a></td></tr>
+<tr><td>56</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:MGT3_USED" title="CCM:MGT3_USED">CCM:MGT3_USED</a></td></tr>
+<tr><td>57</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-DPM:ENOSC1INV" title="~DPM:ENOSC1INV">~DPM:ENOSC1INV</a></td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>58</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-DPM:FREEZEINV" title="~DPM:FREEZEINV">~DPM:FREEZEINV</a></td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>59</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>60</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-DPM:OUTSEL2INV" title="~DPM:OUTSEL2INV">~DPM:OUTSEL2INV</a></td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>61</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-DPM:OUTSEL0INV" title="~DPM:OUTSEL0INV">~DPM:OUTSEL0INV</a></td><td>-</td><td>-</td><td>-</td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="22">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG4" title="CCM:TO_BUFG4[4]">CCM:TO_BUFG4[4]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK2" title="DPM:TESTCLK2[4]">DPM:TESTCLK2[4]</a></td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG4" title="CCM:TO_BUFG4[3]">CCM:TO_BUFG4[3]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK2" title="DPM:TESTCLK2[5]">DPM:TESTCLK2[5]</a></td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG4" title="CCM:TO_BUFG4[5]">CCM:TO_BUFG4[5]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK2" title="DPM:TESTCLK2[6]">DPM:TESTCLK2[6]</a></td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG4" title="CCM:TO_BUFG4[1]">CCM:TO_BUFG4[1]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK2" title="DPM:TESTCLK2[7]">DPM:TESTCLK2[7]</a></td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG4" title="CCM:TO_BUFG4[2]">CCM:TO_BUFG4[2]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK2" title="DPM:TESTCLK2[8]">DPM:TESTCLK2[8]</a></td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG4" title="CCM:TO_BUFG4[0]">CCM:TO_BUFG4[0]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK2" title="DPM:TESTCLK2[9]">DPM:TESTCLK2[9]</a></td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG4" title="CCM:TO_BUFG4[6]">CCM:TO_BUFG4[6]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK2" title="DPM:TESTCLK2[10]">DPM:TESTCLK2[10]</a></td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG4" title="CCM:TO_BUFG4[7]">CCM:TO_BUFG4[7]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK2" title="DPM:TESTCLK2[11]">DPM:TESTCLK2[11]</a></td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG4" title="CCM:TO_BUFG4[8]">CCM:TO_BUFG4[8]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK2" title="DPM:TESTCLK2[1]">DPM:TESTCLK2[1]</a></td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG4" title="CCM:TO_BUFG4[9]">CCM:TO_BUFG4[9]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK2" title="DPM:TESTCLK2[2]">DPM:TESTCLK2[2]</a></td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG5" title="CCM:TO_BUFG5[4]">CCM:TO_BUFG5[4]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK2" title="DPM:TESTCLK2[3]">DPM:TESTCLK2[3]</a></td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG5" title="CCM:TO_BUFG5[3]">CCM:TO_BUFG5[3]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK2" title="DPM:TESTCLK2[0]">DPM:TESTCLK2[0]</a></td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG5" title="CCM:TO_BUFG5[5]">CCM:TO_BUFG5[5]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK2" title="DPM:TESTCLK2[12]">DPM:TESTCLK2[12]</a></td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG5" title="CCM:TO_BUFG5[1]">CCM:TO_BUFG5[1]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK1" title="DPM:TESTCLK1[4]">DPM:TESTCLK1[4]</a></td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG5" title="CCM:TO_BUFG5[2]">CCM:TO_BUFG5[2]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK1" title="DPM:TESTCLK1[5]">DPM:TESTCLK1[5]</a></td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG5" title="CCM:TO_BUFG5[0]">CCM:TO_BUFG5[0]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK1" title="DPM:TESTCLK1[6]">DPM:TESTCLK1[6]</a></td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG5" title="CCM:TO_BUFG5[6]">CCM:TO_BUFG5[6]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK1" title="DPM:TESTCLK1[7]">DPM:TESTCLK1[7]</a></td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG5" title="CCM:TO_BUFG5[7]">CCM:TO_BUFG5[7]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK1" title="DPM:TESTCLK1[8]">DPM:TESTCLK1[8]</a></td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-DPM:HFSEL1INV" title="~DPM:HFSEL1INV">~DPM:HFSEL1INV</a></td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG5" title="CCM:TO_BUFG5[8]">CCM:TO_BUFG5[8]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK1" title="DPM:TESTCLK1[9]">DPM:TESTCLK1[9]</a></td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:RELINV" title="~PMCD1:RELINV">~PMCD1:RELINV</a></td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG5" title="CCM:TO_BUFG5[9]">CCM:TO_BUFG5[9]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK1" title="DPM:TESTCLK1[10]">DPM:TESTCLK1[10]</a></td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG6" title="CCM:TO_BUFG6[4]">CCM:TO_BUFG6[4]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK1" title="DPM:TESTCLK1[11]">DPM:TESTCLK1[11]</a></td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG6" title="CCM:TO_BUFG6[3]">CCM:TO_BUFG6[3]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK1" title="DPM:TESTCLK1[1]">DPM:TESTCLK1[1]</a></td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-DPM:SELSKEWINV" title="~DPM:SELSKEWINV">~DPM:SELSKEWINV</a></td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG6" title="CCM:TO_BUFG6[5]">CCM:TO_BUFG6[5]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK1" title="DPM:TESTCLK1[2]">DPM:TESTCLK1[2]</a></td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG6" title="CCM:TO_BUFG6[1]">CCM:TO_BUFG6[1]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK1" title="DPM:TESTCLK1[3]">DPM:TESTCLK1[3]</a></td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG6" title="CCM:TO_BUFG6[2]">CCM:TO_BUFG6[2]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK1" title="DPM:TESTCLK1[0]">DPM:TESTCLK1[0]</a></td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG6" title="CCM:TO_BUFG6[0]">CCM:TO_BUFG6[0]</a></td><td><a href="#bits-xc4v-CCM-DPM:TESTCLK1" title="DPM:TESTCLK1[12]">DPM:TESTCLK1[12]</a></td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG6" title="CCM:TO_BUFG6[6]">CCM:TO_BUFG6[6]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:REL" title="PMCD0:REL[4]">PMCD0:REL[4]</a></td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG6" title="CCM:TO_BUFG6[7]">CCM:TO_BUFG6[7]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:REL" title="PMCD0:REL[5]">PMCD0:REL[5]</a></td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG6" title="CCM:TO_BUFG6[8]">CCM:TO_BUFG6[8]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:REL" title="PMCD0:REL[6]">PMCD0:REL[6]</a></td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG6" title="CCM:TO_BUFG6[9]">CCM:TO_BUFG6[9]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:REL" title="PMCD0:REL[7]">PMCD0:REL[7]</a></td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG7" title="CCM:TO_BUFG7[4]">CCM:TO_BUFG7[4]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:REL" title="PMCD0:REL[8]">PMCD0:REL[8]</a></td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG7" title="CCM:TO_BUFG7[3]">CCM:TO_BUFG7[3]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:REL" title="PMCD0:REL[9]">PMCD0:REL[9]</a></td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG7" title="CCM:TO_BUFG7[5]">CCM:TO_BUFG7[5]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:REL" title="PMCD0:REL[10]">PMCD0:REL[10]</a></td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG7" title="CCM:TO_BUFG7[1]">CCM:TO_BUFG7[1]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:REL" title="PMCD0:REL[11]">PMCD0:REL[11]</a></td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG7" title="CCM:TO_BUFG7[2]">CCM:TO_BUFG7[2]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:REL" title="PMCD0:REL[1]">PMCD0:REL[1]</a></td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG7" title="CCM:TO_BUFG7[0]">CCM:TO_BUFG7[0]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:REL" title="PMCD0:REL[2]">PMCD0:REL[2]</a></td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG7" title="CCM:TO_BUFG7[6]">CCM:TO_BUFG7[6]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:REL" title="PMCD0:REL[3]">PMCD0:REL[3]</a></td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG7" title="CCM:TO_BUFG7[7]">CCM:TO_BUFG7[7]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:REL" title="PMCD0:REL[0]">PMCD0:REL[0]</a></td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG7" title="CCM:TO_BUFG7[8]">CCM:TO_BUFG7[8]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:REL" title="PMCD0:REL[12]">PMCD0:REL[12]</a></td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG7" title="CCM:TO_BUFG7[9]">CCM:TO_BUFG7[9]</a></td><td><a href="#bits-xc4v-CCM-PMCD1:REL" title="PMCD1:REL[4]">PMCD1:REL[4]</a></td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:REL" title="PMCD1:REL[5]">PMCD1:REL[5]</a></td></tr>
+<tr><td>41</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:REL" title="PMCD1:REL[6]">PMCD1:REL[6]</a></td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:REL" title="PMCD1:REL[7]">PMCD1:REL[7]</a></td></tr>
+<tr><td>43</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:REL" title="PMCD1:REL[8]">PMCD1:REL[8]</a></td></tr>
+<tr><td>44</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:REL" title="PMCD1:REL[9]">PMCD1:REL[9]</a></td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:REL" title="PMCD1:REL[10]">PMCD1:REL[10]</a></td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:REL" title="PMCD1:REL[11]">PMCD1:REL[11]</a></td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:REL" title="PMCD1:REL[1]">PMCD1:REL[1]</a></td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:REL" title="PMCD1:REL[2]">PMCD1:REL[2]</a></td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:REL" title="PMCD1:REL[3]">PMCD1:REL[3]</a></td></tr>
+<tr><td>50</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:REL" title="PMCD1:REL[0]">PMCD1:REL[0]</a></td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:REL" title="PMCD1:REL[12]">PMCD1:REL[12]</a></td></tr>
+<tr><td>52</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>53</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>54</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>55</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>56</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>57</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-DPM:HFSEL2INV" title="~DPM:HFSEL2INV">~DPM:HFSEL2INV</a></td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>58</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-DPM:HFSEL0INV" title="~DPM:HFSEL0INV">~DPM:HFSEL0INV</a></td><td>-</td><td>-</td><td>-</td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="22">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG8" title="CCM:TO_BUFG8[4]">CCM:TO_BUFG8[4]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKA" title="PMCD0:CLKA[4]">PMCD0:CLKA[4]</a></td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG8" title="CCM:TO_BUFG8[3]">CCM:TO_BUFG8[3]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKA" title="PMCD0:CLKA[5]">PMCD0:CLKA[5]</a></td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG8" title="CCM:TO_BUFG8[5]">CCM:TO_BUFG8[5]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKA" title="PMCD0:CLKA[6]">PMCD0:CLKA[6]</a></td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG8" title="CCM:TO_BUFG8[1]">CCM:TO_BUFG8[1]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKA" title="PMCD0:CLKA[7]">PMCD0:CLKA[7]</a></td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG8" title="CCM:TO_BUFG8[2]">CCM:TO_BUFG8[2]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKA" title="PMCD0:CLKA[8]">PMCD0:CLKA[8]</a></td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG8" title="CCM:TO_BUFG8[0]">CCM:TO_BUFG8[0]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKA" title="PMCD0:CLKA[9]">PMCD0:CLKA[9]</a></td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG8" title="CCM:TO_BUFG8[6]">CCM:TO_BUFG8[6]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKA" title="PMCD0:CLKA[10]">PMCD0:CLKA[10]</a></td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG8" title="CCM:TO_BUFG8[7]">CCM:TO_BUFG8[7]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKA" title="PMCD0:CLKA[11]">PMCD0:CLKA[11]</a></td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG8" title="CCM:TO_BUFG8[8]">CCM:TO_BUFG8[8]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKA" title="PMCD0:CLKA[1]">PMCD0:CLKA[1]</a></td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG8" title="CCM:TO_BUFG8[9]">CCM:TO_BUFG8[9]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKA" title="PMCD0:CLKA[2]">PMCD0:CLKA[2]</a></td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG9" title="CCM:TO_BUFG9[4]">CCM:TO_BUFG9[4]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKA" title="PMCD0:CLKA[3]">PMCD0:CLKA[3]</a></td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG9" title="CCM:TO_BUFG9[3]">CCM:TO_BUFG9[3]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKA" title="PMCD0:CLKA[0]">PMCD0:CLKA[0]</a></td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG9" title="CCM:TO_BUFG9[5]">CCM:TO_BUFG9[5]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKA" title="PMCD0:CLKA[12]">PMCD0:CLKA[12]</a></td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG9" title="CCM:TO_BUFG9[1]">CCM:TO_BUFG9[1]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKB" title="PMCD0:CLKB[4]">PMCD0:CLKB[4]</a></td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG9" title="CCM:TO_BUFG9[2]">CCM:TO_BUFG9[2]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKB" title="PMCD0:CLKB[5]">PMCD0:CLKB[5]</a></td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG9" title="CCM:TO_BUFG9[0]">CCM:TO_BUFG9[0]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKB" title="PMCD0:CLKB[6]">PMCD0:CLKB[6]</a></td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG9" title="CCM:TO_BUFG9[6]">CCM:TO_BUFG9[6]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKB" title="PMCD0:CLKB[7]">PMCD0:CLKB[7]</a></td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG9" title="CCM:TO_BUFG9[7]">CCM:TO_BUFG9[7]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKB" title="PMCD0:CLKB[8]">PMCD0:CLKB[8]</a></td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG9" title="CCM:TO_BUFG9[8]">CCM:TO_BUFG9[8]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKB" title="PMCD0:CLKB[9]">PMCD0:CLKB[9]</a></td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG9" title="CCM:TO_BUFG9[9]">CCM:TO_BUFG9[9]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKB" title="PMCD0:CLKB[10]">PMCD0:CLKB[10]</a></td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG10" title="CCM:TO_BUFG10[4]">CCM:TO_BUFG10[4]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKB" title="PMCD0:CLKB[11]">PMCD0:CLKB[11]</a></td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG10" title="CCM:TO_BUFG10[3]">CCM:TO_BUFG10[3]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKB" title="PMCD0:CLKB[1]">PMCD0:CLKB[1]</a></td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG10" title="CCM:TO_BUFG10[5]">CCM:TO_BUFG10[5]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKB" title="PMCD0:CLKB[2]">PMCD0:CLKB[2]</a></td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG10" title="CCM:TO_BUFG10[1]">CCM:TO_BUFG10[1]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKB" title="PMCD0:CLKB[3]">PMCD0:CLKB[3]</a></td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG10" title="CCM:TO_BUFG10[2]">CCM:TO_BUFG10[2]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKB" title="PMCD0:CLKB[0]">PMCD0:CLKB[0]</a></td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG10" title="CCM:TO_BUFG10[0]">CCM:TO_BUFG10[0]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKB" title="PMCD0:CLKB[12]">PMCD0:CLKB[12]</a></td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG10" title="CCM:TO_BUFG10[6]">CCM:TO_BUFG10[6]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKC" title="PMCD0:CLKC[4]">PMCD0:CLKC[4]</a></td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG10" title="CCM:TO_BUFG10[7]">CCM:TO_BUFG10[7]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKC" title="PMCD0:CLKC[5]">PMCD0:CLKC[5]</a></td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG10" title="CCM:TO_BUFG10[8]">CCM:TO_BUFG10[8]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKC" title="PMCD0:CLKC[6]">PMCD0:CLKC[6]</a></td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG10" title="CCM:TO_BUFG10[9]">CCM:TO_BUFG10[9]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKC" title="PMCD0:CLKC[7]">PMCD0:CLKC[7]</a></td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG11" title="CCM:TO_BUFG11[4]">CCM:TO_BUFG11[4]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKC" title="PMCD0:CLKC[8]">PMCD0:CLKC[8]</a></td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG11" title="CCM:TO_BUFG11[3]">CCM:TO_BUFG11[3]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKC" title="PMCD0:CLKC[9]">PMCD0:CLKC[9]</a></td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG11" title="CCM:TO_BUFG11[5]">CCM:TO_BUFG11[5]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKC" title="PMCD0:CLKC[10]">PMCD0:CLKC[10]</a></td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG11" title="CCM:TO_BUFG11[1]">CCM:TO_BUFG11[1]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKC" title="PMCD0:CLKC[11]">PMCD0:CLKC[11]</a></td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG11" title="CCM:TO_BUFG11[2]">CCM:TO_BUFG11[2]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKC" title="PMCD0:CLKC[1]">PMCD0:CLKC[1]</a></td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG11" title="CCM:TO_BUFG11[0]">CCM:TO_BUFG11[0]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKC" title="PMCD0:CLKC[2]">PMCD0:CLKC[2]</a></td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG11" title="CCM:TO_BUFG11[6]">CCM:TO_BUFG11[6]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKC" title="PMCD0:CLKC[3]">PMCD0:CLKC[3]</a></td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG11" title="CCM:TO_BUFG11[7]">CCM:TO_BUFG11[7]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKC" title="PMCD0:CLKC[0]">PMCD0:CLKC[0]</a></td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG11" title="CCM:TO_BUFG11[8]">CCM:TO_BUFG11[8]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKC" title="PMCD0:CLKC[12]">PMCD0:CLKC[12]</a></td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:TO_BUFG11" title="CCM:TO_BUFG11[9]">CCM:TO_BUFG11[9]</a></td><td><a href="#bits-xc4v-CCM-PMCD0:CLKD" title="PMCD0:CLKD[4]">PMCD0:CLKD[4]</a></td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:CLKD" title="PMCD0:CLKD[5]">PMCD0:CLKD[5]</a></td></tr>
+<tr><td>41</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:CLKD" title="PMCD0:CLKD[6]">PMCD0:CLKD[6]</a></td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:CLKD" title="PMCD0:CLKD[7]">PMCD0:CLKD[7]</a></td></tr>
+<tr><td>43</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:CLKD" title="PMCD0:CLKD[8]">PMCD0:CLKD[8]</a></td></tr>
+<tr><td>44</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:CLKD" title="PMCD0:CLKD[9]">PMCD0:CLKD[9]</a></td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:CLKD" title="PMCD0:CLKD[10]">PMCD0:CLKD[10]</a></td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:CLKD" title="PMCD0:CLKD[11]">PMCD0:CLKD[11]</a></td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:CLKD" title="PMCD0:CLKD[1]">PMCD0:CLKD[1]</a></td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:CLKD" title="PMCD0:CLKD[2]">PMCD0:CLKD[2]</a></td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:CLKD" title="PMCD0:CLKD[3]">PMCD0:CLKD[3]</a></td></tr>
+<tr><td>50</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:CLKD" title="PMCD0:CLKD[0]">PMCD0:CLKD[0]</a></td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:CLKD" title="PMCD0:CLKD[12]">PMCD0:CLKD[12]</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="2">Row</th><th colspan="22">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:CLKA_ENABLE" title="PMCD0:CLKA_ENABLE[0]">PMCD0:CLKA_ENABLE[0]</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKA" title="PMCD1:CLKA[4]">PMCD1:CLKA[4]</a></td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:CLKA_ENABLE" title="PMCD0:CLKA_ENABLE[1]">PMCD0:CLKA_ENABLE[1]</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKA" title="PMCD1:CLKA[5]">PMCD1:CLKA[5]</a></td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:CLKA_ENABLE" title="PMCD0:CLKA_ENABLE[2]">PMCD0:CLKA_ENABLE[2]</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKA" title="PMCD1:CLKA[6]">PMCD1:CLKA[6]</a></td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:CLKA_ENABLE" title="PMCD0:CLKA_ENABLE[3]">PMCD0:CLKA_ENABLE[3]</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKA" title="PMCD1:CLKA[7]">PMCD1:CLKA[7]</a></td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:CLKB_ENABLE" title="PMCD0:CLKB_ENABLE">PMCD0:CLKB_ENABLE</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKA" title="PMCD1:CLKA[8]">PMCD1:CLKA[8]</a></td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:CLKC_ENABLE" title="PMCD0:CLKC_ENABLE">PMCD0:CLKC_ENABLE</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKA" title="PMCD1:CLKA[9]">PMCD1:CLKA[9]</a></td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:CLKD_ENABLE" title="PMCD0:CLKD_ENABLE">PMCD0:CLKD_ENABLE</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKA" title="PMCD1:CLKA[10]">PMCD1:CLKA[10]</a></td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:EN_REL" title="PMCD0:EN_REL">PMCD0:EN_REL</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKA" title="PMCD1:CLKA[11]">PMCD1:CLKA[11]</a></td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:RST_DEASSERT_CLK" title="PMCD0:RST_DEASSERT_CLK[0]">PMCD0:RST_DEASSERT_CLK[0]</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKA" title="PMCD1:CLKA[1]">PMCD1:CLKA[1]</a></td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:RST_DEASSERT_CLK" title="PMCD0:RST_DEASSERT_CLK[1]">PMCD0:RST_DEASSERT_CLK[1]</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKA" title="PMCD1:CLKA[2]">PMCD1:CLKA[2]</a></td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKA_ENABLE" title="PMCD1:CLKA_ENABLE[0]">PMCD1:CLKA_ENABLE[0]</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKA" title="PMCD1:CLKA[3]">PMCD1:CLKA[3]</a></td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKA_ENABLE" title="PMCD1:CLKA_ENABLE[1]">PMCD1:CLKA_ENABLE[1]</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKA" title="PMCD1:CLKA[0]">PMCD1:CLKA[0]</a></td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKA_ENABLE" title="PMCD1:CLKA_ENABLE[2]">PMCD1:CLKA_ENABLE[2]</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKA" title="PMCD1:CLKA[12]">PMCD1:CLKA[12]</a></td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKA_ENABLE" title="PMCD1:CLKA_ENABLE[3]">PMCD1:CLKA_ENABLE[3]</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKB" title="PMCD1:CLKB[4]">PMCD1:CLKB[4]</a></td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKB_ENABLE" title="PMCD1:CLKB_ENABLE">PMCD1:CLKB_ENABLE</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKB" title="PMCD1:CLKB[5]">PMCD1:CLKB[5]</a></td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKC_ENABLE" title="PMCD1:CLKC_ENABLE">PMCD1:CLKC_ENABLE</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKB" title="PMCD1:CLKB[6]">PMCD1:CLKB[6]</a></td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKD_ENABLE" title="PMCD1:CLKD_ENABLE">PMCD1:CLKD_ENABLE</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKB" title="PMCD1:CLKB[7]">PMCD1:CLKB[7]</a></td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:EN_REL" title="PMCD1:EN_REL">PMCD1:EN_REL</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKB" title="PMCD1:CLKB[8]">PMCD1:CLKB[8]</a></td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:RST_DEASSERT_CLK" title="PMCD1:RST_DEASSERT_CLK[0]">PMCD1:RST_DEASSERT_CLK[0]</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKB" title="PMCD1:CLKB[9]">PMCD1:CLKB[9]</a></td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:RST_DEASSERT_CLK" title="PMCD1:RST_DEASSERT_CLK[1]">PMCD1:RST_DEASSERT_CLK[1]</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKB" title="PMCD1:CLKB[10]">PMCD1:CLKB[10]</a></td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD0:REL" title="PMCD0:REL[13]">PMCD0:REL[13]</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKB" title="PMCD1:CLKB[11]">PMCD1:CLKB[11]</a></td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:REL" title="PMCD1:REL[13]">PMCD1:REL[13]</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKB" title="PMCD1:CLKB[1]">PMCD1:CLKB[1]</a></td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKB" title="PMCD1:CLKB[2]">PMCD1:CLKB[2]</a></td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKB" title="PMCD1:CLKB[3]">PMCD1:CLKB[3]</a></td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKB" title="PMCD1:CLKB[0]">PMCD1:CLKB[0]</a></td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKB" title="PMCD1:CLKB[12]">PMCD1:CLKB[12]</a></td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKC" title="PMCD1:CLKC[4]">PMCD1:CLKC[4]</a></td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKC" title="PMCD1:CLKC[5]">PMCD1:CLKC[5]</a></td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-CCM:VREG_ENABLE" title="CCM:VREG_ENABLE">CCM:VREG_ENABLE</a></td><td><a href="#bits-xc4v-CCM-PMCD1:CLKC" title="PMCD1:CLKC[6]">PMCD1:CLKC[6]</a></td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKC" title="PMCD1:CLKC[7]">PMCD1:CLKC[7]</a></td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKC" title="PMCD1:CLKC[8]">PMCD1:CLKC[8]</a></td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKC" title="PMCD1:CLKC[9]">PMCD1:CLKC[9]</a></td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKC" title="PMCD1:CLKC[10]">PMCD1:CLKC[10]</a></td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKC" title="PMCD1:CLKC[11]">PMCD1:CLKC[11]</a></td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKC" title="PMCD1:CLKC[1]">PMCD1:CLKC[1]</a></td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKC" title="PMCD1:CLKC[2]">PMCD1:CLKC[2]</a></td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKC" title="PMCD1:CLKC[3]">PMCD1:CLKC[3]</a></td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKC" title="PMCD1:CLKC[0]">PMCD1:CLKC[0]</a></td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKC" title="PMCD1:CLKC[12]">PMCD1:CLKC[12]</a></td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKD" title="PMCD1:CLKD[4]">PMCD1:CLKD[4]</a></td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKD" title="PMCD1:CLKD[5]">PMCD1:CLKD[5]</a></td></tr>
+<tr><td>41</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKD" title="PMCD1:CLKD[6]">PMCD1:CLKD[6]</a></td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKD" title="PMCD1:CLKD[7]">PMCD1:CLKD[7]</a></td></tr>
+<tr><td>43</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKD" title="PMCD1:CLKD[8]">PMCD1:CLKD[8]</a></td></tr>
+<tr><td>44</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKD" title="PMCD1:CLKD[9]">PMCD1:CLKD[9]</a></td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKD" title="PMCD1:CLKD[10]">PMCD1:CLKD[10]</a></td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKD" title="PMCD1:CLKD[11]">PMCD1:CLKD[11]</a></td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKD" title="PMCD1:CLKD[1]">PMCD1:CLKD[1]</a></td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKD" title="PMCD1:CLKD[2]">PMCD1:CLKD[2]</a></td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKD" title="PMCD1:CLKD[3]">PMCD1:CLKD[3]</a></td></tr>
+<tr><td>50</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKD" title="PMCD1:CLKD[0]">PMCD1:CLKD[0]</a></td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CCM-PMCD1:CLKD" title="PMCD1:CLKD[12]">PMCD1:CLKD[12]</a></td></tr>
+</table>
+<div id="bits-xc4v-CCM-DPM:ENOSC0INV"></div>
+<div id="bits-xc4v-CCM-DPM:ENOSC1INV"></div>
+<div id="bits-xc4v-CCM-DPM:ENOSC2INV"></div>
+<div id="bits-xc4v-CCM-DPM:FREEZEINV"></div>
+<div id="bits-xc4v-CCM-DPM:HFSEL0INV"></div>
+<div id="bits-xc4v-CCM-DPM:HFSEL1INV"></div>
+<div id="bits-xc4v-CCM-DPM:HFSEL2INV"></div>
+<div id="bits-xc4v-CCM-DPM:OUTSEL0INV"></div>
+<div id="bits-xc4v-CCM-DPM:OUTSEL1INV"></div>
+<div id="bits-xc4v-CCM-DPM:OUTSEL2INV"></div>
+<div id="bits-xc4v-CCM-DPM:SELSKEWINV"></div>
+<div id="bits-xc4v-CCM-PMCD0:RELINV"></div>
+<div id="bits-xc4v-CCM-PMCD1:RELINV"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>DPM:ENOSC0INV</th><th>[0, 18, 18]</th></tr>
+<tr><th>DPM:ENOSC1INV</th><th>[0, 18, 57]</th></tr>
+<tr><th>DPM:ENOSC2INV</th><th>[0, 18, 22]</th></tr>
+<tr><th>DPM:FREEZEINV</th><th>[0, 18, 58]</th></tr>
+<tr><th>DPM:HFSEL0INV</th><th>[1, 18, 58]</th></tr>
+<tr><th>DPM:HFSEL1INV</th><th>[1, 18, 18]</th></tr>
+<tr><th>DPM:HFSEL2INV</th><th>[1, 18, 57]</th></tr>
+<tr><th>DPM:OUTSEL0INV</th><th>[0, 18, 61]</th></tr>
+<tr><th>DPM:OUTSEL1INV</th><th>[0, 18, 21]</th></tr>
+<tr><th>DPM:OUTSEL2INV</th><th>[0, 18, 60]</th></tr>
+<tr><th>DPM:SELSKEWINV</th><th>[1, 18, 22]</th></tr>
+<tr><th>PMCD0:RELINV</th><th>[0, 18, 19]</th></tr>
+<tr><th>PMCD1:RELINV</th><th>[1, 18, 19]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<div id="bits-xc4v-CCM-CCM:TO_BUFG0"></div>
+<div id="bits-xc4v-CCM-CCM:TO_BUFG1"></div>
+<div id="bits-xc4v-CCM-CCM:TO_BUFG10"></div>
+<div id="bits-xc4v-CCM-CCM:TO_BUFG11"></div>
+<div id="bits-xc4v-CCM-CCM:TO_BUFG2"></div>
+<div id="bits-xc4v-CCM-CCM:TO_BUFG3"></div>
+<div id="bits-xc4v-CCM-CCM:TO_BUFG4"></div>
+<div id="bits-xc4v-CCM-CCM:TO_BUFG5"></div>
+<div id="bits-xc4v-CCM-CCM:TO_BUFG6"></div>
+<div id="bits-xc4v-CCM-CCM:TO_BUFG7"></div>
+<div id="bits-xc4v-CCM-CCM:TO_BUFG8"></div>
+<div id="bits-xc4v-CCM-CCM:TO_BUFG9"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>CCM:TO_BUFG0</th><th>[0, 20, 25]</th><th>[0, 20, 24]</th><th>[0, 20, 23]</th><th>[0, 20, 22]</th><th>[0, 20, 18]</th><th>[0, 20, 16]</th><th>[0, 20, 17]</th><th>[0, 20, 20]</th><th>[0, 20, 19]</th><th>[0, 20, 21]</th></tr>
+<tr><th>CCM:TO_BUFG1</th><th>[0, 20, 35]</th><th>[0, 20, 34]</th><th>[0, 20, 33]</th><th>[0, 20, 32]</th><th>[0, 20, 28]</th><th>[0, 20, 26]</th><th>[0, 20, 27]</th><th>[0, 20, 30]</th><th>[0, 20, 29]</th><th>[0, 20, 31]</th></tr>
+<tr><th>CCM:TO_BUFG10</th><th>[2, 20, 29]</th><th>[2, 20, 28]</th><th>[2, 20, 27]</th><th>[2, 20, 26]</th><th>[2, 20, 22]</th><th>[2, 20, 20]</th><th>[2, 20, 21]</th><th>[2, 20, 24]</th><th>[2, 20, 23]</th><th>[2, 20, 25]</th></tr>
+<tr><th>CCM:TO_BUFG11</th><th>[2, 20, 39]</th><th>[2, 20, 38]</th><th>[2, 20, 37]</th><th>[2, 20, 36]</th><th>[2, 20, 32]</th><th>[2, 20, 30]</th><th>[2, 20, 31]</th><th>[2, 20, 34]</th><th>[2, 20, 33]</th><th>[2, 20, 35]</th></tr>
+<tr><th>CCM:TO_BUFG2</th><th>[0, 20, 45]</th><th>[0, 20, 44]</th><th>[0, 20, 43]</th><th>[0, 20, 42]</th><th>[0, 20, 38]</th><th>[0, 20, 36]</th><th>[0, 20, 37]</th><th>[0, 20, 40]</th><th>[0, 20, 39]</th><th>[0, 20, 41]</th></tr>
+<tr><th>CCM:TO_BUFG3</th><th>[0, 20, 55]</th><th>[0, 20, 54]</th><th>[0, 20, 53]</th><th>[0, 20, 52]</th><th>[0, 20, 48]</th><th>[0, 20, 46]</th><th>[0, 20, 47]</th><th>[0, 20, 50]</th><th>[0, 20, 49]</th><th>[0, 20, 51]</th></tr>
+<tr><th>CCM:TO_BUFG4</th><th>[1, 20, 9]</th><th>[1, 20, 8]</th><th>[1, 20, 7]</th><th>[1, 20, 6]</th><th>[1, 20, 2]</th><th>[1, 20, 0]</th><th>[1, 20, 1]</th><th>[1, 20, 4]</th><th>[1, 20, 3]</th><th>[1, 20, 5]</th></tr>
+<tr><th>CCM:TO_BUFG5</th><th>[1, 20, 19]</th><th>[1, 20, 18]</th><th>[1, 20, 17]</th><th>[1, 20, 16]</th><th>[1, 20, 12]</th><th>[1, 20, 10]</th><th>[1, 20, 11]</th><th>[1, 20, 14]</th><th>[1, 20, 13]</th><th>[1, 20, 15]</th></tr>
+<tr><th>CCM:TO_BUFG6</th><th>[1, 20, 29]</th><th>[1, 20, 28]</th><th>[1, 20, 27]</th><th>[1, 20, 26]</th><th>[1, 20, 22]</th><th>[1, 20, 20]</th><th>[1, 20, 21]</th><th>[1, 20, 24]</th><th>[1, 20, 23]</th><th>[1, 20, 25]</th></tr>
+<tr><th>CCM:TO_BUFG7</th><th>[1, 20, 39]</th><th>[1, 20, 38]</th><th>[1, 20, 37]</th><th>[1, 20, 36]</th><th>[1, 20, 32]</th><th>[1, 20, 30]</th><th>[1, 20, 31]</th><th>[1, 20, 34]</th><th>[1, 20, 33]</th><th>[1, 20, 35]</th></tr>
+<tr><th>CCM:TO_BUFG8</th><th>[2, 20, 9]</th><th>[2, 20, 8]</th><th>[2, 20, 7]</th><th>[2, 20, 6]</th><th>[2, 20, 2]</th><th>[2, 20, 0]</th><th>[2, 20, 1]</th><th>[2, 20, 4]</th><th>[2, 20, 3]</th><th>[2, 20, 5]</th></tr>
+<tr><th>CCM:TO_BUFG9</th><th>[2, 20, 19]</th><th>[2, 20, 18]</th><th>[2, 20, 17]</th><th>[2, 20, 16]</th><th>[2, 20, 12]</th><th>[2, 20, 10]</th><th>[2, 20, 11]</th><th>[2, 20, 14]</th><th>[2, 20, 13]</th><th>[2, 20, 15]</th></tr>
+<tr><td>PMCD0_CLKA1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>DPM_OSCOUT2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>DPM_OSCOUT1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>DPM_REFCLKOUT</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>PMCD1_CLKC1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>PMCD0_CLKA1D2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>PMCD0_CLKA1D4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>PMCD0_CLKC1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>PMCD0_CLKB1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>PMCD0_CLKD1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>PMCD1_CLKA1D4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>PMCD1_CLKA1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>PMCD1_CLKA1D2</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>PMCD0_CLKA1D8</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>PMCD1_CLKD1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>PMCD1_CLKB1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>CKINT</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>PMCD1_CLKA1D8</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xc4v-CCM-DPM:REFCLK"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>DPM:REFCLK</th><th>[0, 21, 28]</th><th>[0, 21, 23]</th><th>[0, 21, 22]</th><th>[0, 21, 21]</th><th>[0, 21, 20]</th><th>[0, 21, 19]</th><th>[0, 21, 18]</th><th>[0, 21, 17]</th><th>[0, 21, 16]</th><th>[0, 21, 26]</th><th>[0, 21, 25]</th><th>[0, 21, 24]</th><th>[0, 21, 27]</th></tr>
+<tr><td>CKINTA2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>HCLK1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>HCLK2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKINTA3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>HCLK4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>HCLK5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKINTA0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>HCLK7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKINTA1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GIOB1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB7</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB8</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB9</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB10</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB11</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB12</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB13</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB14</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB15</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>MGT0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN5</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>MGT1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN6</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN7</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN8</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>MGT2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN9</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN10</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN11</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>MGT3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN12</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN13</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN14</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN15</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN16</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN17</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN18</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN19</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN20</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN21</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN22</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN23</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+</table>
+<div id="bits-xc4v-CCM-CCM:GIOB0_USED"></div>
+<div id="bits-xc4v-CCM-CCM:GIOB10_USED"></div>
+<div id="bits-xc4v-CCM-CCM:GIOB11_USED"></div>
+<div id="bits-xc4v-CCM-CCM:GIOB12_USED"></div>
+<div id="bits-xc4v-CCM-CCM:GIOB13_USED"></div>
+<div id="bits-xc4v-CCM-CCM:GIOB14_USED"></div>
+<div id="bits-xc4v-CCM-CCM:GIOB15_USED"></div>
+<div id="bits-xc4v-CCM-CCM:GIOB1_USED"></div>
+<div id="bits-xc4v-CCM-CCM:GIOB2_USED"></div>
+<div id="bits-xc4v-CCM-CCM:GIOB3_USED"></div>
+<div id="bits-xc4v-CCM-CCM:GIOB4_USED"></div>
+<div id="bits-xc4v-CCM-CCM:GIOB5_USED"></div>
+<div id="bits-xc4v-CCM-CCM:GIOB6_USED"></div>
+<div id="bits-xc4v-CCM-CCM:GIOB7_USED"></div>
+<div id="bits-xc4v-CCM-CCM:GIOB8_USED"></div>
+<div id="bits-xc4v-CCM-CCM:GIOB9_USED"></div>
+<div id="bits-xc4v-CCM-CCM:HCLK0_USED"></div>
+<div id="bits-xc4v-CCM-CCM:HCLK1_USED"></div>
+<div id="bits-xc4v-CCM-CCM:HCLK2_USED"></div>
+<div id="bits-xc4v-CCM-CCM:HCLK3_USED"></div>
+<div id="bits-xc4v-CCM-CCM:HCLK4_USED"></div>
+<div id="bits-xc4v-CCM-CCM:HCLK5_USED"></div>
+<div id="bits-xc4v-CCM-CCM:HCLK6_USED"></div>
+<div id="bits-xc4v-CCM-CCM:HCLK7_USED"></div>
+<div id="bits-xc4v-CCM-CCM:MGT0_USED"></div>
+<div id="bits-xc4v-CCM-CCM:MGT1_USED"></div>
+<div id="bits-xc4v-CCM-CCM:MGT2_USED"></div>
+<div id="bits-xc4v-CCM-CCM:MGT3_USED"></div>
+<div id="bits-xc4v-CCM-CCM:VREG_ENABLE"></div>
+<div id="bits-xc4v-CCM-PMCD0:CLKB_ENABLE"></div>
+<div id="bits-xc4v-CCM-PMCD0:CLKC_ENABLE"></div>
+<div id="bits-xc4v-CCM-PMCD0:CLKD_ENABLE"></div>
+<div id="bits-xc4v-CCM-PMCD0:EN_REL"></div>
+<div id="bits-xc4v-CCM-PMCD1:CLKB_ENABLE"></div>
+<div id="bits-xc4v-CCM-PMCD1:CLKC_ENABLE"></div>
+<div id="bits-xc4v-CCM-PMCD1:CLKD_ENABLE"></div>
+<div id="bits-xc4v-CCM-PMCD1:EN_REL"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>CCM:GIOB0_USED</th><th>[0, 21, 29]</th></tr>
+<tr><th>CCM:GIOB10_USED</th><th>[0, 21, 39]</th></tr>
+<tr><th>CCM:GIOB11_USED</th><th>[0, 21, 40]</th></tr>
+<tr><th>CCM:GIOB12_USED</th><th>[0, 21, 41]</th></tr>
+<tr><th>CCM:GIOB13_USED</th><th>[0, 21, 42]</th></tr>
+<tr><th>CCM:GIOB14_USED</th><th>[0, 21, 43]</th></tr>
+<tr><th>CCM:GIOB15_USED</th><th>[0, 21, 44]</th></tr>
+<tr><th>CCM:GIOB1_USED</th><th>[0, 21, 30]</th></tr>
+<tr><th>CCM:GIOB2_USED</th><th>[0, 21, 31]</th></tr>
+<tr><th>CCM:GIOB3_USED</th><th>[0, 21, 32]</th></tr>
+<tr><th>CCM:GIOB4_USED</th><th>[0, 21, 33]</th></tr>
+<tr><th>CCM:GIOB5_USED</th><th>[0, 21, 34]</th></tr>
+<tr><th>CCM:GIOB6_USED</th><th>[0, 21, 35]</th></tr>
+<tr><th>CCM:GIOB7_USED</th><th>[0, 21, 36]</th></tr>
+<tr><th>CCM:GIOB8_USED</th><th>[0, 21, 37]</th></tr>
+<tr><th>CCM:GIOB9_USED</th><th>[0, 21, 38]</th></tr>
+<tr><th>CCM:HCLK0_USED</th><th>[0, 21, 45]</th></tr>
+<tr><th>CCM:HCLK1_USED</th><th>[0, 21, 46]</th></tr>
+<tr><th>CCM:HCLK2_USED</th><th>[0, 21, 47]</th></tr>
+<tr><th>CCM:HCLK3_USED</th><th>[0, 21, 48]</th></tr>
+<tr><th>CCM:HCLK4_USED</th><th>[0, 21, 49]</th></tr>
+<tr><th>CCM:HCLK5_USED</th><th>[0, 21, 50]</th></tr>
+<tr><th>CCM:HCLK6_USED</th><th>[0, 21, 51]</th></tr>
+<tr><th>CCM:HCLK7_USED</th><th>[0, 21, 52]</th></tr>
+<tr><th>CCM:MGT0_USED</th><th>[0, 21, 53]</th></tr>
+<tr><th>CCM:MGT1_USED</th><th>[0, 21, 54]</th></tr>
+<tr><th>CCM:MGT2_USED</th><th>[0, 21, 55]</th></tr>
+<tr><th>CCM:MGT3_USED</th><th>[0, 21, 56]</th></tr>
+<tr><th>CCM:VREG_ENABLE</th><th>[3, 20, 28]</th></tr>
+<tr><th>PMCD0:CLKB_ENABLE</th><th>[3, 20, 4]</th></tr>
+<tr><th>PMCD0:CLKC_ENABLE</th><th>[3, 20, 5]</th></tr>
+<tr><th>PMCD0:CLKD_ENABLE</th><th>[3, 20, 6]</th></tr>
+<tr><th>PMCD0:EN_REL</th><th>[3, 20, 7]</th></tr>
+<tr><th>PMCD1:CLKB_ENABLE</th><th>[3, 20, 14]</th></tr>
+<tr><th>PMCD1:CLKC_ENABLE</th><th>[3, 20, 15]</th></tr>
+<tr><th>PMCD1:CLKD_ENABLE</th><th>[3, 20, 16]</th></tr>
+<tr><th>PMCD1:EN_REL</th><th>[3, 20, 17]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc4v-CCM-DPM:TESTCLK1"></div>
+<div id="bits-xc4v-CCM-DPM:TESTCLK2"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>DPM:TESTCLK1</th><th>[1, 21, 25]</th><th>[1, 21, 20]</th><th>[1, 21, 19]</th><th>[1, 21, 18]</th><th>[1, 21, 17]</th><th>[1, 21, 16]</th><th>[1, 21, 15]</th><th>[1, 21, 14]</th><th>[1, 21, 13]</th><th>[1, 21, 23]</th><th>[1, 21, 22]</th><th>[1, 21, 21]</th><th>[1, 21, 24]</th></tr>
+<tr><th>DPM:TESTCLK2</th><th>[1, 21, 12]</th><th>[1, 21, 7]</th><th>[1, 21, 6]</th><th>[1, 21, 5]</th><th>[1, 21, 4]</th><th>[1, 21, 3]</th><th>[1, 21, 2]</th><th>[1, 21, 1]</th><th>[1, 21, 0]</th><th>[1, 21, 10]</th><th>[1, 21, 9]</th><th>[1, 21, 8]</th><th>[1, 21, 11]</th></tr>
+<tr><td>CKINTB2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>HCLK1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>HCLK2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKINTB3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>HCLK4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>HCLK5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKINTB0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>HCLK7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKINTB1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GIOB1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB7</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB8</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB9</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB10</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB11</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB12</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB13</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB14</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB15</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>MGT0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN5</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>MGT1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN6</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN7</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN8</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>MGT2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN9</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN10</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN11</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>MGT3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN12</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN13</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN14</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN15</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN16</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN17</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN18</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN19</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN20</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN21</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN22</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN23</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+</table>
+<div id="bits-xc4v-CCM-PMCD0:REL"></div>
+<div id="bits-xc4v-CCM-PMCD1:REL"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>PMCD0:REL</th><th>[3, 20, 20]</th><th>[1, 21, 38]</th><th>[1, 21, 33]</th><th>[1, 21, 32]</th><th>[1, 21, 31]</th><th>[1, 21, 30]</th><th>[1, 21, 29]</th><th>[1, 21, 28]</th><th>[1, 21, 27]</th><th>[1, 21, 26]</th><th>[1, 21, 36]</th><th>[1, 21, 35]</th><th>[1, 21, 34]</th><th>[1, 21, 37]</th></tr>
+<tr><th>PMCD1:REL</th><th>[3, 20, 21]</th><th>[1, 21, 51]</th><th>[1, 21, 46]</th><th>[1, 21, 45]</th><th>[1, 21, 44]</th><th>[1, 21, 43]</th><th>[1, 21, 42]</th><th>[1, 21, 41]</th><th>[1, 21, 40]</th><th>[1, 21, 39]</th><th>[1, 21, 49]</th><th>[1, 21, 48]</th><th>[1, 21, 47]</th><th>[1, 21, 50]</th></tr>
+<tr><td>CKINTC2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>HCLK1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>HCLK2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKINTC3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>HCLK4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>HCLK5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKINTC0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>HCLK7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKINTC1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GIOB1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB8</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB9</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB10</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB11</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB12</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB13</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB14</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB15</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>MGT0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN2</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN3</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>MGT1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN6</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN8</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>MGT2</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN9</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN10</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN11</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>MGT3</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN12</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN13</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN14</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN15</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN16</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN17</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN18</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN19</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN20</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN21</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN22</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN23</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>REL_INT</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xc4v-CCM-PMCD0:CLKA"></div>
+<div id="bits-xc4v-CCM-PMCD0:CLKB"></div>
+<div id="bits-xc4v-CCM-PMCD1:CLKA"></div>
+<div id="bits-xc4v-CCM-PMCD1:CLKB"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>PMCD0:CLKA</th><th>[2, 21, 12]</th><th>[2, 21, 7]</th><th>[2, 21, 6]</th><th>[2, 21, 5]</th><th>[2, 21, 4]</th><th>[2, 21, 3]</th><th>[2, 21, 2]</th><th>[2, 21, 1]</th><th>[2, 21, 0]</th><th>[2, 21, 10]</th><th>[2, 21, 9]</th><th>[2, 21, 8]</th><th>[2, 21, 11]</th></tr>
+<tr><th>PMCD0:CLKB</th><th>[2, 21, 25]</th><th>[2, 21, 20]</th><th>[2, 21, 19]</th><th>[2, 21, 18]</th><th>[2, 21, 17]</th><th>[2, 21, 16]</th><th>[2, 21, 15]</th><th>[2, 21, 14]</th><th>[2, 21, 13]</th><th>[2, 21, 23]</th><th>[2, 21, 22]</th><th>[2, 21, 21]</th><th>[2, 21, 24]</th></tr>
+<tr><th>PMCD1:CLKA</th><th>[3, 21, 12]</th><th>[3, 21, 7]</th><th>[3, 21, 6]</th><th>[3, 21, 5]</th><th>[3, 21, 4]</th><th>[3, 21, 3]</th><th>[3, 21, 2]</th><th>[3, 21, 1]</th><th>[3, 21, 0]</th><th>[3, 21, 10]</th><th>[3, 21, 9]</th><th>[3, 21, 8]</th><th>[3, 21, 11]</th></tr>
+<tr><th>PMCD1:CLKB</th><th>[3, 21, 25]</th><th>[3, 21, 20]</th><th>[3, 21, 19]</th><th>[3, 21, 18]</th><th>[3, 21, 17]</th><th>[3, 21, 16]</th><th>[3, 21, 15]</th><th>[3, 21, 14]</th><th>[3, 21, 13]</th><th>[3, 21, 23]</th><th>[3, 21, 22]</th><th>[3, 21, 21]</th><th>[3, 21, 24]</th></tr>
+<tr><td>CKINTA2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>HCLK1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>HCLK2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKINTA3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>HCLK4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>HCLK5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKINTA0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>HCLK7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKINTA1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GIOB1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB7</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB8</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB9</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB10</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB11</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB12</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB13</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB14</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB15</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>MGT0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN5</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>MGT1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN6</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN7</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN8</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>MGT2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN9</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN10</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN11</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>MGT3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN12</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN13</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN14</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN15</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN16</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN17</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CLKA1D8</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN18</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN19</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN20</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN21</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN22</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN23</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+</table>
+<div id="bits-xc4v-CCM-PMCD0:CLKC"></div>
+<div id="bits-xc4v-CCM-PMCD0:CLKD"></div>
+<div id="bits-xc4v-CCM-PMCD1:CLKC"></div>
+<div id="bits-xc4v-CCM-PMCD1:CLKD"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>PMCD0:CLKC</th><th>[2, 21, 38]</th><th>[2, 21, 33]</th><th>[2, 21, 32]</th><th>[2, 21, 31]</th><th>[2, 21, 30]</th><th>[2, 21, 29]</th><th>[2, 21, 28]</th><th>[2, 21, 27]</th><th>[2, 21, 26]</th><th>[2, 21, 36]</th><th>[2, 21, 35]</th><th>[2, 21, 34]</th><th>[2, 21, 37]</th></tr>
+<tr><th>PMCD0:CLKD</th><th>[2, 21, 51]</th><th>[2, 21, 46]</th><th>[2, 21, 45]</th><th>[2, 21, 44]</th><th>[2, 21, 43]</th><th>[2, 21, 42]</th><th>[2, 21, 41]</th><th>[2, 21, 40]</th><th>[2, 21, 39]</th><th>[2, 21, 49]</th><th>[2, 21, 48]</th><th>[2, 21, 47]</th><th>[2, 21, 50]</th></tr>
+<tr><th>PMCD1:CLKC</th><th>[3, 21, 38]</th><th>[3, 21, 33]</th><th>[3, 21, 32]</th><th>[3, 21, 31]</th><th>[3, 21, 30]</th><th>[3, 21, 29]</th><th>[3, 21, 28]</th><th>[3, 21, 27]</th><th>[3, 21, 26]</th><th>[3, 21, 36]</th><th>[3, 21, 35]</th><th>[3, 21, 34]</th><th>[3, 21, 37]</th></tr>
+<tr><th>PMCD1:CLKD</th><th>[3, 21, 51]</th><th>[3, 21, 46]</th><th>[3, 21, 45]</th><th>[3, 21, 44]</th><th>[3, 21, 43]</th><th>[3, 21, 42]</th><th>[3, 21, 41]</th><th>[3, 21, 40]</th><th>[3, 21, 39]</th><th>[3, 21, 49]</th><th>[3, 21, 48]</th><th>[3, 21, 47]</th><th>[3, 21, 50]</th></tr>
+<tr><td>CKINTB2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>HCLK1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>HCLK2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKINTB3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>HCLK4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>HCLK5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKINTB0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>HCLK7</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CKINTB1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GIOB1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB7</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB8</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB9</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB10</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB11</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB12</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB13</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GIOB14</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GIOB15</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>MGT0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN5</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>MGT1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN6</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN7</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN8</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>MGT2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN9</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN10</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN11</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>MGT3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN12</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN13</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN14</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN15</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN16</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN17</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>CLKA1D8</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUSIN18</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN19</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN20</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN21</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUSIN22</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>BUSIN23</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+</table>
+<div id="bits-xc4v-CCM-PMCD0:CLKA_ENABLE"></div>
+<div id="bits-xc4v-CCM-PMCD1:CLKA_ENABLE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>PMCD0:CLKA_ENABLE</th><th>[3, 20, 3]</th><th>[3, 20, 2]</th><th>[3, 20, 1]</th><th>[3, 20, 0]</th></tr>
+<tr><th>PMCD1:CLKA_ENABLE</th><th>[3, 20, 13]</th><th>[3, 20, 12]</th><th>[3, 20, 11]</th><th>[3, 20, 10]</th></tr>
+<tr><td>Non-inverted</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc4v-CCM-PMCD0:RST_DEASSERT_CLK"></div>
+<div id="bits-xc4v-CCM-PMCD1:RST_DEASSERT_CLK"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>PMCD0:RST_DEASSERT_CLK</th><th>[3, 20, 9]</th><th>[3, 20, 8]</th></tr>
+<tr><th>PMCD1:RST_DEASSERT_CLK</th><th>[3, 20, 19]</th><th>[3, 20, 18]</th></tr>
+<tr><td>CLKA</td><td>0</td><td>0</td></tr>
+<tr><td>CLKB</td><td>0</td><td>1</td></tr>
+<tr><td>CLKC</td><td>1</td><td>0</td></tr>
+<tr><td>CLKD</td><td>1</td><td>1</td></tr>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dcm.html" class="btn btn-neutral float-left" title="DCM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="config.html" class="btn btn-neutral float-right" title="Configuration registers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

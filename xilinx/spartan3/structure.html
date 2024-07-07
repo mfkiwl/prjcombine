@@ -66,6 +66,7 @@
 <li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block — Spartan 3, Virtex 4</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP — Spartan 3A DSP, Spartan 6</a></li>
 <li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcm-xc3se.html">Digital Clock Managers — Spartan 3E, 3A</a></li>
 <li class="toctree-l3"><a class="reference internal" href="config-xc3sa.html">Configuration registers — Spartan 3A and 3A DSP</a></li>
 </ul>
 </li>
@@ -427,12 +428,12 @@
 <li><p>Spartan 3 and Spartan 3E:</p>
 <ul>
 <li><p>bits 0-3: clock rows in bottom half of the device (one bit per clock row, in order from bottom), then one bit for <code class="docutils literal notranslate"><span class="pre">LLV</span></code> tiles (if any)</p></li>
-<li><p>bits 7-12: bottom IOB row</p></li>
+<li><p>bits 7-11: bottom IOB row</p></li>
 </ul>
 </li>
 <li><p>Spartan 3A (and 3A DSP):</p>
 <ul>
-<li><p>bits 0-7: bottom IOB row</p></li>
+<li><p>bits 0-5: bottom IOB row</p></li>
 <li><p>bits 11-15: clock rows in bottom half of the device (one bit per clock row, in order from bottom)</p></li>
 </ul>
 </li>
@@ -443,14 +444,14 @@
 <ul>
 <li><p>Spartan 3 and Spartan 3E:</p>
 <ul>
-<li><p>bits 0-5: bottom IOB row</p></li>
+<li><p>bits 0-4: bottom IOB row</p></li>
 <li><p>bits 12-15 (devices without <code class="docutils literal notranslate"><span class="pre">LLV</span></code> tiles): clock rows in top half of the device (one bit per clock row, in order from top)</p></li>
 <li><p>bits 11-15 (devices with <code class="docutils literal notranslate"><span class="pre">LLV</span></code> tiles): clock rows in top half of the device (one bit per clock row, in order from top), then two bits for <code class="docutils literal notranslate"><span class="pre">LLV</span></code> tiles</p></li>
 </ul>
 </li>
 <li><p>Spartan 3A (and 3A DSP):</p>
 <ul>
-<li><p>bits 0-7: bottom IOB row</p></li>
+<li><p>bits 0-5: bottom IOB row</p></li>
 <li><p>bits 8-10: <code class="docutils literal notranslate"><span class="pre">LLV</span></code> tiles</p></li>
 <li><p>bits 11-15: clock rows in top half of the device (one bit per clock row, in order from top)</p></li>
 </ul>
@@ -459,7 +460,7 @@
 </li>
 </ul>
 <p>Thus, every interconnect tile corresponds to a bitstream tile of 19×64 bits. Such bitstream tiles are shared between the interconnect tiles and their associated primitives.</p>
-<p>The IOB row tiles are 19×5 or 19×8 bits, and belong to <code class="docutils literal notranslate"><span class="pre">IOBS.*</span></code> tiles. Likewise, IOB column tiles are 2×64 bits and are belong to <code class="docutils literal notranslate"><span class="pre">IOBS.*</span></code>.  The corner tiles also reuse some tiles in IOB area with the same dimensions.</p>
+<p>The IOB row tiles are 19×5 or 19×6 bits, and belong to <code class="docutils literal notranslate"><span class="pre">IOBS.*</span></code> tiles. Likewise, IOB column tiles are 2×64 bits and are belong to <code class="docutils literal notranslate"><span class="pre">IOBS.*</span></code>.  The corner tiles also reuse some tiles in IOB area with the same dimensions.</p>
 <p>Blockram data tiles are 76×256 bits (corresponding to 4 interconnect rows). The blockram data frame space to non-BRAM rows is repurposed for interconnect tile storage as described above.</p>
 <p>The space in the intersection of IOB columns and IOB or clock rows is unused.</p>
 <p>On Spartan 3E, the <code class="docutils literal notranslate"><span class="pre">LLV</span></code> tiles are split in two parts, a 19×1 one in the low special area, and a 19×2 one in the high special area. On Spartan 3A, <code class="docutils literal notranslate"><span class="pre">LLV</span></code> tiles are 19×3 bits.</p>

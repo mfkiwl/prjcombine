@@ -19,7 +19,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Configuration registers — Spartan 3A and 3A DSP" href="config-xc3sa.html" />
+    <link rel="next" title="Digital Clock Managers — Spartan 3E, 3A" href="dcm-xc3se.html" />
     <link rel="prev" title="DSP — Spartan 3A DSP, Spartan 6" href="dsp.html" /> 
 </head>
 
@@ -66,6 +66,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#the-gclkh-clock-row-distribution-tiles">The <code class="docutils literal notranslate"><span class="pre">GCLKH</span></code> clock row distribution tiles</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="dcm-xc3se.html">Digital Clock Managers — Spartan 3E, 3A</a></li>
 <li class="toctree-l3"><a class="reference internal" href="config-xc3sa.html">Configuration registers — Spartan 3A and 3A DSP</a></li>
 </ul>
 </li>
@@ -4261,84 +4262,39 @@
 <tr><td>33</td>
 <td><a href="#bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T3" title="GCLKVM:OUT_T3">GCLKVM:OUT_T3</a></td></tr>
 </table>
-<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B3"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_B3</th><th>[0, 0, 30]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B4"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_B4</th><th>[0, 0, 31]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B5"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_B5</th><th>[0, 0, 32]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B6"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_B6</th><th>[0, 0, 33]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B2"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_B2</th><th>[0, 0, 34]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B7"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_B7</th><th>[0, 0, 35]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B1"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_B1</th><th>[0, 0, 36]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
 <div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B0"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_B0</th><th>[0, 0, 38]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B1"></div>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B2"></div>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B3"></div>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B4"></div>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B5"></div>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B6"></div>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_B7"></div>
 <div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T0"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_T0</th><th>[1, 0, 25]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
 <div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T1"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_T1</th><th>[1, 0, 27]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T2"></div>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T3"></div>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T4"></div>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T5"></div>
+<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T6"></div>
 <div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T7"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_T7</th><th>[1, 0, 28]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T2"></div>
-<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B0</th><th>[0, 0, 38]</th></tr>
+<tr><th>GCLKVM:OUT_B1</th><th>[0, 0, 36]</th></tr>
+<tr><th>GCLKVM:OUT_B2</th><th>[0, 0, 34]</th></tr>
+<tr><th>GCLKVM:OUT_B3</th><th>[0, 0, 30]</th></tr>
+<tr><th>GCLKVM:OUT_B4</th><th>[0, 0, 31]</th></tr>
+<tr><th>GCLKVM:OUT_B5</th><th>[0, 0, 32]</th></tr>
+<tr><th>GCLKVM:OUT_B6</th><th>[0, 0, 33]</th></tr>
+<tr><th>GCLKVM:OUT_B7</th><th>[0, 0, 35]</th></tr>
+<tr><th>GCLKVM:OUT_T0</th><th>[1, 0, 25]</th></tr>
+<tr><th>GCLKVM:OUT_T1</th><th>[1, 0, 27]</th></tr>
 <tr><th>GCLKVM:OUT_T2</th><th>[1, 0, 29]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T6"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_T6</th><th>[1, 0, 30]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T5"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_T5</th><th>[1, 0, 31]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T4"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_T4</th><th>[1, 0, 32]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKVM.S3-GCLKVM:OUT_T3"></div>
-<table class="docutils align-default prjcombine-enum">
 <tr><th>GCLKVM:OUT_T3</th><th>[1, 0, 33]</th></tr>
+<tr><th>GCLKVM:OUT_T4</th><th>[1, 0, 32]</th></tr>
+<tr><th>GCLKVM:OUT_T5</th><th>[1, 0, 31]</th></tr>
+<tr><th>GCLKVM:OUT_T6</th><th>[1, 0, 30]</th></tr>
+<tr><th>GCLKVM:OUT_T7</th><th>[1, 0, 28]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 </section>
@@ -4553,112 +4509,72 @@
 <td><a href="#bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T0" title="GCLKVM:OUT_T0[0]">GCLKVM:OUT_T0[0]</a></td></tr>
 </table>
 <div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B7"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_B7</th><th>[0, 0, 20]</th><th>[0, 0, 21]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td></tr>
-<tr><td>IN_LR7</td><td>0</td><td>1</td></tr>
-<tr><td>IN_CORE7</td><td>1</td><td>0</td></tr>
-</table>
-<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B6"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_B6</th><th>[0, 0, 22]</th><th>[0, 0, 23]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td></tr>
-<tr><td>IN_LR6</td><td>0</td><td>1</td></tr>
-<tr><td>IN_CORE6</td><td>1</td><td>0</td></tr>
-</table>
-<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B5"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_B5</th><th>[0, 0, 24]</th><th>[0, 0, 25]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td></tr>
-<tr><td>IN_LR5</td><td>0</td><td>1</td></tr>
-<tr><td>IN_CORE5</td><td>1</td><td>0</td></tr>
-</table>
-<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B4"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_B4</th><th>[0, 0, 26]</th><th>[0, 0, 28]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td></tr>
-<tr><td>IN_LR4</td><td>0</td><td>1</td></tr>
-<tr><td>IN_CORE4</td><td>1</td><td>0</td></tr>
-</table>
-<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B3"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_B3</th><th>[0, 0, 49]</th><th>[0, 0, 50]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td></tr>
-<tr><td>IN_LR3</td><td>0</td><td>1</td></tr>
-<tr><td>IN_CORE3</td><td>1</td><td>0</td></tr>
-</table>
-<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B2"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_B2</th><th>[0, 0, 51]</th><th>[0, 0, 52]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td></tr>
-<tr><td>IN_LR2</td><td>0</td><td>1</td></tr>
-<tr><td>IN_CORE2</td><td>1</td><td>0</td></tr>
-</table>
-<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B1"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_B1</th><th>[0, 0, 53]</th><th>[0, 0, 54]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td></tr>
-<tr><td>IN_LR1</td><td>0</td><td>1</td></tr>
-<tr><td>IN_CORE1</td><td>1</td><td>0</td></tr>
-</table>
-<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B0"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKVM:OUT_B0</th><th>[0, 0, 55]</th><th>[0, 0, 57]</th></tr>
-<tr><td>NONE</td><td>0</td><td>0</td></tr>
-<tr><td>IN_LR0</td><td>0</td><td>1</td></tr>
-<tr><td>IN_CORE0</td><td>1</td><td>0</td></tr>
-</table>
 <div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T7"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B7</th><th>[0, 0, 20]</th><th>[0, 0, 21]</th></tr>
 <tr><th>GCLKVM:OUT_T7</th><th>[1, 0, 6]</th><th>[1, 0, 7]</th></tr>
 <tr><td>NONE</td><td>0</td><td>0</td></tr>
 <tr><td>IN_LR7</td><td>0</td><td>1</td></tr>
 <tr><td>IN_CORE7</td><td>1</td><td>0</td></tr>
 </table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B6"></div>
 <div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T6"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B6</th><th>[0, 0, 22]</th><th>[0, 0, 23]</th></tr>
 <tr><th>GCLKVM:OUT_T6</th><th>[1, 0, 8]</th><th>[1, 0, 9]</th></tr>
 <tr><td>NONE</td><td>0</td><td>0</td></tr>
 <tr><td>IN_LR6</td><td>0</td><td>1</td></tr>
 <tr><td>IN_CORE6</td><td>1</td><td>0</td></tr>
 </table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B5"></div>
 <div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T5"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B5</th><th>[0, 0, 24]</th><th>[0, 0, 25]</th></tr>
 <tr><th>GCLKVM:OUT_T5</th><th>[1, 0, 10]</th><th>[1, 0, 11]</th></tr>
 <tr><td>NONE</td><td>0</td><td>0</td></tr>
 <tr><td>IN_LR5</td><td>0</td><td>1</td></tr>
 <tr><td>IN_CORE5</td><td>1</td><td>0</td></tr>
 </table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B4"></div>
 <div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T4"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B4</th><th>[0, 0, 26]</th><th>[0, 0, 28]</th></tr>
 <tr><th>GCLKVM:OUT_T4</th><th>[1, 0, 12]</th><th>[1, 0, 14]</th></tr>
 <tr><td>NONE</td><td>0</td><td>0</td></tr>
 <tr><td>IN_LR4</td><td>0</td><td>1</td></tr>
 <tr><td>IN_CORE4</td><td>1</td><td>0</td></tr>
 </table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B3"></div>
 <div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T3"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B3</th><th>[0, 0, 49]</th><th>[0, 0, 50]</th></tr>
 <tr><th>GCLKVM:OUT_T3</th><th>[1, 0, 34]</th><th>[1, 0, 36]</th></tr>
 <tr><td>NONE</td><td>0</td><td>0</td></tr>
 <tr><td>IN_LR3</td><td>0</td><td>1</td></tr>
 <tr><td>IN_CORE3</td><td>1</td><td>0</td></tr>
 </table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B2"></div>
 <div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T2"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B2</th><th>[0, 0, 51]</th><th>[0, 0, 52]</th></tr>
 <tr><th>GCLKVM:OUT_T2</th><th>[1, 0, 37]</th><th>[1, 0, 38]</th></tr>
 <tr><td>NONE</td><td>0</td><td>0</td></tr>
 <tr><td>IN_LR2</td><td>0</td><td>1</td></tr>
 <tr><td>IN_CORE2</td><td>1</td><td>0</td></tr>
 </table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B1"></div>
 <div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T1"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B1</th><th>[0, 0, 53]</th><th>[0, 0, 54]</th></tr>
 <tr><th>GCLKVM:OUT_T1</th><th>[1, 0, 39]</th><th>[1, 0, 40]</th></tr>
 <tr><td>NONE</td><td>0</td><td>0</td></tr>
 <tr><td>IN_LR1</td><td>0</td><td>1</td></tr>
 <tr><td>IN_CORE1</td><td>1</td><td>0</td></tr>
 </table>
+<div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_B0"></div>
 <div id="bits-xc3s-GCLKVM.S3E-GCLKVM:OUT_T0"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKVM:OUT_B0</th><th>[0, 0, 55]</th><th>[0, 0, 57]</th></tr>
 <tr><th>GCLKVM:OUT_T0</th><th>[1, 0, 41]</th><th>[1, 0, 42]</th></tr>
 <tr><td>NONE</td><td>0</td><td>0</td></tr>
 <tr><td>IN_LR0</td><td>0</td><td>1</td></tr>
@@ -4686,84 +4602,39 @@
 <tr><td>0</td>
 <td>-</td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_B7" title="GCLKH:OUT_B7">GCLKH:OUT_B7</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_T7" title="GCLKH:OUT_T7">GCLKH:OUT_T7</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_B6" title="GCLKH:OUT_B6">GCLKH:OUT_B6</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_T6" title="GCLKH:OUT_T6">GCLKH:OUT_T6</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_B5" title="GCLKH:OUT_B5">GCLKH:OUT_B5</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_T5" title="GCLKH:OUT_T5">GCLKH:OUT_T5</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_B4" title="GCLKH:OUT_B4">GCLKH:OUT_B4</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_T4" title="GCLKH:OUT_T4">GCLKH:OUT_T4</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_B3" title="GCLKH:OUT_B3">GCLKH:OUT_B3</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_T3" title="GCLKH:OUT_T3">GCLKH:OUT_T3</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_B2" title="GCLKH:OUT_B2">GCLKH:OUT_B2</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_T2" title="GCLKH:OUT_T2">GCLKH:OUT_T2</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_B1" title="GCLKH:OUT_B1">GCLKH:OUT_B1</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_T1" title="GCLKH:OUT_T1">GCLKH:OUT_T1</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_B0" title="GCLKH:OUT_B0">GCLKH:OUT_B0</a></td><td><a href="#bits-xc3s-GCLKH-GCLKH:OUT_T0" title="GCLKH:OUT_T0">GCLKH:OUT_T0</a></td></tr>
 </table>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_B0"></div>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_B1"></div>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_B2"></div>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_B3"></div>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_B4"></div>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_B5"></div>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_B6"></div>
 <div id="bits-xc3s-GCLKH-GCLKH:OUT_B7"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_B7</th><th>[0, 1, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_T0"></div>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_T1"></div>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_T2"></div>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_T3"></div>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_T4"></div>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_T5"></div>
+<div id="bits-xc3s-GCLKH-GCLKH:OUT_T6"></div>
 <div id="bits-xc3s-GCLKH-GCLKH:OUT_T7"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_T7</th><th>[0, 2, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH-GCLKH:OUT_B6"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_B6</th><th>[0, 3, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH-GCLKH:OUT_T6"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_T6</th><th>[0, 4, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH-GCLKH:OUT_B5"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_B5</th><th>[0, 5, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH-GCLKH:OUT_T5"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_T5</th><th>[0, 6, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH-GCLKH:OUT_B4"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_B4</th><th>[0, 7, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH-GCLKH:OUT_T4"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_T4</th><th>[0, 8, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH-GCLKH:OUT_B3"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_B3</th><th>[0, 9, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH-GCLKH:OUT_T3"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_T3</th><th>[0, 10, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH-GCLKH:OUT_B2"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_B2</th><th>[0, 11, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH-GCLKH:OUT_T2"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_T2</th><th>[0, 12, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH-GCLKH:OUT_B1"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_B1</th><th>[0, 13, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH-GCLKH:OUT_T1"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_T1</th><th>[0, 14, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH-GCLKH:OUT_B0"></div>
-<table class="docutils align-default prjcombine-enum">
 <tr><th>GCLKH:OUT_B0</th><th>[0, 15, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH-GCLKH:OUT_T0"></div>
-<table class="docutils align-default prjcombine-enum">
+<tr><th>GCLKH:OUT_B1</th><th>[0, 13, 0]</th></tr>
+<tr><th>GCLKH:OUT_B2</th><th>[0, 11, 0]</th></tr>
+<tr><th>GCLKH:OUT_B3</th><th>[0, 9, 0]</th></tr>
+<tr><th>GCLKH:OUT_B4</th><th>[0, 7, 0]</th></tr>
+<tr><th>GCLKH:OUT_B5</th><th>[0, 5, 0]</th></tr>
+<tr><th>GCLKH:OUT_B6</th><th>[0, 3, 0]</th></tr>
+<tr><th>GCLKH:OUT_B7</th><th>[0, 1, 0]</th></tr>
 <tr><th>GCLKH:OUT_T0</th><th>[0, 16, 0]</th></tr>
+<tr><th>GCLKH:OUT_T1</th><th>[0, 14, 0]</th></tr>
+<tr><th>GCLKH:OUT_T2</th><th>[0, 12, 0]</th></tr>
+<tr><th>GCLKH:OUT_T3</th><th>[0, 10, 0]</th></tr>
+<tr><th>GCLKH:OUT_T4</th><th>[0, 8, 0]</th></tr>
+<tr><th>GCLKH:OUT_T5</th><th>[0, 6, 0]</th></tr>
+<tr><th>GCLKH:OUT_T6</th><th>[0, 4, 0]</th></tr>
+<tr><th>GCLKH:OUT_T7</th><th>[0, 2, 0]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 </section>
@@ -4774,44 +4645,23 @@
 <tr><td>0</td>
 <td>-</td><td><a href="#bits-xc3s-GCLKH.S-GCLKH:OUT_B7" title="GCLKH:OUT_B7">GCLKH:OUT_B7</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.S-GCLKH:OUT_B6" title="GCLKH:OUT_B6">GCLKH:OUT_B6</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.S-GCLKH:OUT_B5" title="GCLKH:OUT_B5">GCLKH:OUT_B5</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.S-GCLKH:OUT_B4" title="GCLKH:OUT_B4">GCLKH:OUT_B4</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.S-GCLKH:OUT_B3" title="GCLKH:OUT_B3">GCLKH:OUT_B3</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.S-GCLKH:OUT_B2" title="GCLKH:OUT_B2">GCLKH:OUT_B2</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.S-GCLKH:OUT_B1" title="GCLKH:OUT_B1">GCLKH:OUT_B1</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.S-GCLKH:OUT_B0" title="GCLKH:OUT_B0">GCLKH:OUT_B0</a></td></tr>
 </table>
+<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B0"></div>
+<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B1"></div>
+<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B2"></div>
+<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B3"></div>
+<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B4"></div>
+<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B5"></div>
+<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B6"></div>
 <div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B7"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_B7</th><th>[0, 1, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B6"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_B6</th><th>[0, 3, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B5"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_B5</th><th>[0, 5, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B4"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_B4</th><th>[0, 7, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B3"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_B3</th><th>[0, 9, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B2"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_B2</th><th>[0, 11, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B1"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_B1</th><th>[0, 13, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.S-GCLKH:OUT_B0"></div>
-<table class="docutils align-default prjcombine-enum">
 <tr><th>GCLKH:OUT_B0</th><th>[0, 15, 0]</th></tr>
+<tr><th>GCLKH:OUT_B1</th><th>[0, 13, 0]</th></tr>
+<tr><th>GCLKH:OUT_B2</th><th>[0, 11, 0]</th></tr>
+<tr><th>GCLKH:OUT_B3</th><th>[0, 9, 0]</th></tr>
+<tr><th>GCLKH:OUT_B4</th><th>[0, 7, 0]</th></tr>
+<tr><th>GCLKH:OUT_B5</th><th>[0, 5, 0]</th></tr>
+<tr><th>GCLKH:OUT_B6</th><th>[0, 3, 0]</th></tr>
+<tr><th>GCLKH:OUT_B7</th><th>[0, 1, 0]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 </section>
@@ -4822,44 +4672,23 @@
 <tr><td>0</td>
 <td>-</td><td>-</td><td><a href="#bits-xc3s-GCLKH.N-GCLKH:OUT_T7" title="GCLKH:OUT_T7">GCLKH:OUT_T7</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.N-GCLKH:OUT_T6" title="GCLKH:OUT_T6">GCLKH:OUT_T6</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.N-GCLKH:OUT_T5" title="GCLKH:OUT_T5">GCLKH:OUT_T5</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.N-GCLKH:OUT_T4" title="GCLKH:OUT_T4">GCLKH:OUT_T4</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.N-GCLKH:OUT_T3" title="GCLKH:OUT_T3">GCLKH:OUT_T3</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.N-GCLKH:OUT_T2" title="GCLKH:OUT_T2">GCLKH:OUT_T2</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.N-GCLKH:OUT_T1" title="GCLKH:OUT_T1">GCLKH:OUT_T1</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.N-GCLKH:OUT_T0" title="GCLKH:OUT_T0">GCLKH:OUT_T0</a></td></tr>
 </table>
+<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T0"></div>
+<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T1"></div>
+<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T2"></div>
+<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T3"></div>
+<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T4"></div>
+<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T5"></div>
+<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T6"></div>
 <div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T7"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_T7</th><th>[0, 2, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T6"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_T6</th><th>[0, 4, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T5"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_T5</th><th>[0, 6, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T4"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_T4</th><th>[0, 8, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T3"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_T3</th><th>[0, 10, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T2"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_T2</th><th>[0, 12, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T1"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT_T1</th><th>[0, 14, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.N-GCLKH:OUT_T0"></div>
-<table class="docutils align-default prjcombine-enum">
 <tr><th>GCLKH:OUT_T0</th><th>[0, 16, 0]</th></tr>
+<tr><th>GCLKH:OUT_T1</th><th>[0, 14, 0]</th></tr>
+<tr><th>GCLKH:OUT_T2</th><th>[0, 12, 0]</th></tr>
+<tr><th>GCLKH:OUT_T3</th><th>[0, 10, 0]</th></tr>
+<tr><th>GCLKH:OUT_T4</th><th>[0, 8, 0]</th></tr>
+<tr><th>GCLKH:OUT_T5</th><th>[0, 6, 0]</th></tr>
+<tr><th>GCLKH:OUT_T6</th><th>[0, 4, 0]</th></tr>
+<tr><th>GCLKH:OUT_T7</th><th>[0, 2, 0]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 </section>
@@ -4870,44 +4699,23 @@
 <tr><td>0</td>
 <td>-</td><td><a href="#bits-xc3s-GCLKH.UNI-GCLKH:OUT7" title="GCLKH:OUT7">GCLKH:OUT7</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI-GCLKH:OUT6" title="GCLKH:OUT6">GCLKH:OUT6</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI-GCLKH:OUT5" title="GCLKH:OUT5">GCLKH:OUT5</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI-GCLKH:OUT4" title="GCLKH:OUT4">GCLKH:OUT4</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI-GCLKH:OUT3" title="GCLKH:OUT3">GCLKH:OUT3</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI-GCLKH:OUT2" title="GCLKH:OUT2">GCLKH:OUT2</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI-GCLKH:OUT1" title="GCLKH:OUT1">GCLKH:OUT1</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI-GCLKH:OUT0" title="GCLKH:OUT0">GCLKH:OUT0</a></td></tr>
 </table>
+<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT0"></div>
+<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT1"></div>
+<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT2"></div>
+<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT3"></div>
+<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT4"></div>
+<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT5"></div>
+<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT6"></div>
 <div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT7"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT7</th><th>[0, 1, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT6"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT6</th><th>[0, 3, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT5"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT5</th><th>[0, 5, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT4"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT4</th><th>[0, 7, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT3"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT3</th><th>[0, 9, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT2"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT2</th><th>[0, 11, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT1"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT1</th><th>[0, 13, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI-GCLKH:OUT0"></div>
-<table class="docutils align-default prjcombine-enum">
 <tr><th>GCLKH:OUT0</th><th>[0, 15, 0]</th></tr>
+<tr><th>GCLKH:OUT1</th><th>[0, 13, 0]</th></tr>
+<tr><th>GCLKH:OUT2</th><th>[0, 11, 0]</th></tr>
+<tr><th>GCLKH:OUT3</th><th>[0, 9, 0]</th></tr>
+<tr><th>GCLKH:OUT4</th><th>[0, 7, 0]</th></tr>
+<tr><th>GCLKH:OUT5</th><th>[0, 5, 0]</th></tr>
+<tr><th>GCLKH:OUT6</th><th>[0, 3, 0]</th></tr>
+<tr><th>GCLKH:OUT7</th><th>[0, 1, 0]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 </section>
@@ -4918,44 +4726,23 @@
 <tr><td>0</td>
 <td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.S-GCLKH:OUT7" title="GCLKH:OUT7">GCLKH:OUT7</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.S-GCLKH:OUT6" title="GCLKH:OUT6">GCLKH:OUT6</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.S-GCLKH:OUT5" title="GCLKH:OUT5">GCLKH:OUT5</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.S-GCLKH:OUT4" title="GCLKH:OUT4">GCLKH:OUT4</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.S-GCLKH:OUT3" title="GCLKH:OUT3">GCLKH:OUT3</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.S-GCLKH:OUT2" title="GCLKH:OUT2">GCLKH:OUT2</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.S-GCLKH:OUT1" title="GCLKH:OUT1">GCLKH:OUT1</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.S-GCLKH:OUT0" title="GCLKH:OUT0">GCLKH:OUT0</a></td></tr>
 </table>
+<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT0"></div>
+<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT1"></div>
+<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT2"></div>
+<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT3"></div>
+<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT4"></div>
+<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT5"></div>
+<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT6"></div>
 <div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT7"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT7</th><th>[0, 1, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT6"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT6</th><th>[0, 3, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT5"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT5</th><th>[0, 5, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT4"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT4</th><th>[0, 7, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT3"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT3</th><th>[0, 9, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT2"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT2</th><th>[0, 11, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT1"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT1</th><th>[0, 13, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI.S-GCLKH:OUT0"></div>
-<table class="docutils align-default prjcombine-enum">
 <tr><th>GCLKH:OUT0</th><th>[0, 15, 0]</th></tr>
+<tr><th>GCLKH:OUT1</th><th>[0, 13, 0]</th></tr>
+<tr><th>GCLKH:OUT2</th><th>[0, 11, 0]</th></tr>
+<tr><th>GCLKH:OUT3</th><th>[0, 9, 0]</th></tr>
+<tr><th>GCLKH:OUT4</th><th>[0, 7, 0]</th></tr>
+<tr><th>GCLKH:OUT5</th><th>[0, 5, 0]</th></tr>
+<tr><th>GCLKH:OUT6</th><th>[0, 3, 0]</th></tr>
+<tr><th>GCLKH:OUT7</th><th>[0, 1, 0]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 </section>
@@ -4966,44 +4753,23 @@
 <tr><td>0</td>
 <td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.N-GCLKH:OUT7" title="GCLKH:OUT7">GCLKH:OUT7</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.N-GCLKH:OUT6" title="GCLKH:OUT6">GCLKH:OUT6</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.N-GCLKH:OUT5" title="GCLKH:OUT5">GCLKH:OUT5</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.N-GCLKH:OUT4" title="GCLKH:OUT4">GCLKH:OUT4</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.N-GCLKH:OUT3" title="GCLKH:OUT3">GCLKH:OUT3</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.N-GCLKH:OUT2" title="GCLKH:OUT2">GCLKH:OUT2</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.N-GCLKH:OUT1" title="GCLKH:OUT1">GCLKH:OUT1</a></td><td>-</td><td><a href="#bits-xc3s-GCLKH.UNI.N-GCLKH:OUT0" title="GCLKH:OUT0">GCLKH:OUT0</a></td></tr>
 </table>
+<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT0"></div>
+<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT1"></div>
+<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT2"></div>
+<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT3"></div>
+<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT4"></div>
+<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT5"></div>
+<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT6"></div>
 <div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT7"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT7</th><th>[0, 1, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT6"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT6</th><th>[0, 3, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT5"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT5</th><th>[0, 5, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT4"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT4</th><th>[0, 7, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT3"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT3</th><th>[0, 9, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT2"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT2</th><th>[0, 11, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT1"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>GCLKH:OUT1</th><th>[0, 13, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-GCLKH.UNI.N-GCLKH:OUT0"></div>
-<table class="docutils align-default prjcombine-enum">
 <tr><th>GCLKH:OUT0</th><th>[0, 15, 0]</th></tr>
+<tr><th>GCLKH:OUT1</th><th>[0, 13, 0]</th></tr>
+<tr><th>GCLKH:OUT2</th><th>[0, 11, 0]</th></tr>
+<tr><th>GCLKH:OUT3</th><th>[0, 9, 0]</th></tr>
+<tr><th>GCLKH:OUT4</th><th>[0, 7, 0]</th></tr>
+<tr><th>GCLKH:OUT5</th><th>[0, 5, 0]</th></tr>
+<tr><th>GCLKH:OUT6</th><th>[0, 3, 0]</th></tr>
+<tr><th>GCLKH:OUT7</th><th>[0, 1, 0]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 </section>
@@ -5015,7 +4781,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="dsp.html" class="btn btn-neutral float-left" title="DSP — Spartan 3A DSP, Spartan 6" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="config-xc3sa.html" class="btn btn-neutral float-right" title="Configuration registers — Spartan 3A and 3A DSP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dcm-xc3se.html" class="btn btn-neutral float-right" title="Digital Clock Managers — Spartan 3E, 3A" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

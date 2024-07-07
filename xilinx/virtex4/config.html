@@ -19,8 +19,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Xilinx Virtex 5 FPGAs" href="../virtex5/index.html" />
-    <link rel="prev" title="Clock interconnect" href="clock.html" /> 
+    <link rel="next" title="System monitor" href="sysmon.html" />
+    <link rel="prev" title="CCM" href="ccm.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -58,11 +58,14 @@
 <li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="center.html">Configuration Center</a></li>
 <li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcm.html">DCM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ccm.html">CCM</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Configuration registers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#cor"><code class="docutils literal notranslate"><span class="pre">COR</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ctl"><code class="docutils literal notranslate"><span class="pre">CTL</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="sysmon.html">System monitor</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Xilinx Virtex 5 FPGAs</a></li>
@@ -166,8 +169,10 @@
 <tr><td>28</td>
 <td><a href="#bits-xc4v-REG.COR-STARTUP:CRC" title="~STARTUP:CRC">~STARTUP:CRC</a></td></tr>
 </table>
+<div id="bits-xc4v-REG.COR-STARTUP:GTS_CYCLE"></div>
 <div id="bits-xc4v-REG.COR-STARTUP:GWE_CYCLE"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>STARTUP:GTS_CYCLE</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th><th>[0, 0, 3]</th></tr>
 <tr><th>STARTUP:GWE_CYCLE</th><th>[0, 0, 2]</th><th>[0, 0, 1]</th><th>[0, 0, 0]</th></tr>
 <tr><td>1</td><td>0</td><td>0</td><td>0</td></tr>
 <tr><td>2</td><td>0</td><td>0</td><td>1</td></tr>
@@ -178,32 +183,10 @@
 <tr><td>DONE</td><td>1</td><td>1</td><td>0</td></tr>
 <tr><td>KEEP</td><td>1</td><td>1</td><td>1</td></tr>
 </table>
-<div id="bits-xc4v-REG.COR-STARTUP:GTS_CYCLE"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>STARTUP:GTS_CYCLE</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th><th>[0, 0, 3]</th></tr>
-<tr><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>2</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>3</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>4</td><td>0</td><td>1</td><td>1</td></tr>
-<tr><td>5</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>6</td><td>1</td><td>0</td><td>1</td></tr>
-<tr><td>DONE</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>KEEP</td><td>1</td><td>1</td><td>1</td></tr>
-</table>
 <div id="bits-xc4v-REG.COR-STARTUP:LCK_CYCLE"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>STARTUP:LCK_CYCLE</th><th>[0, 0, 8]</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th></tr>
-<tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>2</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>3</td><td>0</td><td>1</td><td>1</td></tr>
-<tr><td>4</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>5</td><td>1</td><td>0</td><td>1</td></tr>
-<tr><td>6</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>NOWAIT</td><td>1</td><td>1</td><td>1</td></tr>
-</table>
 <div id="bits-xc4v-REG.COR-STARTUP:MATCH_CYCLE"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>STARTUP:LCK_CYCLE</th><th>[0, 0, 8]</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th></tr>
 <tr><th>STARTUP:MATCH_CYCLE</th><th>[0, 0, 11]</th><th>[0, 0, 10]</th><th>[0, 0, 9]</th></tr>
 <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
 <tr><td>1</td><td>0</td><td>0</td><td>1</td></tr>
@@ -254,27 +237,15 @@
 <tr><td>130</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
 </table>
 <div id="bits-xc4v-REG.COR-CAPTURE:ONESHOT"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>CAPTURE:ONESHOT</th><th>[0, 0, 23]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc4v-REG.COR-STARTUP:DRIVE_DONE"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>STARTUP:DRIVE_DONE</th><th>[0, 0, 24]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc4v-REG.COR-STARTUP:DONE_PIPE"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>STARTUP:DONE_PIPE</th><th>[0, 0, 25]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
 <div id="bits-xc4v-REG.COR-STARTUP:DCM_SHUTDOWN"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>STARTUP:DCM_SHUTDOWN</th><th>[0, 0, 26]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
+<div id="bits-xc4v-REG.COR-STARTUP:DONE_PIPE"></div>
+<div id="bits-xc4v-REG.COR-STARTUP:DRIVE_DONE"></div>
 <div id="bits-xc4v-REG.COR-STARTUP:POWERDOWN_STATUS"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>CAPTURE:ONESHOT</th><th>[0, 0, 23]</th></tr>
+<tr><th>STARTUP:DCM_SHUTDOWN</th><th>[0, 0, 26]</th></tr>
+<tr><th>STARTUP:DONE_PIPE</th><th>[0, 0, 25]</th></tr>
+<tr><th>STARTUP:DRIVE_DONE</th><th>[0, 0, 24]</th></tr>
 <tr><th>STARTUP:POWERDOWN_STATUS</th><th>[0, 0, 27]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
@@ -303,24 +274,17 @@
 <tr><td>6</td>
 <td><a href="#bits-xc4v-REG.CTL-MISC:DECRYPT" title="MISC:DECRYPT">MISC:DECRYPT</a></td></tr>
 </table>
-<div id="bits-xc4v-REG.CTL-MISC:GTS_USR_B"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>MISC:GTS_USR_B</th><th>[0, 0, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
+<div id="bits-xc4v-REG.CTL-MISC:DECRYPT"></div>
 <div id="bits-xc4v-REG.CTL-MISC:EN_VTEST"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>MISC:EN_VTEST</th><th>[0, 0, 1]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
+<div id="bits-xc4v-REG.CTL-MISC:GTS_USR_B"></div>
+<div id="bits-xc4v-REG.CTL-MISC:PERSIST"></div>
 <div id="bits-xc4v-REG.CTL-MISC:VGG_TEST"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>MISC:VGG_TEST</th><th>[0, 0, 2]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc4v-REG.CTL-MISC:PERSIST"></div>
-<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:DECRYPT</th><th>[0, 0, 6]</th></tr>
+<tr><th>MISC:EN_VTEST</th><th>[0, 0, 1]</th></tr>
+<tr><th>MISC:GTS_USR_B</th><th>[0, 0, 0]</th></tr>
 <tr><th>MISC:PERSIST</th><th>[0, 0, 3]</th></tr>
+<tr><th>MISC:VGG_TEST</th><th>[0, 0, 2]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 <div id="bits-xc4v-REG.CTL-MISC:SECURITY"></div>
@@ -330,11 +294,6 @@
 <tr><td>LEVEL1</td><td>0</td><td>1</td></tr>
 <tr><td>LEVEL2</td><td>1</td><td>0</td></tr>
 </table>
-<div id="bits-xc4v-REG.CTL-MISC:DECRYPT"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>MISC:DECRYPT</th><th>[0, 0, 6]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
 </section>
 </section>
 
@@ -342,8 +301,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="clock.html" class="btn btn-neutral float-left" title="Clock interconnect" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../virtex5/index.html" class="btn btn-neutral float-right" title="Xilinx Virtex 5 FPGAs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ccm.html" class="btn btn-neutral float-left" title="CCM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sysmon.html" class="btn btn-neutral float-right" title="System monitor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

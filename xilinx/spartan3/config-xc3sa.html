@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Xilinx Spartan 6 FPGAs" href="../spartan6/index.html" />
-    <link rel="prev" title="Clock interconnect" href="clock.html" /> 
+    <link rel="prev" title="Digital Clock Managers — Spartan 3E, 3A" href="dcm-xc3se.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -57,6 +57,7 @@
 <li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block — Spartan 3, Virtex 4</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP — Spartan 3A DSP, Spartan 6</a></li>
 <li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcm-xc3se.html">Digital Clock Managers — Spartan 3E, 3A</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Configuration registers — Spartan 3A and 3A DSP</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#cor1-s3a"><code class="docutils literal notranslate"><span class="pre">COR1.S3A</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#cor2-s3a"><code class="docutils literal notranslate"><span class="pre">COR2.S3A</span></code></a></li>
@@ -157,18 +158,21 @@
 <tr><td>USERCLK</td><td>0</td><td>1</td></tr>
 <tr><td>JTAGCLK</td><td>1</td><td>0</td></tr>
 </table>
+<div id="bits-xc3s-REG.COR1.S3A-STARTUP:DONE_PIPE"></div>
+<div id="bits-xc3s-REG.COR1.S3A-STARTUP:DRIVE_AWAKE"></div>
 <div id="bits-xc3s-REG.COR1.S3A-STARTUP:DRIVE_DONE"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>STARTUP:DONE_PIPE</th><th>[0, 0, 3]</th></tr>
+<tr><th>STARTUP:DRIVE_AWAKE</th><th>[0, 0, 15]</th></tr>
 <tr><th>STARTUP:DRIVE_DONE</th><th>[0, 0, 2]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
-<div id="bits-xc3s-REG.COR1.S3A-STARTUP:DONE_PIPE"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>STARTUP:DONE_PIPE</th><th>[0, 0, 3]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
+<div id="bits-xc3s-REG.COR1.S3A-MISC:VGG_ENABLE_OFFCHIP"></div>
+<div id="bits-xc3s-REG.COR1.S3A-MISC:VGG_SENDMAX"></div>
 <div id="bits-xc3s-REG.COR1.S3A-STARTUP:CRC"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:VGG_ENABLE_OFFCHIP</th><th>[0, 0, 13]</th></tr>
+<tr><th>MISC:VGG_SENDMAX</th><th>[0, 0, 12]</th></tr>
 <tr><th>STARTUP:CRC</th><th>[0, 0, 4]</th></tr>
 <tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
@@ -181,21 +185,6 @@
 <table class="docutils align-default prjcombine-enum">
 <tr><th>MISC:SEND_VGG</th><th>[0, 0, 11]</th><th>[0, 0, 10]</th><th>[0, 0, 9]</th><th>[0, 0, 8]</th></tr>
 <tr><td>Non-inverted</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-REG.COR1.S3A-MISC:VGG_SENDMAX"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>MISC:VGG_SENDMAX</th><th>[0, 0, 12]</th></tr>
-<tr><td>Inverted</td><td>~[0]</td></tr>
-</table>
-<div id="bits-xc3s-REG.COR1.S3A-MISC:VGG_ENABLE_OFFCHIP"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>MISC:VGG_ENABLE_OFFCHIP</th><th>[0, 0, 13]</th></tr>
-<tr><td>Inverted</td><td>~[0]</td></tr>
-</table>
-<div id="bits-xc3s-REG.COR1.S3A-STARTUP:DRIVE_AWAKE"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>STARTUP:DRIVE_AWAKE</th><th>[0, 0, 15]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 </section>
 <section id="cor2-s3a">
@@ -236,21 +225,11 @@
 <tr><td>15</td>
 <td><a href="#bits-xc3s-REG.COR2.S3A-STARTUP:RESET_ON_ERR" title="STARTUP:RESET_ON_ERR">STARTUP:RESET_ON_ERR</a></td></tr>
 </table>
+<div id="bits-xc3s-REG.COR2.S3A-STARTUP:GTS_CYCLE"></div>
 <div id="bits-xc3s-REG.COR2.S3A-STARTUP:GWE_CYCLE"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>STARTUP:GWE_CYCLE</th><th>[0, 0, 2]</th><th>[0, 0, 1]</th><th>[0, 0, 0]</th></tr>
-<tr><td>KEEP</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>2</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>3</td><td>0</td><td>1</td><td>1</td></tr>
-<tr><td>4</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>5</td><td>1</td><td>0</td><td>1</td></tr>
-<tr><td>6</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>DONE</td><td>1</td><td>1</td><td>1</td></tr>
-</table>
-<div id="bits-xc3s-REG.COR2.S3A-STARTUP:GTS_CYCLE"></div>
-<table class="docutils align-default prjcombine-enum">
 <tr><th>STARTUP:GTS_CYCLE</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th><th>[0, 0, 3]</th></tr>
+<tr><th>STARTUP:GWE_CYCLE</th><th>[0, 0, 2]</th><th>[0, 0, 1]</th><th>[0, 0, 0]</th></tr>
 <tr><td>KEEP</td><td>0</td><td>0</td><td>0</td></tr>
 <tr><td>1</td><td>0</td><td>0</td><td>1</td></tr>
 <tr><td>2</td><td>0</td><td>1</td><td>0</td></tr>
@@ -282,22 +261,13 @@
 <tr><td>6</td><td>1</td><td>1</td><td>0</td></tr>
 </table>
 <div id="bits-xc3s-REG.COR2.S3A-CAPTURE:ONESHOT"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>CAPTURE:ONESHOT</th><th>[0, 0, 12]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-REG.COR2.S3A-STARTUP:BPI_DIV8"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>STARTUP:BPI_DIV8</th><th>[0, 0, 13]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
 <div id="bits-xc3s-REG.COR2.S3A-ICAP:BYPASS"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>ICAP:BYPASS</th><th>[0, 0, 14]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
+<div id="bits-xc3s-REG.COR2.S3A-STARTUP:BPI_DIV8"></div>
 <div id="bits-xc3s-REG.COR2.S3A-STARTUP:RESET_ON_ERR"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>CAPTURE:ONESHOT</th><th>[0, 0, 12]</th></tr>
+<tr><th>ICAP:BYPASS</th><th>[0, 0, 14]</th></tr>
+<tr><th>STARTUP:BPI_DIV8</th><th>[0, 0, 13]</th></tr>
 <tr><th>STARTUP:RESET_ON_ERR</th><th>[0, 0, 15]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
@@ -324,24 +294,17 @@
 <tr><td>7</td>
 <td><a href="#bits-xc3s-REG.CTL.S3A-MISC:MULTIBOOT_ENABLE" title="MISC:MULTIBOOT_ENABLE">MISC:MULTIBOOT_ENABLE</a></td></tr>
 </table>
+<div id="bits-xc3s-REG.CTL.S3A-ICAP:ENABLE"></div>
 <div id="bits-xc3s-REG.CTL.S3A-MISC:GTS_USR_B"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>MISC:GTS_USR_B</th><th>[0, 0, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
+<div id="bits-xc3s-REG.CTL.S3A-MISC:MULTIBOOT_ENABLE"></div>
+<div id="bits-xc3s-REG.CTL.S3A-MISC:PERSIST"></div>
 <div id="bits-xc3s-REG.CTL.S3A-MISC:VGG_TEST"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>MISC:VGG_TEST</th><th>[0, 0, 1]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-REG.CTL.S3A-ICAP:ENABLE"></div>
-<table class="docutils align-default prjcombine-enum">
 <tr><th>ICAP:ENABLE</th><th>[0, 0, 2]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-REG.CTL.S3A-MISC:PERSIST"></div>
-<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:GTS_USR_B</th><th>[0, 0, 0]</th></tr>
+<tr><th>MISC:MULTIBOOT_ENABLE</th><th>[0, 0, 7]</th></tr>
 <tr><th>MISC:PERSIST</th><th>[0, 0, 3]</th></tr>
+<tr><th>MISC:VGG_TEST</th><th>[0, 0, 1]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 <div id="bits-xc3s-REG.CTL.S3A-MISC:SECURITY"></div>
@@ -351,11 +314,6 @@
 <tr><td>LEVEL1</td><td>0</td><td>1</td></tr>
 <tr><td>LEVEL2</td><td>1</td><td>0</td></tr>
 <tr><td>LEVEL3</td><td>1</td><td>1</td></tr>
-</table>
-<div id="bits-xc3s-REG.CTL.S3A-MISC:MULTIBOOT_ENABLE"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>MISC:MULTIBOOT_ENABLE</th><th>[0, 0, 7]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 <hr class="docutils" />
 <table class="docutils align-default prjcombine-tile">
@@ -414,28 +372,13 @@
 <tr><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
 </table>
 <div id="bits-xc3s-REG.CCLK_FREQ-STARTUP:CCLK_DLY"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>STARTUP:CCLK_DLY</th><th>[0, 0, 11]</th><th>[0, 0, 10]</th></tr>
-<tr><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1</td><td>0</td><td>1</td></tr>
-<tr><td>2</td><td>1</td><td>0</td></tr>
-<tr><td>3</td><td>1</td><td>1</td></tr>
-</table>
 <div id="bits-xc3s-REG.CCLK_FREQ-STARTUP:CCLK_SEP"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>STARTUP:CCLK_SEP</th><th>[0, 0, 13]</th><th>[0, 0, 12]</th></tr>
-<tr><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1</td><td>0</td><td>1</td></tr>
-<tr><td>2</td><td>1</td><td>0</td></tr>
-<tr><td>3</td><td>1</td><td>1</td></tr>
-</table>
 <div id="bits-xc3s-REG.CCLK_FREQ-STARTUP:CLK_SWITCH_OPT"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>STARTUP:CCLK_DLY</th><th>[0, 0, 11]</th><th>[0, 0, 10]</th></tr>
+<tr><th>STARTUP:CCLK_SEP</th><th>[0, 0, 13]</th><th>[0, 0, 12]</th></tr>
 <tr><th>STARTUP:CLK_SWITCH_OPT</th><th>[0, 0, 15]</th><th>[0, 0, 14]</th></tr>
-<tr><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>1</td><td>0</td><td>1</td></tr>
-<tr><td>2</td><td>1</td><td>0</td></tr>
-<tr><td>3</td><td>1</td><td>1</td></tr>
+<tr><td>Non-inverted</td><td>[1]</td><td>[0]</td></tr>
 </table>
 </section>
 <section id="hc-opt">
@@ -458,30 +401,13 @@
 <div id="bits-xc3s-REG.HC_OPT-MISC:HC_CYCLE"></div>
 <table class="docutils align-default prjcombine-enum">
 <tr><th>MISC:HC_CYCLE</th><th>[0, 0, 3]</th><th>[0, 0, 2]</th><th>[0, 0, 1]</th><th>[0, 0, 0]</th></tr>
-<tr><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>2</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>3</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
-<tr><td>4</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>5</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
-<tr><td>6</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>7</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
-<tr><td>8</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>9</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>10</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>11</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
-<tr><td>12</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>13</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
-<tr><td>14</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>15</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
-</table>
-<div id="bits-xc3s-REG.HC_OPT-MISC:TWO_ROUND"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>MISC:TWO_ROUND</th><th>[0, 0, 4]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
+<tr><td>Non-inverted</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
 </table>
 <div id="bits-xc3s-REG.HC_OPT-MISC:BRAM_SKIP"></div>
+<div id="bits-xc3s-REG.HC_OPT-MISC:TWO_ROUND"></div>
 <table class="docutils align-default prjcombine-enum">
 <tr><th>MISC:BRAM_SKIP</th><th>[0, 0, 5]</th></tr>
+<tr><th>MISC:TWO_ROUND</th><th>[0, 0, 4]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 </section>
@@ -525,70 +451,28 @@
 <tr><td>STARTUPCLK</td><td>1</td></tr>
 </table>
 <div id="bits-xc3s-REG.POWERDOWN-MISC:EN_PORB"></div>
+<div id="bits-xc3s-REG.POWERDOWN-MISC:SUSPEND_FILTER"></div>
 <table class="docutils align-default prjcombine-enum">
 <tr><th>MISC:EN_PORB</th><th>[0, 0, 1]</th></tr>
+<tr><th>MISC:SUSPEND_FILTER</th><th>[0, 0, 5]</th></tr>
 <tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 <div id="bits-xc3s-REG.POWERDOWN-MISC:EN_SUSPEND"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>MISC:EN_SUSPEND</th><th>[0, 0, 2]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
 <div id="bits-xc3s-REG.POWERDOWN-MISC:EN_SW_GSR"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:EN_SUSPEND</th><th>[0, 0, 2]</th></tr>
 <tr><th>MISC:EN_SW_GSR</th><th>[0, 0, 4]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xc3s-REG.POWERDOWN-MISC:SUSPEND_FILTER"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>MISC:SUSPEND_FILTER</th><th>[0, 0, 5]</th></tr>
-<tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 <div id="bits-xc3s-REG.POWERDOWN-MISC:WAKE_DELAY1"></div>
 <table class="docutils align-default prjcombine-enum">
 <tr><th>MISC:WAKE_DELAY1</th><th>[0, 0, 8]</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th></tr>
-<tr><td>1</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>2</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>3</td><td>0</td><td>1</td><td>1</td></tr>
-<tr><td>4</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>5</td><td>1</td><td>0</td><td>1</td></tr>
-<tr><td>6</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>7</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>Non-inverted</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
 </table>
 <div id="bits-xc3s-REG.POWERDOWN-MISC:WAKE_DELAY2"></div>
 <table class="docutils align-default prjcombine-enum">
 <tr><th>MISC:WAKE_DELAY2</th><th>[0, 0, 13]</th><th>[0, 0, 12]</th><th>[0, 0, 11]</th><th>[0, 0, 10]</th><th>[0, 0, 9]</th></tr>
-<tr><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
-<tr><td>4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>5</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
-<tr><td>6</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>7</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
-<tr><td>8</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>9</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>10</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>11</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
-<tr><td>12</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>13</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
-<tr><td>14</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>15</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
-<tr><td>16</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>17</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>18</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>19</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
-<tr><td>20</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>21</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
-<tr><td>22</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>23</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
-<tr><td>24</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>25</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>26</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>27</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
-<tr><td>28</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>29</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
-<tr><td>30</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>31</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>Non-inverted</td><td>[4]</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
 </table>
 </section>
 <section id="pu-gwe">
@@ -675,22 +559,16 @@
 <td><a href="#bits-xc3s-REG.MODE-MISC:TESTMODE_EN" title="MISC:TESTMODE_EN">MISC:TESTMODE_EN</a></td></tr>
 </table>
 <div id="bits-xc3s-REG.MODE-MISC:BOOTVSEL"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>MISC:BOOTVSEL</th><th>[0, 0, 2]</th><th>[0, 0, 1]</th><th>[0, 0, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
-</table>
 <div id="bits-xc3s-REG.MODE-MISC:NEXT_CONFIG_BOOT_MODE"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:BOOTVSEL</th><th>[0, 0, 2]</th><th>[0, 0, 1]</th><th>[0, 0, 0]</th></tr>
 <tr><th>MISC:NEXT_CONFIG_BOOT_MODE</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th><th>[0, 0, 3]</th></tr>
 <tr><td>Non-inverted</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
 </table>
 <div id="bits-xc3s-REG.MODE-MISC:NEXT_CONFIG_NEW_MODE"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>MISC:NEXT_CONFIG_NEW_MODE</th><th>[0, 0, 6]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
 <div id="bits-xc3s-REG.MODE-MISC:TESTMODE_EN"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:NEXT_CONFIG_NEW_MODE</th><th>[0, 0, 6]</th></tr>
 <tr><th>MISC:TESTMODE_EN</th><th>[0, 0, 7]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
@@ -806,18 +684,12 @@
 <tr><td>13</td>
 <td><a href="#bits-xc3s-REG.SEU_OPT-MISC:POST_CRC_FREQ" title="MISC:POST_CRC_FREQ[9]">MISC:POST_CRC_FREQ[9]</a></td></tr>
 </table>
-<div id="bits-xc3s-REG.SEU_OPT-MISC:POST_CRC_EN"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>MISC:POST_CRC_EN</th><th>[0, 0, 0]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
 <div id="bits-xc3s-REG.SEU_OPT-MISC:GLUTMASK"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>MISC:GLUTMASK</th><th>[0, 0, 1]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
+<div id="bits-xc3s-REG.SEU_OPT-MISC:POST_CRC_EN"></div>
 <div id="bits-xc3s-REG.SEU_OPT-MISC:POST_CRC_KEEP"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:GLUTMASK</th><th>[0, 0, 1]</th></tr>
+<tr><th>MISC:POST_CRC_EN</th><th>[0, 0, 0]</th></tr>
 <tr><th>MISC:POST_CRC_KEEP</th><th>[0, 0, 3]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
@@ -848,7 +720,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="clock.html" class="btn btn-neutral float-left" title="Clock interconnect" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dcm-xc3se.html" class="btn btn-neutral float-left" title="Digital Clock Managers — Spartan 3E, 3A" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../spartan6/index.html" class="btn btn-neutral float-right" title="Xilinx Spartan 6 FPGAs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

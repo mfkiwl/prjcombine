@@ -137,10 +137,20 @@
 <div id="bits-xcv-CLB-SLICE0:BYINV"></div>
 <div id="bits-xcv-CLB-SLICE0:CEINV"></div>
 <div id="bits-xcv-CLB-SLICE0:CLKINV"></div>
+<div id="bits-xcv-CLB-SLICE0:FF_LATCH"></div>
+<div id="bits-xcv-CLB-SLICE0:FF_REV_ENABLE"></div>
+<div id="bits-xcv-CLB-SLICE0:FF_SYNC"></div>
+<div id="bits-xcv-CLB-SLICE0:INITX"></div>
+<div id="bits-xcv-CLB-SLICE0:INITY"></div>
 <div id="bits-xcv-CLB-SLICE1:BXINV"></div>
 <div id="bits-xcv-CLB-SLICE1:BYINV"></div>
 <div id="bits-xcv-CLB-SLICE1:CEINV"></div>
 <div id="bits-xcv-CLB-SLICE1:CLKINV"></div>
+<div id="bits-xcv-CLB-SLICE1:FF_LATCH"></div>
+<div id="bits-xcv-CLB-SLICE1:FF_REV_ENABLE"></div>
+<div id="bits-xcv-CLB-SLICE1:FF_SYNC"></div>
+<div id="bits-xcv-CLB-SLICE1:INITX"></div>
+<div id="bits-xcv-CLB-SLICE1:INITY"></div>
 <div id="bits-xcv-CLB-TBUF0:TINV"></div>
 <div id="bits-xcv-CLB-TBUF1:TINV"></div>
 <table class="docutils align-default prjcombine-enum">
@@ -148,19 +158,41 @@
 <tr><th>SLICE0:BYINV</th><th>[0, 35, 13]</th></tr>
 <tr><th>SLICE0:CEINV</th><th>[0, 1, 13]</th></tr>
 <tr><th>SLICE0:CLKINV</th><th>[0, 23, 13]</th></tr>
+<tr><th>SLICE0:FF_LATCH</th><th>[0, 44, 16]</th></tr>
+<tr><th>SLICE0:FF_REV_ENABLE</th><th>[0, 28, 16]</th></tr>
+<tr><th>SLICE0:FF_SYNC</th><th>[0, 43, 16]</th></tr>
+<tr><th>SLICE0:INITX</th><th>[0, 41, 16]</th></tr>
+<tr><th>SLICE0:INITY</th><th>[0, 35, 16]</th></tr>
 <tr><th>SLICE1:BXINV</th><th>[0, 11, 13]</th></tr>
 <tr><th>SLICE1:BYINV</th><th>[0, 13, 13]</th></tr>
 <tr><th>SLICE1:CEINV</th><th>[0, 0, 13]</th></tr>
 <tr><th>SLICE1:CLKINV</th><th>[0, 22, 13]</th></tr>
+<tr><th>SLICE1:FF_LATCH</th><th>[0, 3, 16]</th></tr>
+<tr><th>SLICE1:FF_REV_ENABLE</th><th>[0, 19, 16]</th></tr>
+<tr><th>SLICE1:FF_SYNC</th><th>[0, 4, 16]</th></tr>
+<tr><th>SLICE1:INITX</th><th>[0, 6, 16]</th></tr>
+<tr><th>SLICE1:INITY</th><th>[0, 12, 16]</th></tr>
 <tr><th>TBUF0:TINV</th><th>[0, 46, 13]</th></tr>
 <tr><th>TBUF1:TINV</th><th>[0, 47, 13]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
+<div id="bits-xcv-CLB-SLICE0:SRINV"></div>
+<div id="bits-xcv-CLB-SLICE1:SRINV"></div>
+<div id="bits-xcv-CLB-TBUF0:IINV"></div>
 <div id="bits-xcv-CLB-TBUF0:OUT_A"></div>
+<div id="bits-xcv-CLB-TBUF0:OUT_B"></div>
+<div id="bits-xcv-CLB-TBUF1:IINV"></div>
 <div id="bits-xcv-CLB-TBUF1:OUT_A"></div>
+<div id="bits-xcv-CLB-TBUF1:OUT_B"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>SLICE0:SRINV</th><th>[0, 25, 13]</th></tr>
+<tr><th>SLICE1:SRINV</th><th>[0, 24, 13]</th></tr>
+<tr><th>TBUF0:IINV</th><th>[0, 37, 13]</th></tr>
 <tr><th>TBUF0:OUT_A</th><th>[0, 36, 16]</th></tr>
+<tr><th>TBUF0:OUT_B</th><th>[0, 47, 16]</th></tr>
+<tr><th>TBUF1:IINV</th><th>[0, 10, 13]</th></tr>
 <tr><th>TBUF1:OUT_A</th><th>[0, 0, 16]</th></tr>
+<tr><th>TBUF1:OUT_B</th><th>[0, 37, 16]</th></tr>
 <tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 <div id="bits-xcv-CLB-SLICE0:DXMUX"></div>
@@ -171,31 +203,6 @@
 <tr><td>X</td><td>0</td></tr>
 <tr><td>BX</td><td>1</td></tr>
 </table>
-<div id="bits-xcv-CLB-SLICE0:FF_LATCH"></div>
-<div id="bits-xcv-CLB-SLICE1:FF_LATCH"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>SLICE0:FF_LATCH</th><th>[0, 44, 16]</th></tr>
-<tr><th>SLICE1:FF_LATCH</th><th>[0, 3, 16]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xcv-CLB-SLICE0:FF_SYNC"></div>
-<div id="bits-xcv-CLB-SLICE1:FF_SYNC"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>SLICE0:FF_SYNC</th><th>[0, 43, 16]</th></tr>
-<tr><th>SLICE1:FF_SYNC</th><th>[0, 4, 16]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
-<div id="bits-xcv-CLB-SLICE0:INITX"></div>
-<div id="bits-xcv-CLB-SLICE0:INITY"></div>
-<div id="bits-xcv-CLB-SLICE1:INITX"></div>
-<div id="bits-xcv-CLB-SLICE1:INITY"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>SLICE0:INITX</th><th>[0, 41, 16]</th></tr>
-<tr><th>SLICE0:INITY</th><th>[0, 35, 16]</th></tr>
-<tr><th>SLICE1:INITX</th><th>[0, 6, 16]</th></tr>
-<tr><th>SLICE1:INITY</th><th>[0, 12, 16]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
-</table>
 <div id="bits-xcv-CLB-SLICE0:DYMUX"></div>
 <div id="bits-xcv-CLB-SLICE1:DYMUX"></div>
 <table class="docutils align-default prjcombine-enum">
@@ -203,17 +210,6 @@
 <tr><th>SLICE1:DYMUX</th><th>[0, 7, 16]</th></tr>
 <tr><td>Y</td><td>0</td></tr>
 <tr><td>BY</td><td>1</td></tr>
-</table>
-<div id="bits-xcv-CLB-SLICE0:SRINV"></div>
-<div id="bits-xcv-CLB-SLICE1:SRINV"></div>
-<div id="bits-xcv-CLB-TBUF0:IINV"></div>
-<div id="bits-xcv-CLB-TBUF1:IINV"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>SLICE0:SRINV</th><th>[0, 25, 13]</th></tr>
-<tr><th>SLICE1:SRINV</th><th>[0, 24, 13]</th></tr>
-<tr><th>TBUF0:IINV</th><th>[0, 37, 13]</th></tr>
-<tr><th>TBUF1:IINV</th><th>[0, 10, 13]</th></tr>
-<tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 <div id="bits-xcv-CLB-SLICE0:F"></div>
 <div id="bits-xcv-CLB-SLICE0:G"></div>
@@ -252,13 +248,6 @@
 <tr><th>SLICE1:YBMUX</th><th>[0, 18, 16]</th></tr>
 <tr><td>CY</td><td>0</td></tr>
 <tr><td>BY</td><td>1</td></tr>
-</table>
-<div id="bits-xcv-CLB-SLICE0:FF_REV_ENABLE"></div>
-<div id="bits-xcv-CLB-SLICE1:FF_REV_ENABLE"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>SLICE0:FF_REV_ENABLE</th><th>[0, 28, 16]</th></tr>
-<tr><th>SLICE1:FF_REV_ENABLE</th><th>[0, 19, 16]</th></tr>
-<tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 <div id="bits-xcv-CLB-SLICE0:CYSELG"></div>
 <div id="bits-xcv-CLB-SLICE1:CYSELG"></div>
@@ -305,13 +294,6 @@
 <tr><td>GXOR</td><td>0</td><td>0</td></tr>
 <tr><td>G</td><td>0</td><td>1</td></tr>
 <tr><td>F6</td><td>1</td><td>0</td></tr>
-</table>
-<div id="bits-xcv-CLB-TBUF0:OUT_B"></div>
-<div id="bits-xcv-CLB-TBUF1:OUT_B"></div>
-<table class="docutils align-default prjcombine-enum">
-<tr><th>TBUF0:OUT_B</th><th>[0, 47, 16]</th></tr>
-<tr><th>TBUF1:OUT_B</th><th>[0, 37, 16]</th></tr>
-<tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 </section>
 </section>
