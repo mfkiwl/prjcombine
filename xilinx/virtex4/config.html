@@ -109,7 +109,7 @@
 <section id="cor">
 <h2><code class="docutils literal notranslate"><span class="pre">COR</span></code><a class="headerlink" href="#cor" title="Link to this heading"></a></h2>
 <table class="docutils align-default prjcombine-tile">
-<tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><th colspan="2">REG.COR bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
 <tr><td>0</td>
 <td><a href="#bits-xc4v-REG.COR-STARTUP:GWE_CYCLE" title="STARTUP:GWE_CYCLE[0]">STARTUP:GWE_CYCLE[0]</a></td></tr>
 <tr><td>1</td>
@@ -258,7 +258,7 @@
 <section id="ctl">
 <h2><code class="docutils literal notranslate"><span class="pre">CTL</span></code><a class="headerlink" href="#ctl" title="Link to this heading"></a></h2>
 <table class="docutils align-default prjcombine-tile">
-<tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><th colspan="2">REG.CTL bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
 <tr><td>0</td>
 <td><a href="#bits-xc4v-REG.CTL-MISC:GTS_USR_B" title="MISC:GTS_USR_B">MISC:GTS_USR_B</a></td></tr>
 <tr><td>1</td>
@@ -273,6 +273,54 @@
 <td><a href="#bits-xc4v-REG.CTL-MISC:SECURITY" title="MISC:SECURITY[1]">MISC:SECURITY[1]</a></td></tr>
 <tr><td>6</td>
 <td><a href="#bits-xc4v-REG.CTL-MISC:DECRYPT" title="MISC:DECRYPT">MISC:DECRYPT</a></td></tr>
+<tr><td>7</td>
+<td>-</td></tr>
+<tr><td>8</td>
+<td><a href="#bits-xc4v-REG.CTL-MISC:GLUTMASK" title="~MISC:GLUTMASK">~MISC:GLUTMASK</a></td></tr>
+<tr><td>9</td>
+<td>-</td></tr>
+<tr><td>10</td>
+<td>-</td></tr>
+<tr><td>11</td>
+<td>-</td></tr>
+<tr><td>12</td>
+<td>-</td></tr>
+<tr><td>13</td>
+<td>-</td></tr>
+<tr><td>14</td>
+<td>-</td></tr>
+<tr><td>15</td>
+<td>-</td></tr>
+<tr><td>16</td>
+<td>-</td></tr>
+<tr><td>17</td>
+<td>-</td></tr>
+<tr><td>18</td>
+<td>-</td></tr>
+<tr><td>19</td>
+<td>-</td></tr>
+<tr><td>20</td>
+<td>-</td></tr>
+<tr><td>21</td>
+<td>-</td></tr>
+<tr><td>22</td>
+<td>-</td></tr>
+<tr><td>23</td>
+<td>-</td></tr>
+<tr><td>24</td>
+<td>-</td></tr>
+<tr><td>25</td>
+<td>-</td></tr>
+<tr><td>26</td>
+<td>-</td></tr>
+<tr><td>27</td>
+<td>-</td></tr>
+<tr><td>28</td>
+<td>-</td></tr>
+<tr><td>29</td>
+<td>-</td></tr>
+<tr><td>30</td>
+<td><a href="#bits-xc4v-REG.CTL-MISC:ICAP_SELECT" title="MISC:ICAP_SELECT">MISC:ICAP_SELECT</a></td></tr>
 </table>
 <div id="bits-xc4v-REG.CTL-MISC:DECRYPT"></div>
 <div id="bits-xc4v-REG.CTL-MISC:EN_VTEST"></div>
@@ -293,6 +341,17 @@
 <tr><td>NONE</td><td>0</td><td>0</td></tr>
 <tr><td>LEVEL1</td><td>0</td><td>1</td></tr>
 <tr><td>LEVEL2</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc4v-REG.CTL-MISC:GLUTMASK"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:GLUTMASK</th><th>[0, 0, 8]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<div id="bits-xc4v-REG.CTL-MISC:ICAP_SELECT"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:ICAP_SELECT</th><th>[0, 0, 30]</th></tr>
+<tr><td>TOP</td><td>0</td></tr>
+<tr><td>BOTTOM</td><td>1</td></tr>
 </table>
 </section>
 </section>

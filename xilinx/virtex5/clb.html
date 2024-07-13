@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Block RAM" href="bram.html" />
-    <link rel="prev" title="Interconnect — Virtex 5, Virtex 6, Series 7" href="int.html" /> 
+    <link rel="prev" title="Interconnect — Virtex 5, Virtex 6, Series 7" href="interconnect.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -54,7 +54,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Xilinx Spartan 6 FPGAs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Xilinx Virtex 4 FPGAs</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Xilinx Virtex 5 FPGAs</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="int.html">Interconnect — Virtex 5, Virtex 6, Series 7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interconnect.html">Interconnect — Virtex 5, Virtex 6, Series 7</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Configurable Logic Block — Virtex 5, Virtex 6, Series 7, Spartan 6</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#bitstream-virtex-5">Bitstream — Virtex 5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#bitstream-virtex-6">Bitstream — Virtex 6</a></li>
@@ -64,9 +64,12 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="center.html">Configuration Center</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ppc.html">PowerPC cores</a></li>
 <li class="toctree-l3"><a class="reference internal" href="emac.html">Ethernet MACs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pcie.html">PCI Express cores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../virtex6/index.html">Xilinx Virtex 6 FPGAs</a></li>
@@ -107,7 +110,7 @@
 <section id="clbll">
 <h3>CLBLL<a class="headerlink" href="#clbll" title="Link to this heading"></a></h3>
 <table class="docutils align-default prjcombine-tile">
-<tr><th rowspan="2">Row</th><th colspan="36">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th><th>32</th><th>33</th><th>34</th><th>35</th></tr>
+<tr><th colspan="37">CLBLL bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="36">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th><th>32</th><th>33</th><th>34</th><th>35</th></tr>
 <tr><td>0</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-CLBLL-SLICE1:A6LUT" title="SLICE1:A6LUT[63]">SLICE1:A6LUT[63]</a></td><td><a href="#bits-xc5v-CLBLL-SLICE1:A6LUT" title="SLICE1:A6LUT[62]">SLICE1:A6LUT[62]</a></td><td><a href="#bits-xc5v-CLBLL-SLICE1:A6LUT" title="SLICE1:A6LUT[60]">SLICE1:A6LUT[60]</a></td><td><a href="#bits-xc5v-CLBLL-SLICE1:A6LUT" title="SLICE1:A6LUT[61]">SLICE1:A6LUT[61]</a></td><td>-</td><td>-</td><td><a href="#bits-xc5v-CLBLL-SLICE0:A6LUT" title="SLICE0:A6LUT[63]">SLICE0:A6LUT[63]</a></td><td><a href="#bits-xc5v-CLBLL-SLICE0:A6LUT" title="SLICE0:A6LUT[62]">SLICE0:A6LUT[62]</a></td><td><a href="#bits-xc5v-CLBLL-SLICE0:A6LUT" title="SLICE0:A6LUT[60]">SLICE0:A6LUT[60]</a></td><td><a href="#bits-xc5v-CLBLL-SLICE0:A6LUT" title="SLICE0:A6LUT[61]">SLICE0:A6LUT[61]</a></td></tr>
 <tr><td>1</td>
@@ -461,7 +464,7 @@
 <section id="clblm">
 <h3>CLBLM<a class="headerlink" href="#clblm" title="Link to this heading"></a></h3>
 <table class="docutils align-default prjcombine-tile">
-<tr><th rowspan="2">Row</th><th colspan="36">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th><th>32</th><th>33</th><th>34</th><th>35</th></tr>
+<tr><th colspan="37">CLBLM bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="36">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th><th>32</th><th>33</th><th>34</th><th>35</th></tr>
 <tr><td>0</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-CLBLM-SLICE1:A6LUT" title="SLICE1:A6LUT[63]">SLICE1:A6LUT[63]</a></td><td><a href="#bits-xc5v-CLBLM-SLICE1:A6LUT" title="SLICE1:A6LUT[62]">SLICE1:A6LUT[62]</a></td><td><a href="#bits-xc5v-CLBLM-SLICE1:A6LUT" title="SLICE1:A6LUT[60]">SLICE1:A6LUT[60]</a></td><td><a href="#bits-xc5v-CLBLM-SLICE1:A6LUT" title="SLICE1:A6LUT[61]">SLICE1:A6LUT[61]</a></td><td><a href="#bits-xc5v-CLBLM-SLICE0:ADI1MUX" title="SLICE0:ADI1MUX">SLICE0:ADI1MUX</a></td><td><a href="#bits-xc5v-CLBLM-SLICE0:ARAMMODE" title="SLICE0:ARAMMODE[1]">SLICE0:ARAMMODE[1]</a></td><td><a href="#bits-xc5v-CLBLM-SLICE0:A6LUT" title="SLICE0:A6LUT[60]">SLICE0:A6LUT[60]</a></td><td><a href="#bits-xc5v-CLBLM-SLICE0:A6LUT" title="SLICE0:A6LUT[61]">SLICE0:A6LUT[61]</a></td><td><a href="#bits-xc5v-CLBLM-SLICE0:A6LUT" title="SLICE0:A6LUT[62]">SLICE0:A6LUT[62]</a></td><td><a href="#bits-xc5v-CLBLM-SLICE0:A6LUT" title="SLICE0:A6LUT[63]">SLICE0:A6LUT[63]</a></td></tr>
 <tr><td>1</td>
@@ -877,7 +880,7 @@
 <section id="id1">
 <h3>CLBLL<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
 <table class="docutils align-default prjcombine-tile">
-<tr><th rowspan="2">Row</th><th colspan="36">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th><th>32</th><th>33</th><th>34</th><th>35</th></tr>
+<tr><th colspan="37">CLBLL bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="36">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th><th>32</th><th>33</th><th>34</th><th>35</th></tr>
 <tr><td>0</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6v-CLBLL-SLICE1:AFFSR" title="~SLICE1:AFFSR">~SLICE1:AFFSR</a></td><td><a href="#bits-xc6v-CLBLL-SLICE1:A6LUT" title="SLICE1:A6LUT[55]">SLICE1:A6LUT[55]</a></td><td><a href="#bits-xc6v-CLBLL-SLICE1:A6LUT" title="SLICE1:A6LUT[54]">SLICE1:A6LUT[54]</a></td><td><a href="#bits-xc6v-CLBLL-SLICE1:A6LUT" title="SLICE1:A6LUT[63]">SLICE1:A6LUT[63]</a></td><td><a href="#bits-xc6v-CLBLL-SLICE1:A6LUT" title="SLICE1:A6LUT[62]">SLICE1:A6LUT[62]</a></td><td><a href="#bits-xc6v-CLBLL-SLICE0:AFFINIT" title="~SLICE0:AFFINIT">~SLICE0:AFFINIT</a></td><td><a href="#bits-xc6v-CLBLL-SLICE0:AFF_LATCH" title="SLICE0:AFF_LATCH">SLICE0:AFF_LATCH</a></td><td><a href="#bits-xc6v-CLBLL-SLICE0:A6LUT" title="SLICE0:A6LUT[55]">SLICE0:A6LUT[55]</a></td><td><a href="#bits-xc6v-CLBLL-SLICE0:A6LUT" title="SLICE0:A6LUT[54]">SLICE0:A6LUT[54]</a></td><td><a href="#bits-xc6v-CLBLL-SLICE0:A6LUT" title="SLICE0:A6LUT[63]">SLICE0:A6LUT[63]</a></td><td><a href="#bits-xc6v-CLBLL-SLICE0:A6LUT" title="SLICE0:A6LUT[62]">SLICE0:A6LUT[62]</a></td></tr>
 <tr><td>1</td>
@@ -1319,7 +1322,7 @@
 <section id="id2">
 <h3>CLBLM<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
 <table class="docutils align-default prjcombine-tile">
-<tr><th rowspan="2">Row</th><th colspan="36">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th><th>32</th><th>33</th><th>34</th><th>35</th></tr>
+<tr><th colspan="37">CLBLM bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="36">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th><th>32</th><th>33</th><th>34</th><th>35</th></tr>
 <tr><td>0</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6v-CLBLM-SLICE1:AFFSR" title="~SLICE1:AFFSR">~SLICE1:AFFSR</a></td><td><a href="#bits-xc6v-CLBLM-SLICE1:A6LUT" title="SLICE1:A6LUT[55]">SLICE1:A6LUT[55]</a></td><td><a href="#bits-xc6v-CLBLM-SLICE1:A6LUT" title="SLICE1:A6LUT[54]">SLICE1:A6LUT[54]</a></td><td><a href="#bits-xc6v-CLBLM-SLICE1:A6LUT" title="SLICE1:A6LUT[63]">SLICE1:A6LUT[63]</a></td><td><a href="#bits-xc6v-CLBLM-SLICE1:A6LUT" title="SLICE1:A6LUT[62]">SLICE1:A6LUT[62]</a></td><td><a href="#bits-xc6v-CLBLM-SLICE0:AFFINIT" title="~SLICE0:AFFINIT">~SLICE0:AFFINIT</a></td><td><a href="#bits-xc6v-CLBLM-SLICE0:AFF_LATCH" title="SLICE0:AFF_LATCH">SLICE0:AFF_LATCH</a></td><td><a href="#bits-xc6v-CLBLM-SLICE0:A6LUT" title="SLICE0:A6LUT[62]">SLICE0:A6LUT[62]</a></td><td><a href="#bits-xc6v-CLBLM-SLICE0:A6LUT" title="SLICE0:A6LUT[63]">SLICE0:A6LUT[63]</a></td><td><a href="#bits-xc6v-CLBLM-SLICE0:A6LUT" title="SLICE0:A6LUT[55]">SLICE0:A6LUT[55]</a></td><td><a href="#bits-xc6v-CLBLM-SLICE0:A6LUT" title="SLICE0:A6LUT[54]">SLICE0:A6LUT[54]</a></td></tr>
 <tr><td>1</td>
@@ -1824,7 +1827,7 @@
 <section id="id3">
 <h3>CLBLL<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <table class="docutils align-default prjcombine-tile">
-<tr><th rowspan="2">Row</th><th colspan="36">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th><th>32</th><th>33</th><th>34</th><th>35</th></tr>
+<tr><th colspan="37">CLBLL bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="36">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th><th>32</th><th>33</th><th>34</th><th>35</th></tr>
 <tr><td>0</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-CLBLL-SLICE1:A6LUT" title="SLICE1:A6LUT[54]">SLICE1:A6LUT[54]</a></td><td><a href="#bits-xc7v-CLBLL-SLICE1:A6LUT" title="SLICE1:A6LUT[55]">SLICE1:A6LUT[55]</a></td><td><a href="#bits-xc7v-CLBLL-SLICE1:A6LUT" title="SLICE1:A6LUT[63]">SLICE1:A6LUT[63]</a></td><td><a href="#bits-xc7v-CLBLL-SLICE1:A6LUT" title="SLICE1:A6LUT[62]">SLICE1:A6LUT[62]</a></td><td><a href="#bits-xc7v-CLBLL-SLICE0:AFFMUX" title="SLICE0:AFFMUX[3]">SLICE0:AFFMUX[3]</a></td><td><a href="#bits-xc7v-CLBLL-SLICE1:AFFMUX" title="SLICE1:AFFMUX[3]">SLICE1:AFFMUX[3]</a></td><td><a href="#bits-xc7v-CLBLL-SLICE0:A6LUT" title="SLICE0:A6LUT[54]">SLICE0:A6LUT[54]</a></td><td><a href="#bits-xc7v-CLBLL-SLICE0:A6LUT" title="SLICE0:A6LUT[55]">SLICE0:A6LUT[55]</a></td><td><a href="#bits-xc7v-CLBLL-SLICE0:A6LUT" title="SLICE0:A6LUT[63]">SLICE0:A6LUT[63]</a></td><td><a href="#bits-xc7v-CLBLL-SLICE0:A6LUT" title="SLICE0:A6LUT[62]">SLICE0:A6LUT[62]</a></td></tr>
 <tr><td>1</td>
@@ -2254,7 +2257,7 @@
 <section id="id4">
 <h3>CLBLM<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
 <table class="docutils align-default prjcombine-tile">
-<tr><th rowspan="2">Row</th><th colspan="36">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th><th>32</th><th>33</th><th>34</th><th>35</th></tr>
+<tr><th colspan="37">CLBLM bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="36">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th><th>32</th><th>33</th><th>34</th><th>35</th></tr>
 <tr><td>0</td>
 <td><a href="#bits-xc7v-CLBLM-SLICE0:ADI1MUX" title="SLICE0:ADI1MUX">SLICE0:ADI1MUX</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-CLBLM-SLICE1:A6LUT" title="SLICE1:A6LUT[54]">SLICE1:A6LUT[54]</a></td><td><a href="#bits-xc7v-CLBLM-SLICE1:A6LUT" title="SLICE1:A6LUT[55]">SLICE1:A6LUT[55]</a></td><td><a href="#bits-xc7v-CLBLM-SLICE1:A6LUT" title="SLICE1:A6LUT[63]">SLICE1:A6LUT[63]</a></td><td><a href="#bits-xc7v-CLBLM-SLICE1:A6LUT" title="SLICE1:A6LUT[62]">SLICE1:A6LUT[62]</a></td><td><a href="#bits-xc7v-CLBLM-SLICE0:AFFMUX" title="SLICE0:AFFMUX[3]">SLICE0:AFFMUX[3]</a></td><td><a href="#bits-xc7v-CLBLM-SLICE1:AFFMUX" title="SLICE1:AFFMUX[3]">SLICE1:AFFMUX[3]</a></td><td><a href="#bits-xc7v-CLBLM-SLICE0:A6LUT" title="SLICE0:A6LUT[62]">SLICE0:A6LUT[62]</a></td><td><a href="#bits-xc7v-CLBLM-SLICE0:A6LUT" title="SLICE0:A6LUT[63]">SLICE0:A6LUT[63]</a></td><td><a href="#bits-xc7v-CLBLM-SLICE0:A6LUT" title="SLICE0:A6LUT[54]">SLICE0:A6LUT[54]</a></td><td><a href="#bits-xc7v-CLBLM-SLICE0:A6LUT" title="SLICE0:A6LUT[55]">SLICE0:A6LUT[55]</a></td></tr>
 <tr><td>1</td>
@@ -2747,7 +2750,7 @@
 <section id="clexl">
 <h3>CLEXL<a class="headerlink" href="#clexl" title="Link to this heading"></a></h3>
 <table class="docutils align-default prjcombine-tile">
-<tr><th rowspan="2">Row</th><th colspan="30">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th></tr>
+<tr><th colspan="31">CLEXL bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="30">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th></tr>
 <tr><td>0</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLEXL-SLICE0:B6LUT" title="SLICE0:B6LUT[50]">SLICE0:B6LUT[50]</a></td><td><a href="#bits-xc6s-CLEXL-SLICE0:B6LUT" title="SLICE0:B6LUT[48]">SLICE0:B6LUT[48]</a></td><td><a href="#bits-xc6s-CLEXL-SLICE0:A6LUT" title="SLICE0:A6LUT[11]">SLICE0:A6LUT[11]</a></td><td><a href="#bits-xc6s-CLEXL-SLICE0:A6LUT" title="SLICE0:A6LUT[9]">SLICE0:A6LUT[9]</a></td><td><a href="#bits-xc6s-CLEXL-SLICE0:AOUTMUX" title="SLICE0:AOUTMUX[0]">SLICE0:AOUTMUX[0]</a></td><td><a href="#bits-xc6s-CLEXL-SLICE1:A6LUT" title="SLICE1:A6LUT[50]">SLICE1:A6LUT[50]</a></td><td><a href="#bits-xc6s-CLEXL-SLICE1:A6LUT" title="SLICE1:A6LUT[48]">SLICE1:A6LUT[48]</a></td><td><a href="#bits-xc6s-CLEXL-SLICE1:B6LUT" title="SLICE1:B6LUT[50]">SLICE1:B6LUT[50]</a></td><td><a href="#bits-xc6s-CLEXL-SLICE1:B6LUT" title="SLICE1:B6LUT[48]">SLICE1:B6LUT[48]</a></td></tr>
 <tr><td>1</td>
@@ -3122,7 +3125,7 @@
 <section id="clexm">
 <h3>CLEXM<a class="headerlink" href="#clexm" title="Link to this heading"></a></h3>
 <table class="docutils align-default prjcombine-tile">
-<tr><th rowspan="2">Row</th><th colspan="31">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th></tr>
+<tr><th colspan="32">CLEXM bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="31">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th></tr>
 <tr><td>0</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLEXM-SLICE0:B6LUT" title="SLICE0:B6LUT[2]">SLICE0:B6LUT[2]</a></td><td><a href="#bits-xc6s-CLEXM-SLICE0:B6LUT" title="SLICE0:B6LUT[0]">SLICE0:B6LUT[0]</a></td><td>-</td><td><a href="#bits-xc6s-CLEXM-SLICE0:A6LUT" title="SLICE0:A6LUT[58]">SLICE0:A6LUT[58]</a></td><td><a href="#bits-xc6s-CLEXM-SLICE0:A6LUT" title="SLICE0:A6LUT[56]">SLICE0:A6LUT[56]</a></td><td><a href="#bits-xc6s-CLEXM-SLICE0:AOUTMUX" title="SLICE0:AOUTMUX[0]">SLICE0:AOUTMUX[0]</a></td><td><a href="#bits-xc6s-CLEXM-SLICE1:A6LUT" title="SLICE1:A6LUT[50]">SLICE1:A6LUT[50]</a></td><td><a href="#bits-xc6s-CLEXM-SLICE1:A6LUT" title="SLICE1:A6LUT[48]">SLICE1:A6LUT[48]</a></td><td><a href="#bits-xc6s-CLEXM-SLICE1:B6LUT" title="SLICE1:B6LUT[50]">SLICE1:B6LUT[50]</a></td><td><a href="#bits-xc6s-CLEXM-SLICE1:B6LUT" title="SLICE1:B6LUT[48]">SLICE1:B6LUT[48]</a></td></tr>
 <tr><td>1</td>
@@ -3545,7 +3548,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="int.html" class="btn btn-neutral float-left" title="Interconnect — Virtex 5, Virtex 6, Series 7" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="interconnect.html" class="btn btn-neutral float-left" title="Interconnect — Virtex 5, Virtex 6, Series 7" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="bram.html" class="btn btn-neutral float-right" title="Block RAM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

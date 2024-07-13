@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuration registers &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Xilinx Virtex 6 FPGAs" href="../virtex6/index.html" />
+    <link rel="prev" title="PCI Express cores" href="pcie.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../xc9500/index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Xilinx FPGAs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Xilinx Virtex, Virtex E, Spartan 2, Spartan 2E FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Xilinx Virtex 2 FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan3/index.html">Xilinx Spartan 3 FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Xilinx Spartan 6 FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Xilinx Virtex 4 FPGAs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Xilinx Virtex 5 FPGAs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="interconnect.html">Interconnect — Virtex 5, Virtex 6, Series 7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block — Virtex 5, Virtex 6, Series 7, Spartan 6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="center.html">Configuration Center</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ppc.html">PowerPC cores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emac.html">Ethernet MACs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pcie.html">PCI Express cores</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Configuration registers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cor"><code class="docutils literal notranslate"><span class="pre">COR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cor1"><code class="docutils literal notranslate"><span class="pre">COR1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ctl"><code class="docutils literal notranslate"><span class="pre">CTL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#timer"><code class="docutils literal notranslate"><span class="pre">TIMER</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex6/index.html">Xilinx Virtex 6 FPGAs</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Xilinx FPGAs</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Xilinx Virtex 5 FPGAs</a></li>
+      <li class="breadcrumb-item active">Configuration registers</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/xilinx/virtex5/config.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="configuration-registers">
+<span id="virtex5-config"></span><h1>Configuration registers<a class="headerlink" href="#configuration-registers" title="Link to this heading"></a></h1>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>document</p>
+</div>
+<section id="cor">
+<h2><code class="docutils literal notranslate"><span class="pre">COR</span></code><a class="headerlink" href="#cor" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.COR bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:GWE_CYCLE" title="STARTUP:GWE_CYCLE[0]">STARTUP:GWE_CYCLE[0]</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:GWE_CYCLE" title="STARTUP:GWE_CYCLE[1]">STARTUP:GWE_CYCLE[1]</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:GWE_CYCLE" title="STARTUP:GWE_CYCLE[2]">STARTUP:GWE_CYCLE[2]</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:GTS_CYCLE" title="STARTUP:GTS_CYCLE[0]">STARTUP:GTS_CYCLE[0]</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:GTS_CYCLE" title="STARTUP:GTS_CYCLE[1]">STARTUP:GTS_CYCLE[1]</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:GTS_CYCLE" title="STARTUP:GTS_CYCLE[2]">STARTUP:GTS_CYCLE[2]</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:LCK_CYCLE" title="STARTUP:LCK_CYCLE[0]">STARTUP:LCK_CYCLE[0]</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:LCK_CYCLE" title="STARTUP:LCK_CYCLE[1]">STARTUP:LCK_CYCLE[1]</a></td></tr>
+<tr><td>8</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:LCK_CYCLE" title="STARTUP:LCK_CYCLE[2]">STARTUP:LCK_CYCLE[2]</a></td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:MATCH_CYCLE" title="STARTUP:MATCH_CYCLE[0]">STARTUP:MATCH_CYCLE[0]</a></td></tr>
+<tr><td>10</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:MATCH_CYCLE" title="STARTUP:MATCH_CYCLE[1]">STARTUP:MATCH_CYCLE[1]</a></td></tr>
+<tr><td>11</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:MATCH_CYCLE" title="STARTUP:MATCH_CYCLE[2]">STARTUP:MATCH_CYCLE[2]</a></td></tr>
+<tr><td>12</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:DONE_CYCLE" title="STARTUP:DONE_CYCLE[0]">STARTUP:DONE_CYCLE[0]</a></td></tr>
+<tr><td>13</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:DONE_CYCLE" title="STARTUP:DONE_CYCLE[1]">STARTUP:DONE_CYCLE[1]</a></td></tr>
+<tr><td>14</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:DONE_CYCLE" title="STARTUP:DONE_CYCLE[2]">STARTUP:DONE_CYCLE[2]</a></td></tr>
+<tr><td>15</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:STARTUPCLK" title="STARTUP:STARTUPCLK[0]">STARTUP:STARTUPCLK[0]</a></td></tr>
+<tr><td>16</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:STARTUPCLK" title="STARTUP:STARTUPCLK[1]">STARTUP:STARTUPCLK[1]</a></td></tr>
+<tr><td>17</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:CONFIG_RATE" title="STARTUP:CONFIG_RATE[0]">STARTUP:CONFIG_RATE[0]</a></td></tr>
+<tr><td>18</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:CONFIG_RATE" title="STARTUP:CONFIG_RATE[1]">STARTUP:CONFIG_RATE[1]</a></td></tr>
+<tr><td>19</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:CONFIG_RATE" title="STARTUP:CONFIG_RATE[2]">STARTUP:CONFIG_RATE[2]</a></td></tr>
+<tr><td>20</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:CONFIG_RATE" title="STARTUP:CONFIG_RATE[3]">STARTUP:CONFIG_RATE[3]</a></td></tr>
+<tr><td>21</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:CONFIG_RATE" title="STARTUP:CONFIG_RATE[4]">STARTUP:CONFIG_RATE[4]</a></td></tr>
+<tr><td>22</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:CONFIG_RATE" title="STARTUP:CONFIG_RATE[5]">STARTUP:CONFIG_RATE[5]</a></td></tr>
+<tr><td>23</td>
+<td><a href="#bits-xc5v-REG.COR-CAPTURE:ONESHOT" title="CAPTURE:ONESHOT">CAPTURE:ONESHOT</a></td></tr>
+<tr><td>24</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:DRIVE_DONE" title="STARTUP:DRIVE_DONE">STARTUP:DRIVE_DONE</a></td></tr>
+<tr><td>25</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:DONE_PIPE" title="STARTUP:DONE_PIPE">STARTUP:DONE_PIPE</a></td></tr>
+<tr><td>26</td>
+<td>-</td></tr>
+<tr><td>27</td>
+<td>-</td></tr>
+<tr><td>28</td>
+<td><a href="#bits-xc5v-REG.COR-STARTUP:CRC" title="~STARTUP:CRC">~STARTUP:CRC</a></td></tr>
+</table>
+<div id="bits-xc5v-REG.COR-STARTUP:GTS_CYCLE"></div>
+<div id="bits-xc5v-REG.COR-STARTUP:GWE_CYCLE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>STARTUP:GTS_CYCLE</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th><th>[0, 0, 3]</th></tr>
+<tr><th>STARTUP:GWE_CYCLE</th><th>[0, 0, 2]</th><th>[0, 0, 1]</th><th>[0, 0, 0]</th></tr>
+<tr><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>3</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>4</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>5</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>6</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>DONE</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>KEEP</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+<div id="bits-xc5v-REG.COR-STARTUP:LCK_CYCLE"></div>
+<div id="bits-xc5v-REG.COR-STARTUP:MATCH_CYCLE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>STARTUP:LCK_CYCLE</th><th>[0, 0, 8]</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th></tr>
+<tr><th>STARTUP:MATCH_CYCLE</th><th>[0, 0, 11]</th><th>[0, 0, 10]</th><th>[0, 0, 9]</th></tr>
+<tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>2</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>3</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>4</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>5</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>6</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>NOWAIT</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+<div id="bits-xc5v-REG.COR-STARTUP:DONE_CYCLE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>STARTUP:DONE_CYCLE</th><th>[0, 0, 14]</th><th>[0, 0, 13]</th><th>[0, 0, 12]</th></tr>
+<tr><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>3</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>4</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>5</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>6</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>KEEP</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+<div id="bits-xc5v-REG.COR-STARTUP:STARTUPCLK"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>STARTUP:STARTUPCLK</th><th>[0, 0, 16]</th><th>[0, 0, 15]</th></tr>
+<tr><td>CCLK</td><td>0</td><td>0</td></tr>
+<tr><td>USERCLK</td><td>0</td><td>1</td></tr>
+<tr><td>JTAGCLK</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc5v-REG.COR-STARTUP:CONFIG_RATE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>STARTUP:CONFIG_RATE</th><th>[0, 0, 22]</th><th>[0, 0, 21]</th><th>[0, 0, 20]</th><th>[0, 0, 19]</th><th>[0, 0, 18]</th><th>[0, 0, 17]</th></tr>
+<tr><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>9</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>13</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>17</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>20</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>24</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>27</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>31</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>35</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>38</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>42</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>49</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>53</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>60</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>46</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>56</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xc5v-REG.COR-CAPTURE:ONESHOT"></div>
+<div id="bits-xc5v-REG.COR-STARTUP:DONE_PIPE"></div>
+<div id="bits-xc5v-REG.COR-STARTUP:DRIVE_DONE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>CAPTURE:ONESHOT</th><th>[0, 0, 23]</th></tr>
+<tr><th>STARTUP:DONE_PIPE</th><th>[0, 0, 25]</th></tr>
+<tr><th>STARTUP:DRIVE_DONE</th><th>[0, 0, 24]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc5v-REG.COR-STARTUP:CRC"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>STARTUP:CRC</th><th>[0, 0, 28]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+</section>
+<section id="cor1">
+<h2><code class="docutils literal notranslate"><span class="pre">COR1</span></code><a class="headerlink" href="#cor1" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.COR1 bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc5v-REG.COR1-MISC:BPI_PAGE_SIZE" title="MISC:BPI_PAGE_SIZE[0]">MISC:BPI_PAGE_SIZE[0]</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc5v-REG.COR1-MISC:BPI_PAGE_SIZE" title="MISC:BPI_PAGE_SIZE[1]">MISC:BPI_PAGE_SIZE[1]</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc5v-REG.COR1-MISC:BPI_1ST_READ_CYCLE" title="MISC:BPI_1ST_READ_CYCLE[0]">MISC:BPI_1ST_READ_CYCLE[0]</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc5v-REG.COR1-MISC:BPI_1ST_READ_CYCLE" title="MISC:BPI_1ST_READ_CYCLE[1]">MISC:BPI_1ST_READ_CYCLE[1]</a></td></tr>
+<tr><td>4</td>
+<td>-</td></tr>
+<tr><td>5</td>
+<td>-</td></tr>
+<tr><td>6</td>
+<td>-</td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc5v-REG.COR1-MISC:POST_CRC_SEL" title="MISC:POST_CRC_SEL">MISC:POST_CRC_SEL</a></td></tr>
+<tr><td>8</td>
+<td><a href="#bits-xc5v-REG.COR1-MISC:POST_CRC_EN" title="MISC:POST_CRC_EN">MISC:POST_CRC_EN</a></td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc5v-REG.COR1-MISC:POST_CRC_NO_PIN" title="MISC:POST_CRC_NO_PIN">MISC:POST_CRC_NO_PIN</a></td></tr>
+<tr><td>10</td>
+<td>-</td></tr>
+<tr><td>11</td>
+<td>-</td></tr>
+<tr><td>12</td>
+<td>-</td></tr>
+<tr><td>13</td>
+<td>-</td></tr>
+<tr><td>14</td>
+<td>-</td></tr>
+<tr><td>15</td>
+<td>-</td></tr>
+<tr><td>16</td>
+<td>-</td></tr>
+<tr><td>17</td>
+<td>-</td></tr>
+<tr><td>18</td>
+<td>-</td></tr>
+<tr><td>19</td>
+<td>-</td></tr>
+<tr><td>20</td>
+<td>-</td></tr>
+<tr><td>21</td>
+<td>-</td></tr>
+<tr><td>22</td>
+<td>-</td></tr>
+<tr><td>23</td>
+<td><a href="#bits-xc5v-REG.COR1-MISC:POST_CRC_RECONFIG" title="MISC:POST_CRC_RECONFIG">MISC:POST_CRC_RECONFIG</a></td></tr>
+<tr><td>24</td>
+<td>-</td></tr>
+<tr><td>25</td>
+<td><a href="#bits-xc5v-REG.COR1-MISC:RETAIN_CONFIG_STATUS" title="~MISC:RETAIN_CONFIG_STATUS">~MISC:RETAIN_CONFIG_STATUS</a></td></tr>
+</table>
+<div id="bits-xc5v-REG.COR1-MISC:BPI_PAGE_SIZE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:BPI_PAGE_SIZE</th><th>[0, 0, 1]</th><th>[0, 0, 0]</th></tr>
+<tr><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>4</td><td>0</td><td>1</td></tr>
+<tr><td>8</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc5v-REG.COR1-MISC:BPI_1ST_READ_CYCLE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:BPI_1ST_READ_CYCLE</th><th>[0, 0, 3]</th><th>[0, 0, 2]</th></tr>
+<tr><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>2</td><td>0</td><td>1</td></tr>
+<tr><td>3</td><td>1</td><td>0</td></tr>
+<tr><td>4</td><td>1</td><td>1</td></tr>
+</table>
+<div id="bits-xc5v-REG.COR1-MISC:POST_CRC_EN"></div>
+<div id="bits-xc5v-REG.COR1-MISC:POST_CRC_NO_PIN"></div>
+<div id="bits-xc5v-REG.COR1-MISC:POST_CRC_RECONFIG"></div>
+<div id="bits-xc5v-REG.COR1-MISC:POST_CRC_SEL"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:POST_CRC_EN</th><th>[0, 0, 8]</th></tr>
+<tr><th>MISC:POST_CRC_NO_PIN</th><th>[0, 0, 9]</th></tr>
+<tr><th>MISC:POST_CRC_RECONFIG</th><th>[0, 0, 23]</th></tr>
+<tr><th>MISC:POST_CRC_SEL</th><th>[0, 0, 7]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc5v-REG.COR1-MISC:RETAIN_CONFIG_STATUS"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:RETAIN_CONFIG_STATUS</th><th>[0, 0, 25]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+</section>
+<section id="ctl">
+<h2><code class="docutils literal notranslate"><span class="pre">CTL</span></code><a class="headerlink" href="#ctl" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.CTL bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:GTS_USR_B" title="MISC:GTS_USR_B">MISC:GTS_USR_B</a></td></tr>
+<tr><td>1</td>
+<td>-</td></tr>
+<tr><td>2</td>
+<td>-</td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:PERSIST" title="MISC:PERSIST">MISC:PERSIST</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:SECURITY" title="MISC:SECURITY[0]">MISC:SECURITY[0]</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:SECURITY" title="MISC:SECURITY[1]">MISC:SECURITY[1]</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:DECRYPT" title="MISC:DECRYPT">MISC:DECRYPT</a></td></tr>
+<tr><td>7</td>
+<td>-</td></tr>
+<tr><td>8</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:GLUTMASK" title="~MISC:GLUTMASK">~MISC:GLUTMASK</a></td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:SELECTMAP_ABORT" title="~MISC:SELECTMAP_ABORT">~MISC:SELECTMAP_ABORT</a></td></tr>
+<tr><td>10</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:CONFIG_FALLBACK" title="~MISC:CONFIG_FALLBACK">~MISC:CONFIG_FALLBACK</a></td></tr>
+<tr><td>11</td>
+<td>-</td></tr>
+<tr><td>12</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:OVERTEMP_POWERDOWN" title="MISC:OVERTEMP_POWERDOWN">MISC:OVERTEMP_POWERDOWN</a></td></tr>
+<tr><td>13</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:VGG_SEL" title="MISC:VGG_SEL[0]">MISC:VGG_SEL[0]</a></td></tr>
+<tr><td>14</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:VGG_SEL" title="MISC:VGG_SEL[1]">MISC:VGG_SEL[1]</a></td></tr>
+<tr><td>15</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:VGG_SEL" title="MISC:VGG_SEL[2]">MISC:VGG_SEL[2]</a></td></tr>
+<tr><td>16</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:VGG_SEL" title="MISC:VGG_SEL[3]">MISC:VGG_SEL[3]</a></td></tr>
+<tr><td>17</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:VGG_SEL" title="MISC:VGG_SEL[4]">MISC:VGG_SEL[4]</a></td></tr>
+<tr><td>18</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:VBG_DLL_SEL" title="MISC:VBG_DLL_SEL[0]">MISC:VBG_DLL_SEL[0]</a></td></tr>
+<tr><td>19</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:VBG_DLL_SEL" title="MISC:VBG_DLL_SEL[1]">MISC:VBG_DLL_SEL[1]</a></td></tr>
+<tr><td>20</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:VBG_DLL_SEL" title="MISC:VBG_DLL_SEL[2]">MISC:VBG_DLL_SEL[2]</a></td></tr>
+<tr><td>21</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:VBG_DLL_SEL" title="MISC:VBG_DLL_SEL[3]">MISC:VBG_DLL_SEL[3]</a></td></tr>
+<tr><td>22</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:VBG_DLL_SEL" title="MISC:VBG_DLL_SEL[4]">MISC:VBG_DLL_SEL[4]</a></td></tr>
+<tr><td>23</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:VBG_SEL" title="MISC:VBG_SEL[0]">MISC:VBG_SEL[0]</a></td></tr>
+<tr><td>24</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:VBG_SEL" title="MISC:VBG_SEL[1]">MISC:VBG_SEL[1]</a></td></tr>
+<tr><td>25</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:VBG_SEL" title="MISC:VBG_SEL[2]">MISC:VBG_SEL[2]</a></td></tr>
+<tr><td>26</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:VBG_SEL" title="MISC:VBG_SEL[3]">MISC:VBG_SEL[3]</a></td></tr>
+<tr><td>27</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:VBG_SEL" title="MISC:VBG_SEL[4]">MISC:VBG_SEL[4]</a></td></tr>
+<tr><td>28</td>
+<td>-</td></tr>
+<tr><td>29</td>
+<td>-</td></tr>
+<tr><td>30</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:ICAP_SELECT" title="MISC:ICAP_SELECT">MISC:ICAP_SELECT</a></td></tr>
+<tr><td>31</td>
+<td><a href="#bits-xc5v-REG.CTL-MISC:ENCRYPT_KEY_SELECT" title="MISC:ENCRYPT_KEY_SELECT">MISC:ENCRYPT_KEY_SELECT</a></td></tr>
+</table>
+<div id="bits-xc5v-REG.CTL-MISC:DECRYPT"></div>
+<div id="bits-xc5v-REG.CTL-MISC:GTS_USR_B"></div>
+<div id="bits-xc5v-REG.CTL-MISC:OVERTEMP_POWERDOWN"></div>
+<div id="bits-xc5v-REG.CTL-MISC:PERSIST"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:DECRYPT</th><th>[0, 0, 6]</th></tr>
+<tr><th>MISC:GTS_USR_B</th><th>[0, 0, 0]</th></tr>
+<tr><th>MISC:OVERTEMP_POWERDOWN</th><th>[0, 0, 12]</th></tr>
+<tr><th>MISC:PERSIST</th><th>[0, 0, 3]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc5v-REG.CTL-MISC:SECURITY"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:SECURITY</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>LEVEL1</td><td>0</td><td>1</td></tr>
+<tr><td>LEVEL2</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc5v-REG.CTL-MISC:CONFIG_FALLBACK"></div>
+<div id="bits-xc5v-REG.CTL-MISC:GLUTMASK"></div>
+<div id="bits-xc5v-REG.CTL-MISC:SELECTMAP_ABORT"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:CONFIG_FALLBACK</th><th>[0, 0, 10]</th></tr>
+<tr><th>MISC:GLUTMASK</th><th>[0, 0, 8]</th></tr>
+<tr><th>MISC:SELECTMAP_ABORT</th><th>[0, 0, 9]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<div id="bits-xc5v-REG.CTL-MISC:VBG_DLL_SEL"></div>
+<div id="bits-xc5v-REG.CTL-MISC:VBG_SEL"></div>
+<div id="bits-xc5v-REG.CTL-MISC:VGG_SEL"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:VBG_DLL_SEL</th><th>[0, 0, 22]</th><th>[0, 0, 21]</th><th>[0, 0, 20]</th><th>[0, 0, 19]</th><th>[0, 0, 18]</th></tr>
+<tr><th>MISC:VBG_SEL</th><th>[0, 0, 27]</th><th>[0, 0, 26]</th><th>[0, 0, 25]</th><th>[0, 0, 24]</th><th>[0, 0, 23]</th></tr>
+<tr><th>MISC:VGG_SEL</th><th>[0, 0, 17]</th><th>[0, 0, 16]</th><th>[0, 0, 15]</th><th>[0, 0, 14]</th><th>[0, 0, 13]</th></tr>
+<tr><td>Non-inverted</td><td>[4]</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc5v-REG.CTL-MISC:ICAP_SELECT"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:ICAP_SELECT</th><th>[0, 0, 30]</th></tr>
+<tr><td>TOP</td><td>0</td></tr>
+<tr><td>BOTTOM</td><td>1</td></tr>
+</table>
+<div id="bits-xc5v-REG.CTL-MISC:ENCRYPT_KEY_SELECT"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:ENCRYPT_KEY_SELECT</th><th>[0, 0, 31]</th></tr>
+<tr><td>BBRAM</td><td>0</td></tr>
+<tr><td>EFUSE</td><td>1</td></tr>
+</table>
+</section>
+<section id="timer">
+<h2><code class="docutils literal notranslate"><span class="pre">TIMER</span></code><a class="headerlink" href="#timer" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.TIMER bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[0]">MISC:TIMER[0]</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[1]">MISC:TIMER[1]</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[2]">MISC:TIMER[2]</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[3]">MISC:TIMER[3]</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[4]">MISC:TIMER[4]</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[5]">MISC:TIMER[5]</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[6]">MISC:TIMER[6]</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[7]">MISC:TIMER[7]</a></td></tr>
+<tr><td>8</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[8]">MISC:TIMER[8]</a></td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[9]">MISC:TIMER[9]</a></td></tr>
+<tr><td>10</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[10]">MISC:TIMER[10]</a></td></tr>
+<tr><td>11</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[11]">MISC:TIMER[11]</a></td></tr>
+<tr><td>12</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[12]">MISC:TIMER[12]</a></td></tr>
+<tr><td>13</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[13]">MISC:TIMER[13]</a></td></tr>
+<tr><td>14</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[14]">MISC:TIMER[14]</a></td></tr>
+<tr><td>15</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[15]">MISC:TIMER[15]</a></td></tr>
+<tr><td>16</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[16]">MISC:TIMER[16]</a></td></tr>
+<tr><td>17</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[17]">MISC:TIMER[17]</a></td></tr>
+<tr><td>18</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[18]">MISC:TIMER[18]</a></td></tr>
+<tr><td>19</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[19]">MISC:TIMER[19]</a></td></tr>
+<tr><td>20</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[20]">MISC:TIMER[20]</a></td></tr>
+<tr><td>21</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[21]">MISC:TIMER[21]</a></td></tr>
+<tr><td>22</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[22]">MISC:TIMER[22]</a></td></tr>
+<tr><td>23</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER" title="MISC:TIMER[23]">MISC:TIMER[23]</a></td></tr>
+<tr><td>24</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER_CFG" title="MISC:TIMER_CFG">MISC:TIMER_CFG</a></td></tr>
+<tr><td>25</td>
+<td><a href="#bits-xc5v-REG.TIMER-MISC:TIMER_USR" title="MISC:TIMER_USR">MISC:TIMER_USR</a></td></tr>
+</table>
+<div id="bits-xc5v-REG.TIMER-MISC:TIMER"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:TIMER</th><th>[0, 0, 23]</th><th>[0, 0, 22]</th><th>[0, 0, 21]</th><th>[0, 0, 20]</th><th>[0, 0, 19]</th><th>[0, 0, 18]</th><th>[0, 0, 17]</th><th>[0, 0, 16]</th><th>[0, 0, 15]</th><th>[0, 0, 14]</th><th>[0, 0, 13]</th><th>[0, 0, 12]</th><th>[0, 0, 11]</th><th>[0, 0, 10]</th><th>[0, 0, 9]</th><th>[0, 0, 8]</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th><th>[0, 0, 3]</th><th>[0, 0, 2]</th><th>[0, 0, 1]</th><th>[0, 0, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[23]</td><td>[22]</td><td>[21]</td><td>[20]</td><td>[19]</td><td>[18]</td><td>[17]</td><td>[16]</td><td>[15]</td><td>[14]</td><td>[13]</td><td>[12]</td><td>[11]</td><td>[10]</td><td>[9]</td><td>[8]</td><td>[7]</td><td>[6]</td><td>[5]</td><td>[4]</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc5v-REG.TIMER-MISC:TIMER_CFG"></div>
+<div id="bits-xc5v-REG.TIMER-MISC:TIMER_USR"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:TIMER_CFG</th><th>[0, 0, 24]</th></tr>
+<tr><th>MISC:TIMER_USR</th><th>[0, 0, 25]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pcie.html" class="btn btn-neutral float-left" title="PCI Express cores" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../virtex6/index.html" class="btn btn-neutral float-right" title="Xilinx Virtex 6 FPGAs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

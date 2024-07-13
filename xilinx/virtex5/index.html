@@ -19,7 +19,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Interconnect — Virtex 5, Virtex 6, Series 7" href="int.html" />
+    <link rel="next" title="Interconnect — Virtex 5, Virtex 6, Series 7" href="interconnect.html" />
     <link rel="prev" title="System monitor" href="../virtex4/sysmon.html" /> 
 </head>
 
@@ -54,13 +54,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Xilinx Spartan 6 FPGAs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Xilinx Virtex 4 FPGAs</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Xilinx Virtex 5 FPGAs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="int.html">Interconnect — Virtex 5, Virtex 6, Series 7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interconnect.html">Interconnect — Virtex 5, Virtex 6, Series 7</a></li>
 <li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block — Virtex 5, Virtex 6, Series 7, Spartan 6</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="center.html">Configuration Center</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ppc.html">PowerPC cores</a></li>
 <li class="toctree-l3"><a class="reference internal" href="emac.html">Ethernet MACs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pcie.html">PCI Express cores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../virtex6/index.html">Xilinx Virtex 6 FPGAs</a></li>
@@ -102,10 +105,10 @@
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="int.html">Interconnect — Virtex 5, Virtex 6, Series 7</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="int.html#bitstream-virtex-5">Bitstream — Virtex 5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="int.html#bitstream-virtex-6">Bitstream — Virtex 6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="int.html#bitstream-series-7">Bitstream — Series 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interconnect.html">Interconnect — Virtex 5, Virtex 6, Series 7</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-virtex-5">Bitstream — Virtex 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-virtex-6">Bitstream — Virtex 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-series-7">Bitstream — Series 7</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="clb.html">Configurable Logic Block — Virtex 5, Virtex 6, Series 7, Spartan 6</a><ul>
@@ -123,6 +126,20 @@
 <li class="toctree-l2"><a class="reference internal" href="dsp.html#bitstream">Bitstream</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="center.html">Configuration Center</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="center.html#bitstream">Bitstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="clock.html">Clock interconnect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#clk-hrow"><code class="docutils literal notranslate"><span class="pre">CLK_HROW</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#hclk"><code class="docutils literal notranslate"><span class="pre">HCLK</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#spine-muxes-iob">Spine muxes — IOB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#spine-muxes-cmt">Spine muxes — CMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#spine-muxes-mgt">Spine muxes — MGT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#mgt-clock-repeater">MGT clock repeater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#io-clock-nodes">IO clock nodes</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="ppc.html">PowerPC cores</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="ppc.html#bitstream">Bitstream</a></li>
 </ul>
@@ -135,6 +152,13 @@
 <li class="toctree-l2"><a class="reference internal" href="pcie.html#bitstream">Bitstream</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration registers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config.html#cor"><code class="docutils literal notranslate"><span class="pre">COR</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#cor1"><code class="docutils literal notranslate"><span class="pre">COR1</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#ctl"><code class="docutils literal notranslate"><span class="pre">CTL</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#timer"><code class="docutils literal notranslate"><span class="pre">TIMER</span></code></a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
@@ -144,7 +168,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../virtex4/sysmon.html" class="btn btn-neutral float-left" title="System monitor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="int.html" class="btn btn-neutral float-right" title="Interconnect — Virtex 5, Virtex 6, Series 7" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="interconnect.html" class="btn btn-neutral float-right" title="Interconnect — Virtex 5, Virtex 6, Series 7" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
