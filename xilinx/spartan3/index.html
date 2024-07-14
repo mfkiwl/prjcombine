@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Xilinx Spartan 3 FPGAs &mdash; Project Combine  documentation</title>
+  <title>Spartan 3 &mdash; Project Combine  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Introduction" href="intro.html" />
-    <link rel="prev" title="Configuration registers — Virtex 2, Spartan 3, Spartan 3E" href="../virtex2/config.html" /> 
+    <link rel="prev" title="Configuration registers" href="../virtex2/config.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,23 +48,29 @@
 <li class="toctree-l1"><a class="reference internal" href="../../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Xilinx FPGAs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Xilinx Virtex, Virtex E, Spartan 2, Spartan 2E FPGAs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Xilinx Virtex 2 FPGAs</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Xilinx Spartan 3 FPGAs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Virtex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Virtex 2</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Spartan 3</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="structure.html">Device geometry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="interconnect.html">General interconnect</a></li>
-<li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block — Spartan 3, Virtex 4</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP — Spartan 3A DSP, Spartan 6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dcm-xc3se.html">Digital Clock Managers — Spartan 3E, 3A</a></li>
-<li class="toctree-l3"><a class="reference internal" href="config-xc3sa.html">Configuration registers — Spartan 3A and 3A DSP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html">Input / Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcm-s3.html">Digital Clock Managers — Spartan 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcm-s3e.html">Digital Clock Managers — Spartan 3E, 3A</a></li>
+<li class="toctree-l3"><a class="reference internal" href="corner.html">Corners</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config-s3.html">Configuration registers — Spartan 3, Spartan 3E</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config-s3a.html">Configuration registers — Spartan 3A and 3A DSP</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Xilinx Spartan 6 FPGAs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Xilinx Virtex 4 FPGAs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Xilinx Virtex 5 FPGAs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../virtex6/index.html">Xilinx Virtex 6 FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Spartan 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Virtex 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Virtex 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex6/index.html">Virtex 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex7/index.html">Virtex 7</a></li>
 </ul>
 </li>
 </ul>
@@ -84,7 +90,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Xilinx FPGAs</a></li>
-      <li class="breadcrumb-item active">Xilinx Spartan 3 FPGAs</li>
+      <li class="breadcrumb-item active">Spartan 3</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/xilinx/spartan3/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -94,8 +100,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="xilinx-spartan-3-fpgas">
-<h1>Xilinx Spartan 3 FPGAs<a class="headerlink" href="#xilinx-spartan-3-fpgas" title="Link to this heading"></a></h1>
+  <section id="spartan-3">
+<h1>Spartan 3<a class="headerlink" href="#spartan-3" title="Link to this heading"></a></h1>
 <div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
 <p>intro document, bitstream format, other tiles, jtag, …</p>
@@ -129,7 +135,7 @@
 <li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-interface-tiles">Bitstream — interface tiles</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="clb.html">Configurable Logic Block — Spartan 3, Virtex 4</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="clb.html">Configurable Logic Block</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="clb.html#luts">LUTs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="clb.html#wide-multiplexers">Wide multiplexers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="clb.html#carry-logic">Carry logic</a></li>
@@ -140,7 +146,12 @@
 <li class="toctree-l2"><a class="reference internal" href="clb.html#reserved-andor"><code class="docutils literal notranslate"><span class="pre">RESERVED_ANDOR</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="dsp.html">DSP — Spartan 3A DSP, Spartan 6</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="bram.html">Block RAM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bram.html#bitstream">Bitstream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bram.html#default-option-values">Default option values</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dsp.html">DSP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="dsp.html#bitstream">Bitstream</a></li>
 </ul>
 </li>
@@ -154,29 +165,57 @@
 <li class="toctree-l2"><a class="reference internal" href="clock.html#the-gclkh-clock-row-distribution-tiles">The <code class="docutils literal notranslate"><span class="pre">GCLKH</span></code> clock row distribution tiles</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="dcm-xc3se.html">Digital Clock Managers — Spartan 3E, 3A</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dcm-xc3se.html#dcm-s3e-bl"><code class="docutils literal notranslate"><span class="pre">DCM.S3E.BL</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcm-xc3se.html#dcm-s3e-br"><code class="docutils literal notranslate"><span class="pre">DCM.S3E.BR</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcm-xc3se.html#dcm-s3e-tl"><code class="docutils literal notranslate"><span class="pre">DCM.S3E.TL</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcm-xc3se.html#dcm-s3e-tr"><code class="docutils literal notranslate"><span class="pre">DCM.S3E.TR</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcm-xc3se.html#dcm-s3e-lb"><code class="docutils literal notranslate"><span class="pre">DCM.S3E.LB</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcm-xc3se.html#dcm-s3e-lt"><code class="docutils literal notranslate"><span class="pre">DCM.S3E.LT</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcm-xc3se.html#dcm-s3e-rb"><code class="docutils literal notranslate"><span class="pre">DCM.S3E.RB</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcm-xc3se.html#dcm-s3e-rt"><code class="docutils literal notranslate"><span class="pre">DCM.S3E.RT</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="dcm-xc3se.html#deskew-adjust"><code class="docutils literal notranslate"><span class="pre">DESKEW_ADJUST</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">Input / Output</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="io.html#i-o-interface">I/O interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#i-o-buffers-spartan-3">I/O buffers — Spartan 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#i-o-buffers-spartan-3e">I/O buffers — Spartan 3E</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#i-o-buffers-spartan-3a">I/O buffers — Spartan 3A</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="config-xc3sa.html">Configuration registers — Spartan 3A and 3A DSP</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="config-xc3sa.html#cor1-s3a"><code class="docutils literal notranslate"><span class="pre">COR1.S3A</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="config-xc3sa.html#cor2-s3a"><code class="docutils literal notranslate"><span class="pre">COR2.S3A</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="config-xc3sa.html#ctl-s3a"><code class="docutils literal notranslate"><span class="pre">CTL.S3A</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="config-xc3sa.html#hc-opt"><code class="docutils literal notranslate"><span class="pre">HC_OPT</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="config-xc3sa.html#powerdown"><code class="docutils literal notranslate"><span class="pre">POWERDOWN</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="config-xc3sa.html#pu-gwe"><code class="docutils literal notranslate"><span class="pre">PU_GWE</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="config-xc3sa.html#pu-gts"><code class="docutils literal notranslate"><span class="pre">PU_GTS</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="config-xc3sa.html#mode"><code class="docutils literal notranslate"><span class="pre">MODE</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="config-xc3sa.html#general-12"><code class="docutils literal notranslate"><span class="pre">GENERAL[12]</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="config-xc3sa.html#seu-opt"><code class="docutils literal notranslate"><span class="pre">SEU_OPT</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="dcm-s3.html">Digital Clock Managers — Spartan 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dcm-s3.html#dcm-s3"><code class="docutils literal notranslate"><span class="pre">DCM.S3</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcm-s3.html#deskew-adjust"><code class="docutils literal notranslate"><span class="pre">DESKEW_ADJUST</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dcm-s3e.html">Digital Clock Managers — Spartan 3E, 3A</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dcm-s3e.html#dcm-s3e-bl"><code class="docutils literal notranslate"><span class="pre">DCM.S3E.BL</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcm-s3e.html#dcm-s3e-br"><code class="docutils literal notranslate"><span class="pre">DCM.S3E.BR</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcm-s3e.html#dcm-s3e-tl"><code class="docutils literal notranslate"><span class="pre">DCM.S3E.TL</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcm-s3e.html#dcm-s3e-tr"><code class="docutils literal notranslate"><span class="pre">DCM.S3E.TR</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcm-s3e.html#dcm-s3e-lb"><code class="docutils literal notranslate"><span class="pre">DCM.S3E.LB</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcm-s3e.html#dcm-s3e-lt"><code class="docutils literal notranslate"><span class="pre">DCM.S3E.LT</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcm-s3e.html#dcm-s3e-rb"><code class="docutils literal notranslate"><span class="pre">DCM.S3E.RB</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcm-s3e.html#dcm-s3e-rt"><code class="docutils literal notranslate"><span class="pre">DCM.S3E.RT</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcm-s3e.html#deskew-adjust"><code class="docutils literal notranslate"><span class="pre">DESKEW_ADJUST</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="corner.html">Corners</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="corner.html#lower-left">Lower left</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corner.html#upper-left">Upper left</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corner.html#lower-right">Lower right</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corner.html#upper-right">Upper right</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corner.html#i-o-data-spartan-3">I/O data — Spartan 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corner.html#i-o-data-spartan-3e">I/O data — Spartan 3E</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corner.html#i-o-data-spartan-3a">I/O data — Spartan 3A</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config-s3.html">Configuration registers — Spartan 3, Spartan 3E</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config-s3.html#cor-s3"><code class="docutils literal notranslate"><span class="pre">COR.S3</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config-s3.html#cor-s3e"><code class="docutils literal notranslate"><span class="pre">COR.S3E</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config-s3.html#ctl-s3"><code class="docutils literal notranslate"><span class="pre">CTL.S3</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config-s3a.html">Configuration registers — Spartan 3A and 3A DSP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config-s3a.html#cor1-s3a"><code class="docutils literal notranslate"><span class="pre">COR1.S3A</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config-s3a.html#cor2-s3a"><code class="docutils literal notranslate"><span class="pre">COR2.S3A</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config-s3a.html#ctl-s3a"><code class="docutils literal notranslate"><span class="pre">CTL.S3A</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config-s3a.html#hc-opt"><code class="docutils literal notranslate"><span class="pre">HC_OPT</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config-s3a.html#powerdown"><code class="docutils literal notranslate"><span class="pre">POWERDOWN</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config-s3a.html#pu-gwe"><code class="docutils literal notranslate"><span class="pre">PU_GWE</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config-s3a.html#pu-gts"><code class="docutils literal notranslate"><span class="pre">PU_GTS</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config-s3a.html#mode"><code class="docutils literal notranslate"><span class="pre">MODE</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config-s3a.html#general-12"><code class="docutils literal notranslate"><span class="pre">GENERAL[12]</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config-s3a.html#seu-opt"><code class="docutils literal notranslate"><span class="pre">SEU_OPT</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -187,7 +226,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../virtex2/config.html" class="btn btn-neutral float-left" title="Configuration registers — Virtex 2, Spartan 3, Spartan 3E" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../virtex2/config.html" class="btn btn-neutral float-left" title="Configuration registers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="intro.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

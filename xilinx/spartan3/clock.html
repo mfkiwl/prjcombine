@@ -19,8 +19,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Digital Clock Managers — Spartan 3E, 3A" href="dcm-xc3se.html" />
-    <link rel="prev" title="DSP — Spartan 3A DSP, Spartan 6" href="dsp.html" /> 
+    <link rel="next" title="Input / Output" href="io.html" />
+    <link rel="prev" title="DSP" href="dsp.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,14 +48,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Xilinx FPGAs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Xilinx Virtex, Virtex E, Spartan 2, Spartan 2E FPGAs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Xilinx Virtex 2 FPGAs</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">Xilinx Spartan 3 FPGAs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Virtex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Virtex 2</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Spartan 3</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="structure.html">Device geometry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="interconnect.html">General interconnect</a></li>
-<li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block — Spartan 3, Virtex 4</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP — Spartan 3A DSP, Spartan 6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Clock interconnect</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#clock-source-spine-bottom-and-top">Clock source — spine bottom and top</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#clock-source-left-and-right">Clock source — left and right</a></li>
@@ -66,14 +67,19 @@
 <li class="toctree-l4"><a class="reference internal" href="#the-gclkh-clock-row-distribution-tiles">The <code class="docutils literal notranslate"><span class="pre">GCLKH</span></code> clock row distribution tiles</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="dcm-xc3se.html">Digital Clock Managers — Spartan 3E, 3A</a></li>
-<li class="toctree-l3"><a class="reference internal" href="config-xc3sa.html">Configuration registers — Spartan 3A and 3A DSP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html">Input / Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcm-s3.html">Digital Clock Managers — Spartan 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcm-s3e.html">Digital Clock Managers — Spartan 3E, 3A</a></li>
+<li class="toctree-l3"><a class="reference internal" href="corner.html">Corners</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config-s3.html">Configuration registers — Spartan 3, Spartan 3E</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config-s3a.html">Configuration registers — Spartan 3A and 3A DSP</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Xilinx Spartan 6 FPGAs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Xilinx Virtex 4 FPGAs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Xilinx Virtex 5 FPGAs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../virtex6/index.html">Xilinx Virtex 6 FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Spartan 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Virtex 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Virtex 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex6/index.html">Virtex 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex7/index.html">Virtex 7</a></li>
 </ul>
 </li>
 </ul>
@@ -93,7 +99,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Xilinx FPGAs</a></li>
-          <li class="breadcrumb-item"><a href="index.html">Xilinx Spartan 3 FPGAs</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Spartan 3</a></li>
       <li class="breadcrumb-item active">Clock interconnect</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/xilinx/spartan3/clock.rst.txt" rel="nofollow"> View page source</a>
@@ -4780,8 +4786,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="dsp.html" class="btn btn-neutral float-left" title="DSP — Spartan 3A DSP, Spartan 6" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="dcm-xc3se.html" class="btn btn-neutral float-right" title="Digital Clock Managers — Spartan 3E, 3A" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dsp.html" class="btn btn-neutral float-left" title="DSP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="io.html" class="btn btn-neutral float-right" title="Input / Output" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

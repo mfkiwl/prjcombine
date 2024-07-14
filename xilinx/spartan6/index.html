@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Xilinx Spartan 6 FPGAs &mdash; Project Combine  documentation</title>
+  <title>Spartan 6 &mdash; Project Combine  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="General interconnect" href="int.html" />
-    <link rel="prev" title="Configuration registers — Spartan 3A and 3A DSP" href="../spartan3/config-xc3sa.html" /> 
+    <link rel="next" title="General interconnect" href="interconnect.html" />
+    <link rel="prev" title="Configuration registers — Spartan 3A and 3A DSP" href="../spartan3/config-s3a.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,19 +48,22 @@
 <li class="toctree-l1"><a class="reference internal" href="../../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Xilinx FPGAs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Xilinx Virtex, Virtex E, Spartan 2, Spartan 2E FPGAs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Xilinx Virtex 2 FPGAs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../spartan3/index.html">Xilinx Spartan 3 FPGAs</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Xilinx Spartan 6 FPGAs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="int.html">General interconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Virtex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Virtex 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan3/index.html">Spartan 3</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Spartan 6</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="interconnect.html">General interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="clk.html">Clock interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pcie.html">PCI Express</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Xilinx Virtex 4 FPGAs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Xilinx Virtex 5 FPGAs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../virtex6/index.html">Xilinx Virtex 6 FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Virtex 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Virtex 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex6/index.html">Virtex 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex7/index.html">Virtex 7</a></li>
 </ul>
 </li>
 </ul>
@@ -80,7 +83,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Xilinx FPGAs</a></li>
-      <li class="breadcrumb-item active">Xilinx Spartan 6 FPGAs</li>
+      <li class="breadcrumb-item active">Spartan 6</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/xilinx/spartan6/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -90,8 +93,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="xilinx-spartan-6-fpgas">
-<h1>Xilinx Spartan 6 FPGAs<a class="headerlink" href="#xilinx-spartan-6-fpgas" title="Link to this heading"></a></h1>
+  <section id="spartan-6">
+<h1>Spartan 6<a class="headerlink" href="#spartan-6" title="Link to this heading"></a></h1>
 <div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
 <p>intro document, bitstream format, other tiles, jtag, …</p>
@@ -99,31 +102,40 @@
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="int.html">General interconnect</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="int.html#bitstream-normal-tile">Bitstream — normal tile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="int.html#bitstream-ioi-tile">Bitstream — IOI tile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="int.html#bitsteam-interface-tiles">Bitsteam — interface tiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interconnect.html">General interconnect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-normal-tile">Bitstream — normal tile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-ioi-tile">Bitstream — IOI tile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitsteam-interface-tiles">Bitsteam — interface tiles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="clb.html">Configurable Logic Block</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="clb.html#bitstream-clexl">Bitstream — <code class="docutils literal notranslate"><span class="pre">CLEXL</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clb.html#bitstream-clexm">Bitstream — <code class="docutils literal notranslate"><span class="pre">CLEXM</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="bram.html">Block RAM</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="bram.html#bitstream">Bitstream</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="clk.html">Clock interconnect</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="clk.html#bitstream-bottom-tile">Bitstream — bottom tile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="clk.html#bitstream-top-tile">Bitstream — top tile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="clk.html#bitstream-left-tile">Bitstream — left tile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="clk.html#bitstream-right-tile">Bitstream — right tile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="clk.html#bitstream-hclk">Bitstream — <code class="docutils literal notranslate"><span class="pre">HCLK</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="clk.html#bitstream-hclk-row">Bitstream — <code class="docutils literal notranslate"><span class="pre">HCLK_ROW</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="clk.html#bitstream-clkc">Bitstream — <code class="docutils literal notranslate"><span class="pre">CLKC</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="clk.html#bitstream-dcm-bufpll">Bitstream — <code class="docutils literal notranslate"><span class="pre">DCM_BUFPLL</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="clk.html#bitstream-pll-bufpll-out0">Bitstream — <code class="docutils literal notranslate"><span class="pre">PLL_BUFPLL_OUT0</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="clk.html#bitstream-pll-bufpll-out1">Bitstream — <code class="docutils literal notranslate"><span class="pre">PLL_BUFPLL_OUT1</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="clk.html#bitstream-pll-bufpll-b">Bitstream — <code class="docutils literal notranslate"><span class="pre">PLL_BUFPLL_B</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="clk.html#bitstream-pll-bufpll-t">Bitstream — <code class="docutils literal notranslate"><span class="pre">PLL_BUFPLL_T</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="clk.html#bitstream-pcilogicse">Bitstream — <code class="docutils literal notranslate"><span class="pre">PCILOGICSE</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="clk.html#pci-ce-delay"><code class="docutils literal notranslate"><span class="pre">PCI_CE_DELAY</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="dsp.html">DSP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dsp.html#bitstream">Bitstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="clock.html">Clock interconnect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#bitstream-bottom-tile">Bitstream — bottom tile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#bitstream-top-tile">Bitstream — top tile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#bitstream-left-tile">Bitstream — left tile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#bitstream-right-tile">Bitstream — right tile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#bitstream-hclk">Bitstream — <code class="docutils literal notranslate"><span class="pre">HCLK</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#bitstream-hclk-row">Bitstream — <code class="docutils literal notranslate"><span class="pre">HCLK_ROW</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#bitstream-clkc">Bitstream — <code class="docutils literal notranslate"><span class="pre">CLKC</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#bitstream-dcm-bufpll">Bitstream — <code class="docutils literal notranslate"><span class="pre">DCM_BUFPLL</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#bitstream-pll-bufpll-out0">Bitstream — <code class="docutils literal notranslate"><span class="pre">PLL_BUFPLL_OUT0</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#bitstream-pll-bufpll-out1">Bitstream — <code class="docutils literal notranslate"><span class="pre">PLL_BUFPLL_OUT1</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#bitstream-pll-bufpll-b">Bitstream — <code class="docutils literal notranslate"><span class="pre">PLL_BUFPLL_B</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#bitstream-pll-bufpll-t">Bitstream — <code class="docutils literal notranslate"><span class="pre">PLL_BUFPLL_T</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#bitstream-pcilogicse">Bitstream — <code class="docutils literal notranslate"><span class="pre">PCILOGICSE</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#pci-ce-delay"><code class="docutils literal notranslate"><span class="pre">PCI_CE_DELAY</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pcie.html">PCI Express</a><ul>
@@ -138,8 +150,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../spartan3/config-xc3sa.html" class="btn btn-neutral float-left" title="Configuration registers — Spartan 3A and 3A DSP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="int.html" class="btn btn-neutral float-right" title="General interconnect" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../spartan3/config-s3a.html" class="btn btn-neutral float-left" title="Configuration registers — Spartan 3A and 3A DSP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="interconnect.html" class="btn btn-neutral float-right" title="General interconnect" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

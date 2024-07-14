@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Device geometry" href="structure.html" />
-    <link rel="prev" title="Xilinx Spartan 3 FPGAs" href="index.html" /> 
+    <link rel="prev" title="Spartan 3" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,26 +48,32 @@
 <li class="toctree-l1"><a class="reference internal" href="../../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Xilinx FPGAs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Xilinx Virtex, Virtex E, Spartan 2, Spartan 2E FPGAs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Xilinx Virtex 2 FPGAs</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">Xilinx Spartan 3 FPGAs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Virtex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Virtex 2</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Spartan 3</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Introduction</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#device-table">Device table</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="structure.html">Device geometry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="interconnect.html">General interconnect</a></li>
-<li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block — Spartan 3, Virtex 4</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP — Spartan 3A DSP, Spartan 6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dcm-xc3se.html">Digital Clock Managers — Spartan 3E, 3A</a></li>
-<li class="toctree-l3"><a class="reference internal" href="config-xc3sa.html">Configuration registers — Spartan 3A and 3A DSP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html">Input / Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcm-s3.html">Digital Clock Managers — Spartan 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcm-s3e.html">Digital Clock Managers — Spartan 3E, 3A</a></li>
+<li class="toctree-l3"><a class="reference internal" href="corner.html">Corners</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config-s3.html">Configuration registers — Spartan 3, Spartan 3E</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config-s3a.html">Configuration registers — Spartan 3A and 3A DSP</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Xilinx Spartan 6 FPGAs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Xilinx Virtex 4 FPGAs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Xilinx Virtex 5 FPGAs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../virtex6/index.html">Xilinx Virtex 6 FPGAs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Spartan 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Virtex 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Virtex 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex6/index.html">Virtex 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex7/index.html">Virtex 7</a></li>
 </ul>
 </li>
 </ul>
@@ -87,7 +93,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Xilinx FPGAs</a></li>
-          <li class="breadcrumb-item"><a href="index.html">Xilinx Spartan 3 FPGAs</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Spartan 3</a></li>
       <li class="breadcrumb-item active">Introduction</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/xilinx/spartan3/intro.rst.txt" rel="nofollow"> View page source</a>
@@ -114,15 +120,15 @@
 <li><p>a <a class="reference internal" href="interconnect.html#spartan3-interconnect"><span class="std std-ref">general interconnect structure</span></a> derived from Virtex 2</p></li>
 <li><p>a dedicated <a class="reference internal" href="clock.html#spartan3-clock"><span class="std std-ref">clock interconnect</span></a> with 8 global clocks and <code class="docutils literal notranslate"><span class="pre">BUFGMUX</span></code> primitives with clock multiplexing</p></li>
 <li><p><a class="reference internal" href="clb.html#spartan3-clb"><span class="std std-ref">configurable logic blocks</span></a>, derived from the Virtex 2 ones</p></li>
-<li><p><a class="reference internal" href="../virtex2/bram.html#virtex2-bram"><span class="std std-ref">block RAM tiles</span></a>, essentially identical to Virtex 2, containing:</p>
+<li><p><a class="reference internal" href="bram.html#spartan3-bram"><span class="std std-ref">block RAM tiles</span></a>, essentially identical to Virtex 2, containing:</p>
 <ul>
 <li><p>18-kbit block RAM</p></li>
 <li><p>18×18 multiplier blocks</p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="../virtex2/io.html#virtex2-io"><span class="std std-ref">input-output tiles</span></a>, similar to Virtex 2</p></li>
-<li><p><a class="reference internal" href="../virtex2/dcm.html#virtex2-dcm"><span class="std std-ref">digital clock managers</span></a>, essentially identical to Virtex 2</p></li>
-<li><p><a class="reference internal" href="../virtex2/corner.html#virtex2-corner"><span class="std std-ref">corner tiles</span></a>, with various global bits of logic:</p>
+<li><p><a class="reference internal" href="io.html#spartan3-io"><span class="std std-ref">input-output tiles</span></a>, similar to Virtex 2</p></li>
+<li><p><a class="reference internal" href="dcm-s3.html#spartan3-dcm-s3"><span class="std std-ref">digital clock managers</span></a>, essentially identical to Virtex 2</p></li>
+<li><p><a class="reference internal" href="corner.html#spartan3-corner"><span class="std std-ref">corner tiles</span></a>, with various global bits of logic:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">BSCAN</span></code> primitive, allowing access to FPGA fabric via dedicated JTAG instructions</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">STARTUP</span></code> primitive, controlling the startup process</p></li>
@@ -142,7 +148,7 @@
 <ul class="simple">
 <li><p>improved clock interconnect, with 24 global clock buffers that can be multiplexed to 8 clocks per region</p></li>
 <li><p>improved hard multiplier blocks, with pipeline registers</p></li>
-<li><p><a class="reference internal" href="dcm-xc3se.html#spartan3e-dcm"><span class="std std-ref">a new version of DCM</span></a></p></li>
+<li><p><a class="reference internal" href="dcm-s3e.html#spartan3-dcm-s3e"><span class="std std-ref">a new version of DCM</span></a></p></li>
 <li><p>IO tile changes</p>
 <ul>
 <li><p>new set of IO standards supported</p></li>
@@ -189,7 +195,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Xilinx Spartan 3 FPGAs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Spartan 3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="structure.html" class="btn btn-neutral float-right" title="Device geometry" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
