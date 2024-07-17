@@ -67,12 +67,14 @@
 <li class="toctree-l4"><a class="reference internal" href="#mgt-clock-repeater">MGT clock repeater</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#row-clock-terminators">Row clock terminators</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#io-clock-nodes">IO clock nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hclk-mgt"><code class="docutils literal notranslate"><span class="pre">HCLK_MGT</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="dcm.html">DCM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ccm.html">CCM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sysmon.html">System monitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gt.html">Multi-gigabit transceivers</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Virtex 5</a></li>
@@ -4769,15 +4771,15 @@
 <tr><td>11</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr><td>12</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-HCLK_MGT_REPEATER-CLK_MGT_REPEATER:MGT0" title="CLK_MGT_REPEATER:MGT0">CLK_MGT_REPEATER:MGT0</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-HCLK_MGT_REPEATER-HCLK_MGT_REPEATER:BUF.MGT0" title="HCLK_MGT_REPEATER:BUF.MGT0">HCLK_MGT_REPEATER:BUF.MGT0</a></td></tr>
 <tr><td>13</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-HCLK_MGT_REPEATER-CLK_MGT_REPEATER:MGT1" title="CLK_MGT_REPEATER:MGT1">CLK_MGT_REPEATER:MGT1</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-HCLK_MGT_REPEATER-HCLK_MGT_REPEATER:BUF.MGT1" title="HCLK_MGT_REPEATER:BUF.MGT1">HCLK_MGT_REPEATER:BUF.MGT1</a></td></tr>
 </table>
-<div id="bits-xc4v-HCLK_MGT_REPEATER-CLK_MGT_REPEATER:MGT0"></div>
-<div id="bits-xc4v-HCLK_MGT_REPEATER-CLK_MGT_REPEATER:MGT1"></div>
+<div id="bits-xc4v-HCLK_MGT_REPEATER-HCLK_MGT_REPEATER:BUF.MGT0"></div>
+<div id="bits-xc4v-HCLK_MGT_REPEATER-HCLK_MGT_REPEATER:BUF.MGT1"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>CLK_MGT_REPEATER:MGT0</th><th>[0, 6, 12]</th></tr>
-<tr><th>CLK_MGT_REPEATER:MGT1</th><th>[0, 6, 13]</th></tr>
+<tr><th>HCLK_MGT_REPEATER:BUF.MGT0</th><th>[0, 6, 12]</th></tr>
+<tr><th>HCLK_MGT_REPEATER:BUF.MGT1</th><th>[0, 6, 13]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 </section>
@@ -5792,6 +5794,67 @@
 <tr><td>Non-inverted</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
 </table>
 </section>
+</section>
+<section id="hclk-mgt">
+<h2><code class="docutils literal notranslate"><span class="pre">HCLK_MGT</span></code><a class="headerlink" href="#hclk-mgt" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="21">HCLK_MGT bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="20">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-HCLK_MGT-HCLK_MGT:BUF.HCLK0" title="HCLK_MGT:BUF.HCLK0">HCLK_MGT:BUF.HCLK0</a></td><td>-</td><td><a href="#bits-xc4v-HCLK_MGT-HCLK_MGT:BUF.HCLK4" title="HCLK_MGT:BUF.HCLK4">HCLK_MGT:BUF.HCLK4</a></td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-HCLK_MGT-HCLK_MGT:BUF.HCLK1" title="HCLK_MGT:BUF.HCLK1">HCLK_MGT:BUF.HCLK1</a></td><td>-</td><td><a href="#bits-xc4v-HCLK_MGT-HCLK_MGT:BUF.HCLK5" title="HCLK_MGT:BUF.HCLK5">HCLK_MGT:BUF.HCLK5</a></td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-HCLK_MGT-HCLK_MGT:BUF.MGT0" title="HCLK_MGT:BUF.MGT0">HCLK_MGT:BUF.MGT0</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-HCLK_MGT-HCLK_MGT:BUF.HCLK2" title="HCLK_MGT:BUF.HCLK2">HCLK_MGT:BUF.HCLK2</a></td><td>-</td><td><a href="#bits-xc4v-HCLK_MGT-HCLK_MGT:BUF.HCLK6" title="HCLK_MGT:BUF.HCLK6">HCLK_MGT:BUF.HCLK6</a></td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-HCLK_MGT-HCLK_MGT:BUF.MGT1" title="HCLK_MGT:BUF.MGT1">HCLK_MGT:BUF.MGT1</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-HCLK_MGT-HCLK_MGT:BUF.HCLK3" title="HCLK_MGT:BUF.HCLK3">HCLK_MGT:BUF.HCLK3</a></td><td>-</td><td><a href="#bits-xc4v-HCLK_MGT-HCLK_MGT:BUF.HCLK7" title="HCLK_MGT:BUF.HCLK7">HCLK_MGT:BUF.HCLK7</a></td></tr>
+</table>
+<div id="bits-xc4v-HCLK_MGT-HCLK_MGT:BUF.HCLK0"></div>
+<div id="bits-xc4v-HCLK_MGT-HCLK_MGT:BUF.HCLK1"></div>
+<div id="bits-xc4v-HCLK_MGT-HCLK_MGT:BUF.HCLK2"></div>
+<div id="bits-xc4v-HCLK_MGT-HCLK_MGT:BUF.HCLK3"></div>
+<div id="bits-xc4v-HCLK_MGT-HCLK_MGT:BUF.HCLK4"></div>
+<div id="bits-xc4v-HCLK_MGT-HCLK_MGT:BUF.HCLK5"></div>
+<div id="bits-xc4v-HCLK_MGT-HCLK_MGT:BUF.HCLK6"></div>
+<div id="bits-xc4v-HCLK_MGT-HCLK_MGT:BUF.HCLK7"></div>
+<div id="bits-xc4v-HCLK_MGT-HCLK_MGT:BUF.MGT0"></div>
+<div id="bits-xc4v-HCLK_MGT-HCLK_MGT:BUF.MGT1"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>HCLK_MGT:BUF.HCLK0</th><th>[0, 17, 12]</th></tr>
+<tr><th>HCLK_MGT:BUF.HCLK1</th><th>[0, 17, 13]</th></tr>
+<tr><th>HCLK_MGT:BUF.HCLK2</th><th>[0, 17, 14]</th></tr>
+<tr><th>HCLK_MGT:BUF.HCLK3</th><th>[0, 17, 15]</th></tr>
+<tr><th>HCLK_MGT:BUF.HCLK4</th><th>[0, 19, 12]</th></tr>
+<tr><th>HCLK_MGT:BUF.HCLK5</th><th>[0, 19, 13]</th></tr>
+<tr><th>HCLK_MGT:BUF.HCLK6</th><th>[0, 19, 14]</th></tr>
+<tr><th>HCLK_MGT:BUF.HCLK7</th><th>[0, 19, 15]</th></tr>
+<tr><th>HCLK_MGT:BUF.MGT0</th><th>[0, 8, 14]</th></tr>
+<tr><th>HCLK_MGT:BUF.MGT1</th><th>[0, 8, 15]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
 </section>
 </section>
 
