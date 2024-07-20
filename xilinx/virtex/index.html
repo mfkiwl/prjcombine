@@ -19,7 +19,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Configurable Logic Block — Virtex" href="clb.html" />
+    <link rel="next" title="Configurable Logic Block" href="clb.html" />
     <link rel="prev" title="Xilinx FPGAs" href="../index.html" /> 
 </head>
 
@@ -49,8 +49,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Xilinx FPGAs</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Virtex</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block — Virtex</a></li>
-<li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM — Virtex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html">Input/Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="corner.html">Corners</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dll.html">Delay Locked Loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pcilogic.html">PCI Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Virtex 2</a></li>
@@ -98,14 +104,58 @@
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="clb.html">Configurable Logic Block — Virtex</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="clb.html">Configurable Logic Block</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="clb.html#bitstream">Bitstream</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="bram.html">Block RAM — Virtex</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="bram.html">Block RAM</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="bram.html#bitstream-left-side">Bitstream — left side</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bram.html#bitstream-right-side">Bitstream — right side</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bram.html#bitstream-middle">Bitstream — middle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bram.html#bitstream-column-bottom">Bitstream — column bottom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bram.html#bitstream-column-top">Bitstream — column top</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">Input/Output</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="io.html#io-l"><code class="docutils literal notranslate"><span class="pre">IO.L</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#io-r"><code class="docutils literal notranslate"><span class="pre">IO.R</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#io-b"><code class="docutils literal notranslate"><span class="pre">IO.B</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#io-t"><code class="docutils literal notranslate"><span class="pre">IO.T</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="corner.html">Corners</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="corner.html#cnr-bl"><code class="docutils literal notranslate"><span class="pre">CNR.BL</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="corner.html#cnr-br"><code class="docutils literal notranslate"><span class="pre">CNR.BR</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="corner.html#cnr-tl"><code class="docutils literal notranslate"><span class="pre">CNR.TL</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="corner.html#cnr-tr"><code class="docutils literal notranslate"><span class="pre">CNR.TR</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dll.html">Delay Locked Loop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dll.html#dll-bot"><code class="docutils literal notranslate"><span class="pre">DLL.BOT</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dll.html#dllp-bot"><code class="docutils literal notranslate"><span class="pre">DLLP.BOT</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dll.html#dlls-bot"><code class="docutils literal notranslate"><span class="pre">DLLS.BOT</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dll.html#dll-top"><code class="docutils literal notranslate"><span class="pre">DLL.TOP</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dll.html#dllp-top"><code class="docutils literal notranslate"><span class="pre">DLLP.TOP</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dll.html#dlls-top"><code class="docutils literal notranslate"><span class="pre">DLLS.TOP</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pcilogic.html">PCI Logic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pcilogic.html#clkl"><code class="docutils literal notranslate"><span class="pre">CLKL</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pcilogic.html#clkr"><code class="docutils literal notranslate"><span class="pre">CLKR</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="clock.html">Clock interconnect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#clkb"><code class="docutils literal notranslate"><span class="pre">CLKB</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#clkb-4dll"><code class="docutils literal notranslate"><span class="pre">CLKB_4DLL</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#clkb-2dll"><code class="docutils literal notranslate"><span class="pre">CLKB_2DLL</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#clkt"><code class="docutils literal notranslate"><span class="pre">CLKT</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#clkt-4dll"><code class="docutils literal notranslate"><span class="pre">CLKT_4DLL</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#clkt-2dll"><code class="docutils literal notranslate"><span class="pre">CLKT_2DLL</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration registers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config.html#cor"><code class="docutils literal notranslate"><span class="pre">COR</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#ctl"><code class="docutils literal notranslate"><span class="pre">CTL</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -117,7 +167,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../index.html" class="btn btn-neutral float-left" title="Xilinx FPGAs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="clb.html" class="btn btn-neutral float-right" title="Configurable Logic Block — Virtex" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="clb.html" class="btn btn-neutral float-right" title="Configurable Logic Block" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

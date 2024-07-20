@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delay Locked Loop &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PCI Logic" href="pcilogic.html" />
+    <link rel="prev" title="Corners" href="corner.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../xc9500/index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Xilinx FPGAs</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Virtex</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html">Input/Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="corner.html">Corners</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Delay Locked Loop</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dll-bot"><code class="docutils literal notranslate"><span class="pre">DLL.BOT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dllp-bot"><code class="docutils literal notranslate"><span class="pre">DLLP.BOT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dlls-bot"><code class="docutils literal notranslate"><span class="pre">DLLS.BOT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dll-top"><code class="docutils literal notranslate"><span class="pre">DLL.TOP</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dllp-top"><code class="docutils literal notranslate"><span class="pre">DLLP.TOP</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dlls-top"><code class="docutils literal notranslate"><span class="pre">DLLS.TOP</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pcilogic.html">PCI Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Virtex 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan3/index.html">Spartan 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Spartan 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Virtex 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Virtex 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex6/index.html">Virtex 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex7/index.html">Virtex 7</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Xilinx FPGAs</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Virtex</a></li>
+      <li class="breadcrumb-item active">Delay Locked Loop</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/xilinx/virtex/dll.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="delay-locked-loop">
+<h1>Delay Locked Loop<a class="headerlink" href="#delay-locked-loop" title="Link to this heading"></a></h1>
+<section id="dll-bot">
+<h2><code class="docutils literal notranslate"><span class="pre">DLL.BOT</span></code><a class="headerlink" href="#dll-bot" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="11">DLL.BOT bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="10">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr>
+<tr><td>0</td>
+<td>-</td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[5]">INT:MUX.0.DLL.IMUX.RST[5]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[4]">INT:MUX.0.DLL.IMUX.RST[4]</a></td><td>-</td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[6]">INT:MUX.0.DLL.IMUX.RST[6]</a></td><td>-</td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[0]">INT:MUX.0.DLL.IMUX.RST[0]</a></td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[3]">INT:MUX.0.DLL.IMUX.RST[3]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[2]">INT:MUX.0.DLL.IMUX.RST[2]</a></td><td>-</td><td>-</td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[1]">INT:MUX.0.DLL.IMUX.RST[1]</a></td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[0]">INT:MUX.0.DLL.IMUX.CLKIN[0]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[0]">INT:MUX.0.DLL.IMUX.CLKFB[0]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[1]">INT:MUX.0.DLL.IMUX.CLKFB[1]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[3]">INT:MUX.0.DLL.IMUX.CLKFB[3]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[3]">INT:MUX.0.DLL.IMUX.CLKIN[3]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[2]">INT:MUX.0.DLL.IMUX.CLKFB[2]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[4]">INT:MUX.0.DLL.IMUX.CLKFB[4]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[4]">INT:MUX.0.DLL.IMUX.CLKIN[4]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[1]">INT:MUX.0.DLL.IMUX.CLKIN[1]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[2]">INT:MUX.0.DLL.IMUX.CLKIN[2]</a></td></tr>
+<tr><td>4</td>
+<td>-</td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[5]">INT:MUX.0.DLL.IMUX.CLKIN[5]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[6]">INT:MUX.0.DLL.IMUX.CLKFB[6]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[7]">INT:MUX.0.DLL.IMUX.CLKIN[7]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[8]">INT:MUX.0.DLL.IMUX.CLKFB[8]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[10]">INT:MUX.0.DLL.IMUX.CLKIN[10]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[11]">INT:MUX.0.DLL.IMUX.CLKFB[11]</a></td><td>-</td><td><a href="#bits-xcv-DLL.BOT-DLL:CLKIN_PAD" title="DLL:CLKIN_PAD">DLL:CLKIN_PAD</a></td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[9]">INT:MUX.0.DLL.IMUX.CLKFB[9]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[5]">INT:MUX.0.DLL.IMUX.CLKFB[5]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[6]">INT:MUX.0.DLL.IMUX.CLKIN[6]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[7]">INT:MUX.0.DLL.IMUX.CLKFB[7]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[8]">INT:MUX.0.DLL.IMUX.CLKIN[8]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[10]">INT:MUX.0.DLL.IMUX.CLKFB[10]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[11]">INT:MUX.0.DLL.IMUX.CLKIN[11]</a></td><td><a href="#bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[9]">INT:MUX.0.DLL.IMUX.CLKIN[9]</a></td><td><a href="#bits-xcv-DLL.BOT-DLL:CLKFB_PAD" title="DLL:CLKFB_PAD">DLL:CLKFB_PAD</a></td><td>-</td></tr>
+</table>
+<div id="bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB"></div>
+<div id="bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:MUX.0.DLL.IMUX.CLKFB</th><th>[0, 6, 4]</th><th>[0, 5, 6]</th><th>[0, 0, 6]</th><th>[0, 4, 4]</th><th>[0, 3, 6]</th><th>[0, 2, 4]</th><th>[0, 1, 6]</th><th>[0, 6, 3]</th><th>[0, 3, 3]</th><th>[0, 5, 3]</th><th>[0, 2, 3]</th><th>[0, 1, 3]</th></tr>
+<tr><th>INT:MUX.0.DLL.IMUX.CLKIN</th><th>[0, 6, 6]</th><th>[0, 5, 4]</th><th>[0, 7, 6]</th><th>[0, 4, 6]</th><th>[0, 3, 4]</th><th>[0, 2, 6]</th><th>[0, 1, 4]</th><th>[0, 7, 3]</th><th>[0, 4, 3]</th><th>[0, 9, 3]</th><th>[0, 8, 3]</th><th>[0, 0, 3]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.CLKPAD0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.CLKPAD1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.4</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.11</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.10</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.9</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.3</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.8</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.4</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.6</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.5</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.7</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.5</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xcv-DLL.BOT-INT:MUX.0.DLL.IMUX.RST"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:MUX.0.DLL.IMUX.RST</th><th>[0, 4, 0]</th><th>[0, 1, 0]</th><th>[0, 2, 0]</th><th>[0, 2, 1]</th><th>[0, 3, 1]</th><th>[0, 6, 1]</th><th>[0, 6, 0]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>1.HEX.H2.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H2.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>1.HEX.H3.2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H3.1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.4</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.5</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xcv-DLL.BOT-DLL:CLKFB_PAD"></div>
+<div id="bits-xcv-DLL.BOT-DLL:CLKIN_PAD"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>DLL:CLKFB_PAD</th><th>[0, 8, 6]</th></tr>
+<tr><th>DLL:CLKIN_PAD</th><th>[0, 8, 4]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="dllp-bot">
+<h2><code class="docutils literal notranslate"><span class="pre">DLLP.BOT</span></code><a class="headerlink" href="#dllp-bot" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="15">DLLP.BOT bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="14">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th></tr>
+<tr><td>0</td>
+<td>-</td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[5]">INT:MUX.0.DLL.IMUX.RST[5]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[4]">INT:MUX.0.DLL.IMUX.RST[4]</a></td><td>-</td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[6]">INT:MUX.0.DLL.IMUX.RST[6]</a></td><td>-</td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[0]">INT:MUX.0.DLL.IMUX.RST[0]</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[3]">INT:MUX.0.DLL.IMUX.RST[3]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[2]">INT:MUX.0.DLL.IMUX.RST[2]</a></td><td>-</td><td>-</td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[1]">INT:MUX.0.DLL.IMUX.RST[1]</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[0]">INT:MUX.0.DLL.IMUX.CLKIN[0]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[0]">INT:MUX.0.DLL.IMUX.CLKFB[0]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[1]">INT:MUX.0.DLL.IMUX.CLKFB[1]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[3]">INT:MUX.0.DLL.IMUX.CLKFB[3]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[3]">INT:MUX.0.DLL.IMUX.CLKIN[3]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[2]">INT:MUX.0.DLL.IMUX.CLKFB[2]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[4]">INT:MUX.0.DLL.IMUX.CLKFB[4]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[4]">INT:MUX.0.DLL.IMUX.CLKIN[4]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[1]">INT:MUX.0.DLL.IMUX.CLKIN[1]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[2]">INT:MUX.0.DLL.IMUX.CLKIN[2]</a></td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[7]">INT:MUX.0.DLL.IMUX.CLKIN[7]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[8]">INT:MUX.0.DLL.IMUX.CLKFB[8]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[9]">INT:MUX.0.DLL.IMUX.CLKIN[9]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[10]">INT:MUX.0.DLL.IMUX.CLKFB[10]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[12]">INT:MUX.0.DLL.IMUX.CLKIN[12]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[13]">INT:MUX.0.DLL.IMUX.CLKFB[13]</a></td><td>-</td><td><a href="#bits-xcv-DLLP.BOT-DLL:CLKIN_PAD" title="DLL:CLKIN_PAD">DLL:CLKIN_PAD</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[11]">INT:MUX.0.DLL.IMUX.CLKFB[11]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[7]">INT:MUX.0.DLL.IMUX.CLKFB[7]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[8]">INT:MUX.0.DLL.IMUX.CLKIN[8]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[9]">INT:MUX.0.DLL.IMUX.CLKFB[9]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[10]">INT:MUX.0.DLL.IMUX.CLKIN[10]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[12]">INT:MUX.0.DLL.IMUX.CLKFB[12]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[13]">INT:MUX.0.DLL.IMUX.CLKIN[13]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[11]">INT:MUX.0.DLL.IMUX.CLKIN[11]</a></td><td><a href="#bits-xcv-DLLP.BOT-DLL:CLKFB_PAD" title="DLL:CLKFB_PAD">DLL:CLKFB_PAD</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[5]">INT:MUX.0.DLL.IMUX.CLKIN[5]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[6]">INT:MUX.0.DLL.IMUX.CLKIN[6]</a></td><td>-</td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[6]">INT:MUX.0.DLL.IMUX.CLKFB[6]</a></td><td><a href="#bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[5]">INT:MUX.0.DLL.IMUX.CLKFB[5]</a></td></tr>
+</table>
+<div id="bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:MUX.0.DLL.IMUX.CLKIN</th><th>[0, 6, 6]</th><th>[0, 5, 4]</th><th>[0, 7, 6]</th><th>[0, 4, 6]</th><th>[0, 3, 4]</th><th>[0, 2, 6]</th><th>[0, 1, 4]</th><th>[0, 10, 6]</th><th>[0, 9, 6]</th><th>[0, 7, 3]</th><th>[0, 4, 3]</th><th>[0, 9, 3]</th><th>[0, 8, 3]</th><th>[0, 0, 3]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.CLKPAD0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.CLKPAD1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.IOFB0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.IOFB1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.4</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.11</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.10</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.9</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.3</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>3.DLL.OUT.CLK2X</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.8</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.4</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.6</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.5</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.7</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.5</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:MUX.0.DLL.IMUX.CLKFB</th><th>[0, 6, 4]</th><th>[0, 5, 6]</th><th>[0, 0, 6]</th><th>[0, 4, 4]</th><th>[0, 3, 6]</th><th>[0, 2, 4]</th><th>[0, 1, 6]</th><th>[0, 12, 6]</th><th>[0, 13, 6]</th><th>[0, 6, 3]</th><th>[0, 3, 3]</th><th>[0, 5, 3]</th><th>[0, 2, 3]</th><th>[0, 1, 3]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.CLKPAD0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.CLKPAD1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.IOFB0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.IOFB1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.4</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.11</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.10</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.9</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.3</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.8</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.4</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.6</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.5</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.7</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.5</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xcv-DLLP.BOT-INT:MUX.0.DLL.IMUX.RST"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:MUX.0.DLL.IMUX.RST</th><th>[0, 4, 0]</th><th>[0, 1, 0]</th><th>[0, 2, 0]</th><th>[0, 2, 1]</th><th>[0, 3, 1]</th><th>[0, 6, 1]</th><th>[0, 6, 0]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>1.HEX.H2.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H2.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>1.HEX.H3.2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H3.1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.4</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.5</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xcv-DLLP.BOT-DLL:CLKFB_PAD"></div>
+<div id="bits-xcv-DLLP.BOT-DLL:CLKIN_PAD"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>DLL:CLKFB_PAD</th><th>[0, 8, 6]</th></tr>
+<tr><th>DLL:CLKIN_PAD</th><th>[0, 8, 4]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="dlls-bot">
+<h2><code class="docutils literal notranslate"><span class="pre">DLLS.BOT</span></code><a class="headerlink" href="#dlls-bot" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="15">DLLS.BOT bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="14">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th></tr>
+<tr><td>0</td>
+<td>-</td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[5]">INT:MUX.0.DLL.IMUX.RST[5]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[4]">INT:MUX.0.DLL.IMUX.RST[4]</a></td><td>-</td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[6]">INT:MUX.0.DLL.IMUX.RST[6]</a></td><td>-</td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[0]">INT:MUX.0.DLL.IMUX.RST[0]</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[3]">INT:MUX.0.DLL.IMUX.RST[3]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[2]">INT:MUX.0.DLL.IMUX.RST[2]</a></td><td>-</td><td>-</td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[1]">INT:MUX.0.DLL.IMUX.RST[1]</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[0]">INT:MUX.0.DLL.IMUX.CLKIN[0]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[0]">INT:MUX.0.DLL.IMUX.CLKFB[0]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[1]">INT:MUX.0.DLL.IMUX.CLKFB[1]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[3]">INT:MUX.0.DLL.IMUX.CLKFB[3]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[3]">INT:MUX.0.DLL.IMUX.CLKIN[3]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[2]">INT:MUX.0.DLL.IMUX.CLKFB[2]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[4]">INT:MUX.0.DLL.IMUX.CLKFB[4]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[4]">INT:MUX.0.DLL.IMUX.CLKIN[4]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[1]">INT:MUX.0.DLL.IMUX.CLKIN[1]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[2]">INT:MUX.0.DLL.IMUX.CLKIN[2]</a></td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[7]">INT:MUX.0.DLL.IMUX.CLKIN[7]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[8]">INT:MUX.0.DLL.IMUX.CLKFB[8]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[9]">INT:MUX.0.DLL.IMUX.CLKIN[9]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[10]">INT:MUX.0.DLL.IMUX.CLKFB[10]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[12]">INT:MUX.0.DLL.IMUX.CLKIN[12]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[13]">INT:MUX.0.DLL.IMUX.CLKFB[13]</a></td><td>-</td><td><a href="#bits-xcv-DLLS.BOT-DLL:CLKIN_PAD" title="DLL:CLKIN_PAD">DLL:CLKIN_PAD</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[11]">INT:MUX.0.DLL.IMUX.CLKFB[11]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[7]">INT:MUX.0.DLL.IMUX.CLKFB[7]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[8]">INT:MUX.0.DLL.IMUX.CLKIN[8]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[9]">INT:MUX.0.DLL.IMUX.CLKFB[9]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[10]">INT:MUX.0.DLL.IMUX.CLKIN[10]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[12]">INT:MUX.0.DLL.IMUX.CLKFB[12]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[13]">INT:MUX.0.DLL.IMUX.CLKIN[13]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[11]">INT:MUX.0.DLL.IMUX.CLKIN[11]</a></td><td><a href="#bits-xcv-DLLS.BOT-DLL:CLKFB_PAD" title="DLL:CLKFB_PAD">DLL:CLKFB_PAD</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[5]">INT:MUX.0.DLL.IMUX.CLKIN[5]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[6]">INT:MUX.0.DLL.IMUX.CLKIN[6]</a></td><td>-</td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[6]">INT:MUX.0.DLL.IMUX.CLKFB[6]</a></td><td><a href="#bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[5]">INT:MUX.0.DLL.IMUX.CLKFB[5]</a></td></tr>
+</table>
+<div id="bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:MUX.0.DLL.IMUX.CLKIN</th><th>[0, 6, 6]</th><th>[0, 5, 4]</th><th>[0, 7, 6]</th><th>[0, 4, 6]</th><th>[0, 3, 4]</th><th>[0, 2, 6]</th><th>[0, 1, 4]</th><th>[0, 10, 6]</th><th>[0, 9, 6]</th><th>[0, 7, 3]</th><th>[0, 4, 3]</th><th>[0, 9, 3]</th><th>[0, 8, 3]</th><th>[0, 0, 3]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.CLKPAD0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.CLKPAD1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.IOFB0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.IOFB1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.4</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.11</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.10</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.9</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.3</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.8</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.4</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.6</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.5</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.7</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.5</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:MUX.0.DLL.IMUX.CLKFB</th><th>[0, 6, 4]</th><th>[0, 5, 6]</th><th>[0, 0, 6]</th><th>[0, 4, 4]</th><th>[0, 3, 6]</th><th>[0, 2, 4]</th><th>[0, 1, 6]</th><th>[0, 12, 6]</th><th>[0, 13, 6]</th><th>[0, 6, 3]</th><th>[0, 3, 3]</th><th>[0, 5, 3]</th><th>[0, 2, 3]</th><th>[0, 1, 3]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.CLKPAD0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.CLKPAD1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.IOFB0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.IOFB1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.4</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.11</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.10</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.9</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.3</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DLL.OUT.CLK2X</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.8</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.4</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.6</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.5</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.7</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.5</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xcv-DLLS.BOT-INT:MUX.0.DLL.IMUX.RST"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:MUX.0.DLL.IMUX.RST</th><th>[0, 4, 0]</th><th>[0, 1, 0]</th><th>[0, 2, 0]</th><th>[0, 2, 1]</th><th>[0, 3, 1]</th><th>[0, 6, 1]</th><th>[0, 6, 0]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>1.HEX.H2.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H2.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>1.HEX.H3.2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H3.1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.4</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.5</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xcv-DLLS.BOT-DLL:CLKFB_PAD"></div>
+<div id="bits-xcv-DLLS.BOT-DLL:CLKIN_PAD"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>DLL:CLKFB_PAD</th><th>[0, 8, 6]</th></tr>
+<tr><th>DLL:CLKIN_PAD</th><th>[0, 8, 4]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="dll-top">
+<h2><code class="docutils literal notranslate"><span class="pre">DLL.TOP</span></code><a class="headerlink" href="#dll-top" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="11">DLL.TOP bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="10">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr>
+<tr><td>0</td>
+<td>-</td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[5]">INT:MUX.0.DLL.IMUX.RST[5]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[4]">INT:MUX.0.DLL.IMUX.RST[4]</a></td><td>-</td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[6]">INT:MUX.0.DLL.IMUX.RST[6]</a></td><td>-</td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[0]">INT:MUX.0.DLL.IMUX.RST[0]</a></td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[3]">INT:MUX.0.DLL.IMUX.RST[3]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[2]">INT:MUX.0.DLL.IMUX.RST[2]</a></td><td>-</td><td>-</td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[1]">INT:MUX.0.DLL.IMUX.RST[1]</a></td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[0]">INT:MUX.0.DLL.IMUX.CLKIN[0]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[0]">INT:MUX.0.DLL.IMUX.CLKFB[0]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[1]">INT:MUX.0.DLL.IMUX.CLKFB[1]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[3]">INT:MUX.0.DLL.IMUX.CLKFB[3]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[3]">INT:MUX.0.DLL.IMUX.CLKIN[3]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[2]">INT:MUX.0.DLL.IMUX.CLKFB[2]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[4]">INT:MUX.0.DLL.IMUX.CLKFB[4]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[4]">INT:MUX.0.DLL.IMUX.CLKIN[4]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[1]">INT:MUX.0.DLL.IMUX.CLKIN[1]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[2]">INT:MUX.0.DLL.IMUX.CLKIN[2]</a></td></tr>
+<tr><td>4</td>
+<td>-</td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[5]">INT:MUX.0.DLL.IMUX.CLKIN[5]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[6]">INT:MUX.0.DLL.IMUX.CLKFB[6]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[7]">INT:MUX.0.DLL.IMUX.CLKIN[7]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[8]">INT:MUX.0.DLL.IMUX.CLKFB[8]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[9]">INT:MUX.0.DLL.IMUX.CLKIN[9]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[10]">INT:MUX.0.DLL.IMUX.CLKFB[10]</a></td><td>-</td><td><a href="#bits-xcv-DLL.TOP-DLL:CLKIN_PAD" title="DLL:CLKIN_PAD">DLL:CLKIN_PAD</a></td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[11]">INT:MUX.0.DLL.IMUX.CLKFB[11]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[5]">INT:MUX.0.DLL.IMUX.CLKFB[5]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[6]">INT:MUX.0.DLL.IMUX.CLKIN[6]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[7]">INT:MUX.0.DLL.IMUX.CLKFB[7]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[8]">INT:MUX.0.DLL.IMUX.CLKIN[8]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[9]">INT:MUX.0.DLL.IMUX.CLKFB[9]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[10]">INT:MUX.0.DLL.IMUX.CLKIN[10]</a></td><td><a href="#bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[11]">INT:MUX.0.DLL.IMUX.CLKIN[11]</a></td><td><a href="#bits-xcv-DLL.TOP-DLL:CLKFB_PAD" title="DLL:CLKFB_PAD">DLL:CLKFB_PAD</a></td><td>-</td></tr>
+</table>
+<div id="bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB"></div>
+<div id="bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:MUX.0.DLL.IMUX.CLKFB</th><th>[0, 0, 6]</th><th>[0, 6, 4]</th><th>[0, 5, 6]</th><th>[0, 4, 4]</th><th>[0, 3, 6]</th><th>[0, 2, 4]</th><th>[0, 1, 6]</th><th>[0, 6, 3]</th><th>[0, 3, 3]</th><th>[0, 5, 3]</th><th>[0, 2, 3]</th><th>[0, 1, 3]</th></tr>
+<tr><th>INT:MUX.0.DLL.IMUX.CLKIN</th><th>[0, 7, 6]</th><th>[0, 6, 6]</th><th>[0, 5, 4]</th><th>[0, 4, 6]</th><th>[0, 3, 4]</th><th>[0, 2, 6]</th><th>[0, 1, 4]</th><th>[0, 7, 3]</th><th>[0, 4, 3]</th><th>[0, 9, 3]</th><th>[0, 8, 3]</th><th>[0, 0, 3]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.CLKPAD0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.CLKPAD1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.11</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.10</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.9</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.8</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.3</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.7</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.4</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.6</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.5</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xcv-DLL.TOP-INT:MUX.0.DLL.IMUX.RST"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:MUX.0.DLL.IMUX.RST</th><th>[0, 4, 0]</th><th>[0, 1, 0]</th><th>[0, 2, 0]</th><th>[0, 2, 1]</th><th>[0, 3, 1]</th><th>[0, 6, 1]</th><th>[0, 6, 0]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>1.HEX.H2.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H2.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>1.HEX.H3.2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H3.1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.4</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.5</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xcv-DLL.TOP-DLL:CLKFB_PAD"></div>
+<div id="bits-xcv-DLL.TOP-DLL:CLKIN_PAD"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>DLL:CLKFB_PAD</th><th>[0, 8, 6]</th></tr>
+<tr><th>DLL:CLKIN_PAD</th><th>[0, 8, 4]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="dllp-top">
+<h2><code class="docutils literal notranslate"><span class="pre">DLLP.TOP</span></code><a class="headerlink" href="#dllp-top" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="15">DLLP.TOP bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="14">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th></tr>
+<tr><td>0</td>
+<td>-</td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[5]">INT:MUX.0.DLL.IMUX.RST[5]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[4]">INT:MUX.0.DLL.IMUX.RST[4]</a></td><td>-</td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[6]">INT:MUX.0.DLL.IMUX.RST[6]</a></td><td>-</td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[0]">INT:MUX.0.DLL.IMUX.RST[0]</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[3]">INT:MUX.0.DLL.IMUX.RST[3]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[2]">INT:MUX.0.DLL.IMUX.RST[2]</a></td><td>-</td><td>-</td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[1]">INT:MUX.0.DLL.IMUX.RST[1]</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[0]">INT:MUX.0.DLL.IMUX.CLKIN[0]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[0]">INT:MUX.0.DLL.IMUX.CLKFB[0]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[1]">INT:MUX.0.DLL.IMUX.CLKFB[1]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[3]">INT:MUX.0.DLL.IMUX.CLKFB[3]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[3]">INT:MUX.0.DLL.IMUX.CLKIN[3]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[2]">INT:MUX.0.DLL.IMUX.CLKFB[2]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[4]">INT:MUX.0.DLL.IMUX.CLKFB[4]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[4]">INT:MUX.0.DLL.IMUX.CLKIN[4]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[1]">INT:MUX.0.DLL.IMUX.CLKIN[1]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[2]">INT:MUX.0.DLL.IMUX.CLKIN[2]</a></td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[7]">INT:MUX.0.DLL.IMUX.CLKIN[7]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[8]">INT:MUX.0.DLL.IMUX.CLKFB[8]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[9]">INT:MUX.0.DLL.IMUX.CLKIN[9]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[10]">INT:MUX.0.DLL.IMUX.CLKFB[10]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[11]">INT:MUX.0.DLL.IMUX.CLKIN[11]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[12]">INT:MUX.0.DLL.IMUX.CLKFB[12]</a></td><td>-</td><td><a href="#bits-xcv-DLLP.TOP-DLL:CLKIN_PAD" title="DLL:CLKIN_PAD">DLL:CLKIN_PAD</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[13]">INT:MUX.0.DLL.IMUX.CLKFB[13]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[7]">INT:MUX.0.DLL.IMUX.CLKFB[7]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[8]">INT:MUX.0.DLL.IMUX.CLKIN[8]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[9]">INT:MUX.0.DLL.IMUX.CLKFB[9]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[10]">INT:MUX.0.DLL.IMUX.CLKIN[10]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[11]">INT:MUX.0.DLL.IMUX.CLKFB[11]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[12]">INT:MUX.0.DLL.IMUX.CLKIN[12]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[13]">INT:MUX.0.DLL.IMUX.CLKIN[13]</a></td><td><a href="#bits-xcv-DLLP.TOP-DLL:CLKFB_PAD" title="DLL:CLKFB_PAD">DLL:CLKFB_PAD</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[5]">INT:MUX.0.DLL.IMUX.CLKIN[5]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[6]">INT:MUX.0.DLL.IMUX.CLKIN[6]</a></td><td>-</td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[6]">INT:MUX.0.DLL.IMUX.CLKFB[6]</a></td><td><a href="#bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[5]">INT:MUX.0.DLL.IMUX.CLKFB[5]</a></td></tr>
+</table>
+<div id="bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:MUX.0.DLL.IMUX.CLKIN</th><th>[0, 7, 6]</th><th>[0, 6, 6]</th><th>[0, 5, 4]</th><th>[0, 4, 6]</th><th>[0, 3, 4]</th><th>[0, 2, 6]</th><th>[0, 1, 4]</th><th>[0, 10, 6]</th><th>[0, 9, 6]</th><th>[0, 7, 3]</th><th>[0, 4, 3]</th><th>[0, 9, 3]</th><th>[0, 8, 3]</th><th>[0, 0, 3]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.CLKPAD0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.CLKPAD1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.IOFB0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.IOFB1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>3.DLL.OUT.CLK2X</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.11</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.10</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.9</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.8</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.3</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.7</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.4</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.6</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.5</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:MUX.0.DLL.IMUX.CLKFB</th><th>[0, 0, 6]</th><th>[0, 6, 4]</th><th>[0, 5, 6]</th><th>[0, 4, 4]</th><th>[0, 3, 6]</th><th>[0, 2, 4]</th><th>[0, 1, 6]</th><th>[0, 12, 6]</th><th>[0, 13, 6]</th><th>[0, 6, 3]</th><th>[0, 3, 3]</th><th>[0, 5, 3]</th><th>[0, 2, 3]</th><th>[0, 1, 3]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.CLKPAD0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.CLKPAD1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.IOFB0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.IOFB1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.11</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.10</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.9</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.8</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.3</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.7</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.4</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.6</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.5</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xcv-DLLP.TOP-INT:MUX.0.DLL.IMUX.RST"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:MUX.0.DLL.IMUX.RST</th><th>[0, 4, 0]</th><th>[0, 1, 0]</th><th>[0, 2, 0]</th><th>[0, 2, 1]</th><th>[0, 3, 1]</th><th>[0, 6, 1]</th><th>[0, 6, 0]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>1.HEX.H2.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H2.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>1.HEX.H3.2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H3.1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.4</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.5</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xcv-DLLP.TOP-DLL:CLKFB_PAD"></div>
+<div id="bits-xcv-DLLP.TOP-DLL:CLKIN_PAD"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>DLL:CLKFB_PAD</th><th>[0, 8, 6]</th></tr>
+<tr><th>DLL:CLKIN_PAD</th><th>[0, 8, 4]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="dlls-top">
+<h2><code class="docutils literal notranslate"><span class="pre">DLLS.TOP</span></code><a class="headerlink" href="#dlls-top" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="15">DLLS.TOP bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="14">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th></tr>
+<tr><td>0</td>
+<td>-</td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[5]">INT:MUX.0.DLL.IMUX.RST[5]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[4]">INT:MUX.0.DLL.IMUX.RST[4]</a></td><td>-</td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[6]">INT:MUX.0.DLL.IMUX.RST[6]</a></td><td>-</td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[0]">INT:MUX.0.DLL.IMUX.RST[0]</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[3]">INT:MUX.0.DLL.IMUX.RST[3]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[2]">INT:MUX.0.DLL.IMUX.RST[2]</a></td><td>-</td><td>-</td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.RST" title="INT:MUX.0.DLL.IMUX.RST[1]">INT:MUX.0.DLL.IMUX.RST[1]</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[0]">INT:MUX.0.DLL.IMUX.CLKIN[0]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[0]">INT:MUX.0.DLL.IMUX.CLKFB[0]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[1]">INT:MUX.0.DLL.IMUX.CLKFB[1]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[3]">INT:MUX.0.DLL.IMUX.CLKFB[3]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[3]">INT:MUX.0.DLL.IMUX.CLKIN[3]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[2]">INT:MUX.0.DLL.IMUX.CLKFB[2]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[4]">INT:MUX.0.DLL.IMUX.CLKFB[4]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[4]">INT:MUX.0.DLL.IMUX.CLKIN[4]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[1]">INT:MUX.0.DLL.IMUX.CLKIN[1]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[2]">INT:MUX.0.DLL.IMUX.CLKIN[2]</a></td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[7]">INT:MUX.0.DLL.IMUX.CLKIN[7]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[8]">INT:MUX.0.DLL.IMUX.CLKFB[8]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[9]">INT:MUX.0.DLL.IMUX.CLKIN[9]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[10]">INT:MUX.0.DLL.IMUX.CLKFB[10]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[11]">INT:MUX.0.DLL.IMUX.CLKIN[11]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[12]">INT:MUX.0.DLL.IMUX.CLKFB[12]</a></td><td>-</td><td><a href="#bits-xcv-DLLS.TOP-DLL:CLKIN_PAD" title="DLL:CLKIN_PAD">DLL:CLKIN_PAD</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[13]">INT:MUX.0.DLL.IMUX.CLKFB[13]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[7]">INT:MUX.0.DLL.IMUX.CLKFB[7]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[8]">INT:MUX.0.DLL.IMUX.CLKIN[8]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[9]">INT:MUX.0.DLL.IMUX.CLKFB[9]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[10]">INT:MUX.0.DLL.IMUX.CLKIN[10]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[11]">INT:MUX.0.DLL.IMUX.CLKFB[11]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[12]">INT:MUX.0.DLL.IMUX.CLKIN[12]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[13]">INT:MUX.0.DLL.IMUX.CLKIN[13]</a></td><td><a href="#bits-xcv-DLLS.TOP-DLL:CLKFB_PAD" title="DLL:CLKFB_PAD">DLL:CLKFB_PAD</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[5]">INT:MUX.0.DLL.IMUX.CLKIN[5]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN" title="INT:MUX.0.DLL.IMUX.CLKIN[6]">INT:MUX.0.DLL.IMUX.CLKIN[6]</a></td><td>-</td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[6]">INT:MUX.0.DLL.IMUX.CLKFB[6]</a></td><td><a href="#bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB" title="INT:MUX.0.DLL.IMUX.CLKFB[5]">INT:MUX.0.DLL.IMUX.CLKFB[5]</a></td></tr>
+</table>
+<div id="bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:MUX.0.DLL.IMUX.CLKIN</th><th>[0, 7, 6]</th><th>[0, 6, 6]</th><th>[0, 5, 4]</th><th>[0, 4, 6]</th><th>[0, 3, 4]</th><th>[0, 2, 6]</th><th>[0, 1, 4]</th><th>[0, 10, 6]</th><th>[0, 9, 6]</th><th>[0, 7, 3]</th><th>[0, 4, 3]</th><th>[0, 9, 3]</th><th>[0, 8, 3]</th><th>[0, 0, 3]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.CLKPAD0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.CLKPAD1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.IOFB0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.IOFB1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.11</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.10</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.9</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.8</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.3</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.7</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.4</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.6</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.5</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:MUX.0.DLL.IMUX.CLKFB</th><th>[0, 0, 6]</th><th>[0, 6, 4]</th><th>[0, 5, 6]</th><th>[0, 4, 4]</th><th>[0, 3, 6]</th><th>[0, 2, 4]</th><th>[0, 1, 6]</th><th>[0, 12, 6]</th><th>[0, 13, 6]</th><th>[0, 6, 3]</th><th>[0, 3, 3]</th><th>[0, 5, 3]</th><th>[0, 2, 3]</th><th>[0, 1, 3]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.CLKPAD0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.CLKPAD1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.IOFB0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2.CLK.OUT.IOFB1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.GCLK3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.DLL.OUT.CLK2X</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0.LV.4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H0.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.11</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.10</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.9</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.8</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.3</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.7</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.4</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>0.LV.6</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H1.5</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xcv-DLLS.TOP-INT:MUX.0.DLL.IMUX.RST"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:MUX.0.DLL.IMUX.RST</th><th>[0, 4, 0]</th><th>[0, 1, 0]</th><th>[0, 2, 0]</th><th>[0, 2, 1]</th><th>[0, 3, 1]</th><th>[0, 6, 1]</th><th>[0, 6, 0]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>1.HEX.H2.2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H2.1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H2.5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>1.HEX.H3.2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1.HEX.H3.1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.4</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1.HEX.H3.5</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xcv-DLLS.TOP-DLL:CLKFB_PAD"></div>
+<div id="bits-xcv-DLLS.TOP-DLL:CLKIN_PAD"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>DLL:CLKFB_PAD</th><th>[0, 8, 6]</th></tr>
+<tr><th>DLL:CLKIN_PAD</th><th>[0, 8, 4]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="corner.html" class="btn btn-neutral float-left" title="Corners" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pcilogic.html" class="btn btn-neutral float-right" title="PCI Logic" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
