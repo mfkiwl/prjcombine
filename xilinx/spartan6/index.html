@@ -57,8 +57,12 @@
 <li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mcb.html">Memory Controller Block</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pcie.html">PCI Express</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gtp.html">Multi-gigabit transceivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcm.html">Digital clock manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="corner.html">Corners</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Virtex 4</a></li>
@@ -106,7 +110,7 @@
 <li class="toctree-l1"><a class="reference internal" href="interconnect.html">General interconnect</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-normal-tile">Bitstream — normal tile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-ioi-tile">Bitstream — IOI tile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitsteam-interface-tiles">Bitsteam — interface tiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-interface-tiles">Bitstream — interface tiles</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="clb.html">Configurable Logic Block</a><ul>
@@ -139,12 +143,46 @@
 <li class="toctree-l2"><a class="reference internal" href="clock.html#pci-ce-delay"><code class="docutils literal notranslate"><span class="pre">PCI_CE_DELAY</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="mcb.html">Memory Controller Block</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mcb.html#bitstream">Bitstream</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="pcie.html">PCI Express</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pcie.html#bitstream">Bitstream</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="gtp.html">Multi-gigabit transceivers</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="gtp.html#bitstream">Bitstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dcm.html">Digital clock manager</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dcm.html#bitstream">Bitstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="corner.html">Corners</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="corner.html#lower-left">Lower left</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corner.html#upper-left">Upper left</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corner.html#lower-right">Lower right</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corner.html#upper-right">Upper right</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration registers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config.html#cor1"><code class="docutils literal notranslate"><span class="pre">COR1</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#cor2"><code class="docutils literal notranslate"><span class="pre">COR2</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#ctl"><code class="docutils literal notranslate"><span class="pre">CTL</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#cclk-freq"><code class="docutils literal notranslate"><span class="pre">CCLK_FREQ</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#hc-opt"><code class="docutils literal notranslate"><span class="pre">HC_OPT</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#powerdown"><code class="docutils literal notranslate"><span class="pre">POWERDOWN</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#pu-gwe"><code class="docutils literal notranslate"><span class="pre">PU_GWE</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#pu-gts"><code class="docutils literal notranslate"><span class="pre">PU_GTS</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#eye-mask"><code class="docutils literal notranslate"><span class="pre">EYE_MASK</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#mode"><code class="docutils literal notranslate"><span class="pre">MODE</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#general-12"><code class="docutils literal notranslate"><span class="pre">GENERAL[12]</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#general-34"><code class="docutils literal notranslate"><span class="pre">GENERAL[34]</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#general5"><code class="docutils literal notranslate"><span class="pre">GENERAL5</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#timer"><code class="docutils literal notranslate"><span class="pre">TIMER</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#seu-opt"><code class="docutils literal notranslate"><span class="pre">SEU_OPT</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#testmode"><code class="docutils literal notranslate"><span class="pre">TESTMODE</span></code></a></li>
 </ul>
 </li>
 </ul>

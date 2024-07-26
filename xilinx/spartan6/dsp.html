@@ -60,8 +60,12 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mcb.html">Memory Controller Block</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pcie.html">PCI Express</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gtp.html">Multi-gigabit transceivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcm.html">Digital clock manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="corner.html">Corners</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Virtex 4</a></li>
@@ -269,29 +273,29 @@
 <tr><td>11</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr><td>12</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:CARRYOUTREG" title="DSP:CARRYOUTREG">DSP:CARRYOUTREG</a></td><td><a href="#bits-xc6s-DSP-DSP:CEOPMODEINV" title="DSP:CEOPMODEINV">DSP:CEOPMODEINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:CARRYOUTREG" title="DSP:CARRYOUTREG">DSP:CARRYOUTREG</a></td><td><a href="#bits-xc6s-DSP-DSP:INV.CEOPMODE" title="DSP:INV.CEOPMODE">DSP:INV.CEOPMODE</a></td></tr>
 <tr><td>13</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:CARRYINREG" title="DSP:CARRYINREG">DSP:CARRYINREG</a></td><td><a href="#bits-xc6s-DSP-DSP:CECINV" title="DSP:CECINV">DSP:CECINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:CARRYINREG" title="DSP:CARRYINREG">DSP:CARRYINREG</a></td><td><a href="#bits-xc6s-DSP-DSP:INV.CEC" title="DSP:INV.CEC">DSP:INV.CEC</a></td></tr>
 <tr><td>14</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:CEDINV" title="DSP:CEDINV">DSP:CEDINV</a></td><td><a href="#bits-xc6s-DSP-DSP:RSTCINV" title="DSP:RSTCINV">DSP:RSTCINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:INV.CED" title="DSP:INV.CED">DSP:INV.CED</a></td><td><a href="#bits-xc6s-DSP-DSP:INV.RSTC" title="DSP:INV.RSTC">DSP:INV.RSTC</a></td></tr>
 <tr><td>15</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:CECARRYININV" title="DSP:CECARRYININV">DSP:CECARRYININV</a></td><td><a href="#bits-xc6s-DSP-DSP:CEBINV" title="DSP:CEBINV">DSP:CEBINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:INV.CECARRYIN" title="DSP:INV.CECARRYIN">DSP:INV.CECARRYIN</a></td><td><a href="#bits-xc6s-DSP-DSP:INV.CEB" title="DSP:INV.CEB">DSP:INV.CEB</a></td></tr>
 <tr><td>16</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr><td>17</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:RSTCARRYININV" title="DSP:RSTCARRYININV">DSP:RSTCARRYININV</a></td><td><a href="#bits-xc6s-DSP-DSP:CEAINV" title="DSP:CEAINV">DSP:CEAINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:INV.RSTCARRYIN" title="DSP:INV.RSTCARRYIN">DSP:INV.RSTCARRYIN</a></td><td><a href="#bits-xc6s-DSP-DSP:INV.CEA" title="DSP:INV.CEA">DSP:INV.CEA</a></td></tr>
 <tr><td>18</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:RSTDINV" title="DSP:RSTDINV">DSP:RSTDINV</a></td><td><a href="#bits-xc6s-DSP-DSP:CEMINV" title="DSP:CEMINV">DSP:CEMINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:INV.RSTD" title="DSP:INV.RSTD">DSP:INV.RSTD</a></td><td><a href="#bits-xc6s-DSP-DSP:INV.CEM" title="DSP:INV.CEM">DSP:INV.CEM</a></td></tr>
 <tr><td>19</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:RSTPINV" title="DSP:RSTPINV">DSP:RSTPINV</a></td><td><a href="#bits-xc6s-DSP-DSP:CLKINV" title="DSP:CLKINV">DSP:CLKINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:INV.RSTP" title="DSP:INV.RSTP">DSP:INV.RSTP</a></td><td><a href="#bits-xc6s-DSP-DSP:INV.CLK" title="DSP:INV.CLK">DSP:INV.CLK</a></td></tr>
 <tr><td>20</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:CEPINV" title="DSP:CEPINV">DSP:CEPINV</a></td><td><a href="#bits-xc6s-DSP-DSP:RSTBINV" title="DSP:RSTBINV">DSP:RSTBINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:INV.CEP" title="DSP:INV.CEP">DSP:INV.CEP</a></td><td><a href="#bits-xc6s-DSP-DSP:INV.RSTB" title="DSP:INV.RSTB">DSP:INV.RSTB</a></td></tr>
 <tr><td>21</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:RSTMINV" title="DSP:RSTMINV">DSP:RSTMINV</a></td><td><a href="#bits-xc6s-DSP-DSP:RSTAINV" title="DSP:RSTAINV">DSP:RSTAINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:INV.RSTM" title="DSP:INV.RSTM">DSP:INV.RSTM</a></td><td><a href="#bits-xc6s-DSP-DSP:INV.RSTA" title="DSP:INV.RSTA">DSP:INV.RSTA</a></td></tr>
 <tr><td>22</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr><td>23</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:RSTOPMODEINV" title="DSP:RSTOPMODEINV">DSP:RSTOPMODEINV</a></td><td>-</td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-DSP-DSP:INV.RSTOPMODE" title="DSP:INV.RSTOPMODE">DSP:INV.RSTOPMODE</a></td><td>-</td></tr>
 </table>
 <div id="bits-xc6s-DSP-DSP:A0REG"></div>
 <div id="bits-xc6s-DSP-DSP:A1REG"></div>
@@ -331,41 +335,41 @@
 <tr><td>CARRYIN</td><td>0</td></tr>
 <tr><td>OPMODE5</td><td>1</td></tr>
 </table>
-<div id="bits-xc6s-DSP-DSP:CEAINV"></div>
-<div id="bits-xc6s-DSP-DSP:CEBINV"></div>
-<div id="bits-xc6s-DSP-DSP:CECARRYININV"></div>
-<div id="bits-xc6s-DSP-DSP:CECINV"></div>
-<div id="bits-xc6s-DSP-DSP:CEDINV"></div>
-<div id="bits-xc6s-DSP-DSP:CEMINV"></div>
-<div id="bits-xc6s-DSP-DSP:CEOPMODEINV"></div>
-<div id="bits-xc6s-DSP-DSP:CEPINV"></div>
-<div id="bits-xc6s-DSP-DSP:CLKINV"></div>
-<div id="bits-xc6s-DSP-DSP:RSTAINV"></div>
-<div id="bits-xc6s-DSP-DSP:RSTBINV"></div>
-<div id="bits-xc6s-DSP-DSP:RSTCARRYININV"></div>
-<div id="bits-xc6s-DSP-DSP:RSTCINV"></div>
-<div id="bits-xc6s-DSP-DSP:RSTDINV"></div>
-<div id="bits-xc6s-DSP-DSP:RSTMINV"></div>
-<div id="bits-xc6s-DSP-DSP:RSTOPMODEINV"></div>
-<div id="bits-xc6s-DSP-DSP:RSTPINV"></div>
+<div id="bits-xc6s-DSP-DSP:INV.CEA"></div>
+<div id="bits-xc6s-DSP-DSP:INV.CEB"></div>
+<div id="bits-xc6s-DSP-DSP:INV.CEC"></div>
+<div id="bits-xc6s-DSP-DSP:INV.CECARRYIN"></div>
+<div id="bits-xc6s-DSP-DSP:INV.CED"></div>
+<div id="bits-xc6s-DSP-DSP:INV.CEM"></div>
+<div id="bits-xc6s-DSP-DSP:INV.CEOPMODE"></div>
+<div id="bits-xc6s-DSP-DSP:INV.CEP"></div>
+<div id="bits-xc6s-DSP-DSP:INV.CLK"></div>
+<div id="bits-xc6s-DSP-DSP:INV.RSTA"></div>
+<div id="bits-xc6s-DSP-DSP:INV.RSTB"></div>
+<div id="bits-xc6s-DSP-DSP:INV.RSTC"></div>
+<div id="bits-xc6s-DSP-DSP:INV.RSTCARRYIN"></div>
+<div id="bits-xc6s-DSP-DSP:INV.RSTD"></div>
+<div id="bits-xc6s-DSP-DSP:INV.RSTM"></div>
+<div id="bits-xc6s-DSP-DSP:INV.RSTOPMODE"></div>
+<div id="bits-xc6s-DSP-DSP:INV.RSTP"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>DSP:CEAINV</th><th>[3, 23, 17]</th></tr>
-<tr><th>DSP:CEBINV</th><th>[3, 23, 15]</th></tr>
-<tr><th>DSP:CECARRYININV</th><th>[3, 22, 15]</th></tr>
-<tr><th>DSP:CECINV</th><th>[3, 23, 13]</th></tr>
-<tr><th>DSP:CEDINV</th><th>[3, 22, 14]</th></tr>
-<tr><th>DSP:CEMINV</th><th>[3, 23, 18]</th></tr>
-<tr><th>DSP:CEOPMODEINV</th><th>[3, 23, 12]</th></tr>
-<tr><th>DSP:CEPINV</th><th>[3, 22, 20]</th></tr>
-<tr><th>DSP:CLKINV</th><th>[3, 23, 19]</th></tr>
-<tr><th>DSP:RSTAINV</th><th>[3, 23, 21]</th></tr>
-<tr><th>DSP:RSTBINV</th><th>[3, 23, 20]</th></tr>
-<tr><th>DSP:RSTCARRYININV</th><th>[3, 22, 17]</th></tr>
-<tr><th>DSP:RSTCINV</th><th>[3, 23, 14]</th></tr>
-<tr><th>DSP:RSTDINV</th><th>[3, 22, 18]</th></tr>
-<tr><th>DSP:RSTMINV</th><th>[3, 22, 21]</th></tr>
-<tr><th>DSP:RSTOPMODEINV</th><th>[3, 22, 23]</th></tr>
-<tr><th>DSP:RSTPINV</th><th>[3, 22, 19]</th></tr>
+<tr><th>DSP:INV.CEA</th><th>[3, 23, 17]</th></tr>
+<tr><th>DSP:INV.CEB</th><th>[3, 23, 15]</th></tr>
+<tr><th>DSP:INV.CEC</th><th>[3, 23, 13]</th></tr>
+<tr><th>DSP:INV.CECARRYIN</th><th>[3, 22, 15]</th></tr>
+<tr><th>DSP:INV.CED</th><th>[3, 22, 14]</th></tr>
+<tr><th>DSP:INV.CEM</th><th>[3, 23, 18]</th></tr>
+<tr><th>DSP:INV.CEOPMODE</th><th>[3, 23, 12]</th></tr>
+<tr><th>DSP:INV.CEP</th><th>[3, 22, 20]</th></tr>
+<tr><th>DSP:INV.CLK</th><th>[3, 23, 19]</th></tr>
+<tr><th>DSP:INV.RSTA</th><th>[3, 23, 21]</th></tr>
+<tr><th>DSP:INV.RSTB</th><th>[3, 23, 20]</th></tr>
+<tr><th>DSP:INV.RSTC</th><th>[3, 23, 14]</th></tr>
+<tr><th>DSP:INV.RSTCARRYIN</th><th>[3, 22, 17]</th></tr>
+<tr><th>DSP:INV.RSTD</th><th>[3, 22, 18]</th></tr>
+<tr><th>DSP:INV.RSTM</th><th>[3, 22, 21]</th></tr>
+<tr><th>DSP:INV.RSTOPMODE</th><th>[3, 22, 23]</th></tr>
+<tr><th>DSP:INV.RSTP</th><th>[3, 22, 19]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 <div id="bits-xc6s-DSP-DSP:RSTTYPE"></div>

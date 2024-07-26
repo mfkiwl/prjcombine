@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuration registers &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Virtex 4" href="../virtex4/index.html" />
+    <link rel="prev" title="Corners" href="corner.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../xc9500/index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Xilinx FPGAs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Virtex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Virtex 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan3/index.html">Spartan 3</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Spartan 6</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="interconnect.html">General interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mcb.html">Memory Controller Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pcie.html">PCI Express</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtp.html">Multi-gigabit transceivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcm.html">Digital clock manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="corner.html">Corners</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Configuration registers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cor1"><code class="docutils literal notranslate"><span class="pre">COR1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cor2"><code class="docutils literal notranslate"><span class="pre">COR2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ctl"><code class="docutils literal notranslate"><span class="pre">CTL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cclk-freq"><code class="docutils literal notranslate"><span class="pre">CCLK_FREQ</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hc-opt"><code class="docutils literal notranslate"><span class="pre">HC_OPT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#powerdown"><code class="docutils literal notranslate"><span class="pre">POWERDOWN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pu-gwe"><code class="docutils literal notranslate"><span class="pre">PU_GWE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pu-gts"><code class="docutils literal notranslate"><span class="pre">PU_GTS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eye-mask"><code class="docutils literal notranslate"><span class="pre">EYE_MASK</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mode"><code class="docutils literal notranslate"><span class="pre">MODE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#general-12"><code class="docutils literal notranslate"><span class="pre">GENERAL[12]</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#general-34"><code class="docutils literal notranslate"><span class="pre">GENERAL[34]</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#general5"><code class="docutils literal notranslate"><span class="pre">GENERAL5</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#timer"><code class="docutils literal notranslate"><span class="pre">TIMER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#seu-opt"><code class="docutils literal notranslate"><span class="pre">SEU_OPT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#testmode"><code class="docutils literal notranslate"><span class="pre">TESTMODE</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Virtex 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Virtex 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex6/index.html">Virtex 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex7/index.html">Virtex 7</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Xilinx FPGAs</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Spartan 6</a></li>
+      <li class="breadcrumb-item active">Configuration registers</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/xilinx/spartan6/config.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="configuration-registers">
+<span id="spartan6-config"></span><h1>Configuration registers<a class="headerlink" href="#configuration-registers" title="Link to this heading"></a></h1>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>document</p>
+</div>
+<section id="cor1">
+<h2><code class="docutils literal notranslate"><span class="pre">COR1</span></code><a class="headerlink" href="#cor1" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.COR1 bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc6s-REG.COR1-STARTUP:STARTUPCLK" title="STARTUP:STARTUPCLK[0]">STARTUP:STARTUPCLK[0]</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc6s-REG.COR1-STARTUP:STARTUPCLK" title="STARTUP:STARTUPCLK[1]">STARTUP:STARTUPCLK[1]</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc6s-REG.COR1-STARTUP:DRIVE_DONE" title="STARTUP:DRIVE_DONE">STARTUP:DRIVE_DONE</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc6s-REG.COR1-STARTUP:DONE_PIPE" title="STARTUP:DONE_PIPE">STARTUP:DONE_PIPE</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc6s-REG.COR1-STARTUP:CRC" title="~STARTUP:CRC">~STARTUP:CRC</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc6s-REG.COR1-STARTUP:VRDSEL" title="STARTUP:VRDSEL[0]">STARTUP:VRDSEL[0]</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc6s-REG.COR1-STARTUP:VRDSEL" title="STARTUP:VRDSEL[1]">STARTUP:VRDSEL[1]</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc6s-REG.COR1-STARTUP:VRDSEL" title="STARTUP:VRDSEL[2]">STARTUP:VRDSEL[2]</a></td></tr>
+<tr><td>8</td>
+<td><a href="#bits-xc6s-REG.COR1-MISC:SEND_VGG" title="MISC:SEND_VGG[0]">MISC:SEND_VGG[0]</a></td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc6s-REG.COR1-MISC:SEND_VGG" title="MISC:SEND_VGG[1]">MISC:SEND_VGG[1]</a></td></tr>
+<tr><td>10</td>
+<td><a href="#bits-xc6s-REG.COR1-MISC:SEND_VGG" title="MISC:SEND_VGG[2]">MISC:SEND_VGG[2]</a></td></tr>
+<tr><td>11</td>
+<td><a href="#bits-xc6s-REG.COR1-MISC:SEND_VGG" title="MISC:SEND_VGG[3]">MISC:SEND_VGG[3]</a></td></tr>
+<tr><td>12</td>
+<td><a href="#bits-xc6s-REG.COR1-MISC:VGG_SENDMAX" title="~MISC:VGG_SENDMAX">~MISC:VGG_SENDMAX</a></td></tr>
+<tr><td>13</td>
+<td><a href="#bits-xc6s-REG.COR1-MISC:VGG_ENABLE_OFFCHIP" title="~MISC:VGG_ENABLE_OFFCHIP">~MISC:VGG_ENABLE_OFFCHIP</a></td></tr>
+<tr><td>14</td>
+<td>-</td></tr>
+<tr><td>15</td>
+<td><a href="#bits-xc6s-REG.COR1-STARTUP:DRIVE_AWAKE" title="STARTUP:DRIVE_AWAKE">STARTUP:DRIVE_AWAKE</a></td></tr>
+</table>
+<div id="bits-xc6s-REG.COR1-STARTUP:STARTUPCLK"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>STARTUP:STARTUPCLK</th><th>[0, 0, 1]</th><th>[0, 0, 0]</th></tr>
+<tr><td>CCLK</td><td>0</td><td>0</td></tr>
+<tr><td>USERCLK</td><td>0</td><td>1</td></tr>
+<tr><td>JTAGCLK</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc6s-REG.COR1-STARTUP:DONE_PIPE"></div>
+<div id="bits-xc6s-REG.COR1-STARTUP:DRIVE_AWAKE"></div>
+<div id="bits-xc6s-REG.COR1-STARTUP:DRIVE_DONE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>STARTUP:DONE_PIPE</th><th>[0, 0, 3]</th></tr>
+<tr><th>STARTUP:DRIVE_AWAKE</th><th>[0, 0, 15]</th></tr>
+<tr><th>STARTUP:DRIVE_DONE</th><th>[0, 0, 2]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc6s-REG.COR1-MISC:VGG_ENABLE_OFFCHIP"></div>
+<div id="bits-xc6s-REG.COR1-MISC:VGG_SENDMAX"></div>
+<div id="bits-xc6s-REG.COR1-STARTUP:CRC"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:VGG_ENABLE_OFFCHIP</th><th>[0, 0, 13]</th></tr>
+<tr><th>MISC:VGG_SENDMAX</th><th>[0, 0, 12]</th></tr>
+<tr><th>STARTUP:CRC</th><th>[0, 0, 4]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<div id="bits-xc6s-REG.COR1-STARTUP:VRDSEL"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>STARTUP:VRDSEL</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th><th>[0, 0, 5]</th></tr>
+<tr><td>Non-inverted</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc6s-REG.COR1-MISC:SEND_VGG"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:SEND_VGG</th><th>[0, 0, 11]</th><th>[0, 0, 10]</th><th>[0, 0, 9]</th><th>[0, 0, 8]</th></tr>
+<tr><td>Non-inverted</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="cor2">
+<h2><code class="docutils literal notranslate"><span class="pre">COR2</span></code><a class="headerlink" href="#cor2" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.COR2 bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc6s-REG.COR2-STARTUP:GWE_CYCLE" title="STARTUP:GWE_CYCLE[0]">STARTUP:GWE_CYCLE[0]</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc6s-REG.COR2-STARTUP:GWE_CYCLE" title="STARTUP:GWE_CYCLE[1]">STARTUP:GWE_CYCLE[1]</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc6s-REG.COR2-STARTUP:GWE_CYCLE" title="STARTUP:GWE_CYCLE[2]">STARTUP:GWE_CYCLE[2]</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc6s-REG.COR2-STARTUP:GTS_CYCLE" title="STARTUP:GTS_CYCLE[0]">STARTUP:GTS_CYCLE[0]</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc6s-REG.COR2-STARTUP:GTS_CYCLE" title="STARTUP:GTS_CYCLE[1]">STARTUP:GTS_CYCLE[1]</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc6s-REG.COR2-STARTUP:GTS_CYCLE" title="STARTUP:GTS_CYCLE[2]">STARTUP:GTS_CYCLE[2]</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc6s-REG.COR2-STARTUP:LCK_CYCLE" title="STARTUP:LCK_CYCLE[0]">STARTUP:LCK_CYCLE[0]</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc6s-REG.COR2-STARTUP:LCK_CYCLE" title="STARTUP:LCK_CYCLE[1]">STARTUP:LCK_CYCLE[1]</a></td></tr>
+<tr><td>8</td>
+<td><a href="#bits-xc6s-REG.COR2-STARTUP:LCK_CYCLE" title="STARTUP:LCK_CYCLE[2]">STARTUP:LCK_CYCLE[2]</a></td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc6s-REG.COR2-STARTUP:DONE_CYCLE" title="STARTUP:DONE_CYCLE[0]">STARTUP:DONE_CYCLE[0]</a></td></tr>
+<tr><td>10</td>
+<td><a href="#bits-xc6s-REG.COR2-STARTUP:DONE_CYCLE" title="STARTUP:DONE_CYCLE[1]">STARTUP:DONE_CYCLE[1]</a></td></tr>
+<tr><td>11</td>
+<td><a href="#bits-xc6s-REG.COR2-STARTUP:DONE_CYCLE" title="STARTUP:DONE_CYCLE[2]">STARTUP:DONE_CYCLE[2]</a></td></tr>
+<tr><td>12</td>
+<td><a href="#bits-xc6s-REG.COR2-STARTUP:DISABLE_VRD_REG" title="STARTUP:DISABLE_VRD_REG">STARTUP:DISABLE_VRD_REG</a></td></tr>
+<tr><td>13</td>
+<td><a href="#bits-xc6s-REG.COR2-STARTUP:BPI_DIV8" title="STARTUP:BPI_DIV8">STARTUP:BPI_DIV8</a></td></tr>
+<tr><td>14</td>
+<td><a href="#bits-xc6s-REG.COR2-STARTUP:BPI_DIV16" title="STARTUP:BPI_DIV16">STARTUP:BPI_DIV16</a></td></tr>
+<tr><td>15</td>
+<td><a href="#bits-xc6s-REG.COR2-STARTUP:RESET_ON_ERR" title="STARTUP:RESET_ON_ERR">STARTUP:RESET_ON_ERR</a></td></tr>
+</table>
+<div id="bits-xc6s-REG.COR2-STARTUP:GTS_CYCLE"></div>
+<div id="bits-xc6s-REG.COR2-STARTUP:GWE_CYCLE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>STARTUP:GTS_CYCLE</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th><th>[0, 0, 3]</th></tr>
+<tr><th>STARTUP:GWE_CYCLE</th><th>[0, 0, 2]</th><th>[0, 0, 1]</th><th>[0, 0, 0]</th></tr>
+<tr><td>KEEP</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>2</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>3</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>4</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>5</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>6</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>DONE</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+<div id="bits-xc6s-REG.COR2-STARTUP:LCK_CYCLE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>STARTUP:LCK_CYCLE</th><th>[0, 0, 8]</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th></tr>
+<tr><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>2</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>3</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>4</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>5</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>6</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>NOWAIT</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+<div id="bits-xc6s-REG.COR2-STARTUP:DONE_CYCLE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>STARTUP:DONE_CYCLE</th><th>[0, 0, 11]</th><th>[0, 0, 10]</th><th>[0, 0, 9]</th></tr>
+<tr><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>2</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>3</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>4</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>5</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>6</td><td>1</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc6s-REG.COR2-STARTUP:BPI_DIV16"></div>
+<div id="bits-xc6s-REG.COR2-STARTUP:BPI_DIV8"></div>
+<div id="bits-xc6s-REG.COR2-STARTUP:DISABLE_VRD_REG"></div>
+<div id="bits-xc6s-REG.COR2-STARTUP:RESET_ON_ERR"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>STARTUP:BPI_DIV16</th><th>[0, 0, 14]</th></tr>
+<tr><th>STARTUP:BPI_DIV8</th><th>[0, 0, 13]</th></tr>
+<tr><th>STARTUP:DISABLE_VRD_REG</th><th>[0, 0, 12]</th></tr>
+<tr><th>STARTUP:RESET_ON_ERR</th><th>[0, 0, 15]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="ctl">
+<h2><code class="docutils literal notranslate"><span class="pre">CTL</span></code><a class="headerlink" href="#ctl" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.CTL bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc6s-REG.CTL-MISC:GTS_USR_B" title="MISC:GTS_USR_B">MISC:GTS_USR_B</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc6s-REG.CTL-MISC:POST_CRC_INIT_FLAG" title="~MISC:POST_CRC_INIT_FLAG">~MISC:POST_CRC_INIT_FLAG</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc6s-REG.CTL-MISC:ENCRYPT_KEY_SELECT" title="MISC:ENCRYPT_KEY_SELECT">MISC:ENCRYPT_KEY_SELECT</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc6s-REG.CTL-MISC:PERSIST" title="MISC:PERSIST">MISC:PERSIST</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc6s-REG.CTL-MISC:SECURITY" title="MISC:SECURITY[0]">MISC:SECURITY[0]</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc6s-REG.CTL-MISC:SECURITY" title="MISC:SECURITY[1]">MISC:SECURITY[1]</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc6s-REG.CTL-MISC:ENCRYPT" title="MISC:ENCRYPT">MISC:ENCRYPT</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc6s-REG.CTL-MISC:MULTIBOOT_ENABLE" title="MISC:MULTIBOOT_ENABLE">MISC:MULTIBOOT_ENABLE</a></td></tr>
+</table>
+<div id="bits-xc6s-REG.CTL-MISC:ENCRYPT"></div>
+<div id="bits-xc6s-REG.CTL-MISC:GTS_USR_B"></div>
+<div id="bits-xc6s-REG.CTL-MISC:MULTIBOOT_ENABLE"></div>
+<div id="bits-xc6s-REG.CTL-MISC:PERSIST"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:ENCRYPT</th><th>[0, 0, 6]</th></tr>
+<tr><th>MISC:GTS_USR_B</th><th>[0, 0, 0]</th></tr>
+<tr><th>MISC:MULTIBOOT_ENABLE</th><th>[0, 0, 7]</th></tr>
+<tr><th>MISC:PERSIST</th><th>[0, 0, 3]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc6s-REG.CTL-MISC:POST_CRC_INIT_FLAG"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:POST_CRC_INIT_FLAG</th><th>[0, 0, 1]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<div id="bits-xc6s-REG.CTL-MISC:ENCRYPT_KEY_SELECT"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:ENCRYPT_KEY_SELECT</th><th>[0, 0, 2]</th></tr>
+<tr><td>BBRAM</td><td>0</td></tr>
+<tr><td>EFUSE</td><td>1</td></tr>
+</table>
+<div id="bits-xc6s-REG.CTL-MISC:SECURITY"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:SECURITY</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td></tr>
+<tr><td>LEVEL1</td><td>0</td><td>1</td></tr>
+<tr><td>LEVEL2</td><td>1</td><td>0</td></tr>
+<tr><td>LEVEL3</td><td>1</td><td>1</td></tr>
+</table>
+</section>
+<section id="cclk-freq">
+<h2><code class="docutils literal notranslate"><span class="pre">CCLK_FREQ</span></code><a class="headerlink" href="#cclk-freq" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.CCLK_FREQ bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc6s-REG.CCLK_FREQ-STARTUP:CCLK_DIVISOR" title="STARTUP:CCLK_DIVISOR[0]">STARTUP:CCLK_DIVISOR[0]</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc6s-REG.CCLK_FREQ-STARTUP:CCLK_DIVISOR" title="STARTUP:CCLK_DIVISOR[1]">STARTUP:CCLK_DIVISOR[1]</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc6s-REG.CCLK_FREQ-STARTUP:CCLK_DIVISOR" title="STARTUP:CCLK_DIVISOR[2]">STARTUP:CCLK_DIVISOR[2]</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc6s-REG.CCLK_FREQ-STARTUP:CCLK_DIVISOR" title="STARTUP:CCLK_DIVISOR[3]">STARTUP:CCLK_DIVISOR[3]</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc6s-REG.CCLK_FREQ-STARTUP:CCLK_DIVISOR" title="STARTUP:CCLK_DIVISOR[4]">STARTUP:CCLK_DIVISOR[4]</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc6s-REG.CCLK_FREQ-STARTUP:CCLK_DIVISOR" title="STARTUP:CCLK_DIVISOR[5]">STARTUP:CCLK_DIVISOR[5]</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc6s-REG.CCLK_FREQ-STARTUP:CCLK_DIVISOR" title="STARTUP:CCLK_DIVISOR[6]">STARTUP:CCLK_DIVISOR[6]</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc6s-REG.CCLK_FREQ-STARTUP:CCLK_DIVISOR" title="STARTUP:CCLK_DIVISOR[7]">STARTUP:CCLK_DIVISOR[7]</a></td></tr>
+<tr><td>8</td>
+<td><a href="#bits-xc6s-REG.CCLK_FREQ-STARTUP:CCLK_DIVISOR" title="STARTUP:CCLK_DIVISOR[8]">STARTUP:CCLK_DIVISOR[8]</a></td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc6s-REG.CCLK_FREQ-STARTUP:CCLK_DIVISOR" title="STARTUP:CCLK_DIVISOR[9]">STARTUP:CCLK_DIVISOR[9]</a></td></tr>
+<tr><td>10</td>
+<td><a href="#bits-xc6s-REG.CCLK_FREQ-STARTUP:CCLK_DLY" title="STARTUP:CCLK_DLY[0]">STARTUP:CCLK_DLY[0]</a></td></tr>
+<tr><td>11</td>
+<td><a href="#bits-xc6s-REG.CCLK_FREQ-STARTUP:CCLK_DLY" title="STARTUP:CCLK_DLY[1]">STARTUP:CCLK_DLY[1]</a></td></tr>
+<tr><td>12</td>
+<td><a href="#bits-xc6s-REG.CCLK_FREQ-STARTUP:CCLK_SEP" title="STARTUP:CCLK_SEP[0]">STARTUP:CCLK_SEP[0]</a></td></tr>
+<tr><td>13</td>
+<td><a href="#bits-xc6s-REG.CCLK_FREQ-STARTUP:CCLK_SEP" title="STARTUP:CCLK_SEP[1]">STARTUP:CCLK_SEP[1]</a></td></tr>
+<tr><td>14</td>
+<td><a href="#bits-xc6s-REG.CCLK_FREQ-STARTUP:EXT_CCLK_ENABLE" title="STARTUP:EXT_CCLK_ENABLE">STARTUP:EXT_CCLK_ENABLE</a></td></tr>
+</table>
+<div id="bits-xc6s-REG.CCLK_FREQ-STARTUP:CCLK_DIVISOR"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>STARTUP:CCLK_DIVISOR</th><th>[0, 0, 9]</th><th>[0, 0, 8]</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th><th>[0, 0, 3]</th><th>[0, 0, 2]</th><th>[0, 0, 1]</th><th>[0, 0, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[9]</td><td>[8]</td><td>[7]</td><td>[6]</td><td>[5]</td><td>[4]</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc6s-REG.CCLK_FREQ-STARTUP:CCLK_DLY"></div>
+<div id="bits-xc6s-REG.CCLK_FREQ-STARTUP:CCLK_SEP"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>STARTUP:CCLK_DLY</th><th>[0, 0, 11]</th><th>[0, 0, 10]</th></tr>
+<tr><th>STARTUP:CCLK_SEP</th><th>[0, 0, 13]</th><th>[0, 0, 12]</th></tr>
+<tr><td>Non-inverted</td><td>[1]</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc6s-REG.CCLK_FREQ-STARTUP:EXT_CCLK_ENABLE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>STARTUP:EXT_CCLK_ENABLE</th><th>[0, 0, 14]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="hc-opt">
+<h2><code class="docutils literal notranslate"><span class="pre">HC_OPT</span></code><a class="headerlink" href="#hc-opt" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.HC_OPT bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc6s-REG.HC_OPT-MISC:HC_CYCLE" title="MISC:HC_CYCLE[0]">MISC:HC_CYCLE[0]</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc6s-REG.HC_OPT-MISC:HC_CYCLE" title="MISC:HC_CYCLE[1]">MISC:HC_CYCLE[1]</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc6s-REG.HC_OPT-MISC:HC_CYCLE" title="MISC:HC_CYCLE[2]">MISC:HC_CYCLE[2]</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc6s-REG.HC_OPT-MISC:HC_CYCLE" title="MISC:HC_CYCLE[3]">MISC:HC_CYCLE[3]</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc6s-REG.HC_OPT-MISC:TWO_ROUND" title="MISC:TWO_ROUND">MISC:TWO_ROUND</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc6s-REG.HC_OPT-MISC:BRAM_SKIP" title="MISC:BRAM_SKIP">MISC:BRAM_SKIP</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc6s-REG.HC_OPT-MISC:INIT_SKIP" title="MISC:INIT_SKIP">MISC:INIT_SKIP</a></td></tr>
+</table>
+<div id="bits-xc6s-REG.HC_OPT-MISC:HC_CYCLE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:HC_CYCLE</th><th>[0, 0, 3]</th><th>[0, 0, 2]</th><th>[0, 0, 1]</th><th>[0, 0, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc6s-REG.HC_OPT-MISC:BRAM_SKIP"></div>
+<div id="bits-xc6s-REG.HC_OPT-MISC:INIT_SKIP"></div>
+<div id="bits-xc6s-REG.HC_OPT-MISC:TWO_ROUND"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:BRAM_SKIP</th><th>[0, 0, 5]</th></tr>
+<tr><th>MISC:INIT_SKIP</th><th>[0, 0, 6]</th></tr>
+<tr><th>MISC:TWO_ROUND</th><th>[0, 0, 4]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="powerdown">
+<h2><code class="docutils literal notranslate"><span class="pre">POWERDOWN</span></code><a class="headerlink" href="#powerdown" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.POWERDOWN bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc6s-REG.POWERDOWN-MISC:SW_CLK" title="MISC:SW_CLK">MISC:SW_CLK</a></td></tr>
+<tr><td>1</td>
+<td>-</td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc6s-REG.POWERDOWN-MISC:EN_SUSPEND" title="MISC:EN_SUSPEND">MISC:EN_SUSPEND</a></td></tr>
+<tr><td>3</td>
+<td>-</td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc6s-REG.POWERDOWN-MISC:EN_SW_GSR" title="MISC:EN_SW_GSR">MISC:EN_SW_GSR</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc6s-REG.POWERDOWN-MISC:SUSPEND_FILTER" title="~MISC:SUSPEND_FILTER">~MISC:SUSPEND_FILTER</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc6s-REG.POWERDOWN-MISC:WAKE_DELAY1" title="MISC:WAKE_DELAY1[0]">MISC:WAKE_DELAY1[0]</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc6s-REG.POWERDOWN-MISC:WAKE_DELAY1" title="MISC:WAKE_DELAY1[1]">MISC:WAKE_DELAY1[1]</a></td></tr>
+<tr><td>8</td>
+<td><a href="#bits-xc6s-REG.POWERDOWN-MISC:WAKE_DELAY1" title="MISC:WAKE_DELAY1[2]">MISC:WAKE_DELAY1[2]</a></td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc6s-REG.POWERDOWN-MISC:WAKE_DELAY2" title="MISC:WAKE_DELAY2[0]">MISC:WAKE_DELAY2[0]</a></td></tr>
+<tr><td>10</td>
+<td><a href="#bits-xc6s-REG.POWERDOWN-MISC:WAKE_DELAY2" title="MISC:WAKE_DELAY2[1]">MISC:WAKE_DELAY2[1]</a></td></tr>
+<tr><td>11</td>
+<td><a href="#bits-xc6s-REG.POWERDOWN-MISC:WAKE_DELAY2" title="MISC:WAKE_DELAY2[2]">MISC:WAKE_DELAY2[2]</a></td></tr>
+<tr><td>12</td>
+<td><a href="#bits-xc6s-REG.POWERDOWN-MISC:WAKE_DELAY2" title="MISC:WAKE_DELAY2[3]">MISC:WAKE_DELAY2[3]</a></td></tr>
+<tr><td>13</td>
+<td><a href="#bits-xc6s-REG.POWERDOWN-MISC:WAKE_DELAY2" title="MISC:WAKE_DELAY2[4]">MISC:WAKE_DELAY2[4]</a></td></tr>
+<tr><td>14</td>
+<td><a href="#bits-xc6s-REG.POWERDOWN-MISC:MULTIPIN_WAKEUP" title="MISC:MULTIPIN_WAKEUP">MISC:MULTIPIN_WAKEUP</a></td></tr>
+</table>
+<div id="bits-xc6s-REG.POWERDOWN-MISC:SW_CLK"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:SW_CLK</th><th>[0, 0, 0]</th></tr>
+<tr><td>INTERNALCLK</td><td>0</td></tr>
+<tr><td>STARTUPCLK</td><td>1</td></tr>
+</table>
+<div id="bits-xc6s-REG.POWERDOWN-MISC:EN_SUSPEND"></div>
+<div id="bits-xc6s-REG.POWERDOWN-MISC:EN_SW_GSR"></div>
+<div id="bits-xc6s-REG.POWERDOWN-MISC:MULTIPIN_WAKEUP"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:EN_SUSPEND</th><th>[0, 0, 2]</th></tr>
+<tr><th>MISC:EN_SW_GSR</th><th>[0, 0, 4]</th></tr>
+<tr><th>MISC:MULTIPIN_WAKEUP</th><th>[0, 0, 14]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc6s-REG.POWERDOWN-MISC:SUSPEND_FILTER"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:SUSPEND_FILTER</th><th>[0, 0, 5]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<div id="bits-xc6s-REG.POWERDOWN-MISC:WAKE_DELAY1"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:WAKE_DELAY1</th><th>[0, 0, 8]</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th></tr>
+<tr><td>Non-inverted</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc6s-REG.POWERDOWN-MISC:WAKE_DELAY2"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:WAKE_DELAY2</th><th>[0, 0, 13]</th><th>[0, 0, 12]</th><th>[0, 0, 11]</th><th>[0, 0, 10]</th><th>[0, 0, 9]</th></tr>
+<tr><td>Non-inverted</td><td>[4]</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="pu-gwe">
+<h2><code class="docutils literal notranslate"><span class="pre">PU_GWE</span></code><a class="headerlink" href="#pu-gwe" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.PU_GWE bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc6s-REG.PU_GWE-MISC:SW_GWE_CYCLE" title="MISC:SW_GWE_CYCLE[0]">MISC:SW_GWE_CYCLE[0]</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc6s-REG.PU_GWE-MISC:SW_GWE_CYCLE" title="MISC:SW_GWE_CYCLE[1]">MISC:SW_GWE_CYCLE[1]</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc6s-REG.PU_GWE-MISC:SW_GWE_CYCLE" title="MISC:SW_GWE_CYCLE[2]">MISC:SW_GWE_CYCLE[2]</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc6s-REG.PU_GWE-MISC:SW_GWE_CYCLE" title="MISC:SW_GWE_CYCLE[3]">MISC:SW_GWE_CYCLE[3]</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc6s-REG.PU_GWE-MISC:SW_GWE_CYCLE" title="MISC:SW_GWE_CYCLE[4]">MISC:SW_GWE_CYCLE[4]</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc6s-REG.PU_GWE-MISC:SW_GWE_CYCLE" title="MISC:SW_GWE_CYCLE[5]">MISC:SW_GWE_CYCLE[5]</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc6s-REG.PU_GWE-MISC:SW_GWE_CYCLE" title="MISC:SW_GWE_CYCLE[6]">MISC:SW_GWE_CYCLE[6]</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc6s-REG.PU_GWE-MISC:SW_GWE_CYCLE" title="MISC:SW_GWE_CYCLE[7]">MISC:SW_GWE_CYCLE[7]</a></td></tr>
+<tr><td>8</td>
+<td><a href="#bits-xc6s-REG.PU_GWE-MISC:SW_GWE_CYCLE" title="MISC:SW_GWE_CYCLE[8]">MISC:SW_GWE_CYCLE[8]</a></td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc6s-REG.PU_GWE-MISC:SW_GWE_CYCLE" title="MISC:SW_GWE_CYCLE[9]">MISC:SW_GWE_CYCLE[9]</a></td></tr>
+</table>
+<div id="bits-xc6s-REG.PU_GWE-MISC:SW_GWE_CYCLE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:SW_GWE_CYCLE</th><th>[0, 0, 9]</th><th>[0, 0, 8]</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th><th>[0, 0, 3]</th><th>[0, 0, 2]</th><th>[0, 0, 1]</th><th>[0, 0, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[9]</td><td>[8]</td><td>[7]</td><td>[6]</td><td>[5]</td><td>[4]</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="pu-gts">
+<h2><code class="docutils literal notranslate"><span class="pre">PU_GTS</span></code><a class="headerlink" href="#pu-gts" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.PU_GTS bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc6s-REG.PU_GTS-MISC:SW_GTS_CYCLE" title="MISC:SW_GTS_CYCLE[0]">MISC:SW_GTS_CYCLE[0]</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc6s-REG.PU_GTS-MISC:SW_GTS_CYCLE" title="MISC:SW_GTS_CYCLE[1]">MISC:SW_GTS_CYCLE[1]</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc6s-REG.PU_GTS-MISC:SW_GTS_CYCLE" title="MISC:SW_GTS_CYCLE[2]">MISC:SW_GTS_CYCLE[2]</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc6s-REG.PU_GTS-MISC:SW_GTS_CYCLE" title="MISC:SW_GTS_CYCLE[3]">MISC:SW_GTS_CYCLE[3]</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc6s-REG.PU_GTS-MISC:SW_GTS_CYCLE" title="MISC:SW_GTS_CYCLE[4]">MISC:SW_GTS_CYCLE[4]</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc6s-REG.PU_GTS-MISC:SW_GTS_CYCLE" title="MISC:SW_GTS_CYCLE[5]">MISC:SW_GTS_CYCLE[5]</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc6s-REG.PU_GTS-MISC:SW_GTS_CYCLE" title="MISC:SW_GTS_CYCLE[6]">MISC:SW_GTS_CYCLE[6]</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc6s-REG.PU_GTS-MISC:SW_GTS_CYCLE" title="MISC:SW_GTS_CYCLE[7]">MISC:SW_GTS_CYCLE[7]</a></td></tr>
+<tr><td>8</td>
+<td><a href="#bits-xc6s-REG.PU_GTS-MISC:SW_GTS_CYCLE" title="MISC:SW_GTS_CYCLE[8]">MISC:SW_GTS_CYCLE[8]</a></td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc6s-REG.PU_GTS-MISC:SW_GTS_CYCLE" title="MISC:SW_GTS_CYCLE[9]">MISC:SW_GTS_CYCLE[9]</a></td></tr>
+</table>
+<div id="bits-xc6s-REG.PU_GTS-MISC:SW_GTS_CYCLE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:SW_GTS_CYCLE</th><th>[0, 0, 9]</th><th>[0, 0, 8]</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th><th>[0, 0, 3]</th><th>[0, 0, 2]</th><th>[0, 0, 1]</th><th>[0, 0, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[9]</td><td>[8]</td><td>[7]</td><td>[6]</td><td>[5]</td><td>[4]</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="eye-mask">
+<h2><code class="docutils literal notranslate"><span class="pre">EYE_MASK</span></code><a class="headerlink" href="#eye-mask" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.EYE_MASK bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc6s-REG.EYE_MASK-MISC:WAKEUP_MASK" title="MISC:WAKEUP_MASK[0]">MISC:WAKEUP_MASK[0]</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc6s-REG.EYE_MASK-MISC:WAKEUP_MASK" title="MISC:WAKEUP_MASK[1]">MISC:WAKEUP_MASK[1]</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc6s-REG.EYE_MASK-MISC:WAKEUP_MASK" title="MISC:WAKEUP_MASK[2]">MISC:WAKEUP_MASK[2]</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc6s-REG.EYE_MASK-MISC:WAKEUP_MASK" title="MISC:WAKEUP_MASK[3]">MISC:WAKEUP_MASK[3]</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc6s-REG.EYE_MASK-MISC:WAKEUP_MASK" title="MISC:WAKEUP_MASK[4]">MISC:WAKEUP_MASK[4]</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc6s-REG.EYE_MASK-MISC:WAKEUP_MASK" title="MISC:WAKEUP_MASK[5]">MISC:WAKEUP_MASK[5]</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc6s-REG.EYE_MASK-MISC:WAKEUP_MASK" title="MISC:WAKEUP_MASK[6]">MISC:WAKEUP_MASK[6]</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc6s-REG.EYE_MASK-MISC:WAKEUP_MASK" title="MISC:WAKEUP_MASK[7]">MISC:WAKEUP_MASK[7]</a></td></tr>
+</table>
+<div id="bits-xc6s-REG.EYE_MASK-MISC:WAKEUP_MASK"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:WAKEUP_MASK</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th><th>[0, 0, 3]</th><th>[0, 0, 2]</th><th>[0, 0, 1]</th><th>[0, 0, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[7]</td><td>[6]</td><td>[5]</td><td>[4]</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="mode">
+<h2><code class="docutils literal notranslate"><span class="pre">MODE</span></code><a class="headerlink" href="#mode" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.MODE bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td>-</td></tr>
+<tr><td>1</td>
+<td>-</td></tr>
+<tr><td>2</td>
+<td>-</td></tr>
+<tr><td>3</td>
+<td>-</td></tr>
+<tr><td>4</td>
+<td>-</td></tr>
+<tr><td>5</td>
+<td>-</td></tr>
+<tr><td>6</td>
+<td>-</td></tr>
+<tr><td>7</td>
+<td>-</td></tr>
+<tr><td>8</td>
+<td><a href="#bits-xc6s-REG.MODE-MISC:NEXT_CONFIG_BOOT_MODE" title="MISC:NEXT_CONFIG_BOOT_MODE[0]">MISC:NEXT_CONFIG_BOOT_MODE[0]</a></td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc6s-REG.MODE-MISC:NEXT_CONFIG_BOOT_MODE" title="MISC:NEXT_CONFIG_BOOT_MODE[1]">MISC:NEXT_CONFIG_BOOT_MODE[1]</a></td></tr>
+<tr><td>10</td>
+<td><a href="#bits-xc6s-REG.MODE-MISC:NEXT_CONFIG_BOOT_MODE" title="MISC:NEXT_CONFIG_BOOT_MODE[2]">MISC:NEXT_CONFIG_BOOT_MODE[2]</a></td></tr>
+<tr><td>11</td>
+<td><a href="#bits-xc6s-REG.MODE-MISC:SPI_BUSWIDTH" title="MISC:SPI_BUSWIDTH[0]">MISC:SPI_BUSWIDTH[0]</a></td></tr>
+<tr><td>12</td>
+<td><a href="#bits-xc6s-REG.MODE-MISC:SPI_BUSWIDTH" title="MISC:SPI_BUSWIDTH[1]">MISC:SPI_BUSWIDTH[1]</a></td></tr>
+<tr><td>13</td>
+<td><a href="#bits-xc6s-REG.MODE-MISC:NEXT_CONFIG_NEW_MODE" title="MISC:NEXT_CONFIG_NEW_MODE">MISC:NEXT_CONFIG_NEW_MODE</a></td></tr>
+</table>
+<div id="bits-xc6s-REG.MODE-MISC:NEXT_CONFIG_BOOT_MODE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:NEXT_CONFIG_BOOT_MODE</th><th>[0, 0, 10]</th><th>[0, 0, 9]</th><th>[0, 0, 8]</th></tr>
+<tr><td>Non-inverted</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc6s-REG.MODE-MISC:SPI_BUSWIDTH"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:SPI_BUSWIDTH</th><th>[0, 0, 12]</th><th>[0, 0, 11]</th></tr>
+<tr><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>2</td><td>0</td><td>1</td></tr>
+<tr><td>4</td><td>1</td><td>0</td></tr>
+</table>
+<div id="bits-xc6s-REG.MODE-MISC:NEXT_CONFIG_NEW_MODE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:NEXT_CONFIG_NEW_MODE</th><th>[0, 0, 13]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="general-12">
+<h2><code class="docutils literal notranslate"><span class="pre">GENERAL[12]</span></code><a class="headerlink" href="#general-12" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.GENERAL12 bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[0]">MISC:NEXT_CONFIG_ADDR[0]</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[1]">MISC:NEXT_CONFIG_ADDR[1]</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[2]">MISC:NEXT_CONFIG_ADDR[2]</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[3]">MISC:NEXT_CONFIG_ADDR[3]</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[4]">MISC:NEXT_CONFIG_ADDR[4]</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[5]">MISC:NEXT_CONFIG_ADDR[5]</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[6]">MISC:NEXT_CONFIG_ADDR[6]</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[7]">MISC:NEXT_CONFIG_ADDR[7]</a></td></tr>
+<tr><td>8</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[8]">MISC:NEXT_CONFIG_ADDR[8]</a></td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[9]">MISC:NEXT_CONFIG_ADDR[9]</a></td></tr>
+<tr><td>10</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[10]">MISC:NEXT_CONFIG_ADDR[10]</a></td></tr>
+<tr><td>11</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[11]">MISC:NEXT_CONFIG_ADDR[11]</a></td></tr>
+<tr><td>12</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[12]">MISC:NEXT_CONFIG_ADDR[12]</a></td></tr>
+<tr><td>13</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[13]">MISC:NEXT_CONFIG_ADDR[13]</a></td></tr>
+<tr><td>14</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[14]">MISC:NEXT_CONFIG_ADDR[14]</a></td></tr>
+<tr><td>15</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[15]">MISC:NEXT_CONFIG_ADDR[15]</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.GENERAL12 bittile 1</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[16]">MISC:NEXT_CONFIG_ADDR[16]</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[17]">MISC:NEXT_CONFIG_ADDR[17]</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[18]">MISC:NEXT_CONFIG_ADDR[18]</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[19]">MISC:NEXT_CONFIG_ADDR[19]</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[20]">MISC:NEXT_CONFIG_ADDR[20]</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[21]">MISC:NEXT_CONFIG_ADDR[21]</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[22]">MISC:NEXT_CONFIG_ADDR[22]</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[23]">MISC:NEXT_CONFIG_ADDR[23]</a></td></tr>
+<tr><td>8</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[24]">MISC:NEXT_CONFIG_ADDR[24]</a></td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[25]">MISC:NEXT_CONFIG_ADDR[25]</a></td></tr>
+<tr><td>10</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[26]">MISC:NEXT_CONFIG_ADDR[26]</a></td></tr>
+<tr><td>11</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[27]">MISC:NEXT_CONFIG_ADDR[27]</a></td></tr>
+<tr><td>12</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[28]">MISC:NEXT_CONFIG_ADDR[28]</a></td></tr>
+<tr><td>13</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[29]">MISC:NEXT_CONFIG_ADDR[29]</a></td></tr>
+<tr><td>14</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[30]">MISC:NEXT_CONFIG_ADDR[30]</a></td></tr>
+<tr><td>15</td>
+<td><a href="#bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR" title="MISC:NEXT_CONFIG_ADDR[31]">MISC:NEXT_CONFIG_ADDR[31]</a></td></tr>
+</table>
+<div id="bits-xc6s-REG.GENERAL12-MISC:NEXT_CONFIG_ADDR"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:NEXT_CONFIG_ADDR</th><th>[1, 0, 15]</th><th>[1, 0, 14]</th><th>[1, 0, 13]</th><th>[1, 0, 12]</th><th>[1, 0, 11]</th><th>[1, 0, 10]</th><th>[1, 0, 9]</th><th>[1, 0, 8]</th><th>[1, 0, 7]</th><th>[1, 0, 6]</th><th>[1, 0, 5]</th><th>[1, 0, 4]</th><th>[1, 0, 3]</th><th>[1, 0, 2]</th><th>[1, 0, 1]</th><th>[1, 0, 0]</th><th>[0, 0, 15]</th><th>[0, 0, 14]</th><th>[0, 0, 13]</th><th>[0, 0, 12]</th><th>[0, 0, 11]</th><th>[0, 0, 10]</th><th>[0, 0, 9]</th><th>[0, 0, 8]</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th><th>[0, 0, 3]</th><th>[0, 0, 2]</th><th>[0, 0, 1]</th><th>[0, 0, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[31]</td><td>[30]</td><td>[29]</td><td>[28]</td><td>[27]</td><td>[26]</td><td>[25]</td><td>[24]</td><td>[23]</td><td>[22]</td><td>[21]</td><td>[20]</td><td>[19]</td><td>[18]</td><td>[17]</td><td>[16]</td><td>[15]</td><td>[14]</td><td>[13]</td><td>[12]</td><td>[11]</td><td>[10]</td><td>[9]</td><td>[8]</td><td>[7]</td><td>[6]</td><td>[5]</td><td>[4]</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="general-34">
+<h2><code class="docutils literal notranslate"><span class="pre">GENERAL[34]</span></code><a class="headerlink" href="#general-34" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.GENERAL34 bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[0]">MISC:GOLDEN_CONFIG_ADDR[0]</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[1]">MISC:GOLDEN_CONFIG_ADDR[1]</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[2]">MISC:GOLDEN_CONFIG_ADDR[2]</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[3]">MISC:GOLDEN_CONFIG_ADDR[3]</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[4]">MISC:GOLDEN_CONFIG_ADDR[4]</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[5]">MISC:GOLDEN_CONFIG_ADDR[5]</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[6]">MISC:GOLDEN_CONFIG_ADDR[6]</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[7]">MISC:GOLDEN_CONFIG_ADDR[7]</a></td></tr>
+<tr><td>8</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[8]">MISC:GOLDEN_CONFIG_ADDR[8]</a></td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[9]">MISC:GOLDEN_CONFIG_ADDR[9]</a></td></tr>
+<tr><td>10</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[10]">MISC:GOLDEN_CONFIG_ADDR[10]</a></td></tr>
+<tr><td>11</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[11]">MISC:GOLDEN_CONFIG_ADDR[11]</a></td></tr>
+<tr><td>12</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[12]">MISC:GOLDEN_CONFIG_ADDR[12]</a></td></tr>
+<tr><td>13</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[13]">MISC:GOLDEN_CONFIG_ADDR[13]</a></td></tr>
+<tr><td>14</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[14]">MISC:GOLDEN_CONFIG_ADDR[14]</a></td></tr>
+<tr><td>15</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[15]">MISC:GOLDEN_CONFIG_ADDR[15]</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.GENERAL34 bittile 1</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[16]">MISC:GOLDEN_CONFIG_ADDR[16]</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[17]">MISC:GOLDEN_CONFIG_ADDR[17]</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[18]">MISC:GOLDEN_CONFIG_ADDR[18]</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[19]">MISC:GOLDEN_CONFIG_ADDR[19]</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[20]">MISC:GOLDEN_CONFIG_ADDR[20]</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[21]">MISC:GOLDEN_CONFIG_ADDR[21]</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[22]">MISC:GOLDEN_CONFIG_ADDR[22]</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[23]">MISC:GOLDEN_CONFIG_ADDR[23]</a></td></tr>
+<tr><td>8</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[24]">MISC:GOLDEN_CONFIG_ADDR[24]</a></td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[25]">MISC:GOLDEN_CONFIG_ADDR[25]</a></td></tr>
+<tr><td>10</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[26]">MISC:GOLDEN_CONFIG_ADDR[26]</a></td></tr>
+<tr><td>11</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[27]">MISC:GOLDEN_CONFIG_ADDR[27]</a></td></tr>
+<tr><td>12</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[28]">MISC:GOLDEN_CONFIG_ADDR[28]</a></td></tr>
+<tr><td>13</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[29]">MISC:GOLDEN_CONFIG_ADDR[29]</a></td></tr>
+<tr><td>14</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[30]">MISC:GOLDEN_CONFIG_ADDR[30]</a></td></tr>
+<tr><td>15</td>
+<td><a href="#bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR" title="MISC:GOLDEN_CONFIG_ADDR[31]">MISC:GOLDEN_CONFIG_ADDR[31]</a></td></tr>
+</table>
+<div id="bits-xc6s-REG.GENERAL34-MISC:GOLDEN_CONFIG_ADDR"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:GOLDEN_CONFIG_ADDR</th><th>[1, 0, 15]</th><th>[1, 0, 14]</th><th>[1, 0, 13]</th><th>[1, 0, 12]</th><th>[1, 0, 11]</th><th>[1, 0, 10]</th><th>[1, 0, 9]</th><th>[1, 0, 8]</th><th>[1, 0, 7]</th><th>[1, 0, 6]</th><th>[1, 0, 5]</th><th>[1, 0, 4]</th><th>[1, 0, 3]</th><th>[1, 0, 2]</th><th>[1, 0, 1]</th><th>[1, 0, 0]</th><th>[0, 0, 15]</th><th>[0, 0, 14]</th><th>[0, 0, 13]</th><th>[0, 0, 12]</th><th>[0, 0, 11]</th><th>[0, 0, 10]</th><th>[0, 0, 9]</th><th>[0, 0, 8]</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th><th>[0, 0, 3]</th><th>[0, 0, 2]</th><th>[0, 0, 1]</th><th>[0, 0, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[31]</td><td>[30]</td><td>[29]</td><td>[28]</td><td>[27]</td><td>[26]</td><td>[25]</td><td>[24]</td><td>[23]</td><td>[22]</td><td>[21]</td><td>[20]</td><td>[19]</td><td>[18]</td><td>[17]</td><td>[16]</td><td>[15]</td><td>[14]</td><td>[13]</td><td>[12]</td><td>[11]</td><td>[10]</td><td>[9]</td><td>[8]</td><td>[7]</td><td>[6]</td><td>[5]</td><td>[4]</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="general5">
+<h2><code class="docutils literal notranslate"><span class="pre">GENERAL5</span></code><a class="headerlink" href="#general5" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.GENERAL5 bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc6s-REG.GENERAL5-MISC:FAILSAFE_USER" title="MISC:FAILSAFE_USER[0]">MISC:FAILSAFE_USER[0]</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc6s-REG.GENERAL5-MISC:FAILSAFE_USER" title="MISC:FAILSAFE_USER[1]">MISC:FAILSAFE_USER[1]</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc6s-REG.GENERAL5-MISC:FAILSAFE_USER" title="MISC:FAILSAFE_USER[2]">MISC:FAILSAFE_USER[2]</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc6s-REG.GENERAL5-MISC:FAILSAFE_USER" title="MISC:FAILSAFE_USER[3]">MISC:FAILSAFE_USER[3]</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc6s-REG.GENERAL5-MISC:FAILSAFE_USER" title="MISC:FAILSAFE_USER[4]">MISC:FAILSAFE_USER[4]</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc6s-REG.GENERAL5-MISC:FAILSAFE_USER" title="MISC:FAILSAFE_USER[5]">MISC:FAILSAFE_USER[5]</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc6s-REG.GENERAL5-MISC:FAILSAFE_USER" title="MISC:FAILSAFE_USER[6]">MISC:FAILSAFE_USER[6]</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc6s-REG.GENERAL5-MISC:FAILSAFE_USER" title="MISC:FAILSAFE_USER[7]">MISC:FAILSAFE_USER[7]</a></td></tr>
+<tr><td>8</td>
+<td><a href="#bits-xc6s-REG.GENERAL5-MISC:FAILSAFE_USER" title="MISC:FAILSAFE_USER[8]">MISC:FAILSAFE_USER[8]</a></td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc6s-REG.GENERAL5-MISC:FAILSAFE_USER" title="MISC:FAILSAFE_USER[9]">MISC:FAILSAFE_USER[9]</a></td></tr>
+<tr><td>10</td>
+<td><a href="#bits-xc6s-REG.GENERAL5-MISC:FAILSAFE_USER" title="MISC:FAILSAFE_USER[10]">MISC:FAILSAFE_USER[10]</a></td></tr>
+<tr><td>11</td>
+<td><a href="#bits-xc6s-REG.GENERAL5-MISC:FAILSAFE_USER" title="MISC:FAILSAFE_USER[11]">MISC:FAILSAFE_USER[11]</a></td></tr>
+<tr><td>12</td>
+<td><a href="#bits-xc6s-REG.GENERAL5-MISC:FAILSAFE_USER" title="MISC:FAILSAFE_USER[12]">MISC:FAILSAFE_USER[12]</a></td></tr>
+<tr><td>13</td>
+<td><a href="#bits-xc6s-REG.GENERAL5-MISC:FAILSAFE_USER" title="MISC:FAILSAFE_USER[13]">MISC:FAILSAFE_USER[13]</a></td></tr>
+<tr><td>14</td>
+<td><a href="#bits-xc6s-REG.GENERAL5-MISC:FAILSAFE_USER" title="MISC:FAILSAFE_USER[14]">MISC:FAILSAFE_USER[14]</a></td></tr>
+<tr><td>15</td>
+<td><a href="#bits-xc6s-REG.GENERAL5-MISC:FAILSAFE_USER" title="MISC:FAILSAFE_USER[15]">MISC:FAILSAFE_USER[15]</a></td></tr>
+</table>
+<div id="bits-xc6s-REG.GENERAL5-MISC:FAILSAFE_USER"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:FAILSAFE_USER</th><th>[0, 0, 15]</th><th>[0, 0, 14]</th><th>[0, 0, 13]</th><th>[0, 0, 12]</th><th>[0, 0, 11]</th><th>[0, 0, 10]</th><th>[0, 0, 9]</th><th>[0, 0, 8]</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th><th>[0, 0, 3]</th><th>[0, 0, 2]</th><th>[0, 0, 1]</th><th>[0, 0, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[15]</td><td>[14]</td><td>[13]</td><td>[12]</td><td>[11]</td><td>[10]</td><td>[9]</td><td>[8]</td><td>[7]</td><td>[6]</td><td>[5]</td><td>[4]</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="timer">
+<h2><code class="docutils literal notranslate"><span class="pre">TIMER</span></code><a class="headerlink" href="#timer" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.TIMER bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc6s-REG.TIMER-MISC:TIMER_CFG" title="MISC:TIMER_CFG[0]">MISC:TIMER_CFG[0]</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc6s-REG.TIMER-MISC:TIMER_CFG" title="MISC:TIMER_CFG[1]">MISC:TIMER_CFG[1]</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc6s-REG.TIMER-MISC:TIMER_CFG" title="MISC:TIMER_CFG[2]">MISC:TIMER_CFG[2]</a></td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc6s-REG.TIMER-MISC:TIMER_CFG" title="MISC:TIMER_CFG[3]">MISC:TIMER_CFG[3]</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc6s-REG.TIMER-MISC:TIMER_CFG" title="MISC:TIMER_CFG[4]">MISC:TIMER_CFG[4]</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc6s-REG.TIMER-MISC:TIMER_CFG" title="MISC:TIMER_CFG[5]">MISC:TIMER_CFG[5]</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc6s-REG.TIMER-MISC:TIMER_CFG" title="MISC:TIMER_CFG[6]">MISC:TIMER_CFG[6]</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc6s-REG.TIMER-MISC:TIMER_CFG" title="MISC:TIMER_CFG[7]">MISC:TIMER_CFG[7]</a></td></tr>
+<tr><td>8</td>
+<td><a href="#bits-xc6s-REG.TIMER-MISC:TIMER_CFG" title="MISC:TIMER_CFG[8]">MISC:TIMER_CFG[8]</a></td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc6s-REG.TIMER-MISC:TIMER_CFG" title="MISC:TIMER_CFG[9]">MISC:TIMER_CFG[9]</a></td></tr>
+<tr><td>10</td>
+<td><a href="#bits-xc6s-REG.TIMER-MISC:TIMER_CFG" title="MISC:TIMER_CFG[10]">MISC:TIMER_CFG[10]</a></td></tr>
+<tr><td>11</td>
+<td><a href="#bits-xc6s-REG.TIMER-MISC:TIMER_CFG" title="MISC:TIMER_CFG[11]">MISC:TIMER_CFG[11]</a></td></tr>
+<tr><td>12</td>
+<td><a href="#bits-xc6s-REG.TIMER-MISC:TIMER_CFG" title="MISC:TIMER_CFG[12]">MISC:TIMER_CFG[12]</a></td></tr>
+<tr><td>13</td>
+<td><a href="#bits-xc6s-REG.TIMER-MISC:TIMER_CFG" title="MISC:TIMER_CFG[13]">MISC:TIMER_CFG[13]</a></td></tr>
+<tr><td>14</td>
+<td><a href="#bits-xc6s-REG.TIMER-MISC:TIMER_CFG" title="MISC:TIMER_CFG[14]">MISC:TIMER_CFG[14]</a></td></tr>
+<tr><td>15</td>
+<td><a href="#bits-xc6s-REG.TIMER-MISC:TIMER_CFG" title="MISC:TIMER_CFG[15]">MISC:TIMER_CFG[15]</a></td></tr>
+</table>
+<div id="bits-xc6s-REG.TIMER-MISC:TIMER_CFG"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:TIMER_CFG</th><th>[0, 0, 15]</th><th>[0, 0, 14]</th><th>[0, 0, 13]</th><th>[0, 0, 12]</th><th>[0, 0, 11]</th><th>[0, 0, 10]</th><th>[0, 0, 9]</th><th>[0, 0, 8]</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th><th>[0, 0, 3]</th><th>[0, 0, 2]</th><th>[0, 0, 1]</th><th>[0, 0, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[15]</td><td>[14]</td><td>[13]</td><td>[12]</td><td>[11]</td><td>[10]</td><td>[9]</td><td>[8]</td><td>[7]</td><td>[6]</td><td>[5]</td><td>[4]</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="seu-opt">
+<h2><code class="docutils literal notranslate"><span class="pre">SEU_OPT</span></code><a class="headerlink" href="#seu-opt" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.SEU_OPT bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc6s-REG.SEU_OPT-MISC:POST_CRC_EN" title="MISC:POST_CRC_EN">MISC:POST_CRC_EN</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc6s-REG.SEU_OPT-MISC:GLUTMASK" title="MISC:GLUTMASK">MISC:GLUTMASK</a></td></tr>
+<tr><td>2</td>
+<td>-</td></tr>
+<tr><td>3</td>
+<td><a href="#bits-xc6s-REG.SEU_OPT-MISC:POST_CRC_KEEP" title="MISC:POST_CRC_KEEP">MISC:POST_CRC_KEEP</a></td></tr>
+<tr><td>4</td>
+<td><a href="#bits-xc6s-REG.SEU_OPT-MISC:POST_CRC_FREQ" title="MISC:POST_CRC_FREQ[0]">MISC:POST_CRC_FREQ[0]</a></td></tr>
+<tr><td>5</td>
+<td><a href="#bits-xc6s-REG.SEU_OPT-MISC:POST_CRC_FREQ" title="MISC:POST_CRC_FREQ[1]">MISC:POST_CRC_FREQ[1]</a></td></tr>
+<tr><td>6</td>
+<td><a href="#bits-xc6s-REG.SEU_OPT-MISC:POST_CRC_FREQ" title="MISC:POST_CRC_FREQ[2]">MISC:POST_CRC_FREQ[2]</a></td></tr>
+<tr><td>7</td>
+<td><a href="#bits-xc6s-REG.SEU_OPT-MISC:POST_CRC_FREQ" title="MISC:POST_CRC_FREQ[3]">MISC:POST_CRC_FREQ[3]</a></td></tr>
+<tr><td>8</td>
+<td><a href="#bits-xc6s-REG.SEU_OPT-MISC:POST_CRC_FREQ" title="MISC:POST_CRC_FREQ[4]">MISC:POST_CRC_FREQ[4]</a></td></tr>
+<tr><td>9</td>
+<td><a href="#bits-xc6s-REG.SEU_OPT-MISC:POST_CRC_FREQ" title="MISC:POST_CRC_FREQ[5]">MISC:POST_CRC_FREQ[5]</a></td></tr>
+<tr><td>10</td>
+<td><a href="#bits-xc6s-REG.SEU_OPT-MISC:POST_CRC_FREQ" title="MISC:POST_CRC_FREQ[6]">MISC:POST_CRC_FREQ[6]</a></td></tr>
+<tr><td>11</td>
+<td><a href="#bits-xc6s-REG.SEU_OPT-MISC:POST_CRC_FREQ" title="MISC:POST_CRC_FREQ[7]">MISC:POST_CRC_FREQ[7]</a></td></tr>
+<tr><td>12</td>
+<td><a href="#bits-xc6s-REG.SEU_OPT-MISC:POST_CRC_FREQ" title="MISC:POST_CRC_FREQ[8]">MISC:POST_CRC_FREQ[8]</a></td></tr>
+<tr><td>13</td>
+<td><a href="#bits-xc6s-REG.SEU_OPT-MISC:POST_CRC_FREQ" title="MISC:POST_CRC_FREQ[9]">MISC:POST_CRC_FREQ[9]</a></td></tr>
+<tr><td>14</td>
+<td><a href="#bits-xc6s-REG.SEU_OPT-MISC:POST_CRC_ONESHOT" title="MISC:POST_CRC_ONESHOT">MISC:POST_CRC_ONESHOT</a></td></tr>
+<tr><td>15</td>
+<td><a href="#bits-xc6s-REG.SEU_OPT-MISC:POST_CRC_SEL" title="~MISC:POST_CRC_SEL">~MISC:POST_CRC_SEL</a></td></tr>
+</table>
+<div id="bits-xc6s-REG.SEU_OPT-MISC:GLUTMASK"></div>
+<div id="bits-xc6s-REG.SEU_OPT-MISC:POST_CRC_EN"></div>
+<div id="bits-xc6s-REG.SEU_OPT-MISC:POST_CRC_KEEP"></div>
+<div id="bits-xc6s-REG.SEU_OPT-MISC:POST_CRC_ONESHOT"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:GLUTMASK</th><th>[0, 0, 1]</th></tr>
+<tr><th>MISC:POST_CRC_EN</th><th>[0, 0, 0]</th></tr>
+<tr><th>MISC:POST_CRC_KEEP</th><th>[0, 0, 3]</th></tr>
+<tr><th>MISC:POST_CRC_ONESHOT</th><th>[0, 0, 14]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc6s-REG.SEU_OPT-MISC:POST_CRC_FREQ"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:POST_CRC_FREQ</th><th>[0, 0, 13]</th><th>[0, 0, 12]</th><th>[0, 0, 11]</th><th>[0, 0, 10]</th><th>[0, 0, 9]</th><th>[0, 0, 8]</th><th>[0, 0, 7]</th><th>[0, 0, 6]</th><th>[0, 0, 5]</th><th>[0, 0, 4]</th></tr>
+<tr><td>Non-inverted</td><td>[9]</td><td>[8]</td><td>[7]</td><td>[6]</td><td>[5]</td><td>[4]</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc6s-REG.SEU_OPT-MISC:POST_CRC_SEL"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:POST_CRC_SEL</th><th>[0, 0, 15]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+</section>
+<section id="testmode">
+<h2><code class="docutils literal notranslate"><span class="pre">TESTMODE</span></code><a class="headerlink" href="#testmode" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">REG.TESTMODE bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc6s-REG.TESTMODE-MISC:VGG_TEST" title="MISC:VGG_TEST">MISC:VGG_TEST</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xc6s-REG.TESTMODE-MISC:ICAP_BYPASS" title="MISC:ICAP_BYPASS">MISC:ICAP_BYPASS</a></td></tr>
+<tr><td>2</td>
+<td><a href="#bits-xc6s-REG.TESTMODE-MISC:TESTMODE_EN" title="MISC:TESTMODE_EN">MISC:TESTMODE_EN</a></td></tr>
+</table>
+<div id="bits-xc6s-REG.TESTMODE-MISC:ICAP_BYPASS"></div>
+<div id="bits-xc6s-REG.TESTMODE-MISC:TESTMODE_EN"></div>
+<div id="bits-xc6s-REG.TESTMODE-MISC:VGG_TEST"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:ICAP_BYPASS</th><th>[0, 0, 1]</th></tr>
+<tr><th>MISC:TESTMODE_EN</th><th>[0, 0, 2]</th></tr>
+<tr><th>MISC:VGG_TEST</th><th>[0, 0, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="corner.html" class="btn btn-neutral float-left" title="Corners" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../virtex4/index.html" class="btn btn-neutral float-right" title="Virtex 4" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

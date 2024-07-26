@@ -19,7 +19,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="PCI Express" href="pcie.html" />
+    <link rel="next" title="Memory Controller Block" href="mcb.html" />
     <link rel="prev" title="DSP" href="dsp.html" /> 
 </head>
 
@@ -73,8 +73,12 @@
 <li class="toctree-l4"><a class="reference internal" href="#pci-ce-delay"><code class="docutils literal notranslate"><span class="pre">PCI_CE_DELAY</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="mcb.html">Memory Controller Block</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pcie.html">PCI Express</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gtp.html">Multi-gigabit transceivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcm.html">Digital clock manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="corner.html">Corners</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Virtex 4</a></li>
@@ -875,6 +879,10 @@
 <td><a href="#bits-xc6s-REG_B-BUFPLL1:LOCKED" title="BUFPLL1:LOCKED[0]">BUFPLL1:LOCKED[0]</a></td></tr>
 <tr><td>378</td>
 <td><a href="#bits-xc6s-REG_B-BUFPLL1:LOCKED" title="BUFPLL1:LOCKED[1]">BUFPLL1:LOCKED[1]</a></td></tr>
+<tr><td>379</td>
+<td><a href="#bits-xc6s-REG_B-MISC:MISR_ENABLE" title="MISC:MISR_ENABLE">MISC:MISR_ENABLE</a></td></tr>
+<tr><td>380</td>
+<td><a href="#bits-xc6s-REG_B-MISC:MISR_RESET" title="MISC:MISR_RESET">MISC:MISR_RESET</a></td></tr>
 </table>
 <div id="bits-xc6s-REG_B-BUFIO2_0:I"></div>
 <div id="bits-xc6s-REG_B-BUFIO2_1:I"></div>
@@ -1093,6 +1101,8 @@
 <div id="bits-xc6s-REG_B-BUFIO2_7:IOCLK_ENABLE"></div>
 <div id="bits-xc6s-REG_B-BUFIO2_7:R_EDGE"></div>
 <div id="bits-xc6s-REG_B-BUFPLL_COMMON:ENABLE"></div>
+<div id="bits-xc6s-REG_B-MISC:MISR_ENABLE"></div>
+<div id="bits-xc6s-REG_B-MISC:MISR_RESET"></div>
 <table class="docutils align-default prjcombine-enum">
 <tr><th>BUFIO2_0:CMT_ENABLE</th><th>[0, 0, 326]</th></tr>
 <tr><th>BUFIO2_0:ENABLE</th><th>[0, 0, 307]</th></tr>
@@ -1143,6 +1153,8 @@
 <tr><th>BUFIO2_7:IOCLK_ENABLE</th><th>[0, 0, 84]</th></tr>
 <tr><th>BUFIO2_7:R_EDGE</th><th>[0, 0, 66]</th></tr>
 <tr><th>BUFPLL_COMMON:ENABLE</th><th>[0, 0, 135]</th></tr>
+<tr><th>MISC:MISR_ENABLE</th><th>[0, 0, 379]</th></tr>
+<tr><th>MISC:MISR_RESET</th><th>[0, 0, 380]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 <div id="bits-xc6s-REG_B-BUFIO2_0:FB_DIVIDE_BYPASS"></div>
@@ -2057,6 +2069,10 @@
 <td><a href="#bits-xc6s-REG_T-BUFPLL1:LOCKED" title="BUFPLL1:LOCKED[0]">BUFPLL1:LOCKED[0]</a></td></tr>
 <tr><td>378</td>
 <td><a href="#bits-xc6s-REG_T-BUFPLL1:LOCKED" title="BUFPLL1:LOCKED[1]">BUFPLL1:LOCKED[1]</a></td></tr>
+<tr><td>379</td>
+<td><a href="#bits-xc6s-REG_T-MISC:MISR_ENABLE" title="MISC:MISR_ENABLE">MISC:MISR_ENABLE</a></td></tr>
+<tr><td>380</td>
+<td><a href="#bits-xc6s-REG_T-MISC:MISR_RESET" title="MISC:MISR_RESET">MISC:MISR_RESET</a></td></tr>
 </table>
 <div id="bits-xc6s-REG_T-BUFIO2_0:I"></div>
 <div id="bits-xc6s-REG_T-BUFIO2_1:I"></div>
@@ -2275,6 +2291,8 @@
 <div id="bits-xc6s-REG_T-BUFIO2_7:IOCLK_ENABLE"></div>
 <div id="bits-xc6s-REG_T-BUFIO2_7:R_EDGE"></div>
 <div id="bits-xc6s-REG_T-BUFPLL_COMMON:ENABLE"></div>
+<div id="bits-xc6s-REG_T-MISC:MISR_ENABLE"></div>
+<div id="bits-xc6s-REG_T-MISC:MISR_RESET"></div>
 <table class="docutils align-default prjcombine-enum">
 <tr><th>BUFIO2_0:CMT_ENABLE</th><th>[0, 0, 326]</th></tr>
 <tr><th>BUFIO2_0:ENABLE</th><th>[0, 0, 307]</th></tr>
@@ -2325,6 +2343,8 @@
 <tr><th>BUFIO2_7:IOCLK_ENABLE</th><th>[0, 0, 84]</th></tr>
 <tr><th>BUFIO2_7:R_EDGE</th><th>[0, 0, 66]</th></tr>
 <tr><th>BUFPLL_COMMON:ENABLE</th><th>[0, 0, 135]</th></tr>
+<tr><th>MISC:MISR_ENABLE</th><th>[0, 0, 379]</th></tr>
+<tr><th>MISC:MISR_RESET</th><th>[0, 0, 380]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 <div id="bits-xc6s-REG_T-BUFIO2_0:FB_DIVIDE_BYPASS"></div>
@@ -5054,37 +5074,37 @@
 <table class="docutils align-default prjcombine-tile">
 <tr><th colspan="30">CLKC bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="29">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th></tr>
 <tr><td>0</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTL_CLKOUT0" title="CLKC:OUTL_CLKOUT0[0]">CLKC:OUTL_CLKOUT0[0]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX0" title="CLKC:IMUX0[3]">CLKC:IMUX0[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX0:CLK_SEL_TYPE" title="BUFGMUX0:CLK_SEL_TYPE">BUFGMUX0:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX0:SINV" title="~BUFGMUX0:SINV">~BUFGMUX0:SINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTL_CLKOUT0" title="CLKC:OUTL_CLKOUT0[0]">CLKC:OUTL_CLKOUT0[0]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX0" title="CLKC:IMUX0[3]">CLKC:IMUX0[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX0:CLK_SEL_TYPE" title="BUFGMUX0:CLK_SEL_TYPE">BUFGMUX0:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX0:INV.S" title="~BUFGMUX0:INV.S">~BUFGMUX0:INV.S</a></td></tr>
 <tr><td>1</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTL_CLKOUT0" title="CLKC:OUTL_CLKOUT0[1]">CLKC:OUTL_CLKOUT0[1]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX1" title="CLKC:IMUX1[3]">CLKC:IMUX1[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX1:CLK_SEL_TYPE" title="BUFGMUX1:CLK_SEL_TYPE">BUFGMUX1:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX1:SINV" title="~BUFGMUX1:SINV">~BUFGMUX1:SINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTL_CLKOUT0" title="CLKC:OUTL_CLKOUT0[1]">CLKC:OUTL_CLKOUT0[1]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX1" title="CLKC:IMUX1[3]">CLKC:IMUX1[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX1:CLK_SEL_TYPE" title="BUFGMUX1:CLK_SEL_TYPE">BUFGMUX1:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX1:INV.S" title="~BUFGMUX1:INV.S">~BUFGMUX1:INV.S</a></td></tr>
 <tr><td>2</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTL_CLKOUT0" title="CLKC:OUTL_CLKOUT0[2]">CLKC:OUTL_CLKOUT0[2]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX2" title="CLKC:IMUX2[3]">CLKC:IMUX2[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX2:CLK_SEL_TYPE" title="BUFGMUX2:CLK_SEL_TYPE">BUFGMUX2:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX2:SINV" title="~BUFGMUX2:SINV">~BUFGMUX2:SINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTL_CLKOUT0" title="CLKC:OUTL_CLKOUT0[2]">CLKC:OUTL_CLKOUT0[2]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX2" title="CLKC:IMUX2[3]">CLKC:IMUX2[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX2:CLK_SEL_TYPE" title="BUFGMUX2:CLK_SEL_TYPE">BUFGMUX2:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX2:INV.S" title="~BUFGMUX2:INV.S">~BUFGMUX2:INV.S</a></td></tr>
 <tr><td>3</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTL_CLKOUT1" title="CLKC:OUTL_CLKOUT1[0]">CLKC:OUTL_CLKOUT1[0]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX3" title="CLKC:IMUX3[3]">CLKC:IMUX3[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX3:CLK_SEL_TYPE" title="BUFGMUX3:CLK_SEL_TYPE">BUFGMUX3:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX3:SINV" title="~BUFGMUX3:SINV">~BUFGMUX3:SINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTL_CLKOUT1" title="CLKC:OUTL_CLKOUT1[0]">CLKC:OUTL_CLKOUT1[0]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX3" title="CLKC:IMUX3[3]">CLKC:IMUX3[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX3:CLK_SEL_TYPE" title="BUFGMUX3:CLK_SEL_TYPE">BUFGMUX3:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX3:INV.S" title="~BUFGMUX3:INV.S">~BUFGMUX3:INV.S</a></td></tr>
 <tr><td>4</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTL_CLKOUT1" title="CLKC:OUTL_CLKOUT1[1]">CLKC:OUTL_CLKOUT1[1]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX4" title="CLKC:IMUX4[3]">CLKC:IMUX4[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX4:CLK_SEL_TYPE" title="BUFGMUX4:CLK_SEL_TYPE">BUFGMUX4:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX4:SINV" title="~BUFGMUX4:SINV">~BUFGMUX4:SINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTL_CLKOUT1" title="CLKC:OUTL_CLKOUT1[1]">CLKC:OUTL_CLKOUT1[1]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX4" title="CLKC:IMUX4[3]">CLKC:IMUX4[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX4:CLK_SEL_TYPE" title="BUFGMUX4:CLK_SEL_TYPE">BUFGMUX4:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX4:INV.S" title="~BUFGMUX4:INV.S">~BUFGMUX4:INV.S</a></td></tr>
 <tr><td>5</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTL_CLKOUT1" title="CLKC:OUTL_CLKOUT1[2]">CLKC:OUTL_CLKOUT1[2]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX5" title="CLKC:IMUX5[3]">CLKC:IMUX5[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX5:CLK_SEL_TYPE" title="BUFGMUX5:CLK_SEL_TYPE">BUFGMUX5:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX5:SINV" title="~BUFGMUX5:SINV">~BUFGMUX5:SINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTL_CLKOUT1" title="CLKC:OUTL_CLKOUT1[2]">CLKC:OUTL_CLKOUT1[2]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX5" title="CLKC:IMUX5[3]">CLKC:IMUX5[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX5:CLK_SEL_TYPE" title="BUFGMUX5:CLK_SEL_TYPE">BUFGMUX5:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX5:INV.S" title="~BUFGMUX5:INV.S">~BUFGMUX5:INV.S</a></td></tr>
 <tr><td>6</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX6" title="CLKC:IMUX6[3]">CLKC:IMUX6[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX6:CLK_SEL_TYPE" title="BUFGMUX6:CLK_SEL_TYPE">BUFGMUX6:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX6:SINV" title="~BUFGMUX6:SINV">~BUFGMUX6:SINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX6" title="CLKC:IMUX6[3]">CLKC:IMUX6[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX6:CLK_SEL_TYPE" title="BUFGMUX6:CLK_SEL_TYPE">BUFGMUX6:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX6:INV.S" title="~BUFGMUX6:INV.S">~BUFGMUX6:INV.S</a></td></tr>
 <tr><td>7</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX7" title="CLKC:IMUX7[3]">CLKC:IMUX7[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX7:CLK_SEL_TYPE" title="BUFGMUX7:CLK_SEL_TYPE">BUFGMUX7:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX7:SINV" title="~BUFGMUX7:SINV">~BUFGMUX7:SINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX7" title="CLKC:IMUX7[3]">CLKC:IMUX7[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX7:CLK_SEL_TYPE" title="BUFGMUX7:CLK_SEL_TYPE">BUFGMUX7:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX7:INV.S" title="~BUFGMUX7:INV.S">~BUFGMUX7:INV.S</a></td></tr>
 <tr><td>8</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTR_CLKOUT0" title="CLKC:OUTR_CLKOUT0[0]">CLKC:OUTR_CLKOUT0[0]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX8" title="CLKC:IMUX8[3]">CLKC:IMUX8[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX8:CLK_SEL_TYPE" title="BUFGMUX8:CLK_SEL_TYPE">BUFGMUX8:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX8:SINV" title="~BUFGMUX8:SINV">~BUFGMUX8:SINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTR_CLKOUT0" title="CLKC:OUTR_CLKOUT0[0]">CLKC:OUTR_CLKOUT0[0]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX8" title="CLKC:IMUX8[3]">CLKC:IMUX8[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX8:CLK_SEL_TYPE" title="BUFGMUX8:CLK_SEL_TYPE">BUFGMUX8:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX8:INV.S" title="~BUFGMUX8:INV.S">~BUFGMUX8:INV.S</a></td></tr>
 <tr><td>9</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTR_CLKOUT0" title="CLKC:OUTR_CLKOUT0[1]">CLKC:OUTR_CLKOUT0[1]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX9" title="CLKC:IMUX9[3]">CLKC:IMUX9[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX9:CLK_SEL_TYPE" title="BUFGMUX9:CLK_SEL_TYPE">BUFGMUX9:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX9:SINV" title="~BUFGMUX9:SINV">~BUFGMUX9:SINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTR_CLKOUT0" title="CLKC:OUTR_CLKOUT0[1]">CLKC:OUTR_CLKOUT0[1]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX9" title="CLKC:IMUX9[3]">CLKC:IMUX9[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX9:CLK_SEL_TYPE" title="BUFGMUX9:CLK_SEL_TYPE">BUFGMUX9:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX9:INV.S" title="~BUFGMUX9:INV.S">~BUFGMUX9:INV.S</a></td></tr>
 <tr><td>10</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTR_CLKOUT0" title="CLKC:OUTR_CLKOUT0[2]">CLKC:OUTR_CLKOUT0[2]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX10" title="CLKC:IMUX10[3]">CLKC:IMUX10[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX10:CLK_SEL_TYPE" title="BUFGMUX10:CLK_SEL_TYPE">BUFGMUX10:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX10:SINV" title="~BUFGMUX10:SINV">~BUFGMUX10:SINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTR_CLKOUT0" title="CLKC:OUTR_CLKOUT0[2]">CLKC:OUTR_CLKOUT0[2]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX10" title="CLKC:IMUX10[3]">CLKC:IMUX10[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX10:CLK_SEL_TYPE" title="BUFGMUX10:CLK_SEL_TYPE">BUFGMUX10:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX10:INV.S" title="~BUFGMUX10:INV.S">~BUFGMUX10:INV.S</a></td></tr>
 <tr><td>11</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTR_CLKOUT1" title="CLKC:OUTR_CLKOUT1[0]">CLKC:OUTR_CLKOUT1[0]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX11" title="CLKC:IMUX11[3]">CLKC:IMUX11[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX11:CLK_SEL_TYPE" title="BUFGMUX11:CLK_SEL_TYPE">BUFGMUX11:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX11:SINV" title="~BUFGMUX11:SINV">~BUFGMUX11:SINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTR_CLKOUT1" title="CLKC:OUTR_CLKOUT1[0]">CLKC:OUTR_CLKOUT1[0]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX11" title="CLKC:IMUX11[3]">CLKC:IMUX11[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX11:CLK_SEL_TYPE" title="BUFGMUX11:CLK_SEL_TYPE">BUFGMUX11:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX11:INV.S" title="~BUFGMUX11:INV.S">~BUFGMUX11:INV.S</a></td></tr>
 <tr><td>12</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTR_CLKOUT1" title="CLKC:OUTR_CLKOUT1[1]">CLKC:OUTR_CLKOUT1[1]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX12" title="CLKC:IMUX12[3]">CLKC:IMUX12[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX12:CLK_SEL_TYPE" title="BUFGMUX12:CLK_SEL_TYPE">BUFGMUX12:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX12:SINV" title="~BUFGMUX12:SINV">~BUFGMUX12:SINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTR_CLKOUT1" title="CLKC:OUTR_CLKOUT1[1]">CLKC:OUTR_CLKOUT1[1]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX12" title="CLKC:IMUX12[3]">CLKC:IMUX12[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX12:CLK_SEL_TYPE" title="BUFGMUX12:CLK_SEL_TYPE">BUFGMUX12:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX12:INV.S" title="~BUFGMUX12:INV.S">~BUFGMUX12:INV.S</a></td></tr>
 <tr><td>13</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTR_CLKOUT1" title="CLKC:OUTR_CLKOUT1[2]">CLKC:OUTR_CLKOUT1[2]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX13" title="CLKC:IMUX13[3]">CLKC:IMUX13[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX13:CLK_SEL_TYPE" title="BUFGMUX13:CLK_SEL_TYPE">BUFGMUX13:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX13:SINV" title="~BUFGMUX13:SINV">~BUFGMUX13:SINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTR_CLKOUT1" title="CLKC:OUTR_CLKOUT1[2]">CLKC:OUTR_CLKOUT1[2]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX13" title="CLKC:IMUX13[3]">CLKC:IMUX13[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX13:CLK_SEL_TYPE" title="BUFGMUX13:CLK_SEL_TYPE">BUFGMUX13:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX13:INV.S" title="~BUFGMUX13:INV.S">~BUFGMUX13:INV.S</a></td></tr>
 <tr><td>14</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX14" title="CLKC:IMUX14[3]">CLKC:IMUX14[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX14:CLK_SEL_TYPE" title="BUFGMUX14:CLK_SEL_TYPE">BUFGMUX14:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX14:SINV" title="~BUFGMUX14:SINV">~BUFGMUX14:SINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX14" title="CLKC:IMUX14[3]">CLKC:IMUX14[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX14:CLK_SEL_TYPE" title="BUFGMUX14:CLK_SEL_TYPE">BUFGMUX14:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX14:INV.S" title="~BUFGMUX14:INV.S">~BUFGMUX14:INV.S</a></td></tr>
 <tr><td>15</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX15" title="CLKC:IMUX15[3]">CLKC:IMUX15[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX15:CLK_SEL_TYPE" title="BUFGMUX15:CLK_SEL_TYPE">BUFGMUX15:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX15:SINV" title="~BUFGMUX15:SINV">~BUFGMUX15:SINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX15" title="CLKC:IMUX15[3]">CLKC:IMUX15[3]</a></td><td><a href="#bits-xc6s-CLKC-BUFGMUX15:CLK_SEL_TYPE" title="BUFGMUX15:CLK_SEL_TYPE">BUFGMUX15:CLK_SEL_TYPE</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX15:INV.S" title="~BUFGMUX15:INV.S">~BUFGMUX15:INV.S</a></td></tr>
 <tr><td>16</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:OUTU_CLKOUT0" title="CLKC:OUTU_CLKOUT0[0]">CLKC:OUTU_CLKOUT0[0]</a></td><td>-</td><td>-</td><td><a href="#bits-xc6s-CLKC-CLKC:IMUX0" title="CLKC:IMUX0[2]">CLKC:IMUX0[2]</a></td><td>-</td><td><a href="#bits-xc6s-CLKC-BUFGMUX0:DISABLE_ATTR" title="BUFGMUX0:DISABLE_ATTR">BUFGMUX0:DISABLE_ATTR</a></td><td>-</td></tr>
 <tr><td>17</td>
@@ -5461,39 +5481,39 @@
 <tr><th>BUFGMUX9:DISABLE_ATTR</th><th>[0, 27, 25]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
-<div id="bits-xc6s-CLKC-BUFGMUX0:SINV"></div>
-<div id="bits-xc6s-CLKC-BUFGMUX10:SINV"></div>
-<div id="bits-xc6s-CLKC-BUFGMUX11:SINV"></div>
-<div id="bits-xc6s-CLKC-BUFGMUX12:SINV"></div>
-<div id="bits-xc6s-CLKC-BUFGMUX13:SINV"></div>
-<div id="bits-xc6s-CLKC-BUFGMUX14:SINV"></div>
-<div id="bits-xc6s-CLKC-BUFGMUX15:SINV"></div>
-<div id="bits-xc6s-CLKC-BUFGMUX1:SINV"></div>
-<div id="bits-xc6s-CLKC-BUFGMUX2:SINV"></div>
-<div id="bits-xc6s-CLKC-BUFGMUX3:SINV"></div>
-<div id="bits-xc6s-CLKC-BUFGMUX4:SINV"></div>
-<div id="bits-xc6s-CLKC-BUFGMUX5:SINV"></div>
-<div id="bits-xc6s-CLKC-BUFGMUX6:SINV"></div>
-<div id="bits-xc6s-CLKC-BUFGMUX7:SINV"></div>
-<div id="bits-xc6s-CLKC-BUFGMUX8:SINV"></div>
-<div id="bits-xc6s-CLKC-BUFGMUX9:SINV"></div>
+<div id="bits-xc6s-CLKC-BUFGMUX0:INV.S"></div>
+<div id="bits-xc6s-CLKC-BUFGMUX10:INV.S"></div>
+<div id="bits-xc6s-CLKC-BUFGMUX11:INV.S"></div>
+<div id="bits-xc6s-CLKC-BUFGMUX12:INV.S"></div>
+<div id="bits-xc6s-CLKC-BUFGMUX13:INV.S"></div>
+<div id="bits-xc6s-CLKC-BUFGMUX14:INV.S"></div>
+<div id="bits-xc6s-CLKC-BUFGMUX15:INV.S"></div>
+<div id="bits-xc6s-CLKC-BUFGMUX1:INV.S"></div>
+<div id="bits-xc6s-CLKC-BUFGMUX2:INV.S"></div>
+<div id="bits-xc6s-CLKC-BUFGMUX3:INV.S"></div>
+<div id="bits-xc6s-CLKC-BUFGMUX4:INV.S"></div>
+<div id="bits-xc6s-CLKC-BUFGMUX5:INV.S"></div>
+<div id="bits-xc6s-CLKC-BUFGMUX6:INV.S"></div>
+<div id="bits-xc6s-CLKC-BUFGMUX7:INV.S"></div>
+<div id="bits-xc6s-CLKC-BUFGMUX8:INV.S"></div>
+<div id="bits-xc6s-CLKC-BUFGMUX9:INV.S"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>BUFGMUX0:SINV</th><th>[0, 28, 0]</th></tr>
-<tr><th>BUFGMUX10:SINV</th><th>[0, 28, 10]</th></tr>
-<tr><th>BUFGMUX11:SINV</th><th>[0, 28, 11]</th></tr>
-<tr><th>BUFGMUX12:SINV</th><th>[0, 28, 12]</th></tr>
-<tr><th>BUFGMUX13:SINV</th><th>[0, 28, 13]</th></tr>
-<tr><th>BUFGMUX14:SINV</th><th>[0, 28, 14]</th></tr>
-<tr><th>BUFGMUX15:SINV</th><th>[0, 28, 15]</th></tr>
-<tr><th>BUFGMUX1:SINV</th><th>[0, 28, 1]</th></tr>
-<tr><th>BUFGMUX2:SINV</th><th>[0, 28, 2]</th></tr>
-<tr><th>BUFGMUX3:SINV</th><th>[0, 28, 3]</th></tr>
-<tr><th>BUFGMUX4:SINV</th><th>[0, 28, 4]</th></tr>
-<tr><th>BUFGMUX5:SINV</th><th>[0, 28, 5]</th></tr>
-<tr><th>BUFGMUX6:SINV</th><th>[0, 28, 6]</th></tr>
-<tr><th>BUFGMUX7:SINV</th><th>[0, 28, 7]</th></tr>
-<tr><th>BUFGMUX8:SINV</th><th>[0, 28, 8]</th></tr>
-<tr><th>BUFGMUX9:SINV</th><th>[0, 28, 9]</th></tr>
+<tr><th>BUFGMUX0:INV.S</th><th>[0, 28, 0]</th></tr>
+<tr><th>BUFGMUX10:INV.S</th><th>[0, 28, 10]</th></tr>
+<tr><th>BUFGMUX11:INV.S</th><th>[0, 28, 11]</th></tr>
+<tr><th>BUFGMUX12:INV.S</th><th>[0, 28, 12]</th></tr>
+<tr><th>BUFGMUX13:INV.S</th><th>[0, 28, 13]</th></tr>
+<tr><th>BUFGMUX14:INV.S</th><th>[0, 28, 14]</th></tr>
+<tr><th>BUFGMUX15:INV.S</th><th>[0, 28, 15]</th></tr>
+<tr><th>BUFGMUX1:INV.S</th><th>[0, 28, 1]</th></tr>
+<tr><th>BUFGMUX2:INV.S</th><th>[0, 28, 2]</th></tr>
+<tr><th>BUFGMUX3:INV.S</th><th>[0, 28, 3]</th></tr>
+<tr><th>BUFGMUX4:INV.S</th><th>[0, 28, 4]</th></tr>
+<tr><th>BUFGMUX5:INV.S</th><th>[0, 28, 5]</th></tr>
+<tr><th>BUFGMUX6:INV.S</th><th>[0, 28, 6]</th></tr>
+<tr><th>BUFGMUX7:INV.S</th><th>[0, 28, 7]</th></tr>
+<tr><th>BUFGMUX8:INV.S</th><th>[0, 28, 8]</th></tr>
+<tr><th>BUFGMUX9:INV.S</th><th>[0, 28, 9]</th></tr>
 <tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 </section>
@@ -5763,7 +5783,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="dsp.html" class="btn btn-neutral float-left" title="DSP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="pcie.html" class="btn btn-neutral float-right" title="PCI Express" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="mcb.html" class="btn btn-neutral float-right" title="Memory Controller Block" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -19,7 +19,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Virtex 4" href="../virtex4/index.html" />
+    <link rel="next" title="Digital clock manager" href="dcm.html" />
     <link rel="prev" title="PCI Express" href="pcie.html" /> 
 </head>
 
@@ -57,11 +57,15 @@
 <li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mcb.html">Memory Controller Block</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pcie.html">PCI Express</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Multi-gigabit transceivers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#bitstream">Bitstream</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="dcm.html">Digital clock manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="corner.html">Corners</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Virtex 4</a></li>
@@ -657,17 +661,17 @@
 <table class="docutils align-default prjcombine-tile">
 <tr><th colspan="27">GTP bittile 12</th></tr><tr><th rowspan="2">Row</th><th colspan="26">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th></tr>
 <tr><td>0</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-GTP-GTP:DRP70" title="GTP:DRP70[0]">GTP:DRP70[0]</a><br><a href="#bits-xc6s-GTP-GTP:TXUSRCLK1INV" title="~GTP:TXUSRCLK1INV">~GTP:TXUSRCLK1INV</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_1" title="GTP:CHAN_BOND_SEQ_1_2_1[0]">GTP:CHAN_BOND_SEQ_1_2_1[0]</a><br><a href="#bits-xc6s-GTP-GTP:DRP50" title="GTP:DRP50[0]">GTP:DRP50[0]</a></td><td><a href="#bits-xc6s-GTP-GTP:DRP30" title="GTP:DRP30[0]">GTP:DRP30[0]</a><br><a href="#bits-xc6s-GTP-GTP:TXUSRCLK0INV" title="~GTP:TXUSRCLK0INV">~GTP:TXUSRCLK0INV</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_0" title="GTP:CHAN_BOND_SEQ_1_2_0[0]">GTP:CHAN_BOND_SEQ_1_2_0[0]</a><br><a href="#bits-xc6s-GTP-GTP:DRP10" title="GTP:DRP10[0]">GTP:DRP10[0]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-GTP-GTP:DRP70" title="GTP:DRP70[0]">GTP:DRP70[0]</a><br><a href="#bits-xc6s-GTP-GTP:INV.TXUSRCLK1" title="~GTP:INV.TXUSRCLK1">~GTP:INV.TXUSRCLK1</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_1" title="GTP:CHAN_BOND_SEQ_1_2_1[0]">GTP:CHAN_BOND_SEQ_1_2_1[0]</a><br><a href="#bits-xc6s-GTP-GTP:DRP50" title="GTP:DRP50[0]">GTP:DRP50[0]</a></td><td><a href="#bits-xc6s-GTP-GTP:DRP30" title="GTP:DRP30[0]">GTP:DRP30[0]</a><br><a href="#bits-xc6s-GTP-GTP:INV.TXUSRCLK0" title="~GTP:INV.TXUSRCLK0">~GTP:INV.TXUSRCLK0</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_0" title="GTP:CHAN_BOND_SEQ_1_2_0[0]">GTP:CHAN_BOND_SEQ_1_2_0[0]</a><br><a href="#bits-xc6s-GTP-GTP:DRP10" title="GTP:DRP10[0]">GTP:DRP10[0]</a></td></tr>
 <tr><td>1</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-GTP-GTP:DRP70" title="GTP:DRP70[1]">GTP:DRP70[1]</a><br><a href="#bits-xc6s-GTP-GTP:TXUSRCLK21INV" title="~GTP:TXUSRCLK21INV">~GTP:TXUSRCLK21INV</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_1" title="GTP:CHAN_BOND_SEQ_1_2_1[1]">GTP:CHAN_BOND_SEQ_1_2_1[1]</a><br><a href="#bits-xc6s-GTP-GTP:DRP50" title="GTP:DRP50[1]">GTP:DRP50[1]</a></td><td><a href="#bits-xc6s-GTP-GTP:DRP30" title="GTP:DRP30[1]">GTP:DRP30[1]</a><br><a href="#bits-xc6s-GTP-GTP:TXUSRCLK20INV" title="~GTP:TXUSRCLK20INV">~GTP:TXUSRCLK20INV</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_0" title="GTP:CHAN_BOND_SEQ_1_2_0[1]">GTP:CHAN_BOND_SEQ_1_2_0[1]</a><br><a href="#bits-xc6s-GTP-GTP:DRP10" title="GTP:DRP10[1]">GTP:DRP10[1]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-GTP-GTP:DRP70" title="GTP:DRP70[1]">GTP:DRP70[1]</a><br><a href="#bits-xc6s-GTP-GTP:INV.TXUSRCLK21" title="~GTP:INV.TXUSRCLK21">~GTP:INV.TXUSRCLK21</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_1" title="GTP:CHAN_BOND_SEQ_1_2_1[1]">GTP:CHAN_BOND_SEQ_1_2_1[1]</a><br><a href="#bits-xc6s-GTP-GTP:DRP50" title="GTP:DRP50[1]">GTP:DRP50[1]</a></td><td><a href="#bits-xc6s-GTP-GTP:DRP30" title="GTP:DRP30[1]">GTP:DRP30[1]</a><br><a href="#bits-xc6s-GTP-GTP:INV.TXUSRCLK20" title="~GTP:INV.TXUSRCLK20">~GTP:INV.TXUSRCLK20</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_0" title="GTP:CHAN_BOND_SEQ_1_2_0[1]">GTP:CHAN_BOND_SEQ_1_2_0[1]</a><br><a href="#bits-xc6s-GTP-GTP:DRP10" title="GTP:DRP10[1]">GTP:DRP10[1]</a></td></tr>
 <tr><td>2</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-GTP-GTP:DRP70" title="GTP:DRP70[2]">GTP:DRP70[2]</a><br><a href="#bits-xc6s-GTP-GTP:RXUSRCLK1INV" title="~GTP:RXUSRCLK1INV">~GTP:RXUSRCLK1INV</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_1" title="GTP:CHAN_BOND_SEQ_1_2_1[2]">GTP:CHAN_BOND_SEQ_1_2_1[2]</a><br><a href="#bits-xc6s-GTP-GTP:DRP50" title="GTP:DRP50[2]">GTP:DRP50[2]</a></td><td><a href="#bits-xc6s-GTP-GTP:DCLKINV" title="~GTP:DCLKINV">~GTP:DCLKINV</a><br><a href="#bits-xc6s-GTP-GTP:DRP30" title="GTP:DRP30[2]">GTP:DRP30[2]</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_0" title="GTP:CHAN_BOND_SEQ_1_2_0[2]">GTP:CHAN_BOND_SEQ_1_2_0[2]</a><br><a href="#bits-xc6s-GTP-GTP:DRP10" title="GTP:DRP10[2]">GTP:DRP10[2]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-GTP-GTP:DRP70" title="GTP:DRP70[2]">GTP:DRP70[2]</a><br><a href="#bits-xc6s-GTP-GTP:INV.RXUSRCLK1" title="~GTP:INV.RXUSRCLK1">~GTP:INV.RXUSRCLK1</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_1" title="GTP:CHAN_BOND_SEQ_1_2_1[2]">GTP:CHAN_BOND_SEQ_1_2_1[2]</a><br><a href="#bits-xc6s-GTP-GTP:DRP50" title="GTP:DRP50[2]">GTP:DRP50[2]</a></td><td><a href="#bits-xc6s-GTP-GTP:DRP30" title="GTP:DRP30[2]">GTP:DRP30[2]</a><br><a href="#bits-xc6s-GTP-GTP:INV.DCLK" title="~GTP:INV.DCLK">~GTP:INV.DCLK</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_0" title="GTP:CHAN_BOND_SEQ_1_2_0[2]">GTP:CHAN_BOND_SEQ_1_2_0[2]</a><br><a href="#bits-xc6s-GTP-GTP:DRP10" title="GTP:DRP10[2]">GTP:DRP10[2]</a></td></tr>
 <tr><td>3</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-GTP-GTP:DRP70" title="GTP:DRP70[3]">GTP:DRP70[3]</a><br><a href="#bits-xc6s-GTP-GTP:RXUSRCLK21INV" title="~GTP:RXUSRCLK21INV">~GTP:RXUSRCLK21INV</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_1" title="GTP:CHAN_BOND_SEQ_1_2_1[3]">GTP:CHAN_BOND_SEQ_1_2_1[3]</a><br><a href="#bits-xc6s-GTP-GTP:DRP50" title="GTP:DRP50[3]">GTP:DRP50[3]</a></td><td><a href="#bits-xc6s-GTP-GTP:DRP30" title="GTP:DRP30[3]">GTP:DRP30[3]</a><br><a href="#bits-xc6s-GTP-GTP:RXUSRCLK0INV" title="~GTP:RXUSRCLK0INV">~GTP:RXUSRCLK0INV</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_0" title="GTP:CHAN_BOND_SEQ_1_2_0[3]">GTP:CHAN_BOND_SEQ_1_2_0[3]</a><br><a href="#bits-xc6s-GTP-GTP:DRP10" title="GTP:DRP10[3]">GTP:DRP10[3]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-GTP-GTP:DRP70" title="GTP:DRP70[3]">GTP:DRP70[3]</a><br><a href="#bits-xc6s-GTP-GTP:INV.RXUSRCLK21" title="~GTP:INV.RXUSRCLK21">~GTP:INV.RXUSRCLK21</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_1" title="GTP:CHAN_BOND_SEQ_1_2_1[3]">GTP:CHAN_BOND_SEQ_1_2_1[3]</a><br><a href="#bits-xc6s-GTP-GTP:DRP50" title="GTP:DRP50[3]">GTP:DRP50[3]</a></td><td><a href="#bits-xc6s-GTP-GTP:DRP30" title="GTP:DRP30[3]">GTP:DRP30[3]</a><br><a href="#bits-xc6s-GTP-GTP:INV.RXUSRCLK0" title="~GTP:INV.RXUSRCLK0">~GTP:INV.RXUSRCLK0</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_0" title="GTP:CHAN_BOND_SEQ_1_2_0[3]">GTP:CHAN_BOND_SEQ_1_2_0[3]</a><br><a href="#bits-xc6s-GTP-GTP:DRP10" title="GTP:DRP10[3]">GTP:DRP10[3]</a></td></tr>
 <tr><td>4</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-GTP-GTP:DRP70" title="GTP:DRP70[4]">GTP:DRP70[4]</a><br><a href="#bits-xc6s-GTP-GTP:TSTCLK1INV" title="~GTP:TSTCLK1INV">~GTP:TSTCLK1INV</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_1" title="GTP:CHAN_BOND_SEQ_1_2_1[4]">GTP:CHAN_BOND_SEQ_1_2_1[4]</a><br><a href="#bits-xc6s-GTP-GTP:DRP50" title="GTP:DRP50[4]">GTP:DRP50[4]</a></td><td><a href="#bits-xc6s-GTP-GTP:DRP30" title="GTP:DRP30[4]">GTP:DRP30[4]</a><br><a href="#bits-xc6s-GTP-GTP:RXUSRCLK20INV" title="~GTP:RXUSRCLK20INV">~GTP:RXUSRCLK20INV</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_0" title="GTP:CHAN_BOND_SEQ_1_2_0[4]">GTP:CHAN_BOND_SEQ_1_2_0[4]</a><br><a href="#bits-xc6s-GTP-GTP:DRP10" title="GTP:DRP10[4]">GTP:DRP10[4]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-GTP-GTP:DRP70" title="GTP:DRP70[4]">GTP:DRP70[4]</a><br><a href="#bits-xc6s-GTP-GTP:INV.TSTCLK1" title="~GTP:INV.TSTCLK1">~GTP:INV.TSTCLK1</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_1" title="GTP:CHAN_BOND_SEQ_1_2_1[4]">GTP:CHAN_BOND_SEQ_1_2_1[4]</a><br><a href="#bits-xc6s-GTP-GTP:DRP50" title="GTP:DRP50[4]">GTP:DRP50[4]</a></td><td><a href="#bits-xc6s-GTP-GTP:DRP30" title="GTP:DRP30[4]">GTP:DRP30[4]</a><br><a href="#bits-xc6s-GTP-GTP:INV.RXUSRCLK20" title="~GTP:INV.RXUSRCLK20">~GTP:INV.RXUSRCLK20</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_0" title="GTP:CHAN_BOND_SEQ_1_2_0[4]">GTP:CHAN_BOND_SEQ_1_2_0[4]</a><br><a href="#bits-xc6s-GTP-GTP:DRP10" title="GTP:DRP10[4]">GTP:DRP10[4]</a></td></tr>
 <tr><td>5</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-GTP-GTP:DRP70" title="GTP:DRP70[5]">GTP:DRP70[5]</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_1" title="GTP:CHAN_BOND_SEQ_1_2_1[5]">GTP:CHAN_BOND_SEQ_1_2_1[5]</a><br><a href="#bits-xc6s-GTP-GTP:DRP50" title="GTP:DRP50[5]">GTP:DRP50[5]</a></td><td><a href="#bits-xc6s-GTP-GTP:DRP30" title="GTP:DRP30[5]">GTP:DRP30[5]</a><br><a href="#bits-xc6s-GTP-GTP:TSTCLK0INV" title="~GTP:TSTCLK0INV">~GTP:TSTCLK0INV</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_0" title="GTP:CHAN_BOND_SEQ_1_2_0[5]">GTP:CHAN_BOND_SEQ_1_2_0[5]</a><br><a href="#bits-xc6s-GTP-GTP:DRP10" title="GTP:DRP10[5]">GTP:DRP10[5]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-GTP-GTP:DRP70" title="GTP:DRP70[5]">GTP:DRP70[5]</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_1" title="GTP:CHAN_BOND_SEQ_1_2_1[5]">GTP:CHAN_BOND_SEQ_1_2_1[5]</a><br><a href="#bits-xc6s-GTP-GTP:DRP50" title="GTP:DRP50[5]">GTP:DRP50[5]</a></td><td><a href="#bits-xc6s-GTP-GTP:DRP30" title="GTP:DRP30[5]">GTP:DRP30[5]</a><br><a href="#bits-xc6s-GTP-GTP:INV.TSTCLK0" title="~GTP:INV.TSTCLK0">~GTP:INV.TSTCLK0</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_0" title="GTP:CHAN_BOND_SEQ_1_2_0[5]">GTP:CHAN_BOND_SEQ_1_2_0[5]</a><br><a href="#bits-xc6s-GTP-GTP:DRP10" title="GTP:DRP10[5]">GTP:DRP10[5]</a></td></tr>
 <tr><td>6</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-GTP-GTP:DRP70" title="GTP:DRP70[6]">GTP:DRP70[6]</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_1" title="GTP:CHAN_BOND_SEQ_1_2_1[6]">GTP:CHAN_BOND_SEQ_1_2_1[6]</a><br><a href="#bits-xc6s-GTP-GTP:DRP50" title="GTP:DRP50[6]">GTP:DRP50[6]</a></td><td><a href="#bits-xc6s-GTP-GTP:DRP30" title="GTP:DRP30[6]">GTP:DRP30[6]</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_2_0" title="GTP:CHAN_BOND_SEQ_1_2_0[6]">GTP:CHAN_BOND_SEQ_1_2_0[6]</a><br><a href="#bits-xc6s-GTP-GTP:DRP10" title="GTP:DRP10[6]">GTP:DRP10[6]</a></td></tr>
 <tr><td>7</td>
@@ -693,7 +697,7 @@
 <tr><td>17</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-GTP-GTP:CLKRCV_TRST_1" title="GTP:CLKRCV_TRST_1">GTP:CLKRCV_TRST_1</a><br><a href="#bits-xc6s-GTP-GTP:DRP71" title="GTP:DRP71[1]">GTP:DRP71[1]</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_3_1" title="GTP:CHAN_BOND_SEQ_1_3_1[1]">GTP:CHAN_BOND_SEQ_1_3_1[1]</a><br><a href="#bits-xc6s-GTP-GTP:DRP51" title="GTP:DRP51[1]">GTP:DRP51[1]</a></td><td><a href="#bits-xc6s-GTP-GTP:CLKRCV_TRST_0" title="GTP:CLKRCV_TRST_0">GTP:CLKRCV_TRST_0</a><br><a href="#bits-xc6s-GTP-GTP:DRP31" title="GTP:DRP31[1]">GTP:DRP31[1]</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_3_0" title="GTP:CHAN_BOND_SEQ_1_3_0[1]">GTP:CHAN_BOND_SEQ_1_3_0[1]</a><br><a href="#bits-xc6s-GTP-GTP:DRP11" title="GTP:DRP11[1]">GTP:DRP11[1]</a></td></tr>
 <tr><td>18</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-GTP-GTP:DRP71" title="GTP:DRP71[2]">GTP:DRP71[2]</a><br><a href="#bits-xc6s-GTP-GTP:MUX.CLKOUT_EW" title="GTP:MUX.CLKOUT_EW">GTP:MUX.CLKOUT_EW</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_3_1" title="GTP:CHAN_BOND_SEQ_1_3_1[2]">GTP:CHAN_BOND_SEQ_1_3_1[2]</a><br><a href="#bits-xc6s-GTP-GTP:DRP51" title="GTP:DRP51[2]">GTP:DRP51[2]</a></td><td><a href="#bits-xc6s-GTP-GTP:DRP31" title="GTP:DRP31[2]">GTP:DRP31[2]</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_3_0" title="GTP:CHAN_BOND_SEQ_1_3_0[2]">GTP:CHAN_BOND_SEQ_1_3_0[2]</a><br><a href="#bits-xc6s-GTP-GTP:DRP11" title="GTP:DRP11[2]">GTP:DRP11[2]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-GTP-GTP:DRP71" title="GTP:DRP71[2]">GTP:DRP71[2]</a><br><a href="#bits-xc6s-GTP-GTP:MUX.CLKOUT_EAST" title="GTP:MUX.CLKOUT_EAST">GTP:MUX.CLKOUT_EAST</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_3_1" title="GTP:CHAN_BOND_SEQ_1_3_1[2]">GTP:CHAN_BOND_SEQ_1_3_1[2]</a><br><a href="#bits-xc6s-GTP-GTP:DRP51" title="GTP:DRP51[2]">GTP:DRP51[2]</a></td><td><a href="#bits-xc6s-GTP-GTP:DRP31" title="GTP:DRP31[2]">GTP:DRP31[2]</a><br><a href="#bits-xc6s-GTP-GTP:MUX.CLKOUT_WEST" title="GTP:MUX.CLKOUT_WEST">GTP:MUX.CLKOUT_WEST</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_3_0" title="GTP:CHAN_BOND_SEQ_1_3_0[2]">GTP:CHAN_BOND_SEQ_1_3_0[2]</a><br><a href="#bits-xc6s-GTP-GTP:DRP11" title="GTP:DRP11[2]">GTP:DRP11[2]</a></td></tr>
 <tr><td>19</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-GTP-GTP:DRP71" title="GTP:DRP71[3]">GTP:DRP71[3]</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_3_1" title="GTP:CHAN_BOND_SEQ_1_3_1[3]">GTP:CHAN_BOND_SEQ_1_3_1[3]</a><br><a href="#bits-xc6s-GTP-GTP:DRP51" title="GTP:DRP51[3]">GTP:DRP51[3]</a></td><td><a href="#bits-xc6s-GTP-GTP:DRP31" title="GTP:DRP31[3]">GTP:DRP31[3]</a></td><td><a href="#bits-xc6s-GTP-GTP:CHAN_BOND_SEQ_1_3_0" title="GTP:CHAN_BOND_SEQ_1_3_0[3]">GTP:CHAN_BOND_SEQ_1_3_0[3]</a><br><a href="#bits-xc6s-GTP-GTP:DRP11" title="GTP:DRP11[3]">GTP:DRP11[3]</a></td></tr>
 <tr><td>20</td>
@@ -2096,34 +2100,36 @@
 <tr><td>PCS</td><td>0</td></tr>
 <tr><td>PMA</td><td>1</td></tr>
 </table>
-<div id="bits-xc6s-GTP-GTP:DCLKINV"></div>
-<div id="bits-xc6s-GTP-GTP:RXUSRCLK0INV"></div>
-<div id="bits-xc6s-GTP-GTP:RXUSRCLK1INV"></div>
-<div id="bits-xc6s-GTP-GTP:RXUSRCLK20INV"></div>
-<div id="bits-xc6s-GTP-GTP:RXUSRCLK21INV"></div>
-<div id="bits-xc6s-GTP-GTP:TSTCLK0INV"></div>
-<div id="bits-xc6s-GTP-GTP:TSTCLK1INV"></div>
-<div id="bits-xc6s-GTP-GTP:TXUSRCLK0INV"></div>
-<div id="bits-xc6s-GTP-GTP:TXUSRCLK1INV"></div>
-<div id="bits-xc6s-GTP-GTP:TXUSRCLK20INV"></div>
-<div id="bits-xc6s-GTP-GTP:TXUSRCLK21INV"></div>
+<div id="bits-xc6s-GTP-GTP:INV.DCLK"></div>
+<div id="bits-xc6s-GTP-GTP:INV.RXUSRCLK0"></div>
+<div id="bits-xc6s-GTP-GTP:INV.RXUSRCLK1"></div>
+<div id="bits-xc6s-GTP-GTP:INV.RXUSRCLK20"></div>
+<div id="bits-xc6s-GTP-GTP:INV.RXUSRCLK21"></div>
+<div id="bits-xc6s-GTP-GTP:INV.TSTCLK0"></div>
+<div id="bits-xc6s-GTP-GTP:INV.TSTCLK1"></div>
+<div id="bits-xc6s-GTP-GTP:INV.TXUSRCLK0"></div>
+<div id="bits-xc6s-GTP-GTP:INV.TXUSRCLK1"></div>
+<div id="bits-xc6s-GTP-GTP:INV.TXUSRCLK20"></div>
+<div id="bits-xc6s-GTP-GTP:INV.TXUSRCLK21"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>GTP:DCLKINV</th><th>[12, 24, 2]</th></tr>
-<tr><th>GTP:RXUSRCLK0INV</th><th>[12, 24, 3]</th></tr>
-<tr><th>GTP:RXUSRCLK1INV</th><th>[12, 22, 2]</th></tr>
-<tr><th>GTP:RXUSRCLK20INV</th><th>[12, 24, 4]</th></tr>
-<tr><th>GTP:RXUSRCLK21INV</th><th>[12, 22, 3]</th></tr>
-<tr><th>GTP:TSTCLK0INV</th><th>[12, 24, 5]</th></tr>
-<tr><th>GTP:TSTCLK1INV</th><th>[12, 22, 4]</th></tr>
-<tr><th>GTP:TXUSRCLK0INV</th><th>[12, 24, 0]</th></tr>
-<tr><th>GTP:TXUSRCLK1INV</th><th>[12, 22, 0]</th></tr>
-<tr><th>GTP:TXUSRCLK20INV</th><th>[12, 24, 1]</th></tr>
-<tr><th>GTP:TXUSRCLK21INV</th><th>[12, 22, 1]</th></tr>
+<tr><th>GTP:INV.DCLK</th><th>[12, 24, 2]</th></tr>
+<tr><th>GTP:INV.RXUSRCLK0</th><th>[12, 24, 3]</th></tr>
+<tr><th>GTP:INV.RXUSRCLK1</th><th>[12, 22, 2]</th></tr>
+<tr><th>GTP:INV.RXUSRCLK20</th><th>[12, 24, 4]</th></tr>
+<tr><th>GTP:INV.RXUSRCLK21</th><th>[12, 22, 3]</th></tr>
+<tr><th>GTP:INV.TSTCLK0</th><th>[12, 24, 5]</th></tr>
+<tr><th>GTP:INV.TSTCLK1</th><th>[12, 22, 4]</th></tr>
+<tr><th>GTP:INV.TXUSRCLK0</th><th>[12, 24, 0]</th></tr>
+<tr><th>GTP:INV.TXUSRCLK1</th><th>[12, 22, 0]</th></tr>
+<tr><th>GTP:INV.TXUSRCLK20</th><th>[12, 24, 1]</th></tr>
+<tr><th>GTP:INV.TXUSRCLK21</th><th>[12, 22, 1]</th></tr>
 <tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
-<div id="bits-xc6s-GTP-GTP:MUX.CLKOUT_EW"></div>
+<div id="bits-xc6s-GTP-GTP:MUX.CLKOUT_EAST"></div>
+<div id="bits-xc6s-GTP-GTP:MUX.CLKOUT_WEST"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>GTP:MUX.CLKOUT_EW</th><th>[12, 22, 18]</th></tr>
+<tr><th>GTP:MUX.CLKOUT_EAST</th><th>[12, 22, 18]</th></tr>
+<tr><th>GTP:MUX.CLKOUT_WEST</th><th>[12, 24, 18]</th></tr>
 <tr><td>REFCLKPLL0</td><td>0</td></tr>
 <tr><td>REFCLKPLL1</td><td>1</td></tr>
 </table>
@@ -2258,7 +2264,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="pcie.html" class="btn btn-neutral float-left" title="PCI Express" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../virtex4/index.html" class="btn btn-neutral float-right" title="Virtex 4" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dcm.html" class="btn btn-neutral float-right" title="Digital clock manager" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

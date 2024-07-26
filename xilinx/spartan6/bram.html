@@ -60,8 +60,12 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mcb.html">Memory Controller Block</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pcie.html">PCI Express</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gtp.html">Multi-gigabit transceivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dcm.html">Digital clock manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="corner.html">Corners</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Virtex 4</a></li>
@@ -107,29 +111,29 @@
 <tr><td>0</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr><td>1</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:SRVAL_A" title="BRAM_H0:SRVAL_A[0]">BRAM_H0:SRVAL_A[0]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:WEAWEL0INV" title="~BRAM_H0:WEAWEL0INV">~BRAM_H0:WEAWEL0INV</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:BW_EN_A" title="BRAM_H0:BW_EN_A">BRAM_H0:BW_EN_A</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:SRVAL_A" title="BRAM_H0:SRVAL_A[0]">BRAM_H0:SRVAL_A[0]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:INV.WEAWEL0" title="~BRAM_H0:INV.WEAWEL0">~BRAM_H0:INV.WEAWEL0</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:BW_EN_A" title="BRAM_H0:BW_EN_A">BRAM_H0:BW_EN_A</a></td></tr>
 <tr><td>2</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:REGCEAINV" title="~BRAM_H0:REGCEAINV">~BRAM_H0:REGCEAINV</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:BW_EN_B" title="BRAM_H0:BW_EN_B">BRAM_H0:BW_EN_B</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:INV.REGCEA" title="~BRAM_H0:INV.REGCEA">~BRAM_H0:INV.REGCEA</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:BW_EN_B" title="BRAM_H0:BW_EN_B">BRAM_H0:BW_EN_B</a></td></tr>
 <tr><td>3</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:WEAWEL1INV" title="~BRAM_H0:WEAWEL1INV">~BRAM_H0:WEAWEL1INV</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:WRITE_MODE_B" title="BRAM_H0:WRITE_MODE_B[0]">BRAM_H0:WRITE_MODE_B[0]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:INV.WEAWEL1" title="~BRAM_H0:INV.WEAWEL1">~BRAM_H0:INV.WEAWEL1</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:WRITE_MODE_B" title="BRAM_H0:WRITE_MODE_B[0]">BRAM_H0:WRITE_MODE_B[0]</a></td></tr>
 <tr><td>4</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:INIT_A" title="BRAM_H0:INIT_A[0]">BRAM_H0:INIT_A[0]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:RSTAINV" title="BRAM_H0:RSTAINV">BRAM_H0:RSTAINV</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:WRITE_MODE_A" title="BRAM_H0:WRITE_MODE_A[0]">BRAM_H0:WRITE_MODE_A[0]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:INIT_A" title="BRAM_H0:INIT_A[0]">BRAM_H0:INIT_A[0]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:INV.RSTA" title="BRAM_H0:INV.RSTA">BRAM_H0:INV.RSTA</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:WRITE_MODE_A" title="BRAM_H0:WRITE_MODE_A[0]">BRAM_H0:WRITE_MODE_A[0]</a></td></tr>
 <tr><td>5</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:SRVAL_B" title="BRAM_H0:SRVAL_B[0]">BRAM_H0:SRVAL_B[0]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:CLKAWRCLKINV" title="~BRAM_H0:CLKAWRCLKINV">~BRAM_H0:CLKAWRCLKINV</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:WRITE_MODE_B" title="BRAM_H0:WRITE_MODE_B[1]">BRAM_H0:WRITE_MODE_B[1]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:SRVAL_B" title="BRAM_H0:SRVAL_B[0]">BRAM_H0:SRVAL_B[0]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:INV.CLKAWRCLK" title="~BRAM_H0:INV.CLKAWRCLK">~BRAM_H0:INV.CLKAWRCLK</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:WRITE_MODE_B" title="BRAM_H0:WRITE_MODE_B[1]">BRAM_H0:WRITE_MODE_B[1]</a></td></tr>
 <tr><td>6</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:WRITE_MODE_A" title="BRAM_H0:WRITE_MODE_A[1]">BRAM_H0:WRITE_MODE_A[1]</a></td></tr>
 <tr><td>7</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:INIT_B" title="BRAM_H0:INIT_B[0]">BRAM_H0:INIT_B[0]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:CLKBRDCLKINV" title="~BRAM_H0:CLKBRDCLKINV">~BRAM_H0:CLKBRDCLKINV</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:DATA_WIDTH_B" title="BRAM_H0:DATA_WIDTH_B[1]">BRAM_H0:DATA_WIDTH_B[1]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:INIT_B" title="BRAM_H0:INIT_B[0]">BRAM_H0:INIT_B[0]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:INV.CLKBRDCLK" title="~BRAM_H0:INV.CLKBRDCLK">~BRAM_H0:INV.CLKBRDCLK</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:DATA_WIDTH_B" title="BRAM_H0:DATA_WIDTH_B[1]">BRAM_H0:DATA_WIDTH_B[1]</a></td></tr>
 <tr><td>8</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:SRVAL_A" title="BRAM_H0:SRVAL_A[1]">BRAM_H0:SRVAL_A[1]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:ENWEAKWRITEA" title="BRAM_H0:ENWEAKWRITEA">BRAM_H0:ENWEAKWRITEA</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:DATA_WIDTH_A" title="BRAM_H0:DATA_WIDTH_A[0]">BRAM_H0:DATA_WIDTH_A[0]</a></td></tr>
 <tr><td>9</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:INIT_A" title="BRAM_H0:INIT_A[1]">BRAM_H0:INIT_A[1]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:WEBWEU1INV" title="~BRAM_H0:WEBWEU1INV">~BRAM_H0:WEBWEU1INV</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:DATA_WIDTH_B" title="BRAM_H0:DATA_WIDTH_B[0]">BRAM_H0:DATA_WIDTH_B[0]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:INIT_A" title="BRAM_H0:INIT_A[1]">BRAM_H0:INIT_A[1]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:INV.WEBWEU1" title="~BRAM_H0:INV.WEBWEU1">~BRAM_H0:INV.WEBWEU1</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:DATA_WIDTH_B" title="BRAM_H0:DATA_WIDTH_B[0]">BRAM_H0:DATA_WIDTH_B[0]</a></td></tr>
 <tr><td>10</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:SRVAL_B" title="BRAM_H0:SRVAL_B[1]">BRAM_H0:SRVAL_B[1]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:RSTBRSTINV" title="~BRAM_H0:RSTBRSTINV">~BRAM_H0:RSTBRSTINV</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:DATA_WIDTH_A" title="BRAM_H0:DATA_WIDTH_A[1]">BRAM_H0:DATA_WIDTH_A[1]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:SRVAL_B" title="BRAM_H0:SRVAL_B[1]">BRAM_H0:SRVAL_B[1]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:INV.RSTBRST" title="~BRAM_H0:INV.RSTBRST">~BRAM_H0:INV.RSTBRST</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:DATA_WIDTH_A" title="BRAM_H0:DATA_WIDTH_A[1]">BRAM_H0:DATA_WIDTH_A[1]</a></td></tr>
 <tr><td>11</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:WEBWEU0INV" title="~BRAM_H0:WEBWEU0INV">~BRAM_H0:WEBWEU0INV</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:DATA_WIDTH_B" title="BRAM_H0:DATA_WIDTH_B[2]">BRAM_H0:DATA_WIDTH_B[2]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:INV.WEBWEU0" title="~BRAM_H0:INV.WEBWEU0">~BRAM_H0:INV.WEBWEU0</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:DATA_WIDTH_B" title="BRAM_H0:DATA_WIDTH_B[2]">BRAM_H0:DATA_WIDTH_B[2]</a></td></tr>
 <tr><td>12</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:INIT_B" title="BRAM_H0:INIT_B[1]">BRAM_H0:INIT_B[1]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:REGCEBREGCEINV" title="~BRAM_H0:REGCEBREGCEINV">~BRAM_H0:REGCEBREGCEINV</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:DATA_WIDTH_A" title="BRAM_H0:DATA_WIDTH_A[2]">BRAM_H0:DATA_WIDTH_A[2]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:INIT_B" title="BRAM_H0:INIT_B[1]">BRAM_H0:INIT_B[1]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:INV.REGCEBREGCE" title="~BRAM_H0:INV.REGCEBREGCE">~BRAM_H0:INV.REGCEBREGCE</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:DATA_WIDTH_A" title="BRAM_H0:DATA_WIDTH_A[2]">BRAM_H0:DATA_WIDTH_A[2]</a></td></tr>
 <tr><td>13</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:WEAKWRITEVALA" title="BRAM_H0:WEAKWRITEVALA">BRAM_H0:WEAKWRITEVALA</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H0:RST_PRIORITY_B" title="BRAM_H0:RST_PRIORITY_B">BRAM_H0:RST_PRIORITY_B</a></td></tr>
 <tr><td>14</td>
@@ -407,13 +411,13 @@
 <tr><td>28</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INIT_A" title="BRAM_H1:INIT_A[16]">BRAM_H1:INIT_A[16]</a></td><td>-</td><td>-</td></tr>
 <tr><td>29</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:SRVAL_B" title="BRAM_H1:SRVAL_B[16]">BRAM_H1:SRVAL_B[16]</a></td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:ENBRDENINV" title="~BRAM_H0:ENBRDENINV">~BRAM_H0:ENBRDENINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:SRVAL_B" title="BRAM_H1:SRVAL_B[16]">BRAM_H1:SRVAL_B[16]</a></td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:INV.ENBRDEN" title="~BRAM_H0:INV.ENBRDEN">~BRAM_H0:INV.ENBRDEN</a></td></tr>
 <tr><td>30</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:ENAWRENINV" title="~BRAM_H0:ENAWRENINV">~BRAM_H0:ENAWRENINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H0:INV.ENAWREN" title="~BRAM_H0:INV.ENAWREN">~BRAM_H0:INV.ENAWREN</a></td></tr>
 <tr><td>31</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INIT_B" title="BRAM_H1:INIT_B[16]">BRAM_H1:INIT_B[16]</a></td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:ENBRDENINV" title="~BRAM_H1:ENBRDENINV">~BRAM_H1:ENBRDENINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INIT_B" title="BRAM_H1:INIT_B[16]">BRAM_H1:INIT_B[16]</a></td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INV.ENBRDEN" title="~BRAM_H1:INV.ENBRDEN">~BRAM_H1:INV.ENBRDEN</a></td></tr>
 <tr><td>32</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:SRVAL_A" title="BRAM_H1:SRVAL_A[4]">BRAM_H1:SRVAL_A[4]</a></td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:ENAWRENINV" title="~BRAM_H1:ENAWRENINV">~BRAM_H1:ENAWRENINV</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:SRVAL_A" title="BRAM_H1:SRVAL_A[4]">BRAM_H1:SRVAL_A[4]</a></td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INV.ENAWREN" title="~BRAM_H1:INV.ENAWREN">~BRAM_H1:INV.ENAWREN</a></td></tr>
 <tr><td>33</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INIT_A" title="BRAM_H1:INIT_A[4]">BRAM_H1:INIT_A[4]</a></td><td>-</td><td>-</td></tr>
 <tr><td>34</td>
@@ -564,29 +568,29 @@
 <tr><td>50</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:WEAKWRITEVALA" title="BRAM_H1:WEAKWRITEVALA">BRAM_H1:WEAKWRITEVALA</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:RST_PRIORITY_B" title="BRAM_H1:RST_PRIORITY_B">BRAM_H1:RST_PRIORITY_B</a></td></tr>
 <tr><td>51</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INIT_B" title="BRAM_H1:INIT_B[13]">BRAM_H1:INIT_B[13]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:REGCEBREGCEINV" title="~BRAM_H1:REGCEBREGCEINV">~BRAM_H1:REGCEBREGCEINV</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:DATA_WIDTH_A" title="BRAM_H1:DATA_WIDTH_A[2]">BRAM_H1:DATA_WIDTH_A[2]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INIT_B" title="BRAM_H1:INIT_B[13]">BRAM_H1:INIT_B[13]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INV.REGCEBREGCE" title="~BRAM_H1:INV.REGCEBREGCE">~BRAM_H1:INV.REGCEBREGCE</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:DATA_WIDTH_A" title="BRAM_H1:DATA_WIDTH_A[2]">BRAM_H1:DATA_WIDTH_A[2]</a></td></tr>
 <tr><td>52</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:SRVAL_A" title="BRAM_H1:SRVAL_A[14]">BRAM_H1:SRVAL_A[14]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:WEBWEU0INV" title="~BRAM_H1:WEBWEU0INV">~BRAM_H1:WEBWEU0INV</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:DATA_WIDTH_B" title="BRAM_H1:DATA_WIDTH_B[2]">BRAM_H1:DATA_WIDTH_B[2]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:SRVAL_A" title="BRAM_H1:SRVAL_A[14]">BRAM_H1:SRVAL_A[14]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INV.WEBWEU0" title="~BRAM_H1:INV.WEBWEU0">~BRAM_H1:INV.WEBWEU0</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:DATA_WIDTH_B" title="BRAM_H1:DATA_WIDTH_B[2]">BRAM_H1:DATA_WIDTH_B[2]</a></td></tr>
 <tr><td>53</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:RSTBRSTINV" title="~BRAM_H1:RSTBRSTINV">~BRAM_H1:RSTBRSTINV</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:DATA_WIDTH_A" title="BRAM_H1:DATA_WIDTH_A[1]">BRAM_H1:DATA_WIDTH_A[1]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INV.RSTBRST" title="~BRAM_H1:INV.RSTBRST">~BRAM_H1:INV.RSTBRST</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:DATA_WIDTH_A" title="BRAM_H1:DATA_WIDTH_A[1]">BRAM_H1:DATA_WIDTH_A[1]</a></td></tr>
 <tr><td>54</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INIT_A" title="BRAM_H1:INIT_A[14]">BRAM_H1:INIT_A[14]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:WEBWEU1INV" title="~BRAM_H1:WEBWEU1INV">~BRAM_H1:WEBWEU1INV</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:DATA_WIDTH_B" title="BRAM_H1:DATA_WIDTH_B[0]">BRAM_H1:DATA_WIDTH_B[0]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INIT_A" title="BRAM_H1:INIT_A[14]">BRAM_H1:INIT_A[14]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INV.WEBWEU1" title="~BRAM_H1:INV.WEBWEU1">~BRAM_H1:INV.WEBWEU1</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:DATA_WIDTH_B" title="BRAM_H1:DATA_WIDTH_B[0]">BRAM_H1:DATA_WIDTH_B[0]</a></td></tr>
 <tr><td>55</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:SRVAL_B" title="BRAM_H1:SRVAL_B[14]">BRAM_H1:SRVAL_B[14]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:ENWEAKWRITEA" title="BRAM_H1:ENWEAKWRITEA">BRAM_H1:ENWEAKWRITEA</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:DATA_WIDTH_A" title="BRAM_H1:DATA_WIDTH_A[0]">BRAM_H1:DATA_WIDTH_A[0]</a></td></tr>
 <tr><td>56</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:CLKBRDCLKINV" title="~BRAM_H1:CLKBRDCLKINV">~BRAM_H1:CLKBRDCLKINV</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:DATA_WIDTH_B" title="BRAM_H1:DATA_WIDTH_B[1]">BRAM_H1:DATA_WIDTH_B[1]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INV.CLKBRDCLK" title="~BRAM_H1:INV.CLKBRDCLK">~BRAM_H1:INV.CLKBRDCLK</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:DATA_WIDTH_B" title="BRAM_H1:DATA_WIDTH_B[1]">BRAM_H1:DATA_WIDTH_B[1]</a></td></tr>
 <tr><td>57</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INIT_B" title="BRAM_H1:INIT_B[14]">BRAM_H1:INIT_B[14]</a></td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:WRITE_MODE_A" title="BRAM_H1:WRITE_MODE_A[1]">BRAM_H1:WRITE_MODE_A[1]</a></td></tr>
 <tr><td>58</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:SRVAL_A" title="BRAM_H1:SRVAL_A[15]">BRAM_H1:SRVAL_A[15]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:CLKAWRCLKINV" title="~BRAM_H1:CLKAWRCLKINV">~BRAM_H1:CLKAWRCLKINV</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:WRITE_MODE_B" title="BRAM_H1:WRITE_MODE_B[1]">BRAM_H1:WRITE_MODE_B[1]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:SRVAL_A" title="BRAM_H1:SRVAL_A[15]">BRAM_H1:SRVAL_A[15]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INV.CLKAWRCLK" title="~BRAM_H1:INV.CLKAWRCLK">~BRAM_H1:INV.CLKAWRCLK</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:WRITE_MODE_B" title="BRAM_H1:WRITE_MODE_B[1]">BRAM_H1:WRITE_MODE_B[1]</a></td></tr>
 <tr><td>59</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:RSTAINV" title="BRAM_H1:RSTAINV">BRAM_H1:RSTAINV</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:WRITE_MODE_A" title="BRAM_H1:WRITE_MODE_A[0]">BRAM_H1:WRITE_MODE_A[0]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INV.RSTA" title="BRAM_H1:INV.RSTA">BRAM_H1:INV.RSTA</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:WRITE_MODE_A" title="BRAM_H1:WRITE_MODE_A[0]">BRAM_H1:WRITE_MODE_A[0]</a></td></tr>
 <tr><td>60</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INIT_A" title="BRAM_H1:INIT_A[15]">BRAM_H1:INIT_A[15]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:WEAWEL1INV" title="~BRAM_H1:WEAWEL1INV">~BRAM_H1:WEAWEL1INV</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:WRITE_MODE_B" title="BRAM_H1:WRITE_MODE_B[0]">BRAM_H1:WRITE_MODE_B[0]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INIT_A" title="BRAM_H1:INIT_A[15]">BRAM_H1:INIT_A[15]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INV.WEAWEL1" title="~BRAM_H1:INV.WEAWEL1">~BRAM_H1:INV.WEAWEL1</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:WRITE_MODE_B" title="BRAM_H1:WRITE_MODE_B[0]">BRAM_H1:WRITE_MODE_B[0]</a></td></tr>
 <tr><td>61</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:SRVAL_B" title="BRAM_H1:SRVAL_B[15]">BRAM_H1:SRVAL_B[15]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:REGCEAINV" title="~BRAM_H1:REGCEAINV">~BRAM_H1:REGCEAINV</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:BW_EN_B" title="BRAM_H1:BW_EN_B">BRAM_H1:BW_EN_B</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:SRVAL_B" title="BRAM_H1:SRVAL_B[15]">BRAM_H1:SRVAL_B[15]</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INV.REGCEA" title="~BRAM_H1:INV.REGCEA">~BRAM_H1:INV.REGCEA</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:BW_EN_B" title="BRAM_H1:BW_EN_B">BRAM_H1:BW_EN_B</a></td></tr>
 <tr><td>62</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:WEAWEL0INV" title="~BRAM_H1:WEAWEL0INV">~BRAM_H1:WEAWEL0INV</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:BW_EN_A" title="BRAM_H1:BW_EN_A">BRAM_H1:BW_EN_A</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INV.WEAWEL0" title="~BRAM_H1:INV.WEAWEL0">~BRAM_H1:INV.WEAWEL0</a></td><td><a href="#bits-xc6s-BRAM-BRAM_H1:BW_EN_A" title="BRAM_H1:BW_EN_A">BRAM_H1:BW_EN_A</a></td></tr>
 <tr><td>63</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-BRAM-BRAM_H1:INIT_B" title="BRAM_H1:INIT_B[15]">BRAM_H1:INIT_B[15]</a></td><td>-</td><td>-</td></tr>
 </table>
@@ -37764,51 +37768,51 @@
 <tr><th>BRAM_H1:SRVAL_B</th><th>[3, 22, 37]</th><th>[2, 22, 29]</th><th>[3, 22, 61]</th><th>[3, 22, 55]</th><th>[3, 22, 49]</th><th>[3, 22, 43]</th><th>[3, 22, 31]</th><th>[3, 22, 24]</th><th>[3, 22, 18]</th><th>[3, 22, 13]</th><th>[2, 22, 53]</th><th>[2, 22, 47]</th><th>[2, 22, 41]</th><th>[2, 22, 34]</th><th>[2, 22, 23]</th><th>[2, 22, 16]</th><th>[2, 22, 10]</th><th>[2, 22, 5]</th></tr>
 <tr><td>Non-inverted</td><td>[17]</td><td>[16]</td><td>[15]</td><td>[14]</td><td>[13]</td><td>[12]</td><td>[11]</td><td>[10]</td><td>[9]</td><td>[8]</td><td>[7]</td><td>[6]</td><td>[5]</td><td>[4]</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
 </table>
-<div id="bits-xc6s-BRAM-BRAM_H0:CLKAWRCLKINV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H0:CLKBRDCLKINV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H0:ENAWRENINV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H0:ENBRDENINV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H0:REGCEAINV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H0:REGCEBREGCEINV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H0:RSTBRSTINV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H0:WEAWEL0INV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H0:WEAWEL1INV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H0:WEBWEU0INV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H0:WEBWEU1INV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H1:CLKAWRCLKINV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H1:CLKBRDCLKINV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H1:ENAWRENINV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H1:ENBRDENINV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H1:REGCEAINV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H1:REGCEBREGCEINV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H1:RSTBRSTINV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H1:WEAWEL0INV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H1:WEAWEL1INV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H1:WEBWEU0INV"></div>
-<div id="bits-xc6s-BRAM-BRAM_H1:WEBWEU1INV"></div>
+<div id="bits-xc6s-BRAM-BRAM_H0:INV.CLKAWRCLK"></div>
+<div id="bits-xc6s-BRAM-BRAM_H0:INV.CLKBRDCLK"></div>
+<div id="bits-xc6s-BRAM-BRAM_H0:INV.ENAWREN"></div>
+<div id="bits-xc6s-BRAM-BRAM_H0:INV.ENBRDEN"></div>
+<div id="bits-xc6s-BRAM-BRAM_H0:INV.REGCEA"></div>
+<div id="bits-xc6s-BRAM-BRAM_H0:INV.REGCEBREGCE"></div>
+<div id="bits-xc6s-BRAM-BRAM_H0:INV.RSTBRST"></div>
+<div id="bits-xc6s-BRAM-BRAM_H0:INV.WEAWEL0"></div>
+<div id="bits-xc6s-BRAM-BRAM_H0:INV.WEAWEL1"></div>
+<div id="bits-xc6s-BRAM-BRAM_H0:INV.WEBWEU0"></div>
+<div id="bits-xc6s-BRAM-BRAM_H0:INV.WEBWEU1"></div>
+<div id="bits-xc6s-BRAM-BRAM_H1:INV.CLKAWRCLK"></div>
+<div id="bits-xc6s-BRAM-BRAM_H1:INV.CLKBRDCLK"></div>
+<div id="bits-xc6s-BRAM-BRAM_H1:INV.ENAWREN"></div>
+<div id="bits-xc6s-BRAM-BRAM_H1:INV.ENBRDEN"></div>
+<div id="bits-xc6s-BRAM-BRAM_H1:INV.REGCEA"></div>
+<div id="bits-xc6s-BRAM-BRAM_H1:INV.REGCEBREGCE"></div>
+<div id="bits-xc6s-BRAM-BRAM_H1:INV.RSTBRST"></div>
+<div id="bits-xc6s-BRAM-BRAM_H1:INV.WEAWEL0"></div>
+<div id="bits-xc6s-BRAM-BRAM_H1:INV.WEAWEL1"></div>
+<div id="bits-xc6s-BRAM-BRAM_H1:INV.WEBWEU0"></div>
+<div id="bits-xc6s-BRAM-BRAM_H1:INV.WEBWEU1"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>BRAM_H0:CLKAWRCLKINV</th><th>[0, 23, 5]</th></tr>
-<tr><th>BRAM_H0:CLKBRDCLKINV</th><th>[0, 23, 7]</th></tr>
-<tr><th>BRAM_H0:ENAWRENINV</th><th>[2, 24, 30]</th></tr>
-<tr><th>BRAM_H0:ENBRDENINV</th><th>[2, 24, 29]</th></tr>
-<tr><th>BRAM_H0:REGCEAINV</th><th>[0, 23, 2]</th></tr>
-<tr><th>BRAM_H0:REGCEBREGCEINV</th><th>[0, 23, 12]</th></tr>
-<tr><th>BRAM_H0:RSTBRSTINV</th><th>[0, 23, 10]</th></tr>
-<tr><th>BRAM_H0:WEAWEL0INV</th><th>[0, 23, 1]</th></tr>
-<tr><th>BRAM_H0:WEAWEL1INV</th><th>[0, 23, 3]</th></tr>
-<tr><th>BRAM_H0:WEBWEU0INV</th><th>[0, 23, 11]</th></tr>
-<tr><th>BRAM_H0:WEBWEU1INV</th><th>[0, 23, 9]</th></tr>
-<tr><th>BRAM_H1:CLKAWRCLKINV</th><th>[3, 23, 58]</th></tr>
-<tr><th>BRAM_H1:CLKBRDCLKINV</th><th>[3, 23, 56]</th></tr>
-<tr><th>BRAM_H1:ENAWRENINV</th><th>[2, 24, 32]</th></tr>
-<tr><th>BRAM_H1:ENBRDENINV</th><th>[2, 24, 31]</th></tr>
-<tr><th>BRAM_H1:REGCEAINV</th><th>[3, 23, 61]</th></tr>
-<tr><th>BRAM_H1:REGCEBREGCEINV</th><th>[3, 23, 51]</th></tr>
-<tr><th>BRAM_H1:RSTBRSTINV</th><th>[3, 23, 53]</th></tr>
-<tr><th>BRAM_H1:WEAWEL0INV</th><th>[3, 23, 62]</th></tr>
-<tr><th>BRAM_H1:WEAWEL1INV</th><th>[3, 23, 60]</th></tr>
-<tr><th>BRAM_H1:WEBWEU0INV</th><th>[3, 23, 52]</th></tr>
-<tr><th>BRAM_H1:WEBWEU1INV</th><th>[3, 23, 54]</th></tr>
+<tr><th>BRAM_H0:INV.CLKAWRCLK</th><th>[0, 23, 5]</th></tr>
+<tr><th>BRAM_H0:INV.CLKBRDCLK</th><th>[0, 23, 7]</th></tr>
+<tr><th>BRAM_H0:INV.ENAWREN</th><th>[2, 24, 30]</th></tr>
+<tr><th>BRAM_H0:INV.ENBRDEN</th><th>[2, 24, 29]</th></tr>
+<tr><th>BRAM_H0:INV.REGCEA</th><th>[0, 23, 2]</th></tr>
+<tr><th>BRAM_H0:INV.REGCEBREGCE</th><th>[0, 23, 12]</th></tr>
+<tr><th>BRAM_H0:INV.RSTBRST</th><th>[0, 23, 10]</th></tr>
+<tr><th>BRAM_H0:INV.WEAWEL0</th><th>[0, 23, 1]</th></tr>
+<tr><th>BRAM_H0:INV.WEAWEL1</th><th>[0, 23, 3]</th></tr>
+<tr><th>BRAM_H0:INV.WEBWEU0</th><th>[0, 23, 11]</th></tr>
+<tr><th>BRAM_H0:INV.WEBWEU1</th><th>[0, 23, 9]</th></tr>
+<tr><th>BRAM_H1:INV.CLKAWRCLK</th><th>[3, 23, 58]</th></tr>
+<tr><th>BRAM_H1:INV.CLKBRDCLK</th><th>[3, 23, 56]</th></tr>
+<tr><th>BRAM_H1:INV.ENAWREN</th><th>[2, 24, 32]</th></tr>
+<tr><th>BRAM_H1:INV.ENBRDEN</th><th>[2, 24, 31]</th></tr>
+<tr><th>BRAM_H1:INV.REGCEA</th><th>[3, 23, 61]</th></tr>
+<tr><th>BRAM_H1:INV.REGCEBREGCE</th><th>[3, 23, 51]</th></tr>
+<tr><th>BRAM_H1:INV.RSTBRST</th><th>[3, 23, 53]</th></tr>
+<tr><th>BRAM_H1:INV.WEAWEL0</th><th>[3, 23, 62]</th></tr>
+<tr><th>BRAM_H1:INV.WEAWEL1</th><th>[3, 23, 60]</th></tr>
+<tr><th>BRAM_H1:INV.WEBWEU0</th><th>[3, 23, 52]</th></tr>
+<tr><th>BRAM_H1:INV.WEBWEU1</th><th>[3, 23, 54]</th></tr>
 <tr><td>Inverted</td><td>~[0]</td></tr>
 </table>
 <div id="bits-xc6s-BRAM-BRAM_H0:BW_EN_A"></div>
@@ -37817,7 +37821,7 @@
 <div id="bits-xc6s-BRAM-BRAM_H0:ENWEAKWRITEB"></div>
 <div id="bits-xc6s-BRAM-BRAM_H0:EN_RSTRAM_A"></div>
 <div id="bits-xc6s-BRAM-BRAM_H0:EN_RSTRAM_B"></div>
-<div id="bits-xc6s-BRAM-BRAM_H0:RSTAINV"></div>
+<div id="bits-xc6s-BRAM-BRAM_H0:INV.RSTA"></div>
 <div id="bits-xc6s-BRAM-BRAM_H0:WEAKWRITEVALA"></div>
 <div id="bits-xc6s-BRAM-BRAM_H0:WEAKWRITEVALB"></div>
 <div id="bits-xc6s-BRAM-BRAM_H1:BW_EN_A"></div>
@@ -37826,7 +37830,7 @@
 <div id="bits-xc6s-BRAM-BRAM_H1:ENWEAKWRITEB"></div>
 <div id="bits-xc6s-BRAM-BRAM_H1:EN_RSTRAM_A"></div>
 <div id="bits-xc6s-BRAM-BRAM_H1:EN_RSTRAM_B"></div>
-<div id="bits-xc6s-BRAM-BRAM_H1:RSTAINV"></div>
+<div id="bits-xc6s-BRAM-BRAM_H1:INV.RSTA"></div>
 <div id="bits-xc6s-BRAM-BRAM_H1:WEAKWRITEVALA"></div>
 <div id="bits-xc6s-BRAM-BRAM_H1:WEAKWRITEVALB"></div>
 <table class="docutils align-default prjcombine-enum">
@@ -37836,7 +37840,7 @@
 <tr><th>BRAM_H0:ENWEAKWRITEB</th><th>[0, 23, 17]</th></tr>
 <tr><th>BRAM_H0:EN_RSTRAM_A</th><th>[0, 24, 25]</th></tr>
 <tr><th>BRAM_H0:EN_RSTRAM_B</th><th>[1, 24, 22]</th></tr>
-<tr><th>BRAM_H0:RSTAINV</th><th>[0, 23, 4]</th></tr>
+<tr><th>BRAM_H0:INV.RSTA</th><th>[0, 23, 4]</th></tr>
 <tr><th>BRAM_H0:WEAKWRITEVALA</th><th>[0, 23, 13]</th></tr>
 <tr><th>BRAM_H0:WEAKWRITEVALB</th><th>[0, 23, 18]</th></tr>
 <tr><th>BRAM_H1:BW_EN_A</th><th>[3, 24, 62]</th></tr>
@@ -37845,7 +37849,7 @@
 <tr><th>BRAM_H1:ENWEAKWRITEB</th><th>[3, 23, 46]</th></tr>
 <tr><th>BRAM_H1:EN_RSTRAM_A</th><th>[3, 24, 38]</th></tr>
 <tr><th>BRAM_H1:EN_RSTRAM_B</th><th>[2, 24, 41]</th></tr>
-<tr><th>BRAM_H1:RSTAINV</th><th>[3, 23, 59]</th></tr>
+<tr><th>BRAM_H1:INV.RSTA</th><th>[3, 23, 59]</th></tr>
 <tr><th>BRAM_H1:WEAKWRITEVALA</th><th>[3, 23, 50]</th></tr>
 <tr><th>BRAM_H1:WEAKWRITEVALB</th><th>[3, 23, 45]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
