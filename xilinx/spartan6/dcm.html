@@ -19,7 +19,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Corners" href="corner.html" />
+    <link rel="next" title="Phase-locked loop" href="pll.html" />
     <link rel="prev" title="Multi-gigabit transceivers" href="gtp.html" /> 
 </head>
 
@@ -65,6 +65,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#bitstream">Bitstream</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="pll.html">Phase-locked loop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="corner.html">Corners</a></li>
 <li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers</a></li>
 </ul>
@@ -872,7 +873,7 @@
 <tr><td>56</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CMT_DCM-DCM0:INTERFACE" title="DCM0:INTERFACE[22]">DCM0:INTERFACE[22]</a><br><a href="#bits-xc6s-CMT_DCM-DCM0:MUX.CLKFB" title="DCM0:MUX.CLKFB[3]">DCM0:MUX.CLKFB[3]</a></td></tr>
 <tr><td>57</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CMT_DCM-DCM0:INTERFACE" title="DCM0:INTERFACE[16]">DCM0:INTERFACE[16]</a><br><a href="#bits-xc6s-CMT_DCM-DCM0:MUX.CLKIN" title="DCM0:MUX.CLKIN[5]">DCM0:MUX.CLKIN[5]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CMT_DCM-DCM0:BUF.CLK_FROM_PLL" title="DCM0:BUF.CLK_FROM_PLL">DCM0:BUF.CLK_FROM_PLL</a><br><a href="#bits-xc6s-CMT_DCM-DCM0:INTERFACE" title="DCM0:INTERFACE[16]">DCM0:INTERFACE[16]</a></td></tr>
 <tr><td>58</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CMT_DCM-DCM0:INV.CTLOSC1" title="DCM0:INV.CTLOSC1">DCM0:INV.CTLOSC1</a></td></tr>
 <tr><td>59</td>
@@ -1199,7 +1200,7 @@
 <tr><td>20</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CMT_DCM-DCM1:DFS_S" title="DCM1:DFS_S[71]">DCM1:DFS_S[71]</a><br><a href="#bits-xc6s-CMT_DCM-DCM1:SPREAD_SPECTRUM" title="DCM1:SPREAD_SPECTRUM[12]">DCM1:SPREAD_SPECTRUM[12]</a></td></tr>
 <tr><td>21</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CMT_DCM-DCM1:INTERFACE" title="DCM1:INTERFACE[16]">DCM1:INTERFACE[16]</a><br><a href="#bits-xc6s-CMT_DCM-DCM1:MUX.CLKIN" title="DCM1:MUX.CLKIN[5]">DCM1:MUX.CLKIN[5]</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CMT_DCM-DCM1:BUF.CLK_FROM_PLL" title="DCM1:BUF.CLK_FROM_PLL">DCM1:BUF.CLK_FROM_PLL</a><br><a href="#bits-xc6s-CMT_DCM-DCM1:INTERFACE" title="DCM1:INTERFACE[16]">DCM1:INTERFACE[16]</a></td></tr>
 <tr><td>22</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6s-CMT_DCM-DCM1:INTERFACE" title="DCM1:INTERFACE[17]">DCM1:INTERFACE[17]</a></td></tr>
 <tr><td>23</td>
@@ -2141,6 +2142,7 @@
 <tr><th>DCM1:PHASE_SHIFT</th><th>[13, 30, 35]</th><th>[13, 30, 34]</th><th>[13, 30, 31]</th><th>[13, 30, 30]</th><th>[13, 30, 27]</th><th>[13, 30, 26]</th><th>[13, 30, 23]</th><th>[13, 30, 22]</th></tr>
 <tr><td>Non-inverted</td><td>[7]</td><td>[6]</td><td>[5]</td><td>[4]</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
 </table>
+<div id="bits-xc6s-CMT_DCM-DCM0:BUF.CLK_FROM_PLL"></div>
 <div id="bits-xc6s-CMT_DCM-DCM0:CLK0"></div>
 <div id="bits-xc6s-CMT_DCM-DCM0:CLK180"></div>
 <div id="bits-xc6s-CMT_DCM-DCM0:CLK270"></div>
@@ -2181,6 +2183,7 @@
 <div id="bits-xc6s-CMT_DCM-DCM0:PHASE_SHIFT_NEGATIVE"></div>
 <div id="bits-xc6s-CMT_DCM-DCM0:PROG_ENABLE"></div>
 <div id="bits-xc6s-CMT_DCM-DCM0:STARTUP_WAIT"></div>
+<div id="bits-xc6s-CMT_DCM-DCM1:BUF.CLK_FROM_PLL"></div>
 <div id="bits-xc6s-CMT_DCM-DCM1:CLK0"></div>
 <div id="bits-xc6s-CMT_DCM-DCM1:CLK180"></div>
 <div id="bits-xc6s-CMT_DCM-DCM1:CLK270"></div>
@@ -2222,6 +2225,7 @@
 <div id="bits-xc6s-CMT_DCM-DCM1:PROG_ENABLE"></div>
 <div id="bits-xc6s-CMT_DCM-DCM1:STARTUP_WAIT"></div>
 <table class="docutils align-default prjcombine-enum">
+<tr><th>DCM0:BUF.CLK_FROM_PLL</th><th>[6, 30, 57]</th></tr>
 <tr><th>DCM0:CLK0</th><th>[5, 30, 41]</th></tr>
 <tr><th>DCM0:CLK180</th><th>[5, 30, 59]</th></tr>
 <tr><th>DCM0:CLK270</th><th>[5, 30, 61]</th></tr>
@@ -2262,6 +2266,7 @@
 <tr><th>DCM0:PHASE_SHIFT_NEGATIVE</th><th>[1, 30, 22]</th></tr>
 <tr><th>DCM0:PROG_ENABLE</th><th>[4, 30, 39]</th></tr>
 <tr><th>DCM0:STARTUP_WAIT</th><th>[5, 30, 53]</th></tr>
+<tr><th>DCM1:BUF.CLK_FROM_PLL</th><th>[11, 30, 21]</th></tr>
 <tr><th>DCM1:CLK0</th><th>[10, 30, 28]</th></tr>
 <tr><th>DCM1:CLK180</th><th>[10, 30, 29]</th></tr>
 <tr><th>DCM1:CLK270</th><th>[10, 30, 33]</th></tr>
@@ -2428,27 +2433,27 @@
 <div id="bits-xc6s-CMT_DCM-DCM0:MUX.CLKIN"></div>
 <div id="bits-xc6s-CMT_DCM-DCM1:MUX.CLKIN"></div>
 <table class="docutils align-default prjcombine-enum">
-<tr><th>DCM0:MUX.CLKIN</th><th>[6, 30, 57]</th><th>[6, 30, 55]</th><th>[6, 30, 30]</th><th>[6, 30, 59]</th><th>[6, 30, 29]</th><th>[6, 30, 28]</th></tr>
-<tr><th>DCM1:MUX.CLKIN</th><th>[11, 30, 21]</th><th>[11, 30, 48]</th><th>[11, 30, 47]</th><th>[11, 30, 46]</th><th>[11, 30, 36]</th><th>[11, 30, 35]</th></tr>
-<tr><td>BUFIO2_LR0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>BUFIO2_LR1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>BUFIO2_LR2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>BUFIO2_LR3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
-<tr><td>BUFIO2_LR4</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>BUFIO2_LR5</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
-<tr><td>BUFIO2_LR6</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>BUFIO2_LR7</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>BUFIO2_BT0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>BUFIO2_BT1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
-<tr><td>BUFIO2_BT2</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>BUFIO2_BT3</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
-<tr><td>BUFIO2_BT4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>BUFIO2_BT5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
-<tr><td>BUFIO2_BT6</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>BUFIO2_BT7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
-<tr><td>CKINT0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
-<tr><td>CKINT1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
-<tr><td>CLK_FROM_PLL</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><th>DCM0:MUX.CLKIN</th><th>[6, 30, 55]</th><th>[6, 30, 30]</th><th>[6, 30, 59]</th><th>[6, 30, 29]</th><th>[6, 30, 28]</th></tr>
+<tr><th>DCM1:MUX.CLKIN</th><th>[11, 30, 48]</th><th>[11, 30, 47]</th><th>[11, 30, 46]</th><th>[11, 30, 36]</th><th>[11, 30, 35]</th></tr>
+<tr><td>BUFIO2_LR0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUFIO2_LR1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUFIO2_LR2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>BUFIO2_LR3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUFIO2_LR4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>BUFIO2_LR5</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>BUFIO2_LR6</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUFIO2_LR7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUFIO2_BT0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>BUFIO2_BT1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>BUFIO2_BT2</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>BUFIO2_BT3</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>BUFIO2_BT4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUFIO2_BT5</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUFIO2_BT6</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>BUFIO2_BT7</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>CKINT0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>CKINT1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>CLK_FROM_PLL</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
 </table>
 <div id="bits-xc6s-CMT_DCM-DCM0:INTERFACE"></div>
 <div id="bits-xc6s-CMT_DCM-DCM1:INTERFACE"></div>
@@ -2611,7 +2616,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="gtp.html" class="btn btn-neutral float-left" title="Multi-gigabit transceivers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="corner.html" class="btn btn-neutral float-right" title="Corners" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pll.html" class="btn btn-neutral float-right" title="Phase-locked loop" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
