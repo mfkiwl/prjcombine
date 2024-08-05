@@ -59,7 +59,7 @@
 <li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Input / Output</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#i-o-interface">I/O interface</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#i-o-buffers">I/O buffers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#i-o-buffers-virtex-2">I/O buffers — Virtex 2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#i-o-buffers-virtex-2-pro">I/O buffers — Virtex 2 Pro</a></li>
 </ul>
 </li>
@@ -1305,14 +1305,14 @@
 </table>
 </section>
 </section>
-<section id="i-o-buffers">
-<h2>I/O buffers<a class="headerlink" href="#i-o-buffers" title="Link to this heading"></a></h2>
+<section id="i-o-buffers-virtex-2">
+<h2>I/O buffers — Virtex 2<a class="headerlink" href="#i-o-buffers-virtex-2" title="Link to this heading"></a></h2>
 <div class="admonition-todo admonition" id="id3">
 <p class="admonition-title">Todo</p>
 <p>document</p>
 </div>
 <table class="docutils align-default">
-<tr><th rowspan="2">Name</th><th rowspan="2">IOSTD:V2:PDRIVE</th><th rowspan="2">IOSTD:V2:NDRIVE</th></tr>
+<tr><th rowspan="2">Name</th><th colspan="5">IOSTD:V2:PDRIVE</th><th colspan="5">IOSTD:V2:NDRIVE</th></tr>
 <tr><th>[4]</th><th>[3]</th><th>[2]</th><th>[1]</th><th>[0]</th><th>[4]</th><th>[3]</th><th>[2]</th><th>[1]</th><th>[0]</th></tr>
 <tr><td>AGP</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
 <tr><td>BLVDS_25</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
@@ -1388,7 +1388,7 @@
 <tr><td>SSTL3_I_DCI</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
 </table>
 <table class="docutils align-default">
-<tr><th rowspan="2">Name</th><th rowspan="2">IOSTD:V2:SLEW</th></tr>
+<tr><th rowspan="2">Name</th><th colspan="4">IOSTD:V2:SLEW</th></tr>
 <tr><th>[3]</th><th>[2]</th><th>[1]</th><th>[0]</th></tr>
 <tr><td>AGP</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
 <tr><td>BLVDS_25</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
@@ -1453,7 +1453,7 @@
 <tr><td>VR</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
 </table>
 <table class="docutils align-default">
-<tr><th rowspan="2">Name</th><th rowspan="2">IOSTD:V2:OUTPUT_MISC</th></tr>
+<tr><th rowspan="2">Name</th><th colspan="1">IOSTD:V2:OUTPUT_MISC</th></tr>
 <tr><th>[0]</th></tr>
 <tr><td>AGP</td><td>0</td></tr>
 <tr><td>BLVDS_25</td><td>0</td></tr>
@@ -1512,7 +1512,7 @@
 <tr><td>SSTL3_I_DCI</td><td>0</td></tr>
 </table>
 <table class="docutils align-default">
-<tr><th rowspan="2">Name</th><th rowspan="2">IOSTD:V2:OUTPUT_DIFF</th></tr>
+<tr><th rowspan="2">Name</th><th colspan="6">IOSTD:V2:OUTPUT_DIFF</th></tr>
 <tr><th>[5]</th><th>[4]</th><th>[3]</th><th>[2]</th><th>[1]</th><th>[0]</th></tr>
 <tr><td>LDT_25</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
 <tr><td>LVDSEXT_25</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
@@ -4254,7 +4254,7 @@
 <p>document</p>
 </div>
 <table class="docutils align-default">
-<tr><th rowspan="2">Name</th><th rowspan="2">IOSTD:V2P:PDRIVE</th><th rowspan="2">IOSTD:V2P:NDRIVE</th></tr>
+<tr><th rowspan="2">Name</th><th colspan="4">IOSTD:V2P:PDRIVE</th><th colspan="5">IOSTD:V2P:NDRIVE</th></tr>
 <tr><th>[3]</th><th>[2]</th><th>[1]</th><th>[0]</th><th>[4]</th><th>[3]</th><th>[2]</th><th>[1]</th><th>[0]</th></tr>
 <tr><td>BLVDS_25</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
 <tr><td>GTL</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
@@ -4325,7 +4325,7 @@
 <tr><td>SSTL2_I_DCI</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
 </table>
 <table class="docutils align-default">
-<tr><th rowspan="2">Name</th><th rowspan="2">IOSTD:V2P:SLEW</th></tr>
+<tr><th rowspan="2">Name</th><th colspan="5">IOSTD:V2P:SLEW</th></tr>
 <tr><th>[4]</th><th>[3]</th><th>[2]</th><th>[1]</th><th>[0]</th></tr>
 <tr><td>BLVDS_25</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
 <tr><td>GTL</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
@@ -4384,7 +4384,7 @@
 <tr><td>VR</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
 </table>
 <table class="docutils align-default">
-<tr><th rowspan="2">Name</th><th rowspan="2">IOSTD:V2P:OUTPUT_MISC</th></tr>
+<tr><th rowspan="2">Name</th><th colspan="2">IOSTD:V2P:OUTPUT_MISC</th></tr>
 <tr><th>[1]</th><th>[0]</th></tr>
 <tr><td>BLVDS_25</td><td>0</td><td>0</td></tr>
 <tr><td>GTL</td><td>0</td><td>1</td></tr>
@@ -4437,7 +4437,7 @@
 <tr><td>SSTL2_I_DCI</td><td>0</td><td>0</td></tr>
 </table>
 <table class="docutils align-default">
-<tr><th rowspan="2">Name</th><th rowspan="2">IOSTD:V2P:OUTPUT_DIFF</th></tr>
+<tr><th rowspan="2">Name</th><th colspan="4">IOSTD:V2P:OUTPUT_DIFF</th></tr>
 <tr><th>[3]</th><th>[2]</th><th>[1]</th><th>[0]</th></tr>
 <tr><td>LDT_25</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
 <tr><td>LVDSEXT_25</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
