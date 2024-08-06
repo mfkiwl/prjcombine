@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corners &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Configuration registers" href="config.html" />
+    <link rel="prev" title="Input / Output" href="io.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../xc9500/index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Xilinx FPGAs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../xc5200/index.html">XC5200</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Virtex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Virtex 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan3/index.html">Spartan 3</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">FPGAcore</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="interconnect.html">General interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html">Input / Output</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Corners</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lower-left">Lower left</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#upper-left">Upper left</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lower-right">Lower right</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#upper-right">Upper right</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Spartan 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Virtex 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Virtex 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex6/index.html">Virtex 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex7/index.html">Virtex 7</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Xilinx FPGAs</a></li>
+          <li class="breadcrumb-item"><a href="index.html">FPGAcore</a></li>
+      <li class="breadcrumb-item active">Corners</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/xilinx/fpgacore/corner.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="corners">
+<span id="fpgacore-corner"></span><h1>Corners<a class="headerlink" href="#corners" title="Link to this heading"></a></h1>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>document</p>
+</div>
+<section id="lower-left">
+<h2>Lower left<a class="headerlink" href="#lower-left" title="Link to this heading"></a></h2>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>document</p>
+</div>
+<section id="ll-fc">
+<h3><code class="docutils literal notranslate"><span class="pre">LL.FC</span></code><a class="headerlink" href="#ll-fc" title="Link to this heading"></a></h3>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="3">LL.FC bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="2">Column</th></tr><tr><th>0</th><th>1</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xcexf-LL.FC-MISC:MISR_RESET" title="MISC:MISR_RESET">MISC:MISR_RESET</a></td><td>-</td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xcexf-LL.FC-MISC:MISR_CLOCK" title="MISC:MISR_CLOCK">MISC:MISR_CLOCK</a></td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td><a href="#bits-xcexf-LL.FC-MISC:SEND_VGG" title="MISC:SEND_VGG[0]">MISC:SEND_VGG[0]</a></td></tr>
+<tr><td>9</td>
+<td>-</td><td><a href="#bits-xcexf-LL.FC-MISC:SEND_VGG" title="MISC:SEND_VGG[1]">MISC:SEND_VGG[1]</a></td></tr>
+<tr><td>10</td>
+<td>-</td><td><a href="#bits-xcexf-LL.FC-MISC:SEND_VGG" title="MISC:SEND_VGG[2]">MISC:SEND_VGG[2]</a></td></tr>
+<tr><td>11</td>
+<td>-</td><td><a href="#bits-xcexf-LL.FC-MISC:SEND_VGG" title="MISC:SEND_VGG[3]">MISC:SEND_VGG[3]</a></td></tr>
+<tr><td>12</td>
+<td>-</td><td><a href="#bits-xcexf-LL.FC-MISC:VGG_SENDMAX" title="MISC:VGG_SENDMAX">MISC:VGG_SENDMAX</a></td></tr>
+<tr><td>13</td>
+<td>-</td><td><a href="#bits-xcexf-LL.FC-MISC:VGG_ENABLE_OFFCHIP" title="MISC:VGG_ENABLE_OFFCHIP">MISC:VGG_ENABLE_OFFCHIP</a></td></tr>
+</table>
+<div id="bits-xcexf-LL.FC-MISC:MISR_CLOCK"></div>
+<div id="bits-xcexf-LL.FC-MISC:MISR_RESET"></div>
+<div id="bits-xcexf-LL.FC-MISC:VGG_ENABLE_OFFCHIP"></div>
+<div id="bits-xcexf-LL.FC-MISC:VGG_SENDMAX"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:MISR_CLOCK</th><th>[0, 0, 1]</th></tr>
+<tr><th>MISC:MISR_RESET</th><th>[0, 0, 0]</th></tr>
+<tr><th>MISC:VGG_ENABLE_OFFCHIP</th><th>[0, 1, 13]</th></tr>
+<tr><th>MISC:VGG_SENDMAX</th><th>[0, 1, 12]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xcexf-LL.FC-MISC:SEND_VGG"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:SEND_VGG</th><th>[0, 1, 11]</th><th>[0, 1, 10]</th><th>[0, 1, 9]</th><th>[0, 1, 8]</th></tr>
+<tr><td>Non-inverted</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+</section>
+</section>
+<section id="upper-left">
+<h2>Upper left<a class="headerlink" href="#upper-left" title="Link to this heading"></a></h2>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>document</p>
+</div>
+<section id="ul-fc">
+<h3><code class="docutils literal notranslate"><span class="pre">UL.FC</span></code><a class="headerlink" href="#ul-fc" title="Link to this heading"></a></h3>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="3">UL.FC bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="2">Column</th></tr><tr><th>0</th><th>1</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xcexf-UL.FC-MISC:MISR_RESET" title="MISC:MISR_RESET">MISC:MISR_RESET</a></td><td>-</td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xcexf-UL.FC-MISC:MISR_CLOCK" title="MISC:MISR_CLOCK">MISC:MISR_CLOCK</a></td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td></tr>
+<tr><td>32</td>
+<td>-</td><td><a href="#bits-xcexf-UL.FC-MISC:TEST_LL" title="MISC:TEST_LL">MISC:TEST_LL</a></td></tr>
+</table>
+<div id="bits-xcexf-UL.FC-MISC:MISR_CLOCK"></div>
+<div id="bits-xcexf-UL.FC-MISC:MISR_RESET"></div>
+<div id="bits-xcexf-UL.FC-MISC:TEST_LL"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:MISR_CLOCK</th><th>[0, 0, 1]</th></tr>
+<tr><th>MISC:MISR_RESET</th><th>[0, 0, 0]</th></tr>
+<tr><th>MISC:TEST_LL</th><th>[0, 1, 32]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+</section>
+<section id="lower-right">
+<h2>Lower right<a class="headerlink" href="#lower-right" title="Link to this heading"></a></h2>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<p>document</p>
+</div>
+<section id="lr-fc">
+<h3><code class="docutils literal notranslate"><span class="pre">LR.FC</span></code><a class="headerlink" href="#lr-fc" title="Link to this heading"></a></h3>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="3">LR.FC bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="2">Column</th></tr><tr><th>0</th><th>1</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xcexf-LR.FC-MISC:MISR_RESET" title="MISC:MISR_RESET">MISC:MISR_RESET</a></td><td><a href="#bits-xcexf-LR.FC-STARTUP:GSR_SYNC" title="STARTUP:GSR_SYNC">STARTUP:GSR_SYNC</a></td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xcexf-LR.FC-MISC:MISR_CLOCK" title="MISC:MISR_CLOCK">MISC:MISR_CLOCK</a></td><td><a href="#bits-xcexf-LR.FC-STARTUP:GTS_SYNC" title="STARTUP:GTS_SYNC">STARTUP:GTS_SYNC</a></td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td><a href="#bits-xcexf-LR.FC-ICAP:ENABLE" title="ICAP:ENABLE">ICAP:ENABLE</a></td></tr>
+<tr><td>4</td>
+<td>-</td><td><a href="#bits-xcexf-LR.FC-STARTUP:GTS_GSR_ENABLE" title="STARTUP:GTS_GSR_ENABLE">STARTUP:GTS_GSR_ENABLE</a></td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td></tr>
+<tr><td>40</td>
+<td><a href="#bits-xcexf-LR.FC-MISC:ABUFF" title="MISC:ABUFF[0]">MISC:ABUFF[0]</a></td><td>-</td></tr>
+<tr><td>41</td>
+<td><a href="#bits-xcexf-LR.FC-MISC:ABUFF" title="MISC:ABUFF[1]">MISC:ABUFF[1]</a></td><td>-</td></tr>
+<tr><td>42</td>
+<td><a href="#bits-xcexf-LR.FC-MISC:ABUFF" title="MISC:ABUFF[2]">MISC:ABUFF[2]</a></td><td>-</td></tr>
+<tr><td>43</td>
+<td><a href="#bits-xcexf-LR.FC-MISC:ABUFF" title="MISC:ABUFF[3]">MISC:ABUFF[3]</a></td><td>-</td></tr>
+</table>
+<div id="bits-xcexf-LR.FC-ICAP:ENABLE"></div>
+<div id="bits-xcexf-LR.FC-MISC:MISR_CLOCK"></div>
+<div id="bits-xcexf-LR.FC-MISC:MISR_RESET"></div>
+<div id="bits-xcexf-LR.FC-STARTUP:GSR_SYNC"></div>
+<div id="bits-xcexf-LR.FC-STARTUP:GTS_GSR_ENABLE"></div>
+<div id="bits-xcexf-LR.FC-STARTUP:GTS_SYNC"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>ICAP:ENABLE</th><th>[0, 1, 3]</th></tr>
+<tr><th>MISC:MISR_CLOCK</th><th>[0, 0, 1]</th></tr>
+<tr><th>MISC:MISR_RESET</th><th>[0, 0, 0]</th></tr>
+<tr><th>STARTUP:GSR_SYNC</th><th>[0, 1, 0]</th></tr>
+<tr><th>STARTUP:GTS_GSR_ENABLE</th><th>[0, 1, 4]</th></tr>
+<tr><th>STARTUP:GTS_SYNC</th><th>[0, 1, 1]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xcexf-LR.FC-MISC:ABUFF"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:ABUFF</th><th>[0, 0, 43]</th><th>[0, 0, 42]</th><th>[0, 0, 41]</th><th>[0, 0, 40]</th></tr>
+<tr><td>Non-inverted</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+</section>
+</section>
+<section id="upper-right">
+<h2>Upper right<a class="headerlink" href="#upper-right" title="Link to this heading"></a></h2>
+<div class="admonition-todo admonition" id="id5">
+<p class="admonition-title">Todo</p>
+<p>document</p>
+</div>
+<section id="ur-fc">
+<h3><code class="docutils literal notranslate"><span class="pre">UR.FC</span></code><a class="headerlink" href="#ur-fc" title="Link to this heading"></a></h3>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="3">UR.FC bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="2">Column</th></tr><tr><th>0</th><th>1</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xcexf-UR.FC-MISC:MISR_RESET" title="MISC:MISR_RESET">MISC:MISR_RESET</a></td><td>-</td></tr>
+<tr><td>1</td>
+<td><a href="#bits-xcexf-UR.FC-MISC:MISR_CLOCK" title="MISC:MISR_CLOCK">MISC:MISR_CLOCK</a></td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td><a href="#bits-xcexf-UR.FC-BSCAN:TDO_ENABLE" title="BSCAN:TDO_ENABLE[0]">BSCAN:TDO_ENABLE[0]</a></td><td><a href="#bits-xcexf-UR.FC-BSCAN:TDO_ENABLE" title="BSCAN:TDO_ENABLE[1]">BSCAN:TDO_ENABLE[1]</a></td></tr>
+<tr><td>17</td>
+<td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[31]">~BSCAN:USERID[31]</a></td><td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[30]">~BSCAN:USERID[30]</a></td></tr>
+<tr><td>18</td>
+<td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[28]">~BSCAN:USERID[28]</a></td><td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[29]">~BSCAN:USERID[29]</a></td></tr>
+<tr><td>19</td>
+<td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[27]">~BSCAN:USERID[27]</a></td><td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[26]">~BSCAN:USERID[26]</a></td></tr>
+<tr><td>20</td>
+<td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[24]">~BSCAN:USERID[24]</a></td><td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[25]">~BSCAN:USERID[25]</a></td></tr>
+<tr><td>21</td>
+<td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[23]">~BSCAN:USERID[23]</a></td><td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[22]">~BSCAN:USERID[22]</a></td></tr>
+<tr><td>22</td>
+<td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[21]">~BSCAN:USERID[21]</a></td><td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[20]">~BSCAN:USERID[20]</a></td></tr>
+<tr><td>23</td>
+<td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[19]">~BSCAN:USERID[19]</a></td><td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[18]">~BSCAN:USERID[18]</a></td></tr>
+<tr><td>24</td>
+<td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[17]">~BSCAN:USERID[17]</a></td><td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[16]">~BSCAN:USERID[16]</a></td></tr>
+<tr><td>25</td>
+<td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[15]">~BSCAN:USERID[15]</a></td><td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[14]">~BSCAN:USERID[14]</a></td></tr>
+<tr><td>26</td>
+<td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[13]">~BSCAN:USERID[13]</a></td><td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[12]">~BSCAN:USERID[12]</a></td></tr>
+<tr><td>27</td>
+<td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[11]">~BSCAN:USERID[11]</a></td><td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[10]">~BSCAN:USERID[10]</a></td></tr>
+<tr><td>28</td>
+<td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[9]">~BSCAN:USERID[9]</a></td><td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[8]">~BSCAN:USERID[8]</a></td></tr>
+<tr><td>29</td>
+<td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[7]">~BSCAN:USERID[7]</a></td><td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[6]">~BSCAN:USERID[6]</a></td></tr>
+<tr><td>30</td>
+<td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[5]">~BSCAN:USERID[5]</a></td><td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[4]">~BSCAN:USERID[4]</a></td></tr>
+<tr><td>31</td>
+<td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[3]">~BSCAN:USERID[3]</a></td><td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[2]">~BSCAN:USERID[2]</a></td></tr>
+<tr><td>32</td>
+<td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[1]">~BSCAN:USERID[1]</a></td><td><a href="#bits-xcexf-UR.FC-BSCAN:USERID" title="~BSCAN:USERID[0]">~BSCAN:USERID[0]</a></td></tr>
+</table>
+<div id="bits-xcexf-UR.FC-MISC:MISR_CLOCK"></div>
+<div id="bits-xcexf-UR.FC-MISC:MISR_RESET"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:MISR_CLOCK</th><th>[0, 0, 1]</th></tr>
+<tr><th>MISC:MISR_RESET</th><th>[0, 0, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xcexf-UR.FC-BSCAN:TDO_ENABLE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BSCAN:TDO_ENABLE</th><th>[0, 1, 16]</th><th>[0, 0, 16]</th></tr>
+<tr><td>Non-inverted</td><td>[1]</td><td>[0]</td></tr>
+</table>
+<div id="bits-xcexf-UR.FC-BSCAN:USERID"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BSCAN:USERID</th><th>[0, 0, 17]</th><th>[0, 1, 17]</th><th>[0, 1, 18]</th><th>[0, 0, 18]</th><th>[0, 0, 19]</th><th>[0, 1, 19]</th><th>[0, 1, 20]</th><th>[0, 0, 20]</th><th>[0, 0, 21]</th><th>[0, 1, 21]</th><th>[0, 0, 22]</th><th>[0, 1, 22]</th><th>[0, 0, 23]</th><th>[0, 1, 23]</th><th>[0, 0, 24]</th><th>[0, 1, 24]</th><th>[0, 0, 25]</th><th>[0, 1, 25]</th><th>[0, 0, 26]</th><th>[0, 1, 26]</th><th>[0, 0, 27]</th><th>[0, 1, 27]</th><th>[0, 0, 28]</th><th>[0, 1, 28]</th><th>[0, 0, 29]</th><th>[0, 1, 29]</th><th>[0, 0, 30]</th><th>[0, 1, 30]</th><th>[0, 0, 31]</th><th>[0, 1, 31]</th><th>[0, 0, 32]</th><th>[0, 1, 32]</th></tr>
+<tr><td>Inverted</td><td>~[31]</td><td>~[30]</td><td>~[29]</td><td>~[28]</td><td>~[27]</td><td>~[26]</td><td>~[25]</td><td>~[24]</td><td>~[23]</td><td>~[22]</td><td>~[21]</td><td>~[20]</td><td>~[19]</td><td>~[18]</td><td>~[17]</td><td>~[16]</td><td>~[15]</td><td>~[14]</td><td>~[13]</td><td>~[12]</td><td>~[11]</td><td>~[10]</td><td>~[9]</td><td>~[8]</td><td>~[7]</td><td>~[6]</td><td>~[5]</td><td>~[4]</td><td>~[3]</td><td>~[2]</td><td>~[1]</td><td>~[0]</td></tr>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="io.html" class="btn btn-neutral float-left" title="Input / Output" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="config.html" class="btn btn-neutral float-right" title="Configuration registers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
