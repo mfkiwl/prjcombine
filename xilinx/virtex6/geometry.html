@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Device geometry &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Interconnect" href="interconnect.html" />
+    <link rel="prev" title="Virtex 6" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../xc9500/index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Xilinx FPGAs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../xc5200/index.html">XC5200</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Virtex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Virtex 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan3/index.html">Spartan 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fpgacore/index.html">FPGAcore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Spartan 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Virtex 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Virtex 5</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Virtex 6</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Device geometry</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#general-structure">General structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bitstream-geometry">Bitstream geometry</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="interconnect.html">Interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html">Input/Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="center.html">Configuration Center</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emac.html">Ethernet MACs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pcie.html">PCI Express cores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex7/index.html">Virtex 7</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Xilinx FPGAs</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Virtex 6</a></li>
+      <li class="breadcrumb-item active">Device geometry</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/xilinx/virtex6/geometry.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="device-geometry">
+<span id="virtex6-geometry"></span><h1>Device geometry<a class="headerlink" href="#device-geometry" title="Link to this heading"></a></h1>
+<section id="general-structure">
+<h2>General structure<a class="headerlink" href="#general-structure" title="Link to this heading"></a></h2>
+<p>Virtex 6 devices follow the same general structure as Virtex 4 and Virtex 5 devices, with minor changes.</p>
+<p>Virtex 6 devices are divided into “regions”. A region is exactly 40 interconnect tiles high. In addition to 40 interconnect rows, each region has a special HCLK row running through the middle (between rows 19 and 20), which is not counted in the row numbering.</p>
+<p>The exact sequence of columns varies with the device. The main available column types are:</p>
+<ul class="simple">
+<li><p>CLBLL column: contains <code class="docutils literal notranslate"><span class="pre">CLBLL</span></code> tiles, one for every interconnect tile.</p></li>
+<li><p>CLBLM column: contains <code class="docutils literal notranslate"><span class="pre">CLBLM</span></code> tiles, one for every interconnect tile.</p></li>
+<li><p>BRAM column: contains <code class="docutils literal notranslate"><span class="pre">BRAM</span></code> tiles, one for every 5 interconnect tiles (ie. 8 <code class="docutils literal notranslate"><span class="pre">BRAM</span></code> tiles per region)</p></li>
+<li><p>hard logic column: a variant of BRAM column; contains a mixture of:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">BRAM</span></code> tiles</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EMAC</span></code> tiles (10 interconnect tiles high, replaces two <code class="docutils literal notranslate"><span class="pre">BRAM</span></code> tiles)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PCIE</span></code> tiles (20 interconnect tiles high and 4 columns wide, replaces 4 <code class="docutils literal notranslate"><span class="pre">BRAM</span></code> tiles and 3×20 CLBs in the three CLB columns to the left)</p></li>
+</ul>
+</li>
+<li><p>DSP column: contains <code class="docutils literal notranslate"><span class="pre">DSP</span></code> tiles, one for every 5 interconnect tiles (ie. 8 <code class="docutils literal notranslate"><span class="pre">DSP</span></code> tiles per region)</p></li>
+<li><p>IO column: contains <code class="docutils literal notranslate"><span class="pre">IO</span></code> tiles, one for every 2 interconnect tiles; also contains special <code class="docutils literal notranslate"><span class="pre">HCLK_IOI</span></code> tiles in the HCLK rows</p></li>
+<li><p>the center column: there is exactly one of those per device; it contains a mixture of <code class="docutils literal notranslate"><span class="pre">CFG</span></code>, <code class="docutils literal notranslate"><span class="pre">CMT</span></code>, <code class="docutils literal notranslate"><span class="pre">CMT_BUFG_*</span></code>, and clock distribution tiles</p></li>
+<li><p>GT column: for each region, contains either four <code class="docutils literal notranslate"><span class="pre">GTX</span></code> tiles (each of them 10 rows high), or one <code class="docutils literal notranslate"><span class="pre">GTH</span></code> tile (40 rows high)</p></li>
+</ul>
+<p>Each of the above types of columns is colocated with a single interconnect column. The interconnect column consists of:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">INT</span></code> tiles, one per interconnect row (16 per region)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INTF</span></code> or <code class="docutils literal notranslate"><span class="pre">INTF.DELAY</span></code> tiles, one for every <code class="docutils literal notranslate"><span class="pre">INT</span></code> tile, except for <code class="docutils literal notranslate"><span class="pre">INT</span></code> tiles associated with <code class="docutils literal notranslate"><span class="pre">CLB*</span></code> tiles</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">INTF</span></code> is associated with <code class="docutils literal notranslate"><span class="pre">BRAM</span></code>, <code class="docutils literal notranslate"><span class="pre">DSP</span></code>, <code class="docutils literal notranslate"><span class="pre">IO</span></code>, <code class="docutils literal notranslate"><span class="pre">CMT</span></code>, and <code class="docutils literal notranslate"><span class="pre">CFG</span></code> tiles</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INTF.DELAY</span></code> is associated with <code class="docutils literal notranslate"><span class="pre">GTX</span></code>, <code class="docutils literal notranslate"><span class="pre">GTH</span></code>, <code class="docutils literal notranslate"><span class="pre">PCIE</span></code>, and <code class="docutils literal notranslate"><span class="pre">EMAC</span></code> tiles</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HCLK</span></code> tiles, one per region (located in the HCLK row)</p></li>
+</ul>
+<p>While there is still a clock spine column, it is no longer considered meaningfully separate from the center column.</p>
+<p>There can be up to four IO columns per device:</p>
+<ul class="simple">
+<li><p>outer left column (present on all except <code class="docutils literal notranslate"><span class="pre">hxt</span></code> devices, always the leftmost column of the device when present)</p></li>
+<li><p>inner left column (always present, relatively close to the center column)</p></li>
+<li><p>inner right column (always present, relatively close to the center column)</p></li>
+<li><p>outer right column (present on some devices; is the rightmost column of the device if the device has no MGT columns)</p></li>
+</ul>
+<p>There can be up to two GT columns on the device, depending on the device type:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">xc6vlx760</span></code> has no GT columns at all; the leftmost and rightmost columns are the outer IO columns</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lxt</span></code>, <code class="docutils literal notranslate"><span class="pre">cxt</span></code>, and <code class="docutils literal notranslate"><span class="pre">sxt</span></code> devices have one GT column, which is the rightmost column of the device; it contains <code class="docutils literal notranslate"><span class="pre">GTX</span></code> tiles</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hxt</span></code> devices have two GT columns, the leftmost and the rightmost column of the device; they contain <code class="docutils literal notranslate"><span class="pre">GTX</span></code> tiles and, on all devices except <code class="docutils literal notranslate"><span class="pre">xc6vhx250t</span></code>, additionally some <code class="docutils literal notranslate"><span class="pre">GTH</span></code> tiles</p></li>
+</ul>
+<p>If the device contains MGT columns, it also has a hard logic column, which is the second rightmost column of the device, right next to the right MGT column. <code class="docutils literal notranslate"><span class="pre">lx</span></code> devices have no hard logic column.</p>
+<p>The other kinds of columns (CLB, BRAM, DSP) come in varying numbers, locations, and proportions, depending on device size and kind.</p>
+<p>The grid is mostly regular, but can have holes of two kinds:</p>
+<ul>
+<li><p>the configuration center (<code class="docutils literal notranslate"><span class="pre">CFG</span></code> tile) occupies a 6×80 area of what would otherwise be <code class="docutils literal notranslate"><span class="pre">CLBLL</span></code> tiles to the left of the center column; this area has no interconnect tiles; horizontal interconnect lines pass through the hole, skipping over the 6 columns, while vertical interconnect lines cannot cross the hole, and are turned around at the bottom and top edge of the hole. The inputs/outputs for the primitives in the <code class="docutils literal notranslate"><span class="pre">CFG</span></code> tile are borrowed from the <code class="docutils literal notranslate"><span class="pre">INT</span></code> tiles in the center column.</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">PCIE</span></code> tile occupies a 4×20 area of interconnect tiles; the columns it occupies are, in order:</p>
+<ul class="simple">
+<li><p>a CLBLL column; the <code class="docutils literal notranslate"><span class="pre">CLBLL</span></code> tiles in this area are skipped, but the <code class="docutils literal notranslate"><span class="pre">INT</span></code> tiles remain and serve as interconnect to the <code class="docutils literal notranslate"><span class="pre">PCIE</span></code> tile</p></li>
+<li><p>a CLBLM column; the <code class="docutils literal notranslate"><span class="pre">CLBLM</span></code> tiles in this area are skipped, but the <code class="docutils literal notranslate"><span class="pre">INT</span></code> tiles remain and serve as interconnect to the <code class="docutils literal notranslate"><span class="pre">PCIE</span></code> tile</p></li>
+<li><p>a CLBLL column; both the <code class="docutils literal notranslate"><span class="pre">CLBLL</span></code> and <code class="docutils literal notranslate"><span class="pre">INT</span></code> tiles in this area are skipped</p></li>
+<li><p>the hard logic column; there are no <code class="docutils literal notranslate"><span class="pre">INT</span></code> tiles in this area</p></li>
+</ul>
+<p>As with the <code class="docutils literal notranslate"><span class="pre">CFG</span></code> tile, horizontal interconnect lines jump across the skipped <code class="docutils literal notranslate"><span class="pre">INT</span></code> tiles, but vertical lines are turned around at the bottom and top edge.</p>
+</li>
+</ul>
+<section id="center-column">
+<h3>Center column<a class="headerlink" href="#center-column" title="Link to this heading"></a></h3>
+<p>The center column has a triple role as the configuration center, CMT column, and clock distrubution column. It has the following contents:</p>
+<ul class="simple">
+<li><p>there is one <code class="docutils literal notranslate"><span class="pre">CMT</span></code> tile (consisting of two <code class="docutils literal notranslate"><span class="pre">MMCM</span></code>s) per region</p></li>
+<li><p>two consecutive regions in the middle additionally host the <code class="docutils literal notranslate"><span class="pre">CFG</span></code> tile; the boundary between this two regions is considered to be the “center point” of the device, regardless of how far it is from actual geometrical center (the devices can be quite unbalanced in that respect); we will call the regions hosting <code class="docutils literal notranslate"><span class="pre">CFG</span></code> tile <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">-</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">c</span></code></p></li>
+<li><p>the top 3 rows of region <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">-</span> <span class="pre">1</span></code> contain the <code class="docutils literal notranslate"><span class="pre">CMT_BUFG_BOT</span></code> tile, which contains 16 global clock buffers (<code class="docutils literal notranslate"><span class="pre">BUGCTRL</span></code>)</p></li>
+<li><p>the bottom 3 rows of region <code class="docutils literal notranslate"><span class="pre">c</span></code> contain the <code class="docutils literal notranslate"><span class="pre">CMT_BUFG_TOP</span></code> tile, which contains another set of 16 global clock buffers (<code class="docutils literal notranslate"><span class="pre">BUGCTRL</span></code>)</p></li>
+<li><p>the top rows of regions <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">-</span> <span class="pre">2</span></code> and below contain the <code class="docutils literal notranslate"><span class="pre">GCLK_BUF</span></code> tile, which rebuffers the global clock signals</p></li>
+<li><p>likewise, the bottom rows of regions <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">+</span> <span class="pre">1</span></code> and above also contain the <code class="docutils literal notranslate"><span class="pre">GCLK_BUF</span></code> tile</p></li>
+<li><p>the bottom two rows of regions <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">-</span> <span class="pre">2</span></code> and below contain the <code class="docutils literal notranslate"><span class="pre">PMVIOB</span></code> tile, the purpose of which is unknown</p></li>
+<li><p>the top two rows of regions <code class="docutils literal notranslate"><span class="pre">c</span></code> and above likewise contain the <code class="docutils literal notranslate"><span class="pre">PMVIOB</span></code> tile</p></li>
+</ul>
+</section>
+</section>
+<section id="bitstream-geometry">
+<h2>Bitstream geometry<a class="headerlink" href="#bitstream-geometry" title="Link to this heading"></a></h2>
+<p>The bitstream is made of frames, which come in two types:</p>
+<ul class="simple">
+<li><p>0: main area</p></li>
+<li><p>1: BRAM data area</p></li>
+</ul>
+<p>The bitstream is split by region — each frame covers 40 interconnect rows plus the HCLK row, and the frame size is independent of device size.</p>
+<p>Frames are identified by their type, region, major and minor numbers. The major number identifies a column (interconnect column or the clock spine), and the minor number identifies a frame within a column. The major numbers are counted separately for each type of frame.</p>
+<p>For bitstream purposes, the regions are counted using the <code class="docutils literal notranslate"><span class="pre">CFG</span></code> tile as the origin. Top region 0 is considered to be the region that contains the upper half of the <code class="docutils literal notranslate"><span class="pre">CFG</span></code> tile, top region 1 is the region above that, and so on. Bottom region 0 is considered to be the region that contains the lower half of the <code class="docutils literal notranslate"><span class="pre">CFG</span></code> tile, bottom region 1 is the region below that, and so on.</p>
+<p>The main area contains all interconnect columns, with major numbers assigned sequentially from 0 on the left, one for each column. The columns have the following widths:</p>
+<ul class="simple">
+<li><p>CLBLL and CLBLM columns: 36 frames</p></li>
+<li><p>BRAM or hard logic column: 28 frames</p></li>
+<li><p>DSP column: 28 frames</p></li>
+<li><p>IO column: 44 frames</p></li>
+<li><p>center column: 38 frames</p></li>
+<li><p>MGT column: 30 frames</p></li>
+</ul>
+<p>The BRAM data area contains 128 frames for each BRAM column, in order from left. The major numbers are assigned sequentially for each BRAM column starting from 0.</p>
+<p>Each frame is exactly 2592 bits long and has the following structure:</p>
+<ul class="simple">
+<li><p>bits 0-1279: interconnect rows 0 to 19 of the region, 64 bits per row</p></li>
+<li><p>bits 1280-1292: ECC</p></li>
+<li><p>bits 1293-1295: HCLK row</p></li>
+<li><p>bits 1296-1311: unused</p></li>
+<li><p>bits 1312-2591: interconnect rows 20 to 39 of the region, 64 bits per row</p></li>
+</ul>
+<p>Every interconnect tile thus corresponds to a bitstream tile that is 28×64 to 44×64 bits. The actual interconnect tile is 26×64 bits, occupying the first 26 frames of the column. If <code class="docutils literal notranslate"><span class="pre">INTF</span></code> or <code class="docutils literal notranslate"><span class="pre">INTF.DELAY</span></code> tile is present in the tile, it occupies leftover space in frames 24 and 25.  The remaining frames, as well as unused space in frames 24-25, are used for configuring the associated primitive tile.</p>
+<p>The HCLK row has smaller bitstream tiles, 28×3 to 44×3 bits in size.</p>
+<p>The BRAM data tiles are 128×320 bits in size (covering the height of 5 interconnect rows). The area at intersection with HCLK rows is unused.</p>
+<section id="ecc">
+<h3>ECC<a class="headerlink" href="#ecc" title="Link to this heading"></a></h3>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>reverse, document</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Virtex 6" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="interconnect.html" class="btn btn-neutral float-right" title="Interconnect" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

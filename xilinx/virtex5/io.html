@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Input/Output &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Configuration Center" href="center.html" />
+    <link rel="prev" title="DSP" href="dsp.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../xc9500/index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Xilinx FPGAs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../xc5200/index.html">XC5200</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Virtex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Virtex 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan3/index.html">Spartan 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fpgacore/index.html">FPGAcore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Spartan 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Virtex 4</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Virtex 5</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="geometry.html">Device geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interconnect.html">Interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Input/Output</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#i-o-banks-and-special-functions">I/O banks and special functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bitstream">Bitstream</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="center.html">Configuration Center</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ppc.html">PowerPC cores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emac.html">Ethernet MACs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pcie.html">PCI Express cores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtp.html">GTP transceivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtx.html">GTX transceivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex6/index.html">Virtex 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex7/index.html">Virtex 7</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Xilinx FPGAs</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Virtex 5</a></li>
+      <li class="breadcrumb-item active">Input/Output</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/xilinx/virtex5/io.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="input-output">
+<h1>Input/Output<a class="headerlink" href="#input-output" title="Link to this heading"></a></h1>
+<section id="i-o-banks-and-special-functions">
+<h2>I/O banks and special functions<a class="headerlink" href="#i-o-banks-and-special-functions" title="Link to this heading"></a></h2>
+<p>Virtex 5 devices have up to three I/O columns:</p>
+<ul class="simple">
+<li><p>the left I/O column, containing only IO tiles; if the device has no transceivers on the left side, it is the leftmost column of the device; otherwise, it is somewhat to the right of the left GT column; it is always present</p></li>
+<li><p>the center column, part of which contains IO tiles; the IO tiles in this column come in up to four segments:</p>
+<ul>
+<li><p>the lower segment (variable size, not present on all devices), between the bottom edge of the device and the lower CMTs</p></li>
+<li><p>the lower middle segment (always 20 tiles high), between lower CMTs and the configuration center</p></li>
+<li><p>the upper middle segment (always 20 tiles high), between the configuration center and the upper CMTs</p></li>
+<li><p>the upper segment (variable size, not present on all devices), between the device and the upper CMTs and the top edge of the device</p></li>
+</ul>
+</li>
+<li><p>the right I/O column, containing only IO tiles; it is present on all devices except for <code class="docutils literal notranslate"><span class="pre">xc5vlx20t</span></code>; if present, it is somewhat to the left of the device’s right edge</p></li>
+</ul>
+<p>Virtex 5 has the following banks:</p>
+<ul>
+<li><p>bank 0 is the configuration bank; it contains only dedicated configuration I/O pins, as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CCLK</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CS_B</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DONE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">D_OUT_BUSY</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">D_IN</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HSWAPEN</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INIT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PROGRAM_B</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RDWR_B</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TCK</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TDI</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TDO</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TMS</span></code></p></li>
+</ul>
+<p>bank 0 is not associated with any IO tiles</p>
+</li>
+<li><p>banks 1-4: middle segments of the center column; each of them consists of 10 IO tiles; they contain global clock inputs and shared configuration pins</p>
+<ul class="simple">
+<li><p>bank 1: immediately above configuration center</p></li>
+<li><p>bank 2: immediately below configuration center</p></li>
+<li><p>bank 3: above bank 1, below upper CMTs (not present on <code class="docutils literal notranslate"><span class="pre">xc5vlx20t</span></code>)</p></li>
+<li><p>bank 4: below bank 2, above lower CMTs</p></li>
+</ul>
+</li>
+<li><p>banks 5-10: lower and upper segments of the center column; each of them consists of 20 IO tiles</p>
+<ul class="simple">
+<li><p>banks 5, 7, 9 are the upper segment, with bank 5 being immediately above upper CMTs; bank number increases upwards</p></li>
+<li><p>banks 6, 8, 10 are the lower segment, with bank 6 being immediately below lower CMTs; bank number increases downwards</p></li>
+</ul>
+</li>
+<li><p>banks 11 and up: left and right column; each of them consists of 20 IO tiles</p>
+<ul class="simple">
+<li><p>banks 11, 15, 19, 23, …: left column, above the configuration center; bank number increases upwards, starting from bank 11 immediately above the configuration center row</p></li>
+<li><p>banks 12, 16, 20, 24, …: right column, above the configuration center; bank number increases upwards, starting from bank 12 immediately above the configuration center row</p></li>
+<li><p>banks 13, 17, 21, 25, …: left column, below the configuration center; bank number increases downwards, starting from bank 13 immediately below the configuration center row</p></li>
+<li><p>banks 14, 18, 22, 26, …: right column, below the configuration center; bank number increases downwards, starting from bank 14 immediately below the configuration center row</p></li>
+</ul>
+</li>
+</ul>
+<p>All IOBs in the device are grouped into differential pairs, one pair per IO tile.  <code class="docutils literal notranslate"><span class="pre">IOB1</span></code> is the “true” pin of the pair, while <code class="docutils literal notranslate"><span class="pre">IOB0</span></code> is the “complemented” pin.  Differential input and true differential output is supported on all pins of the device.</p>
+<p><code class="docutils literal notranslate"><span class="pre">IOB1</span></code> pads in the 4 rows surronding the HCLK row (that is, in rows 8-11 of every clock region) are considered “clock-capable”. They can drive <code class="docutils literal notranslate"><span class="pre">BUFIO</span></code> and <code class="docutils literal notranslate"><span class="pre">BUFR</span></code> buffers via dedicated connections. While Xilinx documentation also considers <code class="docutils literal notranslate"><span class="pre">IOB0</span></code> pads clock-capable, this only means that they can be used together with <code class="docutils literal notranslate"><span class="pre">IOB1</span></code> as a differential pair.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">IOB1</span></code> pads in banks 3 and 4 are considered “global clock-capable”. They can drive <code class="docutils literal notranslate"><span class="pre">BUFGCTRL</span></code> buffers and CMT primitives via dedicated connections.  Likewise, Xilinx considers <code class="docutils literal notranslate"><span class="pre">IOB0</span></code> pads to be clock-capable, but they can only drive clocks as part of differential pair with <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">IOB0</span></code> in rows 5 and 15 of every region is capable of being used as a VREF pad.</p>
+<p>Each bank except for banks 1 and 2 has two IOBs that can be used for reference resistors in DCI operation. They are both located in the same I/O tile, with VRP located on <code class="docutils literal notranslate"><span class="pre">IOB0</span></code> and VRN located on <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>. The relevant tile is located as follows:</p>
+<ul class="simple">
+<li><p>bank 1 and 2: VRP/VRN are not present in this bank (DCI can still be used by cascade from banks 3 and 4)</p></li>
+<li><p>bank 3: row 7 of the bank (or row 7 of the region)</p></li>
+<li><p>bank 4: row 2 of the bank (or row 12 of the region)</p></li>
+<li><p>banks 5 and up: row 7 of the bank (or row 7 of the region)</p></li>
+</ul>
+<p>In parallel configuration modes, some I/O pads in banks 1-4 are borrowed for configuration use, as the parallel data pins:</p>
+<ul class="simple">
+<li><p>bank 4 row 6 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">D[8]</span></code></p></li>
+<li><p>bank 4 row 6 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">D[9]</span></code></p></li>
+<li><p>bank 4 row 7 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">D[10]</span></code></p></li>
+<li><p>bank 4 row 7 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">D[11]</span></code></p></li>
+<li><p>bank 4 row 8 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">D[12]</span></code></p></li>
+<li><p>bank 4 row 8 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">D[13]</span></code></p></li>
+<li><p>bank 4 row 9 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">D[14]</span></code></p></li>
+<li><p>bank 4 row 9 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">D[15]</span></code></p></li>
+<li><p>bank 2 row 0 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">D[0]/FS[0]</span></code></p></li>
+<li><p>bank 2 row 0 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">D[1]/FS[1]</span></code></p></li>
+<li><p>bank 2 row 1 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">D[2]/FS[2]</span></code></p></li>
+<li><p>bank 2 row 1 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">D[3]</span></code></p></li>
+<li><p>bank 2 row 2 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">D[4]</span></code></p></li>
+<li><p>bank 2 row 2 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">D[5]</span></code></p></li>
+<li><p>bank 2 row 3 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">D[6]</span></code></p></li>
+<li><p>bank 2 row 3 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">D[7]</span></code></p></li>
+<li><p>bank 2 row 4 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">CSO_B</span></code></p></li>
+<li><p>bank 2 row 4 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">FWE_B</span></code></p></li>
+<li><p>bank 2 row 5 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">FOE_B/MOSI</span></code></p></li>
+<li><p>bank 2 row 5 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">FCS_B</span></code></p></li>
+<li><p>bank 2 row 6 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">A[20]</span></code></p></li>
+<li><p>bank 2 row 6 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">A[21]</span></code></p></li>
+<li><p>bank 2 row 7 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">A[22]</span></code></p></li>
+<li><p>bank 2 row 7 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">A[23]</span></code></p></li>
+<li><p>bank 2 row 8 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">A[24]</span></code></p></li>
+<li><p>bank 2 row 8 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">A[25]</span></code></p></li>
+<li><p>bank 2 row 9 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">RS[0]</span></code></p></li>
+<li><p>bank 2 row 9 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">RS[1]</span></code></p></li>
+<li><p>bank 1 row 0 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">D[16]/A[0]</span></code></p></li>
+<li><p>bank 1 row 0 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">D[17]/A[1]</span></code></p></li>
+<li><p>bank 1 row 1 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">D[18]/A[2]</span></code></p></li>
+<li><p>bank 1 row 1 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">D[19]/A[3]</span></code></p></li>
+<li><p>bank 1 row 2 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">D[20]/A[4]</span></code></p></li>
+<li><p>bank 1 row 2 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">D[21]/A[5]</span></code></p></li>
+<li><p>bank 1 row 3 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">D[22]/A[6]</span></code></p></li>
+<li><p>bank 1 row 3 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">D[23]/A[7]</span></code></p></li>
+<li><p>bank 1 row 4 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">D[24]/A[8]</span></code></p></li>
+<li><p>bank 1 row 4 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">D[25]/A[9]</span></code></p></li>
+<li><p>bank 1 row 5 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">D[26]/A[10]</span></code></p></li>
+<li><p>bank 1 row 5 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">D[27]/A[11]</span></code></p></li>
+<li><p>bank 1 row 6 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">D[28]/A[12]</span></code></p></li>
+<li><p>bank 1 row 6 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">D[29]/A[13]</span></code></p></li>
+<li><p>bank 1 row 7 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">D[30]/A[14]</span></code></p></li>
+<li><p>bank 1 row 7 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">D[31]/A[15]</span></code></p></li>
+<li><p>bank 1 row 8 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">A[16]</span></code></p></li>
+<li><p>bank 1 row 8 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">A[17]</span></code></p></li>
+<li><p>bank 1 row 9 <code class="docutils literal notranslate"><span class="pre">IOB0</span></code>: <code class="docutils literal notranslate"><span class="pre">A[18]</span></code></p></li>
+<li><p>bank 1 row 9 <code class="docutils literal notranslate"><span class="pre">IOB1</span></code>: <code class="docutils literal notranslate"><span class="pre">A[19]</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">SYSMON</span></code> present on the device can use up to 16 IOB pairs from the left I/O column as auxiliary analog differential inputs. The <code class="docutils literal notranslate"><span class="pre">VPx</span></code> input corresponds to <code class="docutils literal notranslate"><span class="pre">IOB1</span></code> and <code class="docutils literal notranslate"><span class="pre">VNx</span></code> corresponds to <code class="docutils literal notranslate"><span class="pre">IOB0</span></code> within the same tile. The IOBs are in the following tiles, where <code class="docutils literal notranslate"><span class="pre">r</span></code> is the configuration center row:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">VP0/VN0</span></code>: left I/O column, row <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">-</span> <span class="pre">10</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VP1/VN1</span></code>: left I/O column, row <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">-</span> <span class="pre">9</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VP2/VN2</span></code>: left I/O column, row <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">-</span> <span class="pre">8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VP3/VN3</span></code>: left I/O column, row <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">-</span> <span class="pre">7</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VP4/VN4</span></code>: left I/O column, row <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">-</span> <span class="pre">6</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VP5/VN5</span></code>: left I/O column, row <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">-</span> <span class="pre">4</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VP6/VN6</span></code>: left I/O column, row <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">-</span> <span class="pre">3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VP7/VN7</span></code>: left I/O column, row <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">-</span> <span class="pre">2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VP8/VN8</span></code>: left I/O column, row <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">-</span> <span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VP9/VN9</span></code>: left I/O column, row <code class="docutils literal notranslate"><span class="pre">r</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VP10/VN10</span></code>: left I/O column, row <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">+</span> <span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VP11/VN11</span></code>: left I/O column, row <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">+</span> <span class="pre">2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VP12/VN12</span></code>: left I/O column, row <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">+</span> <span class="pre">3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VP13/VN13</span></code>: left I/O column, row <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">+</span> <span class="pre">4</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VP14/VN14</span></code>: left I/O column, row <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">+</span> <span class="pre">8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VP15/VN15</span></code>: left I/O column, row <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">+</span> <span class="pre">9</span></code></p></li>
+</ul>
+</section>
+<section id="bitstream">
+<h2>Bitstream<a class="headerlink" href="#bitstream" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dsp.html" class="btn btn-neutral float-left" title="DSP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="center.html" class="btn btn-neutral float-right" title="Configuration Center" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

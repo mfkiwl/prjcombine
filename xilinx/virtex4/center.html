@@ -55,6 +55,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../fpgacore/index.html">FPGAcore</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Spartan 6</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Virtex 4</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="geometry.html">Device geometry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="interconnect.html">General Interconnect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM</a></li>
@@ -303,6 +304,20 @@
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr><td>5</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CFG-STARTUP:USRCCLK_ENABLE" title="STARTUP:USRCCLK_ENABLE">STARTUP:USRCCLK_ENABLE</a></td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CFG-MISC:DCI_CLK_ENABLE" title="MISC:DCI_CLK_ENABLE[0]">MISC:DCI_CLK_ENABLE[0]</a></td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc4v-CFG-MISC:DCI_CLK_ENABLE" title="MISC:DCI_CLK_ENABLE[1]">MISC:DCI_CLK_ENABLE[1]</a></td></tr>
 </table>
 <table class="docutils align-default prjcombine-tile">
 <tr><th colspan="20">CFG bittile 7</th></tr><tr><th rowspan="2">Row</th><th colspan="19">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th></tr>
@@ -3345,6 +3360,11 @@
 <tr><th>MISC:PROGPIN</th><th>[15, 18, 41]</th></tr>
 <tr><td>PULLUP</td><td>0</td></tr>
 <tr><td>PULLNONE</td><td>1</td></tr>
+</table>
+<div id="bits-xc4v-CFG-MISC:DCI_CLK_ENABLE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:DCI_CLK_ENABLE</th><th>[6, 18, 12]</th><th>[6, 18, 9]</th></tr>
+<tr><td>Non-inverted</td><td>[1]</td><td>[0]</td></tr>
 </table>
 <div id="bits-xc4v-CFG-BSCAN_COMMON:USERID"></div>
 <table class="docutils align-default prjcombine-enum">

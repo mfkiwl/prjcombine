@@ -19,7 +19,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Interconnect" href="interconnect.html" />
+    <link rel="next" title="Device geometry" href="geometry.html" />
     <link rel="prev" title="Multi-gigabit transceivers" href="../virtex4/gt.html" /> 
 </head>
 
@@ -56,15 +56,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Spartan 6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Virtex 4</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Virtex 5</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="geometry.html">Device geometry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="interconnect.html">Interconnect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html">Input/Output</a></li>
 <li class="toctree-l3"><a class="reference internal" href="center.html">Configuration Center</a></li>
 <li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ppc.html">PowerPC cores</a></li>
 <li class="toctree-l3"><a class="reference internal" href="emac.html">Ethernet MACs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pcie.html">PCI Express cores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtp.html">GTP transceivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtx.html">GTX transceivers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers</a></li>
 </ul>
 </li>
@@ -108,6 +112,11 @@
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="geometry.html">Device geometry</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="geometry.html#general-structure">General structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometry.html#bitstream-geometry">Bitstream geometry</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="interconnect.html">Interconnect</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream">Bitstream</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interconnect.html#bitstream-intf">Bitstream — <code class="docutils literal notranslate"><span class="pre">INTF</span></code></a></li>
@@ -125,6 +134,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dsp.html">DSP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="dsp.html#bitstream">Bitstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">Input/Output</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="io.html#i-o-banks-and-special-functions">I/O banks and special functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#bitstream">Bitstream</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="center.html">Configuration Center</a><ul>
@@ -153,6 +167,14 @@
 <li class="toctree-l2"><a class="reference internal" href="pcie.html#bitstream">Bitstream</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="gtp.html">GTP transceivers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gtp.html#bitstream">Bitstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gtx.html">GTX transceivers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gtx.html#bitstream">Bitstream</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="config.html">Configuration registers</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="config.html#cor"><code class="docutils literal notranslate"><span class="pre">COR</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html#cor1"><code class="docutils literal notranslate"><span class="pre">COR1</span></code></a></li>
@@ -169,7 +191,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../virtex4/gt.html" class="btn btn-neutral float-left" title="Multi-gigabit transceivers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="interconnect.html" class="btn btn-neutral float-right" title="Interconnect" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="geometry.html" class="btn btn-neutral float-right" title="Device geometry" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
