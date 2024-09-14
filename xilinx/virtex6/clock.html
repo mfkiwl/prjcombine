@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clock interconnect &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Ethernet MACs" href="emac.html" />
+    <link rel="prev" title="Configuration Center" href="center.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../xc9500/index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Xilinx FPGAs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../xc5200/index.html">XC5200</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Virtex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Virtex 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan3/index.html">Spartan 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fpgacore/index.html">FPGAcore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Spartan 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Virtex 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Virtex 5</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Virtex 6</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="geometry.html">Device geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interconnect.html">Interconnect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bram.html">Block RAM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html">Input/Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="center.html">Configuration Center</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Clock interconnect</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hclk"><code class="docutils literal notranslate"><span class="pre">HCLK</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pmviob"><code class="docutils literal notranslate"><span class="pre">PMVIOB</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emac.html">Ethernet MACs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pcie.html">PCI Express cores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtx.html">GTX transceivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex7/index.html">Virtex 7</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Xilinx FPGAs</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Virtex 6</a></li>
+      <li class="breadcrumb-item active">Clock interconnect</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/xilinx/virtex6/clock.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="clock-interconnect">
+<span id="virtex6-clock"></span><h1>Clock interconnect<a class="headerlink" href="#clock-interconnect" title="Link to this heading"></a></h1>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>describe this madness</p>
+</div>
+<section id="hclk">
+<h2><code class="docutils literal notranslate"><span class="pre">HCLK</span></code><a class="headerlink" href="#hclk" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="27">HCLK bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="26">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6v-HCLK-HCLK:DRP_MASK_SYSMON" title="HCLK:DRP_MASK_SYSMON">HCLK:DRP_MASK_SYSMON</a></td><td><a href="#bits-xc6v-HCLK-HCLK:DRP_MASK_BELOW" title="HCLK:DRP_MASK_BELOW">HCLK:DRP_MASK_BELOW</a></td><td><a href="#bits-xc6v-HCLK-HCLK:DRP_MASK_ABOVE" title="HCLK:DRP_MASK_ABOVE">HCLK:DRP_MASK_ABOVE</a></td></tr>
+<tr><td>14</td>
+<td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D2" title="HCLK:MUX.OUT_D2[0]">HCLK:MUX.OUT_D2[0]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D2" title="HCLK:MUX.OUT_D2[1]">HCLK:MUX.OUT_D2[1]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D3" title="HCLK:MUX.OUT_D3[1]">HCLK:MUX.OUT_D3[1]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D3" title="HCLK:MUX.OUT_D3[0]">HCLK:MUX.OUT_D3[0]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D6" title="HCLK:MUX.OUT_D6[0]">HCLK:MUX.OUT_D6[0]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D6" title="HCLK:MUX.OUT_D6[1]">HCLK:MUX.OUT_D6[1]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D7" title="HCLK:MUX.OUT_D7[1]">HCLK:MUX.OUT_D7[1]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D7" title="HCLK:MUX.OUT_D7[0]">HCLK:MUX.OUT_D7[0]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:ENABLE.RCLK0" title="HCLK:ENABLE.RCLK0">HCLK:ENABLE.RCLK0</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D2" title="HCLK:MUX.OUT_D2[2]">HCLK:MUX.OUT_D2[2]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D2" title="HCLK:MUX.OUT_D2[3]">HCLK:MUX.OUT_D2[3]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D3" title="HCLK:MUX.OUT_D3[3]">HCLK:MUX.OUT_D3[3]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D3" title="HCLK:MUX.OUT_D3[2]">HCLK:MUX.OUT_D3[2]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D6" title="HCLK:MUX.OUT_D6[2]">HCLK:MUX.OUT_D6[2]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D6" title="HCLK:MUX.OUT_D6[3]">HCLK:MUX.OUT_D6[3]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D7" title="HCLK:MUX.OUT_D7[3]">HCLK:MUX.OUT_D7[3]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D7" title="HCLK:MUX.OUT_D7[2]">HCLK:MUX.OUT_D7[2]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:ENABLE.RCLK1" title="HCLK:ENABLE.RCLK1">HCLK:ENABLE.RCLK1</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D2" title="HCLK:MUX.OUT_D2[4]">HCLK:MUX.OUT_D2[4]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D2" title="HCLK:MUX.OUT_D2[5]">HCLK:MUX.OUT_D2[5]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D3" title="HCLK:MUX.OUT_D3[5]">HCLK:MUX.OUT_D3[5]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D3" title="HCLK:MUX.OUT_D3[4]">HCLK:MUX.OUT_D3[4]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D6" title="HCLK:MUX.OUT_D6[4]">HCLK:MUX.OUT_D6[4]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D6" title="HCLK:MUX.OUT_D6[5]">HCLK:MUX.OUT_D6[5]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D7" title="HCLK:MUX.OUT_D7[5]">HCLK:MUX.OUT_D7[5]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D7" title="HCLK:MUX.OUT_D7[4]">HCLK:MUX.OUT_D7[4]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:ENABLE.RCLK2" title="HCLK:ENABLE.RCLK2">HCLK:ENABLE.RCLK2</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D2" title="HCLK:MUX.OUT_D2[8]">HCLK:MUX.OUT_D2[8]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D2" title="HCLK:MUX.OUT_D2[6]">HCLK:MUX.OUT_D2[6]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D3" title="HCLK:MUX.OUT_D3[6]">HCLK:MUX.OUT_D3[6]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D3" title="HCLK:MUX.OUT_D3[8]">HCLK:MUX.OUT_D3[8]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D6" title="HCLK:MUX.OUT_D6[8]">HCLK:MUX.OUT_D6[8]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D6" title="HCLK:MUX.OUT_D6[6]">HCLK:MUX.OUT_D6[6]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D7" title="HCLK:MUX.OUT_D7[6]">HCLK:MUX.OUT_D7[6]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D7" title="HCLK:MUX.OUT_D7[8]">HCLK:MUX.OUT_D7[8]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:ENABLE.RCLK3" title="HCLK:ENABLE.RCLK3">HCLK:ENABLE.RCLK3</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D2" title="HCLK:MUX.OUT_D2[7]">HCLK:MUX.OUT_D2[7]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D0" title="HCLK:MUX.OUT_D0[0]">HCLK:MUX.OUT_D0[0]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D1" title="HCLK:MUX.OUT_D1[0]">HCLK:MUX.OUT_D1[0]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D3" title="HCLK:MUX.OUT_D3[7]">HCLK:MUX.OUT_D3[7]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D6" title="HCLK:MUX.OUT_D6[7]">HCLK:MUX.OUT_D6[7]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D4" title="HCLK:MUX.OUT_D4[0]">HCLK:MUX.OUT_D4[0]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D5" title="HCLK:MUX.OUT_D5[0]">HCLK:MUX.OUT_D5[0]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D7" title="HCLK:MUX.OUT_D7[7]">HCLK:MUX.OUT_D7[7]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:ENABLE.RCLK4" title="HCLK:ENABLE.RCLK4">HCLK:ENABLE.RCLK4</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>19</td>
+<td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D0" title="HCLK:MUX.OUT_D0[1]">HCLK:MUX.OUT_D0[1]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D0" title="HCLK:MUX.OUT_D0[2]">HCLK:MUX.OUT_D0[2]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D1" title="HCLK:MUX.OUT_D1[2]">HCLK:MUX.OUT_D1[2]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D1" title="HCLK:MUX.OUT_D1[1]">HCLK:MUX.OUT_D1[1]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D4" title="HCLK:MUX.OUT_D4[1]">HCLK:MUX.OUT_D4[1]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D4" title="HCLK:MUX.OUT_D4[2]">HCLK:MUX.OUT_D4[2]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D5" title="HCLK:MUX.OUT_D5[2]">HCLK:MUX.OUT_D5[2]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D5" title="HCLK:MUX.OUT_D5[1]">HCLK:MUX.OUT_D5[1]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:ENABLE.RCLK5" title="HCLK:ENABLE.RCLK5">HCLK:ENABLE.RCLK5</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>20</td>
+<td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D0" title="HCLK:MUX.OUT_D0[3]">HCLK:MUX.OUT_D0[3]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D0" title="HCLK:MUX.OUT_D0[4]">HCLK:MUX.OUT_D0[4]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D1" title="HCLK:MUX.OUT_D1[4]">HCLK:MUX.OUT_D1[4]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D1" title="HCLK:MUX.OUT_D1[3]">HCLK:MUX.OUT_D1[3]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D4" title="HCLK:MUX.OUT_D4[3]">HCLK:MUX.OUT_D4[3]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D4" title="HCLK:MUX.OUT_D4[4]">HCLK:MUX.OUT_D4[4]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D5" title="HCLK:MUX.OUT_D5[4]">HCLK:MUX.OUT_D5[4]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D5" title="HCLK:MUX.OUT_D5[3]">HCLK:MUX.OUT_D5[3]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:ENABLE.HCLK0" title="HCLK:ENABLE.HCLK0">HCLK:ENABLE.HCLK0</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>21</td>
+<td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D0" title="HCLK:MUX.OUT_D0[5]">HCLK:MUX.OUT_D0[5]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D0" title="HCLK:MUX.OUT_D0[8]">HCLK:MUX.OUT_D0[8]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D1" title="HCLK:MUX.OUT_D1[8]">HCLK:MUX.OUT_D1[8]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D1" title="HCLK:MUX.OUT_D1[5]">HCLK:MUX.OUT_D1[5]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D4" title="HCLK:MUX.OUT_D4[5]">HCLK:MUX.OUT_D4[5]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D4" title="HCLK:MUX.OUT_D4[8]">HCLK:MUX.OUT_D4[8]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D5" title="HCLK:MUX.OUT_D5[8]">HCLK:MUX.OUT_D5[8]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D5" title="HCLK:MUX.OUT_D5[5]">HCLK:MUX.OUT_D5[5]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:ENABLE.HCLK1" title="HCLK:ENABLE.HCLK1">HCLK:ENABLE.HCLK1</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D0" title="HCLK:MUX.OUT_D0[6]">HCLK:MUX.OUT_D0[6]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D0" title="HCLK:MUX.OUT_D0[7]">HCLK:MUX.OUT_D0[7]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D1" title="HCLK:MUX.OUT_D1[7]">HCLK:MUX.OUT_D1[7]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D1" title="HCLK:MUX.OUT_D1[6]">HCLK:MUX.OUT_D1[6]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D4" title="HCLK:MUX.OUT_D4[6]">HCLK:MUX.OUT_D4[6]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D4" title="HCLK:MUX.OUT_D4[7]">HCLK:MUX.OUT_D4[7]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D5" title="HCLK:MUX.OUT_D5[7]">HCLK:MUX.OUT_D5[7]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_D5" title="HCLK:MUX.OUT_D5[6]">HCLK:MUX.OUT_D5[6]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:ENABLE.HCLK2" title="HCLK:ENABLE.HCLK2">HCLK:ENABLE.HCLK2</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U2" title="HCLK:MUX.OUT_U2[0]">HCLK:MUX.OUT_U2[0]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U2" title="HCLK:MUX.OUT_U2[1]">HCLK:MUX.OUT_U2[1]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U3" title="HCLK:MUX.OUT_U3[1]">HCLK:MUX.OUT_U3[1]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U3" title="HCLK:MUX.OUT_U3[0]">HCLK:MUX.OUT_U3[0]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U6" title="HCLK:MUX.OUT_U6[0]">HCLK:MUX.OUT_U6[0]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U6" title="HCLK:MUX.OUT_U6[1]">HCLK:MUX.OUT_U6[1]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U7" title="HCLK:MUX.OUT_U7[1]">HCLK:MUX.OUT_U7[1]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U7" title="HCLK:MUX.OUT_U7[0]">HCLK:MUX.OUT_U7[0]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:ENABLE.HCLK3" title="HCLK:ENABLE.HCLK3">HCLK:ENABLE.HCLK3</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U2" title="HCLK:MUX.OUT_U2[2]">HCLK:MUX.OUT_U2[2]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U2" title="HCLK:MUX.OUT_U2[3]">HCLK:MUX.OUT_U2[3]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U3" title="HCLK:MUX.OUT_U3[3]">HCLK:MUX.OUT_U3[3]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U3" title="HCLK:MUX.OUT_U3[2]">HCLK:MUX.OUT_U3[2]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U6" title="HCLK:MUX.OUT_U6[2]">HCLK:MUX.OUT_U6[2]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U6" title="HCLK:MUX.OUT_U6[3]">HCLK:MUX.OUT_U6[3]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U7" title="HCLK:MUX.OUT_U7[3]">HCLK:MUX.OUT_U7[3]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U7" title="HCLK:MUX.OUT_U7[2]">HCLK:MUX.OUT_U7[2]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:ENABLE.HCLK4" title="HCLK:ENABLE.HCLK4">HCLK:ENABLE.HCLK4</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U2" title="HCLK:MUX.OUT_U2[4]">HCLK:MUX.OUT_U2[4]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U2" title="HCLK:MUX.OUT_U2[5]">HCLK:MUX.OUT_U2[5]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U3" title="HCLK:MUX.OUT_U3[5]">HCLK:MUX.OUT_U3[5]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U3" title="HCLK:MUX.OUT_U3[4]">HCLK:MUX.OUT_U3[4]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U6" title="HCLK:MUX.OUT_U6[4]">HCLK:MUX.OUT_U6[4]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U6" title="HCLK:MUX.OUT_U6[5]">HCLK:MUX.OUT_U6[5]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U7" title="HCLK:MUX.OUT_U7[5]">HCLK:MUX.OUT_U7[5]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U7" title="HCLK:MUX.OUT_U7[4]">HCLK:MUX.OUT_U7[4]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:ENABLE.HCLK5" title="HCLK:ENABLE.HCLK5">HCLK:ENABLE.HCLK5</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U2" title="HCLK:MUX.OUT_U2[8]">HCLK:MUX.OUT_U2[8]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U2" title="HCLK:MUX.OUT_U2[6]">HCLK:MUX.OUT_U2[6]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U3" title="HCLK:MUX.OUT_U3[6]">HCLK:MUX.OUT_U3[6]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U3" title="HCLK:MUX.OUT_U3[8]">HCLK:MUX.OUT_U3[8]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U6" title="HCLK:MUX.OUT_U6[8]">HCLK:MUX.OUT_U6[8]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U6" title="HCLK:MUX.OUT_U6[6]">HCLK:MUX.OUT_U6[6]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U7" title="HCLK:MUX.OUT_U7[6]">HCLK:MUX.OUT_U7[6]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U7" title="HCLK:MUX.OUT_U7[8]">HCLK:MUX.OUT_U7[8]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:ENABLE.HCLK6" title="HCLK:ENABLE.HCLK6">HCLK:ENABLE.HCLK6</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>27</td>
+<td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U2" title="HCLK:MUX.OUT_U2[7]">HCLK:MUX.OUT_U2[7]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U0" title="HCLK:MUX.OUT_U0[0]">HCLK:MUX.OUT_U0[0]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U1" title="HCLK:MUX.OUT_U1[0]">HCLK:MUX.OUT_U1[0]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U3" title="HCLK:MUX.OUT_U3[7]">HCLK:MUX.OUT_U3[7]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U6" title="HCLK:MUX.OUT_U6[7]">HCLK:MUX.OUT_U6[7]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U4" title="HCLK:MUX.OUT_U4[0]">HCLK:MUX.OUT_U4[0]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U5" title="HCLK:MUX.OUT_U5[0]">HCLK:MUX.OUT_U5[0]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U7" title="HCLK:MUX.OUT_U7[7]">HCLK:MUX.OUT_U7[7]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:ENABLE.HCLK7" title="HCLK:ENABLE.HCLK7">HCLK:ENABLE.HCLK7</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>28</td>
+<td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U0" title="HCLK:MUX.OUT_U0[1]">HCLK:MUX.OUT_U0[1]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U0" title="HCLK:MUX.OUT_U0[2]">HCLK:MUX.OUT_U0[2]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U1" title="HCLK:MUX.OUT_U1[2]">HCLK:MUX.OUT_U1[2]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U1" title="HCLK:MUX.OUT_U1[1]">HCLK:MUX.OUT_U1[1]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U4" title="HCLK:MUX.OUT_U4[1]">HCLK:MUX.OUT_U4[1]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U4" title="HCLK:MUX.OUT_U4[2]">HCLK:MUX.OUT_U4[2]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U5" title="HCLK:MUX.OUT_U5[2]">HCLK:MUX.OUT_U5[2]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U5" title="HCLK:MUX.OUT_U5[1]">HCLK:MUX.OUT_U5[1]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:ENABLE.HCLK8" title="HCLK:ENABLE.HCLK8">HCLK:ENABLE.HCLK8</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>29</td>
+<td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U0" title="HCLK:MUX.OUT_U0[3]">HCLK:MUX.OUT_U0[3]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U0" title="HCLK:MUX.OUT_U0[4]">HCLK:MUX.OUT_U0[4]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U1" title="HCLK:MUX.OUT_U1[4]">HCLK:MUX.OUT_U1[4]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U1" title="HCLK:MUX.OUT_U1[3]">HCLK:MUX.OUT_U1[3]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U4" title="HCLK:MUX.OUT_U4[3]">HCLK:MUX.OUT_U4[3]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U4" title="HCLK:MUX.OUT_U4[4]">HCLK:MUX.OUT_U4[4]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U5" title="HCLK:MUX.OUT_U5[4]">HCLK:MUX.OUT_U5[4]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U5" title="HCLK:MUX.OUT_U5[3]">HCLK:MUX.OUT_U5[3]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:ENABLE.HCLK9" title="HCLK:ENABLE.HCLK9">HCLK:ENABLE.HCLK9</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>30</td>
+<td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U0" title="HCLK:MUX.OUT_U0[5]">HCLK:MUX.OUT_U0[5]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U0" title="HCLK:MUX.OUT_U0[8]">HCLK:MUX.OUT_U0[8]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U1" title="HCLK:MUX.OUT_U1[8]">HCLK:MUX.OUT_U1[8]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U1" title="HCLK:MUX.OUT_U1[5]">HCLK:MUX.OUT_U1[5]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U4" title="HCLK:MUX.OUT_U4[5]">HCLK:MUX.OUT_U4[5]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U4" title="HCLK:MUX.OUT_U4[8]">HCLK:MUX.OUT_U4[8]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U5" title="HCLK:MUX.OUT_U5[8]">HCLK:MUX.OUT_U5[8]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U5" title="HCLK:MUX.OUT_U5[5]">HCLK:MUX.OUT_U5[5]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:ENABLE.HCLK10" title="HCLK:ENABLE.HCLK10">HCLK:ENABLE.HCLK10</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U0" title="HCLK:MUX.OUT_U0[6]">HCLK:MUX.OUT_U0[6]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U0" title="HCLK:MUX.OUT_U0[7]">HCLK:MUX.OUT_U0[7]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U1" title="HCLK:MUX.OUT_U1[7]">HCLK:MUX.OUT_U1[7]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U1" title="HCLK:MUX.OUT_U1[6]">HCLK:MUX.OUT_U1[6]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U4" title="HCLK:MUX.OUT_U4[6]">HCLK:MUX.OUT_U4[6]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U4" title="HCLK:MUX.OUT_U4[7]">HCLK:MUX.OUT_U4[7]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U5" title="HCLK:MUX.OUT_U5[7]">HCLK:MUX.OUT_U5[7]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:MUX.OUT_U5" title="HCLK:MUX.OUT_U5[6]">HCLK:MUX.OUT_U5[6]</a></td><td><a href="#bits-xc6v-HCLK-HCLK:ENABLE.HCLK11" title="HCLK:ENABLE.HCLK11">HCLK:ENABLE.HCLK11</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+</table>
+<div id="bits-xc6v-HCLK-HCLK:MUX.OUT_D0"></div>
+<div id="bits-xc6v-HCLK-HCLK:MUX.OUT_D1"></div>
+<div id="bits-xc6v-HCLK-HCLK:MUX.OUT_D2"></div>
+<div id="bits-xc6v-HCLK-HCLK:MUX.OUT_D3"></div>
+<div id="bits-xc6v-HCLK-HCLK:MUX.OUT_D4"></div>
+<div id="bits-xc6v-HCLK-HCLK:MUX.OUT_D5"></div>
+<div id="bits-xc6v-HCLK-HCLK:MUX.OUT_D6"></div>
+<div id="bits-xc6v-HCLK-HCLK:MUX.OUT_D7"></div>
+<div id="bits-xc6v-HCLK-HCLK:MUX.OUT_U0"></div>
+<div id="bits-xc6v-HCLK-HCLK:MUX.OUT_U1"></div>
+<div id="bits-xc6v-HCLK-HCLK:MUX.OUT_U2"></div>
+<div id="bits-xc6v-HCLK-HCLK:MUX.OUT_U3"></div>
+<div id="bits-xc6v-HCLK-HCLK:MUX.OUT_U4"></div>
+<div id="bits-xc6v-HCLK-HCLK:MUX.OUT_U5"></div>
+<div id="bits-xc6v-HCLK-HCLK:MUX.OUT_U6"></div>
+<div id="bits-xc6v-HCLK-HCLK:MUX.OUT_U7"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>HCLK:MUX.OUT_D0</th><th>[0, 1, 21]</th><th>[0, 1, 22]</th><th>[0, 0, 22]</th><th>[0, 0, 21]</th><th>[0, 1, 20]</th><th>[0, 0, 20]</th><th>[0, 1, 19]</th><th>[0, 0, 19]</th><th>[0, 1, 18]</th></tr>
+<tr><th>HCLK:MUX.OUT_D1</th><th>[0, 2, 21]</th><th>[0, 2, 22]</th><th>[0, 3, 22]</th><th>[0, 3, 21]</th><th>[0, 2, 20]</th><th>[0, 3, 20]</th><th>[0, 2, 19]</th><th>[0, 3, 19]</th><th>[0, 2, 18]</th></tr>
+<tr><th>HCLK:MUX.OUT_D2</th><th>[0, 0, 17]</th><th>[0, 0, 18]</th><th>[0, 1, 17]</th><th>[0, 1, 16]</th><th>[0, 0, 16]</th><th>[0, 1, 15]</th><th>[0, 0, 15]</th><th>[0, 1, 14]</th><th>[0, 0, 14]</th></tr>
+<tr><th>HCLK:MUX.OUT_D3</th><th>[0, 3, 17]</th><th>[0, 3, 18]</th><th>[0, 2, 17]</th><th>[0, 2, 16]</th><th>[0, 3, 16]</th><th>[0, 2, 15]</th><th>[0, 3, 15]</th><th>[0, 2, 14]</th><th>[0, 3, 14]</th></tr>
+<tr><th>HCLK:MUX.OUT_D4</th><th>[0, 5, 21]</th><th>[0, 5, 22]</th><th>[0, 4, 22]</th><th>[0, 4, 21]</th><th>[0, 5, 20]</th><th>[0, 4, 20]</th><th>[0, 5, 19]</th><th>[0, 4, 19]</th><th>[0, 5, 18]</th></tr>
+<tr><th>HCLK:MUX.OUT_D5</th><th>[0, 6, 21]</th><th>[0, 6, 22]</th><th>[0, 7, 22]</th><th>[0, 7, 21]</th><th>[0, 6, 20]</th><th>[0, 7, 20]</th><th>[0, 6, 19]</th><th>[0, 7, 19]</th><th>[0, 6, 18]</th></tr>
+<tr><th>HCLK:MUX.OUT_D6</th><th>[0, 4, 17]</th><th>[0, 4, 18]</th><th>[0, 5, 17]</th><th>[0, 5, 16]</th><th>[0, 4, 16]</th><th>[0, 5, 15]</th><th>[0, 4, 15]</th><th>[0, 5, 14]</th><th>[0, 4, 14]</th></tr>
+<tr><th>HCLK:MUX.OUT_D7</th><th>[0, 7, 17]</th><th>[0, 7, 18]</th><th>[0, 6, 17]</th><th>[0, 6, 16]</th><th>[0, 7, 16]</th><th>[0, 6, 15]</th><th>[0, 7, 15]</th><th>[0, 6, 14]</th><th>[0, 7, 14]</th></tr>
+<tr><th>HCLK:MUX.OUT_U0</th><th>[0, 1, 30]</th><th>[0, 1, 31]</th><th>[0, 0, 31]</th><th>[0, 0, 30]</th><th>[0, 1, 29]</th><th>[0, 0, 29]</th><th>[0, 1, 28]</th><th>[0, 0, 28]</th><th>[0, 1, 27]</th></tr>
+<tr><th>HCLK:MUX.OUT_U1</th><th>[0, 2, 30]</th><th>[0, 2, 31]</th><th>[0, 3, 31]</th><th>[0, 3, 30]</th><th>[0, 2, 29]</th><th>[0, 3, 29]</th><th>[0, 2, 28]</th><th>[0, 3, 28]</th><th>[0, 2, 27]</th></tr>
+<tr><th>HCLK:MUX.OUT_U2</th><th>[0, 0, 26]</th><th>[0, 0, 27]</th><th>[0, 1, 26]</th><th>[0, 1, 25]</th><th>[0, 0, 25]</th><th>[0, 1, 24]</th><th>[0, 0, 24]</th><th>[0, 1, 23]</th><th>[0, 0, 23]</th></tr>
+<tr><th>HCLK:MUX.OUT_U3</th><th>[0, 3, 26]</th><th>[0, 3, 27]</th><th>[0, 2, 26]</th><th>[0, 2, 25]</th><th>[0, 3, 25]</th><th>[0, 2, 24]</th><th>[0, 3, 24]</th><th>[0, 2, 23]</th><th>[0, 3, 23]</th></tr>
+<tr><th>HCLK:MUX.OUT_U4</th><th>[0, 5, 30]</th><th>[0, 5, 31]</th><th>[0, 4, 31]</th><th>[0, 4, 30]</th><th>[0, 5, 29]</th><th>[0, 4, 29]</th><th>[0, 5, 28]</th><th>[0, 4, 28]</th><th>[0, 5, 27]</th></tr>
+<tr><th>HCLK:MUX.OUT_U5</th><th>[0, 6, 30]</th><th>[0, 6, 31]</th><th>[0, 7, 31]</th><th>[0, 7, 30]</th><th>[0, 6, 29]</th><th>[0, 7, 29]</th><th>[0, 6, 28]</th><th>[0, 7, 28]</th><th>[0, 6, 27]</th></tr>
+<tr><th>HCLK:MUX.OUT_U6</th><th>[0, 4, 26]</th><th>[0, 4, 27]</th><th>[0, 5, 26]</th><th>[0, 5, 25]</th><th>[0, 4, 25]</th><th>[0, 5, 24]</th><th>[0, 4, 24]</th><th>[0, 5, 23]</th><th>[0, 4, 23]</th></tr>
+<tr><th>HCLK:MUX.OUT_U7</th><th>[0, 7, 26]</th><th>[0, 7, 27]</th><th>[0, 6, 26]</th><th>[0, 6, 25]</th><th>[0, 7, 25]</th><th>[0, 6, 24]</th><th>[0, 7, 24]</th><th>[0, 6, 23]</th><th>[0, 7, 23]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>HCLK1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HCLK2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK3</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK5</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK6</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>HCLK7</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HCLK8</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK9</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK10</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK11</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>RCLK0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>RCLK1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>RCLK2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>RCLK3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>RCLK4</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>RCLK5</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xc6v-HCLK-HCLK:DRP_MASK_ABOVE"></div>
+<div id="bits-xc6v-HCLK-HCLK:DRP_MASK_BELOW"></div>
+<div id="bits-xc6v-HCLK-HCLK:DRP_MASK_SYSMON"></div>
+<div id="bits-xc6v-HCLK-HCLK:ENABLE.HCLK0"></div>
+<div id="bits-xc6v-HCLK-HCLK:ENABLE.HCLK1"></div>
+<div id="bits-xc6v-HCLK-HCLK:ENABLE.HCLK10"></div>
+<div id="bits-xc6v-HCLK-HCLK:ENABLE.HCLK11"></div>
+<div id="bits-xc6v-HCLK-HCLK:ENABLE.HCLK2"></div>
+<div id="bits-xc6v-HCLK-HCLK:ENABLE.HCLK3"></div>
+<div id="bits-xc6v-HCLK-HCLK:ENABLE.HCLK4"></div>
+<div id="bits-xc6v-HCLK-HCLK:ENABLE.HCLK5"></div>
+<div id="bits-xc6v-HCLK-HCLK:ENABLE.HCLK6"></div>
+<div id="bits-xc6v-HCLK-HCLK:ENABLE.HCLK7"></div>
+<div id="bits-xc6v-HCLK-HCLK:ENABLE.HCLK8"></div>
+<div id="bits-xc6v-HCLK-HCLK:ENABLE.HCLK9"></div>
+<div id="bits-xc6v-HCLK-HCLK:ENABLE.RCLK0"></div>
+<div id="bits-xc6v-HCLK-HCLK:ENABLE.RCLK1"></div>
+<div id="bits-xc6v-HCLK-HCLK:ENABLE.RCLK2"></div>
+<div id="bits-xc6v-HCLK-HCLK:ENABLE.RCLK3"></div>
+<div id="bits-xc6v-HCLK-HCLK:ENABLE.RCLK4"></div>
+<div id="bits-xc6v-HCLK-HCLK:ENABLE.RCLK5"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>HCLK:DRP_MASK_ABOVE</th><th>[0, 25, 13]</th></tr>
+<tr><th>HCLK:DRP_MASK_BELOW</th><th>[0, 24, 13]</th></tr>
+<tr><th>HCLK:DRP_MASK_SYSMON</th><th>[0, 23, 13]</th></tr>
+<tr><th>HCLK:ENABLE.HCLK0</th><th>[0, 8, 20]</th></tr>
+<tr><th>HCLK:ENABLE.HCLK1</th><th>[0, 8, 21]</th></tr>
+<tr><th>HCLK:ENABLE.HCLK10</th><th>[0, 8, 30]</th></tr>
+<tr><th>HCLK:ENABLE.HCLK11</th><th>[0, 8, 31]</th></tr>
+<tr><th>HCLK:ENABLE.HCLK2</th><th>[0, 8, 22]</th></tr>
+<tr><th>HCLK:ENABLE.HCLK3</th><th>[0, 8, 23]</th></tr>
+<tr><th>HCLK:ENABLE.HCLK4</th><th>[0, 8, 24]</th></tr>
+<tr><th>HCLK:ENABLE.HCLK5</th><th>[0, 8, 25]</th></tr>
+<tr><th>HCLK:ENABLE.HCLK6</th><th>[0, 8, 26]</th></tr>
+<tr><th>HCLK:ENABLE.HCLK7</th><th>[0, 8, 27]</th></tr>
+<tr><th>HCLK:ENABLE.HCLK8</th><th>[0, 8, 28]</th></tr>
+<tr><th>HCLK:ENABLE.HCLK9</th><th>[0, 8, 29]</th></tr>
+<tr><th>HCLK:ENABLE.RCLK0</th><th>[0, 8, 14]</th></tr>
+<tr><th>HCLK:ENABLE.RCLK1</th><th>[0, 8, 15]</th></tr>
+<tr><th>HCLK:ENABLE.RCLK2</th><th>[0, 8, 16]</th></tr>
+<tr><th>HCLK:ENABLE.RCLK3</th><th>[0, 8, 17]</th></tr>
+<tr><th>HCLK:ENABLE.RCLK4</th><th>[0, 8, 18]</th></tr>
+<tr><th>HCLK:ENABLE.RCLK5</th><th>[0, 8, 19]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="pmviob">
+<h2><code class="docutils literal notranslate"><span class="pre">PMVIOB</span></code><a class="headerlink" href="#pmviob" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="28">PMVIOB bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="27">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>41</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>43</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>44</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>50</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>52</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>53</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>54</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>55</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>56</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6v-PMVIOB-PMVIOB:PSLEW4_IN" title="PMVIOB:PSLEW4_IN">PMVIOB:PSLEW4_IN</a></td></tr>
+<tr><td>57</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6v-PMVIOB-PMVIOB:HSLEW4_IN" title="PMVIOB:HSLEW4_IN">PMVIOB:HSLEW4_IN</a></td></tr>
+<tr><td>58</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc6v-PMVIOB-PMVIOB:HYS_IN" title="PMVIOB:HYS_IN">PMVIOB:HYS_IN</a></td></tr>
+</table>
+<div id="bits-xc6v-PMVIOB-PMVIOB:HSLEW4_IN"></div>
+<div id="bits-xc6v-PMVIOB-PMVIOB:HYS_IN"></div>
+<div id="bits-xc6v-PMVIOB-PMVIOB:PSLEW4_IN"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>PMVIOB:HSLEW4_IN</th><th>[0, 26, 57]</th></tr>
+<tr><th>PMVIOB:HYS_IN</th><th>[0, 26, 58]</th></tr>
+<tr><th>PMVIOB:PSLEW4_IN</th><th>[0, 26, 56]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="center.html" class="btn btn-neutral float-left" title="Configuration Center" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="emac.html" class="btn btn-neutral float-right" title="Ethernet MACs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
