@@ -255,6 +255,528 @@
 </section>
 <section id="bitstream">
 <h2>Bitstream<a class="headerlink" href="#bitstream" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tr><th rowspan="2">Name</th><th colspan="5">IOSTD:PDRIVE</th><th colspan="5">IOSTD:NDRIVE</th></tr>
+<tr><th>[4]</th><th>[3]</th><th>[2]</th><th>[1]</th><th>[0]</th><th>[4]</th><th>[3]</th><th>[2]</th><th>[1]</th><th>[0]</th></tr>
+<tr><td>BLVDS_25</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>GTL</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>GTLP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GTLP_DCI</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GTL_DCI</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>HSTL_I</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>HSTL_II</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HSTL_III</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>HSTL_III_18</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HSTL_III_DCI</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>HSTL_III_DCI_18</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HSTL_II_18</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>HSTL_II_DCI</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HSTL_II_DCI_18</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>HSTL_II_T_DCI</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>HSTL_II_T_DCI_18</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>HSTL_IV</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>HSTL_IV_18</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>HSTL_IV_DCI</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>HSTL_IV_DCI_18</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>HSTL_I_12</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>HSTL_I_18</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>HSTL_I_DCI</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>HSTL_I_DCI_18</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS12.2</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LVCMOS12.4</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS12.6</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>LVCMOS12.8</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>LVCMOS15.12</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS15.16</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LVCMOS15.2</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LVCMOS15.4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS15.6</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS15.8</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>LVCMOS18.12</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>LVCMOS18.16</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>LVCMOS18.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>LVCMOS18.4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LVCMOS18.6</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS18.8</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS25.12</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS25.16</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LVCMOS25.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LVCMOS25.24</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS25.4</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS25.6</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS25.8</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>LVCMOS33.12</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS33.16</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LVCMOS33.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LVCMOS33.24</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS33.4</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS33.6</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS33.8</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>LVPECL_25</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>LVTTL.12</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVTTL.16</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LVTTL.2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LVTTL.24</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVTTL.4</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>LVTTL.6</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>LVTTL.8</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>OFF</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>PCI33_3</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>PCI66_3</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>PCIX</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>SSTL18_I</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>SSTL18_II</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>SSTL18_II_DCI</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>SSTL18_II_T_DCI</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>SSTL18_I_DCI</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>SSTL2_I</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>SSTL2_II</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>SSTL2_II_DCI</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>SSTL2_II_T_DCI</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>SSTL2_I_DCI</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>VR</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default">
+<tr><th rowspan="2">Name</th><th colspan="6">IOSTD:PSLEW</th><th colspan="6">IOSTD:NSLEW</th></tr>
+<tr><th>[5]</th><th>[4]</th><th>[3]</th><th>[2]</th><th>[1]</th><th>[0]</th><th>[5]</th><th>[4]</th><th>[3]</th><th>[2]</th><th>[1]</th><th>[0]</th></tr>
+<tr><td>BLVDS_25</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>GTL</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GTLP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>GTLP_DCI</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>GTL_DCI</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>HSLVDCI_15</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HSLVDCI_18</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSLVDCI_25</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>HSLVDCI_33</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>HSTL_I</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>HSTL_II</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HSTL_III</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_III_18</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_III_DCI</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>HSTL_III_DCI_18</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>HSTL_II_18</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HSTL_II_DCI</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>HSTL_II_DCI_18</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>HSTL_II_T_DCI</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HSTL_II_T_DCI_18</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>HSTL_IV</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HSTL_IV_18</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_IV_DCI</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>HSTL_IV_DCI_18</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>HSTL_I_12</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HSTL_I_18</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>HSTL_I_DCI</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HSTL_I_DCI_18</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>LVCMOS12.2.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS12.2.SLOW</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS12.4.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS12.4.SLOW</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS12.6.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS12.6.SLOW</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS12.8.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS12.8.SLOW</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS15.12.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS15.12.SLOW</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS15.16.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LVCMOS15.16.SLOW</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS15.2.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS15.2.SLOW</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS15.4.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS15.4.SLOW</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS15.6.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS15.6.SLOW</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS15.8.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS15.8.SLOW</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS18.12.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS18.12.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>LVCMOS18.16.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS18.16.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS18.2.FAST</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS18.2.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS18.4.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS18.4.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>LVCMOS18.6.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS18.6.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>LVCMOS18.8.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS18.8.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>LVCMOS25.12.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS25.12.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS25.16.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS25.16.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LVCMOS25.2.FAST</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS25.2.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LVCMOS25.24.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS25.24.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS25.4.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS25.4.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS25.6.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS25.6.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LVCMOS25.8.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>LVCMOS25.8.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LVCMOS33.12.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS33.12.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS33.16.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS33.16.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS33.2.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS33.2.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS33.24.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS33.24.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>LVCMOS33.4.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS33.4.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>LVCMOS33.6.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS33.6.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LVCMOS33.8.FAST</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVCMOS33.8.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>LVDCI_15</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LVDCI_18</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVDCI_25</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVDCI_33</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVDCI_DV2_15</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>LVDCI_DV2_18</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVDCI_DV2_25</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>LVPECL_25</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVTTL.12.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVTTL.12.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>LVTTL.16.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVTTL.16.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>LVTTL.2.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVTTL.2.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>LVTTL.24.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVTTL.24.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>LVTTL.4.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVTTL.4.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>LVTTL.6.FAST</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVTTL.6.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>LVTTL.8.FAST</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>LVTTL.8.SLOW</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>OFF</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>PCI33_3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>PCI66_3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>PCIX</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>SSTL18_I</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>SSTL18_II</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>SSTL18_II_DCI</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>SSTL18_II_T_DCI</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>SSTL18_I_DCI</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>SSTL2_I</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>SSTL2_II</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>SSTL2_II_DCI</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>SSTL2_II_T_DCI</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>SSTL2_I_DCI</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>VR</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default">
+<tr><th rowspan="2">Name</th><th colspan="6">IOSTD:OUTPUT_MISC</th></tr>
+<tr><th>[5]</th><th>[4]</th><th>[3]</th><th>[2]</th><th>[1]</th><th>[0]</th></tr>
+<tr><td>BLVDS_25</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GTL</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GTLP</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GTLP_DCI</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>GTL_DCI</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>HSLVDCI_15</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSLVDCI_18</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSLVDCI_25</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSLVDCI_33</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_I</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_II</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_III</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_III_18</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_III_DCI</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_III_DCI_18</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_II_18</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_II_DCI</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_II_DCI_18</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_II_T_DCI</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_II_T_DCI_18</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_IV</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_IV_18</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_IV_DCI</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_IV_DCI_18</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HSTL_I_12</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_I_18</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_I_DCI</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HSTL_I_DCI_18</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS12</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS15</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS18</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS25</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVCMOS33</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVDCI_15</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVDCI_18</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVDCI_25</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVDCI_33</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVDCI_DV2_15</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVDCI_DV2_18</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVDCI_DV2_25</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVPECL_25</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>LVTTL</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>OFF</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>PCI33_3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>PCI66_3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>PCIX</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>SSTL18_I</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>SSTL18_II</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>SSTL18_II_DCI</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>SSTL18_II_T_DCI</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>SSTL18_I_DCI</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>SSTL2_I</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>SSTL2_II</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>SSTL2_II_DCI</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>SSTL2_II_T_DCI</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>SSTL2_I_DCI</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default">
+<tr><th rowspan="2">Name</th><th colspan="9">IOSTD:LVDS_T</th><th colspan="9">IOSTD:LVDS_C</th></tr>
+<tr><th>[8]</th><th>[7]</th><th>[6]</th><th>[5]</th><th>[4]</th><th>[3]</th><th>[2]</th><th>[1]</th><th>[0]</th><th>[8]</th><th>[7]</th><th>[6]</th><th>[5]</th><th>[4]</th><th>[3]</th><th>[2]</th><th>[1]</th><th>[0]</th></tr>
+<tr><td>OFF</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>OUTPUT_HT_25</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>OUTPUT_LVDSEXT_25</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>OUTPUT_LVDS_25</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>OUTPUT_RSDS_25</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>TERM_HT_25</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>TERM_LVDSEXT_25</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>TERM_LVDS_25</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>TERM_RSDS_25</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="39">IO bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="38">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th><th>32</th><th>33</th><th>34</th><th>35</th><th>36</th><th>37</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:PDRIVE" title="IOB0:PDRIVE[1]">IOB0:PDRIVE[1]</a></td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:NDRIVE" title="~IOB0:NDRIVE[1]">~IOB0:NDRIVE[1]</a></td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:VR" title="IOB0:VR">IOB0:VR</a></td><td><a href="#bits-xc5v-IO-IOB0:OUTPUT_MISC" title="IOB0:OUTPUT_MISC[5]">IOB0:OUTPUT_MISC[5]</a></td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:OUTPUT_MISC" title="IOB0:OUTPUT_MISC[4]">IOB0:OUTPUT_MISC[4]</a></td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:LVDS" title="IOB0:LVDS[8]">IOB0:LVDS[8]</a></td><td><a href="#bits-xc5v-IO-IOB0:DCIUPDATEMODE_ASREQUIRED" title="~IOB0:DCIUPDATEMODE_ASREQUIRED">~IOB0:DCIUPDATEMODE_ASREQUIRED</a></td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:NDRIVE" title="IOB0:NDRIVE[3]">IOB0:NDRIVE[3]</a></td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:OUTPUT_DELAY" title="IOB0:OUTPUT_DELAY">IOB0:OUTPUT_DELAY</a></td><td><a href="#bits-xc5v-IO-IOB0:DCI_MODE" title="IOB0:DCI_MODE[0]">IOB0:DCI_MODE[0]</a></td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:DCI_MODE" title="IOB0:DCI_MODE[1]">IOB0:DCI_MODE[1]</a></td><td><a href="#bits-xc5v-IO-IOB0:DCI_MODE" title="IOB0:DCI_MODE[2]">IOB0:DCI_MODE[2]</a></td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:PDRIVE" title="~IOB0:PDRIVE[3]">~IOB0:PDRIVE[3]</a></td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:NDRIVE" title="~IOB0:NDRIVE[0]">~IOB0:NDRIVE[0]</a></td><td><a href="#bits-xc5v-IO-IOB0:PDRIVE" title="IOB0:PDRIVE[4]">IOB0:PDRIVE[4]</a></td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:NDRIVE" title="IOB0:NDRIVE[4]">IOB0:NDRIVE[4]</a></td><td><a href="#bits-xc5v-IO-IOB0:LVDS" title="IOB0:LVDS[0]">IOB0:LVDS[0]</a></td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:DCI_T" title="IOB0:DCI_T">IOB0:DCI_T</a></td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:LVDS" title="IOB0:LVDS[1]">IOB0:LVDS[1]</a></td><td><a href="#bits-xc5v-IO-IOB0:PDRIVE" title="IOB0:PDRIVE[2]">IOB0:PDRIVE[2]</a></td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:PDRIVE" title="~IOB0:PDRIVE[0]">~IOB0:PDRIVE[0]</a></td><td><a href="#bits-xc5v-IO-IOB0:NDRIVE" title="~IOB0:NDRIVE[2]">~IOB0:NDRIVE[2]</a></td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:PULL" title="IOB0:PULL[1]">IOB0:PULL[1]</a></td><td><a href="#bits-xc5v-IO-IOB0:LVDS" title="IOB0:LVDS[2]">IOB0:LVDS[2]</a></td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:PULL" title="IOB0:PULL[0]">IOB0:PULL[0]</a></td><td><a href="#bits-xc5v-IO-IOB0:DCI_MISC" title="IOB0:DCI_MISC[0]">IOB0:DCI_MISC[0]</a></td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:LVDS" title="IOB0:LVDS[3]">IOB0:LVDS[3]</a></td><td><a href="#bits-xc5v-IO-IOB0:PSLEW" title="IOB0:PSLEW[0]">IOB0:PSLEW[0]</a></td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:LVDS" title="IOB0:LVDS[4]">IOB0:LVDS[4]</a></td><td><a href="#bits-xc5v-IO-IOB0:IBUF_MODE" title="IOB0:IBUF_MODE[0]">IOB0:IBUF_MODE[0]</a></td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:OUTPUT_ENABLE" title="IOB0:OUTPUT_ENABLE[0]">IOB0:OUTPUT_ENABLE[0]</a></td><td><a href="#bits-xc5v-IO-IOB0:PULL" title="IOB0:PULL[2]">IOB0:PULL[2]</a></td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:OUTPUT_MISC" title="IOB0:OUTPUT_MISC[3]">IOB0:OUTPUT_MISC[3]</a></td><td><a href="#bits-xc5v-IO-IOB0:NSLEW" title="IOB0:NSLEW[5]">IOB0:NSLEW[5]</a></td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:LVDS" title="IOB0:LVDS[5]">IOB0:LVDS[5]</a></td><td><a href="#bits-xc5v-IO-IOB0:LVDS" title="IOB0:LVDS[6]">IOB0:LVDS[6]</a></td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:OUTPUT_ENABLE" title="IOB0:OUTPUT_ENABLE[1]">IOB0:OUTPUT_ENABLE[1]</a></td><td><a href="#bits-xc5v-IO-IOB0:LVDS" title="IOB0:LVDS[7]">IOB0:LVDS[7]</a></td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:INV.I" title="~IOB0:INV.I">~IOB0:INV.I</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:PSLEW" title="IOB0:PSLEW[1]">IOB0:PSLEW[1]</a></td><td><a href="#bits-xc5v-IO-IOB0:PSLEW" title="IOB0:PSLEW[2]">IOB0:PSLEW[2]</a></td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:OUTPUT_MISC" title="IOB0:OUTPUT_MISC[0]">IOB0:OUTPUT_MISC[0]</a></td><td><a href="#bits-xc5v-IO-IOB0:OUTPUT_MISC" title="IOB0:OUTPUT_MISC[1]">IOB0:OUTPUT_MISC[1]</a></td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:IBUF_MODE" title="IOB0:IBUF_MODE[1]">IOB0:IBUF_MODE[1]</a></td><td><a href="#bits-xc5v-IO-IOB0:OUTPUT_MISC" title="IOB0:OUTPUT_MISC[2]">IOB0:OUTPUT_MISC[2]</a></td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:NSLEW" title="IOB0:NSLEW[4]">IOB0:NSLEW[4]</a></td><td><a href="#bits-xc5v-IO-IOB0:DCI_MISC" title="IOB0:DCI_MISC[1]">IOB0:DCI_MISC[1]</a></td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:NSLEW" title="IOB0:NSLEW[1]">IOB0:NSLEW[1]</a></td><td><a href="#bits-xc5v-IO-IOB0:PSLEW" title="IOB0:PSLEW[5]">IOB0:PSLEW[5]</a></td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:NSLEW" title="IOB0:NSLEW[3]">IOB0:NSLEW[3]</a></td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:IBUF_MODE" title="IOB0:IBUF_MODE[2]">IOB0:IBUF_MODE[2]</a></td><td><a href="#bits-xc5v-IO-IOB0:PSLEW" title="IOB0:PSLEW[4]">IOB0:PSLEW[4]</a></td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:VREF_SYSMON" title="IOB0:VREF_SYSMON">IOB0:VREF_SYSMON</a></td><td><a href="#bits-xc5v-IO-IOB0:PSLEW" title="IOB0:PSLEW[3]">IOB0:PSLEW[3]</a></td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB0:NSLEW" title="IOB0:NSLEW[0]">IOB0:NSLEW[0]</a></td><td><a href="#bits-xc5v-IO-IOB0:NSLEW" title="IOB0:NSLEW[2]">IOB0:NSLEW[2]</a></td></tr>
+<tr><td>32</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:NSLEW" title="IOB1:NSLEW[0]">IOB1:NSLEW[0]</a></td><td><a href="#bits-xc5v-IO-IOB1:NSLEW" title="IOB1:NSLEW[2]">IOB1:NSLEW[2]</a></td></tr>
+<tr><td>33</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:VREF_SYSMON" title="IOB1:VREF_SYSMON">IOB1:VREF_SYSMON</a></td><td><a href="#bits-xc5v-IO-IOB1:PSLEW" title="IOB1:PSLEW[3]">IOB1:PSLEW[3]</a></td></tr>
+<tr><td>34</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:IBUF_MODE" title="IOB1:IBUF_MODE[2]">IOB1:IBUF_MODE[2]</a></td><td><a href="#bits-xc5v-IO-IOB1:PSLEW" title="IOB1:PSLEW[4]">IOB1:PSLEW[4]</a></td></tr>
+<tr><td>35</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:NSLEW" title="IOB1:NSLEW[3]">IOB1:NSLEW[3]</a></td></tr>
+<tr><td>36</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:NSLEW" title="IOB1:NSLEW[1]">IOB1:NSLEW[1]</a></td><td><a href="#bits-xc5v-IO-IOB1:PSLEW" title="IOB1:PSLEW[5]">IOB1:PSLEW[5]</a></td></tr>
+<tr><td>37</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:NSLEW" title="IOB1:NSLEW[4]">IOB1:NSLEW[4]</a></td><td><a href="#bits-xc5v-IO-IOB1:DCI_MISC" title="IOB1:DCI_MISC[1]">IOB1:DCI_MISC[1]</a></td></tr>
+<tr><td>38</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:IBUF_MODE" title="IOB1:IBUF_MODE[1]">IOB1:IBUF_MODE[1]</a></td><td><a href="#bits-xc5v-IO-IOB1:OUTPUT_MISC" title="IOB1:OUTPUT_MISC[2]">IOB1:OUTPUT_MISC[2]</a></td></tr>
+<tr><td>39</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:OUTPUT_MISC" title="IOB1:OUTPUT_MISC[0]">IOB1:OUTPUT_MISC[0]</a></td><td><a href="#bits-xc5v-IO-IOB1:OUTPUT_MISC" title="IOB1:OUTPUT_MISC[1]">IOB1:OUTPUT_MISC[1]</a></td></tr>
+<tr><td>40</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:INV.I" title="~IOB1:INV.I">~IOB1:INV.I</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:PSLEW" title="IOB1:PSLEW[1]">IOB1:PSLEW[1]</a></td><td><a href="#bits-xc5v-IO-IOB1:PSLEW" title="IOB1:PSLEW[2]">IOB1:PSLEW[2]</a></td></tr>
+<tr><td>41</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:OUTPUT_ENABLE" title="IOB1:OUTPUT_ENABLE[0]">IOB1:OUTPUT_ENABLE[0]</a></td><td><a href="#bits-xc5v-IO-IOB1:LVDS" title="IOB1:LVDS[7]">IOB1:LVDS[7]</a></td></tr>
+<tr><td>42</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:LVDS" title="IOB1:LVDS[5]">IOB1:LVDS[5]</a></td><td><a href="#bits-xc5v-IO-IOB1:LVDS" title="IOB1:LVDS[6]">IOB1:LVDS[6]</a></td></tr>
+<tr><td>43</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:OUTPUT_MISC" title="IOB1:OUTPUT_MISC[3]">IOB1:OUTPUT_MISC[3]</a></td><td><a href="#bits-xc5v-IO-IOB1:NSLEW" title="IOB1:NSLEW[5]">IOB1:NSLEW[5]</a></td></tr>
+<tr><td>44</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:OUTPUT_ENABLE" title="IOB1:OUTPUT_ENABLE[1]">IOB1:OUTPUT_ENABLE[1]</a></td><td><a href="#bits-xc5v-IO-IOB1:PULL" title="IOB1:PULL[2]">IOB1:PULL[2]</a></td></tr>
+<tr><td>45</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:LVDS" title="IOB1:LVDS[4]">IOB1:LVDS[4]</a></td><td><a href="#bits-xc5v-IO-IOB1:IBUF_MODE" title="IOB1:IBUF_MODE[0]">IOB1:IBUF_MODE[0]</a></td></tr>
+<tr><td>46</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:LVDS" title="IOB1:LVDS[3]">IOB1:LVDS[3]</a></td><td><a href="#bits-xc5v-IO-IOB1:PSLEW" title="IOB1:PSLEW[0]">IOB1:PSLEW[0]</a></td></tr>
+<tr><td>47</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:PULL" title="IOB1:PULL[0]">IOB1:PULL[0]</a></td><td><a href="#bits-xc5v-IO-IOB1:DCI_MISC" title="IOB1:DCI_MISC[0]">IOB1:DCI_MISC[0]</a></td></tr>
+<tr><td>48</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:PULL" title="IOB1:PULL[1]">IOB1:PULL[1]</a></td><td><a href="#bits-xc5v-IO-IOB1:LVDS" title="IOB1:LVDS[2]">IOB1:LVDS[2]</a></td></tr>
+<tr><td>49</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:PDRIVE" title="~IOB1:PDRIVE[0]">~IOB1:PDRIVE[0]</a></td><td><a href="#bits-xc5v-IO-IOB1:NDRIVE" title="~IOB1:NDRIVE[2]">~IOB1:NDRIVE[2]</a></td></tr>
+<tr><td>50</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:LVDS" title="IOB1:LVDS[1]">IOB1:LVDS[1]</a></td><td><a href="#bits-xc5v-IO-IOB1:PDRIVE" title="IOB1:PDRIVE[2]">IOB1:PDRIVE[2]</a></td></tr>
+<tr><td>51</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:DCI_T" title="IOB1:DCI_T">IOB1:DCI_T</a></td><td>-</td></tr>
+<tr><td>52</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:NDRIVE" title="IOB1:NDRIVE[4]">IOB1:NDRIVE[4]</a></td><td><a href="#bits-xc5v-IO-IOB1:LVDS" title="IOB1:LVDS[0]">IOB1:LVDS[0]</a></td></tr>
+<tr><td>53</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:NDRIVE" title="~IOB1:NDRIVE[0]">~IOB1:NDRIVE[0]</a></td><td><a href="#bits-xc5v-IO-IOB1:PDRIVE" title="IOB1:PDRIVE[4]">IOB1:PDRIVE[4]</a></td></tr>
+<tr><td>54</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:PDRIVE" title="~IOB1:PDRIVE[3]">~IOB1:PDRIVE[3]</a></td></tr>
+<tr><td>55</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:DCI_MODE" title="IOB1:DCI_MODE[1]">IOB1:DCI_MODE[1]</a></td><td><a href="#bits-xc5v-IO-IOB1:DCI_MODE" title="IOB1:DCI_MODE[2]">IOB1:DCI_MODE[2]</a></td></tr>
+<tr><td>56</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:OUTPUT_DELAY" title="IOB1:OUTPUT_DELAY">IOB1:OUTPUT_DELAY</a></td><td><a href="#bits-xc5v-IO-IOB1:DCI_MODE" title="IOB1:DCI_MODE[0]">IOB1:DCI_MODE[0]</a></td></tr>
+<tr><td>57</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:NDRIVE" title="IOB1:NDRIVE[3]">IOB1:NDRIVE[3]</a></td><td>-</td></tr>
+<tr><td>58</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:LVDS" title="IOB1:LVDS[8]">IOB1:LVDS[8]</a></td><td><a href="#bits-xc5v-IO-IOB1:DCIUPDATEMODE_ASREQUIRED" title="~IOB1:DCIUPDATEMODE_ASREQUIRED">~IOB1:DCIUPDATEMODE_ASREQUIRED</a></td></tr>
+<tr><td>59</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:OUTPUT_MISC" title="IOB1:OUTPUT_MISC[4]">IOB1:OUTPUT_MISC[4]</a></td><td>-</td></tr>
+<tr><td>60</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:VR" title="IOB1:VR">IOB1:VR</a></td><td><a href="#bits-xc5v-IO-IOB1:OUTPUT_MISC" title="IOB1:OUTPUT_MISC[5]">IOB1:OUTPUT_MISC[5]</a></td></tr>
+<tr><td>61</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:NDRIVE" title="~IOB1:NDRIVE[1]">~IOB1:NDRIVE[1]</a></td></tr>
+<tr><td>62</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>63</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-IO-IOB1:PDRIVE" title="IOB1:PDRIVE[1]">IOB1:PDRIVE[1]</a></td></tr>
+</table>
+<div id="bits-xc5v-IO-IOB0:DCIUPDATEMODE_ASREQUIRED"></div>
+<div id="bits-xc5v-IO-IOB0:INV.I"></div>
+<div id="bits-xc5v-IO-IOB1:DCIUPDATEMODE_ASREQUIRED"></div>
+<div id="bits-xc5v-IO-IOB1:INV.I"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>IOB0:DCIUPDATEMODE_ASREQUIRED</th><th>[0, 37, 5]</th></tr>
+<tr><th>IOB0:INV.I</th><th>[0, 31, 23]</th></tr>
+<tr><th>IOB1:DCIUPDATEMODE_ASREQUIRED</th><th>[0, 37, 58]</th></tr>
+<tr><th>IOB1:INV.I</th><th>[0, 31, 40]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<div id="bits-xc5v-IO-IOB0:DCI_T"></div>
+<div id="bits-xc5v-IO-IOB0:OUTPUT_DELAY"></div>
+<div id="bits-xc5v-IO-IOB0:VR"></div>
+<div id="bits-xc5v-IO-IOB0:VREF_SYSMON"></div>
+<div id="bits-xc5v-IO-IOB1:DCI_T"></div>
+<div id="bits-xc5v-IO-IOB1:OUTPUT_DELAY"></div>
+<div id="bits-xc5v-IO-IOB1:VR"></div>
+<div id="bits-xc5v-IO-IOB1:VREF_SYSMON"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>IOB0:DCI_T</th><th>[0, 36, 12]</th></tr>
+<tr><th>IOB0:OUTPUT_DELAY</th><th>[0, 36, 7]</th></tr>
+<tr><th>IOB0:VR</th><th>[0, 36, 3]</th></tr>
+<tr><th>IOB0:VREF_SYSMON</th><th>[0, 36, 30]</th></tr>
+<tr><th>IOB1:DCI_T</th><th>[0, 36, 51]</th></tr>
+<tr><th>IOB1:OUTPUT_DELAY</th><th>[0, 36, 56]</th></tr>
+<tr><th>IOB1:VR</th><th>[0, 36, 60]</th></tr>
+<tr><th>IOB1:VREF_SYSMON</th><th>[0, 36, 33]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc5v-IO-IOB0:NDRIVE"></div>
+<div id="bits-xc5v-IO-IOB1:NDRIVE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>IOB0:NDRIVE</th><th>[0, 36, 11]</th><th>[0, 36, 6]</th><th>[0, 37, 14]</th><th>[0, 37, 2]</th><th>[0, 36, 10]</th></tr>
+<tr><th>IOB1:NDRIVE</th><th>[0, 36, 52]</th><th>[0, 36, 57]</th><th>[0, 37, 49]</th><th>[0, 37, 61]</th><th>[0, 36, 53]</th></tr>
+<tr><td>Mixed inversion</td><td>[4]</td><td>[3]</td><td>~[2]</td><td>~[1]</td><td>~[0]</td></tr>
+</table>
+<div id="bits-xc5v-IO-IOB0:PDRIVE"></div>
+<div id="bits-xc5v-IO-IOB1:PDRIVE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>IOB0:PDRIVE</th><th>[0, 37, 10]</th><th>[0, 37, 9]</th><th>[0, 37, 13]</th><th>[0, 37, 0]</th><th>[0, 36, 14]</th></tr>
+<tr><th>IOB1:PDRIVE</th><th>[0, 37, 53]</th><th>[0, 37, 54]</th><th>[0, 37, 50]</th><th>[0, 37, 63]</th><th>[0, 36, 49]</th></tr>
+<tr><td>Mixed inversion</td><td>[4]</td><td>~[3]</td><td>[2]</td><td>[1]</td><td>~[0]</td></tr>
+</table>
+<div id="bits-xc5v-IO-IOB0:PULL"></div>
+<div id="bits-xc5v-IO-IOB1:PULL"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>IOB0:PULL</th><th>[0, 37, 19]</th><th>[0, 36, 15]</th><th>[0, 36, 16]</th></tr>
+<tr><th>IOB1:PULL</th><th>[0, 37, 44]</th><th>[0, 36, 48]</th><th>[0, 36, 47]</th></tr>
+<tr><td>PULLDOWN</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>PULLUP</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>KEEPER</td><td>1</td><td>0</td><td>1</td></tr>
+</table>
+<div id="bits-xc5v-IO-IOB0:DCI_MISC"></div>
+<div id="bits-xc5v-IO-IOB0:OUTPUT_ENABLE"></div>
+<div id="bits-xc5v-IO-IOB1:DCI_MISC"></div>
+<div id="bits-xc5v-IO-IOB1:OUTPUT_ENABLE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>IOB0:DCI_MISC</th><th>[0, 37, 26]</th><th>[0, 37, 16]</th></tr>
+<tr><th>IOB0:OUTPUT_ENABLE</th><th>[0, 36, 22]</th><th>[0, 36, 19]</th></tr>
+<tr><th>IOB1:DCI_MISC</th><th>[0, 37, 37]</th><th>[0, 37, 47]</th></tr>
+<tr><th>IOB1:OUTPUT_ENABLE</th><th>[0, 36, 44]</th><th>[0, 36, 41]</th></tr>
+<tr><td>Non-inverted</td><td>[1]</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc5v-IO-IOB0:NSLEW"></div>
+<div id="bits-xc5v-IO-IOB0:OUTPUT_MISC"></div>
+<div id="bits-xc5v-IO-IOB0:PSLEW"></div>
+<div id="bits-xc5v-IO-IOB1:NSLEW"></div>
+<div id="bits-xc5v-IO-IOB1:OUTPUT_MISC"></div>
+<div id="bits-xc5v-IO-IOB1:PSLEW"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>IOB0:NSLEW</th><th>[0, 37, 20]</th><th>[0, 36, 26]</th><th>[0, 37, 28]</th><th>[0, 37, 31]</th><th>[0, 36, 27]</th><th>[0, 36, 31]</th></tr>
+<tr><th>IOB0:OUTPUT_MISC</th><th>[0, 37, 3]</th><th>[0, 36, 4]</th><th>[0, 36, 20]</th><th>[0, 37, 25]</th><th>[0, 37, 24]</th><th>[0, 36, 24]</th></tr>
+<tr><th>IOB0:PSLEW</th><th>[0, 37, 27]</th><th>[0, 37, 29]</th><th>[0, 37, 30]</th><th>[0, 37, 23]</th><th>[0, 36, 23]</th><th>[0, 37, 17]</th></tr>
+<tr><th>IOB1:NSLEW</th><th>[0, 37, 43]</th><th>[0, 36, 37]</th><th>[0, 37, 35]</th><th>[0, 37, 32]</th><th>[0, 36, 36]</th><th>[0, 36, 32]</th></tr>
+<tr><th>IOB1:OUTPUT_MISC</th><th>[0, 37, 60]</th><th>[0, 36, 59]</th><th>[0, 36, 43]</th><th>[0, 37, 38]</th><th>[0, 37, 39]</th><th>[0, 36, 39]</th></tr>
+<tr><th>IOB1:PSLEW</th><th>[0, 37, 36]</th><th>[0, 37, 34]</th><th>[0, 37, 33]</th><th>[0, 37, 40]</th><th>[0, 36, 40]</th><th>[0, 37, 46]</th></tr>
+<tr><td>Non-inverted</td><td>[5]</td><td>[4]</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc5v-IO-IOB0:DCI_MODE"></div>
+<div id="bits-xc5v-IO-IOB1:DCI_MODE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>IOB0:DCI_MODE</th><th>[0, 37, 8]</th><th>[0, 36, 8]</th><th>[0, 37, 7]</th></tr>
+<tr><th>IOB1:DCI_MODE</th><th>[0, 37, 55]</th><th>[0, 36, 55]</th><th>[0, 37, 56]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>OUTPUT</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>OUTPUT_HALF</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>TERM_VCC</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>TERM_SPLIT</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xc5v-IO-IOB0:LVDS"></div>
+<div id="bits-xc5v-IO-IOB1:LVDS"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>IOB0:LVDS</th><th>[0, 36, 5]</th><th>[0, 37, 22]</th><th>[0, 37, 21]</th><th>[0, 36, 21]</th><th>[0, 36, 18]</th><th>[0, 36, 17]</th><th>[0, 37, 15]</th><th>[0, 36, 13]</th><th>[0, 37, 11]</th></tr>
+<tr><th>IOB1:LVDS</th><th>[0, 36, 58]</th><th>[0, 37, 41]</th><th>[0, 37, 42]</th><th>[0, 36, 42]</th><th>[0, 36, 45]</th><th>[0, 36, 46]</th><th>[0, 37, 48]</th><th>[0, 36, 50]</th><th>[0, 37, 52]</th></tr>
+<tr><td>Non-inverted</td><td>[8]</td><td>[7]</td><td>[6]</td><td>[5]</td><td>[4]</td><td>[3]</td><td>[2]</td><td>[1]</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc5v-IO-IOB0:IBUF_MODE"></div>
+<div id="bits-xc5v-IO-IOB1:IBUF_MODE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>IOB0:IBUF_MODE</th><th>[0, 36, 29]</th><th>[0, 36, 25]</th><th>[0, 37, 18]</th></tr>
+<tr><th>IOB1:IBUF_MODE</th><th>[0, 36, 34]</th><th>[0, 36, 38]</th><th>[0, 37, 45]</th></tr>
+<tr><td>OFF</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>VREF</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>DIFF</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>CMOS</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
 </section>
 </section>
 
