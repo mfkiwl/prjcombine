@@ -209,12 +209,11 @@
 <ul class="simple">
 <li><p>bits 0-1279: interconnect rows 0 to 19 of the region, 64 bits per row</p></li>
 <li><p>bits 1280-1292: ECC</p></li>
-<li><p>bits 1293-1295: HCLK row</p></li>
-<li><p>bits 1296-1311: unused</p></li>
+<li><p>bits 1293-1311: HCLK row</p></li>
 <li><p>bits 1312-2591: interconnect rows 20 to 39 of the region, 64 bits per row</p></li>
 </ul>
 <p>Every interconnect tile thus corresponds to a bitstream tile that is 28×64 to 44×64 bits. The actual interconnect tile is 26×64 bits, occupying the first 26 frames of the column. If <code class="docutils literal notranslate"><span class="pre">INTF</span></code> or <code class="docutils literal notranslate"><span class="pre">INTF.DELAY</span></code> tile is present in the tile, it occupies leftover space in frames 24 and 25.  The remaining frames, as well as unused space in frames 24-25, are used for configuring the associated primitive tile.</p>
-<p>The HCLK row has smaller bitstream tiles, 28×3 to 44×3 bits in size.</p>
+<p>The HCLK row has smaller bitstream tiles, 28×19 to 44×19 bits in size.</p>
 <p>The BRAM data tiles are 128×320 bits in size (covering the height of 5 interconnect rows). The area at intersection with HCLK rows is unused.</p>
 <section id="ecc">
 <h3>ECC<a class="headerlink" href="#ecc" title="Link to this heading"></a></h3>
