@@ -19,7 +19,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Clock interconnect" href="clock.html" />
+    <link rel="next" title="Configuration Center" href="center.html" />
     <link rel="prev" title="DSP" href="dsp.html" /> 
 </head>
 
@@ -65,12 +65,16 @@
 <li class="toctree-l3"><a class="reference internal" href="dsp.html">DSP</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Input/Output</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#i-o-banks-and-special-functions">I/O banks and special functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bitstream-hclk-ioi-hp">Bitstream — <code class="docutils literal notranslate"><span class="pre">HCLK_IOI_HP</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bitstream-hclk-ioi-hr">Bitstream — <code class="docutils literal notranslate"><span class="pre">HCLK_IOI_HR</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="center.html">Configuration Center</a></li>
 <li class="toctree-l3"><a class="reference internal" href="clock.html">Clock interconnect</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cmt.html">Clock management tile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pcie.html">PCI Express Gen2 cores</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pcie3.html">PCI Express Gen3 cores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Configuration registers</a></li>
 </ul>
 </li>
 </ul>
@@ -278,6 +282,498 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">TCK</span></code>, <code class="docutils literal notranslate"><span class="pre">TDI</span></code>, <code class="docutils literal notranslate"><span class="pre">TDO</span></code>, <code class="docutils literal notranslate"><span class="pre">TMS</span></code></p></li>
 </ul>
 </section>
+<section id="bitstream-hclk-ioi-hp">
+<h2>Bitstream — <code class="docutils literal notranslate"><span class="pre">HCLK_IOI_HP</span></code><a class="headerlink" href="#bitstream-hclk-ioi-hp" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="39">HCLK_IOI_HP bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="38">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th><th>32</th><th>33</th><th>34</th><th>35</th><th>36</th><th>37</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D3" title="HCLK_IOI:MUX.HCLK_IO_D3[6]">HCLK_IOI:MUX.HCLK_IO_D3[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U3" title="HCLK_IOI:MUX.HCLK_IO_U3[5]">HCLK_IOI:MUX.HCLK_IO_U3[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK8" title="HCLK_IOI:ENABLE.HCLK8">HCLK_IOI:ENABLE.HCLK8</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK1" title="HCLK_IOI:ENABLE.HCLK1">HCLK_IOI:ENABLE.HCLK1</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U5" title="HCLK_IOI:MUX.HCLK_IO_U5[2]">HCLK_IOI:MUX.HCLK_IO_U5[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D5" title="HCLK_IOI:MUX.HCLK_IO_D5[2]">HCLK_IOI:MUX.HCLK_IO_D5[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U4" title="HCLK_IOI:MUX.HCLK_IO_U4[6]">HCLK_IOI:MUX.HCLK_IO_U4[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR3:BUFR_DIVIDE" title="BUFR3:BUFR_DIVIDE[0]">BUFR3:BUFR_DIVIDE[0]</a></td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.PERF2" title="HCLK_IOI:ENABLE.PERF2">HCLK_IOI:ENABLE.PERF2</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.PERF3" title="HCLK_IOI:ENABLE.PERF3">HCLK_IOI:ENABLE.PERF3</a></td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U3" title="HCLK_IOI:MUX.HCLK_IO_U3[4]">HCLK_IOI:MUX.HCLK_IO_U3[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D3" title="HCLK_IOI:MUX.HCLK_IO_D3[5]">HCLK_IOI:MUX.HCLK_IO_D3[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK0" title="HCLK_IOI:ENABLE.HCLK0">HCLK_IOI:ENABLE.HCLK0</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK9" title="HCLK_IOI:ENABLE.HCLK9">HCLK_IOI:ENABLE.HCLK9</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D5" title="HCLK_IOI:MUX.HCLK_IO_D5[3]">HCLK_IOI:MUX.HCLK_IO_D5[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U5" title="HCLK_IOI:MUX.HCLK_IO_U5[1]">HCLK_IOI:MUX.HCLK_IO_U5[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U4" title="HCLK_IOI:MUX.HCLK_IO_U4[5]">HCLK_IOI:MUX.HCLK_IO_U4[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR3:BUFR_DIVIDE" title="BUFR3:BUFR_DIVIDE[3]">BUFR3:BUFR_DIVIDE[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR2:MUX.I" title="BUFR2:MUX.I[2]">BUFR2:MUX.I[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR3:MUX.I" title="BUFR3:MUX.I[7]">BUFR3:MUX.I[7]</a></td><td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D3" title="HCLK_IOI:MUX.HCLK_IO_D3[4]">HCLK_IOI:MUX.HCLK_IO_D3[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U3" title="HCLK_IOI:MUX.HCLK_IO_U3[6]">HCLK_IOI:MUX.HCLK_IO_U3[6]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK2" title="HCLK_IOI:ENABLE.HCLK2">HCLK_IOI:ENABLE.HCLK2</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U5" title="HCLK_IOI:MUX.HCLK_IO_U5[3]">HCLK_IOI:MUX.HCLK_IO_U5[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D5" title="HCLK_IOI:MUX.HCLK_IO_D5[1]">HCLK_IOI:MUX.HCLK_IO_D5[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR3:MUX.I" title="BUFR3:MUX.I[0]">BUFR3:MUX.I[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR3:BUFR_DIVIDE" title="BUFR3:BUFR_DIVIDE[2]">BUFR3:BUFR_DIVIDE[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR2:MUX.I" title="BUFR2:MUX.I[3]">BUFR2:MUX.I[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR3:MUX.I" title="BUFR3:MUX.I[6]">BUFR3:MUX.I[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFIO2:DELAY_BYPASS" title="~BUFIO2:DELAY_BYPASS">~BUFIO2:DELAY_BYPASS</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFIO3:DELAY_BYPASS" title="~BUFIO3:DELAY_BYPASS">~BUFIO3:DELAY_BYPASS</a></td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U0" title="HCLK_IOI:MUX.HCLK_IO_U0[6]">HCLK_IOI:MUX.HCLK_IO_U0[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D1" title="HCLK_IOI:MUX.HCLK_IO_D1[0]">HCLK_IOI:MUX.HCLK_IO_D1[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:BUF.RCLK3" title="HCLK_IOI:BUF.RCLK3">HCLK_IOI:BUF.RCLK3</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK10" title="HCLK_IOI:ENABLE.HCLK10">HCLK_IOI:ENABLE.HCLK10</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U5" title="HCLK_IOI:MUX.HCLK_IO_U5[4]">HCLK_IOI:MUX.HCLK_IO_U5[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U5" title="HCLK_IOI:MUX.HCLK_IO_U5[0]">HCLK_IOI:MUX.HCLK_IO_U5[0]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR3:BUFR_DIVIDE" title="BUFR3:BUFR_DIVIDE[1]">BUFR3:BUFR_DIVIDE[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR2:MUX.I" title="BUFR2:MUX.I[4]">BUFR2:MUX.I[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR3:MUX.I" title="BUFR3:MUX.I[5]">BUFR3:MUX.I[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFIO2:MUX.I" title="BUFIO2:MUX.I">BUFIO2:MUX.I</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFIO3:MUX.I" title="BUFIO3:MUX.I">BUFIO3:MUX.I</a></td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U0" title="HCLK_IOI:MUX.HCLK_IO_U0[5]">HCLK_IOI:MUX.HCLK_IO_U0[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U1" title="HCLK_IOI:MUX.HCLK_IO_U1[0]">HCLK_IOI:MUX.HCLK_IO_U1[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D0" title="HCLK_IOI:MUX.HCLK_IO_D0[5]">HCLK_IOI:MUX.HCLK_IO_D0[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK3" title="HCLK_IOI:ENABLE.HCLK3">HCLK_IOI:ENABLE.HCLK3</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U5" title="HCLK_IOI:MUX.HCLK_IO_U5[5]">HCLK_IOI:MUX.HCLK_IO_U5[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D5" title="HCLK_IOI:MUX.HCLK_IO_D5[0]">HCLK_IOI:MUX.HCLK_IO_D5[0]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR2:BUFR_DIVIDE" title="BUFR2:BUFR_DIVIDE[0]">BUFR2:BUFR_DIVIDE[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR2:MUX.I" title="BUFR2:MUX.I[5]">BUFR2:MUX.I[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR3:MUX.I" title="BUFR3:MUX.I[4]">BUFR3:MUX.I[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFIO2:ENABLE" title="BUFIO2:ENABLE">BUFIO2:ENABLE</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFIO3:ENABLE" title="BUFIO3:ENABLE">BUFIO3:ENABLE</a></td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U0" title="HCLK_IOI:MUX.HCLK_IO_U0[4]">HCLK_IOI:MUX.HCLK_IO_U0[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D0" title="HCLK_IOI:MUX.HCLK_IO_D0[1]">HCLK_IOI:MUX.HCLK_IO_D0[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D1" title="HCLK_IOI:MUX.HCLK_IO_D1[6]">HCLK_IOI:MUX.HCLK_IO_D1[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK11" title="HCLK_IOI:ENABLE.HCLK11">HCLK_IOI:ENABLE.HCLK11</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U5" title="HCLK_IOI:MUX.HCLK_IO_U5[6]">HCLK_IOI:MUX.HCLK_IO_U5[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:BUF.RCLK2" title="HCLK_IOI:BUF.RCLK2">HCLK_IOI:BUF.RCLK2</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR3:ENABLE" title="BUFR3:ENABLE">BUFR3:ENABLE</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR2:BUFR_DIVIDE" title="BUFR2:BUFR_DIVIDE[3]">BUFR2:BUFR_DIVIDE[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR2:MUX.I" title="BUFR2:MUX.I[6]">BUFR2:MUX.I[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR3:MUX.I" title="BUFR3:MUX.I[3]">BUFR3:MUX.I[3]</a></td><td>-</td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[0]">IDELAYCTRL:MUX.REFCLK[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D1" title="HCLK_IOI:MUX.HCLK_IO_D1[1]">HCLK_IOI:MUX.HCLK_IO_D1[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D4" title="HCLK_IOI:MUX.HCLK_IO_D4[6]">HCLK_IOI:MUX.HCLK_IO_D4[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U3" title="HCLK_IOI:MUX.HCLK_IO_U3[2]">HCLK_IOI:MUX.HCLK_IO_U3[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U2" title="HCLK_IOI:MUX.HCLK_IO_U2[6]">HCLK_IOI:MUX.HCLK_IO_U2[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR3:MUX.I" title="BUFR3:MUX.I[2]">BUFR3:MUX.I[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR2:ENABLE" title="BUFR2:ENABLE">BUFR2:ENABLE</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR2:BUFR_DIVIDE" title="BUFR2:BUFR_DIVIDE[2]">BUFR2:BUFR_DIVIDE[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR2:MUX.I" title="BUFR2:MUX.I[7]">BUFR2:MUX.I[7]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.PERF1" title="HCLK_IOI:ENABLE.PERF1">HCLK_IOI:ENABLE.PERF1</a></td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[1]">IDELAYCTRL:MUX.REFCLK[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U0" title="HCLK_IOI:MUX.HCLK_IO_U0[1]">HCLK_IOI:MUX.HCLK_IO_U0[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U4" title="HCLK_IOI:MUX.HCLK_IO_U4[3]">HCLK_IOI:MUX.HCLK_IO_U4[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D3" title="HCLK_IOI:MUX.HCLK_IO_D3[3]">HCLK_IOI:MUX.HCLK_IO_D3[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U2" title="HCLK_IOI:MUX.HCLK_IO_U2[5]">HCLK_IOI:MUX.HCLK_IO_U2[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D5" title="HCLK_IOI:MUX.HCLK_IO_D5[6]">HCLK_IOI:MUX.HCLK_IO_D5[6]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR2:BUFR_DIVIDE" title="BUFR2:BUFR_DIVIDE[1]">BUFR2:BUFR_DIVIDE[1]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR3:MUX.I" title="BUFR3:MUX.I[1]">BUFR3:MUX.I[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFIO1:DELAY_BYPASS" title="~BUFIO1:DELAY_BYPASS">~BUFIO1:DELAY_BYPASS</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFIO1:MUX.I" title="BUFIO1:MUX.I">BUFIO1:MUX.I</a></td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[2]">IDELAYCTRL:MUX.REFCLK[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U1" title="HCLK_IOI:MUX.HCLK_IO_U1[1]">HCLK_IOI:MUX.HCLK_IO_U1[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D4" title="HCLK_IOI:MUX.HCLK_IO_D4[3]">HCLK_IOI:MUX.HCLK_IO_D4[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U3" title="HCLK_IOI:MUX.HCLK_IO_U3[3]">HCLK_IOI:MUX.HCLK_IO_U3[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U2" title="HCLK_IOI:MUX.HCLK_IO_U2[4]">HCLK_IOI:MUX.HCLK_IO_U2[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D5" title="HCLK_IOI:MUX.HCLK_IO_D5[5]">HCLK_IOI:MUX.HCLK_IO_D5[5]</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFIO1:ENABLE" title="BUFIO1:ENABLE">BUFIO1:ENABLE</a></td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[3]">IDELAYCTRL:MUX.REFCLK[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D0" title="HCLK_IOI:MUX.HCLK_IO_D0[2]">HCLK_IOI:MUX.HCLK_IO_D0[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U4" title="HCLK_IOI:MUX.HCLK_IO_U4[2]">HCLK_IOI:MUX.HCLK_IO_U4[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK4" title="HCLK_IOI:ENABLE.HCLK4">HCLK_IOI:ENABLE.HCLK4</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U2" title="HCLK_IOI:MUX.HCLK_IO_U2[3]">HCLK_IOI:MUX.HCLK_IO_U2[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D5" title="HCLK_IOI:MUX.HCLK_IO_D5[4]">HCLK_IOI:MUX.HCLK_IO_D5[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U4" title="HCLK_IOI:MUX.HCLK_IO_U4[4]">HCLK_IOI:MUX.HCLK_IO_U4[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR1:BUFR_DIVIDE" title="BUFR1:BUFR_DIVIDE[0]">BUFR1:BUFR_DIVIDE[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR1:MUX.I" title="BUFR1:MUX.I[2]">BUFR1:MUX.I[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR0:MUX.I" title="BUFR0:MUX.I[0]">BUFR0:MUX.I[0]</a></td><td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[4]">IDELAYCTRL:MUX.REFCLK[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D1" title="HCLK_IOI:MUX.HCLK_IO_D1[2]">HCLK_IOI:MUX.HCLK_IO_D1[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D3" title="HCLK_IOI:MUX.HCLK_IO_D3[2]">HCLK_IOI:MUX.HCLK_IO_D3[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D0" title="HCLK_IOI:MUX.HCLK_IO_D0[4]">HCLK_IOI:MUX.HCLK_IO_D0[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D2" title="HCLK_IOI:MUX.HCLK_IO_D2[3]">HCLK_IOI:MUX.HCLK_IO_D2[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D2" title="HCLK_IOI:MUX.HCLK_IO_D2[5]">HCLK_IOI:MUX.HCLK_IO_D2[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U1" title="HCLK_IOI:MUX.HCLK_IO_U1[4]">HCLK_IOI:MUX.HCLK_IO_U1[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR1:BUFR_DIVIDE" title="BUFR1:BUFR_DIVIDE[3]">BUFR1:BUFR_DIVIDE[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR1:MUX.I" title="BUFR1:MUX.I[3]">BUFR1:MUX.I[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR0:MUX.I" title="BUFR0:MUX.I[1]">BUFR0:MUX.I[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR2:MUX.I" title="BUFR2:MUX.I[0]">BUFR2:MUX.I[0]</a></td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[5]">IDELAYCTRL:MUX.REFCLK[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U0" title="HCLK_IOI:MUX.HCLK_IO_U0[2]">HCLK_IOI:MUX.HCLK_IO_U0[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D4" title="HCLK_IOI:MUX.HCLK_IO_D4[2]">HCLK_IOI:MUX.HCLK_IO_D4[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D0" title="HCLK_IOI:MUX.HCLK_IO_D0[6]">HCLK_IOI:MUX.HCLK_IO_D0[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U2" title="HCLK_IOI:MUX.HCLK_IO_U2[2]">HCLK_IOI:MUX.HCLK_IO_U2[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D2" title="HCLK_IOI:MUX.HCLK_IO_D2[4]">HCLK_IOI:MUX.HCLK_IO_D2[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D1" title="HCLK_IOI:MUX.HCLK_IO_D1[4]">HCLK_IOI:MUX.HCLK_IO_D1[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR1:BUFR_DIVIDE" title="BUFR1:BUFR_DIVIDE[2]">BUFR1:BUFR_DIVIDE[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR1:MUX.I" title="BUFR1:MUX.I[4]">BUFR1:MUX.I[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR0:MUX.I" title="BUFR0:MUX.I[3]">BUFR0:MUX.I[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR2:MUX.I" title="BUFR2:MUX.I[1]">BUFR2:MUX.I[1]</a></td><td>-</td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[6]">IDELAYCTRL:MUX.REFCLK[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U1" title="HCLK_IOI:MUX.HCLK_IO_U1[2]">HCLK_IOI:MUX.HCLK_IO_U1[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U3" title="HCLK_IOI:MUX.HCLK_IO_U3[1]">HCLK_IOI:MUX.HCLK_IO_U3[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U0" title="HCLK_IOI:MUX.HCLK_IO_U0[3]">HCLK_IOI:MUX.HCLK_IO_U0[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D2" title="HCLK_IOI:MUX.HCLK_IO_D2[2]">HCLK_IOI:MUX.HCLK_IO_D2[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D2" title="HCLK_IOI:MUX.HCLK_IO_D2[6]">HCLK_IOI:MUX.HCLK_IO_D2[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR1:ENABLE" title="BUFR1:ENABLE">BUFR1:ENABLE</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR1:BUFR_DIVIDE" title="BUFR1:BUFR_DIVIDE[1]">BUFR1:BUFR_DIVIDE[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR1:MUX.I" title="BUFR1:MUX.I[5]">BUFR1:MUX.I[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR0:MUX.I" title="BUFR0:MUX.I[4]">BUFR0:MUX.I[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR1:MUX.I" title="BUFR1:MUX.I[0]">BUFR1:MUX.I[0]</a></td><td>-</td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[7]">IDELAYCTRL:MUX.REFCLK[7]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D0" title="HCLK_IOI:MUX.HCLK_IO_D0[3]">HCLK_IOI:MUX.HCLK_IO_D0[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U4" title="HCLK_IOI:MUX.HCLK_IO_U4[1]">HCLK_IOI:MUX.HCLK_IO_U4[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK5" title="HCLK_IOI:ENABLE.HCLK5">HCLK_IOI:ENABLE.HCLK5</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U2" title="HCLK_IOI:MUX.HCLK_IO_U2[1]">HCLK_IOI:MUX.HCLK_IO_U2[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D4" title="HCLK_IOI:MUX.HCLK_IO_D4[4]">HCLK_IOI:MUX.HCLK_IO_D4[4]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR0:BUFR_DIVIDE" title="BUFR0:BUFR_DIVIDE[0]">BUFR0:BUFR_DIVIDE[0]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR0:MUX.I" title="BUFR0:MUX.I[5]">BUFR0:MUX.I[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR1:MUX.I" title="BUFR1:MUX.I[1]">BUFR1:MUX.I[1]</a></td><td>-</td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[8]">IDELAYCTRL:MUX.REFCLK[8]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D1" title="HCLK_IOI:MUX.HCLK_IO_D1[3]">HCLK_IOI:MUX.HCLK_IO_D1[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D3" title="HCLK_IOI:MUX.HCLK_IO_D3[1]">HCLK_IOI:MUX.HCLK_IO_D3[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U0" title="HCLK_IOI:MUX.HCLK_IO_U0[0]">HCLK_IOI:MUX.HCLK_IO_U0[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D2" title="HCLK_IOI:MUX.HCLK_IO_D2[1]">HCLK_IOI:MUX.HCLK_IO_D2[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U1" title="HCLK_IOI:MUX.HCLK_IO_U1[6]">HCLK_IOI:MUX.HCLK_IO_U1[6]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR0:BUFR_DIVIDE" title="BUFR0:BUFR_DIVIDE[3]">BUFR0:BUFR_DIVIDE[3]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR0:MUX.I" title="BUFR0:MUX.I[6]">BUFR0:MUX.I[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.PERF0" title="HCLK_IOI:ENABLE.PERF0">HCLK_IOI:ENABLE.PERF0</a></td><td>-</td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[9]">IDELAYCTRL:MUX.REFCLK[9]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U1" title="HCLK_IOI:MUX.HCLK_IO_U1[3]">HCLK_IOI:MUX.HCLK_IO_U1[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D4" title="HCLK_IOI:MUX.HCLK_IO_D4[1]">HCLK_IOI:MUX.HCLK_IO_D4[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D0" title="HCLK_IOI:MUX.HCLK_IO_D0[0]">HCLK_IOI:MUX.HCLK_IO_D0[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U2" title="HCLK_IOI:MUX.HCLK_IO_U2[0]">HCLK_IOI:MUX.HCLK_IO_U2[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D1" title="HCLK_IOI:MUX.HCLK_IO_D1[5]">HCLK_IOI:MUX.HCLK_IO_D1[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:BUF.RCLK0" title="HCLK_IOI:BUF.RCLK0">HCLK_IOI:BUF.RCLK0</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR0:BUFR_DIVIDE" title="BUFR0:BUFR_DIVIDE[2]">BUFR0:BUFR_DIVIDE[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR1:MUX.I" title="BUFR1:MUX.I[7]">BUFR1:MUX.I[7]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR0:MUX.I" title="BUFR0:MUX.I[7]">BUFR0:MUX.I[7]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFIO0:MUX.I" title="BUFIO0:MUX.I">BUFIO0:MUX.I</a></td><td>-</td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[10]">IDELAYCTRL:MUX.REFCLK[10]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D4" title="HCLK_IOI:MUX.HCLK_IO_D4[0]">HCLK_IOI:MUX.HCLK_IO_D4[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U3" title="HCLK_IOI:MUX.HCLK_IO_U3[0]">HCLK_IOI:MUX.HCLK_IO_U3[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK6" title="HCLK_IOI:ENABLE.HCLK6">HCLK_IOI:ENABLE.HCLK6</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D2" title="HCLK_IOI:MUX.HCLK_IO_D2[0]">HCLK_IOI:MUX.HCLK_IO_D2[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D4" title="HCLK_IOI:MUX.HCLK_IO_D4[5]">HCLK_IOI:MUX.HCLK_IO_D4[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR0:ENABLE" title="BUFR0:ENABLE">BUFR0:ENABLE</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR0:BUFR_DIVIDE" title="BUFR0:BUFR_DIVIDE[1]">BUFR0:BUFR_DIVIDE[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR1:MUX.I" title="BUFR1:MUX.I[6]">BUFR1:MUX.I[6]</a></td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[11]">IDELAYCTRL:MUX.REFCLK[11]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D3" title="HCLK_IOI:MUX.HCLK_IO_D3[0]">HCLK_IOI:MUX.HCLK_IO_D3[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U4" title="HCLK_IOI:MUX.HCLK_IO_U4[0]">HCLK_IOI:MUX.HCLK_IO_U4[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK7" title="HCLK_IOI:ENABLE.HCLK7">HCLK_IOI:ENABLE.HCLK7</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:BUF.RCLK1" title="HCLK_IOI:BUF.RCLK1">HCLK_IOI:BUF.RCLK1</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U1" title="HCLK_IOI:MUX.HCLK_IO_U1[5]">HCLK_IOI:MUX.HCLK_IO_U1[5]</a></td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFR0:MUX.I" title="BUFR0:MUX.I[2]">BUFR0:MUX.I[2]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFIO0:DELAY_BYPASS" title="~BUFIO0:DELAY_BYPASS">~BUFIO0:DELAY_BYPASS</a></td><td><a href="#bits-xc7v-HCLK_IOI_HP-BUFIO0:ENABLE" title="BUFIO0:ENABLE">BUFIO0:ENABLE</a></td></tr>
+</table>
+<div id="bits-xc7v-HCLK_IOI_HP-IDELAYCTRL:MUX.REFCLK"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>IDELAYCTRL:MUX.REFCLK</th><th>[0, 26, 31]</th><th>[0, 26, 30]</th><th>[0, 26, 29]</th><th>[0, 26, 28]</th><th>[0, 26, 27]</th><th>[0, 26, 26]</th><th>[0, 26, 25]</th><th>[0, 26, 24]</th><th>[0, 26, 23]</th><th>[0, 26, 22]</th><th>[0, 26, 21]</th><th>[0, 26, 20]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK_IO_D0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>HCLK_IO_D1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HCLK_IO_D2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK_IO_D3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK_IO_D4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK_IO_D5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK_IO_U0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK_IO_U1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK_IO_U2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK_IO_U3</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK_IO_U4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK_IO_U5</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D0"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D1"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D2"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D3"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D4"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_D5"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U0"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U1"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U2"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U3"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U4"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:MUX.HCLK_IO_U5"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>HCLK_IOI:MUX.HCLK_IO_D0</th><th>[0, 29, 25]</th><th>[0, 28, 18]</th><th>[0, 29, 24]</th><th>[0, 27, 27]</th><th>[0, 27, 23]</th><th>[0, 27, 19]</th><th>[0, 29, 29]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_D1</th><th>[0, 28, 19]</th><th>[0, 31, 29]</th><th>[0, 32, 25]</th><th>[0, 27, 28]</th><th>[0, 27, 24]</th><th>[0, 27, 20]</th><th>[0, 27, 17]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_D2</th><th>[0, 31, 26]</th><th>[0, 31, 24]</th><th>[0, 31, 25]</th><th>[0, 30, 24]</th><th>[0, 30, 26]</th><th>[0, 30, 28]</th><th>[0, 30, 30]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_D3</th><th>[0, 26, 14]</th><th>[0, 27, 15]</th><th>[0, 26, 16]</th><th>[0, 29, 21]</th><th>[0, 28, 24]</th><th>[0, 28, 28]</th><th>[0, 27, 31]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_D4</th><th>[0, 28, 20]</th><th>[0, 31, 30]</th><th>[0, 31, 27]</th><th>[0, 28, 22]</th><th>[0, 28, 25]</th><th>[0, 28, 29]</th><th>[0, 27, 30]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_D5</th><th>[0, 31, 21]</th><th>[0, 31, 22]</th><th>[0, 31, 23]</th><th>[0, 30, 15]</th><th>[0, 31, 14]</th><th>[0, 31, 16]</th><th>[0, 31, 18]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_U0</th><th>[0, 26, 17]</th><th>[0, 26, 18]</th><th>[0, 26, 19]</th><th>[0, 29, 26]</th><th>[0, 27, 25]</th><th>[0, 27, 21]</th><th>[0, 29, 28]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_U1</th><th>[0, 31, 28]</th><th>[0, 31, 31]</th><th>[0, 32, 24]</th><th>[0, 27, 29]</th><th>[0, 27, 26]</th><th>[0, 27, 22]</th><th>[0, 27, 18]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_U2</th><th>[0, 30, 20]</th><th>[0, 30, 21]</th><th>[0, 30, 22]</th><th>[0, 30, 23]</th><th>[0, 30, 25]</th><th>[0, 30, 27]</th><th>[0, 30, 29]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_U3</th><th>[0, 27, 16]</th><th>[0, 27, 14]</th><th>[0, 26, 15]</th><th>[0, 29, 22]</th><th>[0, 29, 20]</th><th>[0, 28, 26]</th><th>[0, 28, 30]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_U4</th><th>[0, 32, 14]</th><th>[0, 32, 15]</th><th>[0, 32, 23]</th><th>[0, 28, 21]</th><th>[0, 28, 23]</th><th>[0, 28, 27]</th><th>[0, 28, 31]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_U5</th><th>[0, 30, 19]</th><th>[0, 30, 18]</th><th>[0, 30, 17]</th><th>[0, 30, 16]</th><th>[0, 30, 14]</th><th>[0, 31, 15]</th><th>[0, 31, 17]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>HCLK1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HCLK2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK3</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>HCLK5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HCLK6</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK7</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK8</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>HCLK9</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HCLK10</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK11</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFIO0:ENABLE"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFIO1:ENABLE"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFIO2:ENABLE"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFIO3:ENABLE"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFR0:ENABLE"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFR1:ENABLE"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFR2:ENABLE"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFR3:ENABLE"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:BUF.RCLK0"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:BUF.RCLK1"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:BUF.RCLK2"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:BUF.RCLK3"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK0"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK1"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK10"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK11"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK2"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK3"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK4"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK5"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK6"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK7"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK8"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.HCLK9"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.PERF0"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.PERF1"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.PERF2"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-HCLK_IOI:ENABLE.PERF3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFIO0:ENABLE</th><th>[0, 37, 31]</th></tr>
+<tr><th>BUFIO1:ENABLE</th><th>[0, 37, 22]</th></tr>
+<tr><th>BUFIO2:ENABLE</th><th>[0, 36, 18]</th></tr>
+<tr><th>BUFIO3:ENABLE</th><th>[0, 37, 18]</th></tr>
+<tr><th>BUFR0:ENABLE</th><th>[0, 32, 30]</th></tr>
+<tr><th>BUFR1:ENABLE</th><th>[0, 32, 26]</th></tr>
+<tr><th>BUFR2:ENABLE</th><th>[0, 32, 20]</th></tr>
+<tr><th>BUFR3:ENABLE</th><th>[0, 32, 19]</th></tr>
+<tr><th>HCLK_IOI:BUF.RCLK0</th><th>[0, 32, 29]</th></tr>
+<tr><th>HCLK_IOI:BUF.RCLK1</th><th>[0, 30, 31]</th></tr>
+<tr><th>HCLK_IOI:BUF.RCLK2</th><th>[0, 31, 19]</th></tr>
+<tr><th>HCLK_IOI:BUF.RCLK3</th><th>[0, 28, 17]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK0</th><th>[0, 28, 15]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK1</th><th>[0, 29, 14]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK10</th><th>[0, 29, 17]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK11</th><th>[0, 29, 19]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK2</th><th>[0, 29, 16]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK3</th><th>[0, 29, 18]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK4</th><th>[0, 29, 23]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK5</th><th>[0, 29, 27]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK6</th><th>[0, 29, 30]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK7</th><th>[0, 29, 31]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK8</th><th>[0, 28, 14]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK9</th><th>[0, 29, 15]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.PERF0</th><th>[0, 36, 28]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.PERF1</th><th>[0, 36, 20]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.PERF2</th><th>[0, 36, 14]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.PERF3</th><th>[0, 37, 14]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFR0:MUX.I"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFR1:MUX.I"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFR2:MUX.I"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFR3:MUX.I"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFR0:MUX.I</th><th>[0, 35, 29]</th><th>[0, 35, 28]</th><th>[0, 35, 27]</th><th>[0, 35, 26]</th><th>[0, 35, 25]</th><th>[0, 34, 31]</th><th>[0, 35, 24]</th><th>[0, 35, 23]</th></tr>
+<tr><th>BUFR1:MUX.I</th><th>[0, 34, 29]</th><th>[0, 34, 30]</th><th>[0, 34, 26]</th><th>[0, 34, 25]</th><th>[0, 34, 24]</th><th>[0, 34, 23]</th><th>[0, 36, 27]</th><th>[0, 36, 26]</th></tr>
+<tr><th>BUFR2:MUX.I</th><th>[0, 34, 20]</th><th>[0, 34, 19]</th><th>[0, 34, 18]</th><th>[0, 34, 17]</th><th>[0, 34, 16]</th><th>[0, 34, 15]</th><th>[0, 36, 25]</th><th>[0, 36, 24]</th></tr>
+<tr><th>BUFR3:MUX.I</th><th>[0, 35, 15]</th><th>[0, 35, 16]</th><th>[0, 35, 17]</th><th>[0, 35, 18]</th><th>[0, 35, 19]</th><th>[0, 31, 20]</th><th>[0, 35, 21]</th><th>[0, 32, 16]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUFIO0_I</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUFIO1_I</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>BUFIO2_I</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>BUFIO3_I</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>CKINT0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>CKINT1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>CKINT2</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>CKINT3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFR0:BUFR_DIVIDE"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFR1:BUFR_DIVIDE"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFR2:BUFR_DIVIDE"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFR3:BUFR_DIVIDE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFR0:BUFR_DIVIDE</th><th>[0, 33, 28]</th><th>[0, 33, 29]</th><th>[0, 33, 30]</th><th>[0, 33, 27]</th></tr>
+<tr><th>BUFR1:BUFR_DIVIDE</th><th>[0, 33, 24]</th><th>[0, 33, 25]</th><th>[0, 33, 26]</th><th>[0, 33, 23]</th></tr>
+<tr><th>BUFR2:BUFR_DIVIDE</th><th>[0, 33, 19]</th><th>[0, 33, 20]</th><th>[0, 33, 21]</th><th>[0, 33, 18]</th></tr>
+<tr><th>BUFR3:BUFR_DIVIDE</th><th>[0, 33, 15]</th><th>[0, 33, 16]</th><th>[0, 33, 17]</th><th>[0, 33, 14]</th></tr>
+<tr><td>BYPASS</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>2</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>3</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>4</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>5</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>6</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>7</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>8</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFIO0:DELAY_BYPASS"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFIO1:DELAY_BYPASS"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFIO2:DELAY_BYPASS"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFIO3:DELAY_BYPASS"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFIO0:DELAY_BYPASS</th><th>[0, 36, 31]</th></tr>
+<tr><th>BUFIO1:DELAY_BYPASS</th><th>[0, 36, 21]</th></tr>
+<tr><th>BUFIO2:DELAY_BYPASS</th><th>[0, 36, 16]</th></tr>
+<tr><th>BUFIO3:DELAY_BYPASS</th><th>[0, 37, 16]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFIO0:MUX.I"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFIO1:MUX.I"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFIO2:MUX.I"></div>
+<div id="bits-xc7v-HCLK_IOI_HP-BUFIO3:MUX.I"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFIO0:MUX.I</th><th>[0, 36, 29]</th></tr>
+<tr><th>BUFIO1:MUX.I</th><th>[0, 37, 21]</th></tr>
+<tr><th>BUFIO2:MUX.I</th><th>[0, 36, 17]</th></tr>
+<tr><th>BUFIO3:MUX.I</th><th>[0, 37, 17]</th></tr>
+<tr><td>CCIO</td><td>0</td></tr>
+<tr><td>PERF</td><td>1</td></tr>
+</table>
+</section>
+<section id="bitstream-hclk-ioi-hr">
+<h2>Bitstream — <code class="docutils literal notranslate"><span class="pre">HCLK_IOI_HR</span></code><a class="headerlink" href="#bitstream-hclk-ioi-hr" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="39">HCLK_IOI_HR bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="38">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th><th>32</th><th>33</th><th>34</th><th>35</th><th>36</th><th>37</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>9</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>10</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>11</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>12</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>13</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>14</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D3" title="HCLK_IOI:MUX.HCLK_IO_D3[6]">HCLK_IOI:MUX.HCLK_IO_D3[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U3" title="HCLK_IOI:MUX.HCLK_IO_U3[5]">HCLK_IOI:MUX.HCLK_IO_U3[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK8" title="HCLK_IOI:ENABLE.HCLK8">HCLK_IOI:ENABLE.HCLK8</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK1" title="HCLK_IOI:ENABLE.HCLK1">HCLK_IOI:ENABLE.HCLK1</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U5" title="HCLK_IOI:MUX.HCLK_IO_U5[2]">HCLK_IOI:MUX.HCLK_IO_U5[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D5" title="HCLK_IOI:MUX.HCLK_IO_D5[2]">HCLK_IOI:MUX.HCLK_IO_D5[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U4" title="HCLK_IOI:MUX.HCLK_IO_U4[6]">HCLK_IOI:MUX.HCLK_IO_U4[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR3:BUFR_DIVIDE" title="BUFR3:BUFR_DIVIDE[0]">BUFR3:BUFR_DIVIDE[0]</a></td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.PERF2" title="HCLK_IOI:ENABLE.PERF2">HCLK_IOI:ENABLE.PERF2</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.PERF3" title="HCLK_IOI:ENABLE.PERF3">HCLK_IOI:ENABLE.PERF3</a></td></tr>
+<tr><td>15</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U3" title="HCLK_IOI:MUX.HCLK_IO_U3[4]">HCLK_IOI:MUX.HCLK_IO_U3[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D3" title="HCLK_IOI:MUX.HCLK_IO_D3[5]">HCLK_IOI:MUX.HCLK_IO_D3[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK0" title="HCLK_IOI:ENABLE.HCLK0">HCLK_IOI:ENABLE.HCLK0</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK9" title="HCLK_IOI:ENABLE.HCLK9">HCLK_IOI:ENABLE.HCLK9</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D5" title="HCLK_IOI:MUX.HCLK_IO_D5[3]">HCLK_IOI:MUX.HCLK_IO_D5[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U5" title="HCLK_IOI:MUX.HCLK_IO_U5[1]">HCLK_IOI:MUX.HCLK_IO_U5[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U4" title="HCLK_IOI:MUX.HCLK_IO_U4[5]">HCLK_IOI:MUX.HCLK_IO_U4[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR3:BUFR_DIVIDE" title="BUFR3:BUFR_DIVIDE[3]">BUFR3:BUFR_DIVIDE[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR2:MUX.I" title="BUFR2:MUX.I[2]">BUFR2:MUX.I[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR3:MUX.I" title="BUFR3:MUX.I[7]">BUFR3:MUX.I[7]</a></td><td>-</td><td>-</td></tr>
+<tr><td>16</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D3" title="HCLK_IOI:MUX.HCLK_IO_D3[4]">HCLK_IOI:MUX.HCLK_IO_D3[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U3" title="HCLK_IOI:MUX.HCLK_IO_U3[6]">HCLK_IOI:MUX.HCLK_IO_U3[6]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK2" title="HCLK_IOI:ENABLE.HCLK2">HCLK_IOI:ENABLE.HCLK2</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U5" title="HCLK_IOI:MUX.HCLK_IO_U5[3]">HCLK_IOI:MUX.HCLK_IO_U5[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D5" title="HCLK_IOI:MUX.HCLK_IO_D5[1]">HCLK_IOI:MUX.HCLK_IO_D5[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR3:MUX.I" title="BUFR3:MUX.I[0]">BUFR3:MUX.I[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR3:BUFR_DIVIDE" title="BUFR3:BUFR_DIVIDE[2]">BUFR3:BUFR_DIVIDE[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR2:MUX.I" title="BUFR2:MUX.I[3]">BUFR2:MUX.I[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR3:MUX.I" title="BUFR3:MUX.I[6]">BUFR3:MUX.I[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFIO2:DELAY_BYPASS" title="~BUFIO2:DELAY_BYPASS">~BUFIO2:DELAY_BYPASS</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFIO3:DELAY_BYPASS" title="~BUFIO3:DELAY_BYPASS">~BUFIO3:DELAY_BYPASS</a></td></tr>
+<tr><td>17</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U0" title="HCLK_IOI:MUX.HCLK_IO_U0[6]">HCLK_IOI:MUX.HCLK_IO_U0[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D1" title="HCLK_IOI:MUX.HCLK_IO_D1[0]">HCLK_IOI:MUX.HCLK_IO_D1[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:BUF.RCLK3" title="HCLK_IOI:BUF.RCLK3">HCLK_IOI:BUF.RCLK3</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK10" title="HCLK_IOI:ENABLE.HCLK10">HCLK_IOI:ENABLE.HCLK10</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U5" title="HCLK_IOI:MUX.HCLK_IO_U5[4]">HCLK_IOI:MUX.HCLK_IO_U5[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U5" title="HCLK_IOI:MUX.HCLK_IO_U5[0]">HCLK_IOI:MUX.HCLK_IO_U5[0]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR3:BUFR_DIVIDE" title="BUFR3:BUFR_DIVIDE[1]">BUFR3:BUFR_DIVIDE[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR2:MUX.I" title="BUFR2:MUX.I[4]">BUFR2:MUX.I[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR3:MUX.I" title="BUFR3:MUX.I[5]">BUFR3:MUX.I[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFIO2:MUX.I" title="BUFIO2:MUX.I">BUFIO2:MUX.I</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFIO3:MUX.I" title="BUFIO3:MUX.I">BUFIO3:MUX.I</a></td></tr>
+<tr><td>18</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U0" title="HCLK_IOI:MUX.HCLK_IO_U0[5]">HCLK_IOI:MUX.HCLK_IO_U0[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U1" title="HCLK_IOI:MUX.HCLK_IO_U1[0]">HCLK_IOI:MUX.HCLK_IO_U1[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D0" title="HCLK_IOI:MUX.HCLK_IO_D0[5]">HCLK_IOI:MUX.HCLK_IO_D0[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK3" title="HCLK_IOI:ENABLE.HCLK3">HCLK_IOI:ENABLE.HCLK3</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U5" title="HCLK_IOI:MUX.HCLK_IO_U5[5]">HCLK_IOI:MUX.HCLK_IO_U5[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D5" title="HCLK_IOI:MUX.HCLK_IO_D5[0]">HCLK_IOI:MUX.HCLK_IO_D5[0]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR2:BUFR_DIVIDE" title="BUFR2:BUFR_DIVIDE[0]">BUFR2:BUFR_DIVIDE[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR2:MUX.I" title="BUFR2:MUX.I[5]">BUFR2:MUX.I[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR3:MUX.I" title="BUFR3:MUX.I[4]">BUFR3:MUX.I[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFIO2:ENABLE" title="BUFIO2:ENABLE">BUFIO2:ENABLE</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFIO3:ENABLE" title="BUFIO3:ENABLE">BUFIO3:ENABLE</a></td></tr>
+<tr><td>19</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U0" title="HCLK_IOI:MUX.HCLK_IO_U0[4]">HCLK_IOI:MUX.HCLK_IO_U0[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D0" title="HCLK_IOI:MUX.HCLK_IO_D0[1]">HCLK_IOI:MUX.HCLK_IO_D0[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D1" title="HCLK_IOI:MUX.HCLK_IO_D1[6]">HCLK_IOI:MUX.HCLK_IO_D1[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK11" title="HCLK_IOI:ENABLE.HCLK11">HCLK_IOI:ENABLE.HCLK11</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U5" title="HCLK_IOI:MUX.HCLK_IO_U5[6]">HCLK_IOI:MUX.HCLK_IO_U5[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:BUF.RCLK2" title="HCLK_IOI:BUF.RCLK2">HCLK_IOI:BUF.RCLK2</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR3:ENABLE" title="BUFR3:ENABLE">BUFR3:ENABLE</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR2:BUFR_DIVIDE" title="BUFR2:BUFR_DIVIDE[3]">BUFR2:BUFR_DIVIDE[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR2:MUX.I" title="BUFR2:MUX.I[6]">BUFR2:MUX.I[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR3:MUX.I" title="BUFR3:MUX.I[3]">BUFR3:MUX.I[3]</a></td><td>-</td><td>-</td></tr>
+<tr><td>20</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[0]">IDELAYCTRL:MUX.REFCLK[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D1" title="HCLK_IOI:MUX.HCLK_IO_D1[1]">HCLK_IOI:MUX.HCLK_IO_D1[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D4" title="HCLK_IOI:MUX.HCLK_IO_D4[6]">HCLK_IOI:MUX.HCLK_IO_D4[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U3" title="HCLK_IOI:MUX.HCLK_IO_U3[2]">HCLK_IOI:MUX.HCLK_IO_U3[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U2" title="HCLK_IOI:MUX.HCLK_IO_U2[6]">HCLK_IOI:MUX.HCLK_IO_U2[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR3:MUX.I" title="BUFR3:MUX.I[2]">BUFR3:MUX.I[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR2:ENABLE" title="BUFR2:ENABLE">BUFR2:ENABLE</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR2:BUFR_DIVIDE" title="BUFR2:BUFR_DIVIDE[2]">BUFR2:BUFR_DIVIDE[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR2:MUX.I" title="BUFR2:MUX.I[7]">BUFR2:MUX.I[7]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.PERF1" title="HCLK_IOI:ENABLE.PERF1">HCLK_IOI:ENABLE.PERF1</a></td><td>-</td></tr>
+<tr><td>21</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[1]">IDELAYCTRL:MUX.REFCLK[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U0" title="HCLK_IOI:MUX.HCLK_IO_U0[1]">HCLK_IOI:MUX.HCLK_IO_U0[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U4" title="HCLK_IOI:MUX.HCLK_IO_U4[3]">HCLK_IOI:MUX.HCLK_IO_U4[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D3" title="HCLK_IOI:MUX.HCLK_IO_D3[3]">HCLK_IOI:MUX.HCLK_IO_D3[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U2" title="HCLK_IOI:MUX.HCLK_IO_U2[5]">HCLK_IOI:MUX.HCLK_IO_U2[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D5" title="HCLK_IOI:MUX.HCLK_IO_D5[6]">HCLK_IOI:MUX.HCLK_IO_D5[6]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR2:BUFR_DIVIDE" title="BUFR2:BUFR_DIVIDE[1]">BUFR2:BUFR_DIVIDE[1]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR3:MUX.I" title="BUFR3:MUX.I[1]">BUFR3:MUX.I[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFIO1:DELAY_BYPASS" title="~BUFIO1:DELAY_BYPASS">~BUFIO1:DELAY_BYPASS</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFIO1:MUX.I" title="BUFIO1:MUX.I">BUFIO1:MUX.I</a></td></tr>
+<tr><td>22</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[2]">IDELAYCTRL:MUX.REFCLK[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U1" title="HCLK_IOI:MUX.HCLK_IO_U1[1]">HCLK_IOI:MUX.HCLK_IO_U1[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D4" title="HCLK_IOI:MUX.HCLK_IO_D4[3]">HCLK_IOI:MUX.HCLK_IO_D4[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U3" title="HCLK_IOI:MUX.HCLK_IO_U3[3]">HCLK_IOI:MUX.HCLK_IO_U3[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U2" title="HCLK_IOI:MUX.HCLK_IO_U2[4]">HCLK_IOI:MUX.HCLK_IO_U2[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D5" title="HCLK_IOI:MUX.HCLK_IO_D5[5]">HCLK_IOI:MUX.HCLK_IO_D5[5]</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFIO1:ENABLE" title="BUFIO1:ENABLE">BUFIO1:ENABLE</a></td></tr>
+<tr><td>23</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[3]">IDELAYCTRL:MUX.REFCLK[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D0" title="HCLK_IOI:MUX.HCLK_IO_D0[2]">HCLK_IOI:MUX.HCLK_IO_D0[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U4" title="HCLK_IOI:MUX.HCLK_IO_U4[2]">HCLK_IOI:MUX.HCLK_IO_U4[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK4" title="HCLK_IOI:ENABLE.HCLK4">HCLK_IOI:ENABLE.HCLK4</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U2" title="HCLK_IOI:MUX.HCLK_IO_U2[3]">HCLK_IOI:MUX.HCLK_IO_U2[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D5" title="HCLK_IOI:MUX.HCLK_IO_D5[4]">HCLK_IOI:MUX.HCLK_IO_D5[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U4" title="HCLK_IOI:MUX.HCLK_IO_U4[4]">HCLK_IOI:MUX.HCLK_IO_U4[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR1:BUFR_DIVIDE" title="BUFR1:BUFR_DIVIDE[0]">BUFR1:BUFR_DIVIDE[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR1:MUX.I" title="BUFR1:MUX.I[2]">BUFR1:MUX.I[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR0:MUX.I" title="BUFR0:MUX.I[0]">BUFR0:MUX.I[0]</a></td><td>-</td><td>-</td></tr>
+<tr><td>24</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[4]">IDELAYCTRL:MUX.REFCLK[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D1" title="HCLK_IOI:MUX.HCLK_IO_D1[2]">HCLK_IOI:MUX.HCLK_IO_D1[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D3" title="HCLK_IOI:MUX.HCLK_IO_D3[2]">HCLK_IOI:MUX.HCLK_IO_D3[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D0" title="HCLK_IOI:MUX.HCLK_IO_D0[4]">HCLK_IOI:MUX.HCLK_IO_D0[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D2" title="HCLK_IOI:MUX.HCLK_IO_D2[3]">HCLK_IOI:MUX.HCLK_IO_D2[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D2" title="HCLK_IOI:MUX.HCLK_IO_D2[5]">HCLK_IOI:MUX.HCLK_IO_D2[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U1" title="HCLK_IOI:MUX.HCLK_IO_U1[4]">HCLK_IOI:MUX.HCLK_IO_U1[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR1:BUFR_DIVIDE" title="BUFR1:BUFR_DIVIDE[3]">BUFR1:BUFR_DIVIDE[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR1:MUX.I" title="BUFR1:MUX.I[3]">BUFR1:MUX.I[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR0:MUX.I" title="BUFR0:MUX.I[1]">BUFR0:MUX.I[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR2:MUX.I" title="BUFR2:MUX.I[0]">BUFR2:MUX.I[0]</a></td><td>-</td></tr>
+<tr><td>25</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[5]">IDELAYCTRL:MUX.REFCLK[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U0" title="HCLK_IOI:MUX.HCLK_IO_U0[2]">HCLK_IOI:MUX.HCLK_IO_U0[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D4" title="HCLK_IOI:MUX.HCLK_IO_D4[2]">HCLK_IOI:MUX.HCLK_IO_D4[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D0" title="HCLK_IOI:MUX.HCLK_IO_D0[6]">HCLK_IOI:MUX.HCLK_IO_D0[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U2" title="HCLK_IOI:MUX.HCLK_IO_U2[2]">HCLK_IOI:MUX.HCLK_IO_U2[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D2" title="HCLK_IOI:MUX.HCLK_IO_D2[4]">HCLK_IOI:MUX.HCLK_IO_D2[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D1" title="HCLK_IOI:MUX.HCLK_IO_D1[4]">HCLK_IOI:MUX.HCLK_IO_D1[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR1:BUFR_DIVIDE" title="BUFR1:BUFR_DIVIDE[2]">BUFR1:BUFR_DIVIDE[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR1:MUX.I" title="BUFR1:MUX.I[4]">BUFR1:MUX.I[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR0:MUX.I" title="BUFR0:MUX.I[3]">BUFR0:MUX.I[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR2:MUX.I" title="BUFR2:MUX.I[1]">BUFR2:MUX.I[1]</a></td><td>-</td></tr>
+<tr><td>26</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[6]">IDELAYCTRL:MUX.REFCLK[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U1" title="HCLK_IOI:MUX.HCLK_IO_U1[2]">HCLK_IOI:MUX.HCLK_IO_U1[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U3" title="HCLK_IOI:MUX.HCLK_IO_U3[1]">HCLK_IOI:MUX.HCLK_IO_U3[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U0" title="HCLK_IOI:MUX.HCLK_IO_U0[3]">HCLK_IOI:MUX.HCLK_IO_U0[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D2" title="HCLK_IOI:MUX.HCLK_IO_D2[2]">HCLK_IOI:MUX.HCLK_IO_D2[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D2" title="HCLK_IOI:MUX.HCLK_IO_D2[6]">HCLK_IOI:MUX.HCLK_IO_D2[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR1:ENABLE" title="BUFR1:ENABLE">BUFR1:ENABLE</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR1:BUFR_DIVIDE" title="BUFR1:BUFR_DIVIDE[1]">BUFR1:BUFR_DIVIDE[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR1:MUX.I" title="BUFR1:MUX.I[5]">BUFR1:MUX.I[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR0:MUX.I" title="BUFR0:MUX.I[4]">BUFR0:MUX.I[4]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR1:MUX.I" title="BUFR1:MUX.I[0]">BUFR1:MUX.I[0]</a></td><td>-</td></tr>
+<tr><td>27</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[7]">IDELAYCTRL:MUX.REFCLK[7]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D0" title="HCLK_IOI:MUX.HCLK_IO_D0[3]">HCLK_IOI:MUX.HCLK_IO_D0[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U4" title="HCLK_IOI:MUX.HCLK_IO_U4[1]">HCLK_IOI:MUX.HCLK_IO_U4[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK5" title="HCLK_IOI:ENABLE.HCLK5">HCLK_IOI:ENABLE.HCLK5</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U2" title="HCLK_IOI:MUX.HCLK_IO_U2[1]">HCLK_IOI:MUX.HCLK_IO_U2[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D4" title="HCLK_IOI:MUX.HCLK_IO_D4[4]">HCLK_IOI:MUX.HCLK_IO_D4[4]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR0:BUFR_DIVIDE" title="BUFR0:BUFR_DIVIDE[0]">BUFR0:BUFR_DIVIDE[0]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR0:MUX.I" title="BUFR0:MUX.I[5]">BUFR0:MUX.I[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR1:MUX.I" title="BUFR1:MUX.I[1]">BUFR1:MUX.I[1]</a></td><td>-</td></tr>
+<tr><td>28</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[8]">IDELAYCTRL:MUX.REFCLK[8]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D1" title="HCLK_IOI:MUX.HCLK_IO_D1[3]">HCLK_IOI:MUX.HCLK_IO_D1[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D3" title="HCLK_IOI:MUX.HCLK_IO_D3[1]">HCLK_IOI:MUX.HCLK_IO_D3[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U0" title="HCLK_IOI:MUX.HCLK_IO_U0[0]">HCLK_IOI:MUX.HCLK_IO_U0[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D2" title="HCLK_IOI:MUX.HCLK_IO_D2[1]">HCLK_IOI:MUX.HCLK_IO_D2[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U1" title="HCLK_IOI:MUX.HCLK_IO_U1[6]">HCLK_IOI:MUX.HCLK_IO_U1[6]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR0:BUFR_DIVIDE" title="BUFR0:BUFR_DIVIDE[3]">BUFR0:BUFR_DIVIDE[3]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR0:MUX.I" title="BUFR0:MUX.I[6]">BUFR0:MUX.I[6]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.PERF0" title="HCLK_IOI:ENABLE.PERF0">HCLK_IOI:ENABLE.PERF0</a></td><td>-</td></tr>
+<tr><td>29</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[9]">IDELAYCTRL:MUX.REFCLK[9]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U1" title="HCLK_IOI:MUX.HCLK_IO_U1[3]">HCLK_IOI:MUX.HCLK_IO_U1[3]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D4" title="HCLK_IOI:MUX.HCLK_IO_D4[1]">HCLK_IOI:MUX.HCLK_IO_D4[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D0" title="HCLK_IOI:MUX.HCLK_IO_D0[0]">HCLK_IOI:MUX.HCLK_IO_D0[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U2" title="HCLK_IOI:MUX.HCLK_IO_U2[0]">HCLK_IOI:MUX.HCLK_IO_U2[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D1" title="HCLK_IOI:MUX.HCLK_IO_D1[5]">HCLK_IOI:MUX.HCLK_IO_D1[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:BUF.RCLK0" title="HCLK_IOI:BUF.RCLK0">HCLK_IOI:BUF.RCLK0</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR0:BUFR_DIVIDE" title="BUFR0:BUFR_DIVIDE[2]">BUFR0:BUFR_DIVIDE[2]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR1:MUX.I" title="BUFR1:MUX.I[7]">BUFR1:MUX.I[7]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR0:MUX.I" title="BUFR0:MUX.I[7]">BUFR0:MUX.I[7]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFIO0:MUX.I" title="BUFIO0:MUX.I">BUFIO0:MUX.I</a></td><td>-</td></tr>
+<tr><td>30</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[10]">IDELAYCTRL:MUX.REFCLK[10]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D4" title="HCLK_IOI:MUX.HCLK_IO_D4[0]">HCLK_IOI:MUX.HCLK_IO_D4[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U3" title="HCLK_IOI:MUX.HCLK_IO_U3[0]">HCLK_IOI:MUX.HCLK_IO_U3[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK6" title="HCLK_IOI:ENABLE.HCLK6">HCLK_IOI:ENABLE.HCLK6</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D2" title="HCLK_IOI:MUX.HCLK_IO_D2[0]">HCLK_IOI:MUX.HCLK_IO_D2[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D4" title="HCLK_IOI:MUX.HCLK_IO_D4[5]">HCLK_IOI:MUX.HCLK_IO_D4[5]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR0:ENABLE" title="BUFR0:ENABLE">BUFR0:ENABLE</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR0:BUFR_DIVIDE" title="BUFR0:BUFR_DIVIDE[1]">BUFR0:BUFR_DIVIDE[1]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR1:MUX.I" title="BUFR1:MUX.I[6]">BUFR1:MUX.I[6]</a></td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>31</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-IDELAYCTRL:MUX.REFCLK" title="IDELAYCTRL:MUX.REFCLK[11]">IDELAYCTRL:MUX.REFCLK[11]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D3" title="HCLK_IOI:MUX.HCLK_IO_D3[0]">HCLK_IOI:MUX.HCLK_IO_D3[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U4" title="HCLK_IOI:MUX.HCLK_IO_U4[0]">HCLK_IOI:MUX.HCLK_IO_U4[0]</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK7" title="HCLK_IOI:ENABLE.HCLK7">HCLK_IOI:ENABLE.HCLK7</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:BUF.RCLK1" title="HCLK_IOI:BUF.RCLK1">HCLK_IOI:BUF.RCLK1</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U1" title="HCLK_IOI:MUX.HCLK_IO_U1[5]">HCLK_IOI:MUX.HCLK_IO_U1[5]</a></td><td>-</td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFR0:MUX.I" title="BUFR0:MUX.I[2]">BUFR0:MUX.I[2]</a></td><td>-</td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFIO0:DELAY_BYPASS" title="~BUFIO0:DELAY_BYPASS">~BUFIO0:DELAY_BYPASS</a></td><td><a href="#bits-xc7v-HCLK_IOI_HR-BUFIO0:ENABLE" title="BUFIO0:ENABLE">BUFIO0:ENABLE</a></td></tr>
+</table>
+<div id="bits-xc7v-HCLK_IOI_HR-IDELAYCTRL:MUX.REFCLK"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>IDELAYCTRL:MUX.REFCLK</th><th>[0, 26, 31]</th><th>[0, 26, 30]</th><th>[0, 26, 29]</th><th>[0, 26, 28]</th><th>[0, 26, 27]</th><th>[0, 26, 26]</th><th>[0, 26, 25]</th><th>[0, 26, 24]</th><th>[0, 26, 23]</th><th>[0, 26, 22]</th><th>[0, 26, 21]</th><th>[0, 26, 20]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK_IO_D0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>HCLK_IO_D1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HCLK_IO_D2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK_IO_D3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK_IO_D4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK_IO_D5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK_IO_U0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK_IO_U1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK_IO_U2</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK_IO_U3</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK_IO_U4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK_IO_U5</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D0"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D1"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D2"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D3"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D4"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_D5"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U0"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U1"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U2"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U3"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U4"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:MUX.HCLK_IO_U5"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>HCLK_IOI:MUX.HCLK_IO_D0</th><th>[0, 29, 25]</th><th>[0, 28, 18]</th><th>[0, 29, 24]</th><th>[0, 27, 27]</th><th>[0, 27, 23]</th><th>[0, 27, 19]</th><th>[0, 29, 29]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_D1</th><th>[0, 28, 19]</th><th>[0, 31, 29]</th><th>[0, 32, 25]</th><th>[0, 27, 28]</th><th>[0, 27, 24]</th><th>[0, 27, 20]</th><th>[0, 27, 17]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_D2</th><th>[0, 31, 26]</th><th>[0, 31, 24]</th><th>[0, 31, 25]</th><th>[0, 30, 24]</th><th>[0, 30, 26]</th><th>[0, 30, 28]</th><th>[0, 30, 30]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_D3</th><th>[0, 26, 14]</th><th>[0, 27, 15]</th><th>[0, 26, 16]</th><th>[0, 29, 21]</th><th>[0, 28, 24]</th><th>[0, 28, 28]</th><th>[0, 27, 31]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_D4</th><th>[0, 28, 20]</th><th>[0, 31, 30]</th><th>[0, 31, 27]</th><th>[0, 28, 22]</th><th>[0, 28, 25]</th><th>[0, 28, 29]</th><th>[0, 27, 30]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_D5</th><th>[0, 31, 21]</th><th>[0, 31, 22]</th><th>[0, 31, 23]</th><th>[0, 30, 15]</th><th>[0, 31, 14]</th><th>[0, 31, 16]</th><th>[0, 31, 18]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_U0</th><th>[0, 26, 17]</th><th>[0, 26, 18]</th><th>[0, 26, 19]</th><th>[0, 29, 26]</th><th>[0, 27, 25]</th><th>[0, 27, 21]</th><th>[0, 29, 28]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_U1</th><th>[0, 31, 28]</th><th>[0, 31, 31]</th><th>[0, 32, 24]</th><th>[0, 27, 29]</th><th>[0, 27, 26]</th><th>[0, 27, 22]</th><th>[0, 27, 18]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_U2</th><th>[0, 30, 20]</th><th>[0, 30, 21]</th><th>[0, 30, 22]</th><th>[0, 30, 23]</th><th>[0, 30, 25]</th><th>[0, 30, 27]</th><th>[0, 30, 29]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_U3</th><th>[0, 27, 16]</th><th>[0, 27, 14]</th><th>[0, 26, 15]</th><th>[0, 29, 22]</th><th>[0, 29, 20]</th><th>[0, 28, 26]</th><th>[0, 28, 30]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_U4</th><th>[0, 32, 14]</th><th>[0, 32, 15]</th><th>[0, 32, 23]</th><th>[0, 28, 21]</th><th>[0, 28, 23]</th><th>[0, 28, 27]</th><th>[0, 28, 31]</th></tr>
+<tr><th>HCLK_IOI:MUX.HCLK_IO_U5</th><th>[0, 30, 19]</th><th>[0, 30, 18]</th><th>[0, 30, 17]</th><th>[0, 30, 16]</th><th>[0, 30, 14]</th><th>[0, 31, 15]</th><th>[0, 31, 17]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>HCLK1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HCLK2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK3</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>HCLK5</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HCLK6</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK7</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK8</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>HCLK9</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>HCLK10</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>HCLK11</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFIO0:ENABLE"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFIO1:ENABLE"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFIO2:ENABLE"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFIO3:ENABLE"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFR0:ENABLE"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFR1:ENABLE"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFR2:ENABLE"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFR3:ENABLE"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:BUF.RCLK0"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:BUF.RCLK1"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:BUF.RCLK2"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:BUF.RCLK3"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK0"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK1"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK10"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK11"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK2"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK3"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK4"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK5"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK6"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK7"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK8"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.HCLK9"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.PERF0"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.PERF1"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.PERF2"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-HCLK_IOI:ENABLE.PERF3"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFIO0:ENABLE</th><th>[0, 37, 31]</th></tr>
+<tr><th>BUFIO1:ENABLE</th><th>[0, 37, 22]</th></tr>
+<tr><th>BUFIO2:ENABLE</th><th>[0, 36, 18]</th></tr>
+<tr><th>BUFIO3:ENABLE</th><th>[0, 37, 18]</th></tr>
+<tr><th>BUFR0:ENABLE</th><th>[0, 32, 30]</th></tr>
+<tr><th>BUFR1:ENABLE</th><th>[0, 32, 26]</th></tr>
+<tr><th>BUFR2:ENABLE</th><th>[0, 32, 20]</th></tr>
+<tr><th>BUFR3:ENABLE</th><th>[0, 32, 19]</th></tr>
+<tr><th>HCLK_IOI:BUF.RCLK0</th><th>[0, 32, 29]</th></tr>
+<tr><th>HCLK_IOI:BUF.RCLK1</th><th>[0, 30, 31]</th></tr>
+<tr><th>HCLK_IOI:BUF.RCLK2</th><th>[0, 31, 19]</th></tr>
+<tr><th>HCLK_IOI:BUF.RCLK3</th><th>[0, 28, 17]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK0</th><th>[0, 28, 15]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK1</th><th>[0, 29, 14]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK10</th><th>[0, 29, 17]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK11</th><th>[0, 29, 19]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK2</th><th>[0, 29, 16]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK3</th><th>[0, 29, 18]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK4</th><th>[0, 29, 23]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK5</th><th>[0, 29, 27]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK6</th><th>[0, 29, 30]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK7</th><th>[0, 29, 31]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK8</th><th>[0, 28, 14]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.HCLK9</th><th>[0, 29, 15]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.PERF0</th><th>[0, 36, 28]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.PERF1</th><th>[0, 36, 20]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.PERF2</th><th>[0, 36, 14]</th></tr>
+<tr><th>HCLK_IOI:ENABLE.PERF3</th><th>[0, 37, 14]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFR0:MUX.I"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFR1:MUX.I"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFR2:MUX.I"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFR3:MUX.I"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFR0:MUX.I</th><th>[0, 35, 29]</th><th>[0, 35, 28]</th><th>[0, 35, 27]</th><th>[0, 35, 26]</th><th>[0, 35, 25]</th><th>[0, 34, 31]</th><th>[0, 35, 24]</th><th>[0, 35, 23]</th></tr>
+<tr><th>BUFR1:MUX.I</th><th>[0, 34, 29]</th><th>[0, 34, 30]</th><th>[0, 34, 26]</th><th>[0, 34, 25]</th><th>[0, 34, 24]</th><th>[0, 34, 23]</th><th>[0, 36, 27]</th><th>[0, 36, 26]</th></tr>
+<tr><th>BUFR2:MUX.I</th><th>[0, 34, 20]</th><th>[0, 34, 19]</th><th>[0, 34, 18]</th><th>[0, 34, 17]</th><th>[0, 34, 16]</th><th>[0, 34, 15]</th><th>[0, 36, 25]</th><th>[0, 36, 24]</th></tr>
+<tr><th>BUFR3:MUX.I</th><th>[0, 35, 15]</th><th>[0, 35, 16]</th><th>[0, 35, 17]</th><th>[0, 35, 18]</th><th>[0, 35, 19]</th><th>[0, 31, 20]</th><th>[0, 35, 21]</th><th>[0, 32, 16]</th></tr>
+<tr><td>NONE</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>BUFIO0_I</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>BUFIO1_I</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>BUFIO2_I</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>BUFIO3_I</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>CKINT0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>CKINT1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>CKINT2</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>CKINT3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFR0:BUFR_DIVIDE"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFR1:BUFR_DIVIDE"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFR2:BUFR_DIVIDE"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFR3:BUFR_DIVIDE"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFR0:BUFR_DIVIDE</th><th>[0, 33, 28]</th><th>[0, 33, 29]</th><th>[0, 33, 30]</th><th>[0, 33, 27]</th></tr>
+<tr><th>BUFR1:BUFR_DIVIDE</th><th>[0, 33, 24]</th><th>[0, 33, 25]</th><th>[0, 33, 26]</th><th>[0, 33, 23]</th></tr>
+<tr><th>BUFR2:BUFR_DIVIDE</th><th>[0, 33, 19]</th><th>[0, 33, 20]</th><th>[0, 33, 21]</th><th>[0, 33, 18]</th></tr>
+<tr><th>BUFR3:BUFR_DIVIDE</th><th>[0, 33, 15]</th><th>[0, 33, 16]</th><th>[0, 33, 17]</th><th>[0, 33, 14]</th></tr>
+<tr><td>BYPASS</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>2</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>3</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>4</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>5</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>6</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>7</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>8</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFIO0:DELAY_BYPASS"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFIO1:DELAY_BYPASS"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFIO2:DELAY_BYPASS"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFIO3:DELAY_BYPASS"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFIO0:DELAY_BYPASS</th><th>[0, 36, 31]</th></tr>
+<tr><th>BUFIO1:DELAY_BYPASS</th><th>[0, 36, 21]</th></tr>
+<tr><th>BUFIO2:DELAY_BYPASS</th><th>[0, 36, 16]</th></tr>
+<tr><th>BUFIO3:DELAY_BYPASS</th><th>[0, 37, 16]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFIO0:MUX.I"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFIO1:MUX.I"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFIO2:MUX.I"></div>
+<div id="bits-xc7v-HCLK_IOI_HR-BUFIO3:MUX.I"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>BUFIO0:MUX.I</th><th>[0, 36, 29]</th></tr>
+<tr><th>BUFIO1:MUX.I</th><th>[0, 37, 21]</th></tr>
+<tr><th>BUFIO2:MUX.I</th><th>[0, 36, 17]</th></tr>
+<tr><th>BUFIO3:MUX.I</th><th>[0, 37, 17]</th></tr>
+<tr><td>CCIO</td><td>0</td></tr>
+<tr><td>PERF</td><td>1</td></tr>
+</table>
+</section>
 </section>
 
 
@@ -285,7 +781,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="dsp.html" class="btn btn-neutral float-left" title="DSP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="clock.html" class="btn btn-neutral float-right" title="Clock interconnect" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="center.html" class="btn btn-neutral float-right" title="Configuration Center" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

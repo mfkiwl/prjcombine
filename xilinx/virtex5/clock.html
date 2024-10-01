@@ -19,7 +19,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="PowerPC cores" href="ppc.html" />
+    <link rel="next" title="Clock management tile" href="cmt.html" />
     <link rel="prev" title="Configuration Center" href="center.html" /> 
 </head>
 
@@ -74,6 +74,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#i-o-standard-data">I/O standard data</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="cmt.html">Clock management tile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ppc.html">PowerPC cores</a></li>
 <li class="toctree-l3"><a class="reference internal" href="emac.html">Ethernet MACs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pcie.html">PCI Express cores</a></li>
@@ -6062,7 +6063,7 @@
 <tr><td>14</td>
 <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-HCLK_CMT-HCLK_CMT:BUF.HCLK8" title="HCLK_CMT:BUF.HCLK8">HCLK_CMT:BUF.HCLK8</a></td><td><a href="#bits-xc5v-HCLK_CMT-HCLK_CMT:BUF.HCLK4" title="HCLK_CMT:BUF.HCLK4">HCLK_CMT:BUF.HCLK4</a></td><td><a href="#bits-xc5v-HCLK_CMT-HCLK_CMT:BUF.HCLK0" title="HCLK_CMT:BUF.HCLK0">HCLK_CMT:BUF.HCLK0</a></td><td><a href="#bits-xc5v-HCLK_CMT-HCLK_CMT:BUF.GIOB6" title="HCLK_CMT:BUF.GIOB6">HCLK_CMT:BUF.GIOB6</a></td><td><a href="#bits-xc5v-HCLK_CMT-HCLK_CMT:BUF.GIOB2" title="HCLK_CMT:BUF.GIOB2">HCLK_CMT:BUF.GIOB2</a></td></tr>
 <tr><td>15</td>
-<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-HCLK_CMT-HCLK_CMT:BUF.HCLK9" title="HCLK_CMT:BUF.HCLK9">HCLK_CMT:BUF.HCLK9</a></td><td><a href="#bits-xc5v-HCLK_CMT-HCLK_CMT:BUF.HCLK5" title="HCLK_CMT:BUF.HCLK5">HCLK_CMT:BUF.HCLK5</a></td><td><a href="#bits-xc5v-HCLK_CMT-HCLK_CMT:BUF.HCLK1" title="HCLK_CMT:BUF.HCLK1">HCLK_CMT:BUF.HCLK1</a></td><td><a href="#bits-xc5v-HCLK_CMT-HCLK_CMT:BUF.GIOB7" title="HCLK_CMT:BUF.GIOB7">HCLK_CMT:BUF.GIOB7</a></td><td><a href="#bits-xc5v-HCLK_CMT-HCLK_CMT:BUF.GIOB3" title="HCLK_CMT:BUF.GIOB3">HCLK_CMT:BUF.GIOB3</a></td></tr>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-HCLK_CMT-HCLK_CMT:DRP_MASK" title="HCLK_CMT:DRP_MASK">HCLK_CMT:DRP_MASK</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc5v-HCLK_CMT-HCLK_CMT:BUF.HCLK9" title="HCLK_CMT:BUF.HCLK9">HCLK_CMT:BUF.HCLK9</a></td><td><a href="#bits-xc5v-HCLK_CMT-HCLK_CMT:BUF.HCLK5" title="HCLK_CMT:BUF.HCLK5">HCLK_CMT:BUF.HCLK5</a></td><td><a href="#bits-xc5v-HCLK_CMT-HCLK_CMT:BUF.HCLK1" title="HCLK_CMT:BUF.HCLK1">HCLK_CMT:BUF.HCLK1</a></td><td><a href="#bits-xc5v-HCLK_CMT-HCLK_CMT:BUF.GIOB7" title="HCLK_CMT:BUF.GIOB7">HCLK_CMT:BUF.GIOB7</a></td><td><a href="#bits-xc5v-HCLK_CMT-HCLK_CMT:BUF.GIOB3" title="HCLK_CMT:BUF.GIOB3">HCLK_CMT:BUF.GIOB3</a></td></tr>
 </table>
 <div id="bits-xc5v-HCLK_CMT-HCLK_CMT:BUF.GIOB0"></div>
 <div id="bits-xc5v-HCLK_CMT-HCLK_CMT:BUF.GIOB1"></div>
@@ -6084,6 +6085,7 @@
 <div id="bits-xc5v-HCLK_CMT-HCLK_CMT:BUF.HCLK7"></div>
 <div id="bits-xc5v-HCLK_CMT-HCLK_CMT:BUF.HCLK8"></div>
 <div id="bits-xc5v-HCLK_CMT-HCLK_CMT:BUF.HCLK9"></div>
+<div id="bits-xc5v-HCLK_CMT-HCLK_CMT:DRP_MASK"></div>
 <table class="docutils align-default prjcombine-enum">
 <tr><th>HCLK_CMT:BUF.GIOB0</th><th>[0, 44, 12]</th></tr>
 <tr><th>HCLK_CMT:BUF.GIOB1</th><th>[0, 44, 13]</th></tr>
@@ -6105,6 +6107,7 @@
 <tr><th>HCLK_CMT:BUF.HCLK7</th><th>[0, 40, 13]</th></tr>
 <tr><th>HCLK_CMT:BUF.HCLK8</th><th>[0, 40, 14]</th></tr>
 <tr><th>HCLK_CMT:BUF.HCLK9</th><th>[0, 40, 15]</th></tr>
+<tr><th>HCLK_CMT:DRP_MASK</th><th>[0, 27, 15]</th></tr>
 <tr><td>Non-inverted</td><td>[0]</td></tr>
 </table>
 </section>
@@ -6164,7 +6167,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="center.html" class="btn btn-neutral float-left" title="Configuration Center" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="ppc.html" class="btn btn-neutral float-right" title="PowerPC cores" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="cmt.html" class="btn btn-neutral float-right" title="Clock management tile" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
