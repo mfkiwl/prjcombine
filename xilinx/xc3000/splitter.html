@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Splitters &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="XC3000A" href="../xc3000a/index.html" />
+    <link rel="prev" title="Configurable Logic Block" href="clb.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../xc9500/index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Xilinx FPGAs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../xc2000/index.html">XC2000</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">XC3000</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="clb.html">Configurable Logic Block</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Splitters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#llh-b"><code class="docutils literal notranslate"><span class="pre">LLH.B</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#llh-t"><code class="docutils literal notranslate"><span class="pre">LLH.T</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#llv"><code class="docutils literal notranslate"><span class="pre">LLV</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#llv-l"><code class="docutils literal notranslate"><span class="pre">LLV.L</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#llv-r"><code class="docutils literal notranslate"><span class="pre">LLV.R</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#llv-ls"><code class="docutils literal notranslate"><span class="pre">LLV.LS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#llv-rs"><code class="docutils literal notranslate"><span class="pre">LLV.RS</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../xc3000a/index.html">XC3000A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xc4000/index.html">XC4000</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xc4000a/index.html">XC4000A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xc4000h/index.html">XC4000H</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xc4000e/index.html">XC4000E</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xc4000ex/index.html">XC4000EX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xc4000xla/index.html">XC4000XLA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xc4000xv/index.html">XC4000XV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartanxl/index.html">Spartan XL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xc5200/index.html">XC5200</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex/index.html">Virtex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex2/index.html">Virtex 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan3/index.html">Spartan 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fpgacore/index.html">FPGAcore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spartan6/index.html">Spartan 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex4/index.html">Virtex 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex5/index.html">Virtex 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex6/index.html">Virtex 6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtex7/index.html">Virtex 7</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Xilinx FPGAs</a></li>
+          <li class="breadcrumb-item"><a href="index.html">XC3000</a></li>
+      <li class="breadcrumb-item active">Splitters</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/xilinx/xc3000/splitter.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="splitters">
+<h1>Splitters<a class="headerlink" href="#splitters" title="Link to this heading"></a></h1>
+<section id="llh-b">
+<h2><code class="docutils literal notranslate"><span class="pre">LLH.B</span></code><a class="headerlink" href="#llh-b" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="18">LLH.B bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="17">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3k-LLH.B-INT:BIPASS.0.LONG.IO.B0.1.LONG.IO.B0" title="INT:BIPASS.0.LONG.IO.B0.1.LONG.IO.B0">INT:BIPASS.0.LONG.IO.B0.1.LONG.IO.B0</a></td></tr>
+</table>
+<div id="bits-xc3k-LLH.B-INT:BIPASS.0.LONG.IO.B0.1.LONG.IO.B0"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:BIPASS.0.LONG.IO.B0.1.LONG.IO.B0</th><th>[0, 16, 1]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="llh-t">
+<h2><code class="docutils literal notranslate"><span class="pre">LLH.T</span></code><a class="headerlink" href="#llh-t" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="18">LLH.T bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="17">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>3</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>4</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>5</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>6</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>7</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>8</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3k-LLH.T-INT:BIPASS.0.LONG.IO.T0.1.LONG.IO.T0" title="INT:BIPASS.0.LONG.IO.T0.1.LONG.IO.T0">INT:BIPASS.0.LONG.IO.T0.1.LONG.IO.T0</a></td></tr>
+</table>
+<div id="bits-xc3k-LLH.T-INT:BIPASS.0.LONG.IO.T0.1.LONG.IO.T0"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:BIPASS.0.LONG.IO.T0.1.LONG.IO.T0</th><th>[0, 16, 8]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="llv">
+<h2><code class="docutils literal notranslate"><span class="pre">LLV</span></code><a class="headerlink" href="#llv" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="23">LLV bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="22">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc3k-LLV-INT:BIPASS.0.LONG.V1.1.LONG.V1" title="INT:BIPASS.0.LONG.V1.1.LONG.V1">INT:BIPASS.0.LONG.V1.1.LONG.V1</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3k-LLV-INT:BIPASS.0.LONG.V0.1.LONG.V0" title="INT:BIPASS.0.LONG.V0.1.LONG.V0">INT:BIPASS.0.LONG.V0.1.LONG.V0</a></td></tr>
+</table>
+<div id="bits-xc3k-LLV-INT:BIPASS.0.LONG.V0.1.LONG.V0"></div>
+<div id="bits-xc3k-LLV-INT:BIPASS.0.LONG.V1.1.LONG.V1"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:BIPASS.0.LONG.V0.1.LONG.V0</th><th>[0, 21, 0]</th></tr>
+<tr><th>INT:BIPASS.0.LONG.V1.1.LONG.V1</th><th>[0, 0, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="llv-l">
+<h2><code class="docutils literal notranslate"><span class="pre">LLV.L</span></code><a class="headerlink" href="#llv-l" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="24">LLV.L bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="23">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc3k-LLV.L-INT:BIPASS.0.LONG.V1.1.LONG.V1" title="INT:BIPASS.0.LONG.V1.1.LONG.V1">INT:BIPASS.0.LONG.V1.1.LONG.V1</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3k-LLV.L-INT:BIPASS.0.LONG.V0.1.LONG.V0" title="INT:BIPASS.0.LONG.V0.1.LONG.V0">INT:BIPASS.0.LONG.V0.1.LONG.V0</a></td><td><a href="#bits-xc3k-LLV.L-INT:BIPASS.0.LONG.IO.L0.1.LONG.IO.L0" title="INT:BIPASS.0.LONG.IO.L0.1.LONG.IO.L0">INT:BIPASS.0.LONG.IO.L0.1.LONG.IO.L0</a></td></tr>
+</table>
+<div id="bits-xc3k-LLV.L-INT:BIPASS.0.LONG.IO.L0.1.LONG.IO.L0"></div>
+<div id="bits-xc3k-LLV.L-INT:BIPASS.0.LONG.V0.1.LONG.V0"></div>
+<div id="bits-xc3k-LLV.L-INT:BIPASS.0.LONG.V1.1.LONG.V1"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:BIPASS.0.LONG.IO.L0.1.LONG.IO.L0</th><th>[0, 22, 0]</th></tr>
+<tr><th>INT:BIPASS.0.LONG.V0.1.LONG.V0</th><th>[0, 21, 0]</th></tr>
+<tr><th>INT:BIPASS.0.LONG.V1.1.LONG.V1</th><th>[0, 0, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="llv-r">
+<h2><code class="docutils literal notranslate"><span class="pre">LLV.R</span></code><a class="headerlink" href="#llv-r" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="37">LLV.R bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="36">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th><th>32</th><th>33</th><th>34</th><th>35</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc3k-LLV.R-INT:BIPASS.0.LONG.IO.R0.1.LONG.IO.R0" title="INT:BIPASS.0.LONG.IO.R0.1.LONG.IO.R0">INT:BIPASS.0.LONG.IO.R0.1.LONG.IO.R0</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3k-LLV.R-INT:BIPASS.0.LONG.V1.1.LONG.V1" title="INT:BIPASS.0.LONG.V1.1.LONG.V1">INT:BIPASS.0.LONG.V1.1.LONG.V1</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3k-LLV.R-INT:BIPASS.0.LONG.V0.1.LONG.V0" title="INT:BIPASS.0.LONG.V0.1.LONG.V0">INT:BIPASS.0.LONG.V0.1.LONG.V0</a></td></tr>
+</table>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="2">LLV.R bittile 1</th></tr><tr><th rowspan="2">Row</th><th colspan="1">Column</th></tr><tr><th>0</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc3k-LLV.R-MISC:TLC" title="~MISC:TLC">~MISC:TLC</a></td></tr>
+</table>
+<div id="bits-xc3k-LLV.R-INT:BIPASS.0.LONG.IO.R0.1.LONG.IO.R0"></div>
+<div id="bits-xc3k-LLV.R-INT:BIPASS.0.LONG.V0.1.LONG.V0"></div>
+<div id="bits-xc3k-LLV.R-INT:BIPASS.0.LONG.V1.1.LONG.V1"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:BIPASS.0.LONG.IO.R0.1.LONG.IO.R0</th><th>[0, 0, 0]</th></tr>
+<tr><th>INT:BIPASS.0.LONG.V0.1.LONG.V0</th><th>[0, 35, 0]</th></tr>
+<tr><th>INT:BIPASS.0.LONG.V1.1.LONG.V1</th><th>[0, 14, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+<div id="bits-xc3k-LLV.R-MISC:TLC"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:TLC</th><th>[1, 0, 0]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+</section>
+<section id="llv-ls">
+<h2><code class="docutils literal notranslate"><span class="pre">LLV.LS</span></code><a class="headerlink" href="#llv-ls" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="30">LLV.LS bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="29">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th></tr>
+<tr><td>0</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>1</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3k-LLV.LS-INT:BIPASS.0.LONG.IO.L0.1.LONG.IO.L0" title="INT:BIPASS.0.LONG.IO.L0.1.LONG.IO.L0">INT:BIPASS.0.LONG.IO.L0.1.LONG.IO.L0</a></td></tr>
+</table>
+<div id="bits-xc3k-LLV.LS-INT:BIPASS.0.LONG.IO.L0.1.LONG.IO.L0"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:BIPASS.0.LONG.IO.L0.1.LONG.IO.L0</th><th>[0, 28, 2]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+<section id="llv-rs">
+<h2><code class="docutils literal notranslate"><span class="pre">LLV.RS</span></code><a class="headerlink" href="#llv-rs" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th colspan="15">LLV.RS bittile 0</th></tr><tr><th rowspan="2">Row</th><th colspan="14">Column</th></tr><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th></tr>
+<tr><td>0</td>
+<td><a href="#bits-xc3k-LLV.RS-MISC:TLC" title="~MISC:TLC">~MISC:TLC</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="#bits-xc3k-LLV.RS-INT:BIPASS.0.LONG.IO.R0.1.LONG.IO.R0" title="INT:BIPASS.0.LONG.IO.R0.1.LONG.IO.R0">INT:BIPASS.0.LONG.IO.R0.1.LONG.IO.R0</a></td></tr>
+</table>
+<div id="bits-xc3k-LLV.RS-MISC:TLC"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>MISC:TLC</th><th>[0, 0, 0]</th></tr>
+<tr><td>Inverted</td><td>~[0]</td></tr>
+</table>
+<div id="bits-xc3k-LLV.RS-INT:BIPASS.0.LONG.IO.R0.1.LONG.IO.R0"></div>
+<table class="docutils align-default prjcombine-enum">
+<tr><th>INT:BIPASS.0.LONG.IO.R0.1.LONG.IO.R0</th><th>[0, 13, 0]</th></tr>
+<tr><td>Non-inverted</td><td>[0]</td></tr>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="clb.html" class="btn btn-neutral float-left" title="Configurable Logic Block" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../xc3000a/index.html" class="btn btn-neutral float-right" title="XC3000A" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
