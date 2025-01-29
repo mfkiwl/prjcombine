@@ -152,7 +152,7 @@ address involves some complex calculations:</p>
 <span class="n">fb_bits</span> <span class="o">=</span> <span class="n">main_area_bits</span> <span class="o">+</span> <span class="n">uim_area_bits</span>
 <span class="n">total_bits</span> <span class="o">=</span> <span class="n">fb_bits</span> <span class="o">*</span> <span class="n">device</span><span class="o">.</span><span class="n">num_fbs</span>
 
-<span class="k">def</span> <span class="nf">jed_to_jtag</span><span class="p">(</span><span class="n">fuse</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">jed_to_jtag</span><span class="p">(</span><span class="n">fuse</span><span class="p">):</span>
     <span class="n">fb</span> <span class="o">=</span> <span class="n">fuse</span> <span class="o">//</span> <span class="n">fb_bits</span>
     <span class="n">fuse</span> <span class="o">%=</span> <span class="n">fb_bits</span>
     <span class="k">if</span> <span class="n">fuse</span> <span class="o">&lt;</span> <span class="n">main_area_bits</span><span class="p">:</span>
@@ -193,7 +193,7 @@ address involves some complex calculations:</p>
             <span class="n">column</span>
         <span class="p">),</span> <span class="n">bit</span>
 
-<span class="k">def</span> <span class="nf">jtag_to_jed</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="n">bit</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">jtag_to_jed</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="n">bit</span><span class="p">):</span>
     <span class="n">fb</span> <span class="o">=</span> <span class="n">addr</span> <span class="o">&gt;&gt;</span> <span class="mi">13</span> <span class="o">&amp;</span> <span class="mh">0xf</span>
     <span class="k">assert</span> <span class="n">fb</span> <span class="o">&lt;</span> <span class="n">device</span><span class="o">.</span><span class="n">num_fbs</span>
     <span class="k">if</span> <span class="n">addr</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">12</span><span class="p">):</span>

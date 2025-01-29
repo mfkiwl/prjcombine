@@ -134,7 +134,7 @@ address involves some complex calculations:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">row_bits</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="mi">9</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">*</span> <span class="mi">6</span><span class="p">)</span> <span class="o">*</span> <span class="n">device</span><span class="o">.</span><span class="n">num_fbs</span>
 <span class="n">total_bits</span> <span class="o">=</span> <span class="n">row_bits</span> <span class="o">*</span> <span class="mi">108</span>
 
-<span class="k">def</span> <span class="nf">jed_to_jtag</span><span class="p">(</span><span class="n">fuse</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">jed_to_jtag</span><span class="p">(</span><span class="n">fuse</span><span class="p">):</span>
     <span class="n">row</span> <span class="o">=</span> <span class="n">fuse</span> <span class="o">//</span> <span class="n">row_bits</span>
     <span class="n">fuse</span> <span class="o">%=</span> <span class="n">row_bits</span>
     <span class="k">if</span> <span class="n">fuse</span> <span class="o">&lt;</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">9</span> <span class="o">*</span> <span class="n">device</span><span class="o">.</span><span class="n">num_fbs</span><span class="p">:</span>
@@ -154,7 +154,7 @@ address involves some complex calculations:</p>
         <span class="p">(</span><span class="n">column</span> <span class="o">%</span> <span class="mi">5</span><span class="p">)</span>
     <span class="p">),</span> <span class="p">(</span><span class="n">fb</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">+</span> <span class="n">bit</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">jtag_to_jed</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="n">bit</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">jtag_to_jed</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="n">bit</span><span class="p">):</span>
     <span class="n">fb</span> <span class="o">=</span> <span class="n">bit</span> <span class="o">//</span> <span class="mi">8</span>
     <span class="n">bit</span> <span class="o">%=</span> <span class="mi">8</span>
     <span class="n">row</span> <span class="o">=</span> <span class="n">addr</span> <span class="o">&gt;&gt;</span> <span class="mi">5</span> <span class="o">&amp;</span> <span class="mh">0x7f</span>
