@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DPIO: simple GPIO subsystem &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="DEPP: parallel port subsystem" href="depp.html" />
+    <link rel="prev" title="DJTG: JTAG controller subsystem" href="djtg.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../xilinx/index.html">Xilinx FPGAs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../siliconblue/index.html">SiliconBlue FPGAs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xc9500/index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Digilent Adept Programmers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction, general protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dmgt.html">DMGT: Management subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="djtg.html">DJTG: JTAG controller subsystem</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">DPIO: simple GPIO subsystem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-pin-mask"><code class="docutils literal notranslate"><span class="pre">GET_PIN_MASK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-pin-dir"><code class="docutils literal notranslate"><span class="pre">SET_PIN_DIR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-pin-dir"><code class="docutils literal notranslate"><span class="pre">GET_PIN_DIR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-pin-state"><code class="docutils literal notranslate"><span class="pre">SET_PIN_STATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-pin-state"><code class="docutils literal notranslate"><span class="pre">GET_PIN_STATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-stream-timing"><code class="docutils literal notranslate"><span class="pre">SET_STREAM_TIMING</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-stream-timing"><code class="docutils literal notranslate"><span class="pre">GET_STREAM_TIMING</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stream-state"><code class="docutils literal notranslate"><span class="pre">STREAM_STATE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="depp.html">DEPP: parallel port subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dspi.html">DSPI: SPI controller subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="devices.html">Devices</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Digilent Adept Programmers</a></li>
+      <li class="breadcrumb-item active">DPIO: simple GPIO subsystem</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/digilent/dpio.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dpio-simple-gpio-subsystem">
+<h1>DPIO: simple GPIO subsystem<a class="headerlink" href="#dpio-simple-gpio-subsystem" title="Link to this heading"></a></h1>
+<p>This subsystem is used for simple GPIO control.  A single “port” of this subsystem can support
+up to 32 GPIO pins.</p>
+<p>The port properties on DPIO are as follows:</p>
+<ul class="simple">
+<li><p>bit 0: supports inter-byte delay on stream commands (<code class="docutils literal notranslate"><span class="pre">GET_STREAM_TIMING</span></code> and <code class="docutils literal notranslate"><span class="pre">SET_STREAM_TIMING</span></code>)</p></li>
+<li><p>bit 1: supports data streaming command (<code class="docutils literal notranslate"><span class="pre">STREAM_STATE</span></code>)</p></li>
+</ul>
+<section id="get-pin-mask">
+<h2><code class="docutils literal notranslate"><span class="pre">GET_PIN_MASK</span></code><a class="headerlink" href="#get-pin-mask" title="Link to this heading"></a></h2>
+<p>Returns available pins and their allowed directions.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x03</span></code> (DPIO)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x03</span></code> (short)</p></li>
+<li><p>command payload: none</p></li>
+<li><p>response payload: two 32-bit words:</p>
+<ul>
+<li><p>word 0: bitmask of output-capable pins</p></li>
+<li><p>word 1: bitmask of input-capable pins</p></li>
+</ul>
+</li>
+</ul>
+<p>Pins can be input-only, output-only, or bidirectional.  Bidirectional pins will have bits
+set in both masks, while input-only/output-only pins will have a bit set only in only one
+of the masks.</p>
+</section>
+<section id="set-pin-dir">
+<h2><code class="docutils literal notranslate"><span class="pre">SET_PIN_DIR</span></code><a class="headerlink" href="#set-pin-dir" title="Link to this heading"></a></h2>
+<p>Sets pin directions.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x03</span></code> (DPIO)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x04</span></code> (short)</p></li>
+<li><p>command payload: 32-bit word: bitmask of pins that should be set to output</p></li>
+<li><p>response payload: 32-bit word: bitmask of pins currently set to output</p></li>
+</ul>
+<p>This command returns the actual mask that has been set.  Note that, as is customary
+for garbage GPIO controllers, the pins that have been newly set as outputs will immediately
+start to drive a 0 value, and sending a <code class="docutils literal notranslate"><span class="pre">SET_PIN_STATE</span></code> beforehand will not change this.</p>
+</section>
+<section id="get-pin-dir">
+<h2><code class="docutils literal notranslate"><span class="pre">GET_PIN_DIR</span></code><a class="headerlink" href="#get-pin-dir" title="Link to this heading"></a></h2>
+<p>Returns current pin directions.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x03</span></code> (DPIO)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x05</span></code> (short)</p></li>
+<li><p>command payload: none</p></li>
+<li><p>response payload: 32-bit word: bitmask of pins currently set to output</p></li>
+</ul>
+</section>
+<section id="set-pin-state">
+<h2><code class="docutils literal notranslate"><span class="pre">SET_PIN_STATE</span></code><a class="headerlink" href="#set-pin-state" title="Link to this heading"></a></h2>
+<p>Sets state of output pins.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x03</span></code> (DPIO)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x06</span></code> (short)</p></li>
+<li><p>command payload: 32-bit word: bitmask of ouptut state for all pins (bits corresponding to input pins are ignored)</p></li>
+<li><p>response payload: none</p></li>
+</ul>
+</section>
+<section id="get-pin-state">
+<h2><code class="docutils literal notranslate"><span class="pre">GET_PIN_STATE</span></code><a class="headerlink" href="#get-pin-state" title="Link to this heading"></a></h2>
+<p>Returns the current state of all pins.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x03</span></code> (DPIO)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x07</span></code> (short)</p></li>
+<li><p>command payload: none</p></li>
+<li><p>response payload: 32-bit word: bitmask of current state of all pins</p></li>
+</ul>
+</section>
+<section id="set-stream-timing">
+<h2><code class="docutils literal notranslate"><span class="pre">SET_STREAM_TIMING</span></code><a class="headerlink" href="#set-stream-timing" title="Link to this heading"></a></h2>
+<p>Sets requested timing for the <code class="docutils literal notranslate"><span class="pre">STREAM_STATE</span></code> command.</p>
+<ul>
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x03</span></code> (DPIO)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x08</span></code> (short)</p></li>
+<li><p>command payload: two 32-bit words:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>word 0: delay in nanoseconds from input sampling to output update</p></li>
+<li><p>word 1: delay in nanoseconds from output update to input sampling</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>response payload: two 32-bit words: same format as command payload</p></li>
+</ul>
+<p>This command returns the actual timings that will be used (which are adjusted from the requested ones as required by hardware capabilities).</p>
+</section>
+<section id="get-stream-timing">
+<h2><code class="docutils literal notranslate"><span class="pre">GET_STREAM_TIMING</span></code><a class="headerlink" href="#get-stream-timing" title="Link to this heading"></a></h2>
+<p>Gets the timing for the <code class="docutils literal notranslate"><span class="pre">STREAM_STATE</span></code> command.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x03</span></code> (DPIO)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x09</span></code> (short)</p></li>
+<li><p>command payload: none</p></li>
+<li><p>response payload: two 32-bit words: same format as <code class="docutils literal notranslate"><span class="pre">SET_STREAM_TIMING</span></code></p></li>
+</ul>
+</section>
+<section id="stream-state">
+<h2><code class="docutils literal notranslate"><span class="pre">STREAM_STATE</span></code><a class="headerlink" href="#stream-state" title="Link to this heading"></a></h2>
+<p>Performs streaming I/O.  Can access only the first 8 pins.  Pins will be sampled and updated
+in a tight loop, and transferred to/from the host as long command payload.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x03</span></code> (DPIO)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x0a</span></code> (long)</p></li>
+<li><p>command short payload: 6 bytes</p>
+<ul>
+<li><p>byte 0:</p>
+<ul>
+<li><p>0: no output performed</p></li>
+<li><p>1: stream output data</p></li>
+</ul>
+</li>
+<li><p>byte 1:</p>
+<ul>
+<li><p>0: no input performed</p></li>
+<li><p>1: stream input data</p></li>
+</ul>
+</li>
+<li><p>bytes 2-5: 32-bit word, number of bytes to be transferred</p></li>
+</ul>
+</li>
+<li><p>response payload (end): 1 byte; 0 if all data was transferred at requested rate,
+1 if a hang has occured during the transfer (no buffer space was available and
+the transfer was temporarily paused)</p></li>
+<li><p>long data OUT: if output requested, the output data, byte count as specified in the command payload; otherwise, none</p></li>
+<li><p>long data IN: if input requested, the input data, byte count as specified in the command payload; otherwise, none</p></li>
+</ul>
+<p>Each sample will be transferred as one byte over the long payload endpoints.  Note that
+the documentation doesn’t say whether, for a given sample, output or input is performed first.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="djtg.html" class="btn btn-neutral float-left" title="DJTG: JTAG controller subsystem" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="depp.html" class="btn btn-neutral float-right" title="DEPP: parallel port subsystem" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
