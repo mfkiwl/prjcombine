@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DTWI: I²C / SMBus subsystem &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="DACI: UART subsystem" href="daci.html" />
+    <link rel="prev" title="DSPI: SPI controller subsystem" href="dspi.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../xilinx/index.html">Xilinx FPGAs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../siliconblue/index.html">SiliconBlue FPGAs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xc9500/index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coolrunner2/index.html">Xilinx Coolrunner II CPLDs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Digilent Adept Programmers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction, general protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dmgt.html">DMGT: Management subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="djtg.html">DJTG: JTAG controller subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dpio.html">DPIO: simple GPIO subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="depp.html">DEPP: parallel port subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dstm.html">DSTM: FX2 FIFO interface subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dspi.html">DSPI: SPI controller subsystem</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">DTWI: I²C / SMBus subsystem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#set-speed"><code class="docutils literal notranslate"><span class="pre">SET_SPEED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-speed"><code class="docutils literal notranslate"><span class="pre">GET_SPEED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controller-put"><code class="docutils literal notranslate"><span class="pre">CONTROLLER_PUT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controller-get"><code class="docutils literal notranslate"><span class="pre">CONTROLLER_GET</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controller-put-get"><code class="docutils literal notranslate"><span class="pre">CONTROLLER_PUT_GET</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controller-batch"><code class="docutils literal notranslate"><span class="pre">CONTROLLER_BATCH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#smb-query-alert"><code class="docutils literal notranslate"><span class="pre">SMB_QUERY_ALERT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#smb-set-suspend"><code class="docutils literal notranslate"><span class="pre">SMB_SET_SUSPEND</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#smb-pec-enable"><code class="docutils literal notranslate"><span class="pre">SMB_PEC_ENABLE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#smb-pec-disable"><code class="docutils literal notranslate"><span class="pre">SMB_PEC_DISABLE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="daci.html">DACI: UART subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="devices.html">Devices</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Digilent Adept Programmers</a></li>
+      <li class="breadcrumb-item active">DTWI: I²C / SMBus subsystem</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/digilent/dtwi.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dtwi-i2c-smbus-subsystem">
+<h1>DTWI: I²C / SMBus subsystem<a class="headerlink" href="#dtwi-i2c-smbus-subsystem" title="Link to this heading"></a></h1>
+<p>This subsystem implements an I²C / SMBus controller and/or peripherial.  The name stands
+for “two-wire interface”, lest Phillips lawyers get unhappy.</p>
+<p>The port properties on DTWI are as follows:</p>
+<ul class="simple">
+<li><p>bit 0: supports operating as a controller</p></li>
+<li><p>bit 1: supports operating as a peripherial</p></li>
+<li><p>bit 2: supports operating as a controller in multi-controller environment</p></li>
+<li><p>bit 3: supports the <code class="docutils literal notranslate"><span class="pre">CONTROLLER_BATCH</span></code> command</p></li>
+<li><p>bit 4: supports the <code class="docutils literal notranslate"><span class="pre">SET_SPEED</span></code> command</p></li>
+<li><p>bit 5: supports SMB alert pin</p></li>
+<li><p>bit 6: supports SMB suspend pin</p></li>
+<li><p>bit 7: supports SMB packet error checking</p></li>
+</ul>
+<p>The subsystem supports only 7-bit addresses.  The addresses used in the protocol are specified
+as numbers in the range of 0-127.</p>
+<p>When operating in peripherial mode, the device functions as a simple bidirectional FIFO with
+a predetermined buffer size in each direction.  The buffer in the USB host → device direction
+is called the Tx buffer, while the buffer in the device → USB host direction is called the Rx
+buffer.</p>
+<p>Except, it appears the peripherial mode is a lie.  The functionality is entirely nopped
+out in the driver.</p>
+<section id="set-speed">
+<h2><code class="docutils literal notranslate"><span class="pre">SET_SPEED</span></code><a class="headerlink" href="#set-speed" title="Link to this heading"></a></h2>
+<p>Sets the clock frequency (for controller operation).</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x07</span></code> (DTWI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x03</span></code> (short)</p></li>
+<li><p>command payload: 32-bit word (requested frequency in Hz)</p></li>
+<li><p>response payload: 32-bit word (actual frequency in Hz)</p></li>
+</ul>
+<p>This command returns the actual frequency used, as adjusted by the device
+to match hardware capabilities.</p>
+</section>
+<section id="get-speed">
+<h2><code class="docutils literal notranslate"><span class="pre">GET_SPEED</span></code><a class="headerlink" href="#get-speed" title="Link to this heading"></a></h2>
+<p>Gets the clock frequency (for controller operation).</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x07</span></code> (DTWI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x04</span></code> (short)</p></li>
+<li><p>command payload: none</p></li>
+<li><p>response payload: 32-bit word (frequency in Hz)</p></li>
+</ul>
+</section>
+<section id="controller-put">
+<h2><code class="docutils literal notranslate"><span class="pre">CONTROLLER_PUT</span></code><a class="headerlink" href="#controller-put" title="Link to this heading"></a></h2>
+<p>Performs a “put” operation as a controller.  This consists of:</p>
+<ul class="simple">
+<li><p>a START condition</p></li>
+<li><p>sending an address byte with the specified address and a write operation selected</p></li>
+<li><p>sending the specified payload bytes</p></li>
+<li><p>a STOP condition</p></li>
+</ul>
+<p>The command is:</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x07</span></code> (DTWI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x05</span></code> (long)</p></li>
+<li><p>command payload: 3 bytes:</p>
+<ul>
+<li><p>byte 0: peripherial address</p></li>
+<li><p>bytes 1-2: number of bytes to send</p></li>
+</ul>
+</li>
+<li><p>response payload: none</p></li>
+<li><p>long data OUT: the bytes to send</p></li>
+<li><p>long data IN: none</p></li>
+</ul>
+</section>
+<section id="controller-get">
+<h2><code class="docutils literal notranslate"><span class="pre">CONTROLLER_GET</span></code><a class="headerlink" href="#controller-get" title="Link to this heading"></a></h2>
+<p>Performs a “get” operation as a controller.  This consists of:</p>
+<ul class="simple">
+<li><p>a START condition</p></li>
+<li><p>sending an address byte with the specified address and a read operation selected</p></li>
+<li><p>receiving the specified number of bytes; each byte aside of the last one will be ACKed by the controller</p></li>
+<li><p>a STOP condition</p></li>
+</ul>
+<p>The command is:</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x07</span></code> (DTWI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x06</span></code> (long)</p></li>
+<li><p>command payload: 3 bytes:</p>
+<ul>
+<li><p>byte 0: peripherial address</p></li>
+<li><p>bytes 1-2: number of bytes to receive</p></li>
+</ul>
+</li>
+<li><p>response payload: none</p></li>
+<li><p>long data OUT: none</p></li>
+<li><p>long data IN: received bytes</p></li>
+</ul>
+</section>
+<section id="controller-put-get">
+<h2><code class="docutils literal notranslate"><span class="pre">CONTROLLER_PUT_GET</span></code><a class="headerlink" href="#controller-put-get" title="Link to this heading"></a></h2>
+<p>Performs a “put+get” operation as a controller.  This consists of:</p>
+<ul class="simple">
+<li><p>a START condition</p></li>
+<li><p>sending an address byte with the specified address and a write operation selected</p></li>
+<li><p>sending the specified payload bytes</p></li>
+<li><p>optionally, waiting a specified amount of time (0-65535µs)</p></li>
+<li><p>a repeated START condition</p></li>
+<li><p>sending an address byte with the specified address and a read operation selected</p></li>
+<li><p>receiving the specified number of bytes; each byte aside of the last one will be ACKed by the controller</p></li>
+<li><p>a STOP condition</p></li>
+</ul>
+<p>The command is:</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x07</span></code> (DTWI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x07</span></code> (long)</p></li>
+<li><p>command payload: 7 bytes:</p>
+<ul>
+<li><p>byte 0: peripherial address</p></li>
+<li><p>bytes 1-2: number of bytes to send</p></li>
+<li><p>bytes 3-4: time to wait between send and receive, in µs</p></li>
+<li><p>bytes 5-6: number of bytes to receive</p></li>
+</ul>
+</li>
+<li><p>response payload: none</p></li>
+<li><p>long data OUT: the bytes to send</p></li>
+<li><p>long data IN: received bytes</p></li>
+</ul>
+</section>
+<section id="controller-batch">
+<h2><code class="docutils literal notranslate"><span class="pre">CONTROLLER_BATCH</span></code><a class="headerlink" href="#controller-batch" title="Link to this heading"></a></h2>
+<p>Performs a batch operation as a controller.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x07</span></code> (DTWI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x08</span></code> (long)</p></li>
+<li><p>command payload: 5 bytes:</p>
+<ul>
+<li><p>bytes 0-1: total number of bytes to send (the batch command stream)</p></li>
+<li><p>bytes 2-3: total number of bytes to receive</p></li>
+<li><p>byte 4: ????? always 0, possible driver bug</p></li>
+</ul>
+</li>
+<li><p>response payload: none</p></li>
+<li><p>long data OUT: the bytes to send (batch command stream)</p></li>
+<li><p>long data IN: received bytes</p></li>
+</ul>
+<p>The data sent as payload to this command is the batch command stream, with interleaved
+batch commands and data to transmit.  The data received is the concatenation of received
+data for all batch commands submitted.</p>
+<p>The batch commands are variable-length and start with a single-byte opcode.  The low nibble
+of the opcode is always equal to the length of the “header” of the batch command, while
+the high nibble is the command type.  For the <code class="docutils literal notranslate"><span class="pre">BATCH_PUT</span></code> command, the data to transmit
+immediately follows the header.  All other commands consist of just the header.  The batch
+commands are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">STOP</span></code> (sends a STOP condition)</p>
+<ul>
+<li><p>byte 0: opcode (<code class="docutils literal notranslate"><span class="pre">0x11</span></code>)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">START_WRITE</span></code> (sends a START condition, then sends an address byte with write direction)</p>
+<ul>
+<li><p>byte 0: opcode (<code class="docutils literal notranslate"><span class="pre">0x22</span></code>)</p></li>
+<li><p>byte 1: peripherial address</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">START_READ</span></code> (sends a START condition, then sends an address byte with read direction)</p>
+<ul>
+<li><p>byte 0: opcode (<code class="docutils literal notranslate"><span class="pre">0x32</span></code>)</p></li>
+<li><p>byte 1: peripherial address</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REP_START_WRITE</span></code> (sends a repeated START condition, then sends an address byte with write direction)</p>
+<ul>
+<li><p>byte 0: opcode (<code class="docutils literal notranslate"><span class="pre">0x42</span></code>)</p></li>
+<li><p>byte 1: peripherial address</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REP_START_READ</span></code> (sends a repeated START condition, then sends an address byte with read direction)</p>
+<ul>
+<li><p>byte 0: opcode (<code class="docutils literal notranslate"><span class="pre">0x52</span></code>)</p></li>
+<li><p>byte 1: peripherial address</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PUT</span></code> (sends data bytes)</p>
+<ul>
+<li><p>byte 0: opcode (<code class="docutils literal notranslate"><span class="pre">0x63</span></code>)</p></li>
+<li><p>bytes 1-2: number of bytes to send</p></li>
+<li><p>bytes 3 and up: the bytes to send</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span></code> (receives data bytes)</p>
+<ul>
+<li><p>byte 0: opcode (<code class="docutils literal notranslate"><span class="pre">0x73</span></code>)</p></li>
+<li><p>bytes 1-2: number of bytes to receive</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WAIT</span></code> (waits a specified amount of time)</p>
+<ul>
+<li><p>byte 0: opcode (<code class="docutils literal notranslate"><span class="pre">0x83</span></code>)</p></li>
+<li><p>bytes 1-2: amount of time to wait, in µs</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="smb-query-alert">
+<h2><code class="docutils literal notranslate"><span class="pre">SMB_QUERY_ALERT</span></code><a class="headerlink" href="#smb-query-alert" title="Link to this heading"></a></h2>
+<p>Queries the state of the SMBus alert pin.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x07</span></code> (DTWI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x09</span></code> (short)</p></li>
+<li><p>command payload: none</p></li>
+<li><p>response payload: 1 byte, the <em>inverted</em> alert pin state:</p>
+<ul>
+<li><p>0: alert pin inactive (set to 1)</p></li>
+<li><p>1: alert pin active (set to 0)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="smb-set-suspend">
+<h2><code class="docutils literal notranslate"><span class="pre">SMB_SET_SUSPEND</span></code><a class="headerlink" href="#smb-set-suspend" title="Link to this heading"></a></h2>
+<p>Sets the state of the SMBus suspend pin.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x07</span></code> (DTWI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x0a</span></code> (short)</p></li>
+<li><p>command payload: 1 byte, the <em>inverted</em> suspend pin state to set:</p>
+<ul>
+<li><p>0: suspend pin inactive (set to 1)</p></li>
+<li><p>1: suspend pin active (set to 0)</p></li>
+</ul>
+</li>
+<li><p>response payload: none</p></li>
+</ul>
+</section>
+<section id="smb-pec-enable">
+<h2><code class="docutils literal notranslate"><span class="pre">SMB_PEC_ENABLE</span></code><a class="headerlink" href="#smb-pec-enable" title="Link to this heading"></a></h2>
+<p>Enables SMBus PEC checking.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x07</span></code> (DTWI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x0b</span></code> (short)</p></li>
+<li><p>command payload: none</p></li>
+<li><p>response payload: none</p></li>
+</ul>
+</section>
+<section id="smb-pec-disable">
+<h2><code class="docutils literal notranslate"><span class="pre">SMB_PEC_DISABLE</span></code><a class="headerlink" href="#smb-pec-disable" title="Link to this heading"></a></h2>
+<p>Disables SMBus PEC checking.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x07</span></code> (DTWI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x0c</span></code> (short)</p></li>
+<li><p>command payload: none</p></li>
+<li><p>response payload: none</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dspi.html" class="btn btn-neutral float-left" title="DSPI: SPI controller subsystem" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="daci.html" class="btn btn-neutral float-right" title="DACI: UART subsystem" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

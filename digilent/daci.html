@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DACI: UART subsystem &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Devices" href="devices.html" />
+    <link rel="prev" title="DTWI: I²C / SMBus subsystem" href="dtwi.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../xilinx/index.html">Xilinx FPGAs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../siliconblue/index.html">SiliconBlue FPGAs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xc9500/index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coolrunner2/index.html">Xilinx Coolrunner II CPLDs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Digilent Adept Programmers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction, general protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dmgt.html">DMGT: Management subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="djtg.html">DJTG: JTAG controller subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dpio.html">DPIO: simple GPIO subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="depp.html">DEPP: parallel port subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dstm.html">DSTM: FX2 FIFO interface subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dspi.html">DSPI: SPI controller subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dtwi.html">DTWI: I²C / SMBus subsystem</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">DACI: UART subsystem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#put"><code class="docutils literal notranslate"><span class="pre">PUT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get"><code class="docutils literal notranslate"><span class="pre">GET</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-mode"><code class="docutils literal notranslate"><span class="pre">GET_MODE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-mode"><code class="docutils literal notranslate"><span class="pre">SET_MODE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-baud"><code class="docutils literal notranslate"><span class="pre">SET_BAUD</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-baud"><code class="docutils literal notranslate"><span class="pre">GET_BAUD</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#query-status"><code class="docutils literal notranslate"><span class="pre">QUERY_STATUS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-buffer-size"><code class="docutils literal notranslate"><span class="pre">GET_BUFFER_SIZE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#purge-buffer"><code class="docutils literal notranslate"><span class="pre">PURGE_BUFFER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#halt-tx"><code class="docutils literal notranslate"><span class="pre">HALT_TX</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-rx-block"><code class="docutils literal notranslate"><span class="pre">SET_RX_BLOCK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-rts-cts-enable"><code class="docutils literal notranslate"><span class="pre">SET_RTS_CTS_ENABLE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-xon-xoff-enable"><code class="docutils literal notranslate"><span class="pre">SET_XON_XOFF_ENABLE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="devices.html">Devices</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Digilent Adept Programmers</a></li>
+      <li class="breadcrumb-item active">DACI: UART subsystem</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/digilent/daci.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="daci-uart-subsystem">
+<h1>DACI: UART subsystem<a class="headerlink" href="#daci-uart-subsystem" title="Link to this heading"></a></h1>
+<p>This subsystem implements an UART interface.  DACI stands for “asynchronous communication
+interface”.</p>
+<p>The port properties for DACI are as follows:</p>
+<ul class="simple">
+<li><p>bit 0: port implements a DTE device</p></li>
+<li><p>bit 1: port implements a DCE device</p></li>
+<li><p>bit 2: port implements RTS/CTS hardware handshaking</p></li>
+<li><p>bit 3: port implements XON/XOFF hardware handshaking</p></li>
+<li><p>bit 4: port supports the <code class="docutils literal notranslate"><span class="pre">SET_BAUD</span></code> command</p></li>
+<li><p>bit 5: port supports setting of number of stop bits</p></li>
+<li><p>bit 6: port supports setting of number of data bits</p></li>
+<li><p>bit 7: port supports “none” parity</p></li>
+<li><p>bit 8: port supports “odd” parity</p></li>
+<li><p>bit 9: port supports “even” parity</p></li>
+<li><p>bit 10: port supports “mark” parity</p></li>
+<li><p>bit 11: port supports “space” parity</p></li>
+</ul>
+<section id="put">
+<h2><code class="docutils literal notranslate"><span class="pre">PUT</span></code><a class="headerlink" href="#put" title="Link to this heading"></a></h2>
+<p>Transmits bytes.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x08</span></code> (DACI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x03</span></code> (long)</p></li>
+<li><p>command payload: 4 bytes:</p>
+<ul>
+<li><p>bytes 0-3: byte count to send</p></li>
+</ul>
+</li>
+<li><p>response payload: none</p></li>
+<li><p>long data OUT: data to send</p></li>
+<li><p>long data IN: none</p></li>
+</ul>
+</section>
+<section id="get">
+<h2><code class="docutils literal notranslate"><span class="pre">GET</span></code><a class="headerlink" href="#get" title="Link to this heading"></a></h2>
+<p>Receives bytes.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x08</span></code> (DACI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x04</span></code> (long)</p></li>
+<li><p>command payload: 4 bytes:</p>
+<ul>
+<li><p>bytes 0-3: max byte count to receive</p></li>
+</ul>
+</li>
+<li><p>response payload: none</p></li>
+<li><p>long data OUT: none</p></li>
+<li><p>long data IN: received data (up to the byte count specified in the command)</p></li>
+</ul>
+<p>This command may receive fewer bytes than asked for: the long response should
+be checked for the actual received byte count.</p>
+</section>
+<section id="get-mode">
+<h2><code class="docutils literal notranslate"><span class="pre">GET_MODE</span></code><a class="headerlink" href="#get-mode" title="Link to this heading"></a></h2>
+<p>Gets current UART mode.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x08</span></code> (DACI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x05</span></code> (short)</p></li>
+<li><p>command payload: none</p></li>
+<li><p>response payload: 3 bytes:</p>
+<ul>
+<li><p>byte 0: number of data bits (5 to 8)</p></li>
+<li><p>byte 1: encoded number of stop bits:</p>
+<ul>
+<li><p>1: 1 stop bit</p></li>
+<li><p>2: 1.5 stop bits</p></li>
+<li><p>3: 2 stop bits</p></li>
+</ul>
+</li>
+<li><p>byte 2: parity mode:</p>
+<ul>
+<li><p>0: none</p></li>
+<li><p>1: odd</p></li>
+<li><p>2: even</p></li>
+<li><p>3: mark</p></li>
+<li><p>4: space</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="set-mode">
+<h2><code class="docutils literal notranslate"><span class="pre">SET_MODE</span></code><a class="headerlink" href="#set-mode" title="Link to this heading"></a></h2>
+<p>Sets current UART mode.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x08</span></code> (DACI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x06</span></code> (short)</p></li>
+<li><p>command payload: 3 bytes:</p>
+<ul>
+<li><p>byte 0: number of data bits (5 to 8)</p></li>
+<li><p>byte 1: encoded number of stop bits:</p>
+<ul>
+<li><p>1: 1 stop bit</p></li>
+<li><p>2: 1.5 stop bits</p></li>
+<li><p>3: 2 stop bits</p></li>
+</ul>
+</li>
+<li><p>byte 2: parity mode:</p>
+<ul>
+<li><p>0: none</p></li>
+<li><p>1: odd</p></li>
+<li><p>2: even</p></li>
+<li><p>3: mark</p></li>
+<li><p>4: space</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>response payload: none</p></li>
+</ul>
+<p>Note that not all ports support the full range of possible values.  Check with
+<code class="docutils literal notranslate"><span class="pre">GET_MODE</span></code> to see what mode has been actually set.</p>
+</section>
+<section id="set-baud">
+<h2><code class="docutils literal notranslate"><span class="pre">SET_BAUD</span></code><a class="headerlink" href="#set-baud" title="Link to this heading"></a></h2>
+<p>Sets the baud rate.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x08</span></code> (DACI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x07</span></code> (short)</p></li>
+<li><p>command payload: 32-bit word (requested baud rate)</p></li>
+<li><p>response payload: 32-bit word (actual baud rate)</p></li>
+</ul>
+<p>This command returns the actual baud rate used, as adjusted by the device
+to match hardware capabilities.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>driver seems to expect 8 bytes returned, but this looks like a bug</p>
+</div>
+</section>
+<section id="get-baud">
+<h2><code class="docutils literal notranslate"><span class="pre">GET_BAUD</span></code><a class="headerlink" href="#get-baud" title="Link to this heading"></a></h2>
+<p>Gets the baud rate.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x08</span></code> (DACI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x08</span></code> (short)</p></li>
+<li><p>command payload: none</p></li>
+<li><p>response payload: 32-bit word (baud rate)</p></li>
+</ul>
+</section>
+<section id="query-status">
+<h2><code class="docutils literal notranslate"><span class="pre">QUERY_STATUS</span></code><a class="headerlink" href="#query-status" title="Link to this heading"></a></h2>
+<p>Gets the current status of the port.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x08</span></code> (DACI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x09</span></code> (short)</p></li>
+<li><p>command payload: none</p></li>
+<li><p>response payload: 8 bytes:</p>
+<ul>
+<li><p>bytes 0-1: number of bytes currently in the transmit buffer</p></li>
+<li><p>bytes 2-3: number of bytes currently in the receive buffer</p></li>
+<li><p>bytes 4-7: flags:</p>
+<ul>
+<li><p>bit 0: transmit buffer is halted</p></li>
+<li><p>bit 1: receive buffer is in blocking mode</p></li>
+<li><p>bit 2: transmit stalled due to flow control</p></li>
+<li><p>bit 3: receive stalled due to flow control</p></li>
+<li><p>bit 4: transmit flow control enabled</p></li>
+<li><p>bit 5: receive flow control enabled</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="get-buffer-size">
+<h2><code class="docutils literal notranslate"><span class="pre">GET_BUFFER_SIZE</span></code><a class="headerlink" href="#get-buffer-size" title="Link to this heading"></a></h2>
+<p>Gets the buffer sizes on the device.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x08</span></code> (DACI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x0a</span></code> (short)</p></li>
+<li><p>command payload: none</p></li>
+<li><p>response payload: 4 bytes:</p>
+<ul>
+<li><p>bytes 0-1: transmit buffer size in bytes</p></li>
+<li><p>bytes 2-3: receive buffer size in bytes</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="purge-buffer">
+<h2><code class="docutils literal notranslate"><span class="pre">PURGE_BUFFER</span></code><a class="headerlink" href="#purge-buffer" title="Link to this heading"></a></h2>
+<p>Purges (forcefully empties, discarding contents) transmit and/or receive buffers
+on the device.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x08</span></code> (DACI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x0b</span></code> (short)</p></li>
+<li><p>command payload: 2 bytes:</p>
+<ul>
+<li><p>byte 0:</p>
+<ul>
+<li><p>0: don’t purge transmit buffer</p></li>
+<li><p>1: purge transmit buffer</p></li>
+</ul>
+</li>
+<li><p>byte 1:</p>
+<ul>
+<li><p>0: don’t purge receive buffer</p></li>
+<li><p>1: purge receive buffer</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>response payload: none</p></li>
+</ul>
+</section>
+<section id="halt-tx">
+<h2><code class="docutils literal notranslate"><span class="pre">HALT_TX</span></code><a class="headerlink" href="#halt-tx" title="Link to this heading"></a></h2>
+<p>Halts or unhalts the transmit buffer.  While the transmit buffer is halted,
+no bytes will be sent over the line, and <code class="docutils literal notranslate"><span class="pre">PUT</span></code> commands that would normally
+block waiting for buffer space will return an error instead.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x08</span></code> (DACI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x0c</span></code> (short)</p></li>
+<li><p>command payload: 1 byte:</p>
+<ul>
+<li><p>0: unhalt transmit buffer</p></li>
+<li><p>1: halt transmit buffer</p></li>
+</ul>
+</li>
+<li><p>response payload: none</p></li>
+</ul>
+</section>
+<section id="set-rx-block">
+<h2><code class="docutils literal notranslate"><span class="pre">SET_RX_BLOCK</span></code><a class="headerlink" href="#set-rx-block" title="Link to this heading"></a></h2>
+<p>Sets the receive buffer to blocking or non-blocking mode.  When in non-blocking
+mode, <code class="docutils literal notranslate"><span class="pre">GET</span></code> command will always return immediately, returning whatever is available
+in the buffer.  When in blocking mode, it will wait for the full number of requested
+bytes to be available.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x08</span></code> (DACI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x0d</span></code> (short)</p></li>
+<li><p>command payload: 1 byte:</p>
+<ul>
+<li><p>0: set non-blocking mode</p></li>
+<li><p>1: set blocking mode</p></li>
+</ul>
+</li>
+<li><p>response payload: none</p></li>
+</ul>
+</section>
+<section id="set-rts-cts-enable">
+<h2><code class="docutils literal notranslate"><span class="pre">SET_RTS_CTS_ENABLE</span></code><a class="headerlink" href="#set-rts-cts-enable" title="Link to this heading"></a></h2>
+<p>Enables or disables hardware RTS/CTS control flow.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x08</span></code> (DACI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x0e</span></code> (short)</p></li>
+<li><p>command payload: 1 byte:</p>
+<ul>
+<li><p>0: disable RTS/CTS control flow</p></li>
+<li><p>1: enable RTS/CTS control flow</p></li>
+</ul>
+</li>
+<li><p>response payload: none</p></li>
+</ul>
+</section>
+<section id="set-xon-xoff-enable">
+<h2><code class="docutils literal notranslate"><span class="pre">SET_XON_XOFF_ENABLE</span></code><a class="headerlink" href="#set-xon-xoff-enable" title="Link to this heading"></a></h2>
+<p>Enables or disables hardware XON/XOFF control flow.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x08</span></code> (DACI)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x0f</span></code> (short)</p></li>
+<li><p>command payload: 1 byte:</p>
+<ul>
+<li><p>0: disable XON/XOFF control flow</p></li>
+<li><p>1: enable XON/XOFF control flow</p></li>
+</ul>
+</li>
+<li><p>response payload: none</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dtwi.html" class="btn btn-neutral float-left" title="DTWI: I²C / SMBus subsystem" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="devices.html" class="btn btn-neutral float-right" title="Devices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

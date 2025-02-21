@@ -20,7 +20,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="DSPI: SPI controller subsystem" href="dspi.html" /> 
+    <link rel="prev" title="DACI: UART subsystem" href="daci.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -55,7 +55,10 @@
 <li class="toctree-l2"><a class="reference internal" href="djtg.html">DJTG: JTAG controller subsystem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dpio.html">DPIO: simple GPIO subsystem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="depp.html">DEPP: parallel port subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dstm.html">DSTM: FX2 FIFO interface subsystem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dspi.html">DSPI: SPI controller subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dtwi.html">DTWI: I²C / SMBus subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="daci.html">DACI: UART subsystem</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Devices</a></li>
 </ul>
 </li>
@@ -152,6 +155,33 @@
 </li>
 </ul>
 </li>
+<li><p>Coolrunner II CPLD Starter Board, AT90USB162-based</p>
+<ul>
+<li><p>product name: <code class="docutils literal notranslate"><span class="pre">CoolRunner</span> <span class="pre">2</span> <span class="pre">Starter</span> <span class="pre">2</span></code></p></li>
+<li><p>product id: <code class="docutils literal notranslate"><span class="pre">0x009</span></code></p></li>
+<li><p>variant id: <code class="docutils literal notranslate"><span class="pre">0x001</span></code> (XC2C256)</p></li>
+<li><p>firmware id: <code class="docutils literal notranslate"><span class="pre">0x26</span></code></p></li>
+<li><p>DMGT power control capability</p></li>
+<li><p>one DJTG port</p>
+<ul>
+<li><p>JTAG chain consists of the CPLD only</p></li>
+<li><p>supports set speed; supported frequencies are:</p>
+<ul>
+<li><p>4MHz</p></li>
+<li><p>2MHz</p></li>
+<li><p>1MHz</p></li>
+<li><p>500kHz</p></li>
+<li><p>250kHz</p></li>
+<li><p>125kHz</p></li>
+<li><p>62.5kHz</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>one DEPP port</p></li>
+<li><p>one DSPI port (the port is not, in fact, connected to anything)</p></li>
+</ul>
+</li>
 </ul>
 <div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
@@ -163,7 +193,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="dspi.html" class="btn btn-neutral float-left" title="DSPI: SPI controller subsystem" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="daci.html" class="btn btn-neutral float-left" title="DACI: UART subsystem" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

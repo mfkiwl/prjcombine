@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digilent Adept Programmers &mdash; Project Combine  documentation</title>
+  <title>DSTM: FX2 FIFO interface subsystem &mdash; Project Combine  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
@@ -20,8 +20,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introduction, general protocol" href="intro.html" />
-    <link rel="prev" title="JTAG interface" href="../coolrunner2/jtag.html" /> 
+    <link rel="next" title="DSPI: SPI controller subsystem" href="dspi.html" />
+    <link rel="prev" title="DEPP: parallel port subsystem" href="depp.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,13 +50,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../xc9500/index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../coolrunner2/index.html">Xilinx Coolrunner II CPLDs</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Digilent Adept Programmers</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Digilent Adept Programmers</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction, general protocol</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dmgt.html">DMGT: Management subsystem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="djtg.html">DJTG: JTAG controller subsystem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dpio.html">DPIO: simple GPIO subsystem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="depp.html">DEPP: parallel port subsystem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dstm.html">DSTM: FX2 FIFO interface subsystem</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">DSTM: FX2 FIFO interface subsystem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#protocol">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#io"><code class="docutils literal notranslate"><span class="pre">IO</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#io-ex"><code class="docutils literal notranslate"><span class="pre">IO_EX</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="dspi.html">DSPI: SPI controller subsystem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dtwi.html">DTWI: I²C / SMBus subsystem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="daci.html">DACI: UART subsystem</a></li>
@@ -79,9 +84,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Digilent Adept Programmers</li>
+          <li class="breadcrumb-item"><a href="index.html">Digilent Adept Programmers</a></li>
+      <li class="breadcrumb-item active">DSTM: FX2 FIFO interface subsystem</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/digilent/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/digilent/dstm.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -89,31 +95,59 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="digilent-adept-programmers">
-<h1>Digilent Adept Programmers<a class="headerlink" href="#digilent-adept-programmers" title="Link to this heading"></a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction, general protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dmgt.html">DMGT: Management subsystem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="djtg.html">DJTG: JTAG controller subsystem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dpio.html">DPIO: simple GPIO subsystem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="depp.html">DEPP: parallel port subsystem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dstm.html">DSTM: FX2 FIFO interface subsystem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dspi.html">DSPI: SPI controller subsystem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dtwi.html">DTWI: I²C / SMBus subsystem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="daci.html">DACI: UART subsystem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
-</ul>
+  <section id="dstm-fx2-fifo-interface-subsystem">
+<h1>DSTM: FX2 FIFO interface subsystem<a class="headerlink" href="#dstm-fx2-fifo-interface-subsystem" title="Link to this heading"></a></h1>
+<p>This subsystem implements a high-speed parallel interface using the FX2 FIFO mode.</p>
+<p>There are no port properties on DSTM.</p>
+<section id="protocol">
+<h2>Protocol<a class="headerlink" href="#protocol" title="Link to this heading"></a></h2>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>document</p>
 </div>
+</section>
+<section id="io">
+<h2><code class="docutils literal notranslate"><span class="pre">IO</span></code><a class="headerlink" href="#io" title="Link to this heading"></a></h2>
+<p>Performs a data transfer.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x05</span></code> (DSTM)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x03</span></code> (long)</p></li>
+<li><p>command payload: 8 bytes:</p>
+<ul>
+<li><p>bytes 0-3: number of bytes to send</p></li>
+<li><p>bytes 4-7: number of bytes to receive</p></li>
+</ul>
+</li>
+<li><p>response payload: none</p></li>
+<li><p>long data OUT: data to send</p></li>
+<li><p>long data IN: received data</p></li>
+</ul>
+</section>
+<section id="io-ex">
+<h2><code class="docutils literal notranslate"><span class="pre">IO_EX</span></code><a class="headerlink" href="#io-ex" title="Link to this heading"></a></h2>
+<p>Performs a high-speed data transfer.</p>
+<ul class="simple">
+<li><p>subsystem: <code class="docutils literal notranslate"><span class="pre">0x05</span></code> (DSTM)</p></li>
+<li><p>command type: <code class="docutils literal notranslate"><span class="pre">0x04</span></code> (long)</p></li>
+<li><p>command payload: 8 bytes:</p>
+<ul>
+<li><p>bytes 0-3: number of bytes to send</p></li>
+<li><p>bytes 4-7: number of bytes to receive</p></li>
+</ul>
+</li>
+<li><p>response payload: none</p></li>
+<li><p>long data OUT: data to send</p></li>
+<li><p>long data IN: received data</p></li>
+</ul>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../coolrunner2/jtag.html" class="btn btn-neutral float-left" title="JTAG interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="intro.html" class="btn btn-neutral float-right" title="Introduction, general protocol" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="depp.html" class="btn btn-neutral float-left" title="DEPP: parallel port subsystem" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dspi.html" class="btn btn-neutral float-right" title="DSPI: SPI controller subsystem" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

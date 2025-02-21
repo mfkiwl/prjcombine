@@ -83,7 +83,10 @@
 <li class="toctree-l2"><a class="reference internal" href="djtg.html">DJTG: JTAG controller subsystem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dpio.html">DPIO: simple GPIO subsystem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="depp.html">DEPP: parallel port subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dstm.html">DSTM: FX2 FIFO interface subsystem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dspi.html">DSPI: SPI controller subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dtwi.html">DTWI: I²C / SMBus subsystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="daci.html">DACI: UART subsystem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="devices.html">Devices</a></li>
 </ul>
 </li>
@@ -287,7 +290,7 @@ A secret 16-bit nonce must first be set via the <code class="docutils literal no
 request, then this request must be used to get a 32-bit MAC from the device.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">bmRequestType</span></code>: <code class="docutils literal notranslate"><span class="pre">0xc0</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">bRequest</span></code>: <code class="docutils literal notranslate"><span class="pre">0xe9</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bRequest</span></code>: <code class="docutils literal notranslate"><span class="pre">0xec</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">wValue</span></code>: 0</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">wIndex</span></code>: 0</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">wLength</span></code>: 4</p></li>
@@ -315,7 +318,13 @@ The following subsystems can exist:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">0x02</span></code>: DJTG (JTAG, bit 0 in <code class="docutils literal notranslate"><span class="pre">GET_CAPS</span></code>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">0x03</span></code>: DPIO (simple GPIO, bit 1 in <code class="docutils literal notranslate"><span class="pre">GET_CAPS</span></code>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">0x04</span></code>: DEPP (EPP-like parallel port, bit 2 in <code class="docutils literal notranslate"><span class="pre">GET_CAPS</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0x05</span></code>: DSTM (FX2 FIFO interface, bit 3 in <code class="docutils literal notranslate"><span class="pre">GET_CAPS</span></code>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">0x06</span></code>: DSPI (SPI, bit 4 in <code class="docutils literal notranslate"><span class="pre">GET_CAPS</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0x07</span></code>: DTWI (I²C / SMBus, bit 5 in <code class="docutils literal notranslate"><span class="pre">GET_CAPS</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0x08</span></code>: DACI (UART, bit 6 in <code class="docutils literal notranslate"><span class="pre">GET_CAPS</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0x09</span></code>: DAIO (analog I/O, bit 7 in <code class="docutils literal notranslate"><span class="pre">GET_CAPS</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0x0a</span></code>: DEMC (electro-mechanical control, bit 8 in <code class="docutils literal notranslate"><span class="pre">GET_CAPS</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0x0c</span></code>: DGIO (general sensor and user I/O, bit 10 in <code class="docutils literal notranslate"><span class="pre">GET_CAPS</span></code>)</p></li>
 </ul>
 <div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
