@@ -20,7 +20,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Database — devices" href="db-devices.html" />
+    <link rel="next" title="Database — chips" href="db-chips.html" />
     <link rel="prev" title="Bitstream structure" href="bitstream.html" /> 
 </head>
 
@@ -54,7 +54,7 @@
 <li class="toctree-l2"><a class="reference internal" href="bitstream.html">Bitstream structure</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Database schema</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#top-level">Top level</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#device">Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chip">Chip</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bond">Bond</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#speed">Speed</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#part">Part</a></li>
@@ -62,11 +62,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#jed-bits">JED bits</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="db-devices.html">Database — devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db-chips.html">Database — chips</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jtag.html">JTAG interface</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coolrunner2/index.html">Xilinx Coolrunner II CPLDs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../digilent/index.html">Digilent Adept Programmers</a></li>
 </ul>
 
@@ -105,7 +105,7 @@
 <h2>Top level<a class="headerlink" href="#top-level" title="Link to this heading"></a></h2>
 <p>The top level of the database is an object, with the following fields:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">devices</span></code> (list of object): list of <a class="reference internal" href="#xpla3-db-device"><span class="std std-ref">device</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chips</span></code> (list of object): list of <a class="reference internal" href="#xpla3-db-chip"><span class="std std-ref">chip</span></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">bonds</span></code> (list of object): list of <a class="reference internal" href="#xpla3-db-bond"><span class="std std-ref">bond</span></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">speeds</span></code> (list of object): list of <a class="reference internal" href="#xpla3-db-speed"><span class="std std-ref">speed</span></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">parts</span></code> (list of object): list of <a class="reference internal" href="#xpla3-db-part"><span class="std std-ref">part</span></a></p></li>
@@ -116,12 +116,12 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">jed_mc_bits_buried</span></code> (array) a <a class="reference internal" href="#xpla3-db-jed-bits"><span class="std std-ref">jed bits list</span></a> describing per-MC bits for MCs without IOBs</p></li>
 </ul>
 </section>
-<section id="device">
-<span id="xpla3-db-device"></span><h2>Device<a class="headerlink" href="#device" title="Link to this heading"></a></h2>
-<p>A device is a structure describing a particular device die.  A device is referenced
-from a <a class="reference internal" href="#xpla3-db-part"><span class="std std-ref">part</span></a>.  A device is an object with the following fields:</p>
+<section id="chip">
+<span id="xpla3-db-chip"></span><h2>Chip<a class="headerlink" href="#chip" title="Link to this heading"></a></h2>
+<p>A chip is a structure describing a particular XPLA3 die.  A chip is referenced
+from a <a class="reference internal" href="#xpla3-db-part"><span class="std std-ref">part</span></a>.  A chip is an object with the following fields:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">idcode_part</span></code> (number): bit 12-27 of the JTAG IDCODE of the device, with low 3 bits (package type) masked to 0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">idcode_part</span></code> (number): bit 12-27 of the JTAG IDCODE of the chip, with low 3 bits (package type) masked to 0</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">bs_cols</span></code> (number): bitstream width in columns</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">imux_width</span></code> (number): width of the IMUX bitstream area in columns (and also the size of a single IMUX selector in bits)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">fb_rows</span></code> (number): the number of FB rows</p></li>
@@ -133,7 +133,7 @@ from a <a class="reference internal" href="#xpla3-db-part"><span class="std std-
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">io_mcs</span></code> (array of number): list of MC ids that have IOBs; the list is the same across all FBs, and the list stores only MC indices</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">io_special</span></code> (map from string to pair of numbers): describes the I/O pads with special functions on the device.
+<li><p><code class="docutils literal notranslate"><span class="pre">io_special</span></code> (map from string to pair of numbers): describes the I/O pads with special functions on the chip.
 The keys can be:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;TCK&quot;</span></code></p></li>
@@ -151,11 +151,11 @@ is MC index.</p>
 </section>
 <section id="bond">
 <span id="xpla3-db-bond"></span><h2>Bond<a class="headerlink" href="#bond" title="Link to this heading"></a></h2>
-<p>A bond is a structure describing the mapping of device pads to package pins.
+<p>A bond is a structure describing the mapping of chip pads to package pins.
 Bonds are referenced from <a class="reference internal" href="#xpla3-db-part"><span class="std std-ref">part</span></a> packages.  A bond is an object
 with the following fields:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">idcode_part</span></code> (number): bit 12-27 of the JTAG IDCODE of the device</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">idcode_part</span></code> (number): bit 12-27 of the JTAG IDCODE of the chip</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pins</span></code> (map from string to string): the pins of the package; they keys are package pin names, and the values are:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">NC</span></code>: unconnected pin</p></li>
@@ -179,10 +179,10 @@ All timing data is given in picoseconds, and is always an integer number.</p></l
 <section id="part">
 <span id="xpla3-db-part"></span><h2>Part<a class="headerlink" href="#part" title="Link to this heading"></a></h2>
 <p>A part is a structure describing a particular commercially available part number.
-Several parts may correspond to the same device.  A part is an object with the following fields:</p>
+Several parts may correspond to the same chip.  A part is an object with the following fields:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> (string): the base name of the part, in lowercase</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">device</span></code> (number): the index of the corresponding device in the <code class="docutils literal notranslate"><span class="pre">devices</span></code> field
+<li><p><code class="docutils literal notranslate"><span class="pre">chip</span></code> (number): the index of the corresponding chip in the <code class="docutils literal notranslate"><span class="pre">chips</span></code> field
 of the database</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">packages</span></code> (map from string to int): the packages in which this part is available;
 the key is package name, and the value is the index of the corresponding bond in the <code class="docutils literal notranslate"><span class="pre">bonds</span></code> database field</p></li>
@@ -192,7 +192,7 @@ the key is speed grade name (including the leading <code class="docutils literal
 </section>
 <section id="tile">
 <span id="xpla3-db-tile"></span><h2>Tile<a class="headerlink" href="#tile" title="Link to this heading"></a></h2>
-<p>A tile is a structure describing a set of device fuses.</p>
+<p>A tile is a structure describing a set of chip fuses.</p>
 <p>A tile is an object where the keys are fuse set names, and the values are objects
 with the following keys:</p>
 <ul>
@@ -234,7 +234,7 @@ Each item of the array is itself an array of two items:</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="bitstream.html" class="btn btn-neutral float-left" title="Bitstream structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="db-devices.html" class="btn btn-neutral float-right" title="Database — devices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="db-chips.html" class="btn btn-neutral float-right" title="Database — chips" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

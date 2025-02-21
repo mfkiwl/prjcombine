@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XC95144 &mdash; Project Combine  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="XC95216" href="db-chip-xc95216.html" />
+    <link rel="prev" title="XC95108" href="db-chip-xc95108.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Project Combine
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../xilinx/index.html">Xilinx FPGAs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../siliconblue/index.html">SiliconBlue FPGAs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html">Device structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500.html">Bitstream structure — XC9500</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html">Bitstream structure — XC9500XL/XV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database schema</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="db-chips.html">Database — chips</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="db-chip-xc9536.html">XC9536</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-chip-xc9572.html">XC9572</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-chip-xc95108.html">XC95108</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">XC95144</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#i-o-pins">I/O pins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#speed-data">Speed data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#imux-bits">IMUX bits</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="db-chip-xc95216.html">XC95216</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-chip-xc95288.html">XC95288</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-chip-xc9536xl.html">XC9536XL, XA9536XL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-chip-xc9572xl.html">XC9572XL, XA9572XL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-chip-xc95144xl.html">XC95144XL, XA95144XL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-chip-xc95288xl.html">XC95288XL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-chip-xc9536xv.html">XC9536XV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-chip-xc9572xv.html">XC9572XV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-chip-xc95144xv.html">XC95144XV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-chip-xc95288xv.html">XC95288XV</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jtag.html">JTAG interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coolrunner2/index.html">Xilinx Coolrunner II CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../digilent/index.html">Digilent Adept Programmers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Project Combine</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
+          <li class="breadcrumb-item"><a href="db-chips.html">Database — chips</a></li>
+      <li class="breadcrumb-item active">XC95144</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/xc9500/db-chip-xc95144.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="xc95144">
+<h1>XC95144<a class="headerlink" href="#xc95144" title="Link to this heading"></a></h1>
+<p>IDCODE: <code class="docutils literal notranslate"><span class="pre">0x09508093</span></code></p>
+<p>FB count: 8</p>
+<p>I/O bank count: 1</p>
+<p>FPGM/FPGMI time: 160µs</p>
+<p>FERASE/FBULK time: 1300000µs</p>
+<section id="i-o-pins">
+<h2>I/O pins<a class="headerlink" href="#i-o-pins" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Bank</p></th>
+<th class="head"><p>xc95144-pq100</p></th>
+<th class="head"><p>xc95144-tq100</p></th>
+<th class="head"><p>xc95144-pq160</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IOB_0_0</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P25</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_0_1</p></td>
+<td><p>0</p></td>
+<td><p>P13</p></td>
+<td><p>P11</p></td>
+<td><p>P18</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_0_2</p></td>
+<td><p>0</p></td>
+<td><p>P14</p></td>
+<td><p>P12</p></td>
+<td><p>P19</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_0_3</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P27</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_0_4</p></td>
+<td><p>0</p></td>
+<td><p>P15</p></td>
+<td><p>P13</p></td>
+<td><p>P21</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_0_5</p></td>
+<td><p>0</p></td>
+<td><p>P16</p></td>
+<td><p>P14</p></td>
+<td><p>P22</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_0_6</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P32</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_0_7</p></td>
+<td><p>0</p></td>
+<td><p>P17</p></td>
+<td><p>P15</p></td>
+<td><p>P23</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_0_8</p></td>
+<td><p>0</p></td>
+<td><p>P18</p></td>
+<td><p>P16</p></td>
+<td><p>P24</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_0_9</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P34</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_0_10</p></td>
+<td><p>0</p></td>
+<td><p>P19</p></td>
+<td><p>P17</p></td>
+<td><p>P26</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_0_11</p></td>
+<td><p>0</p></td>
+<td><p>P20</p></td>
+<td><p>P18</p></td>
+<td><p>P28</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_0_12</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P38</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_0_13</p></td>
+<td><p>0</p></td>
+<td><p>P21</p></td>
+<td><p>P19</p></td>
+<td><p>P29</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_0_14</p></td>
+<td><p>0</p></td>
+<td><p>P22</p></td>
+<td><p>P20</p></td>
+<td><p>P30</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_0_15</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P39</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_0_16</p></td>
+<td><p>0</p></td>
+<td><p>P24 (GCLK0)</p></td>
+<td><p>P22 (GCLK0)</p></td>
+<td><p>P33 (GCLK0)</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_1_0</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P158</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_1_1</p></td>
+<td><p>0</p></td>
+<td><p>P1 (GSR)</p></td>
+<td><p>P99 (GSR)</p></td>
+<td><p>P159 (GSR)</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_1_2</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P3</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_1_3</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P5</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_1_4</p></td>
+<td><p>0</p></td>
+<td><p>P3 (GOE2)</p></td>
+<td><p>P1 (GOE2)</p></td>
+<td><p>P2 (GOE2)</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_1_5</p></td>
+<td><p>0</p></td>
+<td><p>P4 (GOE3)</p></td>
+<td><p>P2 (GOE3)</p></td>
+<td><p>P4 (GOE3)</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_1_6</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P7</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_1_7</p></td>
+<td><p>0</p></td>
+<td><p>P5 (GOE0)</p></td>
+<td><p>P3 (GOE0)</p></td>
+<td><p>P6 (GOE0)</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_1_8</p></td>
+<td><p>0</p></td>
+<td><p>P6 (GOE1)</p></td>
+<td><p>P4 (GOE1)</p></td>
+<td><p>P8 (GOE1)</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_1_9</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P9</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_1_10</p></td>
+<td><p>0</p></td>
+<td><p>P8</p></td>
+<td><p>P6</p></td>
+<td><p>P11</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_1_11</p></td>
+<td><p>0</p></td>
+<td><p>P9</p></td>
+<td><p>P7</p></td>
+<td><p>P12</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_1_12</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P14</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_1_13</p></td>
+<td><p>0</p></td>
+<td><p>P10</p></td>
+<td><p>P8</p></td>
+<td><p>P13</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_1_14</p></td>
+<td><p>0</p></td>
+<td><p>P11</p></td>
+<td><p>P9</p></td>
+<td><p>P15</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_1_15</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P16</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_1_16</p></td>
+<td><p>0</p></td>
+<td><p>P12</p></td>
+<td><p>P10</p></td>
+<td><p>P17</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_2_0</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P43</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_2_1</p></td>
+<td><p>0</p></td>
+<td><p>P25 (GCLK1)</p></td>
+<td><p>P23 (GCLK1)</p></td>
+<td><p>P35 (GCLK1)</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_2_2</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P45</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_2_3</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P48</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_2_4</p></td>
+<td><p>0</p></td>
+<td><p>P26</p></td>
+<td><p>P24</p></td>
+<td><p>P36</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_2_5</p></td>
+<td><p>0</p></td>
+<td><p>P27</p></td>
+<td><p>P25</p></td>
+<td><p>P37</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_2_6</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P50</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_2_7</p></td>
+<td><p>0</p></td>
+<td><p>P29 (GCLK2)</p></td>
+<td><p>P27 (GCLK2)</p></td>
+<td><p>P42 (GCLK2)</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_2_8</p></td>
+<td><p>0</p></td>
+<td><p>P30</p></td>
+<td><p>P28</p></td>
+<td><p>P44</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_2_9</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P52</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_2_10</p></td>
+<td><p>0</p></td>
+<td><p>P31</p></td>
+<td><p>P29</p></td>
+<td><p>P47</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_2_11</p></td>
+<td><p>0</p></td>
+<td><p>P32</p></td>
+<td><p>P30</p></td>
+<td><p>P49</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_2_12</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P53</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_2_13</p></td>
+<td><p>0</p></td>
+<td><p>P34</p></td>
+<td><p>P32</p></td>
+<td><p>P54</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_2_14</p></td>
+<td><p>0</p></td>
+<td><p>P35</p></td>
+<td><p>P33</p></td>
+<td><p>P56</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_2_15</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P55</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_2_16</p></td>
+<td><p>0</p></td>
+<td><p>P36</p></td>
+<td><p>P34</p></td>
+<td><p>P57</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_3_0</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P132</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_3_1</p></td>
+<td><p>0</p></td>
+<td><p>P89</p></td>
+<td><p>P87</p></td>
+<td><p>P140</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_3_2</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P147</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_3_3</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P149</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_3_4</p></td>
+<td><p>0</p></td>
+<td><p>P91</p></td>
+<td><p>P89</p></td>
+<td><p>P142</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_3_5</p></td>
+<td><p>0</p></td>
+<td><p>P92</p></td>
+<td><p>P90</p></td>
+<td><p>P143</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_3_6</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P150</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_3_7</p></td>
+<td><p>0</p></td>
+<td><p>P93</p></td>
+<td><p>P91</p></td>
+<td><p>P144</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_3_8</p></td>
+<td><p>0</p></td>
+<td><p>P94</p></td>
+<td><p>P92</p></td>
+<td><p>P145</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_3_9</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P151</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_3_10</p></td>
+<td><p>0</p></td>
+<td><p>P95</p></td>
+<td><p>P93</p></td>
+<td><p>P146</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_3_11</p></td>
+<td><p>0</p></td>
+<td><p>P96</p></td>
+<td><p>P94</p></td>
+<td><p>P148</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_3_12</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P153</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_3_13</p></td>
+<td><p>0</p></td>
+<td><p>P97</p></td>
+<td><p>P95</p></td>
+<td><p>P152</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_3_14</p></td>
+<td><p>0</p></td>
+<td><p>P98</p></td>
+<td><p>P96</p></td>
+<td><p>P154</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_3_15</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P155</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_3_16</p></td>
+<td><p>0</p></td>
+<td><p>P99</p></td>
+<td><p>P97</p></td>
+<td><p>P156</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_4_0</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P65</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_4_1</p></td>
+<td><p>0</p></td>
+<td><p>P37</p></td>
+<td><p>P35</p></td>
+<td><p>P58</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_4_2</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P66</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_4_3</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P67</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_4_4</p></td>
+<td><p>0</p></td>
+<td><p>P38</p></td>
+<td><p>P36</p></td>
+<td><p>P59</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_4_5</p></td>
+<td><p>0</p></td>
+<td><p>P39</p></td>
+<td><p>P37</p></td>
+<td><p>P60</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_4_6</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P74</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_4_7</p></td>
+<td><p>0</p></td>
+<td><p>P41</p></td>
+<td><p>P39</p></td>
+<td><p>P62</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_4_8</p></td>
+<td><p>0</p></td>
+<td><p>P42</p></td>
+<td><p>P40</p></td>
+<td><p>P63</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_4_9</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P76</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_4_10</p></td>
+<td><p>0</p></td>
+<td><p>P43</p></td>
+<td><p>P41</p></td>
+<td><p>P64</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_4_11</p></td>
+<td><p>0</p></td>
+<td><p>P44</p></td>
+<td><p>P42</p></td>
+<td><p>P68</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_4_12</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P78</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_4_13</p></td>
+<td><p>0</p></td>
+<td><p>P45</p></td>
+<td><p>P43</p></td>
+<td><p>P69</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_4_14</p></td>
+<td><p>0</p></td>
+<td><p>P48</p></td>
+<td><p>P46</p></td>
+<td><p>P72</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_4_15</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P83</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_4_16</p></td>
+<td><p>0</p></td>
+<td><p>P51</p></td>
+<td><p>P49</p></td>
+<td><p>P77</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_5_1</p></td>
+<td><p>0</p></td>
+<td><p>P76</p></td>
+<td><p>P74</p></td>
+<td><p>P117</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_5_2</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P119</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_5_3</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P123</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_5_4</p></td>
+<td><p>0</p></td>
+<td><p>P78</p></td>
+<td><p>P76</p></td>
+<td><p>P122</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_5_5</p></td>
+<td><p>0</p></td>
+<td><p>P79</p></td>
+<td><p>P77</p></td>
+<td><p>P124</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_5_6</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P125</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_5_7</p></td>
+<td><p>0</p></td>
+<td><p>P80</p></td>
+<td><p>P78</p></td>
+<td><p>P126</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_5_8</p></td>
+<td><p>0</p></td>
+<td><p>P81</p></td>
+<td><p>P79</p></td>
+<td><p>P129</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_5_9</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P128</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_5_10</p></td>
+<td><p>0</p></td>
+<td><p>P82</p></td>
+<td><p>P80</p></td>
+<td><p>P133</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_5_11</p></td>
+<td><p>0</p></td>
+<td><p>P83</p></td>
+<td><p>P81</p></td>
+<td><p>P134</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_5_12</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P130</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_5_13</p></td>
+<td><p>0</p></td>
+<td><p>P84</p></td>
+<td><p>P82</p></td>
+<td><p>P135</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_5_14</p></td>
+<td><p>0</p></td>
+<td><p>P87</p></td>
+<td><p>P85</p></td>
+<td><p>P138</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_5_15</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P131</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_5_16</p></td>
+<td><p>0</p></td>
+<td><p>P88</p></td>
+<td><p>P86</p></td>
+<td><p>P139</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_6_1</p></td>
+<td><p>0</p></td>
+<td><p>P52</p></td>
+<td><p>P50</p></td>
+<td><p>P79</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_6_2</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P84</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_6_3</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P85</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_6_4</p></td>
+<td><p>0</p></td>
+<td><p>P54</p></td>
+<td><p>P52</p></td>
+<td><p>P82</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_6_5</p></td>
+<td><p>0</p></td>
+<td><p>P55</p></td>
+<td><p>P53</p></td>
+<td><p>P86</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_6_6</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P87</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_6_7</p></td>
+<td><p>0</p></td>
+<td><p>P56</p></td>
+<td><p>P54</p></td>
+<td><p>P88</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_6_8</p></td>
+<td><p>0</p></td>
+<td><p>P57</p></td>
+<td><p>P55</p></td>
+<td><p>P90</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_6_9</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P89</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_6_10</p></td>
+<td><p>0</p></td>
+<td><p>P58</p></td>
+<td><p>P56</p></td>
+<td><p>P92</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_6_11</p></td>
+<td><p>0</p></td>
+<td><p>P60</p></td>
+<td><p>P58</p></td>
+<td><p>P95</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_6_12</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P91</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_6_13</p></td>
+<td><p>0</p></td>
+<td><p>P61</p></td>
+<td><p>P59</p></td>
+<td><p>P96</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_6_14</p></td>
+<td><p>0</p></td>
+<td><p>P62</p></td>
+<td><p>P60</p></td>
+<td><p>P97</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_6_15</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P93</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_6_16</p></td>
+<td><p>0</p></td>
+<td><p>P63</p></td>
+<td><p>P61</p></td>
+<td><p>P98</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_7_1</p></td>
+<td><p>0</p></td>
+<td><p>P65</p></td>
+<td><p>P63</p></td>
+<td><p>P101</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_7_2</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P105</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_7_3</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P107</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_7_4</p></td>
+<td><p>0</p></td>
+<td><p>P66</p></td>
+<td><p>P64</p></td>
+<td><p>P102</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_7_5</p></td>
+<td><p>0</p></td>
+<td><p>P67</p></td>
+<td><p>P65</p></td>
+<td><p>P103</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_7_6</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P109</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_7_7</p></td>
+<td><p>0</p></td>
+<td><p>P68</p></td>
+<td><p>P66</p></td>
+<td><p>P104</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_7_8</p></td>
+<td><p>0</p></td>
+<td><p>P69</p></td>
+<td><p>P67</p></td>
+<td><p>P106</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_7_9</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P112</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_7_10</p></td>
+<td><p>0</p></td>
+<td><p>P70</p></td>
+<td><p>P68</p></td>
+<td><p>P108</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_7_11</p></td>
+<td><p>0</p></td>
+<td><p>P72</p></td>
+<td><p>P70</p></td>
+<td><p>P111</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_7_12</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P114</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_7_13</p></td>
+<td><p>0</p></td>
+<td><p>P73</p></td>
+<td><p>P71</p></td>
+<td><p>P113</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_7_14</p></td>
+<td><p>0</p></td>
+<td><p>P74</p></td>
+<td><p>P72</p></td>
+<td><p>P115</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOB_7_15</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>P118</p></td>
+</tr>
+<tr class="row-even"><td><p>IOB_7_16</p></td>
+<td><p>0</p></td>
+<td><p>P75</p></td>
+<td><p>P73</p></td>
+<td><p>P116</p></td>
+</tr>
+<tr class="row-odd"><td><p>TCK</p></td>
+<td><p>-</p></td>
+<td><p>P50</p></td>
+<td><p>P48</p></td>
+<td><p>P75</p></td>
+</tr>
+<tr class="row-even"><td><p>TMS</p></td>
+<td><p>-</p></td>
+<td><p>P49</p></td>
+<td><p>P47</p></td>
+<td><p>P73</p></td>
+</tr>
+<tr class="row-odd"><td><p>TDI</p></td>
+<td><p>-</p></td>
+<td><p>P47</p></td>
+<td><p>P45</p></td>
+<td><p>P71</p></td>
+</tr>
+<tr class="row-even"><td><p>TDO</p></td>
+<td><p>0</p></td>
+<td><p>P85</p></td>
+<td><p>P83</p></td>
+<td><p>P136</p></td>
+</tr>
+<tr class="row-odd"><td><p>GND</p></td>
+<td><p>-</p></td>
+<td><p>P2</p>
+<p>P23</p>
+<p>P33</p>
+<p>P46</p>
+<p>P64</p>
+<p>P71</p>
+<p>P77</p>
+<p>P86</p>
+</td>
+<td><p>P100</p>
+<p>P21</p>
+<p>P31</p>
+<p>P44</p>
+<p>P62</p>
+<p>P69</p>
+<p>P75</p>
+<p>P84</p>
+</td>
+<td><p>P100</p>
+<p>P110</p>
+<p>P120</p>
+<p>P127</p>
+<p>P137</p>
+<p>P160</p>
+<p>P20</p>
+<p>P31</p>
+<p>P40</p>
+<p>P51</p>
+<p>P70</p>
+<p>P80</p>
+<p>P99</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>VCCINT</p></td>
+<td><p>-</p></td>
+<td><p>P100</p>
+<p>P59</p>
+<p>P7</p>
+</td>
+<td><p>P5</p>
+<p>P57</p>
+<p>P98</p>
+</td>
+<td><p>P10</p>
+<p>P157</p>
+<p>P46</p>
+<p>P94</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>VCCIO0</p></td>
+<td><p>0</p></td>
+<td><p>P28</p>
+<p>P40</p>
+<p>P53</p>
+<p>P90</p>
+</td>
+<td><p>P26</p>
+<p>P38</p>
+<p>P51</p>
+<p>P88</p>
+</td>
+<td><p>P1</p>
+<p>P121</p>
+<p>P141</p>
+<p>P41</p>
+<p>P61</p>
+<p>P81</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>NC</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="speed-data">
+<h2>Speed data<a class="headerlink" href="#speed-data" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Timing parameter</p></th>
+<th class="head"><p>xc95144-7</p></th>
+<th class="head"><p>xc95144-10</p></th>
+<th class="head"><p>xc95144-15</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DEL_CLK_Q</p></td>
+<td><p>500</p></td>
+<td><p>500</p></td>
+<td><p>500</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEL_D_Q_COMB</p></td>
+<td><p>500</p></td>
+<td><p>1000</p></td>
+<td><p>3000</p></td>
+</tr>
+<tr class="row-even"><td><p>DEL_EXP_D</p></td>
+<td><p>1000</p></td>
+<td><p>1000</p></td>
+<td><p>1000</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEL_EXP_EXP</p></td>
+<td><p>1000</p></td>
+<td><p>1000</p></td>
+<td><p>1000</p></td>
+</tr>
+<tr class="row-even"><td><p>DEL_IBUF_FCLK</p></td>
+<td><p>1500</p></td>
+<td><p>2500</p></td>
+<td><p>3000</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEL_IBUF_FOE</p></td>
+<td><p>5500</p></td>
+<td><p>6000</p></td>
+<td><p>11000</p></td>
+</tr>
+<tr class="row-even"><td><p>DEL_IBUF_FSR</p></td>
+<td><p>4500</p></td>
+<td><p>6000</p></td>
+<td><p>7500</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEL_IBUF_IMUX</p></td>
+<td><p>2500</p></td>
+<td><p>3500</p></td>
+<td><p>4500</p></td>
+</tr>
+<tr class="row-even"><td><p>DEL_IMUX_D_HP</p></td>
+<td><p>2000</p></td>
+<td><p>2500</p></td>
+<td><p>3000</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEL_IMUX_D_LP</p></td>
+<td><p>10000</p></td>
+<td><p>11000</p></td>
+<td><p>11500</p></td>
+</tr>
+<tr class="row-even"><td><p>DEL_IMUX_PT_CLK</p></td>
+<td><p>3000</p></td>
+<td><p>3000</p></td>
+<td><p>2500</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEL_IMUX_PT_OE</p></td>
+<td><p>7000</p></td>
+<td><p>6500</p></td>
+<td><p>9500</p></td>
+</tr>
+<tr class="row-even"><td><p>DEL_OBUF_FAST</p></td>
+<td><p>2500</p></td>
+<td><p>3000</p></td>
+<td><p>4500</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEL_OBUF_SLOW</p></td>
+<td><p>6500</p></td>
+<td><p>7500</p></td>
+<td><p>9500</p></td>
+</tr>
+<tr class="row-even"><td><p>DEL_SR_Q</p></td>
+<td><p>6500</p></td>
+<td><p>7000</p></td>
+<td><p>8000</p></td>
+</tr>
+<tr class="row-odd"><td><p>DEL_UIM_IMUX</p></td>
+<td><p>8000</p></td>
+<td><p>9500</p></td>
+<td><p>11000</p></td>
+</tr>
+<tr class="row-even"><td><p>HOLD_D_CLK</p></td>
+<td><p>3000</p></td>
+<td><p>3500</p></td>
+<td><p>4500</p></td>
+</tr>
+<tr class="row-odd"><td><p>RECOVERY_SR_CLK</p></td>
+<td><p>7500</p></td>
+<td><p>10000</p></td>
+<td><p>10000</p></td>
+</tr>
+<tr class="row-even"><td><p>SETUP_D_CLK</p></td>
+<td><p>1500</p></td>
+<td><p>2500</p></td>
+<td><p>3500</p></td>
+</tr>
+<tr class="row-odd"><td><p>WIDTH_CLK</p></td>
+<td><p>4000</p></td>
+<td><p>4500</p></td>
+<td><p>5000</p></td>
+</tr>
+<tr class="row-even"><td><p>WIDTH_CLK_PT</p></td>
+<td><p>4000</p></td>
+<td><p>4500</p></td>
+<td><p>5000</p></td>
+</tr>
+<tr class="row-odd"><td><p>WIDTH_SR</p></td>
+<td><p>7000</p></td>
+<td><p>7500</p></td>
+<td><p>8000</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="imux-bits">
+<h2>IMUX bits<a class="headerlink" href="#imux-bits" title="Link to this heading"></a></h2>
+<table class="docutils align-default prjcombine-tile">
+<tr><th rowspan="3">Row</th><th colspan="18">Bit, column</th></tr>
+<tr><th colspan="9">6</th><th colspan="9">7</th></tr>
+<tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th></tr>
+<tr><td>55</td>
+<td><a href="#bits-imux-IM[0].MUX" title="IM[0].MUX[0]">X</a></td><td><a href="#bits-imux-IM[0].MUX" title="IM[0].MUX[1]">X</a></td><td><a href="#bits-imux-IM[0].MUX" title="IM[0].MUX[2]">X</a></td><td><a href="#bits-imux-IM[0].MUX" title="IM[0].MUX[3]">X</a></td><td>-</td><td>-</td><td><a href="#bits-imux-IM[1].MUX" title="IM[1].MUX[0]">X</a></td><td><a href="#bits-imux-IM[1].MUX" title="IM[1].MUX[1]">X</a></td><td><a href="#bits-imux-IM[1].MUX" title="IM[1].MUX[2]">X</a></td><td><a href="#bits-imux-IM[1].MUX" title="IM[1].MUX[3]">X</a></td><td>-</td><td>-</td><td><a href="#bits-imux-IM[2].MUX" title="IM[2].MUX[0]">X</a></td><td><a href="#bits-imux-IM[2].MUX" title="IM[2].MUX[1]">X</a></td><td><a href="#bits-imux-IM[2].MUX" title="IM[2].MUX[2]">X</a></td><td><a href="#bits-imux-IM[2].MUX" title="IM[2].MUX[3]">X</a></td><td>-</td><td>-</td></tr>
+<tr><td>56</td>
+<td><a href="#bits-imux-IM[3].MUX" title="IM[3].MUX[0]">X</a></td><td><a href="#bits-imux-IM[3].MUX" title="IM[3].MUX[1]">X</a></td><td><a href="#bits-imux-IM[3].MUX" title="IM[3].MUX[2]">X</a></td><td><a href="#bits-imux-IM[3].MUX" title="IM[3].MUX[3]">X</a></td><td>-</td><td>-</td><td><a href="#bits-imux-IM[4].MUX" title="IM[4].MUX[0]">X</a></td><td><a href="#bits-imux-IM[4].MUX" title="IM[4].MUX[1]">X</a></td><td><a href="#bits-imux-IM[4].MUX" title="IM[4].MUX[2]">X</a></td><td><a href="#bits-imux-IM[4].MUX" title="IM[4].MUX[3]">X</a></td><td>-</td><td>-</td><td><a href="#bits-imux-IM[5].MUX" title="IM[5].MUX[0]">X</a></td><td><a href="#bits-imux-IM[5].MUX" title="IM[5].MUX[1]">X</a></td><td><a href="#bits-imux-IM[5].MUX" title="IM[5].MUX[2]">X</a></td><td><a href="#bits-imux-IM[5].MUX" title="IM[5].MUX[3]">X</a></td><td><a href="#bits-imux-IM[5].MUX" title="IM[5].MUX[4]">X</a></td><td>-</td></tr>
+<tr><td>57</td>
+<td><a href="#bits-imux-IM[6].MUX" title="IM[6].MUX[0]">X</a></td><td><a href="#bits-imux-IM[6].MUX" title="IM[6].MUX[1]">X</a></td><td><a href="#bits-imux-IM[6].MUX" title="IM[6].MUX[2]">X</a></td><td><a href="#bits-imux-IM[6].MUX" title="IM[6].MUX[3]">X</a></td><td><a href="#bits-imux-IM[6].MUX" title="IM[6].MUX[4]">X</a></td><td>-</td><td><a href="#bits-imux-IM[7].MUX" title="IM[7].MUX[0]">X</a></td><td><a href="#bits-imux-IM[7].MUX" title="IM[7].MUX[1]">X</a></td><td><a href="#bits-imux-IM[7].MUX" title="IM[7].MUX[2]">X</a></td><td><a href="#bits-imux-IM[7].MUX" title="IM[7].MUX[3]">X</a></td><td>-</td><td>-</td><td><a href="#bits-imux-IM[8].MUX" title="IM[8].MUX[0]">X</a></td><td><a href="#bits-imux-IM[8].MUX" title="IM[8].MUX[1]">X</a></td><td><a href="#bits-imux-IM[8].MUX" title="IM[8].MUX[2]">X</a></td><td><a href="#bits-imux-IM[8].MUX" title="IM[8].MUX[3]">X</a></td><td><a href="#bits-imux-IM[8].MUX" title="IM[8].MUX[4]">X</a></td><td>-</td></tr>
+<tr><td>58</td>
+<td><a href="#bits-imux-IM[9].MUX" title="IM[9].MUX[0]">X</a></td><td><a href="#bits-imux-IM[9].MUX" title="IM[9].MUX[1]">X</a></td><td><a href="#bits-imux-IM[9].MUX" title="IM[9].MUX[2]">X</a></td><td><a href="#bits-imux-IM[9].MUX" title="IM[9].MUX[3]">X</a></td><td><a href="#bits-imux-IM[9].MUX" title="IM[9].MUX[4]">X</a></td><td>-</td><td><a href="#bits-imux-IM[10].MUX" title="IM[10].MUX[0]">X</a></td><td><a href="#bits-imux-IM[10].MUX" title="IM[10].MUX[1]">X</a></td><td><a href="#bits-imux-IM[10].MUX" title="IM[10].MUX[2]">X</a></td><td><a href="#bits-imux-IM[10].MUX" title="IM[10].MUX[3]">X</a></td><td>-</td><td>-</td><td><a href="#bits-imux-IM[11].MUX" title="IM[11].MUX[0]">X</a></td><td><a href="#bits-imux-IM[11].MUX" title="IM[11].MUX[1]">X</a></td><td><a href="#bits-imux-IM[11].MUX" title="IM[11].MUX[2]">X</a></td><td><a href="#bits-imux-IM[11].MUX" title="IM[11].MUX[3]">X</a></td><td><a href="#bits-imux-IM[11].MUX" title="IM[11].MUX[4]">X</a></td><td>-</td></tr>
+<tr><td>59</td>
+<td><a href="#bits-imux-IM[12].MUX" title="IM[12].MUX[0]">X</a></td><td><a href="#bits-imux-IM[12].MUX" title="IM[12].MUX[1]">X</a></td><td><a href="#bits-imux-IM[12].MUX" title="IM[12].MUX[2]">X</a></td><td><a href="#bits-imux-IM[12].MUX" title="IM[12].MUX[3]">X</a></td><td><a href="#bits-imux-IM[12].MUX" title="IM[12].MUX[4]">X</a></td><td>-</td><td><a href="#bits-imux-IM[13].MUX" title="IM[13].MUX[0]">X</a></td><td><a href="#bits-imux-IM[13].MUX" title="IM[13].MUX[1]">X</a></td><td><a href="#bits-imux-IM[13].MUX" title="IM[13].MUX[2]">X</a></td><td><a href="#bits-imux-IM[13].MUX" title="IM[13].MUX[3]">X</a></td><td>-</td><td>-</td><td><a href="#bits-imux-IM[14].MUX" title="IM[14].MUX[0]">X</a></td><td><a href="#bits-imux-IM[14].MUX" title="IM[14].MUX[1]">X</a></td><td><a href="#bits-imux-IM[14].MUX" title="IM[14].MUX[2]">X</a></td><td><a href="#bits-imux-IM[14].MUX" title="IM[14].MUX[3]">X</a></td><td>-</td><td>-</td></tr>
+<tr><td>60</td>
+<td><a href="#bits-imux-IM[15].MUX" title="IM[15].MUX[0]">X</a></td><td><a href="#bits-imux-IM[15].MUX" title="IM[15].MUX[1]">X</a></td><td><a href="#bits-imux-IM[15].MUX" title="IM[15].MUX[2]">X</a></td><td><a href="#bits-imux-IM[15].MUX" title="IM[15].MUX[3]">X</a></td><td><a href="#bits-imux-IM[15].MUX" title="IM[15].MUX[4]">X</a></td><td>-</td><td><a href="#bits-imux-IM[16].MUX" title="IM[16].MUX[0]">X</a></td><td><a href="#bits-imux-IM[16].MUX" title="IM[16].MUX[1]">X</a></td><td><a href="#bits-imux-IM[16].MUX" title="IM[16].MUX[2]">X</a></td><td><a href="#bits-imux-IM[16].MUX" title="IM[16].MUX[3]">X</a></td><td>-</td><td>-</td><td><a href="#bits-imux-IM[17].MUX" title="IM[17].MUX[0]">X</a></td><td><a href="#bits-imux-IM[17].MUX" title="IM[17].MUX[1]">X</a></td><td><a href="#bits-imux-IM[17].MUX" title="IM[17].MUX[2]">X</a></td><td><a href="#bits-imux-IM[17].MUX" title="IM[17].MUX[3]">X</a></td><td>-</td><td>-</td></tr>
+<tr><td>61</td>
+<td><a href="#bits-imux-IM[18].MUX" title="IM[18].MUX[0]">X</a></td><td><a href="#bits-imux-IM[18].MUX" title="IM[18].MUX[1]">X</a></td><td><a href="#bits-imux-IM[18].MUX" title="IM[18].MUX[2]">X</a></td><td><a href="#bits-imux-IM[18].MUX" title="IM[18].MUX[3]">X</a></td><td>-</td><td>-</td><td><a href="#bits-imux-IM[19].MUX" title="IM[19].MUX[0]">X</a></td><td><a href="#bits-imux-IM[19].MUX" title="IM[19].MUX[1]">X</a></td><td><a href="#bits-imux-IM[19].MUX" title="IM[19].MUX[2]">X</a></td><td><a href="#bits-imux-IM[19].MUX" title="IM[19].MUX[3]">X</a></td><td>-</td><td>-</td><td><a href="#bits-imux-IM[20].MUX" title="IM[20].MUX[0]">X</a></td><td><a href="#bits-imux-IM[20].MUX" title="IM[20].MUX[1]">X</a></td><td><a href="#bits-imux-IM[20].MUX" title="IM[20].MUX[2]">X</a></td><td><a href="#bits-imux-IM[20].MUX" title="IM[20].MUX[3]">X</a></td><td>-</td><td>-</td></tr>
+<tr><td>62</td>
+<td><a href="#bits-imux-IM[21].MUX" title="IM[21].MUX[0]">X</a></td><td><a href="#bits-imux-IM[21].MUX" title="IM[21].MUX[1]">X</a></td><td><a href="#bits-imux-IM[21].MUX" title="IM[21].MUX[2]">X</a></td><td><a href="#bits-imux-IM[21].MUX" title="IM[21].MUX[3]">X</a></td><td>-</td><td>-</td><td><a href="#bits-imux-IM[22].MUX" title="IM[22].MUX[0]">X</a></td><td><a href="#bits-imux-IM[22].MUX" title="IM[22].MUX[1]">X</a></td><td><a href="#bits-imux-IM[22].MUX" title="IM[22].MUX[2]">X</a></td><td><a href="#bits-imux-IM[22].MUX" title="IM[22].MUX[3]">X</a></td><td>-</td><td>-</td><td><a href="#bits-imux-IM[23].MUX" title="IM[23].MUX[0]">X</a></td><td><a href="#bits-imux-IM[23].MUX" title="IM[23].MUX[1]">X</a></td><td><a href="#bits-imux-IM[23].MUX" title="IM[23].MUX[2]">X</a></td><td><a href="#bits-imux-IM[23].MUX" title="IM[23].MUX[3]">X</a></td><td>-</td><td>-</td></tr>
+<tr><td>63</td>
+<td><a href="#bits-imux-IM[24].MUX" title="IM[24].MUX[0]">X</a></td><td><a href="#bits-imux-IM[24].MUX" title="IM[24].MUX[1]">X</a></td><td><a href="#bits-imux-IM[24].MUX" title="IM[24].MUX[2]">X</a></td><td><a href="#bits-imux-IM[24].MUX" title="IM[24].MUX[3]">X</a></td><td>-</td><td>-</td><td><a href="#bits-imux-IM[25].MUX" title="IM[25].MUX[0]">X</a></td><td><a href="#bits-imux-IM[25].MUX" title="IM[25].MUX[1]">X</a></td><td><a href="#bits-imux-IM[25].MUX" title="IM[25].MUX[2]">X</a></td><td><a href="#bits-imux-IM[25].MUX" title="IM[25].MUX[3]">X</a></td><td>-</td><td>-</td><td><a href="#bits-imux-IM[26].MUX" title="IM[26].MUX[0]">X</a></td><td><a href="#bits-imux-IM[26].MUX" title="IM[26].MUX[1]">X</a></td><td><a href="#bits-imux-IM[26].MUX" title="IM[26].MUX[2]">X</a></td><td><a href="#bits-imux-IM[26].MUX" title="IM[26].MUX[3]">X</a></td><td>-</td><td>-</td></tr>
+<tr><td>64</td>
+<td><a href="#bits-imux-IM[27].MUX" title="IM[27].MUX[0]">X</a></td><td><a href="#bits-imux-IM[27].MUX" title="IM[27].MUX[1]">X</a></td><td><a href="#bits-imux-IM[27].MUX" title="IM[27].MUX[2]">X</a></td><td><a href="#bits-imux-IM[27].MUX" title="IM[27].MUX[3]">X</a></td><td>-</td><td>-</td><td><a href="#bits-imux-IM[28].MUX" title="IM[28].MUX[0]">X</a></td><td><a href="#bits-imux-IM[28].MUX" title="IM[28].MUX[1]">X</a></td><td><a href="#bits-imux-IM[28].MUX" title="IM[28].MUX[2]">X</a></td><td><a href="#bits-imux-IM[28].MUX" title="IM[28].MUX[3]">X</a></td><td>-</td><td>-</td><td><a href="#bits-imux-IM[29].MUX" title="IM[29].MUX[0]">X</a></td><td><a href="#bits-imux-IM[29].MUX" title="IM[29].MUX[1]">X</a></td><td><a href="#bits-imux-IM[29].MUX" title="IM[29].MUX[2]">X</a></td><td><a href="#bits-imux-IM[29].MUX" title="IM[29].MUX[3]">X</a></td><td>-</td><td>-</td></tr>
+<tr><td>65</td>
+<td><a href="#bits-imux-IM[30].MUX" title="IM[30].MUX[0]">X</a></td><td><a href="#bits-imux-IM[30].MUX" title="IM[30].MUX[1]">X</a></td><td><a href="#bits-imux-IM[30].MUX" title="IM[30].MUX[2]">X</a></td><td><a href="#bits-imux-IM[30].MUX" title="IM[30].MUX[3]">X</a></td><td>-</td><td>-</td><td><a href="#bits-imux-IM[31].MUX" title="IM[31].MUX[0]">X</a></td><td><a href="#bits-imux-IM[31].MUX" title="IM[31].MUX[1]">X</a></td><td><a href="#bits-imux-IM[31].MUX" title="IM[31].MUX[2]">X</a></td><td><a href="#bits-imux-IM[31].MUX" title="IM[31].MUX[3]">X</a></td><td>-</td><td>-</td><td><a href="#bits-imux-IM[32].MUX" title="IM[32].MUX[0]">X</a></td><td><a href="#bits-imux-IM[32].MUX" title="IM[32].MUX[1]">X</a></td><td><a href="#bits-imux-IM[32].MUX" title="IM[32].MUX[2]">X</a></td><td><a href="#bits-imux-IM[32].MUX" title="IM[32].MUX[3]">X</a></td><td>-</td><td>-</td></tr>
+<tr><td>66</td>
+<td><a href="#bits-imux-IM[33].MUX" title="IM[33].MUX[0]">X</a></td><td><a href="#bits-imux-IM[33].MUX" title="IM[33].MUX[1]">X</a></td><td><a href="#bits-imux-IM[33].MUX" title="IM[33].MUX[2]">X</a></td><td><a href="#bits-imux-IM[33].MUX" title="IM[33].MUX[3]">X</a></td><td>-</td><td>-</td><td><a href="#bits-imux-IM[34].MUX" title="IM[34].MUX[0]">X</a></td><td><a href="#bits-imux-IM[34].MUX" title="IM[34].MUX[1]">X</a></td><td><a href="#bits-imux-IM[34].MUX" title="IM[34].MUX[2]">X</a></td><td><a href="#bits-imux-IM[34].MUX" title="IM[34].MUX[3]">X</a></td><td>-</td><td>-</td><td><a href="#bits-imux-IM[35].MUX" title="IM[35].MUX[0]">X</a></td><td><a href="#bits-imux-IM[35].MUX" title="IM[35].MUX[1]">X</a></td><td><a href="#bits-imux-IM[35].MUX" title="IM[35].MUX[2]">X</a></td><td><a href="#bits-imux-IM[35].MUX" title="IM[35].MUX[3]">X</a></td><td>-</td><td>-</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[0].MUX">
+<tr><th>IM[0].MUX</th><th>[55, 6, 3]</th><th>[55, 6, 2]</th><th>[55, 6, 1]</th><th>[55, 6, 0]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_5_1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_3_4</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_2_8</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_3_7</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_1_13</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_6_7</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_5_9</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_0_9</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_5_6</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_2_15</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_6_3</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[1].MUX">
+<tr><th>IM[1].MUX</th><th>[55, 7, 0]</th><th>[55, 6, 8]</th><th>[55, 6, 7]</th><th>[55, 6, 6]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>FBK_1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_1_1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_6_16</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_7_7</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_5_14</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_4_14</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_4_12</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_1_12</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_3_6</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_5_2</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[2].MUX">
+<tr><th>IM[2].MUX</th><th>[55, 7, 6]</th><th>[55, 7, 5]</th><th>[55, 7, 4]</th><th>[55, 7, 3]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>FBK_1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>FBK_2</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_0_10</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_2_8</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_7_8</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_2_5</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_7_16</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_7_2</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_2_9</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_0_6</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_4_2</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_0_12</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[3].MUX">
+<tr><th>IM[3].MUX</th><th>[56, 6, 3]</th><th>[56, 6, 2]</th><th>[56, 6, 1]</th><th>[56, 6, 0]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>FBK_2</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>FBK_3</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_3_13</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_2_8</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_1_1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_4_1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_0_11</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_6_7</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_1_4</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_3_12</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_1_6</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_3_0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_1_2</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[4].MUX">
+<tr><th>IM[4].MUX</th><th>[56, 7, 0]</th><th>[56, 6, 8]</th><th>[56, 6, 7]</th><th>[56, 6, 6]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_3</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>FBK_4</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_1_1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_7_8</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_0_2</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_5_11</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_6_7</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_5_14</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_6_5</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_2_4</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_0_9</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_6_6</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_2_12</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[5].MUX">
+<tr><th>IM[5].MUX</th><th>[56, 7, 7]</th><th>[56, 7, 6]</th><th>[56, 7, 5]</th><th>[56, 7, 4]</th><th>[56, 7, 3]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_2</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>FBK_4</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>FBK_5</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_6_10</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_4_1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_5_7</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_5_14</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_2_5</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_5_13</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_1_11</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_0_9</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_1_12</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_7_9</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_2_3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_6_3</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_3_3</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[6].MUX">
+<tr><th>IM[6].MUX</th><th>[57, 6, 4]</th><th>[57, 6, 3]</th><th>[57, 6, 2]</th><th>[57, 6, 1]</th><th>[57, 6, 0]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_3</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>FBK_5</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>FBK_6</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_2_10</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_7_8</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_0_2</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_0_16</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_6_14</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_1_4</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_4_7</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_1_12</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_2_9</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_0_0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_3_9</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_6_3</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_5_2</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_4_0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[7].MUX">
+<tr><th>IM[7].MUX</th><th>[57, 7, 0]</th><th>[57, 6, 8]</th><th>[57, 6, 7]</th><th>[57, 6, 6]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_6</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>FBK_7</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_4_1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_5_7</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_3_14</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_2_14</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_2_5</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_6_5</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_1_10</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_4_13</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_3_12</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_1_0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_5_2</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_0_12</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[8].MUX">
+<tr><th>IM[8].MUX</th><th>[57, 7, 7]</th><th>[57, 7, 6]</th><th>[57, 7, 5]</th><th>[57, 7, 4]</th><th>[57, 7, 3]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_4</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>FBK_7</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>FBK_8</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_1_8</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_0_16</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_6_11</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_1_4</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_5_13</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_7_13</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_3_2</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_2_9</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_6_6</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_2_2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_4_3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_1_2</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[9].MUX">
+<tr><th>IM[9].MUX</th><th>[58, 6, 4]</th><th>[58, 6, 3]</th><th>[58, 6, 2]</th><th>[58, 6, 1]</th><th>[58, 6, 0]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_5</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>FBK_8</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>FBK_9</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_7_10</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_0_2</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_3_14</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_2_11</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_3_10</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_4_7</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_5_16</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_3_12</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_7_9</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_5_3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_5_15</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_0_12</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_2_12</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[10].MUX">
+<tr><th>IM[10].MUX</th><th>[58, 7, 0]</th><th>[58, 6, 8]</th><th>[58, 6, 7]</th><th>[58, 6, 6]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_9</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>FBK_10</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_5_7</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_6_11</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_1_14</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_7_1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_6_5</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_1_10</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_0_14</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_6_2</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_0_0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_4_9</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_1_2</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_3_3</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[11].MUX">
+<tr><th>IM[11].MUX</th><th>[58, 7, 7]</th><th>[58, 7, 6]</th><th>[58, 7, 5]</th><th>[58, 7, 4]</th><th>[58, 7, 3]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_6</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>FBK_10</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>FBK_11</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_0_5</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_2_11</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_7_11</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_5_13</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_7_13</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_3_1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_7_3</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_6_6</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_1_0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_6_12</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_4_15</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_4_0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[12].MUX">
+<tr><th>IM[12].MUX</th><th>[59, 6, 4]</th><th>[59, 6, 3]</th><th>[59, 6, 2]</th><th>[59, 6, 1]</th><th>[59, 6, 0]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_7</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>FBK_11</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>FBK_12</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_3_5</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_0_16</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_1_14</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_0_7</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_1_16</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_5_16</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_4_10</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_7_9</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_2_2</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_2_0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_7_15</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_2_12</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[13].MUX">
+<tr><th>IM[13].MUX</th><th>[59, 7, 0]</th><th>[59, 6, 8]</th><th>[59, 6, 7]</th><th>[59, 6, 6]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_12</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>FBK_13</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_3_14</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_7_11</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_3_11</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_5_4</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_4_7</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_0_14</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_7_14</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_0_3</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_5_3</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_1_15</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_3_3</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[14].MUX">
+<tr><th>IM[14].MUX</th><th>[59, 7, 6]</th><th>[59, 7, 5]</th><th>[59, 7, 4]</th><th>[59, 7, 3]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_8</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>FBK_13</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>FBK_14</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_6_4</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_0_7</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_6_8</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_1_10</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_3_1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_4_8</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_1_9</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_0_0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_4_9</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_4_6</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_0_15</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[15].MUX">
+<tr><th>IM[15].MUX</th><th>[60, 6, 4]</th><th>[60, 6, 3]</th><th>[60, 6, 2]</th><th>[60, 6, 1]</th><th>[60, 6, 0]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_9</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>FBK_14</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>FBK_15</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_4_11</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_6_11</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_3_11</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_4_5</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_4_16</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_4_10</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_3_8</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_1_0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_6_12</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_3_15</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_1_3</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_4_0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[16].MUX">
+<tr><th>IM[16].MUX</th><th>[60, 7, 0]</th><th>[60, 6, 8]</th><th>[60, 6, 7]</th><th>[60, 6, 6]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_15</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>FBK_16</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_2_11</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_6_8</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_1_7</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_4_4</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_7_13</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_7_14</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_6_13</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_2_6</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_2_0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_6_9</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[17].MUX">
+<tr><th>IM[17].MUX</th><th>[60, 7, 6]</th><th>[60, 7, 5]</th><th>[60, 7, 4]</th><th>[60, 7, 3]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_10</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>FBK_16</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>FBK_17</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_0_4</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_4_5</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_7_5</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_5_16</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_4_8</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_5_8</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_5_9</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_2_2</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_1_15</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_7_12</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_2_15</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[18].MUX">
+<tr><th>IM[18].MUX</th><th>[61, 6, 3]</th><th>[61, 6, 2]</th><th>[61, 6, 1]</th><th>[61, 6, 0]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_11</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>FBK_17</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_2_1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_3_4</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_1_14</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_1_7</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_0_8</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_1_13</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_3_8</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_0_13</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_5_3</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_4_6</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_6_15</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_3_6</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[19].MUX">
+<tr><th>IM[19].MUX</th><th>[61, 7, 0]</th><th>[61, 6, 8]</th><th>[61, 6, 7]</th><th>[61, 6, 6]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_2_1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_3_16</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_7_11</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_7_5</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_5_5</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_7_7</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_0_14</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_6_13</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_1_5</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_4_12</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_3_15</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_5_12</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[20].MUX">
+<tr><th>IM[20].MUX</th><th>[61, 7, 6]</th><th>[61, 7, 5]</th><th>[61, 7, 4]</th><th>[61, 7, 3]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_12</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_3_16</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_7_4</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_0_8</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_6_1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_3_1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_5_8</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_2_16</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_7_2</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_4_9</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_6_9</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_7_6</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_4_2</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[21].MUX">
+<tr><th>IM[21].MUX</th><th>[62, 6, 3]</th><th>[62, 6, 2]</th><th>[62, 6, 1]</th><th>[62, 6, 0]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_13</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_7_4</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_2_13</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_0_7</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_5_5</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_2_7</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_0_13</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_5_10</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_6_12</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_7_12</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_5_6</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_3_0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[22].MUX">
+<tr><th>IM[22].MUX</th><th>[62, 7, 0]</th><th>[62, 6, 8]</th><th>[62, 6, 7]</th><th>[62, 6, 6]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_2_13</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_0_1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_3_11</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_6_1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_3_7</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_4_10</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_1_5</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_4_14</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_6_15</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_0_6</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[23].MUX">
+<tr><th>IM[23].MUX</th><th>[62, 7, 6]</th><th>[62, 7, 5]</th><th>[62, 7, 4]</th><th>[62, 7, 3]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_14</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_0_1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_5_1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_2_7</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_6_16</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_7_14</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_2_16</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_7_16</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_2_0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_5_12</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_1_6</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[24].MUX">
+<tr><th>IM[24].MUX</th><th>[63, 6, 3]</th><th>[63, 6, 2]</th><th>[63, 6, 1]</th><th>[63, 6, 0]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_15</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_5_1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_0_10</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_6_8</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_3_7</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_0_11</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_5_10</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_2_4</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_1_15</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_7_6</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_2_3</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[25].MUX">
+<tr><th>IM[25].MUX</th><th>[63, 7, 0]</th><th>[63, 6, 8]</th><th>[63, 6, 7]</th><th>[63, 6, 6]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_0_10</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_3_13</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_4_5</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_6_16</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_5_11</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_4_8</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_4_14</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_1_11</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_5_6</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_3_9</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[26].MUX">
+<tr><th>IM[26].MUX</th><th>[63, 7, 6]</th><th>[63, 7, 5]</th><th>[63, 7, 4]</th><th>[63, 7, 3]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_16</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_3_13</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_6_10</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_0_11</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_6_14</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_3_8</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_7_16</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_4_13</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_4_6</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_0_6</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_4_3</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[27].MUX">
+<tr><th>IM[27].MUX</th><th>[64, 6, 3]</th><th>[64, 6, 2]</th><th>[64, 6, 1]</th><th>[64, 6, 0]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>FBK_17</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_6_10</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_2_10</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_1_7</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_5_11</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_2_14</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_2_4</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_3_2</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_3_15</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_1_6</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_5_15</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[28].MUX">
+<tr><th>IM[28].MUX</th><th>[64, 7, 0]</th><th>[64, 6, 8]</th><th>[64, 6, 7]</th><th>[64, 6, 6]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_2_10</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_1_8</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_7_5</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_6_14</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_3_10</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_6_13</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_1_11</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_6_2</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_2_3</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_4_15</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[29].MUX">
+<tr><th>IM[29].MUX</th><th>[64, 7, 6]</th><th>[64, 7, 5]</th><th>[64, 7, 4]</th><th>[64, 7, 3]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_2_1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_1_8</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_7_10</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_2_14</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_7_1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_5_8</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_4_13</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_7_3</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_6_9</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_3_9</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_7_15</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[30].MUX">
+<tr><th>IM[30].MUX</th><th>[65, 6, 3]</th><th>[65, 6, 2]</th><th>[65, 6, 1]</th><th>[65, 6, 0]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_3_16</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_7_10</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_0_5</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_0_8</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_3_10</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_1_16</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_3_2</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_0_3</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_7_12</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_4_3</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_0_15</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[31].MUX">
+<tr><th>IM[31].MUX</th><th>[65, 7, 0]</th><th>[65, 6, 8]</th><th>[65, 6, 7]</th><th>[65, 6, 6]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_0_5</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_3_5</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_5_5</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_7_1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_5_4</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_0_13</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_6_2</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_1_9</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_5_15</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_1_3</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[32].MUX">
+<tr><th>IM[32].MUX</th><th>[65, 7, 6]</th><th>[65, 7, 5]</th><th>[65, 7, 4]</th><th>[65, 7, 3]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_7_4</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_3_5</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_6_4</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_1_16</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_4_16</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_1_5</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_7_3</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_2_6</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_6_15</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_4_15</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_2_15</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[33].MUX">
+<tr><th>IM[33].MUX</th><th>[66, 6, 3]</th><th>[66, 6, 2]</th><th>[66, 6, 1]</th><th>[66, 6, 0]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_2_13</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_6_4</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_4_11</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_6_1</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_5_4</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_4_4</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_0_3</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_5_9</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_5_12</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_7_15</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_3_6</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[34].MUX">
+<tr><th>IM[34].MUX</th><th>[66, 7, 0]</th><th>[66, 6, 8]</th><th>[66, 6, 7]</th><th>[66, 6, 6]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_4_11</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_0_4</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_2_7</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_4_16</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_1_13</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_2_16</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_1_9</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_4_12</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_0_15</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_4_2</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+<table class="docutils align-default prjcombine-enum" id="bits-imux-IM[35].MUX">
+<tr><th>IM[35].MUX</th><th>[66, 7, 6]</th><th>[66, 7, 5]</th><th>[66, 7, 4]</th><th>[66, 7, 3]</th></tr>
+<tr><td>NONE</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>UIM</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_0_1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_0_4</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_3_4</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_4_4</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_7_7</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_5_10</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_2_6</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>IOB_7_2</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>IOB_7_6</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>IOB_1_3</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>IOB_3_0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="db-chip-xc95108.html" class="btn btn-neutral float-left" title="XC95108" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="db-chip-xc95216.html" class="btn btn-neutral float-right" title="XC95216" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Wanda.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -20,7 +20,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Database — devices" href="db-devices.html" />
+    <link rel="next" title="Database — chips" href="db-chips.html" />
     <link rel="prev" title="Bitstream structure — XC9500XL/XV" href="bitstream-xc9500xl.html" /> 
 </head>
 
@@ -54,19 +54,19 @@
 <li class="toctree-l2"><a class="reference internal" href="bitstream-xc9500xl.html">Bitstream structure — XC9500XL/XV</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Database schema</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#top-level">Top level</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#device">Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chip">Chip</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bond">Bond</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#speed">Speed</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#part">Part</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tile">Tile</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="db-devices.html">Database — devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db-chips.html">Database — chips</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jtag.html">JTAG interface</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../xpla3/index.html">Xilinx XPLA3 CPLDs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../xc2c/index.html">Xilinx Coolrunner II CPLDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coolrunner2/index.html">Xilinx Coolrunner II CPLDs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../digilent/index.html">Digilent Adept Programmers</a></li>
 </ul>
 
@@ -108,7 +108,7 @@
 <h2>Top level<a class="headerlink" href="#top-level" title="Link to this heading"></a></h2>
 <p>The top level of the database is an object, with the following fields:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">devices</span></code> (list of object): list of <a class="reference internal" href="#xc9500-db-device"><span class="std std-ref">device</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chips</span></code> (list of object): list of <a class="reference internal" href="#xc9500-db-chip"><span class="std std-ref">chip</span></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">bonds</span></code> (list of object): list of <a class="reference internal" href="#xc9500-db-bond"><span class="std std-ref">bond</span></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">speeds</span></code> (list of object): list of <a class="reference internal" href="#xc9500-db-speed"><span class="std std-ref">speed</span></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">parts</span></code> (list of object): list of <a class="reference internal" href="#xc9500-db-part"><span class="std std-ref">part</span></a></p></li>
@@ -117,27 +117,27 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">global_bits</span></code> (object): a <a class="reference internal" href="#xc9500-db-tile"><span class="std std-ref">tile</span></a> describing global bits</p></li>
 </ul>
 </section>
-<section id="device">
-<span id="xc9500-db-device"></span><h2>Device<a class="headerlink" href="#device" title="Link to this heading"></a></h2>
-<p>A device is a structure describing a particular device die.  A device is referenced
-from a <a class="reference internal" href="#xc9500-db-part"><span class="std std-ref">part</span></a>.  A device is an object with the following fields:</p>
+<section id="chip">
+<span id="xc9500-db-chip"></span><h2>Chip<a class="headerlink" href="#chip" title="Link to this heading"></a></h2>
+<p>A chip is a structure describing a particular XC9500 die.  A chip is referenced
+from a <a class="reference internal" href="#xc9500-db-part"><span class="std std-ref">part</span></a>.  A chip is an object with the following fields:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">kind</span></code> (string): the kind of the device, one of:</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">kind</span></code> (string): the kind of the chip, one of:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;xc9500&quot;</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;xc9500xl&quot;</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;xc9500xv&quot;</span></code></p></li>
 </ul>
-<p>All devices within a single file will have the same kind.</p>
+<p>All chips within a single file will have the same kind.</p>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">idcode</span></code> (number): the JTAG IDCODE of the device</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">fbs</span></code> (number): the number of FBs in the device</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ios</span></code> (map from string to number): describes the I/O pads available on the device.
+<li><p><code class="docutils literal notranslate"><span class="pre">idcode</span></code> (number): the JTAG IDCODE of the chip</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fbs</span></code> (number): the number of FBs in the chip</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ios</span></code> (map from string to number): describes the I/O pads available on the chip.
 The keys are of the form <code class="docutils literal notranslate"><span class="pre">&quot;IOB_{fb_idx}_{mc_idx}&quot;</span></code> and identify the MC that owns the IOB.
 The value corresponding to the key is the bank index that the IOB belongs to.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">banks</span></code> (number): the number of I/O banks in the device</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">banks</span></code> (number): the number of I/O banks in the chip</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tdo_bank</span></code> (number): the I/O bank index that is used to drive the TDO special pin</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">io_special</span></code> (map from string to pair of numbers): describes the I/O pads with special functions on the device.
+<li><p><code class="docutils literal notranslate"><span class="pre">io_special</span></code> (map from string to pair of numbers): describes the I/O pads with special functions on the chip.
 The keys can be:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;GCLK[0-2]&quot;</span></code></p></li>
@@ -148,18 +148,18 @@ The keys can be:</p>
 is MC index.  Note that sometimes items in this map are overriden by the bond.</p>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">imux_bits</span></code> (object) : a <a class="reference internal" href="#xc9500-db-tile"><span class="std std-ref">tile</span></a> describing per-FB bits corresponding to IMUX</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">uim_ibuf_bits</span></code> (object or null): for XC95288 device, a <a class="reference internal" href="#xc9500-db-tile"><span class="std std-ref">tile</span></a> describing the UIM IBUF bits; for every other device, <code class="docutils literal notranslate"><span class="pre">null</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uim_ibuf_bits</span></code> (object or null): for XC95288 chip, a <a class="reference internal" href="#xc9500-db-tile"><span class="std std-ref">tile</span></a> describing the UIM IBUF bits; for every other chip, <code class="docutils literal notranslate"><span class="pre">null</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">program_time</span></code> (number): maximum time required by a program operation, in µs</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">erase_time</span></code> (number): maximum time required by an erase operation, in µs</p></li>
 </ul>
 </section>
 <section id="bond">
 <span id="xc9500-db-bond"></span><h2>Bond<a class="headerlink" href="#bond" title="Link to this heading"></a></h2>
-<p>A bond is a structure describing the mapping of device pads to package pins.
+<p>A bond is a structure describing the mapping of chip pads to package pins.
 Bonds are referenced from <a class="reference internal" href="#xc9500-db-part"><span class="std std-ref">part</span></a> packages.  A bond is an object
 with the following fields:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">io_special_override</span></code> (map from string to pair of numbers): a map like the device’s <code class="docutils literal notranslate"><span class="pre">io_special</span></code> map, containing per-bond overrides
+<li><p><code class="docutils literal notranslate"><span class="pre">io_special_override</span></code> (map from string to pair of numbers): a map like the chip’s <code class="docutils literal notranslate"><span class="pre">io_special</span></code> map, containing per-bond overrides
 to the defaults (usually empty)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pins</span></code> (map from string to string): the pins of the package; they keys are package pin names, and the values are:</p>
 <ul>
@@ -183,10 +183,10 @@ All timing data is given in picoseconds, and is always an integer number.</p></l
 <section id="part">
 <span id="xc9500-db-part"></span><h2>Part<a class="headerlink" href="#part" title="Link to this heading"></a></h2>
 <p>A part is a structure describing a particular commercially available part number.
-Several parts may correspond to the same device.  A part is an object with the following fields:</p>
+Several parts may correspond to the same chip.  A part is an object with the following fields:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> (string): the base name of the part, in lowercase</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">device</span></code> (number): the index of the corresponding device in the <code class="docutils literal notranslate"><span class="pre">devices</span></code> field
+<li><p><code class="docutils literal notranslate"><span class="pre">chip</span></code> (number): the index of the corresponding chip in the <code class="docutils literal notranslate"><span class="pre">chips</span></code> field
 of the database</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">packages</span></code> (map from string to int): the packages in which this part is available;
 the key is package name, and the value is the index of the corresponding bond in the <code class="docutils literal notranslate"><span class="pre">bonds</span></code> database field</p></li>
@@ -196,7 +196,7 @@ the key is speed grade name (including the leading <code class="docutils literal
 </section>
 <section id="tile">
 <span id="xc9500-db-tile"></span><h2>Tile<a class="headerlink" href="#tile" title="Link to this heading"></a></h2>
-<p>A tile is a structure describing a set of device fuses.  There are multiple kinds
+<p>A tile is a structure describing a set of chip fuses.  There are multiple kinds
 of tiles used to describe the bitstream.  The base structure of a tile is the same
 for all of these kinds.</p>
 <p>A tile is an object where the keys are fuse set names, and the values are objects
@@ -218,9 +218,9 @@ inversion</p></li>
 <p>The type and interpretation of coordinate depends on the tile kind.</p>
 <p>The following tile kinds exist:</p>
 <ul class="simple">
-<li><p>per-MC bits tile: identical for all devices in the database, the coordinate
+<li><p>per-MC bits tile: identical for all chips in the database, the coordinate
 is a single number and corresponds to the row coordinate of the fuse</p></li>
-<li><p>per-FB bits tile: identical for all devices in the database, the coordinate
+<li><p>per-FB bits tile: identical for all chips in the database, the coordinate
 is a list of 3 numbers, in order:</p>
 <ul>
 <li><p>row</p></li>
@@ -228,8 +228,8 @@ is a list of 3 numbers, in order:</p>
 <li><p>column</p></li>
 </ul>
 </li>
-<li><p>IMUX bits tile: device-specific, the coordinate is the same as for per-FB bits tile</p></li>
-<li><p>global bits tile: identical for all devices in the database, the coordinate
+<li><p>IMUX bits tile: chip-specific, the coordinate is the same as for per-FB bits tile</p></li>
+<li><p>global bits tile: identical for all chips in the database, the coordinate
 is a list of 4 numbers, in order:</p>
 <ul>
 <li><p>fb</p></li>
@@ -238,7 +238,7 @@ is a list of 4 numbers, in order:</p>
 <li><p>column</p></li>
 </ul>
 </li>
-<li><p>UIM IBUF bits tile: device-specific, only for XC995288, the coordinate is the same as for global bits tile</p></li>
+<li><p>UIM IBUF bits tile: chip-specific, only for XC995288, the coordinate is the same as for global bits tile</p></li>
 </ul>
 </section>
 </section>
@@ -248,7 +248,7 @@ is a list of 4 numbers, in order:</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="bitstream-xc9500xl.html" class="btn btn-neutral float-left" title="Bitstream structure — XC9500XL/XV" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="db-devices.html" class="btn btn-neutral float-right" title="Database — devices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="db-chips.html" class="btn btn-neutral float-right" title="Database — chips" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
