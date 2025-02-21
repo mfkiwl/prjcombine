@@ -144,8 +144,7 @@ The keys can be:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;GSR&quot;</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;GOE[0-3]&quot;</span></code></p></li>
 </ul>
-<p>The values are two-element lists of numbers.  The first number is FB index, and the second
-is MC index.  Note that sometimes items in this map are overriden by the bond.</p>
+<p>The values are of the form <code class="docutils literal notranslate"><span class="pre">&quot;IOB_{fb_idx}_{mc_idx}&quot;</span></code>.  Note that sometimes items in this map are overriden by the bond.</p>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">imux_bits</span></code> (object) : a <a class="reference internal" href="#xc9500-db-tile"><span class="std std-ref">tile</span></a> describing per-FB bits corresponding to IMUX</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">uim_ibuf_bits</span></code> (object or null): for XC95288 chip, a <a class="reference internal" href="#xc9500-db-tile"><span class="std std-ref">tile</span></a> describing the UIM IBUF bits; for every other chip, <code class="docutils literal notranslate"><span class="pre">null</span></code></p></li>
