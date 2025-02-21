@@ -217,14 +217,24 @@ inversion</p></li>
 <p>The type and interpretation of coordinate depends on the tile kind.</p>
 <p>The following tile kinds exist:</p>
 <ul class="simple">
-<li><p>per-MC bits tile: identical for all chips in the database, the coordinate
-is a single number and corresponds to the row coordinate of the fuse</p></li>
+<li><p>per-MC bits tile: identical for all chips in the database, the coordinate is a list of three numbers, in order:</p>
+<ul>
+<li><p>always 0</p></li>
+<li><p>row coordinate of the fuse</p></li>
+<li><p>always 0</p></li>
+</ul>
+</li>
 <li><p>per-FB bits tile: identical for all chips in the database, the coordinate
 is a list of 3 numbers, in order:</p>
 <ul>
+<li><p>always 0</p></li>
 <li><p>row</p></li>
-<li><p>bit</p></li>
-<li><p>column</p></li>
+<li><p>bit within row; this should be decoded into column and bit as follows:</p>
+<ul>
+<li><p>column: <code class="docutils literal notranslate"><span class="pre">crd.bit</span> <span class="pre">%</span> <span class="pre">9</span></code></p></li>
+<li><p>bit: <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">+</span> <span class="pre">crd.bit</span> <span class="pre">//</span> <span class="pre">9</span></code></p></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>IMUX bits tile: chip-specific, the coordinate is the same as for per-FB bits tile</p></li>
@@ -233,8 +243,12 @@ is a list of 4 numbers, in order:</p>
 <ul>
 <li><p>fb</p></li>
 <li><p>row</p></li>
-<li><p>bit</p></li>
-<li><p>column</p></li>
+<li><p>bit within row; this should be decoded into column and bit as follows:</p>
+<ul>
+<li><p>column: <code class="docutils literal notranslate"><span class="pre">crd.bit</span> <span class="pre">%</span> <span class="pre">9</span></code></p></li>
+<li><p>bit: <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">+</span> <span class="pre">crd.bit</span> <span class="pre">//</span> <span class="pre">9</span></code></p></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>UIM IBUF bits tile: chip-specific, only for XC995288, the coordinate is the same as for global bits tile</p></li>
