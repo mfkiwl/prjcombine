@@ -1,262 +1,326 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Database - Project Combine</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Database schema &mdash; Project Combine  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Database — chips" href="db-chips.html" />
-    <link rel="prev" title="Bitstream structure" href="bitstream.html" /> 
-</head>
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <!-- Custom HTML head -->
 
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Project Combine
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../xilinx/index.html">Xilinx FPGAs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../siliconblue/index.html">SiliconBlue FPGAs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../xc9500/index.html">Xilinx XC9500, XC9500XL, XC9500XV CPLDs</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Xilinx XPLA3 CPLDs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="structure.html">Device structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bitstream.html">Bitstream structure</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Database schema</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#top-level">Top level</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#chip">Chip</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#bond">Bond</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#speed">Speed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#part">Part</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tile">Tile</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#jed-bits">JED bits</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="db-chips.html">Database — chips</a></li>
-<li class="toctree-l2"><a class="reference internal" href="jtag.html">JTAG interface</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../coolrunner2/index.html">Xilinx Coolrunner II CPLDs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../digilent/index.html">Digilent Adept Programmers</a></li>
-</ul>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
 
-        </div>
-      </div>
-    </nav>
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Project Combine</a>
-      </nav>
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html">Xilinx XPLA3 CPLDs</a></li>
-      <li class="breadcrumb-item active">Database schema</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/xpla3/database.rst.txt" rel="nofollow"> View page source</a>
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <section id="database-schema">
-<h1>Database schema<a class="headerlink" href="#database-schema" title="Link to this heading"></a></h1>
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../custom.css">
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title">Project Combine</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="database-schema"><a class="header" href="#database-schema">Database schema</a></h1>
 <p>The device database is provided in machine-readable form as a JSON file:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://raw.githubusercontent.com/prjunnamed/prjcombine/main/databases/xpla3.json">xpla3.json</a>, describing all XPLA3 devices</p></li>
+<ul>
+<li><a href="https://raw.githubusercontent.com/prjunnamed/prjcombine/main/databases/xpla3.json">xpla3.json</a>, describing all XPLA3 devices</li>
 </ul>
-<section id="top-level">
-<h2>Top level<a class="headerlink" href="#top-level" title="Link to this heading"></a></h2>
+<h2 id="top-level"><a class="header" href="#top-level">Top level</a></h2>
 <p>The top level of the database is an object, with the following fields:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">chips</span></code> (list of object): list of <a class="reference internal" href="#xpla3-db-chip"><span class="std std-ref">chip</span></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">bonds</span></code> (list of object): list of <a class="reference internal" href="#xpla3-db-bond"><span class="std std-ref">bond</span></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">speeds</span></code> (list of object): list of <a class="reference internal" href="#xpla3-db-speed"><span class="std std-ref">speed</span></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">parts</span></code> (list of object): list of <a class="reference internal" href="#xpla3-db-part"><span class="std std-ref">part</span></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mc_bits</span></code> (object): a <a class="reference internal" href="#xpla3-db-tile"><span class="std std-ref">tile</span></a> describing per-MC bits</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">fb_bits</span></code> (object): a <a class="reference internal" href="#xpla3-db-tile"><span class="std std-ref">tile</span></a> describing per-FB bits</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">jed_fb_bits</span></code> (array): a <a class="reference internal" href="#xpla3-db-jed-bits"><span class="std std-ref">jed bits list</span></a> describing per-FB bits</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">jed_mc_bits_iob</span></code> (array) a <a class="reference internal" href="#xpla3-db-jed-bits"><span class="std std-ref">jed bits list</span></a> describing per-MC bits for MCs with IOBs</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">jed_mc_bits_buried</span></code> (array) a <a class="reference internal" href="#xpla3-db-jed-bits"><span class="std std-ref">jed bits list</span></a> describing per-MC bits for MCs without IOBs</p></li>
+<ul>
+<li><code>chips</code> (list of object): list of <a href="#chip">chip</a></li>
+<li><code>bonds</code> (list of object): list of <a href="#bond">bond</a></li>
+<li><code>speeds</code> (list of object): list of <a href="#speed">speed</a></li>
+<li><code>parts</code> (list of object): list of <a href="#part">part</a></li>
+<li><code>mc_bits</code> (object): a <a href="#tile">tile</a> describing per-MC bits</li>
+<li><code>fb_bits</code> (object): a <a href="#tile">tile</a> describing per-FB bits</li>
+<li><code>jed_fb_bits</code> (array): a <a href="#jed-bits">jed bits list</a> describing per-FB bits</li>
+<li><code>jed_mc_bits_iob</code> (array) a <a href="#jed-bits">jed bits list</a> describing per-MC bits for MCs with IOBs</li>
+<li><code>jed_mc_bits_buried</code> (array) a <a href="#jed-bits">jed bits list</a> describing per-MC bits for MCs without IOBs</li>
 </ul>
-</section>
-<section id="chip">
-<span id="xpla3-db-chip"></span><h2>Chip<a class="headerlink" href="#chip" title="Link to this heading"></a></h2>
+<h2 id="chip"><a class="header" href="#chip">Chip</a></h2>
 <p>A chip is a structure describing a particular XPLA3 die.  A chip is referenced
-from a <a class="reference internal" href="#xpla3-db-part"><span class="std std-ref">part</span></a>.  A chip is an object with the following fields:</p>
+from a <a href="#part">part</a>.  A chip is an object with the following fields:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">idcode_part</span></code> (number): bit 12-27 of the JTAG IDCODE of the chip, with low 3 bits (package type) masked to 0</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">bs_cols</span></code> (number): bitstream width in columns</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">imux_width</span></code> (number): width of the IMUX bitstream area in columns (and also the size of a single IMUX selector in bits)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">fb_rows</span></code> (number): the number of FB rows</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">fb_cols</span></code> (array of object): list of FB columns; each item is an object with the following fields:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pt_col</span></code> (number): first column of the PT area in bitstream</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">imux_col</span></code> (number): first column of the IMUX area in bitstream</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mc_col</span></code> (number): first column of the MC/FB area in bitstream</p></li>
+<li>
+<p><code>idcode_part</code> (number): bit 12-27 of the JTAG IDCODE of the chip, with low 3 bits (package type) masked to 0</p>
+</li>
+<li>
+<p><code>bs_cols</code> (number): bitstream width in columns</p>
+</li>
+<li>
+<p><code>imux_width</code> (number): width of the IMUX bitstream area in columns (and also the size of a single IMUX selector in bits)</p>
+</li>
+<li>
+<p><code>fb_rows</code> (number): the number of FB rows</p>
+</li>
+<li>
+<p><code>fb_cols</code> (array of object): list of FB columns; each item is an object with the following fields:</p>
+<ul>
+<li><code>pt_col</code> (number): first column of the PT area in bitstream</li>
+<li><code>imux_col</code> (number): first column of the IMUX area in bitstream</li>
+<li><code>mc_col</code> (number): first column of the MC/FB area in bitstream</li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">io_mcs</span></code> (array of number): list of MC ids that have IOBs; the list is the same across all FBs, and the list stores only MC indices</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">io_special</span></code> (map from string to pair of numbers): describes the I/O pads with special functions on the chip.
+<li>
+<p><code>io_mcs</code> (array of number): list of MC ids that have IOBs; the list is the same across all FBs, and the list stores only MC indices</p>
+</li>
+<li>
+<p><code>io_special</code> (map from string to pair of numbers): describes the I/O pads with special functions on the chip.
 The keys can be:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;TCK&quot;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;TMS&quot;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;TDI&quot;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&quot;TDO&quot;</span></code></p></li>
-</ul>
-<p>The values are of the form <code class="docutils literal notranslate"><span class="pre">&quot;IOB_{fb_idx}_{mc_idx}&quot;</span></code>.</p>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">imux_bits</span></code> (object) : a <a class="reference internal" href="#xpla3-db-tile"><span class="std std-ref">tile</span></a> describing per-FB bits corresponding to IMUX</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">global_bits</span></code> (object) : a <a class="reference internal" href="#xpla3-db-tile"><span class="std std-ref">tile</span></a> describing global bits</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">jed_global_bits</span></code> (array): a <a class="reference internal" href="#xpla3-db-jed-bits"><span class="std std-ref">jed bits list</span></a> describing global bits</p></li>
-</ul>
-</section>
-<section id="bond">
-<span id="xpla3-db-bond"></span><h2>Bond<a class="headerlink" href="#bond" title="Link to this heading"></a></h2>
-<p>A bond is a structure describing the mapping of chip pads to package pins.
-Bonds are referenced from <a class="reference internal" href="#xpla3-db-part"><span class="std std-ref">part</span></a> packages.  A bond is an object
-with the following fields:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">idcode_part</span></code> (number): bit 12-27 of the JTAG IDCODE of the chip</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pins</span></code> (map from string to string): the pins of the package; they keys are package pin names, and the values are:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">NC</span></code>: unconnected pin</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GND</span></code>, <code class="docutils literal notranslate"><span class="pre">VCC</span></code>: power and ground pins</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">IOB_{fb}_{mc}</span></code>: an I/O pin</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GCLK{i}</span></code>: dedicated clock input pins</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PORT_EN</span></code>: JTAG enable pin</p></li>
+<li><code>"TCK"</code></li>
+<li><code>"TMS"</code></li>
+<li><code>"TDI"</code></li>
+<li><code>"TDO"</code></li>
+</ul>
+<p>The values are of the form <code>"IOB_{fb_idx}_{mc_idx}"</code>.</p>
+</li>
+<li>
+<p><code>imux_bits</code> (object) : a <a href="#tile">tile</a> describing per-FB bits corresponding to IMUX</p>
+</li>
+<li>
+<p><code>global_bits</code> (object) : a <a href="#tile">tile</a> describing global bits</p>
+</li>
+<li>
+<p><code>jed_global_bits</code> (array): a <a href="#jed-bits">jed bits list</a> describing global bits</p>
+</li>
+</ul>
+<h2 id="bond"><a class="header" href="#bond">Bond</a></h2>
+<p>A bond is a structure describing the mapping of chip pads to package pins.
+Bonds are referenced from <a href="#part">part</a> packages.  A bond is an object
+with the following fields:</p>
+<ul>
+<li>
+<p><code>idcode_part</code> (number): bit 12-27 of the JTAG IDCODE of the chip</p>
+</li>
+<li>
+<p><code>pins</code> (map from string to string): the pins of the package; they keys are package pin names, and the values are:</p>
+<ul>
+<li><code>NC</code>: unconnected pin</li>
+<li><code>GND</code>, <code>VCC</code>: power and ground pins</li>
+<li><code>IOB_{fb}_{mc}</code>: an I/O pin</li>
+<li><code>GCLK{i}</code>: dedicated clock input pins</li>
+<li><code>PORT_EN</code>: JTAG enable pin</li>
 </ul>
 </li>
 </ul>
-</section>
-<section id="speed">
-<span id="xpla3-db-speed"></span><h2>Speed<a class="headerlink" href="#speed" title="Link to this heading"></a></h2>
+<h2 id="speed"><a class="header" href="#speed">Speed</a></h2>
 <p>A speed is a structure describing the timings of a device.  They are referenced from
-<a class="reference internal" href="#xpla3-db-part"><span class="std std-ref">part</span></a> speed grades.  A speed is an object with one field:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">timing</span></code> (map of string to number): a map from timing parameter name to timing data.
-All timing data is given in picoseconds, and is always an integer number.</p></li>
+<a href="#part">part</a> speed grades.  A speed is an object with one field:</p>
+<ul>
+<li><code>timing</code> (map of string to number): a map from timing parameter name to timing data.
+All timing data is given in picoseconds, and is always an integer number.</li>
 </ul>
-</section>
-<section id="part">
-<span id="xpla3-db-part"></span><h2>Part<a class="headerlink" href="#part" title="Link to this heading"></a></h2>
+<h2 id="part"><a class="header" href="#part">Part</a></h2>
 <p>A part is a structure describing a particular commercially available part number.
 Several parts may correspond to the same chip.  A part is an object with the following fields:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> (string): the base name of the part, in lowercase</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">chip</span></code> (number): the index of the corresponding chip in the <code class="docutils literal notranslate"><span class="pre">chips</span></code> field
-of the database</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">packages</span></code> (map from string to int): the packages in which this part is available;
-the key is package name, and the value is the index of the corresponding bond in the <code class="docutils literal notranslate"><span class="pre">bonds</span></code> database field</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">speeds</span></code> (map from string to int): the speed grades in which this part is available;
-the key is speed grade name (including the leading <code class="docutils literal notranslate"><span class="pre">-</span></code>), and the value is the index of the corresponding speed in the <code class="docutils literal notranslate"><span class="pre">speeds</span></code> database field</p></li>
+<ul>
+<li><code>name</code> (string): the base name of the part, in lowercase</li>
+<li><code>chip</code> (number): the index of the corresponding chip in the <code>chips</code> field
+of the database</li>
+<li><code>packages</code> (map from string to int): the packages in which this part is available;
+the key is package name, and the value is the index of the corresponding bond in the <code>bonds</code> database field</li>
+<li><code>speeds</code> (map from string to int): the speed grades in which this part is available;
+the key is speed grade name (including the leading <code>-</code>), and the value is the index of the corresponding speed in the <code>speeds</code> database field</li>
 </ul>
-</section>
-<section id="tile">
-<span id="xpla3-db-tile"></span><h2>Tile<a class="headerlink" href="#tile" title="Link to this heading"></a></h2>
+<h2 id="tile"><a class="header" href="#tile">Tile</a></h2>
 <p>A tile is a structure describing a set of chip fuses.</p>
 <p>A tile is an object where the keys are fuse set names, and the values are objects
 with the following keys:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">bits</span></code> (list of coordinate): the list of fuse coordinates in this fuse set; a single coordinate is an array of three numbers, in order:</p>
-<ul class="simple">
-<li><p>fuse plane</p></li>
-<li><p>fuse row</p></li>
-<li><p>fuse column</p></li>
+<li>
+<p><code>bits</code> (list of coordinate): the list of fuse coordinates in this fuse set; a single coordinate is an array of three numbers, in order:</p>
+<ul>
+<li>fuse plane</li>
+<li>fuse row</li>
+<li>fuse column</li>
 </ul>
 <p>Depending on the tile, the coordinates may be either absolute or relative to some base.</p>
 </li>
-<li><p>one of:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">values</span></code> (map of string to list of bool): used for an enumerated fuse set;
+<li>
+<p>one of:</p>
+<ul>
+<li><code>values</code> (map of string to list of bool): used for an enumerated fuse set;
 the list of possible values for this fuse set; the value is a list of fuse values, corresponding one
-to one to the coordinates in <code class="docutils literal notranslate"><span class="pre">bits</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">invert</span></code> (bool): used for a plain bool / bitvec fuse set; if true, it means
+to one to the coordinates in <code>bits</code></li>
+<li><code>invert</code> (bool): used for a plain bool / bitvec fuse set; if true, it means
 that the value of this bitvec or bool is stored inverted in the datastream
 (0 means true, 1 means false); if false, the value is stored directly without
-inversion</p></li>
+inversion</li>
 </ul>
 </li>
 </ul>
-</section>
-<section id="jed-bits">
-<span id="xpla3-db-jed-bits"></span><h2>JED bits<a class="headerlink" href="#jed-bits" title="Link to this heading"></a></h2>
+<h2 id="jed-bits"><a class="header" href="#jed-bits">JED bits</a></h2>
 <p>A JED bits list is a structure describing a part of the JED file layout.
 It is represented as an array, with each item describing one fuse, in JED file order.
 Each item of the array is itself an array of two items:</p>
-<ul class="simple">
-<li><p>item 0 (string): fuse set name, referencing an item in the associated tile</p></li>
-<li><p>item 1 (number): fuse index within fuse set</p></li>
+<ul>
+<li>item 0 (string): fuse set name, referencing an item in the associated tile</li>
+<li>item 1 (number): fuse index within fuse set</li>
 </ul>
-</section>
-</section>
 
+                    </main>
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="bitstream.html" class="btn btn-neutral float-left" title="Bitstream structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="db-chips.html" class="btn btn-neutral float-right" title="Database — chips" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../xpla3/bitstream.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
-  <hr/>
+                            <a rel="next prefetch" href="../xpla3/jtag.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
-  <div role="contentinfo">
-    <p>&#169; Copyright 2023, Wanda.</p>
-  </div>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../xpla3/bitstream.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
-</footer>
+                    <a rel="next prefetch" href="../xpla3/jtag.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
         </div>
-      </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
 
-</body>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
 </html>
