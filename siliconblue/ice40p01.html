@@ -42975,7 +42975,9 @@ non-inverted
 <td title="0.1.13">
 <a href="#tile-ice40p01-IO.W-INT:MUX.LOCAL.0.0">INT:MUX.LOCAL.0.0[4]</a>
 </td>
-<td>-</td>
+<td title="0.1.14">
+<a href="#tile-ice40p01-IO.W-IOB0:PULLUP">~IOB0:PULLUP</a>
+</td>
 <td title="0.1.15">
 <a href="#tile-ice40p01-IO.W-INT:BUF.QUAD.H8.2.OUT.LC0">INT:BUF.QUAD.H8.2.OUT.LC0</a>
 </td>
@@ -43223,8 +43225,12 @@ non-inverted
 <td title="0.6.13">
 <a href="#tile-ice40p01-IO.W-INT:MUX.LOCAL.0.6">INT:MUX.LOCAL.0.6[2]</a>
 </td>
-<td>-</td>
-<td>-</td>
+<td title="0.6.14">
+<a href="#tile-ice40p01-IO.W-IOB0:IBUF_ENABLE">~IOB0:IBUF_ENABLE</a>
+</td>
+<td title="0.6.15">
+<a href="#tile-ice40p01-IO.W-IOB1:PULLUP">~IOB1:PULLUP</a>
+</td>
 <td title="0.6.16">
 <a href="#tile-ice40p01-IO.W-INT:BUF.QUAD.V1.2.OUT.LC1">INT:BUF.QUAD.V1.2.OUT.LC1</a>
 </td>
@@ -43321,7 +43327,7 @@ non-inverted
 </td>
 <td>-</td>
 <td title="0.8.15">
-<a href="#tile-ice40p01-IO.W-IO:LVDS_INPUT">IO:LVDS_INPUT</a>
+<a href="#tile-ice40p01-IO.W-IOB0:LVDS_INPUT">IOB0:LVDS_INPUT</a>
 </td>
 <td title="0.8.16">
 <a href="#tile-ice40p01-IO.W-INT:BUF.QUAD.H4.2.OUT.LC2">INT:BUF.QUAD.H4.2.OUT.LC2</a>
@@ -43369,7 +43375,9 @@ non-inverted
 <td title="0.9.13">
 <a href="#tile-ice40p01-IO.W-INT:MUX.LOCAL.1.0">INT:MUX.LOCAL.1.0[4]</a>
 </td>
-<td>-</td>
+<td title="0.9.14">
+<a href="#tile-ice40p01-IO.W-IOB1:IBUF_ENABLE">~IOB1:IBUF_ENABLE</a>
+</td>
 <td title="0.9.15">
 <a href="#tile-ice40p01-IO.W-INT:BUF.QUAD.H1.3.OUT.LC2">INT:BUF.QUAD.H1.3.OUT.LC2</a>
 </td>
@@ -43469,7 +43477,9 @@ non-inverted
 <td title="0.11.13">
 <a href="#tile-ice40p01-IO.W-INT:MUX.LOCAL.1.2">INT:MUX.LOCAL.1.2[4]</a>
 </td>
-<td>-</td>
+<td title="0.11.14">
+<a href="#tile-ice40p01-IO.W-IOB:LATCH_GLOBAL_OUT">IOB:LATCH_GLOBAL_OUT</a>
+</td>
 <td title="0.11.15">
 <a href="#tile-ice40p01-IO.W-INT:BUF.QUAD.V2.1.OUT.LC2">INT:BUF.QUAD.V2.1.OUT.LC2</a>
 </td>
@@ -43858,8 +43868,11 @@ non-inverted
 <tr><th id="tile-ice40p01-IO.W-INT:INV.IMUX.IO.OCLK">INT:INV.IMUX.IO.OCLK</th>
 <th>0.15.4</th>
 </tr>
-<tr><th id="tile-ice40p01-IO.W-IO:LVDS_INPUT">IO:LVDS_INPUT</th>
+<tr><th id="tile-ice40p01-IO.W-IOB0:LVDS_INPUT">IOB0:LVDS_INPUT</th>
 <th>0.8.15</th>
+</tr>
+<tr><th id="tile-ice40p01-IO.W-IOB:LATCH_GLOBAL_OUT">IOB:LATCH_GLOBAL_OUT</th>
+<th>0.11.14</th>
 </tr>
 </thead>
 <tbody>
@@ -45754,6 +45767,29 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-ice40p01-IO.W-IOB0:IBUF_ENABLE">IOB0:IBUF_ENABLE</th>
+<th>0.6.14</th>
+</tr>
+<tr><th id="tile-ice40p01-IO.W-IOB0:PULLUP">IOB0:PULLUP</th>
+<th>0.1.14</th>
+</tr>
+<tr><th id="tile-ice40p01-IO.W-IOB1:IBUF_ENABLE">IOB1:IBUF_ENABLE</th>
+<th>0.9.14</th>
+</tr>
+<tr><th id="tile-ice40p01-IO.W-IOB1:PULLUP">IOB1:PULLUP</th>
+<th>0.6.15</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>
+inverted
+</td>
+<td>~[0]</td>
+</tr>
+</tbody>
+</table></div>
 <h2 id="ioe"><a class="header" href="#ioe"><code>IO.E</code></a></h2>
 <div class="table-wrapper"><table>
 <caption>ice40p01 IO.E bittile 0</caption>
@@ -45839,7 +45875,9 @@ non-inverted
 <td title="0.1.2">
 <a href="#tile-ice40p01-IO.E-INT:BUF.QUAD.H8.3.OUT.LC0">INT:BUF.QUAD.H8.3.OUT.LC0</a>
 </td>
-<td>-</td>
+<td title="0.1.3">
+<a href="#tile-ice40p01-IO.E-IOB1:PULLUP">~IOB1:PULLUP</a>
+</td>
 <td title="0.1.4">
 <a href="#tile-ice40p01-IO.E-INT:MUX.LOCAL.0.0">INT:MUX.LOCAL.0.0[4]</a>
 </td>
@@ -46084,8 +46122,12 @@ non-inverted
 <td title="0.6.1">
 <a href="#tile-ice40p01-IO.E-INT:BUF.QUAD.V1.2.OUT.LC1">INT:BUF.QUAD.V1.2.OUT.LC1</a>
 </td>
-<td>-</td>
-<td>-</td>
+<td title="0.6.2">
+<a href="#tile-ice40p01-IO.E-IOB0:PULLUP">~IOB0:PULLUP</a>
+</td>
+<td title="0.6.3">
+<a href="#tile-ice40p01-IO.E-IOB1:IBUF_ENABLE">~IOB1:IBUF_ENABLE</a>
+</td>
 <td title="0.6.4">
 <a href="#tile-ice40p01-IO.E-INT:MUX.LOCAL.0.6">INT:MUX.LOCAL.0.6[2]</a>
 </td>
@@ -46229,7 +46271,9 @@ non-inverted
 <td title="0.9.2">
 <a href="#tile-ice40p01-IO.E-INT:BUF.QUAD.H1.4.OUT.LC2">INT:BUF.QUAD.H1.4.OUT.LC2</a>
 </td>
-<td>-</td>
+<td title="0.9.3">
+<a href="#tile-ice40p01-IO.E-IOB0:IBUF_ENABLE">~IOB0:IBUF_ENABLE</a>
+</td>
 <td title="0.9.4">
 <a href="#tile-ice40p01-IO.E-INT:MUX.LOCAL.1.0">INT:MUX.LOCAL.1.0[4]</a>
 </td>
@@ -46329,7 +46373,9 @@ non-inverted
 <td title="0.11.2">
 <a href="#tile-ice40p01-IO.E-INT:BUF.QUAD.V2.1.OUT.LC2">INT:BUF.QUAD.V2.1.OUT.LC2</a>
 </td>
-<td>-</td>
+<td title="0.11.3">
+<a href="#tile-ice40p01-IO.E-IOB:LATCH_GLOBAL_OUT">IOB:LATCH_GLOBAL_OUT</a>
+</td>
 <td title="0.11.4">
 <a href="#tile-ice40p01-IO.E-INT:MUX.LOCAL.1.2">INT:MUX.LOCAL.1.2[4]</a>
 </td>
@@ -46746,6 +46792,9 @@ non-inverted
 </tr>
 <tr><th id="tile-ice40p01-IO.E-INT:INV.IMUX.IO.OCLK">INT:INV.IMUX.IO.OCLK</th>
 <th>0.15.13</th>
+</tr>
+<tr><th id="tile-ice40p01-IO.E-IOB:LATCH_GLOBAL_OUT">IOB:LATCH_GLOBAL_OUT</th>
+<th>0.11.3</th>
 </tr>
 </thead>
 <tbody>
@@ -48640,6 +48689,29 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-ice40p01-IO.E-IOB0:IBUF_ENABLE">IOB0:IBUF_ENABLE</th>
+<th>0.9.3</th>
+</tr>
+<tr><th id="tile-ice40p01-IO.E-IOB0:PULLUP">IOB0:PULLUP</th>
+<th>0.6.2</th>
+</tr>
+<tr><th id="tile-ice40p01-IO.E-IOB1:IBUF_ENABLE">IOB1:IBUF_ENABLE</th>
+<th>0.6.3</th>
+</tr>
+<tr><th id="tile-ice40p01-IO.E-IOB1:PULLUP">IOB1:PULLUP</th>
+<th>0.1.3</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>
+inverted
+</td>
+<td>~[0]</td>
+</tr>
+</tbody>
+</table></div>
 <h2 id="ios"><a class="header" href="#ios"><code>IO.S</code></a></h2>
 <div class="table-wrapper"><table>
 <caption>ice40p01 IO.S bittile 0</caption>
@@ -49071,7 +49143,9 @@ non-inverted
 <td title="0.5.26">
 <a href="#tile-ice40p01-IO.S-INT:BUF.QUAD.H2.3.OUT.LC2">INT:BUF.QUAD.H2.3.OUT.LC2</a>
 </td>
-<td>-</td>
+<td title="0.5.27">
+<a href="#tile-ice40p01-IO.S-IOB:LATCH_GLOBAL_OUT">IOB:LATCH_GLOBAL_OUT</a>
+</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -49143,7 +49217,9 @@ non-inverted
 <td title="0.6.26">
 <a href="#tile-ice40p01-IO.S-INT:BUF.QUAD.V0.0.OUT.LC2">INT:BUF.QUAD.V0.0.OUT.LC2</a>
 </td>
-<td>-</td>
+<td title="0.6.27">
+<a href="#tile-ice40p01-IO.S-IOB0:IBUF_ENABLE">~IOB0:IBUF_ENABLE</a>
+</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -49274,8 +49350,12 @@ non-inverted
 <td title="0.8.25">
 <a href="#tile-ice40p01-IO.S-INT:BUF.QUAD.H1.2.OUT.LC1">INT:BUF.QUAD.H1.2.OUT.LC1</a>
 </td>
-<td>-</td>
-<td>-</td>
+<td title="0.8.26">
+<a href="#tile-ice40p01-IO.S-IOB0:PULLUP">~IOB0:PULLUP</a>
+</td>
+<td title="0.8.27">
+<a href="#tile-ice40p01-IO.S-IOB1:IBUF_ENABLE">~IOB1:IBUF_ENABLE</a>
+</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -49681,7 +49761,9 @@ non-inverted
 <td title="0.14.26">
 <a href="#tile-ice40p01-IO.S-INT:BUF.QUAD.V9.1.OUT.LC0">INT:BUF.QUAD.V9.1.OUT.LC0</a>
 </td>
-<td>-</td>
+<td title="0.14.27">
+<a href="#tile-ice40p01-IO.S-IOB1:PULLUP">~IOB1:PULLUP</a>
+</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -49932,6 +50014,9 @@ non-inverted
 </tr>
 <tr><th id="tile-ice40p01-IO.S-INT:INV.IMUX.IO.OCLK">INT:INV.IMUX.IO.OCLK</th>
 <th>0.1.35</th>
+</tr>
+<tr><th id="tile-ice40p01-IO.S-IOB:LATCH_GLOBAL_OUT">IOB:LATCH_GLOBAL_OUT</th>
+<th>0.5.27</th>
 </tr>
 </thead>
 <tbody>
@@ -51826,6 +51911,29 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-ice40p01-IO.S-IOB0:IBUF_ENABLE">IOB0:IBUF_ENABLE</th>
+<th>0.6.27</th>
+</tr>
+<tr><th id="tile-ice40p01-IO.S-IOB0:PULLUP">IOB0:PULLUP</th>
+<th>0.8.26</th>
+</tr>
+<tr><th id="tile-ice40p01-IO.S-IOB1:IBUF_ENABLE">IOB1:IBUF_ENABLE</th>
+<th>0.8.27</th>
+</tr>
+<tr><th id="tile-ice40p01-IO.S-IOB1:PULLUP">IOB1:PULLUP</th>
+<th>0.14.27</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>
+inverted
+</td>
+<td>~[0]</td>
+</tr>
+</tbody>
+</table></div>
 <h2 id="ion"><a class="header" href="#ion"><code>IO.N</code></a></h2>
 <div class="table-wrapper"><table>
 <caption>ice40p01 IO.N bittile 0</caption>
@@ -51985,7 +52093,9 @@ non-inverted
 <td title="0.1.26">
 <a href="#tile-ice40p01-IO.N-INT:BUF.QUAD.V9.2.OUT.LC0">INT:BUF.QUAD.V9.2.OUT.LC0</a>
 </td>
-<td>-</td>
+<td title="0.1.27">
+<a href="#tile-ice40p01-IO.N-IOB1:PULLUP">~IOB1:PULLUP</a>
+</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -52388,8 +52498,12 @@ non-inverted
 <td title="0.7.25">
 <a href="#tile-ice40p01-IO.N-INT:BUF.QUAD.H1.2.OUT.LC1">INT:BUF.QUAD.H1.2.OUT.LC1</a>
 </td>
-<td>-</td>
-<td>-</td>
+<td title="0.7.26">
+<a href="#tile-ice40p01-IO.N-IOB0:PULLUP">~IOB0:PULLUP</a>
+</td>
+<td title="0.7.27">
+<a href="#tile-ice40p01-IO.N-IOB1:IBUF_ENABLE">~IOB1:IBUF_ENABLE</a>
+</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -52523,7 +52637,9 @@ non-inverted
 <td title="0.9.26">
 <a href="#tile-ice40p01-IO.N-INT:BUF.QUAD.V0.1.OUT.LC2">INT:BUF.QUAD.V0.1.OUT.LC2</a>
 </td>
-<td>-</td>
+<td title="0.9.27">
+<a href="#tile-ice40p01-IO.N-IOB0:IBUF_ENABLE">~IOB0:IBUF_ENABLE</a>
+</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -52591,7 +52707,9 @@ non-inverted
 <td title="0.10.26">
 <a href="#tile-ice40p01-IO.N-INT:BUF.QUAD.H2.3.OUT.LC2">INT:BUF.QUAD.H2.3.OUT.LC2</a>
 </td>
-<td>-</td>
+<td title="0.10.27">
+<a href="#tile-ice40p01-IO.N-IOB:LATCH_GLOBAL_OUT">IOB:LATCH_GLOBAL_OUT</a>
+</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -53118,6 +53236,9 @@ non-inverted
 </tr>
 <tr><th id="tile-ice40p01-IO.N-INT:INV.IMUX.IO.OCLK">INT:INV.IMUX.IO.OCLK</th>
 <th>0.14.35</th>
+</tr>
+<tr><th id="tile-ice40p01-IO.N-IOB:LATCH_GLOBAL_OUT">IOB:LATCH_GLOBAL_OUT</th>
+<th>0.10.27</th>
 </tr>
 </thead>
 <tbody>
@@ -55012,9 +55133,1137 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="gbout"><a class="header" href="#gbout"><code>GBOUT</code></a></h2>
 <div class="table-wrapper"><table>
-<caption>ice40p01 GBOUT bittile 0</caption>
+<thead>
+<tr><th id="tile-ice40p01-IO.N-IOB0:IBUF_ENABLE">IOB0:IBUF_ENABLE</th>
+<th>0.9.27</th>
+</tr>
+<tr><th id="tile-ice40p01-IO.N-IOB0:PULLUP">IOB0:PULLUP</th>
+<th>0.7.26</th>
+</tr>
+<tr><th id="tile-ice40p01-IO.N-IOB1:IBUF_ENABLE">IOB1:IBUF_ENABLE</th>
+<th>0.7.27</th>
+</tr>
+<tr><th id="tile-ice40p01-IO.N-IOB1:PULLUP">IOB1:PULLUP</th>
+<th>0.1.27</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>
+inverted
+</td>
+<td>~[0]</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="pll_s"><a class="header" href="#pll_s"><code>PLL_S</code></a></h2>
+<div class="table-wrapper"><table>
+<caption>ice40p01 PLL_S bittile 0</caption>
+<thead>
+<tr><th rowspan="2">Frame</th><th colspan="0">Bit</th></tr>
+<tr>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<caption>ice40p01 PLL_S bittile 1</caption>
+<thead>
+<tr><th rowspan="2">Frame</th><th colspan="0">Bit</th></tr>
+<tr>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<caption>ice40p01 PLL_S bittile 2</caption>
+<thead>
+<tr><th rowspan="2">Frame</th><th colspan="0">Bit</th></tr>
+<tr>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<caption>ice40p01 PLL_S bittile 3</caption>
+<thead>
+<tr><th rowspan="2">Frame</th><th colspan="16">Bit</th></tr>
+<tr>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+<th>15</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>0</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="3.0.14">
+<a href="#tile-ice40p01-PLL_S-PLL:DIVR">PLL:DIVR[1]</a>
+</td>
+<td title="3.0.15">
+<a href="#tile-ice40p01-PLL_S-PLL:DIVR">PLL:DIVR[0]</a>
+</td>
+</tr>
+<tr><td>1</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr><td>2</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="3.2.14">
+<a href="#tile-ice40p01-PLL_S-PLL:DIVF">PLL:DIVF[0]</a>
+</td>
+<td title="3.2.15">
+<a href="#tile-ice40p01-PLL_S-PLL:DIVR">PLL:DIVR[3]</a>
+</td>
+</tr>
+<tr><td>3</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="3.3.14">
+<a href="#tile-ice40p01-PLL_S-PLL:DIVR">PLL:DIVR[2]</a>
+</td>
+<td>-</td>
+</tr>
+<tr><td>4</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="3.4.14">
+<a href="#tile-ice40p01-PLL_S-PLL:DIVF">PLL:DIVF[3]</a>
+</td>
+<td title="3.4.15">
+<a href="#tile-ice40p01-PLL_S-PLL:DIVF">PLL:DIVF[2]</a>
+</td>
+</tr>
+<tr><td>5</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="3.5.14">
+<a href="#tile-ice40p01-PLL_S-PLL:DIVF">PLL:DIVF[1]</a>
+</td>
+<td>-</td>
+</tr>
+<tr><td>6</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr><td>7</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="3.7.14">
+<a href="#tile-ice40p01-PLL_S-PLL:DIVF">PLL:DIVF[4]</a>
+</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<caption>ice40p01 PLL_S bittile 4</caption>
+<thead>
+<tr><th rowspan="2">Frame</th><th colspan="16">Bit</th></tr>
+<tr>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+<th>15</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>0</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="4.0.14">
+<a href="#tile-ice40p01-PLL_S-PLL:DIVF">PLL:DIVF[6]</a>
+</td>
+<td title="4.0.15">
+<a href="#tile-ice40p01-PLL_S-PLL:DIVF">PLL:DIVF[5]</a>
+</td>
+</tr>
+<tr><td>1</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr><td>2</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="4.2.14">
+<a href="#tile-ice40p01-PLL_S-PLL:DIVQ">PLL:DIVQ[2]</a>
+</td>
+<td title="4.2.15">
+<a href="#tile-ice40p01-PLL_S-PLL:DIVQ">PLL:DIVQ[1]</a>
+</td>
+</tr>
+<tr><td>3</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="4.3.14">
+<a href="#tile-ice40p01-PLL_S-PLL:DIVQ">PLL:DIVQ[0]</a>
+</td>
+<td>-</td>
+</tr>
+<tr><td>4</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="4.4.14">
+<a href="#tile-ice40p01-PLL_S-PLL:FILTER_RANGE">PLL:FILTER_RANGE[2]</a>
+</td>
+<td title="4.4.15">
+<a href="#tile-ice40p01-PLL_S-PLL:FILTER_RANGE">PLL:FILTER_RANGE[1]</a>
+</td>
+</tr>
+<tr><td>5</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="4.5.14">
+<a href="#tile-ice40p01-PLL_S-PLL:FILTER_RANGE">PLL:FILTER_RANGE[0]</a>
+</td>
+<td>-</td>
+</tr>
+<tr><td>6</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr><td>7</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="4.7.14">
+<a href="#tile-ice40p01-PLL_S-PLL:FEEDBACK_PATH">PLL:FEEDBACK_PATH[1]</a>
+</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<caption>ice40p01 PLL_S bittile 5</caption>
+<thead>
+<tr><th rowspan="2">Frame</th><th colspan="16">Bit</th></tr>
+<tr>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+<th>15</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>0</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="5.0.14">
+<a href="#tile-ice40p01-PLL_S-PLL:PLLOUT_SELECT_PORTB">PLL:PLLOUT_SELECT_PORTB[0]</a>
+</td>
+<td title="5.0.15">
+<a href="#tile-ice40p01-PLL_S-PLL:FEEDBACK_PATH">PLL:FEEDBACK_PATH[2]</a>
+</td>
+</tr>
+<tr><td>1</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr><td>2</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="5.2.14">
+<a href="#tile-ice40p01-PLL_S-PLL:MODE">PLL:MODE[1]</a>
+</td>
+<td title="5.2.15">
+<a href="#tile-ice40p01-PLL_S-PLL:SHIFTREG_DIV_MODE">PLL:SHIFTREG_DIV_MODE</a>
+</td>
+</tr>
+<tr><td>3</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="5.3.14">
+<a href="#tile-ice40p01-PLL_S-PLL:PLLOUT_SELECT_PORTB">PLL:PLLOUT_SELECT_PORTB[1]</a>
+</td>
+<td>-</td>
+</tr>
+<tr><td>4</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="5.4.14">
+<a href="#tile-ice40p01-PLL_S-PLL:TEST_MODE">PLL:TEST_MODE</a>
+</td>
+<td title="5.4.15">
+<a href="#tile-ice40p01-PLL_S-PLL:PLLOUT_SELECT_PORTA">PLL:PLLOUT_SELECT_PORTA[1]</a>
+</td>
+</tr>
+<tr><td>5</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="5.5.14">
+<a href="#tile-ice40p01-PLL_S-PLL:PLLOUT_SELECT_PORTA">PLL:PLLOUT_SELECT_PORTA[0]</a>
+</td>
+<td>-</td>
+</tr>
+<tr><td>6</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr><td>7</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="5.7.14">
+<a href="#tile-ice40p01-PLL_S-PLL:FDA_FEEDBACK">PLL:FDA_FEEDBACK[0]</a>
+</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<caption>ice40p01 PLL_S bittile 6</caption>
+<thead>
+<tr><th rowspan="2">Frame</th><th colspan="16">Bit</th></tr>
+<tr>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+<th>15</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>0</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="6.0.14">
+<a href="#tile-ice40p01-PLL_S-PLL:FDA_FEEDBACK">PLL:FDA_FEEDBACK[2]</a>
+</td>
+<td title="6.0.15">
+<a href="#tile-ice40p01-PLL_S-PLL:FDA_FEEDBACK">PLL:FDA_FEEDBACK[1]</a>
+</td>
+</tr>
+<tr><td>1</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr><td>2</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="6.2.14">
+<a href="#tile-ice40p01-PLL_S-PLL:FDA_RELATIVE">PLL:FDA_RELATIVE[0]</a>
+</td>
+<td title="6.2.15">
+<a href="#tile-ice40p01-PLL_S-PLL:DELAY_ADJUSTMENT_MODE_FEEDBACK">PLL:DELAY_ADJUSTMENT_MODE_FEEDBACK[0]</a>
+</td>
+</tr>
+<tr><td>3</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="6.3.14">
+<a href="#tile-ice40p01-PLL_S-PLL:FDA_FEEDBACK">PLL:FDA_FEEDBACK[3]</a>
+</td>
+<td>-</td>
+</tr>
+<tr><td>4</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="6.4.14">
+<a href="#tile-ice40p01-PLL_S-PLL:FDA_RELATIVE">PLL:FDA_RELATIVE[3]</a>
+</td>
+<td title="6.4.15">
+<a href="#tile-ice40p01-PLL_S-PLL:FDA_RELATIVE">PLL:FDA_RELATIVE[2]</a>
+</td>
+</tr>
+<tr><td>5</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="6.5.14">
+<a href="#tile-ice40p01-PLL_S-PLL:FDA_RELATIVE">PLL:FDA_RELATIVE[1]</a>
+</td>
+<td>-</td>
+</tr>
+<tr><td>6</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr><td>7</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="6.7.14">
+<a href="#tile-ice40p01-PLL_S-PLL:DELAY_ADJUSTMENT_MODE_RELATIVE">PLL:DELAY_ADJUSTMENT_MODE_RELATIVE[0]</a>
+</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<caption>ice40p01 PLL_S bittile 7</caption>
+<thead>
+<tr><th rowspan="2">Frame</th><th colspan="16">Bit</th></tr>
+<tr>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+<th>15</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>0</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="7.0.15">
+<a href="#tile-ice40p01-PLL_S-PLL:MODE">PLL:MODE[0]</a>
+</td>
+</tr>
+<tr><td>1</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr><td>2</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="7.2.14">
+<a href="#tile-ice40p01-PLL_S-PLL:FEEDBACK_PATH">PLL:FEEDBACK_PATH[0]</a>
+</td>
+<td>-</td>
+</tr>
+<tr><td>3</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="7.3.14">
+<a href="#tile-ice40p01-PLL_S-PLL:MODE">PLL:MODE[2]</a>
+</td>
+<td>-</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-ice40p01-PLL_S-PLL:DELAY_ADJUSTMENT_MODE_FEEDBACK">PLL:DELAY_ADJUSTMENT_MODE_FEEDBACK</th>
+<th>6.2.15</th>
+</tr>
+<tr><th id="tile-ice40p01-PLL_S-PLL:DELAY_ADJUSTMENT_MODE_RELATIVE">PLL:DELAY_ADJUSTMENT_MODE_RELATIVE</th>
+<th>6.7.14</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>FIXED</td>
+<td>0</td>
+</tr>
+<tr><td>DYNAMIC</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-ice40p01-PLL_S-PLL:DIVF">PLL:DIVF</th>
+<th>4.0.14</th>
+<th>4.0.15</th>
+<th>3.7.14</th>
+<th>3.4.14</th>
+<th>3.4.15</th>
+<th>3.5.14</th>
+<th>3.2.14</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>
+non-inverted
+</td>
+<td>[6]</td>
+<td>[5]</td>
+<td>[4]</td>
+<td>[3]</td>
+<td>[2]</td>
+<td>[1]</td>
+<td>[0]</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-ice40p01-PLL_S-PLL:DIVQ">PLL:DIVQ</th>
+<th>4.2.14</th>
+<th>4.2.15</th>
+<th>4.3.14</th>
+</tr>
+<tr><th id="tile-ice40p01-PLL_S-PLL:FILTER_RANGE">PLL:FILTER_RANGE</th>
+<th>4.4.14</th>
+<th>4.4.15</th>
+<th>4.5.14</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>
+non-inverted
+</td>
+<td>[2]</td>
+<td>[1]</td>
+<td>[0]</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-ice40p01-PLL_S-PLL:DIVR">PLL:DIVR</th>
+<th>3.2.15</th>
+<th>3.3.14</th>
+<th>3.0.14</th>
+<th>3.0.15</th>
+</tr>
+<tr><th id="tile-ice40p01-PLL_S-PLL:FDA_FEEDBACK">PLL:FDA_FEEDBACK</th>
+<th>6.3.14</th>
+<th>6.0.14</th>
+<th>6.0.15</th>
+<th>5.7.14</th>
+</tr>
+<tr><th id="tile-ice40p01-PLL_S-PLL:FDA_RELATIVE">PLL:FDA_RELATIVE</th>
+<th>6.4.14</th>
+<th>6.4.15</th>
+<th>6.5.14</th>
+<th>6.2.14</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>
+non-inverted
+</td>
+<td>[3]</td>
+<td>[2]</td>
+<td>[1]</td>
+<td>[0]</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-ice40p01-PLL_S-PLL:FEEDBACK_PATH">PLL:FEEDBACK_PATH</th>
+<th>5.0.15</th>
+<th>4.7.14</th>
+<th>7.2.14</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>DELAY</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>SIMPLE</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>PHASE_AND_DELAY</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr><td>EXTERNAL</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-ice40p01-PLL_S-PLL:MODE">PLL:MODE</th>
+<th>7.3.14</th>
+<th>5.2.14</th>
+<th>7.0.15</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>SB_PLL40_PAD</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>SB_PLL40_CORE</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr><td>SB_PLL40_2_PAD</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>SB_PLL40_2F_PAD</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>SB_PLL40_2F_CORE</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-ice40p01-PLL_S-PLL:PLLOUT_SELECT_PORTA">PLL:PLLOUT_SELECT_PORTA</th>
+<th>5.4.15</th>
+<th>5.5.14</th>
+</tr>
+<tr><th id="tile-ice40p01-PLL_S-PLL:PLLOUT_SELECT_PORTB">PLL:PLLOUT_SELECT_PORTB</th>
+<th>5.3.14</th>
+<th>5.0.14</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>GENCLK</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>GENCLK_HALF</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>SHIFTREG_90deg</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr><td>SHIFTREG_0deg</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-ice40p01-PLL_S-PLL:SHIFTREG_DIV_MODE">PLL:SHIFTREG_DIV_MODE</th>
+<th>5.2.15</th>
+</tr>
+<tr><th id="tile-ice40p01-PLL_S-PLL:TEST_MODE">PLL:TEST_MODE</th>
+<th>5.4.14</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>
+non-inverted
+</td>
+<td>[0]</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="gb_out"><a class="header" href="#gb_out"><code>GB_OUT</code></a></h2>
+<div class="table-wrapper"><table>
+<caption>ice40p01 GB_OUT bittile 0</caption>
 <thead>
 <tr><th rowspan="2">Frame</th><th colspan="2">Bit</th></tr>
 <tr>
@@ -55081,24 +56330,24 @@ non-inverted
 </tr>
 <tr><td>14</td>
 <td title="0.14.0">
-<a href="#tile-ice40p01-GBOUT-GBOUT:MUX.GLOBAL.0">GBOUT:MUX.GLOBAL.0[0]</a>
+<a href="#tile-ice40p01-GB_OUT-GB_OUT:MUX.GLOBAL.0">GB_OUT:MUX.GLOBAL.0[0]</a>
 </td>
 <td title="0.14.1">
-<a href="#tile-ice40p01-GBOUT-GBOUT:MUX.GLOBAL.1">GBOUT:MUX.GLOBAL.1[0]</a>
+<a href="#tile-ice40p01-GB_OUT-GB_OUT:MUX.GLOBAL.1">GB_OUT:MUX.GLOBAL.1[0]</a>
 </td>
 </tr>
 <tr><td>15</td>
 <td title="0.15.0">
-<a href="#tile-ice40p01-GBOUT-GBOUT:MUX.GLOBAL.6">GBOUT:MUX.GLOBAL.6[0]</a>
+<a href="#tile-ice40p01-GB_OUT-GB_OUT:MUX.GLOBAL.6">GB_OUT:MUX.GLOBAL.6[0]</a>
 </td>
 <td title="0.15.1">
-<a href="#tile-ice40p01-GBOUT-GBOUT:MUX.GLOBAL.7">GBOUT:MUX.GLOBAL.7[0]</a>
+<a href="#tile-ice40p01-GB_OUT-GB_OUT:MUX.GLOBAL.7">GB_OUT:MUX.GLOBAL.7[0]</a>
 </td>
 </tr>
 </tbody>
 </table></div>
 <div class="table-wrapper"><table>
-<caption>ice40p01 GBOUT bittile 1</caption>
+<caption>ice40p01 GB_OUT bittile 1</caption>
 <thead>
 <tr><th rowspan="2">Frame</th><th colspan="2">Bit</th></tr>
 <tr>
@@ -55109,46 +56358,46 @@ non-inverted
 <tbody>
 <tr><td>0</td>
 <td title="1.0.0">
-<a href="#tile-ice40p01-GBOUT-GBOUT:MUX.GLOBAL.2">GBOUT:MUX.GLOBAL.2[0]</a>
+<a href="#tile-ice40p01-GB_OUT-GB_OUT:MUX.GLOBAL.2">GB_OUT:MUX.GLOBAL.2[0]</a>
 </td>
 <td title="1.0.1">
-<a href="#tile-ice40p01-GBOUT-GBOUT:MUX.GLOBAL.3">GBOUT:MUX.GLOBAL.3[0]</a>
+<a href="#tile-ice40p01-GB_OUT-GB_OUT:MUX.GLOBAL.3">GB_OUT:MUX.GLOBAL.3[0]</a>
 </td>
 </tr>
 <tr><td>1</td>
 <td title="1.1.0">
-<a href="#tile-ice40p01-GBOUT-GBOUT:MUX.GLOBAL.4">GBOUT:MUX.GLOBAL.4[0]</a>
+<a href="#tile-ice40p01-GB_OUT-GB_OUT:MUX.GLOBAL.4">GB_OUT:MUX.GLOBAL.4[0]</a>
 </td>
 <td title="1.1.1">
-<a href="#tile-ice40p01-GBOUT-GBOUT:MUX.GLOBAL.5">GBOUT:MUX.GLOBAL.5[0]</a>
+<a href="#tile-ice40p01-GB_OUT-GB_OUT:MUX.GLOBAL.5">GB_OUT:MUX.GLOBAL.5[0]</a>
 </td>
 </tr>
 </tbody>
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-ice40p01-GBOUT-GBOUT:MUX.GLOBAL.0">GBOUT:MUX.GLOBAL.0</th>
+<tr><th id="tile-ice40p01-GB_OUT-GB_OUT:MUX.GLOBAL.0">GB_OUT:MUX.GLOBAL.0</th>
 <th>0.14.0</th>
 </tr>
-<tr><th id="tile-ice40p01-GBOUT-GBOUT:MUX.GLOBAL.1">GBOUT:MUX.GLOBAL.1</th>
+<tr><th id="tile-ice40p01-GB_OUT-GB_OUT:MUX.GLOBAL.1">GB_OUT:MUX.GLOBAL.1</th>
 <th>0.14.1</th>
 </tr>
-<tr><th id="tile-ice40p01-GBOUT-GBOUT:MUX.GLOBAL.2">GBOUT:MUX.GLOBAL.2</th>
+<tr><th id="tile-ice40p01-GB_OUT-GB_OUT:MUX.GLOBAL.2">GB_OUT:MUX.GLOBAL.2</th>
 <th>1.0.0</th>
 </tr>
-<tr><th id="tile-ice40p01-GBOUT-GBOUT:MUX.GLOBAL.3">GBOUT:MUX.GLOBAL.3</th>
+<tr><th id="tile-ice40p01-GB_OUT-GB_OUT:MUX.GLOBAL.3">GB_OUT:MUX.GLOBAL.3</th>
 <th>1.0.1</th>
 </tr>
-<tr><th id="tile-ice40p01-GBOUT-GBOUT:MUX.GLOBAL.4">GBOUT:MUX.GLOBAL.4</th>
+<tr><th id="tile-ice40p01-GB_OUT-GB_OUT:MUX.GLOBAL.4">GB_OUT:MUX.GLOBAL.4</th>
 <th>1.1.0</th>
 </tr>
-<tr><th id="tile-ice40p01-GBOUT-GBOUT:MUX.GLOBAL.5">GBOUT:MUX.GLOBAL.5</th>
+<tr><th id="tile-ice40p01-GB_OUT-GB_OUT:MUX.GLOBAL.5">GB_OUT:MUX.GLOBAL.5</th>
 <th>1.1.1</th>
 </tr>
-<tr><th id="tile-ice40p01-GBOUT-GBOUT:MUX.GLOBAL.6">GBOUT:MUX.GLOBAL.6</th>
+<tr><th id="tile-ice40p01-GB_OUT-GB_OUT:MUX.GLOBAL.6">GB_OUT:MUX.GLOBAL.6</th>
 <th>0.15.0</th>
 </tr>
-<tr><th id="tile-ice40p01-GBOUT-GBOUT:MUX.GLOBAL.7">GBOUT:MUX.GLOBAL.7</th>
+<tr><th id="tile-ice40p01-GB_OUT-GB_OUT:MUX.GLOBAL.7">GB_OUT:MUX.GLOBAL.7</th>
 <th>0.15.1</th>
 </tr>
 </thead>

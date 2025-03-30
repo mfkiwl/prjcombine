@@ -42676,7 +42676,9 @@ non-inverted
 <td title="0.1.13">
 <a href="#tile-ice65l01-IO.W-INT:MUX.LOCAL.0.0">INT:MUX.LOCAL.0.0[4]</a>
 </td>
-<td>-</td>
+<td title="0.1.14">
+<a href="#tile-ice65l01-IO.W-IOB0:PULLUP">~IOB0:PULLUP</a>
+</td>
 <td title="0.1.15">
 <a href="#tile-ice65l01-IO.W-INT:BUF.QUAD.H8.2.OUT.LC0">INT:BUF.QUAD.H8.2.OUT.LC0</a>
 </td>
@@ -42925,7 +42927,9 @@ non-inverted
 <a href="#tile-ice65l01-IO.W-INT:MUX.LOCAL.0.6">INT:MUX.LOCAL.0.6[2]</a>
 </td>
 <td>-</td>
-<td>-</td>
+<td title="0.6.15">
+<a href="#tile-ice65l01-IO.W-IOB1:PULLUP">~IOB1:PULLUP</a>
+</td>
 <td title="0.6.16">
 <a href="#tile-ice65l01-IO.W-INT:BUF.QUAD.V1.2.OUT.LC1">INT:BUF.QUAD.V1.2.OUT.LC1</a>
 </td>
@@ -43041,7 +43045,7 @@ non-inverted
 </td>
 <td>-</td>
 <td title="0.9.4">
-<a href="#tile-ice65l01-IO.W-IO:NEG_TRIGGER">IO:NEG_TRIGGER[0]</a>
+<a href="#tile-ice65l01-IO.W-INT:INV.IMUX.IO.ICLK">INT:INV.IMUX.IO.ICLK</a>
 </td>
 <td title="0.9.5">
 <a href="#tile-ice65l01-IO.W-INT:MUX.IMUX.IO.ICLK">INT:MUX.IMUX.IO.ICLK[1]</a>
@@ -43168,7 +43172,9 @@ non-inverted
 <td title="0.11.13">
 <a href="#tile-ice65l01-IO.W-INT:MUX.LOCAL.1.2">INT:MUX.LOCAL.1.2[4]</a>
 </td>
-<td>-</td>
+<td title="0.11.14">
+<a href="#tile-ice65l01-IO.W-IOB:LATCH_GLOBAL_OUT">IOB:LATCH_GLOBAL_OUT</a>
+</td>
 <td title="0.11.15">
 <a href="#tile-ice65l01-IO.W-INT:BUF.QUAD.V2.1.OUT.LC2">INT:BUF.QUAD.V2.1.OUT.LC2</a>
 </td>
@@ -43329,7 +43335,7 @@ non-inverted
 </td>
 <td>-</td>
 <td title="0.15.4">
-<a href="#tile-ice65l01-IO.W-IO:NEG_TRIGGER">IO:NEG_TRIGGER[1]</a>
+<a href="#tile-ice65l01-IO.W-INT:INV.IMUX.IO.OCLK">INT:INV.IMUX.IO.OCLK</a>
 </td>
 <td title="0.15.5">
 <a href="#tile-ice65l01-IO.W-INT:MUX.IMUX.IO.OCLK">INT:MUX.IMUX.IO.OCLK[1]</a>
@@ -43550,6 +43556,15 @@ non-inverted
 </tr>
 <tr><th id="tile-ice65l01-IO.W-INT:BUF.QUAD.V3.4.OUT.LC3">INT:BUF.QUAD.V3.4.OUT.LC3</th>
 <th>0.15.16</th>
+</tr>
+<tr><th id="tile-ice65l01-IO.W-INT:INV.IMUX.IO.ICLK">INT:INV.IMUX.IO.ICLK</th>
+<th>0.9.4</th>
+</tr>
+<tr><th id="tile-ice65l01-IO.W-INT:INV.IMUX.IO.OCLK">INT:INV.IMUX.IO.OCLK</th>
+<th>0.15.4</th>
+</tr>
+<tr><th id="tile-ice65l01-IO.W-IOB:LATCH_GLOBAL_OUT">IOB:LATCH_GLOBAL_OUT</th>
+<th>0.11.14</th>
 </tr>
 </thead>
 <tbody>
@@ -45446,17 +45461,18 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-ice65l01-IO.W-IO:NEG_TRIGGER">IO:NEG_TRIGGER</th>
-<th>0.15.4</th>
-<th>0.9.4</th>
+<tr><th id="tile-ice65l01-IO.W-IOB0:PULLUP">IOB0:PULLUP</th>
+<th>0.1.14</th>
+</tr>
+<tr><th id="tile-ice65l01-IO.W-IOB1:PULLUP">IOB1:PULLUP</th>
+<th>0.6.15</th>
 </tr>
 </thead>
 <tbody>
 <tr><td>
-non-inverted
+inverted
 </td>
-<td>[1]</td>
-<td>[0]</td>
+<td>~[0]</td>
 </tr>
 </tbody>
 </table></div>
@@ -45545,7 +45561,9 @@ non-inverted
 <td title="0.1.2">
 <a href="#tile-ice65l01-IO.E-INT:BUF.QUAD.H8.3.OUT.LC0">INT:BUF.QUAD.H8.3.OUT.LC0</a>
 </td>
-<td>-</td>
+<td title="0.1.3">
+<a href="#tile-ice65l01-IO.E-IOB0:PULLUP">~IOB0:PULLUP</a>
+</td>
 <td title="0.1.4">
 <a href="#tile-ice65l01-IO.E-INT:MUX.LOCAL.0.0">INT:MUX.LOCAL.0.0[4]</a>
 </td>
@@ -45790,7 +45808,9 @@ non-inverted
 <td title="0.6.1">
 <a href="#tile-ice65l01-IO.E-INT:BUF.QUAD.V1.2.OUT.LC1">INT:BUF.QUAD.V1.2.OUT.LC1</a>
 </td>
-<td>-</td>
+<td title="0.6.2">
+<a href="#tile-ice65l01-IO.E-IOB1:PULLUP">~IOB1:PULLUP</a>
+</td>
 <td>-</td>
 <td title="0.6.4">
 <a href="#tile-ice65l01-IO.E-INT:MUX.LOCAL.0.6">INT:MUX.LOCAL.0.6[2]</a>
@@ -45962,7 +45982,7 @@ non-inverted
 <a href="#tile-ice65l01-IO.E-INT:MUX.IMUX.IO.ICLK">INT:MUX.IMUX.IO.ICLK[1]</a>
 </td>
 <td title="0.9.13">
-<a href="#tile-ice65l01-IO.E-IO:NEG_TRIGGER">IO:NEG_TRIGGER[0]</a>
+<a href="#tile-ice65l01-IO.E-INT:INV.IMUX.IO.ICLK">INT:INV.IMUX.IO.ICLK</a>
 </td>
 <td>-</td>
 <td title="0.9.15">
@@ -46035,7 +46055,9 @@ non-inverted
 <td title="0.11.2">
 <a href="#tile-ice65l01-IO.E-INT:BUF.QUAD.V2.1.OUT.LC2">INT:BUF.QUAD.V2.1.OUT.LC2</a>
 </td>
-<td>-</td>
+<td title="0.11.3">
+<a href="#tile-ice65l01-IO.E-IOB:LATCH_GLOBAL_OUT">IOB:LATCH_GLOBAL_OUT</a>
+</td>
 <td title="0.11.4">
 <a href="#tile-ice65l01-IO.E-INT:MUX.LOCAL.1.2">INT:MUX.LOCAL.1.2[4]</a>
 </td>
@@ -46252,7 +46274,7 @@ non-inverted
 <a href="#tile-ice65l01-IO.E-INT:MUX.IMUX.IO.OCLK">INT:MUX.IMUX.IO.OCLK[1]</a>
 </td>
 <td title="0.15.13">
-<a href="#tile-ice65l01-IO.E-IO:NEG_TRIGGER">IO:NEG_TRIGGER[1]</a>
+<a href="#tile-ice65l01-IO.E-INT:INV.IMUX.IO.OCLK">INT:INV.IMUX.IO.OCLK</a>
 </td>
 <td>-</td>
 <td title="0.15.15">
@@ -46446,6 +46468,15 @@ non-inverted
 </tr>
 <tr><th id="tile-ice65l01-IO.E-INT:BUF.QUAD.V3.4.OUT.LC3">INT:BUF.QUAD.V3.4.OUT.LC3</th>
 <th>0.15.1</th>
+</tr>
+<tr><th id="tile-ice65l01-IO.E-INT:INV.IMUX.IO.ICLK">INT:INV.IMUX.IO.ICLK</th>
+<th>0.9.13</th>
+</tr>
+<tr><th id="tile-ice65l01-IO.E-INT:INV.IMUX.IO.OCLK">INT:INV.IMUX.IO.OCLK</th>
+<th>0.15.13</th>
+</tr>
+<tr><th id="tile-ice65l01-IO.E-IOB:LATCH_GLOBAL_OUT">IOB:LATCH_GLOBAL_OUT</th>
+<th>0.11.3</th>
 </tr>
 </thead>
 <tbody>
@@ -48342,17 +48373,18 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-ice65l01-IO.E-IO:NEG_TRIGGER">IO:NEG_TRIGGER</th>
-<th>0.15.13</th>
-<th>0.9.13</th>
+<tr><th id="tile-ice65l01-IO.E-IOB0:PULLUP">IOB0:PULLUP</th>
+<th>0.1.3</th>
+</tr>
+<tr><th id="tile-ice65l01-IO.E-IOB1:PULLUP">IOB1:PULLUP</th>
+<th>0.6.2</th>
 </tr>
 </thead>
 <tbody>
 <tr><td>
-non-inverted
+inverted
 </td>
-<td>[1]</td>
-<td>[0]</td>
+<td>~[0]</td>
 </tr>
 </tbody>
 </table></div>
@@ -48532,7 +48564,7 @@ non-inverted
 <a href="#tile-ice65l01-IO.S-INT:MUX.IMUX.IO.OCLK">INT:MUX.IMUX.IO.OCLK[1]</a>
 </td>
 <td title="0.1.35">
-<a href="#tile-ice65l01-IO.S-IO:NEG_TRIGGER">IO:NEG_TRIGGER[0]</a>
+<a href="#tile-ice65l01-IO.S-INT:INV.IMUX.IO.OCLK">INT:INV.IMUX.IO.OCLK</a>
 </td>
 <td>-</td>
 <td title="0.1.37">
@@ -48787,7 +48819,9 @@ non-inverted
 <td title="0.5.26">
 <a href="#tile-ice65l01-IO.S-INT:BUF.QUAD.H2.3.OUT.LC2">INT:BUF.QUAD.H2.3.OUT.LC2</a>
 </td>
-<td>-</td>
+<td title="0.5.27">
+<a href="#tile-ice65l01-IO.S-IOB:LATCH_GLOBAL_OUT">IOB:LATCH_GLOBAL_OUT</a>
+</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -48874,7 +48908,7 @@ non-inverted
 <a href="#tile-ice65l01-IO.S-INT:MUX.IMUX.IO.ICLK">INT:MUX.IMUX.IO.ICLK[1]</a>
 </td>
 <td title="0.6.35">
-<a href="#tile-ice65l01-IO.S-IO:NEG_TRIGGER">IO:NEG_TRIGGER[1]</a>
+<a href="#tile-ice65l01-IO.S-INT:INV.IMUX.IO.ICLK">INT:INV.IMUX.IO.ICLK</a>
 </td>
 <td>-</td>
 <td title="0.6.37">
@@ -48990,7 +49024,9 @@ non-inverted
 <td title="0.8.25">
 <a href="#tile-ice65l01-IO.S-INT:BUF.QUAD.H1.2.OUT.LC1">INT:BUF.QUAD.H1.2.OUT.LC1</a>
 </td>
-<td>-</td>
+<td title="0.8.26">
+<a href="#tile-ice65l01-IO.S-IOB1:PULLUP">~IOB1:PULLUP</a>
+</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -49397,7 +49433,9 @@ non-inverted
 <td title="0.14.26">
 <a href="#tile-ice65l01-IO.S-INT:BUF.QUAD.V9.1.OUT.LC0">INT:BUF.QUAD.V9.1.OUT.LC0</a>
 </td>
-<td>-</td>
+<td title="0.14.27">
+<a href="#tile-ice65l01-IO.S-IOB0:PULLUP">~IOB0:PULLUP</a>
+</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -49642,6 +49680,15 @@ non-inverted
 </tr>
 <tr><th id="tile-ice65l01-IO.S-INT:BUF.QUAD.V9.3.OUT.LC0">INT:BUF.QUAD.V9.3.OUT.LC0</th>
 <th>0.14.25</th>
+</tr>
+<tr><th id="tile-ice65l01-IO.S-INT:INV.IMUX.IO.ICLK">INT:INV.IMUX.IO.ICLK</th>
+<th>0.6.35</th>
+</tr>
+<tr><th id="tile-ice65l01-IO.S-INT:INV.IMUX.IO.OCLK">INT:INV.IMUX.IO.OCLK</th>
+<th>0.1.35</th>
+</tr>
+<tr><th id="tile-ice65l01-IO.S-IOB:LATCH_GLOBAL_OUT">IOB:LATCH_GLOBAL_OUT</th>
+<th>0.5.27</th>
 </tr>
 </thead>
 <tbody>
@@ -51538,17 +51585,18 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-ice65l01-IO.S-IO:NEG_TRIGGER">IO:NEG_TRIGGER</th>
-<th>0.6.35</th>
-<th>0.1.35</th>
+<tr><th id="tile-ice65l01-IO.S-IOB0:PULLUP">IOB0:PULLUP</th>
+<th>0.14.27</th>
+</tr>
+<tr><th id="tile-ice65l01-IO.S-IOB1:PULLUP">IOB1:PULLUP</th>
+<th>0.8.26</th>
 </tr>
 </thead>
 <tbody>
 <tr><td>
-non-inverted
+inverted
 </td>
-<td>[1]</td>
-<td>[0]</td>
+<td>~[0]</td>
 </tr>
 </tbody>
 </table></div>
@@ -51711,7 +51759,9 @@ non-inverted
 <td title="0.1.26">
 <a href="#tile-ice65l01-IO.N-INT:BUF.QUAD.V9.2.OUT.LC0">INT:BUF.QUAD.V9.2.OUT.LC0</a>
 </td>
-<td>-</td>
+<td title="0.1.27">
+<a href="#tile-ice65l01-IO.N-IOB0:PULLUP">~IOB0:PULLUP</a>
+</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -52114,7 +52164,9 @@ non-inverted
 <td title="0.7.25">
 <a href="#tile-ice65l01-IO.N-INT:BUF.QUAD.H1.2.OUT.LC1">INT:BUF.QUAD.H1.2.OUT.LC1</a>
 </td>
-<td>-</td>
+<td title="0.7.26">
+<a href="#tile-ice65l01-IO.N-IOB1:PULLUP">~IOB1:PULLUP</a>
+</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -52264,7 +52316,7 @@ non-inverted
 <a href="#tile-ice65l01-IO.N-INT:MUX.IMUX.IO.ICLK">INT:MUX.IMUX.IO.ICLK[1]</a>
 </td>
 <td title="0.9.35">
-<a href="#tile-ice65l01-IO.N-IO:NEG_TRIGGER">IO:NEG_TRIGGER[0]</a>
+<a href="#tile-ice65l01-IO.N-INT:INV.IMUX.IO.ICLK">INT:INV.IMUX.IO.ICLK</a>
 </td>
 <td>-</td>
 <td title="0.9.37">
@@ -52317,7 +52369,9 @@ non-inverted
 <td title="0.10.26">
 <a href="#tile-ice65l01-IO.N-INT:BUF.QUAD.H2.3.OUT.LC2">INT:BUF.QUAD.H2.3.OUT.LC2</a>
 </td>
-<td>-</td>
+<td title="0.10.27">
+<a href="#tile-ice65l01-IO.N-IOB:LATCH_GLOBAL_OUT">IOB:LATCH_GLOBAL_OUT</a>
+</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -52604,7 +52658,7 @@ non-inverted
 <a href="#tile-ice65l01-IO.N-INT:MUX.IMUX.IO.OCLK">INT:MUX.IMUX.IO.OCLK[1]</a>
 </td>
 <td title="0.14.35">
-<a href="#tile-ice65l01-IO.N-IO:NEG_TRIGGER">IO:NEG_TRIGGER[1]</a>
+<a href="#tile-ice65l01-IO.N-INT:INV.IMUX.IO.OCLK">INT:INV.IMUX.IO.OCLK</a>
 </td>
 <td>-</td>
 <td title="0.14.37">
@@ -52838,6 +52892,15 @@ non-inverted
 </tr>
 <tr><th id="tile-ice65l01-IO.N-INT:BUF.QUAD.V9.4.OUT.LC0">INT:BUF.QUAD.V9.4.OUT.LC0</th>
 <th>0.1.25</th>
+</tr>
+<tr><th id="tile-ice65l01-IO.N-INT:INV.IMUX.IO.ICLK">INT:INV.IMUX.IO.ICLK</th>
+<th>0.9.35</th>
+</tr>
+<tr><th id="tile-ice65l01-IO.N-INT:INV.IMUX.IO.OCLK">INT:INV.IMUX.IO.OCLK</th>
+<th>0.14.35</th>
+</tr>
+<tr><th id="tile-ice65l01-IO.N-IOB:LATCH_GLOBAL_OUT">IOB:LATCH_GLOBAL_OUT</th>
+<th>0.10.27</th>
 </tr>
 </thead>
 <tbody>
@@ -54734,23 +54797,24 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-ice65l01-IO.N-IO:NEG_TRIGGER">IO:NEG_TRIGGER</th>
-<th>0.14.35</th>
-<th>0.9.35</th>
+<tr><th id="tile-ice65l01-IO.N-IOB0:PULLUP">IOB0:PULLUP</th>
+<th>0.1.27</th>
+</tr>
+<tr><th id="tile-ice65l01-IO.N-IOB1:PULLUP">IOB1:PULLUP</th>
+<th>0.7.26</th>
 </tr>
 </thead>
 <tbody>
 <tr><td>
-non-inverted
+inverted
 </td>
-<td>[1]</td>
-<td>[0]</td>
+<td>~[0]</td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="gbout"><a class="header" href="#gbout"><code>GBOUT</code></a></h2>
+<h2 id="gb_out"><a class="header" href="#gb_out"><code>GB_OUT</code></a></h2>
 <div class="table-wrapper"><table>
-<caption>ice65l01 GBOUT bittile 0</caption>
+<caption>ice65l01 GB_OUT bittile 0</caption>
 <thead>
 <tr><th rowspan="2">Frame</th><th colspan="2">Bit</th></tr>
 <tr>
@@ -54817,24 +54881,24 @@ non-inverted
 </tr>
 <tr><td>14</td>
 <td title="0.14.0">
-<a href="#tile-ice65l01-GBOUT-GBOUT:MUX.GLOBAL.0">GBOUT:MUX.GLOBAL.0[0]</a>
+<a href="#tile-ice65l01-GB_OUT-GB_OUT:MUX.GLOBAL.0">GB_OUT:MUX.GLOBAL.0[0]</a>
 </td>
 <td title="0.14.1">
-<a href="#tile-ice65l01-GBOUT-GBOUT:MUX.GLOBAL.1">GBOUT:MUX.GLOBAL.1[0]</a>
+<a href="#tile-ice65l01-GB_OUT-GB_OUT:MUX.GLOBAL.1">GB_OUT:MUX.GLOBAL.1[0]</a>
 </td>
 </tr>
 <tr><td>15</td>
 <td title="0.15.0">
-<a href="#tile-ice65l01-GBOUT-GBOUT:MUX.GLOBAL.6">GBOUT:MUX.GLOBAL.6[0]</a>
+<a href="#tile-ice65l01-GB_OUT-GB_OUT:MUX.GLOBAL.6">GB_OUT:MUX.GLOBAL.6[0]</a>
 </td>
 <td title="0.15.1">
-<a href="#tile-ice65l01-GBOUT-GBOUT:MUX.GLOBAL.7">GBOUT:MUX.GLOBAL.7[0]</a>
+<a href="#tile-ice65l01-GB_OUT-GB_OUT:MUX.GLOBAL.7">GB_OUT:MUX.GLOBAL.7[0]</a>
 </td>
 </tr>
 </tbody>
 </table></div>
 <div class="table-wrapper"><table>
-<caption>ice65l01 GBOUT bittile 1</caption>
+<caption>ice65l01 GB_OUT bittile 1</caption>
 <thead>
 <tr><th rowspan="2">Frame</th><th colspan="2">Bit</th></tr>
 <tr>
@@ -54845,46 +54909,46 @@ non-inverted
 <tbody>
 <tr><td>0</td>
 <td title="1.0.0">
-<a href="#tile-ice65l01-GBOUT-GBOUT:MUX.GLOBAL.2">GBOUT:MUX.GLOBAL.2[0]</a>
+<a href="#tile-ice65l01-GB_OUT-GB_OUT:MUX.GLOBAL.2">GB_OUT:MUX.GLOBAL.2[0]</a>
 </td>
 <td title="1.0.1">
-<a href="#tile-ice65l01-GBOUT-GBOUT:MUX.GLOBAL.3">GBOUT:MUX.GLOBAL.3[0]</a>
+<a href="#tile-ice65l01-GB_OUT-GB_OUT:MUX.GLOBAL.3">GB_OUT:MUX.GLOBAL.3[0]</a>
 </td>
 </tr>
 <tr><td>1</td>
 <td title="1.1.0">
-<a href="#tile-ice65l01-GBOUT-GBOUT:MUX.GLOBAL.4">GBOUT:MUX.GLOBAL.4[0]</a>
+<a href="#tile-ice65l01-GB_OUT-GB_OUT:MUX.GLOBAL.4">GB_OUT:MUX.GLOBAL.4[0]</a>
 </td>
 <td title="1.1.1">
-<a href="#tile-ice65l01-GBOUT-GBOUT:MUX.GLOBAL.5">GBOUT:MUX.GLOBAL.5[0]</a>
+<a href="#tile-ice65l01-GB_OUT-GB_OUT:MUX.GLOBAL.5">GB_OUT:MUX.GLOBAL.5[0]</a>
 </td>
 </tr>
 </tbody>
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-ice65l01-GBOUT-GBOUT:MUX.GLOBAL.0">GBOUT:MUX.GLOBAL.0</th>
+<tr><th id="tile-ice65l01-GB_OUT-GB_OUT:MUX.GLOBAL.0">GB_OUT:MUX.GLOBAL.0</th>
 <th>0.14.0</th>
 </tr>
-<tr><th id="tile-ice65l01-GBOUT-GBOUT:MUX.GLOBAL.1">GBOUT:MUX.GLOBAL.1</th>
+<tr><th id="tile-ice65l01-GB_OUT-GB_OUT:MUX.GLOBAL.1">GB_OUT:MUX.GLOBAL.1</th>
 <th>0.14.1</th>
 </tr>
-<tr><th id="tile-ice65l01-GBOUT-GBOUT:MUX.GLOBAL.2">GBOUT:MUX.GLOBAL.2</th>
+<tr><th id="tile-ice65l01-GB_OUT-GB_OUT:MUX.GLOBAL.2">GB_OUT:MUX.GLOBAL.2</th>
 <th>1.0.0</th>
 </tr>
-<tr><th id="tile-ice65l01-GBOUT-GBOUT:MUX.GLOBAL.3">GBOUT:MUX.GLOBAL.3</th>
+<tr><th id="tile-ice65l01-GB_OUT-GB_OUT:MUX.GLOBAL.3">GB_OUT:MUX.GLOBAL.3</th>
 <th>1.0.1</th>
 </tr>
-<tr><th id="tile-ice65l01-GBOUT-GBOUT:MUX.GLOBAL.4">GBOUT:MUX.GLOBAL.4</th>
+<tr><th id="tile-ice65l01-GB_OUT-GB_OUT:MUX.GLOBAL.4">GB_OUT:MUX.GLOBAL.4</th>
 <th>1.1.0</th>
 </tr>
-<tr><th id="tile-ice65l01-GBOUT-GBOUT:MUX.GLOBAL.5">GBOUT:MUX.GLOBAL.5</th>
+<tr><th id="tile-ice65l01-GB_OUT-GB_OUT:MUX.GLOBAL.5">GB_OUT:MUX.GLOBAL.5</th>
 <th>1.1.1</th>
 </tr>
-<tr><th id="tile-ice65l01-GBOUT-GBOUT:MUX.GLOBAL.6">GBOUT:MUX.GLOBAL.6</th>
+<tr><th id="tile-ice65l01-GB_OUT-GB_OUT:MUX.GLOBAL.6">GB_OUT:MUX.GLOBAL.6</th>
 <th>0.15.0</th>
 </tr>
-<tr><th id="tile-ice65l01-GBOUT-GBOUT:MUX.GLOBAL.7">GBOUT:MUX.GLOBAL.7</th>
+<tr><th id="tile-ice65l01-GB_OUT-GB_OUT:MUX.GLOBAL.7">GB_OUT:MUX.GLOBAL.7</th>
 <th>0.15.1</th>
 </tr>
 </thead>
