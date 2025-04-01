@@ -31,10 +31,11 @@
         <link rel="stylesheet" href="../custom.css">
 
 
-        <!-- Provide site root to javascript -->
+        <!-- Provide site root and default themes to javascript -->
         <script>
-            var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc.js"></script>
@@ -44,8 +45,8 @@
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
                     localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
@@ -59,7 +60,8 @@
 
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script>
-            var theme;
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             const html = document.documentElement;
@@ -72,8 +74,8 @@
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var sidebar = null;
-            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
@@ -109,6 +111,7 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
@@ -53112,6 +53115,150 @@ non-inverted
 <tr><td>
 non-inverted
 </td>
+<td>[0]</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="filter"><a class="header" href="#filter"><code>FILTER</code></a></h2>
+<div class="table-wrapper"><table>
+<caption>ice40t05 FILTER bittile 0</caption>
+<thead>
+<tr><th rowspan="2">Frame</th><th colspan="0">Bit</th></tr>
+<tr>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<caption>ice40t05 FILTER bittile 1</caption>
+<thead>
+<tr><th rowspan="2">Frame</th><th colspan="8">Bit</th></tr>
+<tr>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>0</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr><td>1</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr><td>2</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="1.2.7">
+<a href="#tile-ice40t05-FILTER-FILTER0:ENABLE">FILTER0:ENABLE[0]</a>
+</td>
+</tr>
+<tr><td>3</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="1.3.7">
+<a href="#tile-ice40t05-FILTER-FILTER0:ENABLE">FILTER0:ENABLE[1]</a>
+</td>
+</tr>
+<tr><td>4</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="1.4.7">
+<a href="#tile-ice40t05-FILTER-FILTER1:ENABLE">FILTER1:ENABLE[0]</a>
+</td>
+</tr>
+<tr><td>5</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="1.5.7">
+<a href="#tile-ice40t05-FILTER-FILTER0:ENABLE">FILTER0:ENABLE[2]</a>
+</td>
+</tr>
+<tr><td>6</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="1.6.7">
+<a href="#tile-ice40t05-FILTER-FILTER1:ENABLE">FILTER1:ENABLE[1]</a>
+</td>
+</tr>
+<tr><td>7</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="1.7.7">
+<a href="#tile-ice40t05-FILTER-FILTER1:ENABLE">FILTER1:ENABLE[2]</a>
+</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-ice40t05-FILTER-FILTER0:ENABLE">FILTER0:ENABLE</th>
+<th>1.5.7</th>
+<th>1.3.7</th>
+<th>1.2.7</th>
+</tr>
+<tr><th id="tile-ice40t05-FILTER-FILTER1:ENABLE">FILTER1:ENABLE</th>
+<th>1.7.7</th>
+<th>1.6.7</th>
+<th>1.4.7</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>
+non-inverted
+</td>
+<td>[2]</td>
+<td>[1]</td>
 <td>[0]</td>
 </tr>
 </tbody>
