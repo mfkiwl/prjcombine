@@ -53004,6 +53004,1233 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
+<h2 id="speed"><a class="header" href="#speed"><code>SPEED</code></a></h2>
+<div class="table-wrapper"><table>
+<caption>ice40t04 SPEED bittile 0</caption>
+<thead>
+<tr><th rowspan="2">Frame</th><th colspan="2">Bit</th></tr>
+<tr>
+<th>0</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>0</td>
+<td title="0.0.0">
+<a href="#tile-ice40t04-SPEED-SPEED:SPEED">SPEED:SPEED[0]</a>
+</td>
+<td title="0.0.1">
+<a href="#tile-ice40t04-SPEED-SPEED:SPEED">SPEED:SPEED[1]</a>
+</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-ice40t04-SPEED-SPEED:SPEED">SPEED:SPEED</th>
+<th>0.0.1</th>
+<th>0.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>LOW</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>MEDIUM</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>HIGH</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="creg"><a class="header" href="#creg"><code>CREG</code></a></h2>
+<div class="table-wrapper"><table>
+<caption>ice40t04 CREG bittile 0</caption>
+<thead>
+<tr><th rowspan="2">Frame</th><th colspan="6">Bit</th></tr>
+<tr>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>0</td>
+<td title="0.0.0">
+<a href="#tile-ice40t04-CREG-MISC:LOW_POWER">~MISC:LOW_POWER</a>
+</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td title="0.0.4">
+<a href="#tile-ice40t04-CREG-MISC:COLD_BOOT">MISC:COLD_BOOT</a>
+</td>
+<td title="0.0.5">
+<a href="#tile-ice40t04-CREG-MISC:WARM_BOOT">MISC:WARM_BOOT</a>
+</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-ice40t04-CREG-MISC:COLD_BOOT">MISC:COLD_BOOT</th>
+<th>0.0.4</th>
+</tr>
+<tr><th id="tile-ice40t04-CREG-MISC:WARM_BOOT">MISC:WARM_BOOT</th>
+<th>0.0.5</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>
+non-inverted
+</td>
+<td>[0]</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-ice40t04-CREG-MISC:LOW_POWER">MISC:LOW_POWER</th>
+<th>0.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>
+inverted
+</td>
+<td>~[0]</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="speed-data"><a class="header" href="#speed-data">Speed data</a></h2>
+<div class="table-wrapper"><table>
+<caption>ice40t04 speed data</caption>
+<thead>
+<tr>
+<th colspan="2">Key</th>
+<th>
+iCE5LP4K
+<br>
+iCE5LP2K
+<br>
+iCE5LP1K
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="2">BRAM:CASCADE</td><td>fall</td>
+<td>[127.835ps, 344.358ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[103.252ps, 278.135ps]</td>
+</tr>
+<tr>
+<td rowspan="4">BRAM:MASK_SETUPHOLD_WCLK</td><td>fall hold</td>
+<td>0ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>516.537ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>0ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>516.537ps</td>
+</tr>
+<tr>
+<td rowspan="4">BRAM:RADDR_SETUPHOLD_RCLK</td><td>fall hold</td>
+<td>105.956ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>384.092ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>105.956ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>384.092ps</td>
+</tr>
+<tr>
+<td rowspan="4">BRAM:RCLKE_SETUPHOLD_RCLK</td><td>fall hold</td>
+<td>99.334ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>503.292ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>99.334ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>503.292ps</td>
+</tr>
+<tr>
+<td rowspan="2">BRAM:RCLK_TO_RDATA</td><td>fall</td>
+<td>[437.591ps, 1178.76ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[437.591ps, 1178.76ps]</td>
+</tr>
+<tr>
+<td rowspan="4">BRAM:RE_SETUPHOLD_RCLK</td><td>fall hold</td>
+<td>158.934ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>185.424ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>158.934ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>185.424ps</td>
+</tr>
+<tr>
+<td rowspan="4">BRAM:WADDR_SETUPHOLD_WCLK</td><td>fall hold</td>
+<td>66.2227ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>423.825ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>66.2227ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>423.825ps</td>
+</tr>
+<tr>
+<td rowspan="4">BRAM:WCLKE_SETUPHOLD_WCLK</td><td>fall hold</td>
+<td>51.6537ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>503.292ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>51.6537ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>503.292ps</td>
+</tr>
+<tr>
+<td rowspan="4">BRAM:WDATA_SETUPHOLD_WCLK</td><td>fall hold</td>
+<td>66.2227ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>304.624ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>66.2227ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>304.624ps</td>
+</tr>
+<tr>
+<td rowspan="4">BRAM:WE_SETUPHOLD_WCLK</td><td>fall hold</td>
+<td>92.7118ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>251.646ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>92.7118ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>251.646ps</td>
+</tr>
+<tr>
+<td rowspan="2">GB_FABRIC</td><td>fall</td>
+<td>[295.005ps, 794.672ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[590.01ps, 1589.34ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:GLOBAL</td><td>fall</td>
+<td>[103.252ps, 278.135ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[93.4182ps, 251.646ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:GOUT</td><td>fall</td>
+<td>[196.67ps, 529.781ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[216.337ps, 582.76ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:IMUX_CE</td><td>fall</td>
+<td>[181.92ps, 490.048ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[260.588ps, 701.96ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:IMUX_CLK</td><td>fall</td>
+<td>[344.172ps, 927.118ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[329.422ps, 887.384ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:IMUX_IO</td><td>fall</td>
+<td>[186.836ps, 503.292ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[245.837ps, 662.227ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:IMUX_LC</td><td>fall</td>
+<td>[186.836ps, 503.292ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[245.837ps, 662.227ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:IMUX_RST</td><td>fall</td>
+<td>[196.67ps, 529.781ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[236.004ps, 635.738ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LOCAL</td><td>fall</td>
+<td>[285.171ps, 768.183ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[408.09ps, 1099.3ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG</td><td>fall</td>
+<td>[457.258ps, 1231.74ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[398.257ps, 1072.81ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_H_0</td><td>fall</td>
+<td>[122.919ps, 331.113ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[113.085ps, 304.624ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_H_1</td><td>fall</td>
+<td>[113.085ps, 304.624ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[108.168ps, 291.38ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_H_10</td><td>fall</td>
+<td>[398.257ps, 1072.81ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[349.089ps, 940.362ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_H_11</td><td>fall</td>
+<td>[442.507ps, 1192.01ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[383.506ps, 1033.07ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_H_12</td><td>fall</td>
+<td>[457.258ps, 1231.74ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[398.257ps, 1072.81ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_H_2</td><td>fall</td>
+<td>[142.586ps, 384.092ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[127.835ps, 344.358ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_H_3</td><td>fall</td>
+<td>[152.419ps, 410.581ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[137.669ps, 370.847ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_H_4</td><td>fall</td>
+<td>[181.92ps, 490.048ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[157.336ps, 423.825ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_H_5</td><td>fall</td>
+<td>[216.337ps, 582.76ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[186.836ps, 503.292ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_H_6</td><td>fall</td>
+<td>[240.921ps, 648.982ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[206.503ps, 556.271ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_H_7</td><td>fall</td>
+<td>[275.338ps, 741.694ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[231.087ps, 622.493ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_H_8</td><td>fall</td>
+<td>[324.505ps, 874.139ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[280.255ps, 754.939ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_H_9</td><td>fall</td>
+<td>[363.839ps, 980.096ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[319.589ps, 860.895ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_TO_QUAD</td><td>fall</td>
+<td>[314.672ps, 847.65ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[221.254ps, 596.004ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_V_0</td><td>fall</td>
+<td>[73.7512ps, 198.668ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[73.7512ps, 198.668ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_V_1</td><td>fall</td>
+<td>[78.668ps, 211.913ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[73.7512ps, 198.668ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_V_10</td><td>fall</td>
+<td>[324.505ps, 874.139ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[290.088ps, 781.428ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_V_11</td><td>fall</td>
+<td>[339.256ps, 913.873ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[299.922ps, 807.917ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_V_12</td><td>fall</td>
+<td>[398.257ps, 1072.81ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[363.839ps, 980.096ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_V_2</td><td>fall</td>
+<td>[113.085ps, 304.624ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[103.252ps, 278.135ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_V_3</td><td>fall</td>
+<td>[122.919ps, 331.113ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[113.085ps, 304.624ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_V_4</td><td>fall</td>
+<td>[152.419ps, 410.581ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[137.669ps, 370.847ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_V_5</td><td>fall</td>
+<td>[196.67ps, 529.781ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[172.086ps, 463.559ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_V_6</td><td>fall</td>
+<td>[216.337ps, 582.76ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[191.753ps, 516.537ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_V_7</td><td>fall</td>
+<td>[236.004ps, 635.738ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[206.503ps, 556.271ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_V_8</td><td>fall</td>
+<td>[295.005ps, 794.672ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[265.504ps, 715.205ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:LONG_V_9</td><td>fall</td>
+<td>[309.755ps, 834.406ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[280.255ps, 754.939ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:OUT_TO_LONG</td><td>fall</td>
+<td>[457.258ps, 1231.74ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[398.257ps, 1072.81ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:OUT_TO_QUAD</td><td>fall</td>
+<td>[240.921ps, 648.982ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[221.254ps, 596.004ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:QUAD</td><td>fall</td>
+<td>[240.921ps, 648.982ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[221.254ps, 596.004ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:QUAD_H_0</td><td>fall</td>
+<td>[88.5015ps, 238.402ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[93.4182ps, 251.646ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:QUAD_H_1</td><td>fall</td>
+<td>[108.168ps, 291.38ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[113.085ps, 304.624ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:QUAD_H_2</td><td>fall</td>
+<td>[127.835ps, 344.358ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[127.835ps, 344.358ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:QUAD_H_3</td><td>fall</td>
+<td>[147.502ps, 397.336ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[147.502ps, 397.336ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:QUAD_H_4</td><td>fall</td>
+<td>[201.587ps, 543.026ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[191.753ps, 516.537ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:QUAD_IO</td><td>fall</td>
+<td>[275.338ps, 741.694ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[231.087ps, 622.493ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:QUAD_V_0</td><td>fall</td>
+<td>[127.835ps, 344.358ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[127.835ps, 344.358ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:QUAD_V_1</td><td>fall</td>
+<td>[127.835ps, 344.358ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[127.835ps, 344.358ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:QUAD_V_2</td><td>fall</td>
+<td>[167.169ps, 450.314ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[162.253ps, 437.07ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:QUAD_V_3</td><td>fall</td>
+<td>[216.337ps, 582.76ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[201.587ps, 543.026ps]</td>
+</tr>
+<tr>
+<td rowspan="2">INT:QUAD_V_4</td><td>fall</td>
+<td>[240.921ps, 648.982ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[221.254ps, 596.004ps]</td>
+</tr>
+<tr>
+<td rowspan="4">LEDD_IP:LEDDADDR0_SETUPHOLD_LEDDCLK</td><td>fall hold</td>
+<td>126.367ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>305.053ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>209.901ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>328.137ps</td>
+</tr>
+<tr>
+<td rowspan="4">LEDD_IP:LEDDADDR1_SETUPHOLD_LEDDCLK</td><td>fall hold</td>
+<td>139.041ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>285.675ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>214.958ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>301.401ps</td>
+</tr>
+<tr>
+<td rowspan="4">LEDD_IP:LEDDADDR2_SETUPHOLD_LEDDCLK</td><td>fall hold</td>
+<td>127.844ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>492.208ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>28.2532ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>349.417ps</td>
+</tr>
+<tr>
+<td rowspan="4">LEDD_IP:LEDDADDR3_SETUPHOLD_LEDDCLK</td><td>fall hold</td>
+<td>87.263ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>371.504ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>204.273ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>355.637ps</td>
+</tr>
+<tr>
+<td rowspan="2">LEDD_IP:LEDDCLK_TO_LEDDON</td><td>fall</td>
+<td>[348.479ps, 938.72ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[318.576ps, 858.167ps]</td>
+</tr>
+<tr>
+<td rowspan="2">LEDD_IP:LEDDCLK_TO_PWMOUT0</td><td>fall</td>
+<td>[355.626ps, 957.972ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[324.638ps, 874.496ps]</td>
+</tr>
+<tr>
+<td rowspan="2">LEDD_IP:LEDDCLK_TO_PWMOUT1</td><td>fall</td>
+<td>[353.394ps, 951.959ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[322.754ps, 869.422ps]</td>
+</tr>
+<tr>
+<td rowspan="2">LEDD_IP:LEDDCLK_TO_PWMOUT2</td><td>fall</td>
+<td>[351.849ps, 947.796ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[321.118ps, 865.015ps]</td>
+</tr>
+<tr>
+<td rowspan="4">LEDD_IP:LEDDCS_SETUPHOLD_LEDDCLK</td><td>fall hold</td>
+<td>131.937ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>264.704ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>18.0775ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>544.287ps</td>
+</tr>
+<tr>
+<td rowspan="4">LEDD_IP:LEDDDAT0_SETUPHOLD_LEDDCLK</td><td>fall hold</td>
+<td>509.846ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>13.5213ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>495.71ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>-1.56948ps</td>
+</tr>
+<tr>
+<td rowspan="4">LEDD_IP:LEDDDAT1_SETUPHOLD_LEDDCLK</td><td>fall hold</td>
+<td>501.306ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>76.0329ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>485.633ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>60.015ps</td>
+</tr>
+<tr>
+<td rowspan="4">LEDD_IP:LEDDDAT2_SETUPHOLD_LEDDCLK</td><td>fall hold</td>
+<td>356.963ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>110.471ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>310.047ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>106.932ps</td>
+</tr>
+<tr>
+<td rowspan="4">LEDD_IP:LEDDDAT3_SETUPHOLD_LEDDCLK</td><td>fall hold</td>
+<td>499.942ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>114.879ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>484.143ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>104.604ps</td>
+</tr>
+<tr>
+<td rowspan="4">LEDD_IP:LEDDDAT4_SETUPHOLD_LEDDCLK</td><td>fall hold</td>
+<td>451.183ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>-140.653ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>396.474ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>-129.448ps</td>
+</tr>
+<tr>
+<td rowspan="4">LEDD_IP:LEDDDAT5_SETUPHOLD_LEDDCLK</td><td>fall hold</td>
+<td>348.686ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>93.8495ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>304.589ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>80.9639ps</td>
+</tr>
+<tr>
+<td rowspan="4">LEDD_IP:LEDDDAT6_SETUPHOLD_LEDDCLK</td><td>fall hold</td>
+<td>377.864ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>116.292ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>331.854ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>116.589ps</td>
+</tr>
+<tr>
+<td rowspan="4">LEDD_IP:LEDDDAT7_SETUPHOLD_LEDDCLK</td><td>fall hold</td>
+<td>381.696ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>89.8695ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>323.499ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>74.0899ps</td>
+</tr>
+<tr>
+<td rowspan="4">LEDD_IP:LEDDDEN_SETUPHOLD_LEDDCLK</td><td>fall hold</td>
+<td>126.027ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>261.675ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>11.9717ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>540.149ps</td>
+</tr>
+<tr>
+<td rowspan="4">LEDD_IP:LEDDEXE_SETUPHOLD_LEDDCLK</td><td>fall hold</td>
+<td>360.202ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>-114.863ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>358.64ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>-101.098ps</td>
+</tr>
+<tr>
+<td rowspan="2">PLB:CARRY_INIT</td><td>fall</td>
+<td>[167.169ps, 450.314ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[206.503ps, 556.271ps]</td>
+</tr>
+<tr>
+<td rowspan="4">PLB:CE_SETUPHOLD_CLK</td><td>fall hold</td>
+<td>0ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>0ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>0ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>0ps</td>
+</tr>
+<tr>
+<td rowspan="2">PLB:CI_TO_CO</td><td>fall</td>
+<td>[103.252ps, 278.135ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[103.252ps, 278.135ps]</td>
+</tr>
+<tr>
+<td rowspan="2">PLB:CLK_TO_O</td><td>fall</td>
+<td>[516.259ps, 1390.68ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[516.259ps, 1390.68ps]</td>
+</tr>
+<tr>
+<td rowspan="4">PLB:I0_SETUPHOLD_CLK</td><td>fall hold</td>
+<td>0ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>1059.56ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>0ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>1231.74ps</td>
+</tr>
+<tr>
+<td rowspan="4">PLB:I0_TO_CASC</td><td>fall-to-fall</td>
+<td>[334.339ps, 900.628ps]</td>
+</tr>
+<tr>
+<td>fall-to-rise</td>
+<td>[314.672ps, 847.65ps]</td>
+</tr>
+<tr>
+<td>rise-to-fall</td>
+<td>[334.339ps, 900.628ps]</td>
+</tr>
+<tr>
+<td>rise-to-rise</td>
+<td>[314.672ps, 847.65ps]</td>
+</tr>
+<tr>
+<td rowspan="4">PLB:I0_TO_O</td><td>fall-to-fall</td>
+<td>[476.925ps, 1284.72ps]</td>
+</tr>
+<tr>
+<td>fall-to-rise</td>
+<td>[462.174ps, 1244.99ps]</td>
+</tr>
+<tr>
+<td>rise-to-fall</td>
+<td>[476.925ps, 1284.72ps]</td>
+</tr>
+<tr>
+<td>rise-to-rise</td>
+<td>[462.174ps, 1244.99ps]</td>
+</tr>
+<tr>
+<td rowspan="4">PLB:I1_SETUPHOLD_CLK</td><td>fall hold</td>
+<td>0ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>1006.58ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>0ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>1059.56ps</td>
+</tr>
+<tr>
+<td rowspan="4">PLB:I1_TO_CASC</td><td>fall-to-fall</td>
+<td>[329.422ps, 887.384ps]</td>
+</tr>
+<tr>
+<td>fall-to-rise</td>
+<td>[275.338ps, 741.694ps]</td>
+</tr>
+<tr>
+<td>rise-to-fall</td>
+<td>[329.422ps, 887.384ps]</td>
+</tr>
+<tr>
+<td>rise-to-rise</td>
+<td>[275.338ps, 741.694ps]</td>
+</tr>
+<tr>
+<td rowspan="2">PLB:I1_TO_CO</td><td>fall</td>
+<td>[245.837ps, 662.227ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[250.754ps, 675.471ps]</td>
+</tr>
+<tr>
+<td rowspan="4">PLB:I1_TO_O</td><td>fall-to-fall</td>
+<td>[457.258ps, 1231.74ps]</td>
+</tr>
+<tr>
+<td>fall-to-rise</td>
+<td>[437.591ps, 1178.76ps]</td>
+</tr>
+<tr>
+<td>rise-to-fall</td>
+<td>[457.258ps, 1231.74ps]</td>
+</tr>
+<tr>
+<td>rise-to-rise</td>
+<td>[437.591ps, 1178.76ps]</td>
+</tr>
+<tr>
+<td rowspan="4">PLB:I2_SETUPHOLD_CLK</td><td>fall hold</td>
+<td>0ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>860.895ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>0ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>980.096ps</td>
+</tr>
+<tr>
+<td rowspan="4">PLB:I2_TO_CASC</td><td>fall-to-fall</td>
+<td>[290.088ps, 781.428ps]</td>
+</tr>
+<tr>
+<td>fall-to-rise</td>
+<td>[260.588ps, 701.96ps]</td>
+</tr>
+<tr>
+<td>rise-to-fall</td>
+<td>[290.088ps, 781.428ps]</td>
+</tr>
+<tr>
+<td>rise-to-rise</td>
+<td>[260.588ps, 701.96ps]</td>
+</tr>
+<tr>
+<td rowspan="2">PLB:I2_TO_CO</td><td>fall</td>
+<td>[132.752ps, 357.602ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[226.17ps, 609.249ps]</td>
+</tr>
+<tr>
+<td rowspan="4">PLB:I2_TO_O</td><td>fall-to-fall</td>
+<td>[447.424ps, 1205.25ps]</td>
+</tr>
+<tr>
+<td>fall-to-rise</td>
+<td>[437.591ps, 1178.76ps]</td>
+</tr>
+<tr>
+<td>rise-to-fall</td>
+<td>[447.424ps, 1205.25ps]</td>
+</tr>
+<tr>
+<td>rise-to-rise</td>
+<td>[437.591ps, 1178.76ps]</td>
+</tr>
+<tr>
+<td rowspan="4">PLB:I3_SETUPHOLD_CLK</td><td>fall hold</td>
+<td>0ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>582.76ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>0ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>728.45ps</td>
+</tr>
+<tr>
+<td rowspan="4">PLB:I3_TO_CASC</td><td>fall-to-fall</td>
+<td>[226.17ps, 609.249ps]</td>
+</tr>
+<tr>
+<td>fall-to-rise</td>
+<td>[216.337ps, 582.76ps]</td>
+</tr>
+<tr>
+<td>rise-to-fall</td>
+<td>[226.17ps, 609.249ps]</td>
+</tr>
+<tr>
+<td>rise-to-rise</td>
+<td>[216.337ps, 582.76ps]</td>
+</tr>
+<tr>
+<td rowspan="4">PLB:I3_TO_O</td><td>fall-to-fall</td>
+<td>[324.505ps, 874.139ps]</td>
+</tr>
+<tr>
+<td>fall-to-rise</td>
+<td>[319.589ps, 860.895ps]</td>
+</tr>
+<tr>
+<td>rise-to-fall</td>
+<td>[324.505ps, 874.139ps]</td>
+</tr>
+<tr>
+<td>rise-to-rise</td>
+<td>[319.589ps, 860.895ps]</td>
+</tr>
+<tr>
+<td rowspan="2">PLB:RST_RECREM_CLK</td><td>recovery</td>
+<td>423.825ps</td>
+</tr>
+<tr>
+<td>removal</td>
+<td>0ps</td>
+</tr>
+<tr>
+<td rowspan="4">PLB:RST_SETUPHOLD_CLK</td><td>fall hold</td>
+<td>-191.753ps</td>
+</tr>
+<tr>
+<td>fall setup</td>
+<td>384.092ps</td>
+</tr>
+<tr>
+<td>rise hold</td>
+<td>-177.003ps</td>
+</tr>
+<tr>
+<td>rise setup</td>
+<td>529.781ps</td>
+</tr>
+<tr>
+<td rowspan="2">PLB:RST_TO_O</td><td>fall</td>
+<td>[590.01ps, 1589.34ps]</td>
+</tr>
+<tr>
+<td>rise</td>
+<td>[420.038ps, 1131.48ps]</td>
+</tr>
+</tbody>
+</table></div>
 
                     </main>
 
