@@ -143,7 +143,47 @@
 <p>XPLA3 is a family of flash-based 3.3V CPLDs orignally designed by Philips, and later acquired by Xilinx (along with Philips entire CPLD division).  It is a derivative of Philips earlier XPLA and XPLA2 architectures.</p>
 <h2 id="devices"><a class="header" href="#devices">Devices</a></h2>
 <p>The following devices exist:</p>
-<p>{{devlist xpla3}}</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Device</th>
+<th>IDCODE</th>
+<th>Function blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xcr3032xl</td>
+<td>0xX4808XXX</td>
+<td>2</td>
+</tr>
+<tr>
+<td>xcr3064xl</td>
+<td>0xX4848XXX</td>
+<td>4</td>
+</tr>
+<tr>
+<td>xcr3128xl</td>
+<td>0xX4888XXX</td>
+<td>8</td>
+</tr>
+<tr>
+<td>xcr3256xl</td>
+<td>0xX4948XXX</td>
+<td>16</td>
+</tr>
+<tr>
+<td>xcr3384xl</td>
+<td>0xX4958XXX</td>
+<td>24</td>
+</tr>
+<tr>
+<td>xcr3512xl</td>
+<td>0xX4978XXX</td>
+<td>32</td>
+</tr>
+</tbody>
+</table></div>
 <h2 id="packages"><a class="header" href="#packages">Packages</a></h2>
 <p>The devices come in the following packages:</p>
 <ul>
@@ -199,7 +239,110 @@
 </ul>
 </li>
 </ul>
-<p>{{devpkg xpla3}}</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Device</th>
+<th>cs48</th>
+<th>pc44</th>
+<th>vq44</th>
+<th>cp56</th>
+<th>vq100</th>
+<th>cs144</th>
+<th>tq144</th>
+<th>cs280</th>
+<th>ft256</th>
+<th>pq208</th>
+<th>fg324</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xcr3032xl</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>xcr3064xl</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>xcr3128xl</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>xcr3256xl</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>xcr3384xl</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>xcr3512xl</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table></div>
 <p>Pin compatibility is maintained across devices within a single package, with one exception:</p>
 <ul>
 <li>XCR3384XL has the JTAG pins on different package pins in the TQ144 package only</li>
@@ -234,7 +377,7 @@ special function that can be used instead of their plain I/O function:</p>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../xc9500/devices/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../xc9500/devices/xc95288xv.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
@@ -248,7 +391,7 @@ special function that can be used instead of their plain I/O function:</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../xc9500/devices/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../xc9500/devices/xc95288xv.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
