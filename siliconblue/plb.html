@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>iCE65 and iCE40 - Project Combine</title>
+        <title>Logic block - Project Combine</title>
 
 
         <!-- Custom HTML head -->
@@ -139,92 +139,109 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="ice65-and-ice40"><a class="header" href="#ice65-and-ice40">iCE65 and iCE40</a></h1>
-<p>The iCE65 and iCE40 are series of small FPGAs originally designed by SiliconBlue, later acquired by Lattice.</p>
-<p>There's a significant amount of variation between devices in these series, so each device is represented as a separate database.</p>
-<p>The iCE65 series is based on a 65nm process, and includes the following devices:</p>
+                        <h1 id="logic-block"><a class="header" href="#logic-block">Logic block</a></h1>
+<p>The PLB, or programmable logic block, consists of:</p>
 <ul>
-<li><a href="ice65l04.html">iCE65L04</a>, the original one in the series</li>
-<li><a href="ice65p04.html">iCE65P04</a>, a variant of L04 with a PLL</li>
-<li><a href="ice65l08.html">iCE65L08</a>, a larger L04</li>
-<li><a href="ice65l01.html">iCE65L01</a>, a smaller L04, does not include the special west IO bank functions</li>
-</ul>
-<p>The iCE40 series is based on a 40nm process.  The original series (codenamed Los Angeles) includes the following devices:</p>
+<li>3 shared control inputs
 <ul>
-<li><a href="ice40p01.html">iCE40P01</a>, essentially a die shrink of iCE65L01 with some new functions added, sold as
-<ul>
-<li>iCE40LP1K (low power version)</li>
-<li>iCE40HX1K (high performance version)</li>
-<li>iCE40LP640 (low power version, software-limitted to 640 LUTs)</li>
+<li><code>CLK</code>, the clock</li>
+<li><code>CE</code>, the clock enable</li>
+<li><code>RST</code>, the reset signal</li>
 </ul>
 </li>
-<li><a href="ice40p03.html">iCE40P03</a>, a very cut down P01 with no BRAM nor PLLs, sold as
+<li>8 LCs (logic cells), each consisting of:
 <ul>
-<li>iCE40LP384</li>
+<li>a four-input LUT</li>
+<li>carry logic</li>
+<li>a flip-flop</li>
 </ul>
 </li>
-<li><a href="ice40p08.html">iCE40P08</a>, mostly just a larger P01, sold as
-<ul>
-<li>iCE40LP8K (low power version)</li>
-<li>iCE40HX8K (high performance version)</li>
-<li>iCE40LP4K (low power version, software-limitted to 4k LUTs)</li>
-<li>iCE40HX4K (high performance version, software-limitted to 4k LUTs)</li>
+<li>a carry chain</li>
+<li>a LUT cascade chain (iCE40 only) or hard logic input (<code>iCE40T0*</code> only)</li>
 </ul>
+<h2 id="luts-and-lut-inputs"><a class="header" href="#luts-and-lut-inputs">LUTs and LUT inputs</a></h2>
+<p>Each LC contains a 4-input LUT.  The 4 inputs to the LUT are called <code>LC[0-7].I[0-3]</code>.  The output of the LUT is called <code>LC[0-7].LTOUT</code>.</p>
+<p>The LUT inputs usually come directly from general interconnect.  However, two of the inputs are special:</p>
+<ul>
+<li><code>I3</code> can be driven by the LC's carry input, <code>LC[0-7].CIN</code>.  This is encoded in the bitstream as a special <code>CI</code> value for the relevant general interconnect <code>MUX</code> field.</li>
+<li>on iCE40 only, <code>I2</code> can be driven from the special <code>LC[0-7].LTIN</code> input.  This is encoded in the bitstream as a separate <code>LC{i}:MUX.I2</code> field, selecting between general interconnect and <code>LTIN</code>.</li>
+</ul>
+<p>For most PLBs, the <code>LTIN</code> input is used to implement LUT cascading: <code>LTIN</code> is connected directly to <code>LTOUT</code> of the previous LC in the PLB, or to <code>LC7.LTOUT</code> of the PLB to the south for <code>LC0.LTIN</code>.</p>
+<p>However, on <code>iCE40T0*</code>, some <code>PLB</code> tiles are designated as "IP connect" tiles, and their <code>LTIN</code> is instead connected to the output of some hard logic block.  To route the hard logic output to the fabric, the LC should be configured as combinational, with <code>0xf0f0</code> as the LUT table, and with <code>LTIN</code> input selected.  The LUT cascading cannot be used in those tiles.</p>
+<p>The <code>PLB</code> tiles designed as "IP connect" are:</p>
+<ul>
+<li><code>iCE40T04</code> and <code>iCE40T05</code>: all <code>PLB</code>s within the westernmost and easternmost columns</li>
+<li><code>iCE40T01</code>: the southernmost three and northernmost three <code>PLB</code>s within the westernmost and easternmost columns</li>
+</ul>
+<h2 id="carry-chain-and-carry-logic"><a class="header" href="#carry-chain-and-carry-logic">Carry chain and carry logic</a></h2>
+<p>In addition to the LUT, each LC also has:</p>
+<ul>
+<li>
+<p>a carry input, <code>LC[0-7].CIN</code></p>
+</li>
+<li>
+<p>a carry output, <code>LC[0-7].COUT</code></p>
+</li>
+<li>
+<p>a carry logic primitive, implementing a fixed majority function over the LC's <code>CIN</code>, <code>I1</code>, <code>I2</code> inputs:</p>
+<pre><code>LC[i].COUT = MAJ(LC[i].I1, LC[i].I2, LC[i].CIN) = (
+  (LC[i].CIN &amp; LC[i].I1) |
+  (LC[i].CIN &amp; LC[i].I2) |
+  (LC[i].I1 &amp; LC[i].I2)
+)
+</code></pre>
 </li>
 </ul>
-<p>There was an unreleased series named iCE40MX (codename San Francisco) which added hard MIPI D-PHY and TMDS transceivers, larger BRAMs, and DSP units.  While support for it is present in vendor tools, it is incredibly buggy, and so is not (currently) included in the database.  The devices in this series are:</p>
+<p>The carry logic primitive is only functional when the <code>LC{i}:CARRY_ENABLE</code> bit is set in the bitstream.  Without that, the carry output is indeterminate.</p>
+<p>The <code>CIN</code> inputs of LCs 1-7 are connected directly to <code>COUT</code> outputs of LCs 0-6 of the same PLB.</p>
+<p>The <code>CIN</code> input of LC 0 can be selected (via <code>LC0:MUX.CI</code>) from one of:</p>
 <ul>
-<li>iCE40M08 (aka iCE40MX8), includes hard MIPI D-PHY transceivers</li>
-<li>iCE40M16 (aka iCE40MX16), includes hard MIPI D-PHY transceivers, TMDS receivers, 16-kbit BRAMs, DSP units</li>
+<li>const <code>0</code></li>
+<li>const <code>1</code></li>
+<li><code>CHAIN</code>: <code>LC7.COUT</code> of the <code>PLB</code> to the south</li>
 </ul>
-<p>The first series made after Lattice acquisition is iCE40LM (codenamed Lightning). It includes new SPI and I2C controller hard IP and internal oscillators.  There was only one device in this series:</p>
-<ul>
-<li><a href="ice40r04.html">iCE40R04</a>, sold as
-<ul>
-<li>iCE40LM4K</li>
-<li>iCE40LM2K (software-limitted to 2k LUTs)</li>
-<li>iCE40LM1K (software-limitted to 1k LUTs)</li>
-</ul>
-</li>
-</ul>
-<p>This was followed by the iCE40 Ultra series (codenamed Thunder), which adds new high-current RGB and IR LED drivers, and brings back the (previously unreleased) DSP units from iCE40MX16.  There was only one device in this series:</p>
-<ul>
-<li><a href="ice40t04.html">iCE40T04</a>, sold as
-<ul>
-<li>iCE5LP4K (do not ask me why they called it iCE5; I have absolutely no idea beyond "marketing should be doing less drugs, or at least different drugs")</li>
-<li>iCE5LP2K (software-limitted to 2k LUTs)</li>
-<li>iCE5LP1K (software-limitted to 1k LUTs)</li>
-</ul>
-</li>
-</ul>
-<p>The next series was iCE40 UltraPlus (codenamed ThunderPlus), with minor improvements in the hard IP, and new 256-kbit single-port RAM blocks.  There was only one device in this series:</p>
-<ul>
-<li><a href="ice40t05.html">iCE40T05</a>, sold as
-<ul>
-<li>iCE40UP5K</li>
-<li>iCE40UP3K (software-limitted to 3k LUTs)</li>
-</ul>
-</li>
-</ul>
-<p>The final iCE40 series was iCE40 UltraLite (codenamed Bolt or ThunderBolt), including a new (different) I2C hard controller IP and a new IR/barcode LED driver.  There was, again, only one device in this series:</p>
-<ul>
-<li><a href="ice40t01.html">iCE40T01</a>, sold as
-<ul>
-<li>iCE40UL1K</li>
-<li>iCE40UL640 (software-limitted to 640 LUTs)</li>
-</ul>
-</li>
-</ul>
+<h2 id="flip-flops"><a class="header" href="#flip-flops">Flip-flops</a></h2>
+<p>Every LC includes a flip-flop that may be optionally enabled.  If the flip-flop is enabled, the combinational output of the LUT is not available outside the LC, except for the LUT cascade function.</p>
+<p>The flip-flop always has an initial value of 0.  The reset signal can be synchronous or asynchronous, and the reset value can be configured via the bitstream.  The clock enable has priority over the synchronous reset.</p>
+<p>The flip-flop implements the following logic:</p>
+<pre><code>if (!LC[i].FF_ENABLE) begin
+
+    assign LC[i].OUT = LC[i].LTOUT;
+
+end else if (LC[i].FF_SR_ASYNC) begin
+
+    initial LC[i].OUT = 0;
+
+    always @(posedge CLK, posedge RST)
+        if (RST)
+            LC[i].OUT &lt;= LC[i].FF_SR_VALUE;
+        else if (CE)
+            LC[i].OUT &lt;= LC[i].LTOUT;
+
+end else begin
+
+    initial LC[i].OUT = 0;
+
+    always @(posedge CLK)
+        if (CE) begin
+            if (RST)
+                LC[i].OUT &lt;= LC[i].FF_SR_VALUE;
+            else
+                LC[i].OUT &lt;= LC[i].LTOUT;
+        end
+
+end
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../fpga.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../siliconblue/global.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../siliconblue/geometry.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../siliconblue/ice65l04.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -234,11 +251,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../fpga.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../siliconblue/global.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../siliconblue/geometry.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../siliconblue/ice65l04.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
