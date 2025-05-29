@@ -41,6 +41,16 @@
         <script src="toc.js"></script>
     </head>
     <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
     <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
@@ -178,25 +188,7 @@
 <li><code>prjcombine-interconnect</code>: implements data structures for FPGA-like tile grids and general interconnect; this is the crate that FPGA targets are generally based around</li>
 <li><code>prjcombine-jed</code>: implements JESD3 bitstream format, also known as the <code>.jed</code> file format</li>
 <li><code>prjcombine-xilinx-bitstream</code>: the Xilinx bitstream format (common across Xilinx FPGA targets)</li>
-<li>per-target crates (FPGA):
-<ul>
-<li><code>prjcombine-siliconblue</code>: SiliconBlue / Lattice iCE40 and iCE65</li>
-<li><code>prjcombine-xc2000</code>: Xilinx XC2000, XC3000, XC4000 (including all its variants, such as Spartan and Spartan XL), XC5200</li>
-<li><code>prjcombine-virtex</code>: Xilinx Virtex, Virtex-E, Spartan-II, Spartan-IIE</li>
-<li><code>prjcombine-virtex2</code>: Xilinx Virtex II, Virtex II Pro, Spartan 3, Spartan 3E, Spartan 3A, Spartan 3A DSP</li>
-<li><code>prjcombine-virtex4</code>: Xilinx Virtex 4, Virtex 5, Virtex 6, Virtex 7 (including its variants: Spartan 7, Artix 7, Kintex 7, Zynq 7000)</li>
-<li><code>prjcombine-spartan6</code>: Xilinx Spartan 6</li>
-<li><code>prjcombine-ultrascale</code>: Xilinx UltraScale and UltraScale+</li>
-<li><code>prjcombine-versal</code>: Xilinx / AMD Versal</li>
-</ul>
-</li>
-<li>per-target crates (CPLD):
-<ul>
-<li><code>prjcombine-xc9500</code>: Xilinx XC9500, XC9500XL, XC9500XV</li>
-<li><code>prjcombine-xpla3</code>: Phillips / Xilinx Coolrunner XPLA3</li>
-<li><code>prjcombine-coolrunner2</code>: Xilinx Coolrunner 2</li>
-</ul>
-</li>
+<li>per-target crates (listed below)</li>
 </ul>
 </li>
 <li>
@@ -204,6 +196,214 @@
 <p>These crates contain code that has been used to create the database files.  Because of their characteristics (essentially, this is the "only has to work once" kind of code), little to no documentation is provided for them, or their usage.  More often than not, they require very specific environment to work in that is hard to recreate (such as heavily patched versions of vendor toolchains).</p>
 </li>
 </ol>
+<h2 id="supported-targets"><a class="header" href="#supported-targets">Supported targets</a></h2>
+<p>The currently supported top-level FPGA targets and their corresponding crates are:</p>
+<ul>
+<li>
+<p><code>prjcombine-siliconblue</code>: SiliconBlue / Lattice iCE40 and iCE65 FPGAs; has one database per chip:</p>
+<ul>
+<li><code>ice65l01</code>: iCE65L01</li>
+<li><code>ice65l04</code>: iCE65L04</li>
+<li><code>ice65p04</code>: iCE65P04</li>
+<li><code>ice65l08</code>: iCE65L08</li>
+<li><code>ice40p01</code>: iCE40LP1K, iCE40LP640, iCE40HX1K, iCE40HX640</li>
+<li><code>ice40p08</code>: iCE40LP8K, iCE40LP4K, iCE40HX8K, iCE40HX4K</li>
+<li><code>ice40p03</code>: iCE40LP384</li>
+<li><code>ice40r04</code>: iCE40LM4K, iCE40LM2K, iCE40LM1K</li>
+<li><code>ice40t04</code>: iCE5LP4K, iCE5LP2K, iCE5LP1K</li>
+<li><code>ice40t05</code>: iCE40UP5K, iCE40UP3K</li>
+<li><code>ice40t01</code>: iCE40UL1K, iCE40UL640</li>
+</ul>
+<p>Status:</p>
+<ul>
+<li>geometry and bitstream data: ✅ complete</li>
+<li>speed data: 👷🏼‍♀️ mostly complete (missing DSP timings)</li>
+<li>documentation: 👷🏼‍♀️ in progress</li>
+<li>verification: ❌ not started</li>
+</ul>
+</li>
+<li>
+<p><code>prjcombine-xc2000</code>: Earliest Xilinx devices; has several databases, corresponding to the subtargets:</p>
+<ul>
+<li><code>xc2000</code>: XC2000, XC2000L</li>
+<li><code>xc3000</code>: XC3000, XC3100</li>
+<li><code>xc3000a</code>: XC3000A, XC3000L, XC3100A, XC3100L</li>
+<li><code>xc4000</code>: XC4000, XC4000D</li>
+<li><code>xc4000a</code>: XC4000A</li>
+<li><code>xc4000h</code>: XC4000H</li>
+<li><code>xc4000e</code>: XC4000E, XC4000L, Spartan</li>
+<li><code>xc4000ex</code>: XC4000EX, XC4000XL</li>
+<li><code>xc4000xla</code>: XC4000XLA</li>
+<li><code>xc4000xv</code>: XC4000XV</li>
+<li><code>spartanxl</code>: Spartan XL</li>
+<li><code>xc5200</code>: XC5200, XC5200L</li>
+</ul>
+<p>Status:</p>
+<ul>
+<li>geometry and bitstream data: ✅ complete</li>
+<li>speed data, documentation, verification: ❌ not started</li>
+</ul>
+</li>
+<li>
+<p><code>prjcombine-virtex</code>: Xilinx Virtex and related devices; has one database:</p>
+<ul>
+<li><code>virtex</code>: Virtex, Virtex-E, Spartan-II, Spartan-IIE</li>
+</ul>
+<p>Status:</p>
+<ul>
+<li>geometry and bitstream data: ✅ complete</li>
+<li>speed data, documentation, verification: ❌ not started</li>
+</ul>
+</li>
+<li>
+<p><code>prjcombine-virtex2</code>: Xilinx Virtex-II and Spartan-3; has three databases:</p>
+<ul>
+<li><code>virtex2</code>:
+<ul>
+<li>Virtex-II</li>
+<li>Virtex-II Pro</li>
+</ul>
+</li>
+<li><code>spartan3</code>:
+<ul>
+<li>Spartan-3</li>
+<li>Spartan-3E</li>
+<li>Spartan-3A and Spartan-3AN</li>
+<li>Spartan-3A DSP</li>
+</ul>
+</li>
+<li><code>fpgacore</code>:
+<ul>
+<li>FPGAcore eFPGA</li>
+</ul>
+</li>
+</ul>
+<p>Status:</p>
+<ul>
+<li>geometry and bitstream data: ✅ complete</li>
+<li>documentation: 👷🏼‍♀️ in progress</li>
+<li>speed data, verification: ❌ not started</li>
+</ul>
+</li>
+<li>
+<p><code>prjcombine-spartan6</code>: Xilinx Spartan-6; has one database:</p>
+<ul>
+<li><code>spartan6</code>: Spartan-6 LX, LXT</li>
+</ul>
+<p>Status:</p>
+<ul>
+<li>geometry and bitstream data: ✅ complete</li>
+<li>speed data, documentation, verification: ❌ not started</li>
+</ul>
+</li>
+<li>
+<p><code>prjcombine-virtex4</code>: Xilinx Virtex-4, -5, -6, -7 devices; has four databases:</p>
+<ul>
+<li><code>virtex4</code>: Virtex-4 LX, SX, FX</li>
+<li><code>virtex5</code>: Virtex-5 LX, LXT, SXT, FXT, TXT</li>
+<li><code>virtex6</code>: Virtex-6 LX, LXT, SXT, HXT, CXT</li>
+<li><code>virtex7</code>:
+<ul>
+<li>Spartan-7</li>
+<li>Artix-7</li>
+<li>Kintex-7</li>
+<li>Virtex-7</li>
+<li>Zynq-7000</li>
+</ul>
+</li>
+</ul>
+<p>Status:</p>
+<ul>
+<li>geometry and bitstream data: ✅ complete</li>
+<li>documentation: 👷🏼‍♀️ in progress</li>
+<li>speed data, verification: ❌ not started</li>
+</ul>
+</li>
+<li>
+<p><code>prjcombine-ultrascale</code>: Xilinx/AMD UltraScale devices; has two databases:</p>
+<ul>
+<li><code>ultrascale</code>:
+<ul>
+<li>Kintex UltraScale</li>
+<li>Virtex UltraScale</li>
+</ul>
+</li>
+<li><code>ultrascaleplus</code>:
+<ul>
+<li>Spartan UltraScale+</li>
+<li>Artix UltraScale+</li>
+<li>Kintex UltraScale+</li>
+<li>Virtex UltraScale+</li>
+<li>Zynq UltraScale+ MPSoC</li>
+<li>Zynq UltraScale+ RFSoC</li>
+</ul>
+</li>
+</ul>
+<p>Status:</p>
+<ul>
+<li>geometry data: ✅ complete</li>
+<li>bitstream and speed data, documentation, verification: ❌ not started</li>
+</ul>
+</li>
+<li>
+<p><code>prjcombine-versal</code>: Xilinx/AMD Versal devices; will have one database:</p>
+<ul>
+<li><code>versal</code>:
+<ul>
+<li>Versal Prime</li>
+<li>Versal Prime Gen 2</li>
+<li>Versal AI Core</li>
+<li>Versal AI Edge</li>
+<li>Versal AI Edge Gen 2</li>
+<li>Versal RF</li>
+<li>Versal Network</li>
+<li>Versal Premium</li>
+<li>Versal Premium Gen 2</li>
+<li>Versal HBM</li>
+</ul>
+</li>
+</ul>
+<p>Status:</p>
+<ul>
+<li>geometry data: 👷🏼‍♀️ in progress</li>
+<li>bitstream and speed data, documentation, verification: ❌ not started</li>
+</ul>
+</li>
+</ul>
+<p>The currently supported top-level CPLD targets and their corresponding crates are:</p>
+<ul>
+<li>
+<p><code>prjcombine-xc9500</code>: Xilinx XC9500 and variants; has three databases:</p>
+<ul>
+<li><code>xc9500</code>: XC9500</li>
+<li><code>xc9500xl</code>: XC9500XL</li>
+<li><code>xc9500xv</code>: XC9500XV</li>
+</ul>
+<p>Status: ✅ complete.</p>
+</li>
+<li>
+<p><code>prjcombine-xpla3</code>: Philips/Xilinx CoolRunner XPLA3 devices; has one database:</p>
+<ul>
+<li><code>xpla3</code>: CoolRunner XPLA3</li>
+</ul>
+<p>Status:</p>
+<ul>
+<li>geometry, bitstream, speed data, and verification: ✅ complete</li>
+<li>documentation: 👷🏼‍♀️ mostly complete (missing JTAG commands)</li>
+</ul>
+</li>
+<li>
+<p><code>prjcombine-coolrunner2</code>: Xilinx CoolRunner-II devices; has one database:</p>
+<ul>
+<li><code>coolrunner2</code>: CoolRunner-II</li>
+</ul>
+<p>Status:</p>
+<ul>
+<li>geometry, bitstream, speed data, and verification: ✅ complete</li>
+<li>documentation: 👷🏼‍♀️ in progress</li>
+</ul>
+</li>
+</ul>
 
                     </main>
 
