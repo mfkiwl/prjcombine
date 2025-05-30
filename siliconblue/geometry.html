@@ -152,26 +152,26 @@
                         <h1 id="device-geometry"><a class="header" href="#device-geometry">Device geometry</a></h1>
 <p>The SiliconBlue devices up to iCE40R04 largely follow the classic column-based FPGA structure, with IO surrounding the device:</p>
 <ul>
-<li>every cell in the westernmost column (except for corners) contains an <code>IO.W</code> tile</li>
-<li>every cell in the easternmost column (except for corners) contains an <code>IO.E</code> tile</li>
-<li>every cell in the southmost row (except for corners) contains an <code>IO.S</code> tile</li>
-<li>every cell in the northmost row (except for corners) contains an <code>IO.N</code> tile</li>
-<li>each of the <code>IO.*</code> tiles contains two IO bels</li>
+<li>every cell in the westernmost column (except for corners) contains an <code>IOI_W</code> tile and an <code>IOB_W</code> tile</li>
+<li>every cell in the easternmost column (except for corners) contains an <code>IOI_E</code> tile and an <code>IOB_E</code> tile</li>
+<li>every cell in the southmost row (except for corners) contains an <code>IOI_S</code> tile and an <code>IOB_S</code> tile</li>
+<li>every cell in the northmost row (except for corners) contains an <code>IOI_N</code> tile and an <code>IOB_N</code> tile</li>
+<li>each of the <code>IOI_*</code> tiles contains two IO bels (with I/O registers); each of the <code>IOB_*</code> tiles contains two corresponding IOB bels</li>
 <li>there are 5 IO banks in the device:
 <ul>
-<li>bank 0 (<code>IO.N</code> tiles)</li>
-<li>bank 1 (<code>IO.E</code> tiles)</li>
-<li>bank 2 (<code>IO.S</code> tiles except the ones included in SPI bank)</li>
-<li>bank 3 (<code>IO.W</code> tiles)</li>
-<li>SPI bank (known as bank 4 in Project Combine), containing just the 2 <code>IO.S</code> tiles involved in the SPI configuration interface</li>
+<li>bank 0 (<code>IOB_N</code> tiles)</li>
+<li>bank 1 (<code>IOB_E</code> tiles)</li>
+<li>bank 2 (<code>IOB_S</code> tiles except the ones included in SPI bank)</li>
+<li>bank 3 (<code>IOB_W</code> tiles)</li>
+<li>SPI bank (known as bank 4 in Project Combine), containing just the 2 <code>IOB_S</code> tiles involved in the SPI configuration interface</li>
 </ul>
 </li>
 <li>the corner cells are empty</li>
 <li>two columns of the device are designated as BRAM columns
 <ul>
 <li>they are located at around ¼ and ¾ of the device</li>
-<li>every cell of the column (excluding the southmost and northmost ones) contains an <code>INT.BRAM</code> tile</li>
-<li>there is a <code>BRAM</code> cell for every two <code>INT.BRAM</code> cells, with a single block RAM primitive</li>
+<li>every cell of the column (excluding the southmost and northmost ones) contains an <code>INT_BRAM</code> tile</li>
+<li>there is a <code>BRAM</code> cell for every two <code>INT_BRAM</code> cells, with a single block RAM primitive</li>
 <li>the iCE40P03 device is an exception; it does not have any BRAM columns</li>
 </ul>
 </li>
@@ -188,10 +188,10 @@
 </ul>
 </li>
 </ul>
-<p>The new iCE40R04 hard IP was added in a rather cursed way: instead of integrating it into the device structure in any ordinary way, it was added at the west and east edges of the device, replacing the I/O buffers, while reusing the IO tiles as interconnect.  The IO logic part of the tiles is still present (including the IO registers), and has to be configured in "bypass" combinational mode to actually make use of the hard IP.  IO banks 1 and 3 are thus entirely gone, replaced by the hard IP.</p>
+<p>The new iCE40R04 hard IP was added in a rather cursed way: instead of integrating it into the device structure in any ordinary way, it was added at the west and east edges of the device, replacing the I/O buffers (<code>IOB_W</code> and <code>IOB_E</code> tiles), while reusing the IO tiles as interconnect.  The IO logic part of the tiles is still present (including the IO registers), and has to be configured in "bypass" combinational mode to actually make use of the hard IP.  IO banks 1 and 3 are thus entirely gone, replaced by the hard IP.</p>
 <p>The iCE40T0* series does different, but similar crimes:</p>
 <ul>
-<li>the <code>IO.W</code> and <code>IO.E</code> tiles are gone, replaced by more <code>PLB</code> tiles</li>
+<li>the <code>IOI_W</code> and <code>IOI_E</code> tiles are gone, replaced by more <code>PLB</code> tiles</li>
 <li>the <code>PLB</code> cells in the westernmost and easternmost columns are, however, special
 <ul>
 <li>the input multiplexers to the LUTs are used as inputs to hard IP blocks (thus likely making them unusable as actual LUT inputs)</li>
@@ -203,9 +203,9 @@
 <li>the corner cells are still empty</li>
 <li>there are 3 IO banks in the device:
 <ul>
-<li>bank 0 (<code>IO.N</code> tiles)</li>
-<li>bank 1 (eastern <code>IO.S</code> tiles; includes the SPI configuration interface)</li>
-<li>bank 2 (western <code>IO.S</code> tiles)</li>
+<li>bank 0 (<code>IOB_N</code> tiles)</li>
+<li>bank 1 (eastern <code>IOB_S</code> tiles; includes the SPI configuration interface)</li>
+<li>bank 2 (western <code>IOB_S</code> tiles)</li>
 </ul>
 </li>
 </ul>
@@ -234,7 +234,7 @@
 </li>
 <li>each column corresponds to some amount of bits within a frame:
 <ul>
-<li>an <code>IO.W</code> or <code>IO.E</code> column corresponds to 18 bits</li>
+<li>an <code>IOI_W</code> or <code>IOI_E</code> column corresponds to 18 bits</li>
 <li>a BRAM column corresponds to 42 bits</li>
 <li>a PLB column corresponds to 54 bits</li>
 </ul>
@@ -248,7 +248,7 @@
 </li>
 <li>in addition to all the ordinary columns, there are two extra bits at the end of every frame, containing configuration for the global clocks and the iCE65 PLL
 <ul>
-<li>the two 2×16 bittiles at the northeast corner of bank 0 and southeast corner of bank 1 configure global clocks; they are represented as the <code>GBOUT</code> tile in the database</li>
+<li>the two 2×16 bittiles at the northeast corner of bank 0 and southeast corner of bank 1 configure global clocks; they are represented as the <code>GB_ROOT</code> tile in the database</li>
 <li>on the iCE65P04 only, the two 2×16 bittiles at southeast corner of bank 0 and southwest corner of bank 2 configure the PLL</li>
 </ul>
 </li>

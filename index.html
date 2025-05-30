@@ -179,7 +179,7 @@
 <ul>
 <li><code>prjcombine-types</code>: common data types used across multiple targets
 <ul>
-<li><code>tiledb</code>: bitstream format description (for the databases)</li>
+<li><code>bsdata</code>: bitstream format description (for the databases)</li>
 <li><code>speed</code>: raw speed data description (for the databases)</li>
 <li><code>units</code>: newtypes over <code>f64</code> associated with physical units (used for speed data)</li>
 <li><code>bscan</code>: boundary scan chain description</li>
@@ -200,19 +200,9 @@
 <p>The currently supported top-level FPGA targets and their corresponding crates are:</p>
 <ul>
 <li>
-<p><code>prjcombine-siliconblue</code>: SiliconBlue / Lattice iCE40 and iCE65 FPGAs; has one database per chip:</p>
+<p><code>prjcombine-siliconblue</code>: SiliconBlue / Lattice iCE40 and iCE65 FPGAs; has one database:</p>
 <ul>
-<li><code>ice65l01</code>: iCE65L01</li>
-<li><code>ice65l04</code>: iCE65L04</li>
-<li><code>ice65p04</code>: iCE65P04</li>
-<li><code>ice65l08</code>: iCE65L08</li>
-<li><code>ice40p01</code>: iCE40LP1K, iCE40LP640, iCE40HX1K, iCE40HX640</li>
-<li><code>ice40p08</code>: iCE40LP8K, iCE40LP4K, iCE40HX8K, iCE40HX4K</li>
-<li><code>ice40p03</code>: iCE40LP384</li>
-<li><code>ice40r04</code>: iCE40LM4K, iCE40LM2K, iCE40LM1K</li>
-<li><code>ice40t04</code>: iCE5LP4K, iCE5LP2K, iCE5LP1K</li>
-<li><code>ice40t05</code>: iCE40UP5K, iCE40UP3K</li>
-<li><code>ice40t01</code>: iCE40UL1K, iCE40UL640</li>
+<li><code>siliconblue</code>: iCE65, iCE40</li>
 </ul>
 <p>Status:</p>
 <ul>

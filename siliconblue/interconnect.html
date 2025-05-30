@@ -152,8 +152,8 @@
                         <h1 id="general-interconnect"><a class="header" href="#general-interconnect">General interconnect</a></h1>
 <p>The SiliconBlue general interconnect structure involves the following tile types:</p>
 <ul>
-<li><code>PLB</code> and <code>INT.RAM</code>: the "center" tiles of the interconnect, connecting to four neighbouring tiles</li>
-<li><code>IO.W</code>, <code>IO.E</code>, <code>IO.S</code>, <code>IO.N</code>: the "edge" tiles of the interconnect, connecting to three neighbouring tiles</li>
+<li><code>PLB</code> and <code>INT_BRAM</code>: the "center" tiles of the interconnect, connecting to four neighbouring tiles</li>
+<li><code>IOI_W</code>, <code>IOI_E</code>, <code>IOI_S</code>, <code>IOI_N</code>: the "edge" tiles of the interconnect, connecting to three neighbouring tiles</li>
 </ul>
 <h2 id="global-wires"><a class="header" href="#global-wires"><code>GLOBAL</code> wires</a></h2>
 <p>There are 8 global wires:</p>
@@ -172,8 +172,8 @@ are driven by the various bels within the FPGA:</p>
 <p><code>OUT.LC[0-7]</code>: bel output wires; note that, depending on tile type, some of them may actually alias other <code>OUT</code> wires, effectively making for fewer than 8 distinct outputs per tile:</p>
 <ul>
 <li><code>PLB</code>: all 8 wires are distinct; <code>OUT.LC{i}</code> corresponds directly to the output of LC <code>i</code></li>
-<li><code>INT.RAM</code>: all 8 wires are distinct</li>
-<li><code>IO.*</code>: there are 4 distinct wires; <code>OUT.LC[4-7]</code> are aliased to <code>OUT.LC[0-3]</code>:
+<li><code>INT_BRAM</code>: all 8 wires are distinct</li>
+<li><code>IOI_*</code>: there are 4 distinct wires; <code>OUT.LC[4-7]</code> are aliased to <code>OUT.LC[0-3]</code>:
 <ul>
 <li><code>OUT.LC[04]</code> is <code>IO0.DIN0</code></li>
 <li><code>OUT.LC[15]</code> is <code>IO0.DIN1</code></li>
@@ -227,20 +227,20 @@ are driven by the various bels within the FPGA:</p>
 </ul>
 <p>The interconnect in <code>IO</code> tiles is special:</p>
 <ul>
-<li>in the <code>IO.W</code> and <code>IO.E</code> tiles:
+<li>in the <code>IOI_W</code> and <code>IOI_E</code> tiles:
 <ul>
 <li>there are no vertical <code>LONG</code> wires</li>
 <li>there are only 4 sets of vertical <code>QUAD</code> wires (<code>QUAD.V[0-3].*</code>)</li>
 </ul>
 </li>
-<li>in the <code>IO.S</code> and <code>IO.N</code> tiles:
+<li>in the <code>IOI_S</code> and <code>IOI_N</code> tiles:
 <ul>
 <li>there are no horizontal <code>LONG</code> wires</li>
 <li>there are only 4 sets of horizontal <code>QUAD</code> wires (<code>QUAD.H[0-3].*</code>)</li>
 </ul>
 </li>
 </ul>
-<p>Further, the corner tiles are special: the <code>QUAD.H*.*</code> wires of the horizontally adjacent <code>IO.[WE]</code> tile are connected directly to the <code>QUAD.V*.*</code> wires of the vertically adjacent <code>IO.[SN]</code> or <code>PLB</code> tile.</p>
+<p>Further, the corner tiles are special: the <code>QUAD.H*.*</code> wires of the horizontally adjacent <code>IOI_[WE]</code> tile are connected directly to the <code>QUAD.V*.*</code> wires of the vertically adjacent <code>IOI_[SN]</code> or <code>PLB</code> tile.</p>
 <p>The <code>LONG</code> wires can be driven:</p>
 <ul>
 <li>at many points along the wire: from <code>OUT</code> wires</li>
@@ -254,12 +254,12 @@ are driven by the various bels within the FPGA:</p>
 <li>at <code>IO</code> tiles: from other <code>QUAD</code> wires</li>
 </ul>
 <h2 id="local-wires"><a class="header" href="#local-wires"><code>LOCAL</code> wires</a></h2>
-<p>Every tile has 32 (<code>PLB</code>, <code>INT.RAM</code>) or 16 (<code>IO.*</code>) local wires:</p>
+<p>Every tile has 32 (<code>PLB</code>, <code>INT_BRAM</code>) or 16 (<code>IOI_*</code>) local wires:</p>
 <ul>
 <li>
 <p><code>LOCAL.[0-3].[0-7]</code>: local wires</p>
 <ul>
-<li><code>IO.*</code> tiles only have <code>LOCAL.[0-1].[0-7]</code></li>
+<li><code>IOI_*</code> tiles only have <code>LOCAL.[0-1].[0-7]</code></li>
 </ul>
 </li>
 </ul>
@@ -271,14 +271,14 @@ are driven by the various bels within the FPGA:</p>
 <li><code>GOUT</code> wires (not in <code>IO</code> tiles)</li>
 </ul>
 <h2 id="imux-wires"><a class="header" href="#imux-wires"><code>IMUX</code> wires</a></h2>
-<p><code>IMUX</code> wires directly drive bel inputs.  <code>PLB</code> and <code>INT.RAM</code> tiles contain the following wires:</p>
+<p><code>IMUX</code> wires directly drive bel inputs.  <code>PLB</code> and <code>INT_BRAM</code> tiles contain the following wires:</p>
 <ul>
 <li><code>IMUX.LC[0-7].I[0-3]</code>: "normal" inputs; in <code>PLB</code> tiles, they correspond to LCs in the obvious way</li>
 <li><code>IMUX.CLK</code>: a clock input; freely invertible, can be driven directly by all <code>GLOBAL</code> wires</li>
 <li><code>IMUX.CE</code>: a clock enable input; gates the <code>IMUX.CLK</code> input, can be driven directly by some <code>GLOBAL</code> wires</li>
 <li><code>IMUX.RST</code>: a reset input; can be driven directly by some <code>GLOBAL</code> wires</li>
 </ul>
-<p><code>IO.*</code> tiles contain the following wires:</p>
+<p><code>IOI_*</code> tiles contain the following wires:</p>
 <ul>
 <li><code>IMUX.IO[0-1].DOUT[0-1]</code>: "normal" inputs, I/O data</li>
 <li><code>IMUX.IO[0-1].OE</code>: "normal" inputs, I/O output enable</li>
