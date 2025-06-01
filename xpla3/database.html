@@ -162,8 +162,8 @@
 <li><code>speeds</code> (list of object): list of <a href="#speed">speed</a></li>
 <li><code>parts</code> (list of object): list of <a href="#part">part</a></li>
 <li><code>mc_bits</code> (object): a <a href="#tile">tile</a> describing per-MC bits</li>
-<li><code>fb_bits</code> (object): a <a href="#tile">tile</a> describing per-FB bits</li>
-<li><code>jed_fb_bits</code> (array): a <a href="#jed-bits">jed bits list</a> describing per-FB bits</li>
+<li><code>block_bits</code> (object): a <a href="#tile">tile</a> describing per-FB bits</li>
+<li><code>jed_block_bits</code> (array): a <a href="#jed-bits">jed bits list</a> describing per-FB bits</li>
 <li><code>jed_mc_bits_iob</code> (array) a <a href="#jed-bits">jed bits list</a> describing per-MC bits for MCs with IOBs</li>
 <li><code>jed_mc_bits_buried</code> (array) a <a href="#jed-bits">jed bits list</a> describing per-MC bits for MCs without IOBs</li>
 </ul>
@@ -181,10 +181,10 @@ from a <a href="#part">part</a>.  A chip is an object with the following fields:
 <p><code>imux_width</code> (number): width of the IMUX bitstream area in columns (and also the size of a single IMUX selector in bits)</p>
 </li>
 <li>
-<p><code>fb_rows</code> (number): the number of FB rows</p>
+<p><code>block_rows</code> (number): the number of FB rows</p>
 </li>
 <li>
-<p><code>fb_cols</code> (array of object): list of FB columns; each item is an object with the following fields:</p>
+<p><code>block_cols</code> (array of object): list of FB columns; each item is an object with the following fields:</p>
 <ul>
 <li><code>pt_col</code> (number): first column of the PT area in bitstream</li>
 <li><code>imux_col</code> (number): first column of the IMUX area in bitstream</li>
@@ -203,7 +203,7 @@ The keys can be:</p>
 <li><code>"TDI"</code></li>
 <li><code>"TDO"</code></li>
 </ul>
-<p>The values are of the form <code>"IOB_{fb_idx}_{mc_idx}"</code>.</p>
+<p>The values are of the form <code>"IOB_{block_idx}_{mc_idx}"</code>.</p>
 </li>
 <li>
 <p><code>imux_bits</code> (object) : a <a href="#tile">tile</a> describing per-FB bits corresponding to IMUX</p>
@@ -228,7 +228,7 @@ with the following fields:</p>
 <ul>
 <li><code>NC</code>: unconnected pin</li>
 <li><code>GND</code>, <code>VCC</code>: power and ground pins</li>
-<li><code>IOB_{fb}_{mc}</code>: an I/O pin</li>
+<li><code>IOB_{block}_{mc}</code>: an I/O pin</li>
 <li><code>GCLK{i}</code>: dedicated clock input pins</li>
 <li><code>PORT_EN</code>: JTAG enable pin</li>
 </ul>

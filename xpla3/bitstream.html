@@ -152,11 +152,11 @@
                         <h1 id="bitstream-structure"><a class="header" href="#bitstream-structure">Bitstream structure</a></h1>
 <p>The raw XPLA3 bitstream is a three-dimensional array of bits. The bitstream is arranged into:</p>
 <ul>
-<li><code>fb_rows * 52 + 2</code> rows</li>
+<li><code>block_rows * 52 + 2</code> rows</li>
 <li>2 planes</li>
 <li><code>bs_cols</code> columns</li>
 </ul>
-<p>The <code>fb_rows</code> and <code>bs_cols</code> variables are per-device and can be obtained from the database.</p>
+<p>The <code>block_rows</code> and <code>bs_cols</code> variables are per-device and can be obtained from the database.</p>
 <p>The bitstream is roughly divided into areas as follows:</p>
 <ul>
 <li>the last row is used to store the UES (user electronic signature)</li>
@@ -228,38 +228,38 @@
 <ul>
 <li>row is:
 <ul>
-<li>if <code>j &lt; 20</code>: <code>fb_row(i) * 52 + 2 + j</code></li>
-<li>if <code>j &gt;= 20</code>: <code>fb_row(i) * 52 + 2 + j + 8</code></li>
+<li>if <code>j &lt; 20</code>: <code>block_row(i) * 52 + 2 + j</code></li>
+<li>if <code>j &gt;= 20</code>: <code>block_row(i) * 52 + 2 + j + 8</code></li>
 </ul>
 </li>
 <li>plane is: <code>(i &amp; 1) ^ 1</code></li>
-<li>column is <code>fb_cols[fb_col(i)].imux_col + imux_width - 1 - k</code></li>
+<li>column is <code>block_cols[block_col(i)].imux_col + imux_width - 1 - k</code></li>
 </ul>
 <h2 id="fuses--product-and-sum-terms"><a class="header" href="#fuses--product-and-sum-terms">Fuses — product and sum terms</a></h2>
 <p>The position of <code>FB[i].PT[j].IM[k].P</code> and <code>FB[i].PT[j].IM[k].N</code> can be computed as follows:</p>
 <ul>
 <li>row is:
 <ul>
-<li>if <code>k &lt; 20</code>: <code>fb_row(i) * 52 + 2 + k</code></li>
-<li>if <code>k &gt;= 20</code>: <code>fb_row(i) * 52 + 2 + k + 8</code></li>
+<li>if <code>k &lt; 20</code>: <code>block_row(i) * 52 + 2 + k</code></li>
+<li>if <code>k &gt;= 20</code>: <code>block_row(i) * 52 + 2 + k + 8</code></li>
 </ul>
 </li>
 <li>plane is <code>0</code> for <code>.P</code> bit, <code>1</code> for <code>.N</code> bit</li>
 <li>column is:
 <ul>
-<li>if <code>i</code> is even: <code>fb_cols[fb_col(i)].pt_col + j</code></li>
-<li>if <code>i</code> is odd: <code>fb_cols[fb_col(i)].pt_col + 95 - j</code></li>
+<li>if <code>i</code> is even: <code>block_cols[block_col(i)].pt_col + j</code></li>
+<li>if <code>i</code> is odd: <code>block_cols[block_col(i)].pt_col + 95 - j</code></li>
 </ul>
 </li>
 </ul>
 <p>The position of <code>FB[i].PT[j].FBN[k]</code> can be computed as follows:</p>
 <ul>
-<li>row is <code>fb_row(i) * 52 + dr</code>, where <code>dr</code> is given in the table below</li>
+<li>row is <code>block_row(i) * 52 + dr</code>, where <code>dr</code> is given in the table below</li>
 <li>plane is given in the table below</li>
 <li>column is:
 <ul>
-<li>if <code>i</code> is even: <code>fb_cols[fb_col(i)].pt_col + j</code></li>
-<li>if <code>i</code> is odd: <code>fb_cols[fb_col(i)].pt_col + 95 - j</code></li>
+<li>if <code>i</code> is even: <code>block_cols[block_col(i)].pt_col + j</code></li>
+<li>if <code>i</code> is odd: <code>block_cols[block_col(i)].pt_col + 95 - j</code></li>
 </ul>
 </li>
 </ul>
@@ -276,12 +276,12 @@
 </div>
 <p>The position of <code>FB[i].MC[j].SUM.PT[k]</code> can be computed as follows:</p>
 <ul>
-<li>row is <code>fb_row(i) * 52 + 22 + (j // 2)</code></li>
+<li>row is <code>block_row(i) * 52 + 22 + (j // 2)</code></li>
 <li>plane is <code>1 - (j % 2)</code></li>
 <li>column is:
 <ul>
-<li>if <code>i</code> is even: <code>fb_cols[fb_col(i)].pt_col + k</code></li>
-<li>if <code>i</code> is odd: <code>fb_cols[fb_col(i)].pt_col + 95 - k</code></li>
+<li>if <code>i</code> is even: <code>block_cols[block_col(i)].pt_col + k</code></li>
+<li>if <code>i</code> is odd: <code>block_cols[block_col(i)].pt_col + 95 - k</code></li>
 </ul>
 </li>
 </ul>
@@ -289,13 +289,13 @@
 <p>The per-MC bits are listed in the table below. The per-MC coordinates should be translated to global coordinates as follows:</p>
 <ul>
 <li>row is:
-if <code>mc &lt; 8</code>: <code>fb_row(fb) * 52 + mc * 3 + table_row</code>
-if <code>mc &gt;= 8</code>: <code>fb_row(fb) * 52 + 4 + mc * 3 + table_row</code></li>
+if <code>mc &lt; 8</code>: <code>block_row(block) * 52 + mc * 3 + table_row</code>
+if <code>mc &gt;= 8</code>: <code>block_row(block) * 52 + 4 + mc * 3 + table_row</code></li>
 <li>plane is: <code>table_plane</code></li>
 <li>column is:
 <ul>
-<li>if <code>fb</code> is even: <code>fb_cols[fb_col(fb)].mc_col + table_column</code></li>
-<li>if <code>fb</code> is odd: <code>fb_cols[fb_col(fb)].mc_col + 9 - table_column</code></li>
+<li>if <code>block</code> is even: <code>block_cols[block_col(block)].mc_col + table_column</code></li>
+<li>if <code>block</code> is odd: <code>block_cols[block_col(block)].mc_col + 9 - table_column</code></li>
 </ul>
 </li>
 </ul>
@@ -986,17 +986,17 @@ non-inverted
 <h2 id="fuses--fbs"><a class="header" href="#fuses--fbs">Fuses — FBs</a></h2>
 <p>The per-FB bits are listed in the table below. The per-FB coordinates should be translated to global coordinates as follows:</p>
 <ul>
-<li>row is: <code>fb_row(fb) * 52 + 24 + table_row</code></li>
+<li>row is: <code>block_row(block) * 52 + 24 + table_row</code></li>
 <li>plane is: <code>table_plane</code></li>
 <li>column is:
 <ul>
-<li>if <code>fb</code> is even: <code>fb_cols[fb_col(fb)].mc_col + table_column</code></li>
-<li>if <code>fb</code> is odd: <code>fb_cols[fb_col(fb)].mc_col + 9 - table_column</code></li>
+<li>if <code>block</code> is even: <code>block_cols[block_col(block)].mc_col + table_column</code></li>
+<li>if <code>block</code> is odd: <code>block_cols[block_col(block)].mc_col + 9 - table_column</code></li>
 </ul>
 </li>
 </ul>
 <div class="table-wrapper"><table>
-<caption>xpla3 fb bittile 0</caption>
+<caption>xpla3 block bittile 0</caption>
 <thead>
 <tr><th rowspan="2">Frame</th><th colspan="4">Bit</th></tr>
 <tr>
@@ -1009,51 +1009,51 @@ non-inverted
 <tbody>
 <tr><td>0</td>
 <td title="0.0.0">
-<a href="#tile-xpla3-fb-LCT0_INV">~LCT0_INV</a>
+<a href="#tile-xpla3-block-LCT0_INV">~LCT0_INV</a>
 </td>
 <td title="0.0.1">
-<a href="#tile-xpla3-fb-LCT1_INV">~LCT1_INV</a>
+<a href="#tile-xpla3-block-LCT1_INV">~LCT1_INV</a>
 </td>
 <td title="0.0.2">
-<a href="#tile-xpla3-fb-LCT2_INV">~LCT2_INV</a>
+<a href="#tile-xpla3-block-LCT2_INV">~LCT2_INV</a>
 </td>
 <td title="0.0.3">
-<a href="#tile-xpla3-fb-LCT3_INV">~LCT3_INV</a>
+<a href="#tile-xpla3-block-LCT3_INV">~LCT3_INV</a>
 </td>
 </tr>
 <tr><td>1</td>
 <td title="0.1.0">
-<a href="#tile-xpla3-fb-LCT4_INV">~LCT4_INV</a>
+<a href="#tile-xpla3-block-LCT4_INV">~LCT4_INV</a>
 </td>
 <td title="0.1.1">
-<a href="#tile-xpla3-fb-LCT5_INV">~LCT5_INV</a>
+<a href="#tile-xpla3-block-LCT5_INV">~LCT5_INV</a>
 </td>
 <td title="0.1.2">
-<a href="#tile-xpla3-fb-LCT6_INV">~LCT6_INV</a>
+<a href="#tile-xpla3-block-LCT6_INV">~LCT6_INV</a>
 </td>
 <td title="0.1.3">
-<a href="#tile-xpla3-fb-LCT7_INV">~LCT7_INV</a>
+<a href="#tile-xpla3-block-LCT7_INV">~LCT7_INV</a>
 </td>
 </tr>
 <tr><td>2</td>
 <td title="0.2.0">
-<a href="#tile-xpla3-fb-FCLK_MUX">FCLK_MUX[0]</a>
+<a href="#tile-xpla3-block-FCLK_MUX">FCLK_MUX[0]</a>
 </td>
 <td title="0.2.1">
-<a href="#tile-xpla3-fb-FCLK_MUX">FCLK_MUX[1]</a>
+<a href="#tile-xpla3-block-FCLK_MUX">FCLK_MUX[1]</a>
 </td>
 <td title="0.2.2">
-<a href="#tile-xpla3-fb-FCLK_MUX">FCLK_MUX[2]</a>
+<a href="#tile-xpla3-block-FCLK_MUX">FCLK_MUX[2]</a>
 </td>
 <td title="0.2.3">
-<a href="#tile-xpla3-fb-FCLK_MUX">FCLK_MUX[3]</a>
+<a href="#tile-xpla3-block-FCLK_MUX">FCLK_MUX[3]</a>
 </td>
 </tr>
 </tbody>
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-xpla3-fb-FCLK_MUX">FCLK_MUX</th>
+<tr><th id="tile-xpla3-block-FCLK_MUX">FCLK_MUX</th>
 <th>0.2.3</th>
 <th>0.2.2</th>
 <th>0.2.1</th>
@@ -1131,28 +1131,28 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-xpla3-fb-LCT0_INV">LCT0_INV</th>
+<tr><th id="tile-xpla3-block-LCT0_INV">LCT0_INV</th>
 <th>0.0.0</th>
 </tr>
-<tr><th id="tile-xpla3-fb-LCT1_INV">LCT1_INV</th>
+<tr><th id="tile-xpla3-block-LCT1_INV">LCT1_INV</th>
 <th>0.0.1</th>
 </tr>
-<tr><th id="tile-xpla3-fb-LCT2_INV">LCT2_INV</th>
+<tr><th id="tile-xpla3-block-LCT2_INV">LCT2_INV</th>
 <th>0.0.2</th>
 </tr>
-<tr><th id="tile-xpla3-fb-LCT3_INV">LCT3_INV</th>
+<tr><th id="tile-xpla3-block-LCT3_INV">LCT3_INV</th>
 <th>0.0.3</th>
 </tr>
-<tr><th id="tile-xpla3-fb-LCT4_INV">LCT4_INV</th>
+<tr><th id="tile-xpla3-block-LCT4_INV">LCT4_INV</th>
 <th>0.1.0</th>
 </tr>
-<tr><th id="tile-xpla3-fb-LCT5_INV">LCT5_INV</th>
+<tr><th id="tile-xpla3-block-LCT5_INV">LCT5_INV</th>
 <th>0.1.1</th>
 </tr>
-<tr><th id="tile-xpla3-fb-LCT6_INV">LCT6_INV</th>
+<tr><th id="tile-xpla3-block-LCT6_INV">LCT6_INV</th>
 <th>0.1.2</th>
 </tr>
-<tr><th id="tile-xpla3-fb-LCT7_INV">LCT7_INV</th>
+<tr><th id="tile-xpla3-block-LCT7_INV">LCT7_INV</th>
 <th>0.1.3</th>
 </tr>
 </thead>
@@ -1175,51 +1175,51 @@ inverted
 <tbody>
 <tr>
 <td>0</td>
-<td><a href="#tile-xpla3-fb-FCLK_MUX">FCLK_MUX[0]</a></td>
+<td><a href="#tile-xpla3-block-FCLK_MUX">FCLK_MUX[0]</a></td>
 </tr>
 <tr>
 <td>1</td>
-<td><a href="#tile-xpla3-fb-FCLK_MUX">FCLK_MUX[1]</a></td>
+<td><a href="#tile-xpla3-block-FCLK_MUX">FCLK_MUX[1]</a></td>
 </tr>
 <tr>
 <td>2</td>
-<td><a href="#tile-xpla3-fb-FCLK_MUX">FCLK_MUX[2]</a></td>
+<td><a href="#tile-xpla3-block-FCLK_MUX">FCLK_MUX[2]</a></td>
 </tr>
 <tr>
 <td>3</td>
-<td><a href="#tile-xpla3-fb-FCLK_MUX">FCLK_MUX[3]</a></td>
+<td><a href="#tile-xpla3-block-FCLK_MUX">FCLK_MUX[3]</a></td>
 </tr>
 <tr>
 <td>4</td>
-<td><a href="#tile-xpla3-fb-LCT0_INV">LCT0_INV</a></td>
+<td><a href="#tile-xpla3-block-LCT0_INV">LCT0_INV</a></td>
 </tr>
 <tr>
 <td>5</td>
-<td><a href="#tile-xpla3-fb-LCT1_INV">LCT1_INV</a></td>
+<td><a href="#tile-xpla3-block-LCT1_INV">LCT1_INV</a></td>
 </tr>
 <tr>
 <td>6</td>
-<td><a href="#tile-xpla3-fb-LCT2_INV">LCT2_INV</a></td>
+<td><a href="#tile-xpla3-block-LCT2_INV">LCT2_INV</a></td>
 </tr>
 <tr>
 <td>7</td>
-<td><a href="#tile-xpla3-fb-LCT3_INV">LCT3_INV</a></td>
+<td><a href="#tile-xpla3-block-LCT3_INV">LCT3_INV</a></td>
 </tr>
 <tr>
 <td>8</td>
-<td><a href="#tile-xpla3-fb-LCT4_INV">LCT4_INV</a></td>
+<td><a href="#tile-xpla3-block-LCT4_INV">LCT4_INV</a></td>
 </tr>
 <tr>
 <td>9</td>
-<td><a href="#tile-xpla3-fb-LCT5_INV">LCT5_INV</a></td>
+<td><a href="#tile-xpla3-block-LCT5_INV">LCT5_INV</a></td>
 </tr>
 <tr>
 <td>10</td>
-<td><a href="#tile-xpla3-fb-LCT6_INV">LCT6_INV</a></td>
+<td><a href="#tile-xpla3-block-LCT6_INV">LCT6_INV</a></td>
 </tr>
 <tr>
 <td>11</td>
-<td><a href="#tile-xpla3-fb-LCT7_INV">LCT7_INV</a></td>
+<td><a href="#tile-xpla3-block-LCT7_INV">LCT7_INV</a></td>
 </tr>
 </tbody>
 </table></div>

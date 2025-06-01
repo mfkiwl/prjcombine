@@ -152,26 +152,26 @@
                         <h1 id="xc2c32a-xa2c32a"><a class="header" href="#xc2c32a-xa2c32a">XC2C32A, XA2C32A</a></h1>
 <div class="table-wrapper"><table><thead><tr><th>Parameter</th><th>Value</th></tr></thead><tbody>
 <tr><td>IDCODE part</td><td>0x6e18</td></tr>
-<tr><td>FB count</td><td>2</td></tr>
+<tr><td>Block count</td><td>2</td></tr>
 <tr><td>I/O banks</td><td>2</td></tr>
 <tr><td>Input-only pads</td><td>1</td></tr>
 <tr><td>Has VREF</td><td>❌</td></tr>
 <tr><td>BS columns</td><td>260</td></tr>
 <tr><td>IMUX width</td><td>8</td></tr>
 <tr><td>BS layout</td><td>wide</td></tr>
-<tr><td>FB rows</td><td>1</td></tr>
-<tr><td>MC width</td><td>9</td></tr>
-<tr><td>FB columns</td><td>1</td></tr>
+<tr><td>Block rows</td><td>1</td></tr>
+<tr><td>Macrocell width</td><td>9</td></tr>
+<tr><td>Block columns</td><td>1</td></tr>
 </tbody></table>
 </div>
 <h2 id="bitstream-columns"><a class="header" href="#bitstream-columns">Bitstream columns</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Column range</th><th>Bits</th></tr></thead><tbody>
 <tr><td>0..1</td><td>transfer</td></tr>
-<tr><td>1..10</td><td>FB column 0 even MCs</td></tr>
-<tr><td>10..122</td><td>FB column 0 even PTs</td></tr>
-<tr><td>122..138</td><td>FB column 0 IMUX</td></tr>
-<tr><td>138..250</td><td>FB column 0 odd PTs</td></tr>
-<tr><td>250..259</td><td>FB column 0 odd MCs</td></tr>
+<tr><td>1..10</td><td>Block column 0 even MCs</td></tr>
+<tr><td>10..122</td><td>Block column 0 even PTs</td></tr>
+<tr><td>122..138</td><td>Block column 0 IMUX</td></tr>
+<tr><td>138..250</td><td>Block column 0 odd PTs</td></tr>
+<tr><td>250..259</td><td>Block column 0 odd MCs</td></tr>
 <tr><td>259..260</td><td>transfer</td></tr>
 </tbody></table>
 </div>
@@ -204,7 +204,7 @@
 </tr>
 <tr>
 <td>IPAD0</td>
-<td>1</td>
+<td>BANK1</td>
 <td>23</td>
 <td>P22</td>
 <td>P24</td>
@@ -214,8 +214,8 @@
 <td>D6</td>
 </tr>
 <tr>
-<td>IOB_0_0</td>
-<td>1</td>
+<td>IOB_C0B0MC0</td>
+<td>BANK1</td>
 <td>43</td>
 <td>-</td>
 <td>P44</td>
@@ -225,8 +225,8 @@
 <td>D2</td>
 </tr>
 <tr>
-<td>IOB_0_1</td>
-<td>1</td>
+<td>IOB_C0B0MC1</td>
+<td>BANK1</td>
 <td>42</td>
 <td>-</td>
 <td>P43</td>
@@ -236,8 +236,8 @@
 <td>D1</td>
 </tr>
 <tr>
-<td>IOB_0_2</td>
-<td>1</td>
+<td>IOB_C0B0MC2</td>
+<td>BANK1</td>
 <td>41</td>
 <td>-</td>
 <td>P42</td>
@@ -247,8 +247,8 @@
 <td>C2</td>
 </tr>
 <tr>
-<td>IOB_0_3</td>
-<td>1</td>
+<td>IOB_C0B0MC3</td>
+<td>BANK1</td>
 <td>39</td>
 <td>P3 (GOE1)</td>
 <td>P40 (GOE1)</td>
@@ -258,8 +258,8 @@
 <td>B2 (GOE1)</td>
 </tr>
 <tr>
-<td>IOB_0_4</td>
-<td>1</td>
+<td>IOB_C0B0MC4</td>
+<td>BANK1</td>
 <td>38</td>
 <td>P2 (GOE0)</td>
 <td>P39 (GOE0)</td>
@@ -269,8 +269,8 @@
 <td>A1 (GOE0)</td>
 </tr>
 <tr>
-<td>IOB_0_5</td>
-<td>1</td>
+<td>IOB_C0B0MC5</td>
+<td>BANK1</td>
 <td>37</td>
 <td>P1 (GOE3)</td>
 <td>P38 (GOE3)</td>
@@ -280,8 +280,8 @@
 <td>C3 (GOE3)</td>
 </tr>
 <tr>
-<td>IOB_0_6</td>
-<td>1</td>
+<td>IOB_C0B0MC6</td>
+<td>BANK1</td>
 <td>36</td>
 <td>P32 (GOE2)</td>
 <td>P37 (GOE2)</td>
@@ -291,8 +291,8 @@
 <td>A2 (GOE2)</td>
 </tr>
 <tr>
-<td>IOB_0_7</td>
-<td>1</td>
+<td>IOB_C0B0MC7</td>
+<td>BANK1</td>
 <td>35</td>
 <td>P31 (GSR)</td>
 <td>P36 (GSR)</td>
@@ -302,8 +302,8 @@
 <td>B3 (GSR)</td>
 </tr>
 <tr>
-<td>IOB_0_8</td>
-<td>1</td>
+<td>IOB_C0B0MC8</td>
+<td>BANK1</td>
 <td>34</td>
 <td>P30</td>
 <td>P35</td>
@@ -313,8 +313,8 @@
 <td>C4</td>
 </tr>
 <tr>
-<td>IOB_0_9</td>
-<td>1</td>
+<td>IOB_C0B0MC9</td>
+<td>BANK1</td>
 <td>33</td>
 <td>P29</td>
 <td>P34</td>
@@ -324,8 +324,8 @@
 <td>B4</td>
 </tr>
 <tr>
-<td>IOB_0_10</td>
-<td>1</td>
+<td>IOB_C0B0MC10</td>
+<td>BANK1</td>
 <td>32</td>
 <td>P28</td>
 <td>P33</td>
@@ -335,8 +335,8 @@
 <td>C5</td>
 </tr>
 <tr>
-<td>IOB_0_11</td>
-<td>1</td>
+<td>IOB_C0B0MC11</td>
+<td>BANK1</td>
 <td>28</td>
 <td>P24</td>
 <td>P29</td>
@@ -346,8 +346,8 @@
 <td>B7</td>
 </tr>
 <tr>
-<td>IOB_0_12</td>
-<td>1</td>
+<td>IOB_C0B0MC12</td>
+<td>BANK1</td>
 <td>27</td>
 <td>-</td>
 <td>P28</td>
@@ -357,8 +357,8 @@
 <td>C6</td>
 </tr>
 <tr>
-<td>IOB_0_13</td>
-<td>1</td>
+<td>IOB_C0B0MC13</td>
+<td>BANK1</td>
 <td>26</td>
 <td>P23</td>
 <td>P27</td>
@@ -368,8 +368,8 @@
 <td>B8</td>
 </tr>
 <tr>
-<td>IOB_0_14</td>
-<td>1</td>
+<td>IOB_C0B0MC14</td>
+<td>BANK1</td>
 <td>25</td>
 <td>-</td>
 <td>P26</td>
@@ -379,8 +379,8 @@
 <td>C7</td>
 </tr>
 <tr>
-<td>IOB_0_15</td>
-<td>1</td>
+<td>IOB_C0B0MC15</td>
+<td>BANK1</td>
 <td>24</td>
 <td>-</td>
 <td>P25</td>
@@ -390,8 +390,8 @@
 <td>C8</td>
 </tr>
 <tr>
-<td>IOB_1_0</td>
-<td>0</td>
+<td>IOB_C0B1MC0</td>
+<td>BANK0</td>
 <td>0</td>
 <td>P5</td>
 <td>P1</td>
@@ -401,8 +401,8 @@
 <td>E1</td>
 </tr>
 <tr>
-<td>IOB_1_1</td>
-<td>0</td>
+<td>IOB_C0B1MC1</td>
+<td>BANK0</td>
 <td>1</td>
 <td>-</td>
 <td>P2</td>
@@ -412,8 +412,8 @@
 <td>E2</td>
 </tr>
 <tr>
-<td>IOB_1_2</td>
-<td>0</td>
+<td>IOB_C0B1MC2</td>
+<td>BANK0</td>
 <td>2</td>
 <td>-</td>
 <td>P3</td>
@@ -423,8 +423,8 @@
 <td>F1</td>
 </tr>
 <tr>
-<td>IOB_1_3</td>
-<td>0</td>
+<td>IOB_C0B1MC3</td>
+<td>BANK0</td>
 <td>3</td>
 <td>-</td>
 <td>P4</td>
@@ -434,8 +434,8 @@
 <td>G1</td>
 </tr>
 <tr>
-<td>IOB_1_4</td>
-<td>0</td>
+<td>IOB_C0B1MC4</td>
+<td>BANK0</td>
 <td>4</td>
 <td>P6 (GCLK0)</td>
 <td>P5 (GCLK0)</td>
@@ -445,8 +445,8 @@
 <td>F3 (GCLK0)</td>
 </tr>
 <tr>
-<td>IOB_1_5</td>
-<td>0</td>
+<td>IOB_C0B1MC5</td>
+<td>BANK0</td>
 <td>5</td>
 <td>P7 (GCLK1)</td>
 <td>P6 (GCLK1)</td>
@@ -456,8 +456,8 @@
 <td>H1 (GCLK1)</td>
 </tr>
 <tr>
-<td>IOB_1_6</td>
-<td>0</td>
+<td>IOB_C0B1MC6</td>
+<td>BANK0</td>
 <td>6</td>
 <td>P8 (GCLK2)</td>
 <td>P7 (GCLK2)</td>
@@ -467,8 +467,8 @@
 <td>H2 (GCLK2)</td>
 </tr>
 <tr>
-<td>IOB_1_7</td>
-<td>0</td>
+<td>IOB_C0B1MC7</td>
+<td>BANK0</td>
 <td>7</td>
 <td>P9</td>
 <td>P8</td>
@@ -478,8 +478,8 @@
 <td>G3</td>
 </tr>
 <tr>
-<td>IOB_1_8</td>
-<td>0</td>
+<td>IOB_C0B1MC8</td>
+<td>BANK0</td>
 <td>8</td>
 <td>P10</td>
 <td>P9</td>
@@ -489,8 +489,8 @@
 <td>H3</td>
 </tr>
 <tr>
-<td>IOB_1_9</td>
-<td>0</td>
+<td>IOB_C0B1MC9</td>
+<td>BANK0</td>
 <td>10</td>
 <td>-</td>
 <td>P11</td>
@@ -500,8 +500,8 @@
 <td>G4</td>
 </tr>
 <tr>
-<td>IOB_1_10</td>
-<td>0</td>
+<td>IOB_C0B1MC10</td>
+<td>BANK0</td>
 <td>11</td>
 <td>-</td>
 <td>P12</td>
@@ -511,8 +511,8 @@
 <td>F4</td>
 </tr>
 <tr>
-<td>IOB_1_11</td>
-<td>0</td>
+<td>IOB_C0B1MC11</td>
+<td>BANK0</td>
 <td>13</td>
 <td>P13</td>
 <td>P14</td>
@@ -522,8 +522,8 @@
 <td>H6</td>
 </tr>
 <tr>
-<td>IOB_1_12</td>
-<td>0</td>
+<td>IOB_C0B1MC12</td>
+<td>BANK0</td>
 <td>17</td>
 <td>P17</td>
 <td>P18</td>
@@ -533,8 +533,8 @@
 <td>G7</td>
 </tr>
 <tr>
-<td>IOB_1_13</td>
-<td>0</td>
+<td>IOB_C0B1MC13</td>
+<td>BANK0</td>
 <td>18</td>
 <td>P18</td>
 <td>P19</td>
@@ -544,8 +544,8 @@
 <td>G8</td>
 </tr>
 <tr>
-<td>IOB_1_14</td>
-<td>0</td>
+<td>IOB_C0B1MC14</td>
+<td>BANK0</td>
 <td>19</td>
 <td>P19</td>
 <td>P20</td>
@@ -555,8 +555,8 @@
 <td>F7</td>
 </tr>
 <tr>
-<td>IOB_1_15</td>
-<td>0</td>
+<td>IOB_C0B1MC15</td>
+<td>BANK0</td>
 <td>21</td>
 <td>-</td>
 <td>P22</td>
@@ -633,7 +633,7 @@
 </tr>
 <tr>
 <td>VCCIO0</td>
-<td>0</td>
+<td>BANK0</td>
 <td></td>
 <td>P12</td>
 <td>P13</td>
@@ -644,7 +644,7 @@
 </tr>
 <tr>
 <td>VCCIO1</td>
-<td>1</td>
+<td>BANK1</td>
 <td></td>
 <td>P27</td>
 <td>P32</td>
@@ -2501,7 +2501,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_0</td>
+<tr><td>IOB_C0B0MC0</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -2511,7 +2511,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_10</td>
+<tr><td>IOB_C0B0MC10</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -2521,7 +2521,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_5</td>
+<tr><td>IOB_C0B1MC5</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -2531,7 +2531,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_1</td>
+<tr><td>MC_C0B0MC1</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -2541,7 +2541,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_13</td>
+<tr><td>MC_C0B0MC13</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -2551,7 +2551,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_9</td>
+<tr><td>MC_C0B1MC9</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -2587,7 +2587,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_7</td>
+<tr><td>IOB_C0B0MC7</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -2597,7 +2597,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_3</td>
+<tr><td>IOB_C0B1MC3</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -2607,7 +2607,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_12</td>
+<tr><td>IOB_C0B1MC12</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -2617,7 +2617,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_3</td>
+<tr><td>MC_C0B0MC3</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -2627,7 +2627,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_0</td>
+<tr><td>MC_C0B1MC0</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -2637,7 +2637,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_14</td>
+<tr><td>MC_C0B1MC14</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -2673,7 +2673,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_0</td>
+<tr><td>IOB_C0B0MC0</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -2683,7 +2683,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_11</td>
+<tr><td>IOB_C0B0MC11</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -2693,7 +2693,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_6</td>
+<tr><td>IOB_C0B1MC6</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -2703,7 +2703,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_2</td>
+<tr><td>MC_C0B0MC2</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -2713,7 +2713,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_14</td>
+<tr><td>MC_C0B0MC14</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -2723,7 +2723,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_10</td>
+<tr><td>MC_C0B1MC10</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -2759,7 +2759,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_1</td>
+<tr><td>IOB_C0B0MC1</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -2769,7 +2769,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_12</td>
+<tr><td>IOB_C0B0MC12</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -2779,7 +2779,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_13</td>
+<tr><td>IOB_C0B1MC13</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -2789,7 +2789,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_4</td>
+<tr><td>MC_C0B0MC4</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -2799,7 +2799,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_1</td>
+<tr><td>MC_C0B1MC1</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -2809,7 +2809,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_15</td>
+<tr><td>MC_C0B1MC15</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -2845,7 +2845,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_2</td>
+<tr><td>IOB_C0B0MC2</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -2855,7 +2855,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_2</td>
+<tr><td>IOB_C0B1MC2</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -2865,7 +2865,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_7</td>
+<tr><td>IOB_C0B1MC7</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -2875,7 +2875,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_9</td>
+<tr><td>MC_C0B0MC9</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -2885,7 +2885,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_0</td>
+<tr><td>MC_C0B1MC0</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -2895,7 +2895,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_13</td>
+<tr><td>MC_C0B1MC13</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -2931,7 +2931,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_3</td>
+<tr><td>IOB_C0B0MC3</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -2941,7 +2941,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_15</td>
+<tr><td>IOB_C0B0MC15</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -2951,7 +2951,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_14</td>
+<tr><td>IOB_C0B1MC14</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -2961,7 +2961,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_3</td>
+<tr><td>MC_C0B0MC3</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -2971,7 +2971,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_11</td>
+<tr><td>MC_C0B0MC11</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -2981,7 +2981,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_12</td>
+<tr><td>MC_C0B1MC12</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3017,7 +3017,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_4</td>
+<tr><td>IOB_C0B0MC4</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -3027,7 +3027,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_0</td>
+<tr><td>IOB_C0B1MC0</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -3037,7 +3037,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_10</td>
+<tr><td>IOB_C0B1MC10</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -3047,7 +3047,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_0</td>
+<tr><td>MC_C0B0MC0</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3057,7 +3057,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_15</td>
+<tr><td>MC_C0B0MC15</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3067,7 +3067,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_7</td>
+<tr><td>MC_C0B1MC7</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3103,7 +3103,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_5</td>
+<tr><td>IOB_C0B0MC5</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -3113,7 +3113,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_3</td>
+<tr><td>IOB_C0B1MC3</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -3123,7 +3123,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_12</td>
+<tr><td>IOB_C0B1MC12</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -3133,7 +3133,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_6</td>
+<tr><td>MC_C0B0MC6</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3143,7 +3143,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_12</td>
+<tr><td>MC_C0B0MC12</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3153,7 +3153,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_11</td>
+<tr><td>MC_C0B1MC11</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3189,7 +3189,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_6</td>
+<tr><td>IOB_C0B0MC6</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -3199,7 +3199,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_10</td>
+<tr><td>IOB_C0B0MC10</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -3209,7 +3209,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_5</td>
+<tr><td>IOB_C0B1MC5</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -3219,7 +3219,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_8</td>
+<tr><td>MC_C0B0MC8</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3229,7 +3229,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_2</td>
+<tr><td>MC_C0B1MC2</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3239,7 +3239,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_8</td>
+<tr><td>MC_C0B1MC8</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3275,7 +3275,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_7</td>
+<tr><td>IOB_C0B0MC7</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -3295,7 +3295,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_4</td>
+<tr><td>IOB_C0B1MC4</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -3305,7 +3305,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_1</td>
+<tr><td>MC_C0B0MC1</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3315,7 +3315,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_4</td>
+<tr><td>MC_C0B1MC4</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3325,7 +3325,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_14</td>
+<tr><td>MC_C0B1MC14</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3361,7 +3361,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_8</td>
+<tr><td>IOB_C0B0MC8</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -3371,7 +3371,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_14</td>
+<tr><td>IOB_C0B0MC14</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -3381,7 +3381,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_11</td>
+<tr><td>IOB_C0B1MC11</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -3391,7 +3391,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_15</td>
+<tr><td>IOB_C0B1MC15</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3401,7 +3401,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_13</td>
+<tr><td>MC_C0B0MC13</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3411,7 +3411,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_6</td>
+<tr><td>MC_C0B1MC6</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3447,7 +3447,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_1</td>
+<tr><td>IOB_C0B0MC1</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -3457,7 +3457,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_11</td>
+<tr><td>IOB_C0B0MC11</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -3467,7 +3467,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_6</td>
+<tr><td>IOB_C0B1MC6</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -3477,7 +3477,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_8</td>
+<tr><td>MC_C0B0MC8</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3487,7 +3487,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_15</td>
+<tr><td>MC_C0B0MC15</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3497,7 +3497,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_12</td>
+<tr><td>MC_C0B1MC12</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3533,7 +3533,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_9</td>
+<tr><td>IOB_C0B0MC9</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -3543,7 +3543,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_13</td>
+<tr><td>IOB_C0B0MC13</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -3553,7 +3553,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_9</td>
+<tr><td>IOB_C0B1MC9</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -3563,7 +3563,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_7</td>
+<tr><td>MC_C0B0MC7</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3573,7 +3573,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_10</td>
+<tr><td>MC_C0B0MC10</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3583,7 +3583,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_9</td>
+<tr><td>MC_C0B1MC9</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3619,7 +3619,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_8</td>
+<tr><td>IOB_C0B0MC8</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -3629,7 +3629,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_1</td>
+<tr><td>IOB_C0B1MC1</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -3639,7 +3639,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_8</td>
+<tr><td>IOB_C0B1MC8</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -3649,7 +3649,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_5</td>
+<tr><td>MC_C0B0MC5</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3659,7 +3659,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_3</td>
+<tr><td>MC_C0B1MC3</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3669,7 +3669,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_5</td>
+<tr><td>MC_C0B1MC5</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3705,7 +3705,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_0</td>
+<tr><td>IOB_C0B0MC0</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -3715,7 +3715,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_12</td>
+<tr><td>IOB_C0B0MC12</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -3725,7 +3725,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_7</td>
+<tr><td>IOB_C0B1MC7</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -3735,7 +3735,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_3</td>
+<tr><td>MC_C0B0MC3</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3745,7 +3745,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_15</td>
+<tr><td>MC_C0B0MC15</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3755,7 +3755,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_11</td>
+<tr><td>MC_C0B1MC11</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3791,7 +3791,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_1</td>
+<tr><td>IOB_C0B0MC1</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -3801,7 +3801,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_2</td>
+<tr><td>IOB_C0B1MC2</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -3811,7 +3811,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_9</td>
+<tr><td>IOB_C0B1MC9</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -3821,7 +3821,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_6</td>
+<tr><td>MC_C0B0MC6</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3831,7 +3831,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_4</td>
+<tr><td>MC_C0B1MC4</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3841,7 +3841,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_5</td>
+<tr><td>MC_C0B1MC5</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3877,7 +3877,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_2</td>
+<tr><td>IOB_C0B0MC2</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -3887,7 +3887,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_13</td>
+<tr><td>IOB_C0B0MC13</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -3897,7 +3897,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_14</td>
+<tr><td>IOB_C0B1MC14</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -3907,7 +3907,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_5</td>
+<tr><td>MC_C0B0MC5</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3917,7 +3917,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_2</td>
+<tr><td>MC_C0B1MC2</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3927,7 +3927,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_6</td>
+<tr><td>MC_C0B1MC6</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -3963,7 +3963,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_3</td>
+<tr><td>IOB_C0B0MC3</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -3973,7 +3973,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_3</td>
+<tr><td>IOB_C0B1MC3</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -3983,7 +3983,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_8</td>
+<tr><td>IOB_C0B1MC8</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -3993,7 +3993,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_0</td>
+<tr><td>MC_C0B0MC0</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4003,7 +4003,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_1</td>
+<tr><td>MC_C0B1MC1</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4013,7 +4013,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_14</td>
+<tr><td>MC_C0B1MC14</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4049,7 +4049,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_4</td>
+<tr><td>IOB_C0B0MC4</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -4069,7 +4069,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_5</td>
+<tr><td>IOB_C0B1MC5</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -4079,7 +4079,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_4</td>
+<tr><td>MC_C0B0MC4</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4089,7 +4089,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_12</td>
+<tr><td>MC_C0B0MC12</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4099,7 +4099,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_13</td>
+<tr><td>MC_C0B1MC13</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4135,7 +4135,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_5</td>
+<tr><td>IOB_C0B0MC5</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -4145,7 +4145,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_1</td>
+<tr><td>IOB_C0B1MC1</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -4155,7 +4155,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_11</td>
+<tr><td>IOB_C0B1MC11</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -4165,7 +4165,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_1</td>
+<tr><td>MC_C0B0MC1</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4175,7 +4175,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_0</td>
+<tr><td>MC_C0B1MC0</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4185,7 +4185,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_8</td>
+<tr><td>MC_C0B1MC8</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4221,7 +4221,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_6</td>
+<tr><td>IOB_C0B0MC6</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -4231,7 +4231,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_11</td>
+<tr><td>IOB_C0B0MC11</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -4241,7 +4241,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_13</td>
+<tr><td>IOB_C0B1MC13</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -4251,7 +4251,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_7</td>
+<tr><td>MC_C0B0MC7</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4261,7 +4261,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_13</td>
+<tr><td>MC_C0B0MC13</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4271,7 +4271,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_12</td>
+<tr><td>MC_C0B1MC12</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4307,7 +4307,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_7</td>
+<tr><td>IOB_C0B0MC7</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -4317,7 +4317,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_10</td>
+<tr><td>IOB_C0B0MC10</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -4327,7 +4327,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_6</td>
+<tr><td>IOB_C0B1MC6</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -4337,7 +4337,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_9</td>
+<tr><td>MC_C0B0MC9</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4347,7 +4347,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_3</td>
+<tr><td>MC_C0B1MC3</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4357,7 +4357,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_9</td>
+<tr><td>MC_C0B1MC9</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4393,7 +4393,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_2</td>
+<tr><td>IOB_C0B0MC2</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -4403,7 +4403,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_12</td>
+<tr><td>IOB_C0B0MC12</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -4413,7 +4413,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_13</td>
+<tr><td>IOB_C0B1MC13</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -4423,7 +4423,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_2</td>
+<tr><td>MC_C0B0MC2</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4433,7 +4433,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_4</td>
+<tr><td>MC_C0B1MC4</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4443,7 +4443,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_11</td>
+<tr><td>MC_C0B1MC11</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4479,7 +4479,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_8</td>
+<tr><td>IOB_C0B0MC8</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -4489,7 +4489,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_0</td>
+<tr><td>IOB_C0B1MC0</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -4499,7 +4499,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_4</td>
+<tr><td>IOB_C0B1MC4</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -4509,7 +4509,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_2</td>
+<tr><td>MC_C0B0MC2</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4519,7 +4519,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_11</td>
+<tr><td>MC_C0B0MC11</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4529,7 +4529,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_15</td>
+<tr><td>MC_C0B1MC15</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4565,7 +4565,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_9</td>
+<tr><td>IOB_C0B0MC9</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -4575,7 +4575,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_15</td>
+<tr><td>IOB_C0B0MC15</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -4585,7 +4585,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_12</td>
+<tr><td>IOB_C0B1MC12</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -4595,7 +4595,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_15</td>
+<tr><td>IOB_C0B1MC15</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4605,7 +4605,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_14</td>
+<tr><td>MC_C0B0MC14</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4615,7 +4615,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_7</td>
+<tr><td>MC_C0B1MC7</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4651,7 +4651,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_9</td>
+<tr><td>IOB_C0B0MC9</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -4661,7 +4661,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_14</td>
+<tr><td>IOB_C0B0MC14</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -4671,7 +4671,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_10</td>
+<tr><td>IOB_C0B1MC10</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -4681,7 +4681,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_8</td>
+<tr><td>MC_C0B0MC8</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4691,7 +4691,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_10</td>
+<tr><td>MC_C0B0MC10</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4701,7 +4701,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_10</td>
+<tr><td>MC_C0B1MC10</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4737,7 +4737,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_0</td>
+<tr><td>IOB_C0B0MC0</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -4747,7 +4747,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_13</td>
+<tr><td>IOB_C0B0MC13</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -4757,7 +4757,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_8</td>
+<tr><td>IOB_C0B1MC8</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -4767,7 +4767,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_4</td>
+<tr><td>MC_C0B0MC4</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4777,7 +4777,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_0</td>
+<tr><td>MC_C0B1MC0</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4787,7 +4787,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_12</td>
+<tr><td>MC_C0B1MC12</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4823,7 +4823,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_1</td>
+<tr><td>IOB_C0B0MC1</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -4833,7 +4833,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_15</td>
+<tr><td>IOB_C0B0MC15</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -4843,7 +4843,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_11</td>
+<tr><td>IOB_C0B1MC11</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -4853,7 +4853,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_9</td>
+<tr><td>MC_C0B0MC9</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4863,7 +4863,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_10</td>
+<tr><td>MC_C0B0MC10</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4873,7 +4873,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_11</td>
+<tr><td>MC_C0B1MC11</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4909,7 +4909,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_2</td>
+<tr><td>IOB_C0B0MC2</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -4919,7 +4919,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_3</td>
+<tr><td>IOB_C0B1MC3</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -4929,7 +4929,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_10</td>
+<tr><td>IOB_C0B1MC10</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -4939,7 +4939,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_7</td>
+<tr><td>MC_C0B0MC7</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4949,7 +4949,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_11</td>
+<tr><td>MC_C0B0MC11</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4959,7 +4959,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_5</td>
+<tr><td>MC_C0B1MC5</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -4995,7 +4995,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_3</td>
+<tr><td>IOB_C0B0MC3</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -5005,7 +5005,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_14</td>
+<tr><td>IOB_C0B0MC14</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -5015,7 +5015,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_5</td>
+<tr><td>IOB_C0B1MC5</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -5025,7 +5025,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_6</td>
+<tr><td>MC_C0B0MC6</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5035,7 +5035,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_3</td>
+<tr><td>MC_C0B1MC3</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5045,7 +5045,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_7</td>
+<tr><td>MC_C0B1MC7</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5081,7 +5081,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_4</td>
+<tr><td>IOB_C0B0MC4</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -5091,7 +5091,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_11</td>
+<tr><td>IOB_C0B0MC11</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -5101,7 +5101,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_9</td>
+<tr><td>IOB_C0B1MC9</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -5111,7 +5111,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_1</td>
+<tr><td>MC_C0B0MC1</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5121,7 +5121,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_2</td>
+<tr><td>MC_C0B1MC2</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5131,7 +5131,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_15</td>
+<tr><td>MC_C0B1MC15</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5167,7 +5167,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_5</td>
+<tr><td>IOB_C0B0MC5</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -5177,7 +5177,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_0</td>
+<tr><td>IOB_C0B1MC0</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -5187,7 +5187,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_6</td>
+<tr><td>IOB_C0B1MC6</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -5197,7 +5197,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_5</td>
+<tr><td>MC_C0B0MC5</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5207,7 +5207,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_13</td>
+<tr><td>MC_C0B0MC13</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5217,7 +5217,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_14</td>
+<tr><td>MC_C0B1MC14</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5253,7 +5253,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_6</td>
+<tr><td>IOB_C0B0MC6</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -5263,7 +5263,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_2</td>
+<tr><td>IOB_C0B1MC2</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -5273,7 +5273,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_12</td>
+<tr><td>IOB_C0B1MC12</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -5283,7 +5283,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_2</td>
+<tr><td>MC_C0B0MC2</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5293,7 +5293,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_1</td>
+<tr><td>MC_C0B1MC1</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5303,7 +5303,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_9</td>
+<tr><td>MC_C0B1MC9</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5339,7 +5339,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_3</td>
+<tr><td>IOB_C0B0MC3</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -5349,7 +5349,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_13</td>
+<tr><td>IOB_C0B0MC13</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -5359,7 +5359,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_9</td>
+<tr><td>IOB_C0B1MC9</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -5369,7 +5369,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_9</td>
+<tr><td>MC_C0B0MC9</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5379,7 +5379,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_14</td>
+<tr><td>MC_C0B0MC14</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5389,7 +5389,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_6</td>
+<tr><td>MC_C0B1MC6</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5425,7 +5425,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_4</td>
+<tr><td>IOB_C0B0MC4</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -5435,7 +5435,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_14</td>
+<tr><td>IOB_C0B0MC14</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -5445,7 +5445,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_11</td>
+<tr><td>IOB_C0B1MC11</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -5455,7 +5455,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_5</td>
+<tr><td>MC_C0B0MC5</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5465,7 +5465,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_11</td>
+<tr><td>MC_C0B0MC11</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5475,7 +5475,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_10</td>
+<tr><td>MC_C0B1MC10</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5511,7 +5511,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_5</td>
+<tr><td>IOB_C0B0MC5</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -5521,7 +5521,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_0_15</td>
+<tr><td>IOB_C0B0MC15</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -5531,7 +5531,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_14</td>
+<tr><td>IOB_C0B1MC14</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -5541,7 +5541,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_7</td>
+<tr><td>MC_C0B0MC7</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5551,7 +5551,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_1</td>
+<tr><td>MC_C0B1MC1</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5561,7 +5561,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_7</td>
+<tr><td>MC_C0B1MC7</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5597,7 +5597,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_6</td>
+<tr><td>IOB_C0B0MC6</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -5617,7 +5617,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_4</td>
+<tr><td>IOB_C0B1MC4</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -5627,7 +5627,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_0</td>
+<tr><td>MC_C0B0MC0</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5637,7 +5637,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_3</td>
+<tr><td>MC_C0B1MC3</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5647,7 +5647,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_13</td>
+<tr><td>MC_C0B1MC13</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5683,7 +5683,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_7</td>
+<tr><td>IOB_C0B0MC7</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -5693,7 +5693,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_0</td>
+<tr><td>IOB_C0B1MC0</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -5703,7 +5703,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_10</td>
+<tr><td>IOB_C0B1MC10</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -5713,7 +5713,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_15</td>
+<tr><td>IOB_C0B1MC15</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5723,7 +5723,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_12</td>
+<tr><td>MC_C0B0MC12</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5733,7 +5733,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_15</td>
+<tr><td>MC_C0B1MC15</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5769,7 +5769,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_8</td>
+<tr><td>IOB_C0B0MC8</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -5779,7 +5779,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_1</td>
+<tr><td>IOB_C0B1MC1</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -5789,7 +5789,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_8</td>
+<tr><td>IOB_C0B1MC8</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -5799,7 +5799,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_6</td>
+<tr><td>MC_C0B0MC6</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5809,7 +5809,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_10</td>
+<tr><td>MC_C0B0MC10</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5819,7 +5819,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_8</td>
+<tr><td>MC_C0B1MC8</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5855,7 +5855,7 @@ xa2c32a-7
 </tr>
 </thead>
 <tbody>
-<tr><td>IOB_0_9</td>
+<tr><td>IOB_C0B0MC9</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -5865,7 +5865,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_2</td>
+<tr><td>IOB_C0B1MC2</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -5875,7 +5875,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>IOB_1_7</td>
+<tr><td>IOB_C0B1MC7</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
@@ -5885,7 +5885,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_0_4</td>
+<tr><td>MC_C0B0MC4</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5895,7 +5895,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_2</td>
+<tr><td>MC_C0B1MC2</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5905,7 +5905,7 @@ xa2c32a-7
 <td>1</td>
 <td>0</td>
 </tr>
-<tr><td>MC_1_5</td>
+<tr><td>MC_C0B1MC5</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
@@ -5927,7 +5927,7 @@ xa2c32a-7
 </tr>
 </tbody>
 </table></div>
-<h2 id="mc-bits"><a class="header" href="#mc-bits">MC bits</a></h2>
+<h2 id="macrocell-bits"><a class="header" href="#macrocell-bits">Macrocell bits</a></h2>
 <div class="table-wrapper"><table>
 <caption>xc2c32a mc bittile 0</caption>
 <thead>

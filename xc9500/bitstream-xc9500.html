@@ -849,7 +849,7 @@ The exact bit assignments are irregular and should be obtained from the database
 <h2 id="fuses--per-fb-bits-and-globals"><a class="header" href="#fuses--per-fb-bits-and-globals">Fuses — per-FB bits and globals</a></h2>
 <p>Per-FB bits are stored in rows 67-68, columns 0-8, bits 6-7.  The bits are (row, bit, column):</p>
 <div class="table-wrapper"><table>
-<caption>xc9500 fb bittile 0</caption>
+<caption>xc9500 block bittile 0</caption>
 <thead>
 <tr><th rowspan="2">Frame</th><th colspan="7">Bit</th></tr>
 <tr>
@@ -967,7 +967,7 @@ The exact bit assignments are irregular and should be obtained from the database
 <td>-</td>
 <td>-</td>
 <td title="0.11.3">
-<a href="#tile-xc9500-fb-READ_PROT_A">~READ_PROT_A</a>
+<a href="#tile-xc9500-block-READ_PROT_A">~READ_PROT_A</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -1470,10 +1470,10 @@ The exact bit assignments are irregular and should be obtained from the database
 </tr>
 <tr><td>67</td>
 <td title="0.67.0">
-<a href="#tile-xc9500-fb-ENABLE">~ENABLE</a>
+<a href="#tile-xc9500-block-ENABLE">~ENABLE</a>
 </td>
 <td title="0.67.1">
-<a href="#tile-xc9500-fb-EXPORT_ENABLE">~EXPORT_ENABLE</a>
+<a href="#tile-xc9500-block-EXPORT_ENABLE">~EXPORT_ENABLE</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -1483,39 +1483,39 @@ The exact bit assignments are irregular and should be obtained from the database
 </tr>
 <tr><td>68</td>
 <td title="0.68.0">
-<a href="#tile-xc9500-fb-WRITE_PROT">~WRITE_PROT</a>
+<a href="#tile-xc9500-block-WRITE_PROT">~WRITE_PROT</a>
 </td>
 <td>-</td>
 <td>-</td>
 <td title="0.68.3">
-<a href="#tile-xc9500-fb-READ_PROT_B">~READ_PROT_B</a>
+<a href="#tile-xc9500-block-READ_PROT_B">~READ_PROT_B</a>
 </td>
 <td>-</td>
 <td>-</td>
 <td title="0.68.6">
-<a href="#tile-xc9500-fb-PULLUP_DISABLE">~PULLUP_DISABLE</a>
+<a href="#tile-xc9500-block-PULLUP_DISABLE">~PULLUP_DISABLE</a>
 </td>
 </tr>
 </tbody>
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-xc9500-fb-ENABLE">ENABLE</th>
+<tr><th id="tile-xc9500-block-ENABLE">ENABLE</th>
 <th>0.67.0</th>
 </tr>
-<tr><th id="tile-xc9500-fb-EXPORT_ENABLE">EXPORT_ENABLE</th>
+<tr><th id="tile-xc9500-block-EXPORT_ENABLE">EXPORT_ENABLE</th>
 <th>0.67.1</th>
 </tr>
-<tr><th id="tile-xc9500-fb-PULLUP_DISABLE">PULLUP_DISABLE</th>
+<tr><th id="tile-xc9500-block-PULLUP_DISABLE">PULLUP_DISABLE</th>
 <th>0.68.6</th>
 </tr>
-<tr><th id="tile-xc9500-fb-READ_PROT_A">READ_PROT_A</th>
+<tr><th id="tile-xc9500-block-READ_PROT_A">READ_PROT_A</th>
 <th>0.11.3</th>
 </tr>
-<tr><th id="tile-xc9500-fb-READ_PROT_B">READ_PROT_B</th>
+<tr><th id="tile-xc9500-block-READ_PROT_B">READ_PROT_B</th>
 <th>0.68.3</th>
 </tr>
-<tr><th id="tile-xc9500-fb-WRITE_PROT">WRITE_PROT</th>
+<tr><th id="tile-xc9500-block-WRITE_PROT">WRITE_PROT</th>
 <th>0.68.0</th>
 </tr>
 </thead>
@@ -1862,11 +1862,11 @@ inverted
 </tr>
 </thead>
 <tbody>
-<tr><td>GCLK1</td>
+<tr><td>GCLKCLKPAD1</td>
 <td>0</td>
 <td>1</td>
 </tr>
-<tr><td>GCLK0</td>
+<tr><td>GCLKCLKPAD0</td>
 <td>1</td>
 <td>0</td>
 </tr>
@@ -1884,11 +1884,11 @@ inverted
 </tr>
 </thead>
 <tbody>
-<tr><td>GCLK2</td>
+<tr><td>GCLKCLKPAD2</td>
 <td>0</td>
 <td>1</td>
 </tr>
-<tr><td>GCLK1</td>
+<tr><td>GCLKCLKPAD1</td>
 <td>1</td>
 <td>0</td>
 </tr>
@@ -1906,11 +1906,11 @@ inverted
 </tr>
 </thead>
 <tbody>
-<tr><td>GCLK0</td>
+<tr><td>GCLKCLKPAD0</td>
 <td>0</td>
 <td>1</td>
 </tr>
-<tr><td>GCLK2</td>
+<tr><td>GCLKCLKPAD2</td>
 <td>1</td>
 <td>0</td>
 </tr>
@@ -1932,11 +1932,11 @@ inverted
 </tr>
 </thead>
 <tbody>
-<tr><td>GOE1</td>
+<tr><td>GOEOEPAD1</td>
 <td>0</td>
 <td>1</td>
 </tr>
-<tr><td>GOE0</td>
+<tr><td>GOEOEPAD0</td>
 <td>1</td>
 <td>0</td>
 </tr>
@@ -1954,11 +1954,11 @@ inverted
 </tr>
 </thead>
 <tbody>
-<tr><td>GOE2</td>
+<tr><td>GOEOEPAD2</td>
 <td>0</td>
 <td>1</td>
 </tr>
-<tr><td>GOE1</td>
+<tr><td>GOEOEPAD1</td>
 <td>1</td>
 <td>0</td>
 </tr>
@@ -1976,11 +1976,11 @@ inverted
 </tr>
 </thead>
 <tbody>
-<tr><td>GOE0</td>
+<tr><td>GOEOEPAD0</td>
 <td>0</td>
 <td>1</td>
 </tr>
-<tr><td>GOE1</td>
+<tr><td>GOEOEPAD1</td>
 <td>1</td>
 <td>0</td>
 </tr>
@@ -1998,11 +1998,11 @@ inverted
 </tr>
 </thead>
 <tbody>
-<tr><td>GOE3</td>
+<tr><td>GOEOEPAD3</td>
 <td>0</td>
 <td>1</td>
 </tr>
-<tr><td>GOE2</td>
+<tr><td>GOEOEPAD2</td>
 <td>1</td>
 <td>0</td>
 </tr>
@@ -2020,11 +2020,11 @@ inverted
 </tr>
 </thead>
 <tbody>
-<tr><td>GOE0</td>
+<tr><td>GOEOEPAD0</td>
 <td>0</td>
 <td>1</td>
 </tr>
-<tr><td>GOE3</td>
+<tr><td>GOEOEPAD3</td>
 <td>1</td>
 <td>0</td>
 </tr>
