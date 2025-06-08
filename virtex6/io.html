@@ -266,7 +266,332 @@
 <li><code>RDWR_B</code></li>
 <li><code>TCK</code>, <code>TDI</code>, <code>TDO</code>, <code>TMS</code></li>
 </ul>
-<h2 id="bitstream--io"><a class="header" href="#bitstream--io">Bitstream — <code>IO</code></a></h2>
+<h2 id="tile-io"><a class="header" href="#tile-io">Tile IO</a></h2>
+<p>Cells: 2
+IRIs: 0</p>
+<h3 id="bel-ilogic0"><a class="header" href="#bel-ilogic0">Bel ILOGIC0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 IO bel ILOGIC0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>BITSLIP</td><td>input</td><td>TCELL0:IMUX.IMUX8</td></tr>
+<tr><td>CE1</td><td>input</td><td>TCELL0:IMUX.IMUX10</td></tr>
+<tr><td>CE2</td><td>input</td><td>TCELL0:IMUX.IMUX11</td></tr>
+<tr><td>CKINT0</td><td>input</td><td>TCELL0:IMUX.IMUX14</td></tr>
+<tr><td>CKINT1</td><td>input</td><td>TCELL0:IMUX.IMUX15</td></tr>
+<tr><td>CLKDIV</td><td>input</td><td>TCELL0:IMUX.CLK0</td></tr>
+<tr><td>DYNCLKDIVSEL</td><td>input</td><td>TCELL0:IMUX.IMUX12</td></tr>
+<tr><td>DYNCLKSEL</td><td>input</td><td>TCELL0:IMUX.IMUX33</td></tr>
+<tr><td>DYNOCLKSEL</td><td>input</td><td>TCELL0:IMUX.IMUX13</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:OUT18</td></tr>
+<tr><td>Q1</td><td>output</td><td>TCELL0:OUT19</td></tr>
+<tr><td>Q2</td><td>output</td><td>TCELL0:OUT23</td></tr>
+<tr><td>Q3</td><td>output</td><td>TCELL0:OUT20</td></tr>
+<tr><td>Q4</td><td>output</td><td>TCELL0:OUT16</td></tr>
+<tr><td>Q5</td><td>output</td><td>TCELL0:OUT17</td></tr>
+<tr><td>Q6</td><td>output</td><td>TCELL0:OUT21</td></tr>
+<tr><td>SR</td><td>input</td><td>TCELL0:IMUX.CTRL1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-ilogic1"><a class="header" href="#bel-ilogic1">Bel ILOGIC1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 IO bel ILOGIC1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>BITSLIP</td><td>input</td><td>TCELL1:IMUX.IMUX8</td></tr>
+<tr><td>CE1</td><td>input</td><td>TCELL1:IMUX.IMUX10</td></tr>
+<tr><td>CE2</td><td>input</td><td>TCELL1:IMUX.IMUX11</td></tr>
+<tr><td>CKINT0</td><td>input</td><td>TCELL1:IMUX.IMUX14</td></tr>
+<tr><td>CKINT1</td><td>input</td><td>TCELL1:IMUX.IMUX15</td></tr>
+<tr><td>CLKDIV</td><td>input</td><td>TCELL1:IMUX.CLK0</td></tr>
+<tr><td>DYNCLKDIVSEL</td><td>input</td><td>TCELL1:IMUX.IMUX12</td></tr>
+<tr><td>DYNCLKSEL</td><td>input</td><td>TCELL1:IMUX.IMUX33</td></tr>
+<tr><td>DYNOCLKSEL</td><td>input</td><td>TCELL1:IMUX.IMUX13</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL1:OUT18</td></tr>
+<tr><td>Q1</td><td>output</td><td>TCELL1:OUT19</td></tr>
+<tr><td>Q2</td><td>output</td><td>TCELL1:OUT23</td></tr>
+<tr><td>Q3</td><td>output</td><td>TCELL1:OUT20</td></tr>
+<tr><td>Q4</td><td>output</td><td>TCELL1:OUT16</td></tr>
+<tr><td>Q5</td><td>output</td><td>TCELL1:OUT17</td></tr>
+<tr><td>Q6</td><td>output</td><td>TCELL1:OUT21</td></tr>
+<tr><td>SR</td><td>input</td><td>TCELL1:IMUX.CTRL1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-ologic0"><a class="header" href="#bel-ologic0">Bel OLOGIC0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 IO bel OLOGIC0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLKDIV</td><td>output</td><td>TCELL0:TEST0</td></tr>
+<tr><td>CLKDIV_CKINT</td><td>input</td><td>TCELL0:IMUX.IMUX20</td></tr>
+<tr><td>CLK_CKINT</td><td>input</td><td>TCELL0:IMUX.IMUX21</td></tr>
+<tr><td>CLK_MUX</td><td>output</td><td>TCELL0:TEST2</td></tr>
+<tr><td>D1</td><td>input</td><td>TCELL0:IMUX.IMUX42</td></tr>
+<tr><td>D2</td><td>input</td><td>TCELL0:IMUX.IMUX43</td></tr>
+<tr><td>D3</td><td>input</td><td>TCELL0:IMUX.IMUX44</td></tr>
+<tr><td>D4</td><td>input</td><td>TCELL0:IMUX.IMUX45</td></tr>
+<tr><td>D5</td><td>input</td><td>TCELL0:IMUX.IMUX46</td></tr>
+<tr><td>D6</td><td>input</td><td>TCELL0:IMUX.IMUX47</td></tr>
+<tr><td>IOCLKGLITCH</td><td>output</td><td>TCELL0:OUT15</td></tr>
+<tr><td>OCBEXTEND</td><td>output</td><td>TCELL0:OUT5</td></tr>
+<tr><td>OCE</td><td>input</td><td>TCELL0:IMUX.IMUX35</td></tr>
+<tr><td>ODV</td><td>input</td><td>TCELL0:IMUX.IMUX16</td></tr>
+<tr><td>SR</td><td>input</td><td>TCELL0:IMUX.CTRL0</td></tr>
+<tr><td>T1</td><td>input</td><td>TCELL0:IMUX.IMUX38</td></tr>
+<tr><td>T2</td><td>input</td><td>TCELL0:IMUX.IMUX39</td></tr>
+<tr><td>T3</td><td>input</td><td>TCELL0:IMUX.IMUX40</td></tr>
+<tr><td>T4</td><td>input</td><td>TCELL0:IMUX.IMUX41</td></tr>
+<tr><td>TCE</td><td>input</td><td>TCELL0:IMUX.IMUX34</td></tr>
+<tr><td>TFB_BUF</td><td>output</td><td>TCELL0:OUT22</td></tr>
+<tr><td>WC</td><td>input</td><td>TCELL0:IMUX.IMUX17</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-ologic1"><a class="header" href="#bel-ologic1">Bel OLOGIC1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 IO bel OLOGIC1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLKDIV</td><td>output</td><td>TCELL1:TEST0</td></tr>
+<tr><td>CLKDIV_CKINT</td><td>input</td><td>TCELL1:IMUX.IMUX20</td></tr>
+<tr><td>CLK_CKINT</td><td>input</td><td>TCELL1:IMUX.IMUX21</td></tr>
+<tr><td>CLK_MUX</td><td>output</td><td>TCELL1:TEST2</td></tr>
+<tr><td>D1</td><td>input</td><td>TCELL1:IMUX.IMUX42</td></tr>
+<tr><td>D2</td><td>input</td><td>TCELL1:IMUX.IMUX43</td></tr>
+<tr><td>D3</td><td>input</td><td>TCELL1:IMUX.IMUX44</td></tr>
+<tr><td>D4</td><td>input</td><td>TCELL1:IMUX.IMUX45</td></tr>
+<tr><td>D5</td><td>input</td><td>TCELL1:IMUX.IMUX46</td></tr>
+<tr><td>D6</td><td>input</td><td>TCELL1:IMUX.IMUX47</td></tr>
+<tr><td>IOCLKGLITCH</td><td>output</td><td>TCELL1:OUT15</td></tr>
+<tr><td>OCBEXTEND</td><td>output</td><td>TCELL1:OUT5</td></tr>
+<tr><td>OCE</td><td>input</td><td>TCELL1:IMUX.IMUX35</td></tr>
+<tr><td>ODV</td><td>input</td><td>TCELL1:IMUX.IMUX16</td></tr>
+<tr><td>SR</td><td>input</td><td>TCELL1:IMUX.CTRL0</td></tr>
+<tr><td>T1</td><td>input</td><td>TCELL1:IMUX.IMUX38</td></tr>
+<tr><td>T2</td><td>input</td><td>TCELL1:IMUX.IMUX39</td></tr>
+<tr><td>T3</td><td>input</td><td>TCELL1:IMUX.IMUX40</td></tr>
+<tr><td>T4</td><td>input</td><td>TCELL1:IMUX.IMUX41</td></tr>
+<tr><td>TCE</td><td>input</td><td>TCELL1:IMUX.IMUX34</td></tr>
+<tr><td>TFB_BUF</td><td>output</td><td>TCELL1:OUT22</td></tr>
+<tr><td>WC</td><td>input</td><td>TCELL1:IMUX.IMUX17</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-iodelay0"><a class="header" href="#bel-iodelay0">Bel IODELAY0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 IO bel IODELAY0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>C</td><td>input</td><td>TCELL0:IMUX.CLK0</td></tr>
+<tr><td>CE</td><td>input</td><td>TCELL0:IMUX.IMUX6</td></tr>
+<tr><td>CINVCTRL</td><td>input</td><td>TCELL0:IMUX.IMUX3</td></tr>
+<tr><td>CNTVALUEIN0</td><td>input</td><td>TCELL0:IMUX.IMUX1</td></tr>
+<tr><td>CNTVALUEIN1</td><td>input</td><td>TCELL0:IMUX.IMUX2</td></tr>
+<tr><td>CNTVALUEIN2</td><td>input</td><td>TCELL0:IMUX.IMUX0</td></tr>
+<tr><td>CNTVALUEIN3</td><td>input</td><td>TCELL0:IMUX.IMUX31</td></tr>
+<tr><td>CNTVALUEIN4</td><td>input</td><td>TCELL0:IMUX.IMUX36</td></tr>
+<tr><td>CNTVALUEOUT0</td><td>output</td><td>TCELL0:OUT10</td></tr>
+<tr><td>CNTVALUEOUT1</td><td>output</td><td>TCELL0:OUT14</td></tr>
+<tr><td>CNTVALUEOUT2</td><td>output</td><td>TCELL0:OUT13</td></tr>
+<tr><td>CNTVALUEOUT3</td><td>output</td><td>TCELL0:OUT9</td></tr>
+<tr><td>CNTVALUEOUT4</td><td>output</td><td>TCELL0:OUT12</td></tr>
+<tr><td>DATAIN</td><td>input</td><td>TCELL0:IMUX.IMUX37</td></tr>
+<tr><td>INC</td><td>input</td><td>TCELL0:IMUX.IMUX7</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL0:IMUX.IMUX5</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-iodelay1"><a class="header" href="#bel-iodelay1">Bel IODELAY1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 IO bel IODELAY1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>C</td><td>input</td><td>TCELL1:IMUX.CLK0</td></tr>
+<tr><td>CE</td><td>input</td><td>TCELL1:IMUX.IMUX6</td></tr>
+<tr><td>CINVCTRL</td><td>input</td><td>TCELL1:IMUX.IMUX3</td></tr>
+<tr><td>CNTVALUEIN0</td><td>input</td><td>TCELL1:IMUX.IMUX1</td></tr>
+<tr><td>CNTVALUEIN1</td><td>input</td><td>TCELL1:IMUX.IMUX2</td></tr>
+<tr><td>CNTVALUEIN2</td><td>input</td><td>TCELL1:IMUX.IMUX0</td></tr>
+<tr><td>CNTVALUEIN3</td><td>input</td><td>TCELL1:IMUX.IMUX31</td></tr>
+<tr><td>CNTVALUEIN4</td><td>input</td><td>TCELL1:IMUX.IMUX36</td></tr>
+<tr><td>CNTVALUEOUT0</td><td>output</td><td>TCELL1:OUT10</td></tr>
+<tr><td>CNTVALUEOUT1</td><td>output</td><td>TCELL1:OUT14</td></tr>
+<tr><td>CNTVALUEOUT2</td><td>output</td><td>TCELL1:OUT13</td></tr>
+<tr><td>CNTVALUEOUT3</td><td>output</td><td>TCELL1:OUT9</td></tr>
+<tr><td>CNTVALUEOUT4</td><td>output</td><td>TCELL1:OUT12</td></tr>
+<tr><td>DATAIN</td><td>input</td><td>TCELL1:IMUX.IMUX37</td></tr>
+<tr><td>INC</td><td>input</td><td>TCELL1:IMUX.IMUX7</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL1:IMUX.IMUX5</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-iob0"><a class="header" href="#bel-iob0">Bel IOB0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 IO bel IOB0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>DIFF_TERM_INT_EN</td><td>input</td><td>TCELL1:IMUX.IMUX30</td></tr>
+<tr><td>KEEPER_INT_EN</td><td>input</td><td>TCELL0:IMUX.IMUX30</td></tr>
+<tr><td>PD_INT_EN</td><td>input</td><td>TCELL0:IMUX.IMUX18</td></tr>
+<tr><td>PU_INT_EN</td><td>input</td><td>TCELL0:IMUX.IMUX19</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-iob1"><a class="header" href="#bel-iob1">Bel IOB1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 IO bel IOB1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>KEEPER_INT_EN</td><td>input</td><td>TCELL1:IMUX.IMUX25</td></tr>
+<tr><td>PD_INT_EN</td><td>input</td><td>TCELL1:IMUX.IMUX18</td></tr>
+<tr><td>PU_INT_EN</td><td>input</td><td>TCELL1:IMUX.IMUX19</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-ioi"><a class="header" href="#bel-ioi">Bel IOI</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 IO bel IOI</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-wires"><a class="header" href="#bel-wires">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 IO bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:IMUX.CLK0</td><td>ILOGIC0.CLKDIV, IODELAY0.C</td></tr>
+<tr><td>TCELL0:IMUX.CTRL0</td><td>OLOGIC0.SR</td></tr>
+<tr><td>TCELL0:IMUX.CTRL1</td><td>ILOGIC0.SR</td></tr>
+<tr><td>TCELL0:IMUX.IMUX0</td><td>IODELAY0.CNTVALUEIN2</td></tr>
+<tr><td>TCELL0:IMUX.IMUX1</td><td>IODELAY0.CNTVALUEIN0</td></tr>
+<tr><td>TCELL0:IMUX.IMUX2</td><td>IODELAY0.CNTVALUEIN1</td></tr>
+<tr><td>TCELL0:IMUX.IMUX3</td><td>IODELAY0.CINVCTRL</td></tr>
+<tr><td>TCELL0:IMUX.IMUX5</td><td>IODELAY0.RST</td></tr>
+<tr><td>TCELL0:IMUX.IMUX6</td><td>IODELAY0.CE</td></tr>
+<tr><td>TCELL0:IMUX.IMUX7</td><td>IODELAY0.INC</td></tr>
+<tr><td>TCELL0:IMUX.IMUX8</td><td>ILOGIC0.BITSLIP</td></tr>
+<tr><td>TCELL0:IMUX.IMUX10</td><td>ILOGIC0.CE1</td></tr>
+<tr><td>TCELL0:IMUX.IMUX11</td><td>ILOGIC0.CE2</td></tr>
+<tr><td>TCELL0:IMUX.IMUX12</td><td>ILOGIC0.DYNCLKDIVSEL</td></tr>
+<tr><td>TCELL0:IMUX.IMUX13</td><td>ILOGIC0.DYNOCLKSEL</td></tr>
+<tr><td>TCELL0:IMUX.IMUX14</td><td>ILOGIC0.CKINT0</td></tr>
+<tr><td>TCELL0:IMUX.IMUX15</td><td>ILOGIC0.CKINT1</td></tr>
+<tr><td>TCELL0:IMUX.IMUX16</td><td>OLOGIC0.ODV</td></tr>
+<tr><td>TCELL0:IMUX.IMUX17</td><td>OLOGIC0.WC</td></tr>
+<tr><td>TCELL0:IMUX.IMUX18</td><td>IOB0.PD_INT_EN</td></tr>
+<tr><td>TCELL0:IMUX.IMUX19</td><td>IOB0.PU_INT_EN</td></tr>
+<tr><td>TCELL0:IMUX.IMUX20</td><td>OLOGIC0.CLKDIV_CKINT</td></tr>
+<tr><td>TCELL0:IMUX.IMUX21</td><td>OLOGIC0.CLK_CKINT</td></tr>
+<tr><td>TCELL0:IMUX.IMUX30</td><td>IOB0.KEEPER_INT_EN</td></tr>
+<tr><td>TCELL0:IMUX.IMUX31</td><td>IODELAY0.CNTVALUEIN3</td></tr>
+<tr><td>TCELL0:IMUX.IMUX33</td><td>ILOGIC0.DYNCLKSEL</td></tr>
+<tr><td>TCELL0:IMUX.IMUX34</td><td>OLOGIC0.TCE</td></tr>
+<tr><td>TCELL0:IMUX.IMUX35</td><td>OLOGIC0.OCE</td></tr>
+<tr><td>TCELL0:IMUX.IMUX36</td><td>IODELAY0.CNTVALUEIN4</td></tr>
+<tr><td>TCELL0:IMUX.IMUX37</td><td>IODELAY0.DATAIN</td></tr>
+<tr><td>TCELL0:IMUX.IMUX38</td><td>OLOGIC0.T1</td></tr>
+<tr><td>TCELL0:IMUX.IMUX39</td><td>OLOGIC0.T2</td></tr>
+<tr><td>TCELL0:IMUX.IMUX40</td><td>OLOGIC0.T3</td></tr>
+<tr><td>TCELL0:IMUX.IMUX41</td><td>OLOGIC0.T4</td></tr>
+<tr><td>TCELL0:IMUX.IMUX42</td><td>OLOGIC0.D1</td></tr>
+<tr><td>TCELL0:IMUX.IMUX43</td><td>OLOGIC0.D2</td></tr>
+<tr><td>TCELL0:IMUX.IMUX44</td><td>OLOGIC0.D3</td></tr>
+<tr><td>TCELL0:IMUX.IMUX45</td><td>OLOGIC0.D4</td></tr>
+<tr><td>TCELL0:IMUX.IMUX46</td><td>OLOGIC0.D5</td></tr>
+<tr><td>TCELL0:IMUX.IMUX47</td><td>OLOGIC0.D6</td></tr>
+<tr><td>TCELL0:OUT5</td><td>OLOGIC0.OCBEXTEND</td></tr>
+<tr><td>TCELL0:OUT9</td><td>IODELAY0.CNTVALUEOUT3</td></tr>
+<tr><td>TCELL0:OUT10</td><td>IODELAY0.CNTVALUEOUT0</td></tr>
+<tr><td>TCELL0:OUT12</td><td>IODELAY0.CNTVALUEOUT4</td></tr>
+<tr><td>TCELL0:OUT13</td><td>IODELAY0.CNTVALUEOUT2</td></tr>
+<tr><td>TCELL0:OUT14</td><td>IODELAY0.CNTVALUEOUT1</td></tr>
+<tr><td>TCELL0:OUT15</td><td>OLOGIC0.IOCLKGLITCH</td></tr>
+<tr><td>TCELL0:OUT16</td><td>ILOGIC0.Q4</td></tr>
+<tr><td>TCELL0:OUT17</td><td>ILOGIC0.Q5</td></tr>
+<tr><td>TCELL0:OUT18</td><td>ILOGIC0.O</td></tr>
+<tr><td>TCELL0:OUT19</td><td>ILOGIC0.Q1</td></tr>
+<tr><td>TCELL0:OUT20</td><td>ILOGIC0.Q3</td></tr>
+<tr><td>TCELL0:OUT21</td><td>ILOGIC0.Q6</td></tr>
+<tr><td>TCELL0:OUT22</td><td>OLOGIC0.TFB_BUF</td></tr>
+<tr><td>TCELL0:OUT23</td><td>ILOGIC0.Q2</td></tr>
+<tr><td>TCELL0:TEST0</td><td>OLOGIC0.CLKDIV</td></tr>
+<tr><td>TCELL0:TEST2</td><td>OLOGIC0.CLK_MUX</td></tr>
+<tr><td>TCELL1:IMUX.CLK0</td><td>ILOGIC1.CLKDIV, IODELAY1.C</td></tr>
+<tr><td>TCELL1:IMUX.CTRL0</td><td>OLOGIC1.SR</td></tr>
+<tr><td>TCELL1:IMUX.CTRL1</td><td>ILOGIC1.SR</td></tr>
+<tr><td>TCELL1:IMUX.IMUX0</td><td>IODELAY1.CNTVALUEIN2</td></tr>
+<tr><td>TCELL1:IMUX.IMUX1</td><td>IODELAY1.CNTVALUEIN0</td></tr>
+<tr><td>TCELL1:IMUX.IMUX2</td><td>IODELAY1.CNTVALUEIN1</td></tr>
+<tr><td>TCELL1:IMUX.IMUX3</td><td>IODELAY1.CINVCTRL</td></tr>
+<tr><td>TCELL1:IMUX.IMUX5</td><td>IODELAY1.RST</td></tr>
+<tr><td>TCELL1:IMUX.IMUX6</td><td>IODELAY1.CE</td></tr>
+<tr><td>TCELL1:IMUX.IMUX7</td><td>IODELAY1.INC</td></tr>
+<tr><td>TCELL1:IMUX.IMUX8</td><td>ILOGIC1.BITSLIP</td></tr>
+<tr><td>TCELL1:IMUX.IMUX10</td><td>ILOGIC1.CE1</td></tr>
+<tr><td>TCELL1:IMUX.IMUX11</td><td>ILOGIC1.CE2</td></tr>
+<tr><td>TCELL1:IMUX.IMUX12</td><td>ILOGIC1.DYNCLKDIVSEL</td></tr>
+<tr><td>TCELL1:IMUX.IMUX13</td><td>ILOGIC1.DYNOCLKSEL</td></tr>
+<tr><td>TCELL1:IMUX.IMUX14</td><td>ILOGIC1.CKINT0</td></tr>
+<tr><td>TCELL1:IMUX.IMUX15</td><td>ILOGIC1.CKINT1</td></tr>
+<tr><td>TCELL1:IMUX.IMUX16</td><td>OLOGIC1.ODV</td></tr>
+<tr><td>TCELL1:IMUX.IMUX17</td><td>OLOGIC1.WC</td></tr>
+<tr><td>TCELL1:IMUX.IMUX18</td><td>IOB1.PD_INT_EN</td></tr>
+<tr><td>TCELL1:IMUX.IMUX19</td><td>IOB1.PU_INT_EN</td></tr>
+<tr><td>TCELL1:IMUX.IMUX20</td><td>OLOGIC1.CLKDIV_CKINT</td></tr>
+<tr><td>TCELL1:IMUX.IMUX21</td><td>OLOGIC1.CLK_CKINT</td></tr>
+<tr><td>TCELL1:IMUX.IMUX25</td><td>IOB1.KEEPER_INT_EN</td></tr>
+<tr><td>TCELL1:IMUX.IMUX30</td><td>IOB0.DIFF_TERM_INT_EN</td></tr>
+<tr><td>TCELL1:IMUX.IMUX31</td><td>IODELAY1.CNTVALUEIN3</td></tr>
+<tr><td>TCELL1:IMUX.IMUX33</td><td>ILOGIC1.DYNCLKSEL</td></tr>
+<tr><td>TCELL1:IMUX.IMUX34</td><td>OLOGIC1.TCE</td></tr>
+<tr><td>TCELL1:IMUX.IMUX35</td><td>OLOGIC1.OCE</td></tr>
+<tr><td>TCELL1:IMUX.IMUX36</td><td>IODELAY1.CNTVALUEIN4</td></tr>
+<tr><td>TCELL1:IMUX.IMUX37</td><td>IODELAY1.DATAIN</td></tr>
+<tr><td>TCELL1:IMUX.IMUX38</td><td>OLOGIC1.T1</td></tr>
+<tr><td>TCELL1:IMUX.IMUX39</td><td>OLOGIC1.T2</td></tr>
+<tr><td>TCELL1:IMUX.IMUX40</td><td>OLOGIC1.T3</td></tr>
+<tr><td>TCELL1:IMUX.IMUX41</td><td>OLOGIC1.T4</td></tr>
+<tr><td>TCELL1:IMUX.IMUX42</td><td>OLOGIC1.D1</td></tr>
+<tr><td>TCELL1:IMUX.IMUX43</td><td>OLOGIC1.D2</td></tr>
+<tr><td>TCELL1:IMUX.IMUX44</td><td>OLOGIC1.D3</td></tr>
+<tr><td>TCELL1:IMUX.IMUX45</td><td>OLOGIC1.D4</td></tr>
+<tr><td>TCELL1:IMUX.IMUX46</td><td>OLOGIC1.D5</td></tr>
+<tr><td>TCELL1:IMUX.IMUX47</td><td>OLOGIC1.D6</td></tr>
+<tr><td>TCELL1:OUT5</td><td>OLOGIC1.OCBEXTEND</td></tr>
+<tr><td>TCELL1:OUT9</td><td>IODELAY1.CNTVALUEOUT3</td></tr>
+<tr><td>TCELL1:OUT10</td><td>IODELAY1.CNTVALUEOUT0</td></tr>
+<tr><td>TCELL1:OUT12</td><td>IODELAY1.CNTVALUEOUT4</td></tr>
+<tr><td>TCELL1:OUT13</td><td>IODELAY1.CNTVALUEOUT2</td></tr>
+<tr><td>TCELL1:OUT14</td><td>IODELAY1.CNTVALUEOUT1</td></tr>
+<tr><td>TCELL1:OUT15</td><td>OLOGIC1.IOCLKGLITCH</td></tr>
+<tr><td>TCELL1:OUT16</td><td>ILOGIC1.Q4</td></tr>
+<tr><td>TCELL1:OUT17</td><td>ILOGIC1.Q5</td></tr>
+<tr><td>TCELL1:OUT18</td><td>ILOGIC1.O</td></tr>
+<tr><td>TCELL1:OUT19</td><td>ILOGIC1.Q1</td></tr>
+<tr><td>TCELL1:OUT20</td><td>ILOGIC1.Q3</td></tr>
+<tr><td>TCELL1:OUT21</td><td>ILOGIC1.Q6</td></tr>
+<tr><td>TCELL1:OUT22</td><td>OLOGIC1.TFB_BUF</td></tr>
+<tr><td>TCELL1:OUT23</td><td>ILOGIC1.Q2</td></tr>
+<tr><td>TCELL1:TEST0</td><td>OLOGIC1.CLKDIV</td></tr>
+<tr><td>TCELL1:TEST2</td><td>OLOGIC1.CLK_MUX</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream"><a class="header" href="#bitstream">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex6 IO bittile 0</caption>
 <thead>
@@ -10330,7 +10655,162 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="bitstream--hclk_ioi"><a class="header" href="#bitstream--hclk_ioi">Bitstream — <code>HCLK_IOI</code></a></h2>
+<h2 id="tile-hclk_ioi"><a class="header" href="#tile-hclk_ioi">Tile HCLK_IOI</a></h2>
+<p>Cells: 2
+IRIs: 0</p>
+<h3 id="bel-hclk_ioi"><a class="header" href="#bel-hclk_ioi">Bel HCLK_IOI</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 HCLK_IOI bel HCLK_IOI</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>BUFR_CKINT0</td><td>input</td><td>TCELL1:IMUX.IMUX4</td></tr>
+<tr><td>BUFR_CKINT1</td><td>input</td><td>TCELL0:IMUX.IMUX4</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufr0"><a class="header" href="#bel-bufr0">Bel BUFR0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 HCLK_IOI bel BUFR0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CE</td><td>input</td><td>TCELL1:IMUX.IMUX28</td></tr>
+<tr><td>CLR</td><td>input</td><td>TCELL1:IMUX.IMUX27</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufr1"><a class="header" href="#bel-bufr1">Bel BUFR1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 HCLK_IOI bel BUFR1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CE</td><td>input</td><td>TCELL0:IMUX.IMUX9</td></tr>
+<tr><td>CLR</td><td>input</td><td>TCELL0:IMUX.IMUX29</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufio0"><a class="header" href="#bel-bufio0">Bel BUFIO0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 HCLK_IOI bel BUFIO0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>DQSMASK</td><td>input</td><td>TCELL0:IMUX.IMUX24</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufio1"><a class="header" href="#bel-bufio1">Bel BUFIO1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 HCLK_IOI bel BUFIO1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>DQSMASK</td><td>input</td><td>TCELL0:IMUX.IMUX23</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufio2"><a class="header" href="#bel-bufio2">Bel BUFIO2</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 HCLK_IOI bel BUFIO2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>DQSMASK</td><td>input</td><td>TCELL1:IMUX.IMUX24</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufio3"><a class="header" href="#bel-bufio3">Bel BUFIO3</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 HCLK_IOI bel BUFIO3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>DQSMASK</td><td>input</td><td>TCELL1:IMUX.IMUX23</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufo0"><a class="header" href="#bel-bufo0">Bel BUFO0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 HCLK_IOI bel BUFO0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-bufo1"><a class="header" href="#bel-bufo1">Bel BUFO1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 HCLK_IOI bel BUFO1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-idelayctrl"><a class="header" href="#bel-idelayctrl">Bel IDELAYCTRL</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 HCLK_IOI bel IDELAYCTRL</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>DNPULSEOUT</td><td>output</td><td>TCELL0:OUT8</td></tr>
+<tr><td>OUTN1</td><td>output</td><td>TCELL0:OUT7</td></tr>
+<tr><td>OUTN65</td><td>output</td><td>TCELL0:OUT6</td></tr>
+<tr><td>RDY</td><td>output</td><td>TCELL1:OUT6</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL1:IMUX.IMUX32</td></tr>
+<tr><td>UPPULSEOUT</td><td>output</td><td>TCELL0:OUT11</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-dci"><a class="header" href="#bel-dci">Bel DCI</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 HCLK_IOI bel DCI</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>DCIDONE</td><td>output</td><td>TCELL1:OUT11</td></tr>
+<tr><td>INT_DCI_EN</td><td>input</td><td>TCELL0:IMUX.IMUX26</td></tr>
+<tr><td>TSTCLK</td><td>input</td><td>TCELL0:IMUX.IMUX27</td></tr>
+<tr><td>TSTHLN</td><td>input</td><td>TCELL0:IMUX.IMUX28</td></tr>
+<tr><td>TSTHLP</td><td>input</td><td>TCELL1:IMUX.IMUX29</td></tr>
+<tr><td>TSTRST</td><td>input</td><td>TCELL1:IMUX.IMUX9</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-1"><a class="header" href="#bel-wires-1">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex6 HCLK_IOI bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:IMUX.IMUX4</td><td>HCLK_IOI.BUFR_CKINT1</td></tr>
+<tr><td>TCELL0:IMUX.IMUX9</td><td>BUFR1.CE</td></tr>
+<tr><td>TCELL0:IMUX.IMUX23</td><td>BUFIO1.DQSMASK</td></tr>
+<tr><td>TCELL0:IMUX.IMUX24</td><td>BUFIO0.DQSMASK</td></tr>
+<tr><td>TCELL0:IMUX.IMUX26</td><td>DCI.INT_DCI_EN</td></tr>
+<tr><td>TCELL0:IMUX.IMUX27</td><td>DCI.TSTCLK</td></tr>
+<tr><td>TCELL0:IMUX.IMUX28</td><td>DCI.TSTHLN</td></tr>
+<tr><td>TCELL0:IMUX.IMUX29</td><td>BUFR1.CLR</td></tr>
+<tr><td>TCELL0:OUT6</td><td>IDELAYCTRL.OUTN65</td></tr>
+<tr><td>TCELL0:OUT7</td><td>IDELAYCTRL.OUTN1</td></tr>
+<tr><td>TCELL0:OUT8</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
+<tr><td>TCELL0:OUT11</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
+<tr><td>TCELL1:IMUX.IMUX4</td><td>HCLK_IOI.BUFR_CKINT0</td></tr>
+<tr><td>TCELL1:IMUX.IMUX9</td><td>DCI.TSTRST</td></tr>
+<tr><td>TCELL1:IMUX.IMUX23</td><td>BUFIO3.DQSMASK</td></tr>
+<tr><td>TCELL1:IMUX.IMUX24</td><td>BUFIO2.DQSMASK</td></tr>
+<tr><td>TCELL1:IMUX.IMUX27</td><td>BUFR0.CLR</td></tr>
+<tr><td>TCELL1:IMUX.IMUX28</td><td>BUFR0.CE</td></tr>
+<tr><td>TCELL1:IMUX.IMUX29</td><td>DCI.TSTHLP</td></tr>
+<tr><td>TCELL1:IMUX.IMUX32</td><td>IDELAYCTRL.RST</td></tr>
+<tr><td>TCELL1:OUT6</td><td>IDELAYCTRL.RDY</td></tr>
+<tr><td>TCELL1:OUT11</td><td>DCI.DCIDONE</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-1"><a class="header" href="#bitstream-1">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex6 HCLK_IOI bittile 0</caption>
 <thead>

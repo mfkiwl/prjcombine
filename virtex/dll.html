@@ -150,7 +150,62 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="delay-locked-loop"><a class="header" href="#delay-locked-loop">Delay-locked loop</a></h1>
-<h2 id="dllbot"><a class="header" href="#dllbot"><code>DLL.BOT</code></a></h2>
+<h2 id="tile-dllbot"><a class="header" href="#tile-dllbot">Tile DLL.BOT</a></h2>
+<p>Cells: 2
+IRIs: 0</p>
+<h3 id="muxes"><a class="header" href="#muxes">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex DLL.BOT muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:DLL.IMUX.CLKIN</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1</td></tr>
+<tr><td>TCELL0:DLL.IMUX.CLKFB</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1</td></tr>
+<tr><td>TCELL0:DLL.IMUX.RST</td><td>TCELL1:HEX.H2.3, TCELL1:HEX.H2.2, TCELL1:HEX.H2.1, TCELL1:HEX.H2.0, TCELL1:HEX.H2.4, TCELL1:HEX.H2.5, TCELL1:HEX.H3.3, TCELL1:HEX.H3.2, TCELL1:HEX.H3.1, TCELL1:HEX.H3.0, TCELL1:HEX.H3.4, TCELL1:HEX.H3.5</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-dll"><a class="header" href="#bel-dll">Bel DLL</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex DLL.BOT bel DLL</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK0</td><td>output</td><td>TCELL0:DLL.OUT.CLK0</td></tr>
+<tr><td>CLK180</td><td>output</td><td>TCELL0:DLL.OUT.CLK180</td></tr>
+<tr><td>CLK270</td><td>output</td><td>TCELL0:DLL.OUT.CLK270</td></tr>
+<tr><td>CLK2X</td><td>output</td><td>TCELL0:DLL.OUT.CLK2X</td></tr>
+<tr><td>CLK2X90</td><td>output</td><td>TCELL0:DLL.OUT.CLK2X90</td></tr>
+<tr><td>CLK90</td><td>output</td><td>TCELL0:DLL.OUT.CLK90</td></tr>
+<tr><td>CLKDV</td><td>output</td><td>TCELL0:DLL.OUT.CLKDV</td></tr>
+<tr><td>CLKFB</td><td>input</td><td>TCELL0:DLL.IMUX.CLKFB</td></tr>
+<tr><td>CLKIN</td><td>input</td><td>TCELL0:DLL.IMUX.CLKIN</td></tr>
+<tr><td>LOCKED</td><td>output</td><td>TCELL0:DLL.OUT.LOCKED</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL0:DLL.IMUX.RST</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires"><a class="header" href="#bel-wires">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex DLL.BOT bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:DLL.IMUX.CLKIN</td><td>DLL.CLKIN</td></tr>
+<tr><td>TCELL0:DLL.IMUX.CLKFB</td><td>DLL.CLKFB</td></tr>
+<tr><td>TCELL0:DLL.IMUX.RST</td><td>DLL.RST</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK0</td><td>DLL.CLK0</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK90</td><td>DLL.CLK90</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK180</td><td>DLL.CLK180</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK270</td><td>DLL.CLK270</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK2X</td><td>DLL.CLK2X</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK2X90</td><td>DLL.CLK2X90</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLKDV</td><td>DLL.CLKDV</td></tr>
+<tr><td>TCELL0:DLL.OUT.LOCKED</td><td>DLL.LOCKED</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream"><a class="header" href="#bitstream">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex DLL.BOT bittile 0</caption>
 <thead>
@@ -1512,7 +1567,62 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="dllpbot"><a class="header" href="#dllpbot"><code>DLLP.BOT</code></a></h2>
+<h2 id="tile-dllpbot"><a class="header" href="#tile-dllpbot">Tile DLLP.BOT</a></h2>
+<p>Cells: 2
+IRIs: 0</p>
+<h3 id="muxes-1"><a class="header" href="#muxes-1">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex DLLP.BOT muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:DLL.IMUX.CLKIN</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1, TCELL2:CLK.OUT.IOFB0, TCELL2:CLK.OUT.IOFB1, TCELL3:DLL.OUT.CLK2X</td></tr>
+<tr><td>TCELL0:DLL.IMUX.CLKFB</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1, TCELL2:CLK.OUT.IOFB0, TCELL2:CLK.OUT.IOFB1</td></tr>
+<tr><td>TCELL0:DLL.IMUX.RST</td><td>TCELL1:HEX.H2.3, TCELL1:HEX.H2.2, TCELL1:HEX.H2.1, TCELL1:HEX.H2.0, TCELL1:HEX.H2.4, TCELL1:HEX.H2.5, TCELL1:HEX.H3.3, TCELL1:HEX.H3.2, TCELL1:HEX.H3.1, TCELL1:HEX.H3.0, TCELL1:HEX.H3.4, TCELL1:HEX.H3.5</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-dll-1"><a class="header" href="#bel-dll-1">Bel DLL</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex DLLP.BOT bel DLL</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK0</td><td>output</td><td>TCELL0:DLL.OUT.CLK0</td></tr>
+<tr><td>CLK180</td><td>output</td><td>TCELL0:DLL.OUT.CLK180</td></tr>
+<tr><td>CLK270</td><td>output</td><td>TCELL0:DLL.OUT.CLK270</td></tr>
+<tr><td>CLK2X</td><td>output</td><td>TCELL0:DLL.OUT.CLK2X</td></tr>
+<tr><td>CLK2X90</td><td>output</td><td>TCELL0:DLL.OUT.CLK2X90</td></tr>
+<tr><td>CLK90</td><td>output</td><td>TCELL0:DLL.OUT.CLK90</td></tr>
+<tr><td>CLKDV</td><td>output</td><td>TCELL0:DLL.OUT.CLKDV</td></tr>
+<tr><td>CLKFB</td><td>input</td><td>TCELL0:DLL.IMUX.CLKFB</td></tr>
+<tr><td>CLKIN</td><td>input</td><td>TCELL0:DLL.IMUX.CLKIN</td></tr>
+<tr><td>LOCKED</td><td>output</td><td>TCELL0:DLL.OUT.LOCKED</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL0:DLL.IMUX.RST</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-1"><a class="header" href="#bel-wires-1">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex DLLP.BOT bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:DLL.IMUX.CLKIN</td><td>DLL.CLKIN</td></tr>
+<tr><td>TCELL0:DLL.IMUX.CLKFB</td><td>DLL.CLKFB</td></tr>
+<tr><td>TCELL0:DLL.IMUX.RST</td><td>DLL.RST</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK0</td><td>DLL.CLK0</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK90</td><td>DLL.CLK90</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK180</td><td>DLL.CLK180</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK270</td><td>DLL.CLK270</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK2X</td><td>DLL.CLK2X</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK2X90</td><td>DLL.CLK2X90</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLKDV</td><td>DLL.CLKDV</td></tr>
+<tr><td>TCELL0:DLL.OUT.LOCKED</td><td>DLL.LOCKED</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-1"><a class="header" href="#bitstream-1">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex DLLP.BOT bittile 0</caption>
 <thead>
@@ -3546,7 +3656,62 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="dllsbot"><a class="header" href="#dllsbot"><code>DLLS.BOT</code></a></h2>
+<h2 id="tile-dllsbot"><a class="header" href="#tile-dllsbot">Tile DLLS.BOT</a></h2>
+<p>Cells: 2
+IRIs: 0</p>
+<h3 id="muxes-2"><a class="header" href="#muxes-2">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex DLLS.BOT muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:DLL.IMUX.CLKIN</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1, TCELL2:CLK.OUT.IOFB0, TCELL2:CLK.OUT.IOFB1</td></tr>
+<tr><td>TCELL0:DLL.IMUX.CLKFB</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL0:DLL.OUT.CLK2X, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1, TCELL2:CLK.OUT.IOFB0, TCELL2:CLK.OUT.IOFB1</td></tr>
+<tr><td>TCELL0:DLL.IMUX.RST</td><td>TCELL1:HEX.H2.3, TCELL1:HEX.H2.2, TCELL1:HEX.H2.1, TCELL1:HEX.H2.0, TCELL1:HEX.H2.4, TCELL1:HEX.H2.5, TCELL1:HEX.H3.3, TCELL1:HEX.H3.2, TCELL1:HEX.H3.1, TCELL1:HEX.H3.0, TCELL1:HEX.H3.4, TCELL1:HEX.H3.5</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-dll-2"><a class="header" href="#bel-dll-2">Bel DLL</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex DLLS.BOT bel DLL</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK0</td><td>output</td><td>TCELL0:DLL.OUT.CLK0</td></tr>
+<tr><td>CLK180</td><td>output</td><td>TCELL0:DLL.OUT.CLK180</td></tr>
+<tr><td>CLK270</td><td>output</td><td>TCELL0:DLL.OUT.CLK270</td></tr>
+<tr><td>CLK2X</td><td>output</td><td>TCELL0:DLL.OUT.CLK2X</td></tr>
+<tr><td>CLK2X90</td><td>output</td><td>TCELL0:DLL.OUT.CLK2X90</td></tr>
+<tr><td>CLK90</td><td>output</td><td>TCELL0:DLL.OUT.CLK90</td></tr>
+<tr><td>CLKDV</td><td>output</td><td>TCELL0:DLL.OUT.CLKDV</td></tr>
+<tr><td>CLKFB</td><td>input</td><td>TCELL0:DLL.IMUX.CLKFB</td></tr>
+<tr><td>CLKIN</td><td>input</td><td>TCELL0:DLL.IMUX.CLKIN</td></tr>
+<tr><td>LOCKED</td><td>output</td><td>TCELL0:DLL.OUT.LOCKED</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL0:DLL.IMUX.RST</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-2"><a class="header" href="#bel-wires-2">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex DLLS.BOT bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:DLL.IMUX.CLKIN</td><td>DLL.CLKIN</td></tr>
+<tr><td>TCELL0:DLL.IMUX.CLKFB</td><td>DLL.CLKFB</td></tr>
+<tr><td>TCELL0:DLL.IMUX.RST</td><td>DLL.RST</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK0</td><td>DLL.CLK0</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK90</td><td>DLL.CLK90</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK180</td><td>DLL.CLK180</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK270</td><td>DLL.CLK270</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK2X</td><td>DLL.CLK2X</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK2X90</td><td>DLL.CLK2X90</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLKDV</td><td>DLL.CLKDV</td></tr>
+<tr><td>TCELL0:DLL.OUT.LOCKED</td><td>DLL.LOCKED</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-2"><a class="header" href="#bitstream-2">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex DLLS.BOT bittile 0</caption>
 <thead>
@@ -5580,7 +5745,62 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="dlltop"><a class="header" href="#dlltop"><code>DLL.TOP</code></a></h2>
+<h2 id="tile-dlltop"><a class="header" href="#tile-dlltop">Tile DLL.TOP</a></h2>
+<p>Cells: 2
+IRIs: 0</p>
+<h3 id="muxes-3"><a class="header" href="#muxes-3">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex DLL.TOP muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:DLL.IMUX.CLKIN</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1</td></tr>
+<tr><td>TCELL0:DLL.IMUX.CLKFB</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1</td></tr>
+<tr><td>TCELL0:DLL.IMUX.RST</td><td>TCELL1:HEX.H2.3, TCELL1:HEX.H2.2, TCELL1:HEX.H2.1, TCELL1:HEX.H2.0, TCELL1:HEX.H2.4, TCELL1:HEX.H2.5, TCELL1:HEX.H3.3, TCELL1:HEX.H3.2, TCELL1:HEX.H3.1, TCELL1:HEX.H3.0, TCELL1:HEX.H3.4, TCELL1:HEX.H3.5</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-dll-3"><a class="header" href="#bel-dll-3">Bel DLL</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex DLL.TOP bel DLL</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK0</td><td>output</td><td>TCELL0:DLL.OUT.CLK0</td></tr>
+<tr><td>CLK180</td><td>output</td><td>TCELL0:DLL.OUT.CLK180</td></tr>
+<tr><td>CLK270</td><td>output</td><td>TCELL0:DLL.OUT.CLK270</td></tr>
+<tr><td>CLK2X</td><td>output</td><td>TCELL0:DLL.OUT.CLK2X</td></tr>
+<tr><td>CLK2X90</td><td>output</td><td>TCELL0:DLL.OUT.CLK2X90</td></tr>
+<tr><td>CLK90</td><td>output</td><td>TCELL0:DLL.OUT.CLK90</td></tr>
+<tr><td>CLKDV</td><td>output</td><td>TCELL0:DLL.OUT.CLKDV</td></tr>
+<tr><td>CLKFB</td><td>input</td><td>TCELL0:DLL.IMUX.CLKFB</td></tr>
+<tr><td>CLKIN</td><td>input</td><td>TCELL0:DLL.IMUX.CLKIN</td></tr>
+<tr><td>LOCKED</td><td>output</td><td>TCELL0:DLL.OUT.LOCKED</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL0:DLL.IMUX.RST</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-3"><a class="header" href="#bel-wires-3">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex DLL.TOP bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:DLL.IMUX.CLKIN</td><td>DLL.CLKIN</td></tr>
+<tr><td>TCELL0:DLL.IMUX.CLKFB</td><td>DLL.CLKFB</td></tr>
+<tr><td>TCELL0:DLL.IMUX.RST</td><td>DLL.RST</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK0</td><td>DLL.CLK0</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK90</td><td>DLL.CLK90</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK180</td><td>DLL.CLK180</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK270</td><td>DLL.CLK270</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK2X</td><td>DLL.CLK2X</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK2X90</td><td>DLL.CLK2X90</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLKDV</td><td>DLL.CLKDV</td></tr>
+<tr><td>TCELL0:DLL.OUT.LOCKED</td><td>DLL.LOCKED</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-3"><a class="header" href="#bitstream-3">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex DLL.TOP bittile 0</caption>
 <thead>
@@ -6942,7 +7162,62 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="dllptop"><a class="header" href="#dllptop"><code>DLLP.TOP</code></a></h2>
+<h2 id="tile-dllptop"><a class="header" href="#tile-dllptop">Tile DLLP.TOP</a></h2>
+<p>Cells: 2
+IRIs: 0</p>
+<h3 id="muxes-4"><a class="header" href="#muxes-4">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex DLLP.TOP muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:DLL.IMUX.CLKIN</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1, TCELL2:CLK.OUT.IOFB0, TCELL2:CLK.OUT.IOFB1, TCELL3:DLL.OUT.CLK2X</td></tr>
+<tr><td>TCELL0:DLL.IMUX.CLKFB</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1, TCELL2:CLK.OUT.IOFB0, TCELL2:CLK.OUT.IOFB1</td></tr>
+<tr><td>TCELL0:DLL.IMUX.RST</td><td>TCELL1:HEX.H2.3, TCELL1:HEX.H2.2, TCELL1:HEX.H2.1, TCELL1:HEX.H2.0, TCELL1:HEX.H2.4, TCELL1:HEX.H2.5, TCELL1:HEX.H3.3, TCELL1:HEX.H3.2, TCELL1:HEX.H3.1, TCELL1:HEX.H3.0, TCELL1:HEX.H3.4, TCELL1:HEX.H3.5</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-dll-4"><a class="header" href="#bel-dll-4">Bel DLL</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex DLLP.TOP bel DLL</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK0</td><td>output</td><td>TCELL0:DLL.OUT.CLK0</td></tr>
+<tr><td>CLK180</td><td>output</td><td>TCELL0:DLL.OUT.CLK180</td></tr>
+<tr><td>CLK270</td><td>output</td><td>TCELL0:DLL.OUT.CLK270</td></tr>
+<tr><td>CLK2X</td><td>output</td><td>TCELL0:DLL.OUT.CLK2X</td></tr>
+<tr><td>CLK2X90</td><td>output</td><td>TCELL0:DLL.OUT.CLK2X90</td></tr>
+<tr><td>CLK90</td><td>output</td><td>TCELL0:DLL.OUT.CLK90</td></tr>
+<tr><td>CLKDV</td><td>output</td><td>TCELL0:DLL.OUT.CLKDV</td></tr>
+<tr><td>CLKFB</td><td>input</td><td>TCELL0:DLL.IMUX.CLKFB</td></tr>
+<tr><td>CLKIN</td><td>input</td><td>TCELL0:DLL.IMUX.CLKIN</td></tr>
+<tr><td>LOCKED</td><td>output</td><td>TCELL0:DLL.OUT.LOCKED</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL0:DLL.IMUX.RST</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-4"><a class="header" href="#bel-wires-4">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex DLLP.TOP bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:DLL.IMUX.CLKIN</td><td>DLL.CLKIN</td></tr>
+<tr><td>TCELL0:DLL.IMUX.CLKFB</td><td>DLL.CLKFB</td></tr>
+<tr><td>TCELL0:DLL.IMUX.RST</td><td>DLL.RST</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK0</td><td>DLL.CLK0</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK90</td><td>DLL.CLK90</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK180</td><td>DLL.CLK180</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK270</td><td>DLL.CLK270</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK2X</td><td>DLL.CLK2X</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK2X90</td><td>DLL.CLK2X90</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLKDV</td><td>DLL.CLKDV</td></tr>
+<tr><td>TCELL0:DLL.OUT.LOCKED</td><td>DLL.LOCKED</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-4"><a class="header" href="#bitstream-4">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex DLLP.TOP bittile 0</caption>
 <thead>
@@ -8976,7 +9251,62 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="dllstop"><a class="header" href="#dllstop"><code>DLLS.TOP</code></a></h2>
+<h2 id="tile-dllstop"><a class="header" href="#tile-dllstop">Tile DLLS.TOP</a></h2>
+<p>Cells: 2
+IRIs: 0</p>
+<h3 id="muxes-5"><a class="header" href="#muxes-5">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex DLLS.TOP muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:DLL.IMUX.CLKIN</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1, TCELL2:CLK.OUT.IOFB0, TCELL2:CLK.OUT.IOFB1</td></tr>
+<tr><td>TCELL0:DLL.IMUX.CLKFB</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL0:DLL.OUT.CLK2X, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1, TCELL2:CLK.OUT.IOFB0, TCELL2:CLK.OUT.IOFB1</td></tr>
+<tr><td>TCELL0:DLL.IMUX.RST</td><td>TCELL1:HEX.H2.3, TCELL1:HEX.H2.2, TCELL1:HEX.H2.1, TCELL1:HEX.H2.0, TCELL1:HEX.H2.4, TCELL1:HEX.H2.5, TCELL1:HEX.H3.3, TCELL1:HEX.H3.2, TCELL1:HEX.H3.1, TCELL1:HEX.H3.0, TCELL1:HEX.H3.4, TCELL1:HEX.H3.5</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-dll-5"><a class="header" href="#bel-dll-5">Bel DLL</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex DLLS.TOP bel DLL</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK0</td><td>output</td><td>TCELL0:DLL.OUT.CLK0</td></tr>
+<tr><td>CLK180</td><td>output</td><td>TCELL0:DLL.OUT.CLK180</td></tr>
+<tr><td>CLK270</td><td>output</td><td>TCELL0:DLL.OUT.CLK270</td></tr>
+<tr><td>CLK2X</td><td>output</td><td>TCELL0:DLL.OUT.CLK2X</td></tr>
+<tr><td>CLK2X90</td><td>output</td><td>TCELL0:DLL.OUT.CLK2X90</td></tr>
+<tr><td>CLK90</td><td>output</td><td>TCELL0:DLL.OUT.CLK90</td></tr>
+<tr><td>CLKDV</td><td>output</td><td>TCELL0:DLL.OUT.CLKDV</td></tr>
+<tr><td>CLKFB</td><td>input</td><td>TCELL0:DLL.IMUX.CLKFB</td></tr>
+<tr><td>CLKIN</td><td>input</td><td>TCELL0:DLL.IMUX.CLKIN</td></tr>
+<tr><td>LOCKED</td><td>output</td><td>TCELL0:DLL.OUT.LOCKED</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL0:DLL.IMUX.RST</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-5"><a class="header" href="#bel-wires-5">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex DLLS.TOP bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:DLL.IMUX.CLKIN</td><td>DLL.CLKIN</td></tr>
+<tr><td>TCELL0:DLL.IMUX.CLKFB</td><td>DLL.CLKFB</td></tr>
+<tr><td>TCELL0:DLL.IMUX.RST</td><td>DLL.RST</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK0</td><td>DLL.CLK0</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK90</td><td>DLL.CLK90</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK180</td><td>DLL.CLK180</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK270</td><td>DLL.CLK270</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK2X</td><td>DLL.CLK2X</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLK2X90</td><td>DLL.CLK2X90</td></tr>
+<tr><td>TCELL0:DLL.OUT.CLKDV</td><td>DLL.CLKDV</td></tr>
+<tr><td>TCELL0:DLL.OUT.LOCKED</td><td>DLL.LOCKED</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-5"><a class="header" href="#bitstream-5">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex DLLS.TOP bittile 0</caption>
 <thead>

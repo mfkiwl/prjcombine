@@ -150,7 +150,111 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="clock-io-and-dcm-buffers"><a class="header" href="#clock-io-and-dcm-buffers">Clock I/O and DCM buffers</a></h1>
-<h2 id="hclk_iois_lvds"><a class="header" href="#hclk_iois_lvds"><code>HCLK_IOIS_LVDS</code></a></h2>
+<h2 id="tile-hclk_iois_lvds"><a class="header" href="#tile-hclk_iois_lvds">Tile HCLK_IOIS_LVDS</a></h2>
+<p>Cells: 3
+IRIs: 0</p>
+<h3 id="bel-ioclk"><a class="header" href="#bel-ioclk">Bel IOCLK</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOIS_LVDS bel IOCLK</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-rclk"><a class="header" href="#bel-rclk">Bel RCLK</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOIS_LVDS bel RCLK</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CKINT0</td><td>input</td><td>TCELL1:IMUX.BYP4</td></tr>
+<tr><td>CKINT1</td><td>input</td><td>TCELL2:IMUX.BYP4</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufr0"><a class="header" href="#bel-bufr0">Bel BUFR0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOIS_LVDS bel BUFR0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CE</td><td>input</td><td>TCELL2:IMUX.BYP0</td></tr>
+<tr><td>CLR</td><td>input</td><td>TCELL2:IMUX.BYP2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufr1"><a class="header" href="#bel-bufr1">Bel BUFR1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOIS_LVDS bel BUFR1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CE</td><td>input</td><td>TCELL1:IMUX.BYP0</td></tr>
+<tr><td>CLR</td><td>input</td><td>TCELL1:IMUX.BYP2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufio0"><a class="header" href="#bel-bufio0">Bel BUFIO0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOIS_LVDS bel BUFIO0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-bufio1"><a class="header" href="#bel-bufio1">Bel BUFIO1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOIS_LVDS bel BUFIO1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-idelayctrl"><a class="header" href="#bel-idelayctrl">Bel IDELAYCTRL</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOIS_LVDS bel IDELAYCTRL</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>DNPULSEOUT</td><td>output</td><td>TCELL1:OUT.HALF.BOT0, TCELL1:OUT.HALF.TOP0</td></tr>
+<tr><td>OUTN1</td><td>output</td><td>TCELL1:OUT.HALF.BOT3, TCELL1:OUT.HALF.TOP3</td></tr>
+<tr><td>OUTN65</td><td>output</td><td>TCELL1:OUT.HALF.BOT2, TCELL1:OUT.HALF.TOP2</td></tr>
+<tr><td>RDY</td><td>output</td><td>TCELL1:OUT.HALF.BOT4, TCELL1:OUT.HALF.TOP4</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL1:IMUX.BYP7</td></tr>
+<tr><td>UPPULSEOUT</td><td>output</td><td>TCELL1:OUT.HALF.BOT1, TCELL1:OUT.HALF.TOP1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires"><a class="header" href="#bel-wires">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOIS_LVDS bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL1:IMUX.BYP0</td><td>BUFR1.CE</td></tr>
+<tr><td>TCELL1:IMUX.BYP2</td><td>BUFR1.CLR</td></tr>
+<tr><td>TCELL1:IMUX.BYP4</td><td>RCLK.CKINT0</td></tr>
+<tr><td>TCELL1:IMUX.BYP7</td><td>IDELAYCTRL.RST</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT0</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT1</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT2</td><td>IDELAYCTRL.OUTN65</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT3</td><td>IDELAYCTRL.OUTN1</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT4</td><td>IDELAYCTRL.RDY</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP0</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP1</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP2</td><td>IDELAYCTRL.OUTN65</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP3</td><td>IDELAYCTRL.OUTN1</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP4</td><td>IDELAYCTRL.RDY</td></tr>
+<tr><td>TCELL2:IMUX.BYP0</td><td>BUFR0.CE</td></tr>
+<tr><td>TCELL2:IMUX.BYP2</td><td>BUFR0.CLR</td></tr>
+<tr><td>TCELL2:IMUX.BYP4</td><td>RCLK.CKINT1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream"><a class="header" href="#bitstream">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex4 HCLK_IOIS_LVDS bittile 0</caption>
 <thead>
@@ -1080,7 +1184,152 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="hclk_iois_dci"><a class="header" href="#hclk_iois_dci"><code>HCLK_IOIS_DCI</code></a></h2>
+<h2 id="tile-hclk_iois_dci"><a class="header" href="#tile-hclk_iois_dci">Tile HCLK_IOIS_DCI</a></h2>
+<p>Cells: 3
+IRIs: 0</p>
+<h3 id="bel-ioclk-1"><a class="header" href="#bel-ioclk-1">Bel IOCLK</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOIS_DCI bel IOCLK</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-rclk-1"><a class="header" href="#bel-rclk-1">Bel RCLK</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOIS_DCI bel RCLK</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CKINT0</td><td>input</td><td>TCELL1:IMUX.BYP4</td></tr>
+<tr><td>CKINT1</td><td>input</td><td>TCELL2:IMUX.BYP4</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufr0-1"><a class="header" href="#bel-bufr0-1">Bel BUFR0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOIS_DCI bel BUFR0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CE</td><td>input</td><td>TCELL2:IMUX.BYP0</td></tr>
+<tr><td>CLR</td><td>input</td><td>TCELL2:IMUX.BYP2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufr1-1"><a class="header" href="#bel-bufr1-1">Bel BUFR1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOIS_DCI bel BUFR1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CE</td><td>input</td><td>TCELL1:IMUX.BYP0</td></tr>
+<tr><td>CLR</td><td>input</td><td>TCELL1:IMUX.BYP2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufio0-1"><a class="header" href="#bel-bufio0-1">Bel BUFIO0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOIS_DCI bel BUFIO0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-bufio1-1"><a class="header" href="#bel-bufio1-1">Bel BUFIO1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOIS_DCI bel BUFIO1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-idelayctrl-1"><a class="header" href="#bel-idelayctrl-1">Bel IDELAYCTRL</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOIS_DCI bel IDELAYCTRL</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>DNPULSEOUT</td><td>output</td><td>TCELL1:OUT.HALF.BOT0, TCELL1:OUT.HALF.TOP0</td></tr>
+<tr><td>OUTN1</td><td>output</td><td>TCELL1:OUT.HALF.BOT3, TCELL1:OUT.HALF.TOP3</td></tr>
+<tr><td>OUTN65</td><td>output</td><td>TCELL1:OUT.HALF.BOT2, TCELL1:OUT.HALF.TOP2</td></tr>
+<tr><td>RDY</td><td>output</td><td>TCELL1:OUT.HALF.BOT4, TCELL1:OUT.HALF.TOP4</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL1:IMUX.BYP7</td></tr>
+<tr><td>UPPULSEOUT</td><td>output</td><td>TCELL1:OUT.HALF.BOT1, TCELL1:OUT.HALF.TOP1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-dci"><a class="header" href="#bel-dci">Bel DCI</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOIS_DCI bel DCI</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>DCIADDRESS0</td><td>output</td><td>TCELL1:OUT.HALF.BOT5, TCELL1:OUT.HALF.TOP5</td></tr>
+<tr><td>DCIADDRESS1</td><td>output</td><td>TCELL1:OUT.HALF.BOT6, TCELL1:OUT.HALF.TOP6</td></tr>
+<tr><td>DCIADDRESS2</td><td>output</td><td>TCELL1:OUT.HALF.BOT7, TCELL1:OUT.HALF.TOP7</td></tr>
+<tr><td>DCIDATA</td><td>output</td><td>TCELL0:OUT.HALF.BOT7, TCELL0:OUT.HALF.TOP7</td></tr>
+<tr><td>DCIDONE</td><td>output</td><td>TCELL0:OUT.HALF.BOT3, TCELL0:OUT.HALF.TOP3</td></tr>
+<tr><td>DCIIOUPDATE</td><td>output</td><td>TCELL0:OUT.HALF.BOT5, TCELL0:OUT.HALF.TOP5</td></tr>
+<tr><td>DCIREFIOUPDATE</td><td>output</td><td>TCELL0:OUT.HALF.BOT4, TCELL0:OUT.HALF.TOP4</td></tr>
+<tr><td>DCISCLK</td><td>output</td><td>TCELL0:OUT.HALF.BOT6, TCELL0:OUT.HALF.TOP6</td></tr>
+<tr><td>TSTCLK</td><td>input</td><td>TCELL0:IMUX.BYP0</td></tr>
+<tr><td>TSTHLN</td><td>input</td><td>TCELL0:IMUX.BYP4</td></tr>
+<tr><td>TSTHLP</td><td>input</td><td>TCELL0:IMUX.BYP7</td></tr>
+<tr><td>TSTRST</td><td>input</td><td>TCELL0:IMUX.BYP2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-1"><a class="header" href="#bel-wires-1">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOIS_DCI bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:IMUX.BYP0</td><td>DCI.TSTCLK</td></tr>
+<tr><td>TCELL0:IMUX.BYP2</td><td>DCI.TSTRST</td></tr>
+<tr><td>TCELL0:IMUX.BYP4</td><td>DCI.TSTHLN</td></tr>
+<tr><td>TCELL0:IMUX.BYP7</td><td>DCI.TSTHLP</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT3</td><td>DCI.DCIDONE</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT4</td><td>DCI.DCIREFIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT5</td><td>DCI.DCIIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT6</td><td>DCI.DCISCLK</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT7</td><td>DCI.DCIDATA</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP3</td><td>DCI.DCIDONE</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP4</td><td>DCI.DCIREFIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP5</td><td>DCI.DCIIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP6</td><td>DCI.DCISCLK</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP7</td><td>DCI.DCIDATA</td></tr>
+<tr><td>TCELL1:IMUX.BYP0</td><td>BUFR1.CE</td></tr>
+<tr><td>TCELL1:IMUX.BYP2</td><td>BUFR1.CLR</td></tr>
+<tr><td>TCELL1:IMUX.BYP4</td><td>RCLK.CKINT0</td></tr>
+<tr><td>TCELL1:IMUX.BYP7</td><td>IDELAYCTRL.RST</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT0</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT1</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT2</td><td>IDELAYCTRL.OUTN65</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT3</td><td>IDELAYCTRL.OUTN1</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT4</td><td>IDELAYCTRL.RDY</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT5</td><td>DCI.DCIADDRESS0</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT6</td><td>DCI.DCIADDRESS1</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT7</td><td>DCI.DCIADDRESS2</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP0</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP1</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP2</td><td>IDELAYCTRL.OUTN65</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP3</td><td>IDELAYCTRL.OUTN1</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP4</td><td>IDELAYCTRL.RDY</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP5</td><td>DCI.DCIADDRESS0</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP6</td><td>DCI.DCIADDRESS1</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP7</td><td>DCI.DCIADDRESS2</td></tr>
+<tr><td>TCELL2:IMUX.BYP0</td><td>BUFR0.CE</td></tr>
+<tr><td>TCELL2:IMUX.BYP2</td><td>BUFR0.CLR</td></tr>
+<tr><td>TCELL2:IMUX.BYP4</td><td>RCLK.CKINT1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-1"><a class="header" href="#bitstream-1">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex4 HCLK_IOIS_DCI bittile 0</caption>
 <thead>
@@ -2118,7 +2367,113 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="hclk_center"><a class="header" href="#hclk_center"><code>HCLK_CENTER</code></a></h2>
+<h2 id="tile-hclk_center"><a class="header" href="#tile-hclk_center">Tile HCLK_CENTER</a></h2>
+<p>Cells: 2
+IRIs: 0</p>
+<h3 id="bel-ioclk-2"><a class="header" href="#bel-ioclk-2">Bel IOCLK</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_CENTER bel IOCLK</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-bufio0-2"><a class="header" href="#bel-bufio0-2">Bel BUFIO0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_CENTER bel BUFIO0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-bufio1-2"><a class="header" href="#bel-bufio1-2">Bel BUFIO1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_CENTER bel BUFIO1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-idelayctrl-2"><a class="header" href="#bel-idelayctrl-2">Bel IDELAYCTRL</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_CENTER bel IDELAYCTRL</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>DNPULSEOUT</td><td>output</td><td>TCELL1:OUT.HALF.BOT0, TCELL1:OUT.HALF.TOP0</td></tr>
+<tr><td>OUTN1</td><td>output</td><td>TCELL1:OUT.HALF.BOT3, TCELL1:OUT.HALF.TOP3</td></tr>
+<tr><td>OUTN65</td><td>output</td><td>TCELL1:OUT.HALF.BOT2, TCELL1:OUT.HALF.TOP2</td></tr>
+<tr><td>RDY</td><td>output</td><td>TCELL1:OUT.HALF.BOT4, TCELL1:OUT.HALF.TOP4</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL1:IMUX.BYP7</td></tr>
+<tr><td>UPPULSEOUT</td><td>output</td><td>TCELL1:OUT.HALF.BOT1, TCELL1:OUT.HALF.TOP1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-dci-1"><a class="header" href="#bel-dci-1">Bel DCI</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_CENTER bel DCI</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>DCIADDRESS0</td><td>output</td><td>TCELL1:OUT.HALF.BOT5, TCELL1:OUT.HALF.TOP5</td></tr>
+<tr><td>DCIADDRESS1</td><td>output</td><td>TCELL1:OUT.HALF.BOT6, TCELL1:OUT.HALF.TOP6</td></tr>
+<tr><td>DCIADDRESS2</td><td>output</td><td>TCELL1:OUT.HALF.BOT7, TCELL1:OUT.HALF.TOP7</td></tr>
+<tr><td>DCIDATA</td><td>output</td><td>TCELL0:OUT.HALF.BOT7, TCELL0:OUT.HALF.TOP7</td></tr>
+<tr><td>DCIDONE</td><td>output</td><td>TCELL0:OUT.HALF.BOT3, TCELL0:OUT.HALF.TOP3</td></tr>
+<tr><td>DCIIOUPDATE</td><td>output</td><td>TCELL0:OUT.HALF.BOT5, TCELL0:OUT.HALF.TOP5</td></tr>
+<tr><td>DCIREFIOUPDATE</td><td>output</td><td>TCELL0:OUT.HALF.BOT4, TCELL0:OUT.HALF.TOP4</td></tr>
+<tr><td>DCISCLK</td><td>output</td><td>TCELL0:OUT.HALF.BOT6, TCELL0:OUT.HALF.TOP6</td></tr>
+<tr><td>TSTCLK</td><td>input</td><td>TCELL0:IMUX.BYP0</td></tr>
+<tr><td>TSTHLN</td><td>input</td><td>TCELL0:IMUX.BYP4</td></tr>
+<tr><td>TSTHLP</td><td>input</td><td>TCELL0:IMUX.BYP7</td></tr>
+<tr><td>TSTRST</td><td>input</td><td>TCELL0:IMUX.BYP2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-2"><a class="header" href="#bel-wires-2">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_CENTER bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:IMUX.BYP0</td><td>DCI.TSTCLK</td></tr>
+<tr><td>TCELL0:IMUX.BYP2</td><td>DCI.TSTRST</td></tr>
+<tr><td>TCELL0:IMUX.BYP4</td><td>DCI.TSTHLN</td></tr>
+<tr><td>TCELL0:IMUX.BYP7</td><td>DCI.TSTHLP</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT3</td><td>DCI.DCIDONE</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT4</td><td>DCI.DCIREFIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT5</td><td>DCI.DCIIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT6</td><td>DCI.DCISCLK</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT7</td><td>DCI.DCIDATA</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP3</td><td>DCI.DCIDONE</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP4</td><td>DCI.DCIREFIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP5</td><td>DCI.DCIIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP6</td><td>DCI.DCISCLK</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP7</td><td>DCI.DCIDATA</td></tr>
+<tr><td>TCELL1:IMUX.BYP7</td><td>IDELAYCTRL.RST</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT0</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT1</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT2</td><td>IDELAYCTRL.OUTN65</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT3</td><td>IDELAYCTRL.OUTN1</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT4</td><td>IDELAYCTRL.RDY</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT5</td><td>DCI.DCIADDRESS0</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT6</td><td>DCI.DCIADDRESS1</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT7</td><td>DCI.DCIADDRESS2</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP0</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP1</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP2</td><td>IDELAYCTRL.OUTN65</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP3</td><td>IDELAYCTRL.OUTN1</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP4</td><td>IDELAYCTRL.RDY</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP5</td><td>DCI.DCIADDRESS0</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP6</td><td>DCI.DCIADDRESS1</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP7</td><td>DCI.DCIADDRESS2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-2"><a class="header" href="#bitstream-2">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex4 HCLK_CENTER bittile 0</caption>
 <thead>
@@ -2954,7 +3309,113 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="hclk_center_above_cfg"><a class="header" href="#hclk_center_above_cfg"><code>HCLK_CENTER_ABOVE_CFG</code></a></h2>
+<h2 id="tile-hclk_center_above_cfg"><a class="header" href="#tile-hclk_center_above_cfg">Tile HCLK_CENTER_ABOVE_CFG</a></h2>
+<p>Cells: 2
+IRIs: 0</p>
+<h3 id="bel-ioclk-3"><a class="header" href="#bel-ioclk-3">Bel IOCLK</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_CENTER_ABOVE_CFG bel IOCLK</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-bufio0-3"><a class="header" href="#bel-bufio0-3">Bel BUFIO0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_CENTER_ABOVE_CFG bel BUFIO0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-bufio1-3"><a class="header" href="#bel-bufio1-3">Bel BUFIO1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_CENTER_ABOVE_CFG bel BUFIO1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-idelayctrl-3"><a class="header" href="#bel-idelayctrl-3">Bel IDELAYCTRL</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_CENTER_ABOVE_CFG bel IDELAYCTRL</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>DNPULSEOUT</td><td>output</td><td>TCELL0:OUT.HALF.BOT0, TCELL0:OUT.HALF.TOP0</td></tr>
+<tr><td>OUTN1</td><td>output</td><td>TCELL0:OUT.HALF.BOT3, TCELL0:OUT.HALF.TOP3</td></tr>
+<tr><td>OUTN65</td><td>output</td><td>TCELL0:OUT.HALF.BOT2, TCELL0:OUT.HALF.TOP2</td></tr>
+<tr><td>RDY</td><td>output</td><td>TCELL0:OUT.HALF.BOT4, TCELL0:OUT.HALF.TOP4</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL0:IMUX.BYP7</td></tr>
+<tr><td>UPPULSEOUT</td><td>output</td><td>TCELL0:OUT.HALF.BOT1, TCELL0:OUT.HALF.TOP1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-dci-2"><a class="header" href="#bel-dci-2">Bel DCI</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_CENTER_ABOVE_CFG bel DCI</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>DCIADDRESS0</td><td>output</td><td>TCELL0:OUT.HALF.BOT5, TCELL0:OUT.HALF.TOP5</td></tr>
+<tr><td>DCIADDRESS1</td><td>output</td><td>TCELL0:OUT.HALF.BOT6, TCELL0:OUT.HALF.TOP6</td></tr>
+<tr><td>DCIADDRESS2</td><td>output</td><td>TCELL0:OUT.HALF.BOT7, TCELL0:OUT.HALF.TOP7</td></tr>
+<tr><td>DCIDATA</td><td>output</td><td>TCELL1:OUT.HALF.BOT7, TCELL1:OUT.HALF.TOP7</td></tr>
+<tr><td>DCIDONE</td><td>output</td><td>TCELL1:OUT.HALF.BOT3, TCELL1:OUT.HALF.TOP3</td></tr>
+<tr><td>DCIIOUPDATE</td><td>output</td><td>TCELL1:OUT.HALF.BOT5, TCELL1:OUT.HALF.TOP5</td></tr>
+<tr><td>DCIREFIOUPDATE</td><td>output</td><td>TCELL1:OUT.HALF.BOT4, TCELL1:OUT.HALF.TOP4</td></tr>
+<tr><td>DCISCLK</td><td>output</td><td>TCELL1:OUT.HALF.BOT6, TCELL1:OUT.HALF.TOP6</td></tr>
+<tr><td>TSTCLK</td><td>input</td><td>TCELL1:IMUX.BYP0</td></tr>
+<tr><td>TSTHLN</td><td>input</td><td>TCELL1:IMUX.BYP7</td></tr>
+<tr><td>TSTHLP</td><td>input</td><td>TCELL1:IMUX.BYP4</td></tr>
+<tr><td>TSTRST</td><td>input</td><td>TCELL1:IMUX.BYP2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-3"><a class="header" href="#bel-wires-3">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_CENTER_ABOVE_CFG bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:IMUX.BYP7</td><td>IDELAYCTRL.RST</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT0</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT1</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT2</td><td>IDELAYCTRL.OUTN65</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT3</td><td>IDELAYCTRL.OUTN1</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT4</td><td>IDELAYCTRL.RDY</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT5</td><td>DCI.DCIADDRESS0</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT6</td><td>DCI.DCIADDRESS1</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT7</td><td>DCI.DCIADDRESS2</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP0</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP1</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP2</td><td>IDELAYCTRL.OUTN65</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP3</td><td>IDELAYCTRL.OUTN1</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP4</td><td>IDELAYCTRL.RDY</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP5</td><td>DCI.DCIADDRESS0</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP6</td><td>DCI.DCIADDRESS1</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP7</td><td>DCI.DCIADDRESS2</td></tr>
+<tr><td>TCELL1:IMUX.BYP0</td><td>DCI.TSTCLK</td></tr>
+<tr><td>TCELL1:IMUX.BYP2</td><td>DCI.TSTRST</td></tr>
+<tr><td>TCELL1:IMUX.BYP4</td><td>DCI.TSTHLP</td></tr>
+<tr><td>TCELL1:IMUX.BYP7</td><td>DCI.TSTHLN</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT3</td><td>DCI.DCIDONE</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT4</td><td>DCI.DCIREFIOUPDATE</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT5</td><td>DCI.DCIIOUPDATE</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT6</td><td>DCI.DCISCLK</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT7</td><td>DCI.DCIDATA</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP3</td><td>DCI.DCIDONE</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP4</td><td>DCI.DCIREFIOUPDATE</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP5</td><td>DCI.DCIIOUPDATE</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP6</td><td>DCI.DCISCLK</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP7</td><td>DCI.DCIDATA</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-3"><a class="header" href="#bitstream-3">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex4 HCLK_CENTER_ABOVE_CFG bittile 0</caption>
 <thead>
@@ -3785,7 +4246,131 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="hclk_iobdcm"><a class="header" href="#hclk_iobdcm"><code>HCLK_IOBDCM</code></a></h2>
+<h2 id="tile-hclk_iobdcm"><a class="header" href="#tile-hclk_iobdcm">Tile HCLK_IOBDCM</a></h2>
+<p>Cells: 2
+IRIs: 0</p>
+<h3 id="bel-ioclk-4"><a class="header" href="#bel-ioclk-4">Bel IOCLK</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOBDCM bel IOCLK</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-hclk_dcm_hrow"><a class="header" href="#bel-hclk_dcm_hrow">Bel HCLK_DCM_HROW</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOBDCM bel HCLK_DCM_HROW</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-hclk_dcm_n"><a class="header" href="#bel-hclk_dcm_n">Bel HCLK_DCM_N</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOBDCM bel HCLK_DCM_N</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-bufio0-4"><a class="header" href="#bel-bufio0-4">Bel BUFIO0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOBDCM bel BUFIO0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-bufio1-4"><a class="header" href="#bel-bufio1-4">Bel BUFIO1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOBDCM bel BUFIO1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-idelayctrl-4"><a class="header" href="#bel-idelayctrl-4">Bel IDELAYCTRL</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOBDCM bel IDELAYCTRL</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>DNPULSEOUT</td><td>output</td><td>TCELL1:OUT.HALF.BOT0, TCELL1:OUT.HALF.TOP0</td></tr>
+<tr><td>OUTN1</td><td>output</td><td>TCELL1:OUT.HALF.BOT3, TCELL1:OUT.HALF.TOP3</td></tr>
+<tr><td>OUTN65</td><td>output</td><td>TCELL1:OUT.HALF.BOT2, TCELL1:OUT.HALF.TOP2</td></tr>
+<tr><td>RDY</td><td>output</td><td>TCELL1:OUT.HALF.BOT4, TCELL1:OUT.HALF.TOP4</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL1:IMUX.BYP7</td></tr>
+<tr><td>UPPULSEOUT</td><td>output</td><td>TCELL1:OUT.HALF.BOT1, TCELL1:OUT.HALF.TOP1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-dci-3"><a class="header" href="#bel-dci-3">Bel DCI</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOBDCM bel DCI</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>DCIADDRESS0</td><td>output</td><td>TCELL1:OUT.HALF.BOT5, TCELL1:OUT.HALF.TOP5</td></tr>
+<tr><td>DCIADDRESS1</td><td>output</td><td>TCELL1:OUT.HALF.BOT6, TCELL1:OUT.HALF.TOP6</td></tr>
+<tr><td>DCIADDRESS2</td><td>output</td><td>TCELL1:OUT.HALF.BOT7, TCELL1:OUT.HALF.TOP7</td></tr>
+<tr><td>DCIDATA</td><td>output</td><td>TCELL0:OUT.HALF.BOT7, TCELL0:OUT.HALF.TOP7</td></tr>
+<tr><td>DCIDONE</td><td>output</td><td>TCELL0:OUT.HALF.BOT3, TCELL0:OUT.HALF.TOP3</td></tr>
+<tr><td>DCIIOUPDATE</td><td>output</td><td>TCELL0:OUT.HALF.BOT5, TCELL0:OUT.HALF.TOP5</td></tr>
+<tr><td>DCIREFIOUPDATE</td><td>output</td><td>TCELL0:OUT.HALF.BOT4, TCELL0:OUT.HALF.TOP4</td></tr>
+<tr><td>DCISCLK</td><td>output</td><td>TCELL0:OUT.HALF.BOT6, TCELL0:OUT.HALF.TOP6</td></tr>
+<tr><td>TSTCLK</td><td>input</td><td>TCELL0:IMUX.BYP0</td></tr>
+<tr><td>TSTHLN</td><td>input</td><td>TCELL0:IMUX.BYP4</td></tr>
+<tr><td>TSTHLP</td><td>input</td><td>TCELL0:IMUX.BYP7</td></tr>
+<tr><td>TSTRST</td><td>input</td><td>TCELL0:IMUX.BYP2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-4"><a class="header" href="#bel-wires-4">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_IOBDCM bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:IMUX.BYP0</td><td>DCI.TSTCLK</td></tr>
+<tr><td>TCELL0:IMUX.BYP2</td><td>DCI.TSTRST</td></tr>
+<tr><td>TCELL0:IMUX.BYP4</td><td>DCI.TSTHLN</td></tr>
+<tr><td>TCELL0:IMUX.BYP7</td><td>DCI.TSTHLP</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT3</td><td>DCI.DCIDONE</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT4</td><td>DCI.DCIREFIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT5</td><td>DCI.DCIIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT6</td><td>DCI.DCISCLK</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT7</td><td>DCI.DCIDATA</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP3</td><td>DCI.DCIDONE</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP4</td><td>DCI.DCIREFIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP5</td><td>DCI.DCIIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP6</td><td>DCI.DCISCLK</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP7</td><td>DCI.DCIDATA</td></tr>
+<tr><td>TCELL1:IMUX.BYP7</td><td>IDELAYCTRL.RST</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT0</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT1</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT2</td><td>IDELAYCTRL.OUTN65</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT3</td><td>IDELAYCTRL.OUTN1</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT4</td><td>IDELAYCTRL.RDY</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT5</td><td>DCI.DCIADDRESS0</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT6</td><td>DCI.DCIADDRESS1</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT7</td><td>DCI.DCIADDRESS2</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP0</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP1</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP2</td><td>IDELAYCTRL.OUTN65</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP3</td><td>IDELAYCTRL.OUTN1</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP4</td><td>IDELAYCTRL.RDY</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP5</td><td>DCI.DCIADDRESS0</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP6</td><td>DCI.DCIADDRESS1</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP7</td><td>DCI.DCIADDRESS2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-4"><a class="header" href="#bitstream-4">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex4 HCLK_IOBDCM bittile 0</caption>
 <thead>
@@ -4797,7 +5382,131 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="hclk_dcmiob"><a class="header" href="#hclk_dcmiob"><code>HCLK_DCMIOB</code></a></h2>
+<h2 id="tile-hclk_dcmiob"><a class="header" href="#tile-hclk_dcmiob">Tile HCLK_DCMIOB</a></h2>
+<p>Cells: 2
+IRIs: 0</p>
+<h3 id="bel-ioclk-5"><a class="header" href="#bel-ioclk-5">Bel IOCLK</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_DCMIOB bel IOCLK</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-hclk_dcm_hrow-1"><a class="header" href="#bel-hclk_dcm_hrow-1">Bel HCLK_DCM_HROW</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_DCMIOB bel HCLK_DCM_HROW</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-hclk_dcm_s"><a class="header" href="#bel-hclk_dcm_s">Bel HCLK_DCM_S</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_DCMIOB bel HCLK_DCM_S</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-bufio0-5"><a class="header" href="#bel-bufio0-5">Bel BUFIO0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_DCMIOB bel BUFIO0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-bufio1-5"><a class="header" href="#bel-bufio1-5">Bel BUFIO1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_DCMIOB bel BUFIO1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-idelayctrl-5"><a class="header" href="#bel-idelayctrl-5">Bel IDELAYCTRL</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_DCMIOB bel IDELAYCTRL</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>DNPULSEOUT</td><td>output</td><td>TCELL0:OUT.HALF.BOT0, TCELL0:OUT.HALF.TOP0</td></tr>
+<tr><td>OUTN1</td><td>output</td><td>TCELL0:OUT.HALF.BOT3, TCELL0:OUT.HALF.TOP3</td></tr>
+<tr><td>OUTN65</td><td>output</td><td>TCELL0:OUT.HALF.BOT2, TCELL0:OUT.HALF.TOP2</td></tr>
+<tr><td>RDY</td><td>output</td><td>TCELL0:OUT.HALF.BOT4, TCELL0:OUT.HALF.TOP4</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL0:IMUX.BYP7</td></tr>
+<tr><td>UPPULSEOUT</td><td>output</td><td>TCELL0:OUT.HALF.BOT1, TCELL0:OUT.HALF.TOP1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-dci-4"><a class="header" href="#bel-dci-4">Bel DCI</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_DCMIOB bel DCI</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>DCIADDRESS0</td><td>output</td><td>TCELL0:OUT.HALF.BOT5, TCELL0:OUT.HALF.TOP5</td></tr>
+<tr><td>DCIADDRESS1</td><td>output</td><td>TCELL0:OUT.HALF.BOT6, TCELL0:OUT.HALF.TOP6</td></tr>
+<tr><td>DCIADDRESS2</td><td>output</td><td>TCELL0:OUT.HALF.BOT7, TCELL0:OUT.HALF.TOP7</td></tr>
+<tr><td>DCIDATA</td><td>output</td><td>TCELL1:OUT.HALF.BOT7, TCELL1:OUT.HALF.TOP7</td></tr>
+<tr><td>DCIDONE</td><td>output</td><td>TCELL1:OUT.HALF.BOT3, TCELL1:OUT.HALF.TOP3</td></tr>
+<tr><td>DCIIOUPDATE</td><td>output</td><td>TCELL1:OUT.HALF.BOT5, TCELL1:OUT.HALF.TOP5</td></tr>
+<tr><td>DCIREFIOUPDATE</td><td>output</td><td>TCELL1:OUT.HALF.BOT4, TCELL1:OUT.HALF.TOP4</td></tr>
+<tr><td>DCISCLK</td><td>output</td><td>TCELL1:OUT.HALF.BOT6, TCELL1:OUT.HALF.TOP6</td></tr>
+<tr><td>TSTCLK</td><td>input</td><td>TCELL1:IMUX.BYP0</td></tr>
+<tr><td>TSTHLN</td><td>input</td><td>TCELL1:IMUX.BYP7</td></tr>
+<tr><td>TSTHLP</td><td>input</td><td>TCELL1:IMUX.BYP4</td></tr>
+<tr><td>TSTRST</td><td>input</td><td>TCELL1:IMUX.BYP2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-5"><a class="header" href="#bel-wires-5">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_DCMIOB bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:IMUX.BYP7</td><td>IDELAYCTRL.RST</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT0</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT1</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT2</td><td>IDELAYCTRL.OUTN65</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT3</td><td>IDELAYCTRL.OUTN1</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT4</td><td>IDELAYCTRL.RDY</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT5</td><td>DCI.DCIADDRESS0</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT6</td><td>DCI.DCIADDRESS1</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT7</td><td>DCI.DCIADDRESS2</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP0</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP1</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP2</td><td>IDELAYCTRL.OUTN65</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP3</td><td>IDELAYCTRL.OUTN1</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP4</td><td>IDELAYCTRL.RDY</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP5</td><td>DCI.DCIADDRESS0</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP6</td><td>DCI.DCIADDRESS1</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP7</td><td>DCI.DCIADDRESS2</td></tr>
+<tr><td>TCELL1:IMUX.BYP0</td><td>DCI.TSTCLK</td></tr>
+<tr><td>TCELL1:IMUX.BYP2</td><td>DCI.TSTRST</td></tr>
+<tr><td>TCELL1:IMUX.BYP4</td><td>DCI.TSTHLP</td></tr>
+<tr><td>TCELL1:IMUX.BYP7</td><td>DCI.TSTHLN</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT3</td><td>DCI.DCIDONE</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT4</td><td>DCI.DCIREFIOUPDATE</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT5</td><td>DCI.DCIIOUPDATE</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT6</td><td>DCI.DCISCLK</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT7</td><td>DCI.DCIDATA</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP3</td><td>DCI.DCIDONE</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP4</td><td>DCI.DCIREFIOUPDATE</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP5</td><td>DCI.DCIIOUPDATE</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP6</td><td>DCI.DCISCLK</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP7</td><td>DCI.DCIDATA</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-5"><a class="header" href="#bitstream-5">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex4 HCLK_DCMIOB bittile 0</caption>
 <thead>
@@ -5809,7 +6518,28 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="hclk_dcm"><a class="header" href="#hclk_dcm"><code>HCLK_DCM</code></a></h2>
+<h2 id="tile-hclk_dcm"><a class="header" href="#tile-hclk_dcm">Tile HCLK_DCM</a></h2>
+<p>Cells: 0
+IRIs: 0</p>
+<h3 id="bel-hclk_dcm_hrow-2"><a class="header" href="#bel-hclk_dcm_hrow-2">Bel HCLK_DCM_HROW</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_DCM bel HCLK_DCM_HROW</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-hclk_dcm"><a class="header" href="#bel-hclk_dcm">Bel HCLK_DCM</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 HCLK_DCM bel HCLK_DCM</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bitstream-6"><a class="header" href="#bitstream-6">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex4 HCLK_DCM bittile 0</caption>
 <thead>

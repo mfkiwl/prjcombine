@@ -391,6 +391,532 @@
 <li>tiles 0-3: the 4 bitstream tiles that are shared with the <code>INT</code> interconnect tiles (starting from the bottom)</li>
 <li>tile 4: the dedicated BRAM data tile located in the BRAM data area; this tile is 64×320 bits; it contains solely the <code>DATA</code> and <code>DATAP</code> attributes and the <code>SAVEDATA</code> attribute</li>
 </ul>
+<h2 id="tile-bram"><a class="header" href="#tile-bram">Tile BRAM</a></h2>
+<p>Cells: 4
+IRIs: 0</p>
+<h3 id="bel-bram"><a class="header" href="#bel-bram">Bel BRAM</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 BRAM bel BRAM</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>ADDRA0</td><td>input</td><td>TCELL0:IMUX.IMUX5</td></tr>
+<tr><td>ADDRA1</td><td>input</td><td>TCELL0:IMUX.IMUX29</td></tr>
+<tr><td>ADDRA10</td><td>input</td><td>TCELL2:IMUX.IMUX30</td></tr>
+<tr><td>ADDRA11</td><td>input</td><td>TCELL2:IMUX.IMUX31</td></tr>
+<tr><td>ADDRA12</td><td>input</td><td>TCELL3:IMUX.IMUX5</td></tr>
+<tr><td>ADDRA13</td><td>input</td><td>TCELL3:IMUX.IMUX29</td></tr>
+<tr><td>ADDRA14</td><td>input</td><td>TCELL3:IMUX.IMUX30</td></tr>
+<tr><td>ADDRA2</td><td>input</td><td>TCELL0:IMUX.IMUX30</td></tr>
+<tr><td>ADDRA3</td><td>input</td><td>TCELL0:IMUX.IMUX31</td></tr>
+<tr><td>ADDRA4</td><td>input</td><td>TCELL1:IMUX.IMUX5</td></tr>
+<tr><td>ADDRA5</td><td>input</td><td>TCELL1:IMUX.IMUX29</td></tr>
+<tr><td>ADDRA6</td><td>input</td><td>TCELL1:IMUX.IMUX30</td></tr>
+<tr><td>ADDRA7</td><td>input</td><td>TCELL1:IMUX.IMUX31</td></tr>
+<tr><td>ADDRA8</td><td>input</td><td>TCELL2:IMUX.IMUX5</td></tr>
+<tr><td>ADDRA9</td><td>input</td><td>TCELL2:IMUX.IMUX29</td></tr>
+<tr><td>ADDRB0</td><td>input</td><td>TCELL0:IMUX.IMUX3</td></tr>
+<tr><td>ADDRB1</td><td>input</td><td>TCELL0:IMUX.IMUX25</td></tr>
+<tr><td>ADDRB10</td><td>input</td><td>TCELL2:IMUX.IMUX26</td></tr>
+<tr><td>ADDRB11</td><td>input</td><td>TCELL2:IMUX.IMUX27</td></tr>
+<tr><td>ADDRB12</td><td>input</td><td>TCELL3:IMUX.IMUX3</td></tr>
+<tr><td>ADDRB13</td><td>input</td><td>TCELL3:IMUX.IMUX25</td></tr>
+<tr><td>ADDRB14</td><td>input</td><td>TCELL3:IMUX.IMUX26</td></tr>
+<tr><td>ADDRB2</td><td>input</td><td>TCELL0:IMUX.IMUX26</td></tr>
+<tr><td>ADDRB3</td><td>input</td><td>TCELL0:IMUX.IMUX27</td></tr>
+<tr><td>ADDRB4</td><td>input</td><td>TCELL1:IMUX.IMUX3</td></tr>
+<tr><td>ADDRB5</td><td>input</td><td>TCELL1:IMUX.IMUX25</td></tr>
+<tr><td>ADDRB6</td><td>input</td><td>TCELL1:IMUX.IMUX26</td></tr>
+<tr><td>ADDRB7</td><td>input</td><td>TCELL1:IMUX.IMUX27</td></tr>
+<tr><td>ADDRB8</td><td>input</td><td>TCELL2:IMUX.IMUX3</td></tr>
+<tr><td>ADDRB9</td><td>input</td><td>TCELL2:IMUX.IMUX25</td></tr>
+<tr><td>CLKA</td><td>input</td><td>TCELL1:IMUX.CLK2</td></tr>
+<tr><td>CLKB</td><td>input</td><td>TCELL1:IMUX.CLK3</td></tr>
+<tr><td>DIA0</td><td>input</td><td>TCELL0:IMUX.IMUX16</td></tr>
+<tr><td>DIA1</td><td>input</td><td>TCELL0:IMUX.IMUX17</td></tr>
+<tr><td>DIA10</td><td>input</td><td>TCELL2:IMUX.IMUX18</td></tr>
+<tr><td>DIA11</td><td>input</td><td>TCELL2:IMUX.IMUX19</td></tr>
+<tr><td>DIA12</td><td>input</td><td>TCELL3:IMUX.IMUX16</td></tr>
+<tr><td>DIA13</td><td>input</td><td>TCELL3:IMUX.IMUX17</td></tr>
+<tr><td>DIA14</td><td>input</td><td>TCELL3:IMUX.IMUX18</td></tr>
+<tr><td>DIA15</td><td>input</td><td>TCELL3:IMUX.IMUX19</td></tr>
+<tr><td>DIA16</td><td>input</td><td>TCELL0:IMUX.IMUX12</td></tr>
+<tr><td>DIA17</td><td>input</td><td>TCELL0:IMUX.IMUX13</td></tr>
+<tr><td>DIA18</td><td>input</td><td>TCELL0:IMUX.IMUX14</td></tr>
+<tr><td>DIA19</td><td>input</td><td>TCELL0:IMUX.IMUX15</td></tr>
+<tr><td>DIA2</td><td>input</td><td>TCELL0:IMUX.IMUX18</td></tr>
+<tr><td>DIA20</td><td>input</td><td>TCELL1:IMUX.IMUX12</td></tr>
+<tr><td>DIA21</td><td>input</td><td>TCELL1:IMUX.IMUX13</td></tr>
+<tr><td>DIA22</td><td>input</td><td>TCELL1:IMUX.IMUX14</td></tr>
+<tr><td>DIA23</td><td>input</td><td>TCELL1:IMUX.IMUX15</td></tr>
+<tr><td>DIA24</td><td>input</td><td>TCELL2:IMUX.IMUX12</td></tr>
+<tr><td>DIA25</td><td>input</td><td>TCELL2:IMUX.IMUX13</td></tr>
+<tr><td>DIA26</td><td>input</td><td>TCELL2:IMUX.IMUX14</td></tr>
+<tr><td>DIA27</td><td>input</td><td>TCELL2:IMUX.IMUX15</td></tr>
+<tr><td>DIA28</td><td>input</td><td>TCELL3:IMUX.IMUX12</td></tr>
+<tr><td>DIA29</td><td>input</td><td>TCELL3:IMUX.IMUX13</td></tr>
+<tr><td>DIA3</td><td>input</td><td>TCELL0:IMUX.IMUX19</td></tr>
+<tr><td>DIA30</td><td>input</td><td>TCELL3:IMUX.IMUX14</td></tr>
+<tr><td>DIA31</td><td>input</td><td>TCELL3:IMUX.IMUX15</td></tr>
+<tr><td>DIA4</td><td>input</td><td>TCELL1:IMUX.IMUX16</td></tr>
+<tr><td>DIA5</td><td>input</td><td>TCELL1:IMUX.IMUX17</td></tr>
+<tr><td>DIA6</td><td>input</td><td>TCELL1:IMUX.IMUX18</td></tr>
+<tr><td>DIA7</td><td>input</td><td>TCELL1:IMUX.IMUX19</td></tr>
+<tr><td>DIA8</td><td>input</td><td>TCELL2:IMUX.IMUX16</td></tr>
+<tr><td>DIA9</td><td>input</td><td>TCELL2:IMUX.IMUX17</td></tr>
+<tr><td>DIB0</td><td>input</td><td>TCELL0:IMUX.IMUX20</td></tr>
+<tr><td>DIB1</td><td>input</td><td>TCELL0:IMUX.IMUX21</td></tr>
+<tr><td>DIB10</td><td>input</td><td>TCELL2:IMUX.IMUX22</td></tr>
+<tr><td>DIB11</td><td>input</td><td>TCELL2:IMUX.IMUX23</td></tr>
+<tr><td>DIB12</td><td>input</td><td>TCELL3:IMUX.IMUX20</td></tr>
+<tr><td>DIB13</td><td>input</td><td>TCELL3:IMUX.IMUX21</td></tr>
+<tr><td>DIB14</td><td>input</td><td>TCELL3:IMUX.IMUX22</td></tr>
+<tr><td>DIB15</td><td>input</td><td>TCELL3:IMUX.IMUX23</td></tr>
+<tr><td>DIB16</td><td>input</td><td>TCELL0:IMUX.IMUX8</td></tr>
+<tr><td>DIB17</td><td>input</td><td>TCELL0:IMUX.IMUX9</td></tr>
+<tr><td>DIB18</td><td>input</td><td>TCELL0:IMUX.IMUX10</td></tr>
+<tr><td>DIB19</td><td>input</td><td>TCELL0:IMUX.IMUX11</td></tr>
+<tr><td>DIB2</td><td>input</td><td>TCELL0:IMUX.IMUX22</td></tr>
+<tr><td>DIB20</td><td>input</td><td>TCELL1:IMUX.IMUX8</td></tr>
+<tr><td>DIB21</td><td>input</td><td>TCELL1:IMUX.IMUX9</td></tr>
+<tr><td>DIB22</td><td>input</td><td>TCELL1:IMUX.IMUX10</td></tr>
+<tr><td>DIB23</td><td>input</td><td>TCELL1:IMUX.IMUX11</td></tr>
+<tr><td>DIB24</td><td>input</td><td>TCELL2:IMUX.IMUX8</td></tr>
+<tr><td>DIB25</td><td>input</td><td>TCELL2:IMUX.IMUX9</td></tr>
+<tr><td>DIB26</td><td>input</td><td>TCELL2:IMUX.IMUX10</td></tr>
+<tr><td>DIB27</td><td>input</td><td>TCELL2:IMUX.IMUX11</td></tr>
+<tr><td>DIB28</td><td>input</td><td>TCELL3:IMUX.IMUX8</td></tr>
+<tr><td>DIB29</td><td>input</td><td>TCELL3:IMUX.IMUX9</td></tr>
+<tr><td>DIB3</td><td>input</td><td>TCELL0:IMUX.IMUX23</td></tr>
+<tr><td>DIB30</td><td>input</td><td>TCELL3:IMUX.IMUX10</td></tr>
+<tr><td>DIB31</td><td>input</td><td>TCELL3:IMUX.IMUX11</td></tr>
+<tr><td>DIB4</td><td>input</td><td>TCELL1:IMUX.IMUX20</td></tr>
+<tr><td>DIB5</td><td>input</td><td>TCELL1:IMUX.IMUX21</td></tr>
+<tr><td>DIB6</td><td>input</td><td>TCELL1:IMUX.IMUX22</td></tr>
+<tr><td>DIB7</td><td>input</td><td>TCELL1:IMUX.IMUX23</td></tr>
+<tr><td>DIB8</td><td>input</td><td>TCELL2:IMUX.IMUX20</td></tr>
+<tr><td>DIB9</td><td>input</td><td>TCELL2:IMUX.IMUX21</td></tr>
+<tr><td>DIPA0</td><td>input</td><td>TCELL0:IMUX.IMUX7</td></tr>
+<tr><td>DIPA1</td><td>input</td><td>TCELL2:IMUX.IMUX7</td></tr>
+<tr><td>DIPA2</td><td>input</td><td>TCELL1:IMUX.IMUX7</td></tr>
+<tr><td>DIPA3</td><td>input</td><td>TCELL3:IMUX.IMUX7</td></tr>
+<tr><td>DIPB0</td><td>input</td><td>TCELL0:IMUX.IMUX6</td></tr>
+<tr><td>DIPB1</td><td>input</td><td>TCELL2:IMUX.IMUX6</td></tr>
+<tr><td>DIPB2</td><td>input</td><td>TCELL1:IMUX.IMUX6</td></tr>
+<tr><td>DIPB3</td><td>input</td><td>TCELL3:IMUX.IMUX6</td></tr>
+<tr><td>DOA0</td><td>output</td><td>TCELL0:OUT.BEST3</td></tr>
+<tr><td>DOA1</td><td>output</td><td>TCELL0:OUT.BEST2</td></tr>
+<tr><td>DOA10</td><td>output</td><td>TCELL2:OUT.BEST1</td></tr>
+<tr><td>DOA11</td><td>output</td><td>TCELL2:OUT.BEST0</td></tr>
+<tr><td>DOA12</td><td>output</td><td>TCELL3:OUT.BEST3</td></tr>
+<tr><td>DOA13</td><td>output</td><td>TCELL3:OUT.BEST2</td></tr>
+<tr><td>DOA14</td><td>output</td><td>TCELL3:OUT.BEST1</td></tr>
+<tr><td>DOA15</td><td>output</td><td>TCELL3:OUT.BEST0</td></tr>
+<tr><td>DOA16</td><td>output</td><td>TCELL0:OUT.SEC1</td></tr>
+<tr><td>DOA17</td><td>output</td><td>TCELL0:OUT.SEC5</td></tr>
+<tr><td>DOA18</td><td>output</td><td>TCELL0:OUT.SEC3</td></tr>
+<tr><td>DOA19</td><td>output</td><td>TCELL0:OUT.SEC7</td></tr>
+<tr><td>DOA2</td><td>output</td><td>TCELL0:OUT.BEST1</td></tr>
+<tr><td>DOA20</td><td>output</td><td>TCELL1:OUT.SEC1</td></tr>
+<tr><td>DOA21</td><td>output</td><td>TCELL1:OUT.SEC5</td></tr>
+<tr><td>DOA22</td><td>output</td><td>TCELL1:OUT.SEC3</td></tr>
+<tr><td>DOA23</td><td>output</td><td>TCELL1:OUT.SEC7</td></tr>
+<tr><td>DOA24</td><td>output</td><td>TCELL2:OUT.SEC1</td></tr>
+<tr><td>DOA25</td><td>output</td><td>TCELL2:OUT.SEC5</td></tr>
+<tr><td>DOA26</td><td>output</td><td>TCELL2:OUT.SEC3</td></tr>
+<tr><td>DOA27</td><td>output</td><td>TCELL2:OUT.SEC7</td></tr>
+<tr><td>DOA28</td><td>output</td><td>TCELL3:OUT.SEC1</td></tr>
+<tr><td>DOA29</td><td>output</td><td>TCELL3:OUT.SEC5</td></tr>
+<tr><td>DOA3</td><td>output</td><td>TCELL0:OUT.BEST0</td></tr>
+<tr><td>DOA30</td><td>output</td><td>TCELL3:OUT.SEC3</td></tr>
+<tr><td>DOA31</td><td>output</td><td>TCELL3:OUT.SEC7</td></tr>
+<tr><td>DOA4</td><td>output</td><td>TCELL1:OUT.BEST3</td></tr>
+<tr><td>DOA5</td><td>output</td><td>TCELL1:OUT.BEST2</td></tr>
+<tr><td>DOA6</td><td>output</td><td>TCELL1:OUT.BEST1</td></tr>
+<tr><td>DOA7</td><td>output</td><td>TCELL1:OUT.BEST0</td></tr>
+<tr><td>DOA8</td><td>output</td><td>TCELL2:OUT.BEST3</td></tr>
+<tr><td>DOA9</td><td>output</td><td>TCELL2:OUT.BEST2</td></tr>
+<tr><td>DOB0</td><td>output</td><td>TCELL0:OUT.BEST4</td></tr>
+<tr><td>DOB1</td><td>output</td><td>TCELL0:OUT.BEST5</td></tr>
+<tr><td>DOB10</td><td>output</td><td>TCELL2:OUT.BEST6</td></tr>
+<tr><td>DOB11</td><td>output</td><td>TCELL2:OUT.BEST7</td></tr>
+<tr><td>DOB12</td><td>output</td><td>TCELL3:OUT.BEST4</td></tr>
+<tr><td>DOB13</td><td>output</td><td>TCELL3:OUT.BEST5</td></tr>
+<tr><td>DOB14</td><td>output</td><td>TCELL3:OUT.BEST6</td></tr>
+<tr><td>DOB15</td><td>output</td><td>TCELL3:OUT.BEST7</td></tr>
+<tr><td>DOB16</td><td>output</td><td>TCELL0:OUT.SEC0</td></tr>
+<tr><td>DOB17</td><td>output</td><td>TCELL0:OUT.SEC4</td></tr>
+<tr><td>DOB18</td><td>output</td><td>TCELL0:OUT.SEC2</td></tr>
+<tr><td>DOB19</td><td>output</td><td>TCELL0:OUT.SEC6</td></tr>
+<tr><td>DOB2</td><td>output</td><td>TCELL0:OUT.BEST6</td></tr>
+<tr><td>DOB20</td><td>output</td><td>TCELL1:OUT.SEC0</td></tr>
+<tr><td>DOB21</td><td>output</td><td>TCELL1:OUT.SEC4</td></tr>
+<tr><td>DOB22</td><td>output</td><td>TCELL1:OUT.SEC2</td></tr>
+<tr><td>DOB23</td><td>output</td><td>TCELL1:OUT.SEC6</td></tr>
+<tr><td>DOB24</td><td>output</td><td>TCELL2:OUT.SEC0</td></tr>
+<tr><td>DOB25</td><td>output</td><td>TCELL2:OUT.SEC4</td></tr>
+<tr><td>DOB26</td><td>output</td><td>TCELL2:OUT.SEC2</td></tr>
+<tr><td>DOB27</td><td>output</td><td>TCELL2:OUT.SEC6</td></tr>
+<tr><td>DOB28</td><td>output</td><td>TCELL3:OUT.SEC0</td></tr>
+<tr><td>DOB29</td><td>output</td><td>TCELL3:OUT.SEC4</td></tr>
+<tr><td>DOB3</td><td>output</td><td>TCELL0:OUT.BEST7</td></tr>
+<tr><td>DOB30</td><td>output</td><td>TCELL3:OUT.SEC2</td></tr>
+<tr><td>DOB31</td><td>output</td><td>TCELL3:OUT.SEC6</td></tr>
+<tr><td>DOB4</td><td>output</td><td>TCELL1:OUT.BEST4</td></tr>
+<tr><td>DOB5</td><td>output</td><td>TCELL1:OUT.BEST5</td></tr>
+<tr><td>DOB6</td><td>output</td><td>TCELL1:OUT.BEST6</td></tr>
+<tr><td>DOB7</td><td>output</td><td>TCELL1:OUT.BEST7</td></tr>
+<tr><td>DOB8</td><td>output</td><td>TCELL2:OUT.BEST4</td></tr>
+<tr><td>DOB9</td><td>output</td><td>TCELL2:OUT.BEST5</td></tr>
+<tr><td>DOPA0</td><td>output</td><td>TCELL0:OUT.HALF.BOT7, TCELL0:OUT.HALF.TOP7</td></tr>
+<tr><td>DOPA1</td><td>output</td><td>TCELL2:OUT.HALF.BOT7, TCELL2:OUT.HALF.TOP7</td></tr>
+<tr><td>DOPA2</td><td>output</td><td>TCELL1:OUT.HALF.BOT7, TCELL1:OUT.HALF.TOP7</td></tr>
+<tr><td>DOPA3</td><td>output</td><td>TCELL3:OUT.HALF.BOT7, TCELL3:OUT.HALF.TOP7</td></tr>
+<tr><td>DOPB0</td><td>output</td><td>TCELL0:OUT.HALF.BOT6, TCELL0:OUT.HALF.TOP6</td></tr>
+<tr><td>DOPB1</td><td>output</td><td>TCELL2:OUT.HALF.BOT6, TCELL2:OUT.HALF.TOP6</td></tr>
+<tr><td>DOPB2</td><td>output</td><td>TCELL1:OUT.HALF.BOT6, TCELL1:OUT.HALF.TOP6</td></tr>
+<tr><td>DOPB3</td><td>output</td><td>TCELL3:OUT.HALF.BOT6, TCELL3:OUT.HALF.TOP6</td></tr>
+<tr><td>ENA</td><td>input</td><td>TCELL1:IMUX.CE2</td></tr>
+<tr><td>ENB</td><td>input</td><td>TCELL1:IMUX.CE3</td></tr>
+<tr><td>REGCEA</td><td>input</td><td>TCELL1:IMUX.CE0</td></tr>
+<tr><td>REGCEB</td><td>input</td><td>TCELL1:IMUX.CE1</td></tr>
+<tr><td>SSRA</td><td>input</td><td>TCELL2:IMUX.SR0</td></tr>
+<tr><td>SSRB</td><td>input</td><td>TCELL2:IMUX.SR1</td></tr>
+<tr><td>WEA0</td><td>input</td><td>TCELL2:IMUX.IMUX0</td></tr>
+<tr><td>WEA1</td><td>input</td><td>TCELL2:IMUX.IMUX4</td></tr>
+<tr><td>WEA2</td><td>input</td><td>TCELL2:IMUX.IMUX24</td></tr>
+<tr><td>WEA3</td><td>input</td><td>TCELL2:IMUX.IMUX28</td></tr>
+<tr><td>WEB0</td><td>input</td><td>TCELL1:IMUX.IMUX0</td></tr>
+<tr><td>WEB1</td><td>input</td><td>TCELL1:IMUX.IMUX4</td></tr>
+<tr><td>WEB2</td><td>input</td><td>TCELL1:IMUX.IMUX24</td></tr>
+<tr><td>WEB3</td><td>input</td><td>TCELL1:IMUX.IMUX28</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-fifo"><a class="header" href="#bel-fifo">Bel FIFO</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 BRAM bel FIFO</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>ALMOSTEMPTY</td><td>output</td><td>TCELL1:OUT.BEST6</td></tr>
+<tr><td>ALMOSTFULL</td><td>output</td><td>TCELL2:OUT.BEST5</td></tr>
+<tr><td>DI0</td><td>input</td><td>TCELL0:IMUX.IMUX20</td></tr>
+<tr><td>DI1</td><td>input</td><td>TCELL0:IMUX.IMUX21</td></tr>
+<tr><td>DI10</td><td>input</td><td>TCELL2:IMUX.IMUX22</td></tr>
+<tr><td>DI11</td><td>input</td><td>TCELL2:IMUX.IMUX23</td></tr>
+<tr><td>DI12</td><td>input</td><td>TCELL3:IMUX.IMUX20</td></tr>
+<tr><td>DI13</td><td>input</td><td>TCELL3:IMUX.IMUX21</td></tr>
+<tr><td>DI14</td><td>input</td><td>TCELL3:IMUX.IMUX22</td></tr>
+<tr><td>DI15</td><td>input</td><td>TCELL3:IMUX.IMUX23</td></tr>
+<tr><td>DI16</td><td>input</td><td>TCELL0:IMUX.IMUX8</td></tr>
+<tr><td>DI17</td><td>input</td><td>TCELL0:IMUX.IMUX9</td></tr>
+<tr><td>DI18</td><td>input</td><td>TCELL0:IMUX.IMUX10</td></tr>
+<tr><td>DI19</td><td>input</td><td>TCELL0:IMUX.IMUX11</td></tr>
+<tr><td>DI2</td><td>input</td><td>TCELL0:IMUX.IMUX22</td></tr>
+<tr><td>DI20</td><td>input</td><td>TCELL1:IMUX.IMUX8</td></tr>
+<tr><td>DI21</td><td>input</td><td>TCELL1:IMUX.IMUX9</td></tr>
+<tr><td>DI22</td><td>input</td><td>TCELL1:IMUX.IMUX10</td></tr>
+<tr><td>DI23</td><td>input</td><td>TCELL1:IMUX.IMUX11</td></tr>
+<tr><td>DI24</td><td>input</td><td>TCELL2:IMUX.IMUX8</td></tr>
+<tr><td>DI25</td><td>input</td><td>TCELL2:IMUX.IMUX9</td></tr>
+<tr><td>DI26</td><td>input</td><td>TCELL2:IMUX.IMUX10</td></tr>
+<tr><td>DI27</td><td>input</td><td>TCELL2:IMUX.IMUX11</td></tr>
+<tr><td>DI28</td><td>input</td><td>TCELL3:IMUX.IMUX8</td></tr>
+<tr><td>DI29</td><td>input</td><td>TCELL3:IMUX.IMUX9</td></tr>
+<tr><td>DI3</td><td>input</td><td>TCELL0:IMUX.IMUX23</td></tr>
+<tr><td>DI30</td><td>input</td><td>TCELL3:IMUX.IMUX10</td></tr>
+<tr><td>DI31</td><td>input</td><td>TCELL3:IMUX.IMUX11</td></tr>
+<tr><td>DI4</td><td>input</td><td>TCELL1:IMUX.IMUX20</td></tr>
+<tr><td>DI5</td><td>input</td><td>TCELL1:IMUX.IMUX21</td></tr>
+<tr><td>DI6</td><td>input</td><td>TCELL1:IMUX.IMUX22</td></tr>
+<tr><td>DI7</td><td>input</td><td>TCELL1:IMUX.IMUX23</td></tr>
+<tr><td>DI8</td><td>input</td><td>TCELL2:IMUX.IMUX20</td></tr>
+<tr><td>DI9</td><td>input</td><td>TCELL2:IMUX.IMUX21</td></tr>
+<tr><td>DIP0</td><td>input</td><td>TCELL0:IMUX.IMUX6</td></tr>
+<tr><td>DIP1</td><td>input</td><td>TCELL2:IMUX.IMUX6</td></tr>
+<tr><td>DIP2</td><td>input</td><td>TCELL1:IMUX.IMUX6</td></tr>
+<tr><td>DIP3</td><td>input</td><td>TCELL3:IMUX.IMUX6</td></tr>
+<tr><td>DO0</td><td>output</td><td>TCELL0:OUT.BEST3</td></tr>
+<tr><td>DO1</td><td>output</td><td>TCELL0:OUT.BEST2</td></tr>
+<tr><td>DO10</td><td>output</td><td>TCELL2:OUT.BEST1</td></tr>
+<tr><td>DO11</td><td>output</td><td>TCELL2:OUT.BEST0</td></tr>
+<tr><td>DO12</td><td>output</td><td>TCELL3:OUT.BEST3</td></tr>
+<tr><td>DO13</td><td>output</td><td>TCELL3:OUT.BEST2</td></tr>
+<tr><td>DO14</td><td>output</td><td>TCELL3:OUT.BEST1</td></tr>
+<tr><td>DO15</td><td>output</td><td>TCELL3:OUT.BEST0</td></tr>
+<tr><td>DO16</td><td>output</td><td>TCELL0:OUT.SEC1</td></tr>
+<tr><td>DO17</td><td>output</td><td>TCELL0:OUT.SEC5</td></tr>
+<tr><td>DO18</td><td>output</td><td>TCELL0:OUT.SEC3</td></tr>
+<tr><td>DO19</td><td>output</td><td>TCELL0:OUT.SEC7</td></tr>
+<tr><td>DO2</td><td>output</td><td>TCELL0:OUT.BEST1</td></tr>
+<tr><td>DO20</td><td>output</td><td>TCELL1:OUT.SEC1</td></tr>
+<tr><td>DO21</td><td>output</td><td>TCELL1:OUT.SEC5</td></tr>
+<tr><td>DO22</td><td>output</td><td>TCELL1:OUT.SEC3</td></tr>
+<tr><td>DO23</td><td>output</td><td>TCELL1:OUT.SEC7</td></tr>
+<tr><td>DO24</td><td>output</td><td>TCELL2:OUT.SEC1</td></tr>
+<tr><td>DO25</td><td>output</td><td>TCELL2:OUT.SEC5</td></tr>
+<tr><td>DO26</td><td>output</td><td>TCELL2:OUT.SEC3</td></tr>
+<tr><td>DO27</td><td>output</td><td>TCELL2:OUT.SEC7</td></tr>
+<tr><td>DO28</td><td>output</td><td>TCELL3:OUT.SEC1</td></tr>
+<tr><td>DO29</td><td>output</td><td>TCELL3:OUT.SEC5</td></tr>
+<tr><td>DO3</td><td>output</td><td>TCELL0:OUT.BEST0</td></tr>
+<tr><td>DO30</td><td>output</td><td>TCELL3:OUT.SEC3</td></tr>
+<tr><td>DO31</td><td>output</td><td>TCELL3:OUT.SEC7</td></tr>
+<tr><td>DO4</td><td>output</td><td>TCELL1:OUT.BEST3</td></tr>
+<tr><td>DO5</td><td>output</td><td>TCELL1:OUT.BEST2</td></tr>
+<tr><td>DO6</td><td>output</td><td>TCELL1:OUT.BEST1</td></tr>
+<tr><td>DO7</td><td>output</td><td>TCELL1:OUT.BEST0</td></tr>
+<tr><td>DO8</td><td>output</td><td>TCELL2:OUT.BEST3</td></tr>
+<tr><td>DO9</td><td>output</td><td>TCELL2:OUT.BEST2</td></tr>
+<tr><td>DOP0</td><td>output</td><td>TCELL0:OUT.HALF.BOT7, TCELL0:OUT.HALF.TOP7</td></tr>
+<tr><td>DOP1</td><td>output</td><td>TCELL2:OUT.HALF.BOT7, TCELL2:OUT.HALF.TOP7</td></tr>
+<tr><td>DOP2</td><td>output</td><td>TCELL1:OUT.HALF.BOT7, TCELL1:OUT.HALF.TOP7</td></tr>
+<tr><td>DOP3</td><td>output</td><td>TCELL3:OUT.HALF.BOT7, TCELL3:OUT.HALF.TOP7</td></tr>
+<tr><td>EMPTY</td><td>output</td><td>TCELL1:OUT.BEST7</td></tr>
+<tr><td>FULL</td><td>output</td><td>TCELL2:OUT.BEST4</td></tr>
+<tr><td>RDCLK</td><td>input</td><td>TCELL1:IMUX.CLK2</td></tr>
+<tr><td>RDCOUNT0</td><td>output</td><td>TCELL0:OUT.BEST4</td></tr>
+<tr><td>RDCOUNT1</td><td>output</td><td>TCELL0:OUT.BEST5</td></tr>
+<tr><td>RDCOUNT10</td><td>output</td><td>TCELL3:OUT.BEST6</td></tr>
+<tr><td>RDCOUNT11</td><td>output</td><td>TCELL3:OUT.BEST7</td></tr>
+<tr><td>RDCOUNT2</td><td>output</td><td>TCELL0:OUT.BEST6</td></tr>
+<tr><td>RDCOUNT3</td><td>output</td><td>TCELL0:OUT.BEST7</td></tr>
+<tr><td>RDCOUNT4</td><td>output</td><td>TCELL2:OUT.SEC0</td></tr>
+<tr><td>RDCOUNT5</td><td>output</td><td>TCELL2:OUT.SEC4</td></tr>
+<tr><td>RDCOUNT6</td><td>output</td><td>TCELL2:OUT.SEC2</td></tr>
+<tr><td>RDCOUNT7</td><td>output</td><td>TCELL2:OUT.SEC6</td></tr>
+<tr><td>RDCOUNT8</td><td>output</td><td>TCELL3:OUT.BEST4</td></tr>
+<tr><td>RDCOUNT9</td><td>output</td><td>TCELL3:OUT.BEST5</td></tr>
+<tr><td>RDEN</td><td>input</td><td>TCELL1:IMUX.CE2</td></tr>
+<tr><td>RDERR</td><td>output</td><td>TCELL1:OUT.BEST5</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL2:IMUX.SR0</td></tr>
+<tr><td>WRCLK</td><td>input</td><td>TCELL1:IMUX.CLK3</td></tr>
+<tr><td>WRCOUNT0</td><td>output</td><td>TCELL0:OUT.SEC0</td></tr>
+<tr><td>WRCOUNT1</td><td>output</td><td>TCELL0:OUT.SEC4</td></tr>
+<tr><td>WRCOUNT10</td><td>output</td><td>TCELL3:OUT.SEC2</td></tr>
+<tr><td>WRCOUNT11</td><td>output</td><td>TCELL3:OUT.SEC6</td></tr>
+<tr><td>WRCOUNT2</td><td>output</td><td>TCELL0:OUT.SEC2</td></tr>
+<tr><td>WRCOUNT3</td><td>output</td><td>TCELL0:OUT.SEC6</td></tr>
+<tr><td>WRCOUNT4</td><td>output</td><td>TCELL1:OUT.SEC0</td></tr>
+<tr><td>WRCOUNT5</td><td>output</td><td>TCELL1:OUT.SEC4</td></tr>
+<tr><td>WRCOUNT6</td><td>output</td><td>TCELL1:OUT.SEC2</td></tr>
+<tr><td>WRCOUNT7</td><td>output</td><td>TCELL1:OUT.SEC6</td></tr>
+<tr><td>WRCOUNT8</td><td>output</td><td>TCELL3:OUT.SEC0</td></tr>
+<tr><td>WRCOUNT9</td><td>output</td><td>TCELL3:OUT.SEC4</td></tr>
+<tr><td>WREN</td><td>input</td><td>TCELL1:IMUX.CE3</td></tr>
+<tr><td>WRERR</td><td>output</td><td>TCELL2:OUT.BEST6</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires"><a class="header" href="#bel-wires">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 BRAM bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:IMUX.IMUX3</td><td>BRAM.ADDRB0</td></tr>
+<tr><td>TCELL0:IMUX.IMUX5</td><td>BRAM.ADDRA0</td></tr>
+<tr><td>TCELL0:IMUX.IMUX6</td><td>BRAM.DIPB0, FIFO.DIP0</td></tr>
+<tr><td>TCELL0:IMUX.IMUX7</td><td>BRAM.DIPA0</td></tr>
+<tr><td>TCELL0:IMUX.IMUX8</td><td>BRAM.DIB16, FIFO.DI16</td></tr>
+<tr><td>TCELL0:IMUX.IMUX9</td><td>BRAM.DIB17, FIFO.DI17</td></tr>
+<tr><td>TCELL0:IMUX.IMUX10</td><td>BRAM.DIB18, FIFO.DI18</td></tr>
+<tr><td>TCELL0:IMUX.IMUX11</td><td>BRAM.DIB19, FIFO.DI19</td></tr>
+<tr><td>TCELL0:IMUX.IMUX12</td><td>BRAM.DIA16</td></tr>
+<tr><td>TCELL0:IMUX.IMUX13</td><td>BRAM.DIA17</td></tr>
+<tr><td>TCELL0:IMUX.IMUX14</td><td>BRAM.DIA18</td></tr>
+<tr><td>TCELL0:IMUX.IMUX15</td><td>BRAM.DIA19</td></tr>
+<tr><td>TCELL0:IMUX.IMUX16</td><td>BRAM.DIA0</td></tr>
+<tr><td>TCELL0:IMUX.IMUX17</td><td>BRAM.DIA1</td></tr>
+<tr><td>TCELL0:IMUX.IMUX18</td><td>BRAM.DIA2</td></tr>
+<tr><td>TCELL0:IMUX.IMUX19</td><td>BRAM.DIA3</td></tr>
+<tr><td>TCELL0:IMUX.IMUX20</td><td>BRAM.DIB0, FIFO.DI0</td></tr>
+<tr><td>TCELL0:IMUX.IMUX21</td><td>BRAM.DIB1, FIFO.DI1</td></tr>
+<tr><td>TCELL0:IMUX.IMUX22</td><td>BRAM.DIB2, FIFO.DI2</td></tr>
+<tr><td>TCELL0:IMUX.IMUX23</td><td>BRAM.DIB3, FIFO.DI3</td></tr>
+<tr><td>TCELL0:IMUX.IMUX25</td><td>BRAM.ADDRB1</td></tr>
+<tr><td>TCELL0:IMUX.IMUX26</td><td>BRAM.ADDRB2</td></tr>
+<tr><td>TCELL0:IMUX.IMUX27</td><td>BRAM.ADDRB3</td></tr>
+<tr><td>TCELL0:IMUX.IMUX29</td><td>BRAM.ADDRA1</td></tr>
+<tr><td>TCELL0:IMUX.IMUX30</td><td>BRAM.ADDRA2</td></tr>
+<tr><td>TCELL0:IMUX.IMUX31</td><td>BRAM.ADDRA3</td></tr>
+<tr><td>TCELL0:OUT.BEST0</td><td>BRAM.DOA3, FIFO.DO3</td></tr>
+<tr><td>TCELL0:OUT.BEST1</td><td>BRAM.DOA2, FIFO.DO2</td></tr>
+<tr><td>TCELL0:OUT.BEST2</td><td>BRAM.DOA1, FIFO.DO1</td></tr>
+<tr><td>TCELL0:OUT.BEST3</td><td>BRAM.DOA0, FIFO.DO0</td></tr>
+<tr><td>TCELL0:OUT.BEST4</td><td>BRAM.DOB0, FIFO.RDCOUNT0</td></tr>
+<tr><td>TCELL0:OUT.BEST5</td><td>BRAM.DOB1, FIFO.RDCOUNT1</td></tr>
+<tr><td>TCELL0:OUT.BEST6</td><td>BRAM.DOB2, FIFO.RDCOUNT2</td></tr>
+<tr><td>TCELL0:OUT.BEST7</td><td>BRAM.DOB3, FIFO.RDCOUNT3</td></tr>
+<tr><td>TCELL0:OUT.SEC0</td><td>BRAM.DOB16, FIFO.WRCOUNT0</td></tr>
+<tr><td>TCELL0:OUT.SEC1</td><td>BRAM.DOA16, FIFO.DO16</td></tr>
+<tr><td>TCELL0:OUT.SEC2</td><td>BRAM.DOB18, FIFO.WRCOUNT2</td></tr>
+<tr><td>TCELL0:OUT.SEC3</td><td>BRAM.DOA18, FIFO.DO18</td></tr>
+<tr><td>TCELL0:OUT.SEC4</td><td>BRAM.DOB17, FIFO.WRCOUNT1</td></tr>
+<tr><td>TCELL0:OUT.SEC5</td><td>BRAM.DOA17, FIFO.DO17</td></tr>
+<tr><td>TCELL0:OUT.SEC6</td><td>BRAM.DOB19, FIFO.WRCOUNT3</td></tr>
+<tr><td>TCELL0:OUT.SEC7</td><td>BRAM.DOA19, FIFO.DO19</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT6</td><td>BRAM.DOPB0</td></tr>
+<tr><td>TCELL0:OUT.HALF.BOT7</td><td>BRAM.DOPA0, FIFO.DOP0</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP6</td><td>BRAM.DOPB0</td></tr>
+<tr><td>TCELL0:OUT.HALF.TOP7</td><td>BRAM.DOPA0, FIFO.DOP0</td></tr>
+<tr><td>TCELL1:IMUX.CLK2</td><td>BRAM.CLKA, FIFO.RDCLK</td></tr>
+<tr><td>TCELL1:IMUX.CLK3</td><td>BRAM.CLKB, FIFO.WRCLK</td></tr>
+<tr><td>TCELL1:IMUX.CE0</td><td>BRAM.REGCEA</td></tr>
+<tr><td>TCELL1:IMUX.CE1</td><td>BRAM.REGCEB</td></tr>
+<tr><td>TCELL1:IMUX.CE2</td><td>BRAM.ENA, FIFO.RDEN</td></tr>
+<tr><td>TCELL1:IMUX.CE3</td><td>BRAM.ENB, FIFO.WREN</td></tr>
+<tr><td>TCELL1:IMUX.IMUX0</td><td>BRAM.WEB0</td></tr>
+<tr><td>TCELL1:IMUX.IMUX3</td><td>BRAM.ADDRB4</td></tr>
+<tr><td>TCELL1:IMUX.IMUX4</td><td>BRAM.WEB1</td></tr>
+<tr><td>TCELL1:IMUX.IMUX5</td><td>BRAM.ADDRA4</td></tr>
+<tr><td>TCELL1:IMUX.IMUX6</td><td>BRAM.DIPB2, FIFO.DIP2</td></tr>
+<tr><td>TCELL1:IMUX.IMUX7</td><td>BRAM.DIPA2</td></tr>
+<tr><td>TCELL1:IMUX.IMUX8</td><td>BRAM.DIB20, FIFO.DI20</td></tr>
+<tr><td>TCELL1:IMUX.IMUX9</td><td>BRAM.DIB21, FIFO.DI21</td></tr>
+<tr><td>TCELL1:IMUX.IMUX10</td><td>BRAM.DIB22, FIFO.DI22</td></tr>
+<tr><td>TCELL1:IMUX.IMUX11</td><td>BRAM.DIB23, FIFO.DI23</td></tr>
+<tr><td>TCELL1:IMUX.IMUX12</td><td>BRAM.DIA20</td></tr>
+<tr><td>TCELL1:IMUX.IMUX13</td><td>BRAM.DIA21</td></tr>
+<tr><td>TCELL1:IMUX.IMUX14</td><td>BRAM.DIA22</td></tr>
+<tr><td>TCELL1:IMUX.IMUX15</td><td>BRAM.DIA23</td></tr>
+<tr><td>TCELL1:IMUX.IMUX16</td><td>BRAM.DIA4</td></tr>
+<tr><td>TCELL1:IMUX.IMUX17</td><td>BRAM.DIA5</td></tr>
+<tr><td>TCELL1:IMUX.IMUX18</td><td>BRAM.DIA6</td></tr>
+<tr><td>TCELL1:IMUX.IMUX19</td><td>BRAM.DIA7</td></tr>
+<tr><td>TCELL1:IMUX.IMUX20</td><td>BRAM.DIB4, FIFO.DI4</td></tr>
+<tr><td>TCELL1:IMUX.IMUX21</td><td>BRAM.DIB5, FIFO.DI5</td></tr>
+<tr><td>TCELL1:IMUX.IMUX22</td><td>BRAM.DIB6, FIFO.DI6</td></tr>
+<tr><td>TCELL1:IMUX.IMUX23</td><td>BRAM.DIB7, FIFO.DI7</td></tr>
+<tr><td>TCELL1:IMUX.IMUX24</td><td>BRAM.WEB2</td></tr>
+<tr><td>TCELL1:IMUX.IMUX25</td><td>BRAM.ADDRB5</td></tr>
+<tr><td>TCELL1:IMUX.IMUX26</td><td>BRAM.ADDRB6</td></tr>
+<tr><td>TCELL1:IMUX.IMUX27</td><td>BRAM.ADDRB7</td></tr>
+<tr><td>TCELL1:IMUX.IMUX28</td><td>BRAM.WEB3</td></tr>
+<tr><td>TCELL1:IMUX.IMUX29</td><td>BRAM.ADDRA5</td></tr>
+<tr><td>TCELL1:IMUX.IMUX30</td><td>BRAM.ADDRA6</td></tr>
+<tr><td>TCELL1:IMUX.IMUX31</td><td>BRAM.ADDRA7</td></tr>
+<tr><td>TCELL1:OUT.BEST0</td><td>BRAM.DOA7, FIFO.DO7</td></tr>
+<tr><td>TCELL1:OUT.BEST1</td><td>BRAM.DOA6, FIFO.DO6</td></tr>
+<tr><td>TCELL1:OUT.BEST2</td><td>BRAM.DOA5, FIFO.DO5</td></tr>
+<tr><td>TCELL1:OUT.BEST3</td><td>BRAM.DOA4, FIFO.DO4</td></tr>
+<tr><td>TCELL1:OUT.BEST4</td><td>BRAM.DOB4</td></tr>
+<tr><td>TCELL1:OUT.BEST5</td><td>BRAM.DOB5, FIFO.RDERR</td></tr>
+<tr><td>TCELL1:OUT.BEST6</td><td>BRAM.DOB6, FIFO.ALMOSTEMPTY</td></tr>
+<tr><td>TCELL1:OUT.BEST7</td><td>BRAM.DOB7, FIFO.EMPTY</td></tr>
+<tr><td>TCELL1:OUT.SEC0</td><td>BRAM.DOB20, FIFO.WRCOUNT4</td></tr>
+<tr><td>TCELL1:OUT.SEC1</td><td>BRAM.DOA20, FIFO.DO20</td></tr>
+<tr><td>TCELL1:OUT.SEC2</td><td>BRAM.DOB22, FIFO.WRCOUNT6</td></tr>
+<tr><td>TCELL1:OUT.SEC3</td><td>BRAM.DOA22, FIFO.DO22</td></tr>
+<tr><td>TCELL1:OUT.SEC4</td><td>BRAM.DOB21, FIFO.WRCOUNT5</td></tr>
+<tr><td>TCELL1:OUT.SEC5</td><td>BRAM.DOA21, FIFO.DO21</td></tr>
+<tr><td>TCELL1:OUT.SEC6</td><td>BRAM.DOB23, FIFO.WRCOUNT7</td></tr>
+<tr><td>TCELL1:OUT.SEC7</td><td>BRAM.DOA23, FIFO.DO23</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT6</td><td>BRAM.DOPB2</td></tr>
+<tr><td>TCELL1:OUT.HALF.BOT7</td><td>BRAM.DOPA2, FIFO.DOP2</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP6</td><td>BRAM.DOPB2</td></tr>
+<tr><td>TCELL1:OUT.HALF.TOP7</td><td>BRAM.DOPA2, FIFO.DOP2</td></tr>
+<tr><td>TCELL2:IMUX.SR0</td><td>BRAM.SSRA, FIFO.RST</td></tr>
+<tr><td>TCELL2:IMUX.SR1</td><td>BRAM.SSRB</td></tr>
+<tr><td>TCELL2:IMUX.IMUX0</td><td>BRAM.WEA0</td></tr>
+<tr><td>TCELL2:IMUX.IMUX3</td><td>BRAM.ADDRB8</td></tr>
+<tr><td>TCELL2:IMUX.IMUX4</td><td>BRAM.WEA1</td></tr>
+<tr><td>TCELL2:IMUX.IMUX5</td><td>BRAM.ADDRA8</td></tr>
+<tr><td>TCELL2:IMUX.IMUX6</td><td>BRAM.DIPB1, FIFO.DIP1</td></tr>
+<tr><td>TCELL2:IMUX.IMUX7</td><td>BRAM.DIPA1</td></tr>
+<tr><td>TCELL2:IMUX.IMUX8</td><td>BRAM.DIB24, FIFO.DI24</td></tr>
+<tr><td>TCELL2:IMUX.IMUX9</td><td>BRAM.DIB25, FIFO.DI25</td></tr>
+<tr><td>TCELL2:IMUX.IMUX10</td><td>BRAM.DIB26, FIFO.DI26</td></tr>
+<tr><td>TCELL2:IMUX.IMUX11</td><td>BRAM.DIB27, FIFO.DI27</td></tr>
+<tr><td>TCELL2:IMUX.IMUX12</td><td>BRAM.DIA24</td></tr>
+<tr><td>TCELL2:IMUX.IMUX13</td><td>BRAM.DIA25</td></tr>
+<tr><td>TCELL2:IMUX.IMUX14</td><td>BRAM.DIA26</td></tr>
+<tr><td>TCELL2:IMUX.IMUX15</td><td>BRAM.DIA27</td></tr>
+<tr><td>TCELL2:IMUX.IMUX16</td><td>BRAM.DIA8</td></tr>
+<tr><td>TCELL2:IMUX.IMUX17</td><td>BRAM.DIA9</td></tr>
+<tr><td>TCELL2:IMUX.IMUX18</td><td>BRAM.DIA10</td></tr>
+<tr><td>TCELL2:IMUX.IMUX19</td><td>BRAM.DIA11</td></tr>
+<tr><td>TCELL2:IMUX.IMUX20</td><td>BRAM.DIB8, FIFO.DI8</td></tr>
+<tr><td>TCELL2:IMUX.IMUX21</td><td>BRAM.DIB9, FIFO.DI9</td></tr>
+<tr><td>TCELL2:IMUX.IMUX22</td><td>BRAM.DIB10, FIFO.DI10</td></tr>
+<tr><td>TCELL2:IMUX.IMUX23</td><td>BRAM.DIB11, FIFO.DI11</td></tr>
+<tr><td>TCELL2:IMUX.IMUX24</td><td>BRAM.WEA2</td></tr>
+<tr><td>TCELL2:IMUX.IMUX25</td><td>BRAM.ADDRB9</td></tr>
+<tr><td>TCELL2:IMUX.IMUX26</td><td>BRAM.ADDRB10</td></tr>
+<tr><td>TCELL2:IMUX.IMUX27</td><td>BRAM.ADDRB11</td></tr>
+<tr><td>TCELL2:IMUX.IMUX28</td><td>BRAM.WEA3</td></tr>
+<tr><td>TCELL2:IMUX.IMUX29</td><td>BRAM.ADDRA9</td></tr>
+<tr><td>TCELL2:IMUX.IMUX30</td><td>BRAM.ADDRA10</td></tr>
+<tr><td>TCELL2:IMUX.IMUX31</td><td>BRAM.ADDRA11</td></tr>
+<tr><td>TCELL2:OUT.BEST0</td><td>BRAM.DOA11, FIFO.DO11</td></tr>
+<tr><td>TCELL2:OUT.BEST1</td><td>BRAM.DOA10, FIFO.DO10</td></tr>
+<tr><td>TCELL2:OUT.BEST2</td><td>BRAM.DOA9, FIFO.DO9</td></tr>
+<tr><td>TCELL2:OUT.BEST3</td><td>BRAM.DOA8, FIFO.DO8</td></tr>
+<tr><td>TCELL2:OUT.BEST4</td><td>BRAM.DOB8, FIFO.FULL</td></tr>
+<tr><td>TCELL2:OUT.BEST5</td><td>BRAM.DOB9, FIFO.ALMOSTFULL</td></tr>
+<tr><td>TCELL2:OUT.BEST6</td><td>BRAM.DOB10, FIFO.WRERR</td></tr>
+<tr><td>TCELL2:OUT.BEST7</td><td>BRAM.DOB11</td></tr>
+<tr><td>TCELL2:OUT.SEC0</td><td>BRAM.DOB24, FIFO.RDCOUNT4</td></tr>
+<tr><td>TCELL2:OUT.SEC1</td><td>BRAM.DOA24, FIFO.DO24</td></tr>
+<tr><td>TCELL2:OUT.SEC2</td><td>BRAM.DOB26, FIFO.RDCOUNT6</td></tr>
+<tr><td>TCELL2:OUT.SEC3</td><td>BRAM.DOA26, FIFO.DO26</td></tr>
+<tr><td>TCELL2:OUT.SEC4</td><td>BRAM.DOB25, FIFO.RDCOUNT5</td></tr>
+<tr><td>TCELL2:OUT.SEC5</td><td>BRAM.DOA25, FIFO.DO25</td></tr>
+<tr><td>TCELL2:OUT.SEC6</td><td>BRAM.DOB27, FIFO.RDCOUNT7</td></tr>
+<tr><td>TCELL2:OUT.SEC7</td><td>BRAM.DOA27, FIFO.DO27</td></tr>
+<tr><td>TCELL2:OUT.HALF.BOT6</td><td>BRAM.DOPB1</td></tr>
+<tr><td>TCELL2:OUT.HALF.BOT7</td><td>BRAM.DOPA1, FIFO.DOP1</td></tr>
+<tr><td>TCELL2:OUT.HALF.TOP6</td><td>BRAM.DOPB1</td></tr>
+<tr><td>TCELL2:OUT.HALF.TOP7</td><td>BRAM.DOPA1, FIFO.DOP1</td></tr>
+<tr><td>TCELL3:IMUX.IMUX3</td><td>BRAM.ADDRB12</td></tr>
+<tr><td>TCELL3:IMUX.IMUX5</td><td>BRAM.ADDRA12</td></tr>
+<tr><td>TCELL3:IMUX.IMUX6</td><td>BRAM.DIPB3, FIFO.DIP3</td></tr>
+<tr><td>TCELL3:IMUX.IMUX7</td><td>BRAM.DIPA3</td></tr>
+<tr><td>TCELL3:IMUX.IMUX8</td><td>BRAM.DIB28, FIFO.DI28</td></tr>
+<tr><td>TCELL3:IMUX.IMUX9</td><td>BRAM.DIB29, FIFO.DI29</td></tr>
+<tr><td>TCELL3:IMUX.IMUX10</td><td>BRAM.DIB30, FIFO.DI30</td></tr>
+<tr><td>TCELL3:IMUX.IMUX11</td><td>BRAM.DIB31, FIFO.DI31</td></tr>
+<tr><td>TCELL3:IMUX.IMUX12</td><td>BRAM.DIA28</td></tr>
+<tr><td>TCELL3:IMUX.IMUX13</td><td>BRAM.DIA29</td></tr>
+<tr><td>TCELL3:IMUX.IMUX14</td><td>BRAM.DIA30</td></tr>
+<tr><td>TCELL3:IMUX.IMUX15</td><td>BRAM.DIA31</td></tr>
+<tr><td>TCELL3:IMUX.IMUX16</td><td>BRAM.DIA12</td></tr>
+<tr><td>TCELL3:IMUX.IMUX17</td><td>BRAM.DIA13</td></tr>
+<tr><td>TCELL3:IMUX.IMUX18</td><td>BRAM.DIA14</td></tr>
+<tr><td>TCELL3:IMUX.IMUX19</td><td>BRAM.DIA15</td></tr>
+<tr><td>TCELL3:IMUX.IMUX20</td><td>BRAM.DIB12, FIFO.DI12</td></tr>
+<tr><td>TCELL3:IMUX.IMUX21</td><td>BRAM.DIB13, FIFO.DI13</td></tr>
+<tr><td>TCELL3:IMUX.IMUX22</td><td>BRAM.DIB14, FIFO.DI14</td></tr>
+<tr><td>TCELL3:IMUX.IMUX23</td><td>BRAM.DIB15, FIFO.DI15</td></tr>
+<tr><td>TCELL3:IMUX.IMUX25</td><td>BRAM.ADDRB13</td></tr>
+<tr><td>TCELL3:IMUX.IMUX26</td><td>BRAM.ADDRB14</td></tr>
+<tr><td>TCELL3:IMUX.IMUX29</td><td>BRAM.ADDRA13</td></tr>
+<tr><td>TCELL3:IMUX.IMUX30</td><td>BRAM.ADDRA14</td></tr>
+<tr><td>TCELL3:OUT.BEST0</td><td>BRAM.DOA15, FIFO.DO15</td></tr>
+<tr><td>TCELL3:OUT.BEST1</td><td>BRAM.DOA14, FIFO.DO14</td></tr>
+<tr><td>TCELL3:OUT.BEST2</td><td>BRAM.DOA13, FIFO.DO13</td></tr>
+<tr><td>TCELL3:OUT.BEST3</td><td>BRAM.DOA12, FIFO.DO12</td></tr>
+<tr><td>TCELL3:OUT.BEST4</td><td>BRAM.DOB12, FIFO.RDCOUNT8</td></tr>
+<tr><td>TCELL3:OUT.BEST5</td><td>BRAM.DOB13, FIFO.RDCOUNT9</td></tr>
+<tr><td>TCELL3:OUT.BEST6</td><td>BRAM.DOB14, FIFO.RDCOUNT10</td></tr>
+<tr><td>TCELL3:OUT.BEST7</td><td>BRAM.DOB15, FIFO.RDCOUNT11</td></tr>
+<tr><td>TCELL3:OUT.SEC0</td><td>BRAM.DOB28, FIFO.WRCOUNT8</td></tr>
+<tr><td>TCELL3:OUT.SEC1</td><td>BRAM.DOA28, FIFO.DO28</td></tr>
+<tr><td>TCELL3:OUT.SEC2</td><td>BRAM.DOB30, FIFO.WRCOUNT10</td></tr>
+<tr><td>TCELL3:OUT.SEC3</td><td>BRAM.DOA30, FIFO.DO30</td></tr>
+<tr><td>TCELL3:OUT.SEC4</td><td>BRAM.DOB29, FIFO.WRCOUNT9</td></tr>
+<tr><td>TCELL3:OUT.SEC5</td><td>BRAM.DOA29, FIFO.DO29</td></tr>
+<tr><td>TCELL3:OUT.SEC6</td><td>BRAM.DOB31, FIFO.WRCOUNT11</td></tr>
+<tr><td>TCELL3:OUT.SEC7</td><td>BRAM.DOA31, FIFO.DO31</td></tr>
+<tr><td>TCELL3:OUT.HALF.BOT6</td><td>BRAM.DOPB3</td></tr>
+<tr><td>TCELL3:OUT.HALF.BOT7</td><td>BRAM.DOPA3, FIFO.DOP3</td></tr>
+<tr><td>TCELL3:OUT.HALF.TOP6</td><td>BRAM.DOPB3</td></tr>
+<tr><td>TCELL3:OUT.HALF.TOP7</td><td>BRAM.DOPA3, FIFO.DOP3</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-1"><a class="header" href="#bitstream-1">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex4 BRAM bittile 0</caption>
 <thead>

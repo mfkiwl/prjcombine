@@ -151,14 +151,207 @@
                     <main>
                         <h1 id="global-buffers"><a class="header" href="#global-buffers">Global buffers</a></h1>
 <p>TODO: document</p>
-<h2 id="bitstream--bottom-tiles"><a class="header" href="#bitstream--bottom-tiles">Bitstream — bottom tiles</a></h2>
+<h2 id="bitstream"><a class="header" href="#bitstream">Bitstream</a></h2>
 <p>The <code>CLKB.*</code> tiles use two bitstream tiles:</p>
 <ul>
 <li>tile 0: 4×80 tile located in the clock spine column, in the bits corresponding to the bottom interconnect row</li>
 <li>tile 1: 4×16 tile located in the clock spine column, in the bits corresponding to the low special area (used for bottom <code>IOB</code> tiles and clock rows in normal columns)</li>
 </ul>
-<h3 id="clkbv2"><a class="header" href="#clkbv2"><code>CLKB.V2</code></a></h3>
-<p>This tile is used on Virtex 2 devices.</p>
+<p>The <code>CLKT.*</code> tiles use two bitstream tiles:</p>
+<ul>
+<li>tile 0: 4×80 tile located in the clock spine column, in the bits corresponding to the top interconnect row</li>
+<li>tile 1: 4×16 tile located in the clock spine column, in the bits corresponding to the high special area (used for top <code>IOB</code> tiles and clock rows in normal columns)</li>
+</ul>
+<p>Each tile comes in three variants:</p>
+<ul>
+<li><code>*.V2</code>: used on Virtex 2 devices</li>
+<li><code>*.V2P</code>: used on Virtex 2 Pro devices with <code>GT</code> transceivers</li>
+<li><code>*.V2PX</code>: used on Virtex 2 Pro X devices with <code>GT10</code> transceivers</li>
+</ul>
+<h2 id="tile-clkbv2"><a class="header" href="#tile-clkbv2">Tile CLKB.V2</a></h2>
+<p>Cells: 2
+IRIs: 0</p>
+<h3 id="muxes"><a class="header" href="#muxes">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2 muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:OMUX10.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:OMUX11.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:OMUX12.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:OMUX15.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL0</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL1</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL2</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL3</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL4</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL5</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL6</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL7</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK0</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK1</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK2</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK3</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK4</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK5</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK6</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK7</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL1:OMUX10.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL1:OMUX11.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL1:OMUX12.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL1:OMUX15.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux0"><a class="header" href="#bel-bufgmux0">Bel BUFGMUX0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2 bel BUFGMUX0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK0</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.0</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux1"><a class="header" href="#bel-bufgmux1">Bel BUFGMUX1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2 bel BUFGMUX1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK1</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.1</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux2"><a class="header" href="#bel-bufgmux2">Bel BUFGMUX2</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2 bel BUFGMUX2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK2</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.2</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux3"><a class="header" href="#bel-bufgmux3">Bel BUFGMUX3</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2 bel BUFGMUX3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK3</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.3</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL3</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux4"><a class="header" href="#bel-bufgmux4">Bel BUFGMUX4</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2 bel BUFGMUX4</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK4</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.4</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL4</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux5"><a class="header" href="#bel-bufgmux5">Bel BUFGMUX5</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2 bel BUFGMUX5</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK5</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.5</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL5</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux6"><a class="header" href="#bel-bufgmux6">Bel BUFGMUX6</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2 bel BUFGMUX6</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK6</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.6</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL6</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux7"><a class="header" href="#bel-bufgmux7">Bel BUFGMUX7</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2 bel BUFGMUX7</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK7</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.7</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL7</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-globalsig_s0"><a class="header" href="#bel-globalsig_s0">Bel GLOBALSIG_S0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2 bel GLOBALSIG_S0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-globalsig_s1"><a class="header" href="#bel-globalsig_s1">Bel GLOBALSIG_S1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2 bel GLOBALSIG_S1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-wires"><a class="header" href="#bel-wires">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2 bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:CLK.IMUX.SEL0</td><td>BUFGMUX0.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL1</td><td>BUFGMUX1.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL2</td><td>BUFGMUX2.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL3</td><td>BUFGMUX3.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL4</td><td>BUFGMUX4.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL5</td><td>BUFGMUX5.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL6</td><td>BUFGMUX6.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL7</td><td>BUFGMUX7.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK0</td><td>BUFGMUX0.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK1</td><td>BUFGMUX1.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK2</td><td>BUFGMUX2.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK3</td><td>BUFGMUX3.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK4</td><td>BUFGMUX4.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK5</td><td>BUFGMUX5.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK6</td><td>BUFGMUX6.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK7</td><td>BUFGMUX7.CLK</td></tr>
+<tr><td>TCELL0:CLK.OUT.0</td><td>BUFGMUX0.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.1</td><td>BUFGMUX1.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.2</td><td>BUFGMUX2.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.3</td><td>BUFGMUX3.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.4</td><td>BUFGMUX4.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.5</td><td>BUFGMUX5.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.6</td><td>BUFGMUX6.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.7</td><td>BUFGMUX7.O</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-1"><a class="header" href="#bitstream-1">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex2 CLKB.V2 bittile 0</caption>
 <thead>
@@ -1960,8 +2153,199 @@ inverted
 </tr>
 </tbody>
 </table></div>
-<h3 id="clkbv2p"><a class="header" href="#clkbv2p"><code>CLKB.V2P</code></a></h3>
-<p>This tile is used on Virtex 2 Pro devices.</p>
+<h2 id="tile-clkbv2p"><a class="header" href="#tile-clkbv2p">Tile CLKB.V2P</a></h2>
+<p>Cells: 2
+IRIs: 0</p>
+<h3 id="muxes-1"><a class="header" href="#muxes-1">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2P muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:OMUX10.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:OMUX11.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:OMUX12.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:OMUX15.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL0</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL1</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL2</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL3</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL4</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL5</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL6</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL7</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK0</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK1</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK2</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK3</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK4</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK5</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK6</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK7</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL1:OMUX10.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL1:OMUX11.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL1:OMUX12.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL1:OMUX15.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux0-1"><a class="header" href="#bel-bufgmux0-1">Bel BUFGMUX0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2P bel BUFGMUX0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK0</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.0</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux1-1"><a class="header" href="#bel-bufgmux1-1">Bel BUFGMUX1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2P bel BUFGMUX1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK1</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.1</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux2-1"><a class="header" href="#bel-bufgmux2-1">Bel BUFGMUX2</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2P bel BUFGMUX2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK2</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.2</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux3-1"><a class="header" href="#bel-bufgmux3-1">Bel BUFGMUX3</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2P bel BUFGMUX3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK3</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.3</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL3</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux4-1"><a class="header" href="#bel-bufgmux4-1">Bel BUFGMUX4</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2P bel BUFGMUX4</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK4</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.4</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL4</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux5-1"><a class="header" href="#bel-bufgmux5-1">Bel BUFGMUX5</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2P bel BUFGMUX5</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK5</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.5</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL5</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux6-1"><a class="header" href="#bel-bufgmux6-1">Bel BUFGMUX6</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2P bel BUFGMUX6</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK6</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.6</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL6</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux7-1"><a class="header" href="#bel-bufgmux7-1">Bel BUFGMUX7</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2P bel BUFGMUX7</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK7</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.7</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL7</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-globalsig_s0-1"><a class="header" href="#bel-globalsig_s0-1">Bel GLOBALSIG_S0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2P bel GLOBALSIG_S0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-globalsig_s1-1"><a class="header" href="#bel-globalsig_s1-1">Bel GLOBALSIG_S1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2P bel GLOBALSIG_S1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-brefclk"><a class="header" href="#bel-brefclk">Bel BREFCLK</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2P bel BREFCLK</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-wires-1"><a class="header" href="#bel-wires-1">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2P bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:CLK.IMUX.SEL0</td><td>BUFGMUX0.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL1</td><td>BUFGMUX1.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL2</td><td>BUFGMUX2.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL3</td><td>BUFGMUX3.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL4</td><td>BUFGMUX4.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL5</td><td>BUFGMUX5.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL6</td><td>BUFGMUX6.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL7</td><td>BUFGMUX7.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK0</td><td>BUFGMUX0.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK1</td><td>BUFGMUX1.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK2</td><td>BUFGMUX2.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK3</td><td>BUFGMUX3.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK4</td><td>BUFGMUX4.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK5</td><td>BUFGMUX5.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK6</td><td>BUFGMUX6.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK7</td><td>BUFGMUX7.CLK</td></tr>
+<tr><td>TCELL0:CLK.OUT.0</td><td>BUFGMUX0.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.1</td><td>BUFGMUX1.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.2</td><td>BUFGMUX2.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.3</td><td>BUFGMUX3.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.4</td><td>BUFGMUX4.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.5</td><td>BUFGMUX5.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.6</td><td>BUFGMUX6.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.7</td><td>BUFGMUX7.O</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-2"><a class="header" href="#bitstream-2">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex2 CLKB.V2P bittile 0</caption>
 <thead>
@@ -3763,8 +4147,190 @@ inverted
 </tr>
 </tbody>
 </table></div>
-<h3 id="clkbv2px"><a class="header" href="#clkbv2px"><code>CLKB.V2PX</code></a></h3>
-<p>This tile is used on Virtex 2 Pro X devices.</p>
+<h2 id="tile-clkbv2px"><a class="header" href="#tile-clkbv2px">Tile CLKB.V2PX</a></h2>
+<p>Cells: 2
+IRIs: 0</p>
+<h3 id="muxes-2"><a class="header" href="#muxes-2">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2PX muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:OMUX10.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:OMUX11.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:OMUX12.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:OMUX15.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL0</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL1</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL2</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL3</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL4</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL5</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL6</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL7</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK0</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK1</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK2</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK3</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK4</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK5</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK6</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK7</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL1:OMUX10.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL1:OMUX11.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL1:OMUX12.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL1:OMUX15.N</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux0-2"><a class="header" href="#bel-bufgmux0-2">Bel BUFGMUX0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2PX bel BUFGMUX0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK0</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.0</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux1-2"><a class="header" href="#bel-bufgmux1-2">Bel BUFGMUX1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2PX bel BUFGMUX1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK1</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.1</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux2-2"><a class="header" href="#bel-bufgmux2-2">Bel BUFGMUX2</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2PX bel BUFGMUX2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK2</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.2</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux3-2"><a class="header" href="#bel-bufgmux3-2">Bel BUFGMUX3</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2PX bel BUFGMUX3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK3</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.3</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL3</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux4-2"><a class="header" href="#bel-bufgmux4-2">Bel BUFGMUX4</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2PX bel BUFGMUX4</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK4</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.4</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL4</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux5-2"><a class="header" href="#bel-bufgmux5-2">Bel BUFGMUX5</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2PX bel BUFGMUX5</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK5</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.5</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL5</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux6-2"><a class="header" href="#bel-bufgmux6-2">Bel BUFGMUX6</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2PX bel BUFGMUX6</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK6</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.6</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL6</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux7-2"><a class="header" href="#bel-bufgmux7-2">Bel BUFGMUX7</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2PX bel BUFGMUX7</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK7</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.7</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL7</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-globalsig_s0-2"><a class="header" href="#bel-globalsig_s0-2">Bel GLOBALSIG_S0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2PX bel GLOBALSIG_S0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-globalsig_s1-2"><a class="header" href="#bel-globalsig_s1-2">Bel GLOBALSIG_S1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2PX bel GLOBALSIG_S1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-wires-2"><a class="header" href="#bel-wires-2">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKB.V2PX bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:CLK.IMUX.SEL0</td><td>BUFGMUX0.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL1</td><td>BUFGMUX1.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL2</td><td>BUFGMUX2.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL3</td><td>BUFGMUX3.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL4</td><td>BUFGMUX4.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL5</td><td>BUFGMUX5.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL6</td><td>BUFGMUX6.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL7</td><td>BUFGMUX7.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK0</td><td>BUFGMUX0.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK1</td><td>BUFGMUX1.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK2</td><td>BUFGMUX2.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK3</td><td>BUFGMUX3.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK4</td><td>BUFGMUX4.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK5</td><td>BUFGMUX5.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK6</td><td>BUFGMUX6.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK7</td><td>BUFGMUX7.CLK</td></tr>
+<tr><td>TCELL0:CLK.OUT.0</td><td>BUFGMUX0.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.1</td><td>BUFGMUX1.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.2</td><td>BUFGMUX2.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.3</td><td>BUFGMUX3.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.4</td><td>BUFGMUX4.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.5</td><td>BUFGMUX5.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.6</td><td>BUFGMUX6.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.7</td><td>BUFGMUX7.O</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-3"><a class="header" href="#bitstream-3">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex2 CLKB.V2PX bittile 0</caption>
 <thead>
@@ -5566,14 +6132,190 @@ inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="bitstream--top-tiles"><a class="header" href="#bitstream--top-tiles">Bitstream — top tiles</a></h2>
-<p>The <code>CLKT.*</code> tiles use two bitstream tiles:</p>
-<ul>
-<li>tile 0: 4×80 tile located in the clock spine column, in the bits corresponding to the top interconnect row</li>
-<li>tile 1: 4×16 tile located in the clock spine column, in the bits corresponding to the high special area (used for top <code>IOB</code> tiles and clock rows in normal columns)</li>
-</ul>
-<h3 id="clktv2"><a class="header" href="#clktv2"><code>CLKT.V2</code></a></h3>
-<p>This tile is used on Virtex 2 devices.</p>
+<h2 id="tile-clktv2"><a class="header" href="#tile-clktv2">Tile CLKT.V2</a></h2>
+<p>Cells: 2
+IRIs: 0</p>
+<h3 id="muxes-3"><a class="header" href="#muxes-3">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2 muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:OMUX0.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:OMUX3.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:OMUX4.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:OMUX5.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL0</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL1</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL2</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL3</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL4</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL5</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL6</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL7</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK0</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK1</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK2</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK3</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK4</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK5</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK6</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK7</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL1:OMUX0.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL1:OMUX3.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL1:OMUX4.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL1:OMUX5.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux0-3"><a class="header" href="#bel-bufgmux0-3">Bel BUFGMUX0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2 bel BUFGMUX0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK0</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.0</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux1-3"><a class="header" href="#bel-bufgmux1-3">Bel BUFGMUX1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2 bel BUFGMUX1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK1</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.1</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux2-3"><a class="header" href="#bel-bufgmux2-3">Bel BUFGMUX2</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2 bel BUFGMUX2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK2</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.2</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux3-3"><a class="header" href="#bel-bufgmux3-3">Bel BUFGMUX3</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2 bel BUFGMUX3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK3</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.3</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL3</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux4-3"><a class="header" href="#bel-bufgmux4-3">Bel BUFGMUX4</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2 bel BUFGMUX4</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK4</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.4</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL4</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux5-3"><a class="header" href="#bel-bufgmux5-3">Bel BUFGMUX5</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2 bel BUFGMUX5</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK5</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.5</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL5</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux6-3"><a class="header" href="#bel-bufgmux6-3">Bel BUFGMUX6</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2 bel BUFGMUX6</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK6</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.6</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL6</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux7-3"><a class="header" href="#bel-bufgmux7-3">Bel BUFGMUX7</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2 bel BUFGMUX7</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK7</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.7</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL7</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-globalsig_n0"><a class="header" href="#bel-globalsig_n0">Bel GLOBALSIG_N0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2 bel GLOBALSIG_N0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-globalsig_n1"><a class="header" href="#bel-globalsig_n1">Bel GLOBALSIG_N1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2 bel GLOBALSIG_N1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-wires-3"><a class="header" href="#bel-wires-3">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2 bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:CLK.IMUX.SEL0</td><td>BUFGMUX0.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL1</td><td>BUFGMUX1.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL2</td><td>BUFGMUX2.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL3</td><td>BUFGMUX3.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL4</td><td>BUFGMUX4.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL5</td><td>BUFGMUX5.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL6</td><td>BUFGMUX6.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL7</td><td>BUFGMUX7.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK0</td><td>BUFGMUX0.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK1</td><td>BUFGMUX1.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK2</td><td>BUFGMUX2.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK3</td><td>BUFGMUX3.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK4</td><td>BUFGMUX4.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK5</td><td>BUFGMUX5.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK6</td><td>BUFGMUX6.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK7</td><td>BUFGMUX7.CLK</td></tr>
+<tr><td>TCELL0:CLK.OUT.0</td><td>BUFGMUX0.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.1</td><td>BUFGMUX1.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.2</td><td>BUFGMUX2.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.3</td><td>BUFGMUX3.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.4</td><td>BUFGMUX4.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.5</td><td>BUFGMUX5.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.6</td><td>BUFGMUX6.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.7</td><td>BUFGMUX7.O</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-4"><a class="header" href="#bitstream-4">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex2 CLKT.V2 bittile 0</caption>
 <thead>
@@ -7345,8 +8087,199 @@ inverted
 </tr>
 </tbody>
 </table></div>
-<h3 id="clktv2p"><a class="header" href="#clktv2p"><code>CLKT.V2P</code></a></h3>
-<p>This tile is used on Virtex 2 Pro devices.</p>
+<h2 id="tile-clktv2p"><a class="header" href="#tile-clktv2p">Tile CLKT.V2P</a></h2>
+<p>Cells: 2
+IRIs: 0</p>
+<h3 id="muxes-4"><a class="header" href="#muxes-4">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2P muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:OMUX0.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:OMUX3.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:OMUX4.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:OMUX5.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL0</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL1</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL2</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL3</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL4</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL5</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL6</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL7</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK0</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK1</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK2</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK3</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK4</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK5</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK6</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK7</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL1:OMUX0.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL1:OMUX3.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL1:OMUX4.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL1:OMUX5.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux0-4"><a class="header" href="#bel-bufgmux0-4">Bel BUFGMUX0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2P bel BUFGMUX0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK0</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.0</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux1-4"><a class="header" href="#bel-bufgmux1-4">Bel BUFGMUX1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2P bel BUFGMUX1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK1</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.1</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux2-4"><a class="header" href="#bel-bufgmux2-4">Bel BUFGMUX2</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2P bel BUFGMUX2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK2</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.2</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux3-4"><a class="header" href="#bel-bufgmux3-4">Bel BUFGMUX3</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2P bel BUFGMUX3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK3</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.3</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL3</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux4-4"><a class="header" href="#bel-bufgmux4-4">Bel BUFGMUX4</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2P bel BUFGMUX4</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK4</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.4</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL4</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux5-4"><a class="header" href="#bel-bufgmux5-4">Bel BUFGMUX5</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2P bel BUFGMUX5</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK5</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.5</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL5</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux6-4"><a class="header" href="#bel-bufgmux6-4">Bel BUFGMUX6</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2P bel BUFGMUX6</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK6</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.6</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL6</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux7-4"><a class="header" href="#bel-bufgmux7-4">Bel BUFGMUX7</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2P bel BUFGMUX7</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK7</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.7</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL7</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-globalsig_n0-1"><a class="header" href="#bel-globalsig_n0-1">Bel GLOBALSIG_N0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2P bel GLOBALSIG_N0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-globalsig_n1-1"><a class="header" href="#bel-globalsig_n1-1">Bel GLOBALSIG_N1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2P bel GLOBALSIG_N1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-brefclk-1"><a class="header" href="#bel-brefclk-1">Bel BREFCLK</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2P bel BREFCLK</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-wires-4"><a class="header" href="#bel-wires-4">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2P bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:CLK.IMUX.SEL0</td><td>BUFGMUX0.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL1</td><td>BUFGMUX1.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL2</td><td>BUFGMUX2.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL3</td><td>BUFGMUX3.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL4</td><td>BUFGMUX4.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL5</td><td>BUFGMUX5.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL6</td><td>BUFGMUX6.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL7</td><td>BUFGMUX7.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK0</td><td>BUFGMUX0.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK1</td><td>BUFGMUX1.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK2</td><td>BUFGMUX2.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK3</td><td>BUFGMUX3.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK4</td><td>BUFGMUX4.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK5</td><td>BUFGMUX5.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK6</td><td>BUFGMUX6.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK7</td><td>BUFGMUX7.CLK</td></tr>
+<tr><td>TCELL0:CLK.OUT.0</td><td>BUFGMUX0.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.1</td><td>BUFGMUX1.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.2</td><td>BUFGMUX2.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.3</td><td>BUFGMUX3.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.4</td><td>BUFGMUX4.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.5</td><td>BUFGMUX5.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.6</td><td>BUFGMUX6.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.7</td><td>BUFGMUX7.O</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-5"><a class="header" href="#bitstream-5">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex2 CLKT.V2P bittile 0</caption>
 <thead>
@@ -9118,8 +10051,190 @@ inverted
 </tr>
 </tbody>
 </table></div>
-<h3 id="clktv2px"><a class="header" href="#clktv2px"><code>CLKT.V2PX</code></a></h3>
-<p>This tile is used on Virtex 2 Pro X devices.</p>
+<h2 id="tile-clktv2px"><a class="header" href="#tile-clktv2px">Tile CLKT.V2PX</a></h2>
+<p>Cells: 2
+IRIs: 0</p>
+<h3 id="muxes-5"><a class="header" href="#muxes-5">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2PX muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:OMUX0.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:OMUX3.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:OMUX4.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:OMUX5.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL0</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL1</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL2</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL3</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL4</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL5</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL6</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL7</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK0</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK1</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK2</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK3</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK4</td><td>TCELL0:PULLUP, TCELL0:DBL.W0.2, TCELL0:DBL.W1.2, TCELL0:DBL.W2.2, TCELL0:DBL.E0.0, TCELL0:DBL.E0.1, TCELL0:DBL.E1.0, TCELL0:DBL.E1.1, TCELL0:DBL.E2.0, TCELL1:DBL.W0.0, TCELL1:DBL.W1.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK5</td><td>TCELL0:PULLUP, TCELL0:DBL.W3.2, TCELL0:DBL.W4.2, TCELL0:DBL.E2.1, TCELL0:DBL.E3.0, TCELL0:DBL.E3.1, TCELL0:DBL.E4.0, TCELL0:DBL.E4.1, TCELL1:DBL.W2.0, TCELL1:DBL.W3.0, TCELL1:DBL.W4.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK6</td><td>TCELL0:PULLUP, TCELL0:DBL.W5.2, TCELL0:DBL.W6.2, TCELL0:DBL.W7.2, TCELL0:DBL.E5.0, TCELL0:DBL.E5.1, TCELL0:DBL.E6.0, TCELL0:DBL.E6.1, TCELL0:DBL.E7.0, TCELL1:DBL.W5.0, TCELL1:DBL.W6.0</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK7</td><td>TCELL0:PULLUP, TCELL0:DBL.W8.2, TCELL0:DBL.W9.2, TCELL0:DBL.E7.1, TCELL0:DBL.E8.0, TCELL0:DBL.E8.1, TCELL0:DBL.E9.0, TCELL0:DBL.E9.1, TCELL1:DBL.W7.0, TCELL1:DBL.W8.0, TCELL1:DBL.W9.0</td></tr>
+<tr><td>TCELL1:OMUX0.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL1:OMUX3.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL1:OMUX4.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+<tr><td>TCELL1:OMUX5.S</td><td>TCELL0:CLK.OUT.0, TCELL0:CLK.OUT.1, TCELL0:CLK.OUT.2, TCELL0:CLK.OUT.3, TCELL0:CLK.OUT.4, TCELL0:CLK.OUT.5, TCELL0:CLK.OUT.6, TCELL0:CLK.OUT.7</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux0-5"><a class="header" href="#bel-bufgmux0-5">Bel BUFGMUX0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2PX bel BUFGMUX0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK0</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.0</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux1-5"><a class="header" href="#bel-bufgmux1-5">Bel BUFGMUX1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2PX bel BUFGMUX1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK1</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.1</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux2-5"><a class="header" href="#bel-bufgmux2-5">Bel BUFGMUX2</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2PX bel BUFGMUX2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK2</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.2</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux3-5"><a class="header" href="#bel-bufgmux3-5">Bel BUFGMUX3</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2PX bel BUFGMUX3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK3</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.3</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL3</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux4-5"><a class="header" href="#bel-bufgmux4-5">Bel BUFGMUX4</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2PX bel BUFGMUX4</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK4</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.4</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL4</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux5-5"><a class="header" href="#bel-bufgmux5-5">Bel BUFGMUX5</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2PX bel BUFGMUX5</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK5</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.5</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL5</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux6-5"><a class="header" href="#bel-bufgmux6-5">Bel BUFGMUX6</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2PX bel BUFGMUX6</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK6</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.6</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL6</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux7-5"><a class="header" href="#bel-bufgmux7-5">Bel BUFGMUX7</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2PX bel BUFGMUX7</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:CLK.IMUX.CLK7</td></tr>
+<tr><td>O</td><td>output</td><td>TCELL0:CLK.OUT.7</td></tr>
+<tr><td>S</td><td>input</td><td>TCELL0:CLK.IMUX.SEL7</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-globalsig_n0-2"><a class="header" href="#bel-globalsig_n0-2">Bel GLOBALSIG_N0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2PX bel GLOBALSIG_N0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-globalsig_n1-2"><a class="header" href="#bel-globalsig_n1-2">Bel GLOBALSIG_N1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2PX bel GLOBALSIG_N1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-wires-5"><a class="header" href="#bel-wires-5">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKT.V2PX bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:CLK.IMUX.SEL0</td><td>BUFGMUX0.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL1</td><td>BUFGMUX1.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL2</td><td>BUFGMUX2.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL3</td><td>BUFGMUX3.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL4</td><td>BUFGMUX4.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL5</td><td>BUFGMUX5.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL6</td><td>BUFGMUX6.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.SEL7</td><td>BUFGMUX7.S</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK0</td><td>BUFGMUX0.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK1</td><td>BUFGMUX1.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK2</td><td>BUFGMUX2.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK3</td><td>BUFGMUX3.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK4</td><td>BUFGMUX4.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK5</td><td>BUFGMUX5.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK6</td><td>BUFGMUX6.CLK</td></tr>
+<tr><td>TCELL0:CLK.IMUX.CLK7</td><td>BUFGMUX7.CLK</td></tr>
+<tr><td>TCELL0:CLK.OUT.0</td><td>BUFGMUX0.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.1</td><td>BUFGMUX1.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.2</td><td>BUFGMUX2.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.3</td><td>BUFGMUX3.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.4</td><td>BUFGMUX4.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.5</td><td>BUFGMUX5.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.6</td><td>BUFGMUX6.O</td></tr>
+<tr><td>TCELL0:CLK.OUT.7</td><td>BUFGMUX7.O</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-6"><a class="header" href="#bitstream-6">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex2 CLKT.V2PX bittile 0</caption>
 <thead>
@@ -10889,6 +12004,18 @@ inverted
 <td>0</td>
 <td>0</td>
 </tr>
+</tbody>
+</table></div>
+<h2 id="tile-clkc"><a class="header" href="#tile-clkc">Tile CLKC</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="bel-clkc"><a class="header" href="#bel-clkc">Bel CLKC</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 CLKC bel CLKC</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
 </tbody>
 </table></div>
 

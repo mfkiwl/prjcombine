@@ -153,6 +153,79 @@
 <p>These tiles are placed at the edges of the device and deal with interconnect lines that go out-of-bounds. The associated bitstream tiles are shared with <code>IOBS</code> tiles and primitive data for corner tiles.</p>
 <h2 id="termw"><a class="header" href="#termw"><code>TERM.W</code></a></h2>
 <p>Located at the left edge of every interconnect row, this tile is 4×80 bits.</p>
+<h2 id="tile-termw"><a class="header" href="#tile-termw">Tile TERM.W</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="muxes"><a class="header" href="#muxes">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 TERM.W muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>HEX.E0.1</td><td>HEX.W0.0, LH.7, LH.19</td></tr>
+<tr><td>HEX.E0.2</td><td>HEX.W0.1, LH.8, LH.20</td></tr>
+<tr><td>HEX.E0.3</td><td>HEX.W0.2, LH.9, LH.21</td></tr>
+<tr><td>HEX.E0.4</td><td>HEX.W0.3, LH.10, LH.22</td></tr>
+<tr><td>HEX.E0.5</td><td>HEX.W0.4, LH.11, LH.23</td></tr>
+<tr><td>HEX.E0.6</td><td>HEX.W0.5, LH.0, LH.12</td></tr>
+<tr><td>HEX.E1.1</td><td>HEX.W1.0, LH.1, LH.13, OUT.PCI0</td></tr>
+<tr><td>HEX.E1.2</td><td>HEX.W1.1, LH.2, LH.14, OUT.PCI1</td></tr>
+<tr><td>HEX.E1.3</td><td>HEX.W1.2, LH.3, LH.15</td></tr>
+<tr><td>HEX.E1.4</td><td>HEX.W1.3, LH.4, LH.16</td></tr>
+<tr><td>HEX.E1.5</td><td>HEX.W1.4, LH.5, LH.17</td></tr>
+<tr><td>HEX.E1.6</td><td>HEX.W1.5, LH.6, LH.18</td></tr>
+<tr><td>HEX.E2.1</td><td>HEX.W2.0, LH.7, LH.19</td></tr>
+<tr><td>HEX.E2.2</td><td>HEX.W2.1, LH.8, LH.20</td></tr>
+<tr><td>HEX.E2.3</td><td>HEX.W2.2, LH.9, LH.21</td></tr>
+<tr><td>HEX.E2.4</td><td>HEX.W2.3, LH.10, LH.22</td></tr>
+<tr><td>HEX.E2.5</td><td>HEX.W2.4, LH.11, LH.23</td></tr>
+<tr><td>HEX.E2.6</td><td>HEX.W2.5, LH.0, LH.12</td></tr>
+<tr><td>HEX.E3.1</td><td>HEX.W3.0, LH.1, LH.13</td></tr>
+<tr><td>HEX.E3.2</td><td>HEX.W3.1, LH.2, LH.14</td></tr>
+<tr><td>HEX.E3.3</td><td>HEX.W3.2, LH.3, LH.15</td></tr>
+<tr><td>HEX.E3.4</td><td>HEX.W3.3, LH.4, LH.16</td></tr>
+<tr><td>HEX.E3.5</td><td>HEX.W3.4, LH.5, LH.17</td></tr>
+<tr><td>HEX.E3.6</td><td>HEX.W3.5, LH.6, LH.18</td></tr>
+<tr><td>HEX.E4.1</td><td>HEX.W4.0, LH.7, LH.19</td></tr>
+<tr><td>HEX.E4.2</td><td>HEX.W4.1, LH.8, LH.20</td></tr>
+<tr><td>HEX.E4.3</td><td>HEX.W4.2, LH.9, LH.21</td></tr>
+<tr><td>HEX.E4.4</td><td>HEX.W4.3, LH.10, LH.22</td></tr>
+<tr><td>HEX.E4.5</td><td>HEX.W4.4, LH.11, LH.23</td></tr>
+<tr><td>HEX.E4.6</td><td>HEX.W4.5, LH.0, LH.12</td></tr>
+<tr><td>HEX.E5.1</td><td>HEX.W5.0, LH.1, LH.13</td></tr>
+<tr><td>HEX.E5.2</td><td>HEX.W5.1, LH.2, LH.14</td></tr>
+<tr><td>HEX.E5.3</td><td>HEX.W5.2, LH.3, LH.15</td></tr>
+<tr><td>HEX.E5.4</td><td>HEX.W5.3, LH.4, LH.16</td></tr>
+<tr><td>HEX.E5.5</td><td>HEX.W5.4, LH.5, LH.17</td></tr>
+<tr><td>HEX.E5.6</td><td>HEX.W5.5, LH.6, LH.18</td></tr>
+<tr><td>HEX.E6.1</td><td>HEX.W6.0, LH.7, LH.19</td></tr>
+<tr><td>HEX.E6.2</td><td>HEX.W6.1, LH.8, LH.20</td></tr>
+<tr><td>HEX.E6.3</td><td>HEX.W6.2, LH.9, LH.21</td></tr>
+<tr><td>HEX.E6.4</td><td>HEX.W6.3, LH.10, LH.22</td></tr>
+<tr><td>HEX.E6.5</td><td>HEX.W6.4, LH.11, LH.23</td></tr>
+<tr><td>HEX.E6.6</td><td>HEX.W6.5, LH.0, LH.12</td></tr>
+<tr><td>HEX.E7.1</td><td>HEX.W7.0, LH.1, LH.13</td></tr>
+<tr><td>HEX.E7.2</td><td>HEX.W7.1, LH.2, LH.14</td></tr>
+<tr><td>HEX.E7.3</td><td>HEX.W7.2, LH.3, LH.15</td></tr>
+<tr><td>HEX.E7.4</td><td>HEX.W7.3, LH.4, LH.16</td></tr>
+<tr><td>HEX.E7.5</td><td>HEX.W7.4, LH.5, LH.17</td></tr>
+<tr><td>HEX.E7.6</td><td>HEX.W7.5, LH.6, LH.18</td></tr>
+<tr><td>HEX.E8.1</td><td>HEX.W8.0, LH.7, LH.19</td></tr>
+<tr><td>HEX.E8.2</td><td>HEX.W8.1, LH.8, LH.20</td></tr>
+<tr><td>HEX.E8.3</td><td>HEX.W8.2, LH.9, LH.21</td></tr>
+<tr><td>HEX.E8.4</td><td>HEX.W8.3, LH.10, LH.22</td></tr>
+<tr><td>HEX.E8.5</td><td>HEX.W8.4, LH.11, LH.23</td></tr>
+<tr><td>HEX.E8.6</td><td>HEX.W8.5, LH.0, LH.12</td></tr>
+<tr><td>HEX.E9.1</td><td>HEX.W9.0, LH.1, LH.13</td></tr>
+<tr><td>HEX.E9.2</td><td>HEX.W9.1, LH.2, LH.14</td></tr>
+<tr><td>HEX.E9.3</td><td>HEX.W9.2, LH.3, LH.15</td></tr>
+<tr><td>HEX.E9.4</td><td>HEX.W9.3, LH.4, LH.16</td></tr>
+<tr><td>HEX.E9.5</td><td>HEX.W9.4, LH.5, LH.17</td></tr>
+<tr><td>HEX.E9.6</td><td>HEX.W9.5, LH.6, LH.18</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream"><a class="header" href="#bitstream">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex2 TERM.W bittile 0</caption>
 <thead>
@@ -2287,6 +2360,79 @@
 </table></div>
 <h2 id="terme"><a class="header" href="#terme"><code>TERM.E</code></a></h2>
 <p>Located at the right edge of every interconnect row, this tile is 4×80 bits.</p>
+<h2 id="tile-terme"><a class="header" href="#tile-terme">Tile TERM.E</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="muxes-1"><a class="header" href="#muxes-1">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 TERM.E muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>HEX.W0.1</td><td>HEX.E0.0, LH.5, LH.17</td></tr>
+<tr><td>HEX.W0.2</td><td>HEX.E0.1, LH.4, LH.16</td></tr>
+<tr><td>HEX.W0.3</td><td>HEX.E0.2, LH.3, LH.15</td></tr>
+<tr><td>HEX.W0.4</td><td>HEX.E0.3, LH.2, LH.14</td></tr>
+<tr><td>HEX.W0.5</td><td>HEX.E0.4, LH.1, LH.13</td></tr>
+<tr><td>HEX.W0.6</td><td>HEX.E0.5, LH.0, LH.12</td></tr>
+<tr><td>HEX.W1.1</td><td>HEX.E1.0, LH.11, LH.23</td></tr>
+<tr><td>HEX.W1.2</td><td>HEX.E1.1, LH.10, LH.22</td></tr>
+<tr><td>HEX.W1.3</td><td>HEX.E1.2, LH.9, LH.21</td></tr>
+<tr><td>HEX.W1.4</td><td>HEX.E1.3, LH.8, LH.20</td></tr>
+<tr><td>HEX.W1.5</td><td>HEX.E1.4, LH.7, LH.19</td></tr>
+<tr><td>HEX.W1.6</td><td>HEX.E1.5, LH.6, LH.18</td></tr>
+<tr><td>HEX.W2.1</td><td>HEX.E2.0, LH.5, LH.17</td></tr>
+<tr><td>HEX.W2.2</td><td>HEX.E2.1, LH.4, LH.16</td></tr>
+<tr><td>HEX.W2.3</td><td>HEX.E2.2, LH.3, LH.15</td></tr>
+<tr><td>HEX.W2.4</td><td>HEX.E2.3, LH.2, LH.14</td></tr>
+<tr><td>HEX.W2.5</td><td>HEX.E2.4, LH.1, LH.13</td></tr>
+<tr><td>HEX.W2.6</td><td>HEX.E2.5, LH.0, LH.12</td></tr>
+<tr><td>HEX.W3.1</td><td>HEX.E3.0, LH.11, LH.23</td></tr>
+<tr><td>HEX.W3.2</td><td>HEX.E3.1, LH.10, LH.22</td></tr>
+<tr><td>HEX.W3.3</td><td>HEX.E3.2, LH.9, LH.21</td></tr>
+<tr><td>HEX.W3.4</td><td>HEX.E3.3, LH.8, LH.20</td></tr>
+<tr><td>HEX.W3.5</td><td>HEX.E3.4, LH.7, LH.19</td></tr>
+<tr><td>HEX.W3.6</td><td>HEX.E3.5, LH.6, LH.18</td></tr>
+<tr><td>HEX.W4.1</td><td>HEX.E4.0, LH.5, LH.17</td></tr>
+<tr><td>HEX.W4.2</td><td>HEX.E4.1, LH.4, LH.16</td></tr>
+<tr><td>HEX.W4.3</td><td>HEX.E4.2, LH.3, LH.15</td></tr>
+<tr><td>HEX.W4.4</td><td>HEX.E4.3, LH.2, LH.14</td></tr>
+<tr><td>HEX.W4.5</td><td>HEX.E4.4, LH.1, LH.13</td></tr>
+<tr><td>HEX.W4.6</td><td>HEX.E4.5, LH.0, LH.12</td></tr>
+<tr><td>HEX.W5.1</td><td>HEX.E5.0, LH.11, LH.23</td></tr>
+<tr><td>HEX.W5.2</td><td>HEX.E5.1, LH.10, LH.22</td></tr>
+<tr><td>HEX.W5.3</td><td>HEX.E5.2, LH.9, LH.21</td></tr>
+<tr><td>HEX.W5.4</td><td>HEX.E5.3, LH.8, LH.20</td></tr>
+<tr><td>HEX.W5.5</td><td>HEX.E5.4, LH.7, LH.19</td></tr>
+<tr><td>HEX.W5.6</td><td>HEX.E5.5, LH.6, LH.18</td></tr>
+<tr><td>HEX.W6.1</td><td>HEX.E6.0, LH.5, LH.17</td></tr>
+<tr><td>HEX.W6.2</td><td>HEX.E6.1, LH.4, LH.16</td></tr>
+<tr><td>HEX.W6.3</td><td>HEX.E6.2, LH.3, LH.15</td></tr>
+<tr><td>HEX.W6.4</td><td>HEX.E6.3, LH.2, LH.14</td></tr>
+<tr><td>HEX.W6.5</td><td>HEX.E6.4, LH.1, LH.13</td></tr>
+<tr><td>HEX.W6.6</td><td>HEX.E6.5, LH.0, LH.12</td></tr>
+<tr><td>HEX.W7.1</td><td>HEX.E7.0, LH.11, LH.23, OUT.PCI0</td></tr>
+<tr><td>HEX.W7.2</td><td>HEX.E7.1, LH.10, LH.22, OUT.PCI1</td></tr>
+<tr><td>HEX.W7.3</td><td>HEX.E7.2, LH.9, LH.21</td></tr>
+<tr><td>HEX.W7.4</td><td>HEX.E7.3, LH.8, LH.20</td></tr>
+<tr><td>HEX.W7.5</td><td>HEX.E7.4, LH.7, LH.19</td></tr>
+<tr><td>HEX.W7.6</td><td>HEX.E7.5, LH.6, LH.18</td></tr>
+<tr><td>HEX.W8.1</td><td>HEX.E8.0, LH.5, LH.17</td></tr>
+<tr><td>HEX.W8.2</td><td>HEX.E8.1, LH.4, LH.16</td></tr>
+<tr><td>HEX.W8.3</td><td>HEX.E8.2, LH.3, LH.15</td></tr>
+<tr><td>HEX.W8.4</td><td>HEX.E8.3, LH.2, LH.14</td></tr>
+<tr><td>HEX.W8.5</td><td>HEX.E8.4, LH.1, LH.13</td></tr>
+<tr><td>HEX.W8.6</td><td>HEX.E8.5, LH.0, LH.12</td></tr>
+<tr><td>HEX.W9.1</td><td>HEX.E9.0, LH.11, LH.23</td></tr>
+<tr><td>HEX.W9.2</td><td>HEX.E9.1, LH.10, LH.22</td></tr>
+<tr><td>HEX.W9.3</td><td>HEX.E9.2, LH.9, LH.21</td></tr>
+<tr><td>HEX.W9.4</td><td>HEX.E9.3, LH.8, LH.20</td></tr>
+<tr><td>HEX.W9.5</td><td>HEX.E9.4, LH.7, LH.19</td></tr>
+<tr><td>HEX.W9.6</td><td>HEX.E9.5, LH.6, LH.18</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-1"><a class="header" href="#bitstream-1">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex2 TERM.E bittile 0</caption>
 <thead>
@@ -4421,6 +4567,79 @@
 </table></div>
 <h2 id="terms"><a class="header" href="#terms"><code>TERM.S</code></a></h2>
 <p>Located at the bottom edge of every interconnect column, this tile is 22×12 bits.</p>
+<h2 id="tile-terms"><a class="header" href="#tile-terms">Tile TERM.S</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="muxes-2"><a class="header" href="#muxes-2">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 TERM.S muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>HEX.N0.1</td><td>HEX.S0.0, LV.11, LV.23</td></tr>
+<tr><td>HEX.N0.2</td><td>HEX.S0.1, LV.10, LV.22</td></tr>
+<tr><td>HEX.N0.3</td><td>HEX.S0.2, LV.9, LV.21</td></tr>
+<tr><td>HEX.N0.4</td><td>HEX.S0.3, LV.8, LV.20</td></tr>
+<tr><td>HEX.N0.5</td><td>HEX.S0.4, LV.7, LV.19</td></tr>
+<tr><td>HEX.N0.6</td><td>HEX.S0.5, LV.6, LV.18</td></tr>
+<tr><td>HEX.N1.1</td><td>HEX.S1.0, LV.5, LV.17</td></tr>
+<tr><td>HEX.N1.2</td><td>HEX.S1.1, LV.4, LV.16</td></tr>
+<tr><td>HEX.N1.3</td><td>HEX.S1.2, LV.3, LV.15</td></tr>
+<tr><td>HEX.N1.4</td><td>HEX.S1.3, LV.2, LV.14</td></tr>
+<tr><td>HEX.N1.5</td><td>HEX.S1.4, LV.1, LV.13</td></tr>
+<tr><td>HEX.N1.6</td><td>HEX.S1.5, LV.0, LV.12</td></tr>
+<tr><td>HEX.N2.1</td><td>HEX.S2.0, LV.11, LV.23</td></tr>
+<tr><td>HEX.N2.2</td><td>HEX.S2.1, LV.10, LV.22</td></tr>
+<tr><td>HEX.N2.3</td><td>HEX.S2.2, LV.9, LV.21</td></tr>
+<tr><td>HEX.N2.4</td><td>HEX.S2.3, LV.8, LV.20</td></tr>
+<tr><td>HEX.N2.5</td><td>HEX.S2.4, LV.7, LV.19</td></tr>
+<tr><td>HEX.N2.6</td><td>HEX.S2.5, LV.6, LV.18</td></tr>
+<tr><td>HEX.N3.1</td><td>HEX.S3.0, LV.5, LV.17</td></tr>
+<tr><td>HEX.N3.2</td><td>HEX.S3.1, LV.4, LV.16</td></tr>
+<tr><td>HEX.N3.3</td><td>HEX.S3.2, LV.3, LV.15</td></tr>
+<tr><td>HEX.N3.4</td><td>HEX.S3.3, LV.2, LV.14</td></tr>
+<tr><td>HEX.N3.5</td><td>HEX.S3.4, LV.1, LV.13</td></tr>
+<tr><td>HEX.N3.6</td><td>HEX.S3.5, LV.0, LV.12</td></tr>
+<tr><td>HEX.N4.1</td><td>HEX.S4.0, LV.11, LV.23</td></tr>
+<tr><td>HEX.N4.2</td><td>HEX.S4.1, LV.10, LV.22</td></tr>
+<tr><td>HEX.N4.3</td><td>HEX.S4.2, LV.9, LV.21</td></tr>
+<tr><td>HEX.N4.4</td><td>HEX.S4.3, LV.8, LV.20</td></tr>
+<tr><td>HEX.N4.5</td><td>HEX.S4.4, LV.7, LV.19</td></tr>
+<tr><td>HEX.N4.6</td><td>HEX.S4.5, LV.6, LV.18</td></tr>
+<tr><td>HEX.N5.1</td><td>HEX.S5.0, LV.5, LV.17</td></tr>
+<tr><td>HEX.N5.2</td><td>HEX.S5.1, LV.4, LV.16</td></tr>
+<tr><td>HEX.N5.3</td><td>HEX.S5.2, LV.3, LV.15</td></tr>
+<tr><td>HEX.N5.4</td><td>HEX.S5.3, LV.2, LV.14</td></tr>
+<tr><td>HEX.N5.5</td><td>HEX.S5.4, LV.1, LV.13</td></tr>
+<tr><td>HEX.N5.6</td><td>HEX.S5.5, LV.0, LV.12</td></tr>
+<tr><td>HEX.N6.1</td><td>HEX.S6.0, LV.11, LV.23</td></tr>
+<tr><td>HEX.N6.2</td><td>HEX.S6.1, LV.10, LV.22</td></tr>
+<tr><td>HEX.N6.3</td><td>HEX.S6.2, LV.9, LV.21</td></tr>
+<tr><td>HEX.N6.4</td><td>HEX.S6.3, LV.8, LV.20</td></tr>
+<tr><td>HEX.N6.5</td><td>HEX.S6.4, LV.7, LV.19</td></tr>
+<tr><td>HEX.N6.6</td><td>HEX.S6.5, LV.6, LV.18</td></tr>
+<tr><td>HEX.N7.1</td><td>HEX.S7.0, LV.5, LV.17</td></tr>
+<tr><td>HEX.N7.2</td><td>HEX.S7.1, LV.4, LV.16</td></tr>
+<tr><td>HEX.N7.3</td><td>HEX.S7.2, LV.3, LV.15</td></tr>
+<tr><td>HEX.N7.4</td><td>HEX.S7.3, LV.2, LV.14</td></tr>
+<tr><td>HEX.N7.5</td><td>HEX.S7.4, LV.1, LV.13</td></tr>
+<tr><td>HEX.N7.6</td><td>HEX.S7.5, LV.0, LV.12</td></tr>
+<tr><td>HEX.N8.1</td><td>HEX.S8.0, LV.11, LV.23</td></tr>
+<tr><td>HEX.N8.2</td><td>HEX.S8.1, LV.10, LV.22</td></tr>
+<tr><td>HEX.N8.3</td><td>HEX.S8.2, LV.9, LV.21</td></tr>
+<tr><td>HEX.N8.4</td><td>HEX.S8.3, LV.8, LV.20</td></tr>
+<tr><td>HEX.N8.5</td><td>HEX.S8.4, LV.7, LV.19</td></tr>
+<tr><td>HEX.N8.6</td><td>HEX.S8.5, LV.6, LV.18</td></tr>
+<tr><td>HEX.N9.1</td><td>HEX.S9.0, LV.5, LV.17</td></tr>
+<tr><td>HEX.N9.2</td><td>HEX.S9.1, LV.4, LV.16</td></tr>
+<tr><td>HEX.N9.3</td><td>HEX.S9.2, LV.3, LV.15</td></tr>
+<tr><td>HEX.N9.4</td><td>HEX.S9.3, LV.2, LV.14</td></tr>
+<tr><td>HEX.N9.5</td><td>HEX.S9.4, LV.1, LV.13</td></tr>
+<tr><td>HEX.N9.6</td><td>HEX.S9.5, LV.0, LV.12</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-2"><a class="header" href="#bitstream-2">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex2 TERM.S bittile 0</caption>
 <thead>
@@ -6399,6 +6618,79 @@
 </table></div>
 <h2 id="termn"><a class="header" href="#termn"><code>TERM.N</code></a></h2>
 <p>Located at the top edge of every interconnect column, this tile is 22×12 bits.</p>
+<h2 id="tile-termn"><a class="header" href="#tile-termn">Tile TERM.N</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="muxes-3"><a class="header" href="#muxes-3">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 TERM.N muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>HEX.S0.1</td><td>HEX.N0.0, LV.1, LV.13</td></tr>
+<tr><td>HEX.S0.2</td><td>HEX.N0.1, LV.2, LV.14</td></tr>
+<tr><td>HEX.S0.3</td><td>HEX.N0.2, LV.3, LV.15</td></tr>
+<tr><td>HEX.S0.4</td><td>HEX.N0.3, LV.4, LV.16</td></tr>
+<tr><td>HEX.S0.5</td><td>HEX.N0.4, LV.5, LV.17</td></tr>
+<tr><td>HEX.S0.6</td><td>HEX.N0.5, LV.6, LV.18</td></tr>
+<tr><td>HEX.S1.1</td><td>HEX.N1.0, LV.7, LV.19</td></tr>
+<tr><td>HEX.S1.2</td><td>HEX.N1.1, LV.8, LV.20</td></tr>
+<tr><td>HEX.S1.3</td><td>HEX.N1.2, LV.9, LV.21</td></tr>
+<tr><td>HEX.S1.4</td><td>HEX.N1.3, LV.10, LV.22</td></tr>
+<tr><td>HEX.S1.5</td><td>HEX.N1.4, LV.11, LV.23</td></tr>
+<tr><td>HEX.S1.6</td><td>HEX.N1.5, LV.0, LV.12</td></tr>
+<tr><td>HEX.S2.1</td><td>HEX.N2.0, LV.1, LV.13</td></tr>
+<tr><td>HEX.S2.2</td><td>HEX.N2.1, LV.2, LV.14</td></tr>
+<tr><td>HEX.S2.3</td><td>HEX.N2.2, LV.3, LV.15</td></tr>
+<tr><td>HEX.S2.4</td><td>HEX.N2.3, LV.4, LV.16</td></tr>
+<tr><td>HEX.S2.5</td><td>HEX.N2.4, LV.5, LV.17</td></tr>
+<tr><td>HEX.S2.6</td><td>HEX.N2.5, LV.6, LV.18</td></tr>
+<tr><td>HEX.S3.1</td><td>HEX.N3.0, LV.7, LV.19</td></tr>
+<tr><td>HEX.S3.2</td><td>HEX.N3.1, LV.8, LV.20</td></tr>
+<tr><td>HEX.S3.3</td><td>HEX.N3.2, LV.9, LV.21</td></tr>
+<tr><td>HEX.S3.4</td><td>HEX.N3.3, LV.10, LV.22</td></tr>
+<tr><td>HEX.S3.5</td><td>HEX.N3.4, LV.11, LV.23</td></tr>
+<tr><td>HEX.S3.6</td><td>HEX.N3.5, LV.0, LV.12</td></tr>
+<tr><td>HEX.S4.1</td><td>HEX.N4.0, LV.1, LV.13</td></tr>
+<tr><td>HEX.S4.2</td><td>HEX.N4.1, LV.2, LV.14</td></tr>
+<tr><td>HEX.S4.3</td><td>HEX.N4.2, LV.3, LV.15</td></tr>
+<tr><td>HEX.S4.4</td><td>HEX.N4.3, LV.4, LV.16</td></tr>
+<tr><td>HEX.S4.5</td><td>HEX.N4.4, LV.5, LV.17</td></tr>
+<tr><td>HEX.S4.6</td><td>HEX.N4.5, LV.6, LV.18</td></tr>
+<tr><td>HEX.S5.1</td><td>HEX.N5.0, LV.7, LV.19</td></tr>
+<tr><td>HEX.S5.2</td><td>HEX.N5.1, LV.8, LV.20</td></tr>
+<tr><td>HEX.S5.3</td><td>HEX.N5.2, LV.9, LV.21</td></tr>
+<tr><td>HEX.S5.4</td><td>HEX.N5.3, LV.10, LV.22</td></tr>
+<tr><td>HEX.S5.5</td><td>HEX.N5.4, LV.11, LV.23</td></tr>
+<tr><td>HEX.S5.6</td><td>HEX.N5.5, LV.0, LV.12</td></tr>
+<tr><td>HEX.S6.1</td><td>HEX.N6.0, LV.1, LV.13</td></tr>
+<tr><td>HEX.S6.2</td><td>HEX.N6.1, LV.2, LV.14</td></tr>
+<tr><td>HEX.S6.3</td><td>HEX.N6.2, LV.3, LV.15</td></tr>
+<tr><td>HEX.S6.4</td><td>HEX.N6.3, LV.4, LV.16</td></tr>
+<tr><td>HEX.S6.5</td><td>HEX.N6.4, LV.5, LV.17</td></tr>
+<tr><td>HEX.S6.6</td><td>HEX.N6.5, LV.6, LV.18</td></tr>
+<tr><td>HEX.S7.1</td><td>HEX.N7.0, LV.7, LV.19</td></tr>
+<tr><td>HEX.S7.2</td><td>HEX.N7.1, LV.8, LV.20</td></tr>
+<tr><td>HEX.S7.3</td><td>HEX.N7.2, LV.9, LV.21</td></tr>
+<tr><td>HEX.S7.4</td><td>HEX.N7.3, LV.10, LV.22</td></tr>
+<tr><td>HEX.S7.5</td><td>HEX.N7.4, LV.11, LV.23</td></tr>
+<tr><td>HEX.S7.6</td><td>HEX.N7.5, LV.0, LV.12</td></tr>
+<tr><td>HEX.S8.1</td><td>HEX.N8.0, LV.1, LV.13</td></tr>
+<tr><td>HEX.S8.2</td><td>HEX.N8.1, LV.2, LV.14</td></tr>
+<tr><td>HEX.S8.3</td><td>HEX.N8.2, LV.3, LV.15</td></tr>
+<tr><td>HEX.S8.4</td><td>HEX.N8.3, LV.4, LV.16</td></tr>
+<tr><td>HEX.S8.5</td><td>HEX.N8.4, LV.5, LV.17</td></tr>
+<tr><td>HEX.S8.6</td><td>HEX.N8.5, LV.6, LV.18</td></tr>
+<tr><td>HEX.S9.1</td><td>HEX.N9.0, LV.7, LV.19</td></tr>
+<tr><td>HEX.S9.2</td><td>HEX.N9.1, LV.8, LV.20</td></tr>
+<tr><td>HEX.S9.3</td><td>HEX.N9.2, LV.9, LV.21</td></tr>
+<tr><td>HEX.S9.4</td><td>HEX.N9.3, LV.10, LV.22</td></tr>
+<tr><td>HEX.S9.5</td><td>HEX.N9.4, LV.11, LV.23</td></tr>
+<tr><td>HEX.S9.6</td><td>HEX.N9.5, LV.0, LV.12</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-3"><a class="header" href="#bitstream-3">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex2 TERM.N bittile 0</caption>
 <thead>

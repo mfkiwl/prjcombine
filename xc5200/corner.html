@@ -150,7 +150,96 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="corners"><a class="header" href="#corners">Corners</a></h1>
-<h2 id="cnrbl"><a class="header" href="#cnrbl"><code>CNR.BL</code></a></h2>
+<h2 id="tile-cnrbl"><a class="header" href="#tile-cnrbl">Tile CNR.BL</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="muxes"><a class="header" href="#muxes">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.BL muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>IO.SINGLE.L.N0</td><td>OUT.RDBK.RIP</td></tr>
+<tr><td>IO.SINGLE.L.N1</td><td>OUT.RDBK.RIP</td></tr>
+<tr><td>IO.SINGLE.L.N2</td><td>OUT.RDBK.RIP</td></tr>
+<tr><td>IO.SINGLE.L.N3</td><td>OUT.RDBK.RIP</td></tr>
+<tr><td>IO.SINGLE.L.N4</td><td>OUT.RDBK.DATA</td></tr>
+<tr><td>IO.SINGLE.L.N5</td><td>OUT.RDBK.DATA</td></tr>
+<tr><td>IO.SINGLE.L.N6</td><td>OUT.RDBK.DATA</td></tr>
+<tr><td>IO.SINGLE.L.N7</td><td>OUT.RDBK.DATA</td></tr>
+<tr><td>LONG.H0</td><td>LONG.V0, OUT.RDBK.RIP</td></tr>
+<tr><td>LONG.H1</td><td>LONG.V1, OUT.RDBK.RIP</td></tr>
+<tr><td>LONG.H2</td><td>LONG.V2, OUT.RDBK.RIP</td></tr>
+<tr><td>LONG.H3</td><td>LONG.V3, OUT.RDBK.RIP</td></tr>
+<tr><td>LONG.H4</td><td>LONG.V4, OUT.RDBK.DATA</td></tr>
+<tr><td>LONG.H5</td><td>LONG.V5, OUT.RDBK.DATA</td></tr>
+<tr><td>LONG.H6</td><td>LONG.V6, OUT.RDBK.DATA</td></tr>
+<tr><td>LONG.H7</td><td>LONG.V7, OUT.RDBK.DATA</td></tr>
+<tr><td>LONG.V0</td><td>LONG.H0</td></tr>
+<tr><td>LONG.V1</td><td>LONG.H1</td></tr>
+<tr><td>LONG.V2</td><td>LONG.H2</td></tr>
+<tr><td>LONG.V3</td><td>LONG.H3</td></tr>
+<tr><td>LONG.V4</td><td>LONG.H4</td></tr>
+<tr><td>LONG.V5</td><td>LONG.H5</td></tr>
+<tr><td>LONG.V6</td><td>LONG.H6</td></tr>
+<tr><td>LONG.V7</td><td>LONG.H7</td></tr>
+<tr><td>IMUX.RDBK.RCLK</td><td>IO.SINGLE.L.N0, IO.SINGLE.L.N1, IO.SINGLE.L.N2, IO.SINGLE.L.N3, LONG.H0, LONG.H1, LONG.H2, LONG.H3</td></tr>
+<tr><td>IMUX.RDBK.TRIG</td><td>GND, IO.SINGLE.L.N4, IO.SINGLE.L.N5, IO.SINGLE.L.N6, LONG.H4, LONG.H5, LONG.H6, LONG.H7</td></tr>
+<tr><td>IMUX.BUFG</td><td>GND, IO.SINGLE.L.N0, IO.SINGLE.L.N1, IO.SINGLE.L.N2, IO.SINGLE.L.N3, LONG.V4, LONG.V5, LONG.V6, LONG.V7, OUT.CLKIOB</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufg"><a class="header" href="#bel-bufg">Bel BUFG</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.BL bel BUFG</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>IMUX.BUFG</td></tr>
+<tr><td>O</td><td>output</td><td>GLOBAL.BL</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-clkiob"><a class="header" href="#bel-clkiob">Bel CLKIOB</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.BL bel CLKIOB</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>OUT</td><td>output</td><td>OUT.CLKIOB</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-rdbk"><a class="header" href="#bel-rdbk">Bel RDBK</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.BL bel RDBK</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CK</td><td>input</td><td>IMUX.RDBK.RCLK</td></tr>
+<tr><td>DATA</td><td>output</td><td>OUT.RDBK.DATA</td></tr>
+<tr><td>RIP</td><td>output</td><td>OUT.RDBK.RIP</td></tr>
+<tr><td>TRIG</td><td>input</td><td>IMUX.RDBK.TRIG</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires"><a class="header" href="#bel-wires">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.BL bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>GLOBAL.BL</td><td>BUFG.O</td></tr>
+<tr><td>OUT.CLKIOB</td><td>CLKIOB.OUT</td></tr>
+<tr><td>OUT.RDBK.RIP</td><td>RDBK.RIP</td></tr>
+<tr><td>OUT.RDBK.DATA</td><td>RDBK.DATA</td></tr>
+<tr><td>IMUX.RDBK.RCLK</td><td>RDBK.CK</td></tr>
+<tr><td>IMUX.RDBK.TRIG</td><td>RDBK.TRIG</td></tr>
+<tr><td>IMUX.BUFG</td><td>BUFG.I</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream"><a class="header" href="#bitstream">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>xc5200 CNR.BL bittile 0</caption>
 <thead>
@@ -874,7 +963,103 @@ inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="cnrbr"><a class="header" href="#cnrbr"><code>CNR.BR</code></a></h2>
+<h2 id="tile-cnrbr"><a class="header" href="#tile-cnrbr">Tile CNR.BR</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="muxes-1"><a class="header" href="#muxes-1">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.BR muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>IO.SINGLE.B.W0</td><td>OUT.STARTUP.DONEIN</td></tr>
+<tr><td>IO.SINGLE.B.W1</td><td>OUT.STARTUP.DONEIN</td></tr>
+<tr><td>IO.SINGLE.B.W2</td><td>OUT.STARTUP.Q3</td></tr>
+<tr><td>IO.SINGLE.B.W3</td><td>OUT.STARTUP.Q3</td></tr>
+<tr><td>IO.SINGLE.B.W4</td><td>OUT.STARTUP.Q2</td></tr>
+<tr><td>IO.SINGLE.B.W5</td><td>OUT.STARTUP.Q2</td></tr>
+<tr><td>IO.SINGLE.B.W6</td><td>OUT.STARTUP.Q1Q4</td></tr>
+<tr><td>IO.SINGLE.B.W7</td><td>OUT.STARTUP.Q1Q4</td></tr>
+<tr><td>LONG.H0</td><td>LONG.V0</td></tr>
+<tr><td>LONG.H1</td><td>LONG.V1</td></tr>
+<tr><td>LONG.H2</td><td>LONG.V2</td></tr>
+<tr><td>LONG.H3</td><td>LONG.V3</td></tr>
+<tr><td>LONG.H4</td><td>LONG.V4</td></tr>
+<tr><td>LONG.H5</td><td>LONG.V5</td></tr>
+<tr><td>LONG.H6</td><td>LONG.V6</td></tr>
+<tr><td>LONG.H7</td><td>LONG.V7</td></tr>
+<tr><td>LONG.V0</td><td>LONG.H0, OUT.STARTUP.DONEIN</td></tr>
+<tr><td>LONG.V1</td><td>LONG.H1, OUT.STARTUP.DONEIN</td></tr>
+<tr><td>LONG.V2</td><td>LONG.H2, OUT.STARTUP.Q3</td></tr>
+<tr><td>LONG.V3</td><td>LONG.H3, OUT.STARTUP.Q3</td></tr>
+<tr><td>LONG.V4</td><td>LONG.H4, OUT.STARTUP.Q2</td></tr>
+<tr><td>LONG.V5</td><td>LONG.H5, OUT.STARTUP.Q2</td></tr>
+<tr><td>LONG.V6</td><td>LONG.H6, OUT.STARTUP.Q1Q4</td></tr>
+<tr><td>LONG.V7</td><td>LONG.H7, OUT.STARTUP.Q1Q4</td></tr>
+<tr><td>IMUX.STARTUP.SCLK</td><td>LONG.V0, LONG.V1, LONG.V2, LONG.V3, LONG.V4, LONG.V5, LONG.V6, LONG.V7</td></tr>
+<tr><td>IMUX.STARTUP.GRST</td><td>IO.SINGLE.B.W4, IO.SINGLE.B.W5, IO.SINGLE.B.W6, IO.SINGLE.B.W7, LONG.V4, LONG.V5, LONG.V6, LONG.V7</td></tr>
+<tr><td>IMUX.STARTUP.GTS</td><td>IO.SINGLE.B.W0, IO.SINGLE.B.W1, IO.SINGLE.B.W2, IO.SINGLE.B.W3, LONG.V0, LONG.V1, LONG.V2, LONG.V3</td></tr>
+<tr><td>IMUX.BUFG</td><td>GND, IO.SINGLE.B.W0, IO.SINGLE.B.W1, IO.SINGLE.B.W2, IO.SINGLE.B.W3, LONG.H4, LONG.H5, LONG.H6, LONG.H7, OUT.CLKIOB</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufg-1"><a class="header" href="#bel-bufg-1">Bel BUFG</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.BR bel BUFG</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>IMUX.BUFG</td></tr>
+<tr><td>O</td><td>output</td><td>GLOBAL.BR</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-clkiob-1"><a class="header" href="#bel-clkiob-1">Bel CLKIOB</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.BR bel CLKIOB</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>OUT</td><td>output</td><td>OUT.CLKIOB</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-startup"><a class="header" href="#bel-startup">Bel STARTUP</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.BR bel STARTUP</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>IMUX.STARTUP.SCLK</td></tr>
+<tr><td>DONEIN</td><td>output</td><td>OUT.STARTUP.DONEIN</td></tr>
+<tr><td>GR</td><td>input</td><td>IMUX.STARTUP.GRST</td></tr>
+<tr><td>GTS</td><td>input</td><td>IMUX.STARTUP.GTS</td></tr>
+<tr><td>Q1Q4</td><td>output</td><td>OUT.STARTUP.Q1Q4</td></tr>
+<tr><td>Q2</td><td>output</td><td>OUT.STARTUP.Q2</td></tr>
+<tr><td>Q3</td><td>output</td><td>OUT.STARTUP.Q3</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-1"><a class="header" href="#bel-wires-1">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.BR bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>GLOBAL.BR</td><td>BUFG.O</td></tr>
+<tr><td>OUT.CLKIOB</td><td>CLKIOB.OUT</td></tr>
+<tr><td>OUT.STARTUP.DONEIN</td><td>STARTUP.DONEIN</td></tr>
+<tr><td>OUT.STARTUP.Q1Q4</td><td>STARTUP.Q1Q4</td></tr>
+<tr><td>OUT.STARTUP.Q2</td><td>STARTUP.Q2</td></tr>
+<tr><td>OUT.STARTUP.Q3</td><td>STARTUP.Q3</td></tr>
+<tr><td>IMUX.STARTUP.SCLK</td><td>STARTUP.CLK</td></tr>
+<tr><td>IMUX.STARTUP.GRST</td><td>STARTUP.GR</td></tr>
+<tr><td>IMUX.STARTUP.GTS</td><td>STARTUP.GTS</td></tr>
+<tr><td>IMUX.BUFG</td><td>BUFG.I</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-1"><a class="header" href="#bitstream-1">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>xc5200 CNR.BR bittile 0</caption>
 <thead>
@@ -1896,7 +2081,106 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="cnrtl"><a class="header" href="#cnrtl"><code>CNR.TL</code></a></h2>
+<h2 id="tile-cnrtl"><a class="header" href="#tile-cnrtl">Tile CNR.TL</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="muxes-2"><a class="header" href="#muxes-2">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.TL muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>IO.SINGLE.T.E0</td><td>OUT.BSCAN.DRCK, OUT.BSCAN.SEL2</td></tr>
+<tr><td>IO.SINGLE.T.E1</td><td>OUT.BSCAN.DRCK, OUT.BSCAN.SEL2</td></tr>
+<tr><td>IO.SINGLE.T.E2</td><td>OUT.BSCAN.SEL1, OUT.BSCAN.SHIFT</td></tr>
+<tr><td>IO.SINGLE.T.E3</td><td>OUT.BSCAN.SEL1, OUT.BSCAN.SHIFT</td></tr>
+<tr><td>IO.SINGLE.T.E4</td><td>OUT.BSCAN.UPDATE</td></tr>
+<tr><td>IO.SINGLE.T.E5</td><td>OUT.BSCAN.UPDATE</td></tr>
+<tr><td>IO.SINGLE.T.E6</td><td>OUT.BSCAN.IDLE, OUT.BSCAN.RESET</td></tr>
+<tr><td>IO.SINGLE.T.E7</td><td>OUT.BSCAN.IDLE, OUT.BSCAN.RESET</td></tr>
+<tr><td>LONG.H0</td><td>LONG.V0</td></tr>
+<tr><td>LONG.H1</td><td>LONG.V1</td></tr>
+<tr><td>LONG.H2</td><td>LONG.V2</td></tr>
+<tr><td>LONG.H3</td><td>LONG.V3</td></tr>
+<tr><td>LONG.H4</td><td>LONG.V4</td></tr>
+<tr><td>LONG.H5</td><td>LONG.V5</td></tr>
+<tr><td>LONG.H6</td><td>LONG.V6</td></tr>
+<tr><td>LONG.H7</td><td>LONG.V7</td></tr>
+<tr><td>LONG.V0</td><td>LONG.H0, OUT.BSCAN.DRCK, OUT.BSCAN.SEL2</td></tr>
+<tr><td>LONG.V1</td><td>LONG.H1, OUT.BSCAN.DRCK, OUT.BSCAN.SEL2</td></tr>
+<tr><td>LONG.V2</td><td>LONG.H2, OUT.BSCAN.SEL1, OUT.BSCAN.SHIFT</td></tr>
+<tr><td>LONG.V3</td><td>LONG.H3, OUT.BSCAN.SEL1, OUT.BSCAN.SHIFT</td></tr>
+<tr><td>LONG.V4</td><td>LONG.H4, OUT.BSCAN.UPDATE</td></tr>
+<tr><td>LONG.V5</td><td>LONG.H5, OUT.BSCAN.UPDATE</td></tr>
+<tr><td>LONG.V6</td><td>LONG.H6, OUT.BSCAN.IDLE, OUT.BSCAN.RESET</td></tr>
+<tr><td>LONG.V7</td><td>LONG.H7, OUT.BSCAN.IDLE, OUT.BSCAN.RESET</td></tr>
+<tr><td>IMUX.BSCAN.TDO1</td><td>IO.SINGLE.T.E6, IO.SINGLE.T.E7, LONG.V6, LONG.V7</td></tr>
+<tr><td>IMUX.BSCAN.TDO2</td><td>IO.SINGLE.T.E4, IO.SINGLE.T.E5, LONG.V4, LONG.V5</td></tr>
+<tr><td>IMUX.BUFG</td><td>GND, IO.SINGLE.T.E0, IO.SINGLE.T.E1, IO.SINGLE.T.E2, IO.SINGLE.T.E3, LONG.H4, LONG.H5, LONG.H6, LONG.H7, OUT.CLKIOB</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufg-2"><a class="header" href="#bel-bufg-2">Bel BUFG</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.TL bel BUFG</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>IMUX.BUFG</td></tr>
+<tr><td>O</td><td>output</td><td>GLOBAL.TL</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-clkiob-2"><a class="header" href="#bel-clkiob-2">Bel CLKIOB</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.TL bel CLKIOB</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>OUT</td><td>output</td><td>OUT.CLKIOB</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bscan"><a class="header" href="#bel-bscan">Bel BSCAN</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.TL bel BSCAN</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>DRCK</td><td>output</td><td>OUT.BSCAN.DRCK</td></tr>
+<tr><td>IDLE</td><td>output</td><td>OUT.BSCAN.IDLE</td></tr>
+<tr><td>RESET</td><td>output</td><td>OUT.BSCAN.RESET</td></tr>
+<tr><td>SEL1</td><td>output</td><td>OUT.BSCAN.SEL1</td></tr>
+<tr><td>SEL2</td><td>output</td><td>OUT.BSCAN.SEL2</td></tr>
+<tr><td>SHIFT</td><td>output</td><td>OUT.BSCAN.SHIFT</td></tr>
+<tr><td>TDO1</td><td>input</td><td>IMUX.BSCAN.TDO1</td></tr>
+<tr><td>TDO2</td><td>input</td><td>IMUX.BSCAN.TDO2</td></tr>
+<tr><td>UPDATE</td><td>output</td><td>OUT.BSCAN.UPDATE</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-2"><a class="header" href="#bel-wires-2">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.TL bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>GLOBAL.TL</td><td>BUFG.O</td></tr>
+<tr><td>OUT.CLKIOB</td><td>CLKIOB.OUT</td></tr>
+<tr><td>OUT.BSCAN.DRCK</td><td>BSCAN.DRCK</td></tr>
+<tr><td>OUT.BSCAN.IDLE</td><td>BSCAN.IDLE</td></tr>
+<tr><td>OUT.BSCAN.RESET</td><td>BSCAN.RESET</td></tr>
+<tr><td>OUT.BSCAN.SEL1</td><td>BSCAN.SEL1</td></tr>
+<tr><td>OUT.BSCAN.SEL2</td><td>BSCAN.SEL2</td></tr>
+<tr><td>OUT.BSCAN.SHIFT</td><td>BSCAN.SHIFT</td></tr>
+<tr><td>OUT.BSCAN.UPDATE</td><td>BSCAN.UPDATE</td></tr>
+<tr><td>IMUX.BSCAN.TDO1</td><td>BSCAN.TDO1</td></tr>
+<tr><td>IMUX.BSCAN.TDO2</td><td>BSCAN.TDO2</td></tr>
+<tr><td>IMUX.BUFG</td><td>BUFG.I</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-2"><a class="header" href="#bitstream-2">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>xc5200 CNR.TL bittile 0</caption>
 <thead>
@@ -2469,7 +2753,114 @@ inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="cnrtr"><a class="header" href="#cnrtr"><code>CNR.TR</code></a></h2>
+<h2 id="tile-cnrtr"><a class="header" href="#tile-cnrtr">Tile CNR.TR</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="muxes-3"><a class="header" href="#muxes-3">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.TR muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>IO.SINGLE.R.S2</td><td>OUT.BSUPD</td></tr>
+<tr><td>IO.SINGLE.R.S3</td><td>OUT.BSUPD</td></tr>
+<tr><td>IO.SINGLE.R.S4</td><td>OUT.OSC.OSC1</td></tr>
+<tr><td>IO.SINGLE.R.S5</td><td>OUT.OSC.OSC1</td></tr>
+<tr><td>IO.SINGLE.R.S6</td><td>OUT.OSC.OSC2</td></tr>
+<tr><td>IO.SINGLE.R.S7</td><td>OUT.OSC.OSC2</td></tr>
+<tr><td>LONG.H0</td><td>LONG.V0</td></tr>
+<tr><td>LONG.H1</td><td>LONG.V1</td></tr>
+<tr><td>LONG.H2</td><td>LONG.V2, OUT.BSUPD</td></tr>
+<tr><td>LONG.H3</td><td>LONG.V3, OUT.BSUPD</td></tr>
+<tr><td>LONG.H4</td><td>LONG.V4, OUT.OSC.OSC1</td></tr>
+<tr><td>LONG.H5</td><td>LONG.V5, OUT.OSC.OSC1</td></tr>
+<tr><td>LONG.H6</td><td>LONG.V6, OUT.OSC.OSC2</td></tr>
+<tr><td>LONG.H7</td><td>LONG.V7, OUT.OSC.OSC2</td></tr>
+<tr><td>LONG.V0</td><td>LONG.H0</td></tr>
+<tr><td>LONG.V1</td><td>LONG.H1</td></tr>
+<tr><td>LONG.V2</td><td>LONG.H2</td></tr>
+<tr><td>LONG.V3</td><td>LONG.H3</td></tr>
+<tr><td>LONG.V4</td><td>LONG.H4</td></tr>
+<tr><td>LONG.V5</td><td>LONG.H5</td></tr>
+<tr><td>LONG.V6</td><td>LONG.H6</td></tr>
+<tr><td>LONG.V7</td><td>LONG.H7</td></tr>
+<tr><td>IMUX.OSC.OCLK</td><td>GND, IO.SINGLE.R.S0, IO.SINGLE.R.S1, IO.SINGLE.R.S2, IO.SINGLE.R.S3, LONG.H0, LONG.H1, LONG.H2, LONG.H3</td></tr>
+<tr><td>IMUX.BYPOSC.PUMP</td><td>IO.SINGLE.R.S4, IO.SINGLE.R.S5, LONG.H4, LONG.V3</td></tr>
+<tr><td>IMUX.BUFG</td><td>GND, IO.SINGLE.R.S0, IO.SINGLE.R.S1, IO.SINGLE.R.S2, IO.SINGLE.R.S3, LONG.V4, LONG.V5, LONG.V6, LONG.V7, OUT.CLKIOB</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufg-3"><a class="header" href="#bel-bufg-3">Bel BUFG</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.TR bel BUFG</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>IMUX.BUFG</td></tr>
+<tr><td>O</td><td>output</td><td>GLOBAL.TR</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-clkiob-3"><a class="header" href="#bel-clkiob-3">Bel CLKIOB</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.TR bel CLKIOB</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>OUT</td><td>output</td><td>OUT.CLKIOB</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-osc"><a class="header" href="#bel-osc">Bel OSC</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.TR bel OSC</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>C</td><td>input</td><td>IMUX.OSC.OCLK</td></tr>
+<tr><td>OSC1</td><td>output</td><td>OUT.OSC.OSC1</td></tr>
+<tr><td>OSC2</td><td>output</td><td>OUT.OSC.OSC2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-byposc"><a class="header" href="#bel-byposc">Bel BYPOSC</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.TR bel BYPOSC</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>IMUX.BYPOSC.PUMP</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bsupd"><a class="header" href="#bel-bsupd">Bel BSUPD</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.TR bel BSUPD</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>O</td><td>output</td><td>OUT.BSUPD</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-3"><a class="header" href="#bel-wires-3">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 CNR.TR bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>GLOBAL.TR</td><td>BUFG.O</td></tr>
+<tr><td>OUT.CLKIOB</td><td>CLKIOB.OUT</td></tr>
+<tr><td>OUT.BSUPD</td><td>BSUPD.O</td></tr>
+<tr><td>OUT.OSC.OSC1</td><td>OSC.OSC1</td></tr>
+<tr><td>OUT.OSC.OSC2</td><td>OSC.OSC2</td></tr>
+<tr><td>IMUX.OSC.OCLK</td><td>OSC.C</td></tr>
+<tr><td>IMUX.BYPOSC.PUMP</td><td>BYPOSC.I</td></tr>
+<tr><td>IMUX.BUFG</td><td>BUFG.I</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-3"><a class="header" href="#bitstream-3">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>xc5200 CNR.TR bittile 0</caption>
 <thead>

@@ -153,7 +153,97 @@
 <p>TODO: document</p>
 <h2 id="bitstream--bottom-tiles"><a class="header" href="#bitstream--bottom-tiles">Bitstream — bottom tiles</a></h2>
 <p>TODO: document</p>
-<h3 id="clkbfc"><a class="header" href="#clkbfc"><code>CLKB.FC</code></a></h3>
+<h2 id="tile-clkbfc"><a class="header" href="#tile-clkbfc">Tile CLKB.FC</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="muxes"><a class="header" href="#muxes">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>fpgacore CLKB.FC muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>OMUX10.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX11.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX12.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX15.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>CLK.IMUX.CLK0</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
+<tr><td>CLK.IMUX.CLK1</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
+<tr><td>CLK.IMUX.CLK2</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
+<tr><td>CLK.IMUX.CLK3</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux0"><a class="header" href="#bel-bufgmux0">Bel BUFGMUX0</a></h3>
+<div class="table-wrapper"><table>
+<caption>fpgacore CLKB.FC bel BUFGMUX0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK0</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux1"><a class="header" href="#bel-bufgmux1">Bel BUFGMUX1</a></h3>
+<div class="table-wrapper"><table>
+<caption>fpgacore CLKB.FC bel BUFGMUX1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK1</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux2"><a class="header" href="#bel-bufgmux2">Bel BUFGMUX2</a></h3>
+<div class="table-wrapper"><table>
+<caption>fpgacore CLKB.FC bel BUFGMUX2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK2</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux3"><a class="header" href="#bel-bufgmux3">Bel BUFGMUX3</a></h3>
+<div class="table-wrapper"><table>
+<caption>fpgacore CLKB.FC bel BUFGMUX3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK3</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.3</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-globalsig_s"><a class="header" href="#bel-globalsig_s">Bel GLOBALSIG_S</a></h3>
+<div class="table-wrapper"><table>
+<caption>fpgacore CLKB.FC bel GLOBALSIG_S</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-wires"><a class="header" href="#bel-wires">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>fpgacore CLKB.FC bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK.IMUX.CLK0</td><td>BUFGMUX0.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK1</td><td>BUFGMUX1.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK2</td><td>BUFGMUX2.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK3</td><td>BUFGMUX3.CLK</td></tr>
+<tr><td>CLK.OUT.0</td><td>BUFGMUX0.O</td></tr>
+<tr><td>CLK.OUT.1</td><td>BUFGMUX1.O</td></tr>
+<tr><td>CLK.OUT.2</td><td>BUFGMUX2.O</td></tr>
+<tr><td>CLK.OUT.3</td><td>BUFGMUX3.O</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream"><a class="header" href="#bitstream">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>fpgacore CLKB.FC bittile 0</caption>
 <thead>
@@ -805,7 +895,97 @@
 </table></div>
 <h2 id="bitstream--top-tiles"><a class="header" href="#bitstream--top-tiles">Bitstream — top tiles</a></h2>
 <p>TODO: document</p>
-<h3 id="clktfc"><a class="header" href="#clktfc"><code>CLKT.FC</code></a></h3>
+<h2 id="tile-clktfc"><a class="header" href="#tile-clktfc">Tile CLKT.FC</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="muxes-1"><a class="header" href="#muxes-1">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>fpgacore CLKT.FC muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>OMUX0.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX3.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX4.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX5.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>CLK.IMUX.CLK0</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
+<tr><td>CLK.IMUX.CLK1</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
+<tr><td>CLK.IMUX.CLK2</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
+<tr><td>CLK.IMUX.CLK3</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux0-1"><a class="header" href="#bel-bufgmux0-1">Bel BUFGMUX0</a></h3>
+<div class="table-wrapper"><table>
+<caption>fpgacore CLKT.FC bel BUFGMUX0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK0</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux1-1"><a class="header" href="#bel-bufgmux1-1">Bel BUFGMUX1</a></h3>
+<div class="table-wrapper"><table>
+<caption>fpgacore CLKT.FC bel BUFGMUX1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK1</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux2-1"><a class="header" href="#bel-bufgmux2-1">Bel BUFGMUX2</a></h3>
+<div class="table-wrapper"><table>
+<caption>fpgacore CLKT.FC bel BUFGMUX2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK2</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux3-1"><a class="header" href="#bel-bufgmux3-1">Bel BUFGMUX3</a></h3>
+<div class="table-wrapper"><table>
+<caption>fpgacore CLKT.FC bel BUFGMUX3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK3</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.3</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-globalsig_n"><a class="header" href="#bel-globalsig_n">Bel GLOBALSIG_N</a></h3>
+<div class="table-wrapper"><table>
+<caption>fpgacore CLKT.FC bel GLOBALSIG_N</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-wires-1"><a class="header" href="#bel-wires-1">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>fpgacore CLKT.FC bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK.IMUX.CLK0</td><td>BUFGMUX0.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK1</td><td>BUFGMUX1.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK2</td><td>BUFGMUX2.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK3</td><td>BUFGMUX3.CLK</td></tr>
+<tr><td>CLK.OUT.0</td><td>BUFGMUX0.O</td></tr>
+<tr><td>CLK.OUT.1</td><td>BUFGMUX1.O</td></tr>
+<tr><td>CLK.OUT.2</td><td>BUFGMUX2.O</td></tr>
+<tr><td>CLK.OUT.3</td><td>BUFGMUX3.O</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-1"><a class="header" href="#bitstream-1">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>fpgacore CLKT.FC bittile 0</caption>
 <thead>

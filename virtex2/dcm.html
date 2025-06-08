@@ -151,7 +151,108 @@
                     <main>
                         <h1 id="digital-clock-managers"><a class="header" href="#digital-clock-managers">Digital Clock Managers</a></h1>
 <p>TODO: reverse, document</p>
-<h2 id="dcmv2"><a class="header" href="#dcmv2"><code>DCM.V2</code></a></h2>
+<h2 id="tile-dcmv2"><a class="header" href="#tile-dcmv2">Tile DCM.V2</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="bel-dcm"><a class="header" href="#bel-dcm">Bel DCM</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 DCM.V2 bel DCM</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK0</td><td>output</td><td>OUT.SEC10</td></tr>
+<tr><td>CLK180</td><td>output</td><td>OUT.SEC8</td></tr>
+<tr><td>CLK270</td><td>output</td><td>OUT.SEC7</td></tr>
+<tr><td>CLK2X</td><td>output</td><td>OUT.SEC6</td></tr>
+<tr><td>CLK2X180</td><td>output</td><td>OUT.SEC5</td></tr>
+<tr><td>CLK90</td><td>output</td><td>OUT.SEC9</td></tr>
+<tr><td>CLKDV</td><td>output</td><td>OUT.SEC4</td></tr>
+<tr><td>CLKFB</td><td>input</td><td>IMUX.DCMCLK0</td></tr>
+<tr><td>CLKFX</td><td>output</td><td>OUT.SEC3</td></tr>
+<tr><td>CLKFX180</td><td>output</td><td>OUT.SEC2</td></tr>
+<tr><td>CLKIN</td><td>input</td><td>IMUX.DCMCLK1</td></tr>
+<tr><td>CONCUR</td><td>output</td><td>OUT.SEC11</td></tr>
+<tr><td>CTLGO</td><td>input</td><td>IMUX.G1.DATA3</td></tr>
+<tr><td>CTLMODE</td><td>input</td><td>IMUX.G2.DATA1</td></tr>
+<tr><td>CTLOSC1</td><td>input</td><td>IMUX.G1.DATA2</td></tr>
+<tr><td>CTLOSC2</td><td>input</td><td>IMUX.G1.DATA1</td></tr>
+<tr><td>CTLSEL0</td><td>input</td><td>IMUX.G0.DATA1</td></tr>
+<tr><td>CTLSEL1</td><td>input</td><td>IMUX.G0.DATA2</td></tr>
+<tr><td>CTLSEL2</td><td>input</td><td>IMUX.G0.DATA3</td></tr>
+<tr><td>DSSEN</td><td>input</td><td>IMUX.G0.DATA0</td></tr>
+<tr><td>FREEZEDFS</td><td>input</td><td>IMUX.G2.DATA3</td></tr>
+<tr><td>FREEZEDLL</td><td>input</td><td>IMUX.G2.DATA2</td></tr>
+<tr><td>LOCKED</td><td>output</td><td>OUT.SEC13</td></tr>
+<tr><td>PSCLK</td><td>input</td><td>IMUX.DCMCLK2</td></tr>
+<tr><td>PSDONE</td><td>output</td><td>OUT.SEC12</td></tr>
+<tr><td>PSEN</td><td>input</td><td>IMUX.G1.DATA0</td></tr>
+<tr><td>PSINCDEC</td><td>input</td><td>IMUX.G2.DATA0</td></tr>
+<tr><td>RST</td><td>input</td><td>IMUX.G3.DATA0</td></tr>
+<tr><td>STATUS0</td><td>output</td><td>OUT.HALF14.0</td></tr>
+<tr><td>STATUS1</td><td>output</td><td>OUT.HALF15.0</td></tr>
+<tr><td>STATUS2</td><td>output</td><td>OUT.HALF16.0</td></tr>
+<tr><td>STATUS3</td><td>output</td><td>OUT.HALF17.0</td></tr>
+<tr><td>STATUS4</td><td>output</td><td>OUT.HALF14.1</td></tr>
+<tr><td>STATUS5</td><td>output</td><td>OUT.HALF15.1</td></tr>
+<tr><td>STATUS6</td><td>output</td><td>OUT.HALF16.1</td></tr>
+<tr><td>STATUS7</td><td>output</td><td>OUT.HALF17.1</td></tr>
+<tr><td>STSADRS0</td><td>input</td><td>IMUX.G3.DATA1</td></tr>
+<tr><td>STSADRS1</td><td>input</td><td>IMUX.G3.DATA2</td></tr>
+<tr><td>STSADRS2</td><td>input</td><td>IMUX.G3.DATA3</td></tr>
+<tr><td>STSADRS3</td><td>input</td><td>IMUX.G3.DATA4</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires"><a class="header" href="#bel-wires">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 DCM.V2 bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>IMUX.DCMCLK0</td><td>DCM.CLKFB</td></tr>
+<tr><td>IMUX.DCMCLK1</td><td>DCM.CLKIN</td></tr>
+<tr><td>IMUX.DCMCLK2</td><td>DCM.PSCLK</td></tr>
+<tr><td>IMUX.G0.DATA0</td><td>DCM.DSSEN</td></tr>
+<tr><td>IMUX.G0.DATA1</td><td>DCM.CTLSEL0</td></tr>
+<tr><td>IMUX.G0.DATA2</td><td>DCM.CTLSEL1</td></tr>
+<tr><td>IMUX.G0.DATA3</td><td>DCM.CTLSEL2</td></tr>
+<tr><td>IMUX.G1.DATA0</td><td>DCM.PSEN</td></tr>
+<tr><td>IMUX.G1.DATA1</td><td>DCM.CTLOSC2</td></tr>
+<tr><td>IMUX.G1.DATA2</td><td>DCM.CTLOSC1</td></tr>
+<tr><td>IMUX.G1.DATA3</td><td>DCM.CTLGO</td></tr>
+<tr><td>IMUX.G2.DATA0</td><td>DCM.PSINCDEC</td></tr>
+<tr><td>IMUX.G2.DATA1</td><td>DCM.CTLMODE</td></tr>
+<tr><td>IMUX.G2.DATA2</td><td>DCM.FREEZEDLL</td></tr>
+<tr><td>IMUX.G2.DATA3</td><td>DCM.FREEZEDFS</td></tr>
+<tr><td>IMUX.G3.DATA0</td><td>DCM.RST</td></tr>
+<tr><td>IMUX.G3.DATA1</td><td>DCM.STSADRS0</td></tr>
+<tr><td>IMUX.G3.DATA2</td><td>DCM.STSADRS1</td></tr>
+<tr><td>IMUX.G3.DATA3</td><td>DCM.STSADRS2</td></tr>
+<tr><td>IMUX.G3.DATA4</td><td>DCM.STSADRS3</td></tr>
+<tr><td>OUT.SEC2</td><td>DCM.CLKFX180</td></tr>
+<tr><td>OUT.SEC3</td><td>DCM.CLKFX</td></tr>
+<tr><td>OUT.SEC4</td><td>DCM.CLKDV</td></tr>
+<tr><td>OUT.SEC5</td><td>DCM.CLK2X180</td></tr>
+<tr><td>OUT.SEC6</td><td>DCM.CLK2X</td></tr>
+<tr><td>OUT.SEC7</td><td>DCM.CLK270</td></tr>
+<tr><td>OUT.SEC8</td><td>DCM.CLK180</td></tr>
+<tr><td>OUT.SEC9</td><td>DCM.CLK90</td></tr>
+<tr><td>OUT.SEC10</td><td>DCM.CLK0</td></tr>
+<tr><td>OUT.SEC11</td><td>DCM.CONCUR</td></tr>
+<tr><td>OUT.SEC12</td><td>DCM.PSDONE</td></tr>
+<tr><td>OUT.SEC13</td><td>DCM.LOCKED</td></tr>
+<tr><td>OUT.HALF14.0</td><td>DCM.STATUS0</td></tr>
+<tr><td>OUT.HALF14.1</td><td>DCM.STATUS4</td></tr>
+<tr><td>OUT.HALF15.0</td><td>DCM.STATUS1</td></tr>
+<tr><td>OUT.HALF15.1</td><td>DCM.STATUS5</td></tr>
+<tr><td>OUT.HALF16.0</td><td>DCM.STATUS2</td></tr>
+<tr><td>OUT.HALF16.1</td><td>DCM.STATUS6</td></tr>
+<tr><td>OUT.HALF17.0</td><td>DCM.STATUS3</td></tr>
+<tr><td>OUT.HALF17.1</td><td>DCM.STATUS7</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream"><a class="header" href="#bitstream">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex2 DCM.V2 bittile 0</caption>
 <thead>
@@ -1959,7 +2060,110 @@ inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="dcmv2p"><a class="header" href="#dcmv2p"><code>DCM.V2P</code></a></h2>
+<h2 id="tile-dcmv2p"><a class="header" href="#tile-dcmv2p">Tile DCM.V2P</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="bel-dcm-1"><a class="header" href="#bel-dcm-1">Bel DCM</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 DCM.V2P bel DCM</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK0</td><td>output</td><td>OUT.SEC10</td></tr>
+<tr><td>CLK180</td><td>output</td><td>OUT.SEC8</td></tr>
+<tr><td>CLK270</td><td>output</td><td>OUT.SEC7</td></tr>
+<tr><td>CLK2X</td><td>output</td><td>OUT.SEC6</td></tr>
+<tr><td>CLK2X180</td><td>output</td><td>OUT.SEC5</td></tr>
+<tr><td>CLK90</td><td>output</td><td>OUT.SEC9</td></tr>
+<tr><td>CLKDV</td><td>output</td><td>OUT.SEC4</td></tr>
+<tr><td>CLKFB</td><td>input</td><td>IMUX.DCMCLK0</td></tr>
+<tr><td>CLKFX</td><td>output</td><td>OUT.SEC3</td></tr>
+<tr><td>CLKFX180</td><td>output</td><td>OUT.SEC2</td></tr>
+<tr><td>CLKIN</td><td>input</td><td>IMUX.DCMCLK1</td></tr>
+<tr><td>CONCUR</td><td>output</td><td>OUT.SEC11</td></tr>
+<tr><td>CTLGO</td><td>input</td><td>IMUX.G1.DATA3</td></tr>
+<tr><td>CTLMODE</td><td>input</td><td>IMUX.G2.DATA1</td></tr>
+<tr><td>CTLOSC1</td><td>input</td><td>IMUX.G1.DATA2</td></tr>
+<tr><td>CTLOSC2</td><td>input</td><td>IMUX.G1.DATA1</td></tr>
+<tr><td>CTLSEL0</td><td>input</td><td>IMUX.G0.DATA1</td></tr>
+<tr><td>CTLSEL1</td><td>input</td><td>IMUX.G0.DATA2</td></tr>
+<tr><td>CTLSEL2</td><td>input</td><td>IMUX.G0.DATA3</td></tr>
+<tr><td>DSSEN</td><td>input</td><td>IMUX.G0.DATA0</td></tr>
+<tr><td>FREEZEDFS</td><td>input</td><td>IMUX.G2.DATA3</td></tr>
+<tr><td>FREEZEDLL</td><td>input</td><td>IMUX.G2.DATA2</td></tr>
+<tr><td>LOCKED</td><td>output</td><td>OUT.SEC13</td></tr>
+<tr><td>PSCLK</td><td>input</td><td>IMUX.DCMCLK2</td></tr>
+<tr><td>PSDONE</td><td>output</td><td>OUT.SEC12</td></tr>
+<tr><td>PSEN</td><td>input</td><td>IMUX.G1.DATA0</td></tr>
+<tr><td>PSINCDEC</td><td>input</td><td>IMUX.G2.DATA0</td></tr>
+<tr><td>RST</td><td>input</td><td>IMUX.G3.DATA0</td></tr>
+<tr><td>STATUS0</td><td>output</td><td>OUT.HALF14.0</td></tr>
+<tr><td>STATUS1</td><td>output</td><td>OUT.HALF15.0</td></tr>
+<tr><td>STATUS2</td><td>output</td><td>OUT.HALF16.0</td></tr>
+<tr><td>STATUS3</td><td>output</td><td>OUT.HALF17.0</td></tr>
+<tr><td>STATUS4</td><td>output</td><td>OUT.HALF14.1</td></tr>
+<tr><td>STATUS5</td><td>output</td><td>OUT.HALF15.1</td></tr>
+<tr><td>STATUS6</td><td>output</td><td>OUT.HALF16.1</td></tr>
+<tr><td>STATUS7</td><td>output</td><td>OUT.HALF17.1</td></tr>
+<tr><td>STSADRS0</td><td>input</td><td>IMUX.G3.DATA1</td></tr>
+<tr><td>STSADRS1</td><td>input</td><td>IMUX.G3.DATA2</td></tr>
+<tr><td>STSADRS2</td><td>input</td><td>IMUX.G3.DATA3</td></tr>
+<tr><td>STSADRS3</td><td>input</td><td>IMUX.G3.DATA4</td></tr>
+<tr><td>STSADRS4</td><td>input</td><td>IMUX.G3.DATA5</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-1"><a class="header" href="#bel-wires-1">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex2 DCM.V2P bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>IMUX.DCMCLK0</td><td>DCM.CLKFB</td></tr>
+<tr><td>IMUX.DCMCLK1</td><td>DCM.CLKIN</td></tr>
+<tr><td>IMUX.DCMCLK2</td><td>DCM.PSCLK</td></tr>
+<tr><td>IMUX.G0.DATA0</td><td>DCM.DSSEN</td></tr>
+<tr><td>IMUX.G0.DATA1</td><td>DCM.CTLSEL0</td></tr>
+<tr><td>IMUX.G0.DATA2</td><td>DCM.CTLSEL1</td></tr>
+<tr><td>IMUX.G0.DATA3</td><td>DCM.CTLSEL2</td></tr>
+<tr><td>IMUX.G1.DATA0</td><td>DCM.PSEN</td></tr>
+<tr><td>IMUX.G1.DATA1</td><td>DCM.CTLOSC2</td></tr>
+<tr><td>IMUX.G1.DATA2</td><td>DCM.CTLOSC1</td></tr>
+<tr><td>IMUX.G1.DATA3</td><td>DCM.CTLGO</td></tr>
+<tr><td>IMUX.G2.DATA0</td><td>DCM.PSINCDEC</td></tr>
+<tr><td>IMUX.G2.DATA1</td><td>DCM.CTLMODE</td></tr>
+<tr><td>IMUX.G2.DATA2</td><td>DCM.FREEZEDLL</td></tr>
+<tr><td>IMUX.G2.DATA3</td><td>DCM.FREEZEDFS</td></tr>
+<tr><td>IMUX.G3.DATA0</td><td>DCM.RST</td></tr>
+<tr><td>IMUX.G3.DATA1</td><td>DCM.STSADRS0</td></tr>
+<tr><td>IMUX.G3.DATA2</td><td>DCM.STSADRS1</td></tr>
+<tr><td>IMUX.G3.DATA3</td><td>DCM.STSADRS2</td></tr>
+<tr><td>IMUX.G3.DATA4</td><td>DCM.STSADRS3</td></tr>
+<tr><td>IMUX.G3.DATA5</td><td>DCM.STSADRS4</td></tr>
+<tr><td>OUT.SEC2</td><td>DCM.CLKFX180</td></tr>
+<tr><td>OUT.SEC3</td><td>DCM.CLKFX</td></tr>
+<tr><td>OUT.SEC4</td><td>DCM.CLKDV</td></tr>
+<tr><td>OUT.SEC5</td><td>DCM.CLK2X180</td></tr>
+<tr><td>OUT.SEC6</td><td>DCM.CLK2X</td></tr>
+<tr><td>OUT.SEC7</td><td>DCM.CLK270</td></tr>
+<tr><td>OUT.SEC8</td><td>DCM.CLK180</td></tr>
+<tr><td>OUT.SEC9</td><td>DCM.CLK90</td></tr>
+<tr><td>OUT.SEC10</td><td>DCM.CLK0</td></tr>
+<tr><td>OUT.SEC11</td><td>DCM.CONCUR</td></tr>
+<tr><td>OUT.SEC12</td><td>DCM.PSDONE</td></tr>
+<tr><td>OUT.SEC13</td><td>DCM.LOCKED</td></tr>
+<tr><td>OUT.HALF14.0</td><td>DCM.STATUS0</td></tr>
+<tr><td>OUT.HALF14.1</td><td>DCM.STATUS4</td></tr>
+<tr><td>OUT.HALF15.0</td><td>DCM.STATUS1</td></tr>
+<tr><td>OUT.HALF15.1</td><td>DCM.STATUS5</td></tr>
+<tr><td>OUT.HALF16.0</td><td>DCM.STATUS2</td></tr>
+<tr><td>OUT.HALF16.1</td><td>DCM.STATUS6</td></tr>
+<tr><td>OUT.HALF17.0</td><td>DCM.STATUS3</td></tr>
+<tr><td>OUT.HALF17.1</td><td>DCM.STATUS7</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-1"><a class="header" href="#bitstream-1">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex2 DCM.V2P bittile 0</caption>
 <thead>

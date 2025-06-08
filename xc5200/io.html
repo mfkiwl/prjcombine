@@ -150,7 +150,234 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="inputoutput"><a class="header" href="#inputoutput">Input/Output</a></h1>
-<h2 id="iol"><a class="header" href="#iol"><code>IO.L</code></a></h2>
+<h2 id="tile-iol"><a class="header" href="#tile-iol">Tile IO.L</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="muxes"><a class="header" href="#muxes">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.L muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>IO.M0</td><td>IO.SINGLE.L.S0, IO.SINGLE.L.N0, DBL.H0.W, LONG.V0, OMUX0.BUF</td></tr>
+<tr><td>IO.M1</td><td>SINGLE.E1, IO.SINGLE.L.S1, IO.SINGLE.L.N1, LONG.V1, OMUX1.BUF</td></tr>
+<tr><td>IO.M2</td><td>SINGLE.E2, IO.SINGLE.L.S2, IO.SINGLE.L.N2, LONG.V2, OMUX2.BUF</td></tr>
+<tr><td>IO.M3</td><td>SINGLE.E3, IO.SINGLE.L.S3, IO.SINGLE.L.N3, LONG.V3, OMUX3.BUF</td></tr>
+<tr><td>IO.M4</td><td>SINGLE.E4, IO.SINGLE.L.S4, IO.SINGLE.L.N4, LONG.V4, OMUX1.BUF</td></tr>
+<tr><td>IO.M5</td><td>SINGLE.E5, IO.SINGLE.L.S5, IO.SINGLE.L.N5, LONG.V5, OMUX2.BUF</td></tr>
+<tr><td>IO.M6</td><td>IO.SINGLE.L.S6, IO.SINGLE.L.N6, DBL.H6.W, LONG.V6, OMUX3.BUF</td></tr>
+<tr><td>IO.M7</td><td>SINGLE.E7, IO.SINGLE.L.S7, IO.SINGLE.L.N7, LONG.V7, OMUX0.BUF</td></tr>
+<tr><td>IO.M8</td><td>SINGLE.E8, IO.SINGLE.L.S0, IO.SINGLE.L.N1, LONG.H0, OMUX2.BUF</td></tr>
+<tr><td>IO.M9</td><td>SINGLE.E9, IO.SINGLE.L.S1, IO.SINGLE.L.N2, LONG.H1, OMUX3.BUF</td></tr>
+<tr><td>IO.M10</td><td>SINGLE.E10, IO.SINGLE.L.S2, IO.SINGLE.L.N3, LONG.H2, OMUX0.BUF</td></tr>
+<tr><td>IO.M11</td><td>SINGLE.E11, IO.SINGLE.L.S3, IO.SINGLE.L.N4, LONG.H3, OMUX1.BUF</td></tr>
+<tr><td>IO.M12</td><td>IO.SINGLE.L.S4, IO.SINGLE.L.N5, DBL.H0.M, LONG.H4, OMUX3.BUF</td></tr>
+<tr><td>IO.M13</td><td>IO.SINGLE.L.S5, IO.SINGLE.L.N6, DBL.H6.M, LONG.H5, OMUX0.BUF</td></tr>
+<tr><td>IO.M14</td><td>IO.SINGLE.L.S6, IO.SINGLE.L.N7, LONG.H6, OMUX1.BUF</td></tr>
+<tr><td>IO.M15</td><td>IO.SINGLE.L.N0, IO.SINGLE.L.S7, LONG.H7, OMUX2.BUF</td></tr>
+<tr><td>SINGLE.E1</td><td>IO.M1</td></tr>
+<tr><td>SINGLE.E2</td><td>IO.M2</td></tr>
+<tr><td>SINGLE.E3</td><td>IO.M3</td></tr>
+<tr><td>SINGLE.E4</td><td>IO.M4</td></tr>
+<tr><td>SINGLE.E5</td><td>IO.M5</td></tr>
+<tr><td>SINGLE.E7</td><td>IO.M7</td></tr>
+<tr><td>SINGLE.E8</td><td>IO.M8</td></tr>
+<tr><td>SINGLE.E9</td><td>IO.M9</td></tr>
+<tr><td>SINGLE.E10</td><td>IO.M10</td></tr>
+<tr><td>SINGLE.E11</td><td>IO.M11</td></tr>
+<tr><td>IO.SINGLE.L.S0</td><td>IO.M0, IO.M8</td></tr>
+<tr><td>IO.SINGLE.L.N0</td><td>IO.M0, IO.M15</td></tr>
+<tr><td>IO.SINGLE.L.S1</td><td>IO.M1, IO.M9</td></tr>
+<tr><td>IO.SINGLE.L.N1</td><td>IO.M1, IO.M8</td></tr>
+<tr><td>IO.SINGLE.L.S2</td><td>IO.M2, IO.M10</td></tr>
+<tr><td>IO.SINGLE.L.N2</td><td>IO.M2, IO.M9</td></tr>
+<tr><td>IO.SINGLE.L.S3</td><td>IO.M3, IO.M11</td></tr>
+<tr><td>IO.SINGLE.L.N3</td><td>IO.M3, IO.M10</td></tr>
+<tr><td>IO.SINGLE.L.S4</td><td>IO.M4, IO.M12</td></tr>
+<tr><td>IO.SINGLE.L.N4</td><td>IO.M4, IO.M11</td></tr>
+<tr><td>IO.SINGLE.L.S5</td><td>IO.M5, IO.M13</td></tr>
+<tr><td>IO.SINGLE.L.N5</td><td>IO.M5, IO.M12</td></tr>
+<tr><td>IO.SINGLE.L.S6</td><td>IO.M6, IO.M14</td></tr>
+<tr><td>IO.SINGLE.L.N6</td><td>IO.M6, IO.M13</td></tr>
+<tr><td>IO.SINGLE.L.S7</td><td>IO.M7, IO.M15</td></tr>
+<tr><td>IO.SINGLE.L.N7</td><td>IO.M7, IO.M14</td></tr>
+<tr><td>DBL.H0.M</td><td>IO.M12</td></tr>
+<tr><td>DBL.H0.W</td><td>IO.M0</td></tr>
+<tr><td>DBL.H6.M</td><td>IO.M13</td></tr>
+<tr><td>DBL.H6.W</td><td>IO.M6</td></tr>
+<tr><td>LONG.H0</td><td>OUT.TBUF0</td></tr>
+<tr><td>LONG.H1</td><td>OUT.TBUF1</td></tr>
+<tr><td>LONG.H2</td><td>OUT.TBUF2</td></tr>
+<tr><td>LONG.H3</td><td>OUT.TBUF3</td></tr>
+<tr><td>LONG.H4</td><td>OUT.TBUF0</td></tr>
+<tr><td>LONG.H5</td><td>OUT.TBUF1</td></tr>
+<tr><td>LONG.H6</td><td>OUT.TBUF2</td></tr>
+<tr><td>LONG.H7</td><td>OUT.TBUF3</td></tr>
+<tr><td>LONG.V0</td><td>OUT.TBUF0</td></tr>
+<tr><td>LONG.V1</td><td>OUT.TBUF1</td></tr>
+<tr><td>LONG.V2</td><td>OUT.TBUF2</td></tr>
+<tr><td>LONG.V3</td><td>OUT.TBUF3</td></tr>
+<tr><td>LONG.V4</td><td>OUT.TBUF0</td></tr>
+<tr><td>LONG.V5</td><td>OUT.TBUF1</td></tr>
+<tr><td>LONG.V6</td><td>OUT.TBUF2</td></tr>
+<tr><td>LONG.V7</td><td>OUT.TBUF3</td></tr>
+<tr><td>OMUX0</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M12.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OUT.IO0.I, OUT.IO1.I, OUT.IO2.I, OUT.IO3.I</td></tr>
+<tr><td>OMUX1</td><td>GND, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M8.BUF, IO.M9.BUF, IO.M14.BUF, IO.M15.BUF, OUT.IO0.I, OUT.IO1.I, OUT.IO2.I, OUT.IO3.I</td></tr>
+<tr><td>OMUX2</td><td>GND, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M8.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, OUT.IO0.I, OUT.IO1.I, OUT.IO2.I, OUT.IO3.I</td></tr>
+<tr><td>OMUX3</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M6.BUF, IO.M7.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, IO.M13.BUF, OUT.IO0.I, OUT.IO1.I, OUT.IO2.I, OUT.IO3.I</td></tr>
+<tr><td>IMUX.TS</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M10.BUF, IO.M11.BUF, IO.M14.BUF, IO.M15.BUF</td></tr>
+<tr><td>IMUX.GIN</td><td>GND, IO.M6.BUF, IO.M7.BUF, IO.M12.BUF, IO.M13.BUF, GLOBAL.BL</td></tr>
+<tr><td>IMUX.IO0.T</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, OMUX1.BUF.W</td></tr>
+<tr><td>IMUX.IO0.O</td><td>GND, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M8.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OMUX0.BUF.W</td></tr>
+<tr><td>IMUX.IO1.T</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, OMUX2.BUF.W</td></tr>
+<tr><td>IMUX.IO1.O</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M6.BUF, IO.M7.BUF, IO.M8.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OMUX1.BUF.W</td></tr>
+<tr><td>IMUX.IO2.T</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OMUX3.BUF.W</td></tr>
+<tr><td>IMUX.IO2.O</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M8.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OMUX2.BUF.W</td></tr>
+<tr><td>IMUX.IO3.T</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M8.BUF, IO.M14.BUF, IO.M15.BUF, OMUX0.BUF.W</td></tr>
+<tr><td>IMUX.IO3.O</td><td>GND, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M8.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OMUX3.BUF.W</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-tbuf0"><a class="header" href="#bel-tbuf0">Bel TBUF0</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.L bel TBUF0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>OMUX0.BUF</td></tr>
+<tr><td>O</td><td>output</td><td>OUT.TBUF0</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.TS</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-tbuf1"><a class="header" href="#bel-tbuf1">Bel TBUF1</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.L bel TBUF1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>OMUX1.BUF</td></tr>
+<tr><td>O</td><td>output</td><td>OUT.TBUF1</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.TS</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-tbuf2"><a class="header" href="#bel-tbuf2">Bel TBUF2</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.L bel TBUF2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>OMUX2.BUF</td></tr>
+<tr><td>O</td><td>output</td><td>OUT.TBUF2</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.TS</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-tbuf3"><a class="header" href="#bel-tbuf3">Bel TBUF3</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.L bel TBUF3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>OMUX3.BUF</td></tr>
+<tr><td>O</td><td>output</td><td>OUT.TBUF3</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.TS</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-io0"><a class="header" href="#bel-io0">Bel IO0</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.L bel IO0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>output</td><td>OUT.IO0.I</td></tr>
+<tr><td>O</td><td>input</td><td>IMUX.IO0.O</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.IO0.T</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-io1"><a class="header" href="#bel-io1">Bel IO1</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.L bel IO1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>output</td><td>OUT.IO1.I</td></tr>
+<tr><td>O</td><td>input</td><td>IMUX.IO1.O</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.IO1.T</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-io2"><a class="header" href="#bel-io2">Bel IO2</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.L bel IO2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>output</td><td>OUT.IO2.I</td></tr>
+<tr><td>O</td><td>input</td><td>IMUX.IO2.O</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.IO2.T</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-io3"><a class="header" href="#bel-io3">Bel IO3</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.L bel IO3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>output</td><td>OUT.IO3.I</td></tr>
+<tr><td>O</td><td>input</td><td>IMUX.IO3.O</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.IO3.T</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufr"><a class="header" href="#bel-bufr">Bel BUFR</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.L bel BUFR</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>IN</td><td>input</td><td>IMUX.GIN</td></tr>
+<tr><td>OUT</td><td>output</td><td>GLOBAL.L</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires"><a class="header" href="#bel-wires">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.L bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>GLOBAL.L</td><td>BUFR.OUT</td></tr>
+<tr><td>OMUX0.BUF</td><td>TBUF0.I</td></tr>
+<tr><td>OMUX1.BUF</td><td>TBUF1.I</td></tr>
+<tr><td>OMUX2.BUF</td><td>TBUF2.I</td></tr>
+<tr><td>OMUX3.BUF</td><td>TBUF3.I</td></tr>
+<tr><td>OUT.TBUF0</td><td>TBUF0.O</td></tr>
+<tr><td>OUT.TBUF1</td><td>TBUF1.O</td></tr>
+<tr><td>OUT.TBUF2</td><td>TBUF2.O</td></tr>
+<tr><td>OUT.TBUF3</td><td>TBUF3.O</td></tr>
+<tr><td>OUT.IO0.I</td><td>IO0.I</td></tr>
+<tr><td>OUT.IO1.I</td><td>IO1.I</td></tr>
+<tr><td>OUT.IO2.I</td><td>IO2.I</td></tr>
+<tr><td>OUT.IO3.I</td><td>IO3.I</td></tr>
+<tr><td>IMUX.TS</td><td>TBUF0.T, TBUF1.T, TBUF2.T, TBUF3.T</td></tr>
+<tr><td>IMUX.GIN</td><td>BUFR.IN</td></tr>
+<tr><td>IMUX.IO0.T</td><td>IO0.T</td></tr>
+<tr><td>IMUX.IO0.O</td><td>IO0.O</td></tr>
+<tr><td>IMUX.IO1.T</td><td>IO1.T</td></tr>
+<tr><td>IMUX.IO1.O</td><td>IO1.O</td></tr>
+<tr><td>IMUX.IO2.T</td><td>IO2.T</td></tr>
+<tr><td>IMUX.IO2.O</td><td>IO2.O</td></tr>
+<tr><td>IMUX.IO3.T</td><td>IO3.T</td></tr>
+<tr><td>IMUX.IO3.O</td><td>IO3.O</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream"><a class="header" href="#bitstream">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>xc5200 IO.L bittile 0</caption>
 <thead>
@@ -3239,7 +3466,234 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="ior"><a class="header" href="#ior"><code>IO.R</code></a></h2>
+<h2 id="tile-ior"><a class="header" href="#tile-ior">Tile IO.R</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="muxes-1"><a class="header" href="#muxes-1">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.R muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>IO.M0</td><td>IO.SINGLE.R.N0, IO.SINGLE.R.S0, DBL.H0.E, LONG.V0, OMUX0.BUF</td></tr>
+<tr><td>IO.M1</td><td>SINGLE.W1, IO.SINGLE.R.N1, IO.SINGLE.R.S1, LONG.V1, OMUX1.BUF</td></tr>
+<tr><td>IO.M2</td><td>SINGLE.W2, IO.SINGLE.R.N2, IO.SINGLE.R.S2, LONG.V2, OMUX2.BUF</td></tr>
+<tr><td>IO.M3</td><td>SINGLE.W3, IO.SINGLE.R.N3, IO.SINGLE.R.S3, LONG.V3, OMUX3.BUF</td></tr>
+<tr><td>IO.M4</td><td>SINGLE.W4, IO.SINGLE.R.N4, IO.SINGLE.R.S4, LONG.V4, OMUX1.BUF</td></tr>
+<tr><td>IO.M5</td><td>SINGLE.W5, IO.SINGLE.R.N5, IO.SINGLE.R.S5, LONG.V5, OMUX2.BUF</td></tr>
+<tr><td>IO.M6</td><td>IO.SINGLE.R.N6, IO.SINGLE.R.S6, DBL.H6.E, LONG.V6, OMUX3.BUF</td></tr>
+<tr><td>IO.M7</td><td>SINGLE.W7, IO.SINGLE.R.N7, IO.SINGLE.R.S7, LONG.V7, OMUX0.BUF</td></tr>
+<tr><td>IO.M8</td><td>SINGLE.W8, IO.SINGLE.R.S0, IO.SINGLE.R.N1, LONG.H0, OMUX2.BUF</td></tr>
+<tr><td>IO.M9</td><td>SINGLE.W9, IO.SINGLE.R.S1, IO.SINGLE.R.N2, LONG.H1, OMUX3.BUF</td></tr>
+<tr><td>IO.M10</td><td>SINGLE.W10, IO.SINGLE.R.S2, IO.SINGLE.R.N3, LONG.H2, OMUX0.BUF</td></tr>
+<tr><td>IO.M11</td><td>SINGLE.W11, IO.SINGLE.R.S3, IO.SINGLE.R.N4, LONG.H3, OMUX1.BUF</td></tr>
+<tr><td>IO.M12</td><td>IO.SINGLE.R.S4, IO.SINGLE.R.N5, DBL.H0.M, LONG.H4, OMUX3.BUF</td></tr>
+<tr><td>IO.M13</td><td>IO.SINGLE.R.S5, IO.SINGLE.R.N6, DBL.H6.M, LONG.H5, OMUX0.BUF</td></tr>
+<tr><td>IO.M14</td><td>IO.SINGLE.R.S6, IO.SINGLE.R.N7, LONG.H6, OMUX1.BUF</td></tr>
+<tr><td>IO.M15</td><td>IO.SINGLE.R.N0, IO.SINGLE.R.S7, LONG.H7, OMUX2.BUF</td></tr>
+<tr><td>SINGLE.W1</td><td>IO.M1</td></tr>
+<tr><td>SINGLE.W2</td><td>IO.M2</td></tr>
+<tr><td>SINGLE.W3</td><td>IO.M3</td></tr>
+<tr><td>SINGLE.W4</td><td>IO.M4</td></tr>
+<tr><td>SINGLE.W5</td><td>IO.M5</td></tr>
+<tr><td>SINGLE.W7</td><td>IO.M7</td></tr>
+<tr><td>SINGLE.W8</td><td>IO.M8</td></tr>
+<tr><td>SINGLE.W9</td><td>IO.M9</td></tr>
+<tr><td>SINGLE.W10</td><td>IO.M10</td></tr>
+<tr><td>SINGLE.W11</td><td>IO.M11</td></tr>
+<tr><td>IO.SINGLE.R.N0</td><td>IO.M0, IO.M15</td></tr>
+<tr><td>IO.SINGLE.R.S0</td><td>IO.M0, IO.M8</td></tr>
+<tr><td>IO.SINGLE.R.N1</td><td>IO.M1, IO.M8</td></tr>
+<tr><td>IO.SINGLE.R.S1</td><td>IO.M1, IO.M9</td></tr>
+<tr><td>IO.SINGLE.R.N2</td><td>IO.M2, IO.M9</td></tr>
+<tr><td>IO.SINGLE.R.S2</td><td>IO.M2, IO.M10</td></tr>
+<tr><td>IO.SINGLE.R.N3</td><td>IO.M3, IO.M10</td></tr>
+<tr><td>IO.SINGLE.R.S3</td><td>IO.M3, IO.M11</td></tr>
+<tr><td>IO.SINGLE.R.N4</td><td>IO.M4, IO.M11</td></tr>
+<tr><td>IO.SINGLE.R.S4</td><td>IO.M4, IO.M12</td></tr>
+<tr><td>IO.SINGLE.R.N5</td><td>IO.M5, IO.M12</td></tr>
+<tr><td>IO.SINGLE.R.S5</td><td>IO.M5, IO.M13</td></tr>
+<tr><td>IO.SINGLE.R.N6</td><td>IO.M6, IO.M13</td></tr>
+<tr><td>IO.SINGLE.R.S6</td><td>IO.M6, IO.M14</td></tr>
+<tr><td>IO.SINGLE.R.N7</td><td>IO.M7, IO.M14</td></tr>
+<tr><td>IO.SINGLE.R.S7</td><td>IO.M7, IO.M15</td></tr>
+<tr><td>DBL.H0.M</td><td>IO.M12</td></tr>
+<tr><td>DBL.H0.E</td><td>IO.M0</td></tr>
+<tr><td>DBL.H6.M</td><td>IO.M13</td></tr>
+<tr><td>DBL.H6.E</td><td>IO.M6</td></tr>
+<tr><td>LONG.H0</td><td>OUT.TBUF0</td></tr>
+<tr><td>LONG.H1</td><td>OUT.TBUF1</td></tr>
+<tr><td>LONG.H2</td><td>OUT.TBUF2</td></tr>
+<tr><td>LONG.H3</td><td>OUT.TBUF3</td></tr>
+<tr><td>LONG.H4</td><td>OUT.TBUF0</td></tr>
+<tr><td>LONG.H5</td><td>OUT.TBUF1</td></tr>
+<tr><td>LONG.H6</td><td>OUT.TBUF2</td></tr>
+<tr><td>LONG.H7</td><td>OUT.TBUF3</td></tr>
+<tr><td>LONG.V0</td><td>OUT.TBUF0</td></tr>
+<tr><td>LONG.V1</td><td>OUT.TBUF1</td></tr>
+<tr><td>LONG.V2</td><td>OUT.TBUF2</td></tr>
+<tr><td>LONG.V3</td><td>OUT.TBUF3</td></tr>
+<tr><td>LONG.V4</td><td>OUT.TBUF0</td></tr>
+<tr><td>LONG.V5</td><td>OUT.TBUF1</td></tr>
+<tr><td>LONG.V6</td><td>OUT.TBUF2</td></tr>
+<tr><td>LONG.V7</td><td>OUT.TBUF3</td></tr>
+<tr><td>OMUX0</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M12.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OUT.IO0.I, OUT.IO1.I, OUT.IO2.I, OUT.IO3.I</td></tr>
+<tr><td>OMUX1</td><td>GND, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M8.BUF, IO.M9.BUF, IO.M14.BUF, IO.M15.BUF, OUT.IO0.I, OUT.IO1.I, OUT.IO2.I, OUT.IO3.I</td></tr>
+<tr><td>OMUX2</td><td>GND, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M8.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, OUT.IO0.I, OUT.IO1.I, OUT.IO2.I, OUT.IO3.I</td></tr>
+<tr><td>OMUX3</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M6.BUF, IO.M7.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, IO.M13.BUF, OUT.IO0.I, OUT.IO1.I, OUT.IO2.I, OUT.IO3.I</td></tr>
+<tr><td>IMUX.TS</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M10.BUF, IO.M11.BUF, IO.M14.BUF, IO.M15.BUF</td></tr>
+<tr><td>IMUX.GIN</td><td>GND, IO.M6.BUF, IO.M7.BUF, IO.M12.BUF, IO.M13.BUF, GLOBAL.TR</td></tr>
+<tr><td>IMUX.IO0.T</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, OMUX1.BUF.E</td></tr>
+<tr><td>IMUX.IO0.O</td><td>GND, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M8.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OMUX0.BUF.E</td></tr>
+<tr><td>IMUX.IO1.T</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, OMUX2.BUF.E</td></tr>
+<tr><td>IMUX.IO1.O</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M6.BUF, IO.M7.BUF, IO.M8.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OMUX1.BUF.E</td></tr>
+<tr><td>IMUX.IO2.T</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OMUX3.BUF.E</td></tr>
+<tr><td>IMUX.IO2.O</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M8.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OMUX2.BUF.E</td></tr>
+<tr><td>IMUX.IO3.T</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M8.BUF, IO.M14.BUF, IO.M15.BUF, OMUX0.BUF.E</td></tr>
+<tr><td>IMUX.IO3.O</td><td>GND, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M8.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OMUX3.BUF.E</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-tbuf0-1"><a class="header" href="#bel-tbuf0-1">Bel TBUF0</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.R bel TBUF0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>OMUX0.BUF</td></tr>
+<tr><td>O</td><td>output</td><td>OUT.TBUF0</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.TS</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-tbuf1-1"><a class="header" href="#bel-tbuf1-1">Bel TBUF1</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.R bel TBUF1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>OMUX1.BUF</td></tr>
+<tr><td>O</td><td>output</td><td>OUT.TBUF1</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.TS</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-tbuf2-1"><a class="header" href="#bel-tbuf2-1">Bel TBUF2</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.R bel TBUF2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>OMUX2.BUF</td></tr>
+<tr><td>O</td><td>output</td><td>OUT.TBUF2</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.TS</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-tbuf3-1"><a class="header" href="#bel-tbuf3-1">Bel TBUF3</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.R bel TBUF3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>OMUX3.BUF</td></tr>
+<tr><td>O</td><td>output</td><td>OUT.TBUF3</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.TS</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-io0-1"><a class="header" href="#bel-io0-1">Bel IO0</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.R bel IO0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>output</td><td>OUT.IO0.I</td></tr>
+<tr><td>O</td><td>input</td><td>IMUX.IO0.O</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.IO0.T</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-io1-1"><a class="header" href="#bel-io1-1">Bel IO1</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.R bel IO1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>output</td><td>OUT.IO1.I</td></tr>
+<tr><td>O</td><td>input</td><td>IMUX.IO1.O</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.IO1.T</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-io2-1"><a class="header" href="#bel-io2-1">Bel IO2</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.R bel IO2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>output</td><td>OUT.IO2.I</td></tr>
+<tr><td>O</td><td>input</td><td>IMUX.IO2.O</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.IO2.T</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-io3-1"><a class="header" href="#bel-io3-1">Bel IO3</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.R bel IO3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>output</td><td>OUT.IO3.I</td></tr>
+<tr><td>O</td><td>input</td><td>IMUX.IO3.O</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.IO3.T</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufr-1"><a class="header" href="#bel-bufr-1">Bel BUFR</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.R bel BUFR</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>IN</td><td>input</td><td>IMUX.GIN</td></tr>
+<tr><td>OUT</td><td>output</td><td>GLOBAL.R</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-1"><a class="header" href="#bel-wires-1">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.R bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>GLOBAL.R</td><td>BUFR.OUT</td></tr>
+<tr><td>OMUX0.BUF</td><td>TBUF0.I</td></tr>
+<tr><td>OMUX1.BUF</td><td>TBUF1.I</td></tr>
+<tr><td>OMUX2.BUF</td><td>TBUF2.I</td></tr>
+<tr><td>OMUX3.BUF</td><td>TBUF3.I</td></tr>
+<tr><td>OUT.TBUF0</td><td>TBUF0.O</td></tr>
+<tr><td>OUT.TBUF1</td><td>TBUF1.O</td></tr>
+<tr><td>OUT.TBUF2</td><td>TBUF2.O</td></tr>
+<tr><td>OUT.TBUF3</td><td>TBUF3.O</td></tr>
+<tr><td>OUT.IO0.I</td><td>IO0.I</td></tr>
+<tr><td>OUT.IO1.I</td><td>IO1.I</td></tr>
+<tr><td>OUT.IO2.I</td><td>IO2.I</td></tr>
+<tr><td>OUT.IO3.I</td><td>IO3.I</td></tr>
+<tr><td>IMUX.TS</td><td>TBUF0.T, TBUF1.T, TBUF2.T, TBUF3.T</td></tr>
+<tr><td>IMUX.GIN</td><td>BUFR.IN</td></tr>
+<tr><td>IMUX.IO0.T</td><td>IO0.T</td></tr>
+<tr><td>IMUX.IO0.O</td><td>IO0.O</td></tr>
+<tr><td>IMUX.IO1.T</td><td>IO1.T</td></tr>
+<tr><td>IMUX.IO1.O</td><td>IO1.O</td></tr>
+<tr><td>IMUX.IO2.T</td><td>IO2.T</td></tr>
+<tr><td>IMUX.IO2.O</td><td>IO2.O</td></tr>
+<tr><td>IMUX.IO3.T</td><td>IO3.T</td></tr>
+<tr><td>IMUX.IO3.O</td><td>IO3.O</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-1"><a class="header" href="#bitstream-1">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>xc5200 IO.R bittile 0</caption>
 <thead>
@@ -6328,7 +6782,255 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="iob"><a class="header" href="#iob"><code>IO.B</code></a></h2>
+<h2 id="tile-iob"><a class="header" href="#tile-iob">Tile IO.B</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="muxes-2"><a class="header" href="#muxes-2">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.B muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>IO.M0</td><td>IO.SINGLE.B.E0, IO.SINGLE.B.W0, DBL.V0.S, LONG.H0, OMUX0.BUF</td></tr>
+<tr><td>IO.M1</td><td>SINGLE.N1, IO.SINGLE.B.E1, IO.SINGLE.B.W1, LONG.H1, OMUX1.BUF</td></tr>
+<tr><td>IO.M2</td><td>SINGLE.N2, IO.SINGLE.B.E2, IO.SINGLE.B.W2, LONG.H2, OMUX2.BUF</td></tr>
+<tr><td>IO.M3</td><td>SINGLE.N3, IO.SINGLE.B.E3, IO.SINGLE.B.W3, LONG.H3, OMUX3.BUF</td></tr>
+<tr><td>IO.M4</td><td>SINGLE.N4, IO.SINGLE.B.E4, IO.SINGLE.B.W4, LONG.H4, OMUX1.BUF</td></tr>
+<tr><td>IO.M5</td><td>SINGLE.N5, IO.SINGLE.B.E5, IO.SINGLE.B.W5, LONG.H5, OMUX2.BUF</td></tr>
+<tr><td>IO.M6</td><td>IO.SINGLE.B.E6, IO.SINGLE.B.W6, DBL.V6.S, LONG.H6, OMUX3.BUF</td></tr>
+<tr><td>IO.M7</td><td>SINGLE.N7, IO.SINGLE.B.E7, IO.SINGLE.B.W7, LONG.H7, OMUX0.BUF</td></tr>
+<tr><td>IO.M8</td><td>SINGLE.N8, IO.SINGLE.B.E0, IO.SINGLE.B.W1, LONG.V0, OMUX2.BUF</td></tr>
+<tr><td>IO.M9</td><td>SINGLE.N9, IO.SINGLE.B.E1, IO.SINGLE.B.W2, LONG.V1, OMUX3.BUF</td></tr>
+<tr><td>IO.M10</td><td>SINGLE.N10, IO.SINGLE.B.E2, IO.SINGLE.B.W3, LONG.V2, OMUX0.BUF</td></tr>
+<tr><td>IO.M11</td><td>SINGLE.N11, IO.SINGLE.B.E3, IO.SINGLE.B.W4, LONG.V3, OMUX1.BUF</td></tr>
+<tr><td>IO.M12</td><td>IO.SINGLE.B.E4, IO.SINGLE.B.W5, DBL.V0.M, LONG.V4, OMUX3.BUF</td></tr>
+<tr><td>IO.M13</td><td>IO.SINGLE.B.E5, IO.SINGLE.B.W6, DBL.V6.M, LONG.V5, OMUX0.BUF</td></tr>
+<tr><td>IO.M14</td><td>IO.SINGLE.B.E6, IO.SINGLE.B.W7, LONG.V6, OMUX1.BUF</td></tr>
+<tr><td>IO.M15</td><td>IO.SINGLE.B.W0, IO.SINGLE.B.E7, LONG.V7, OMUX2.BUF</td></tr>
+<tr><td>SINGLE.N1</td><td>IO.M1</td></tr>
+<tr><td>SINGLE.N2</td><td>IO.M2</td></tr>
+<tr><td>SINGLE.N3</td><td>IO.M3</td></tr>
+<tr><td>SINGLE.N4</td><td>IO.M4</td></tr>
+<tr><td>SINGLE.N5</td><td>IO.M5</td></tr>
+<tr><td>SINGLE.N7</td><td>IO.M7</td></tr>
+<tr><td>SINGLE.N8</td><td>IO.M8</td></tr>
+<tr><td>SINGLE.N9</td><td>IO.M9</td></tr>
+<tr><td>SINGLE.N10</td><td>IO.M10</td></tr>
+<tr><td>SINGLE.N11</td><td>IO.M11</td></tr>
+<tr><td>IO.SINGLE.B.E0</td><td>IO.M0, IO.M8</td></tr>
+<tr><td>IO.SINGLE.B.W0</td><td>IO.M0, IO.M15</td></tr>
+<tr><td>IO.SINGLE.B.E1</td><td>IO.M1, IO.M9</td></tr>
+<tr><td>IO.SINGLE.B.W1</td><td>IO.M1, IO.M8</td></tr>
+<tr><td>IO.SINGLE.B.E2</td><td>IO.M2, IO.M10</td></tr>
+<tr><td>IO.SINGLE.B.W2</td><td>IO.M2, IO.M9</td></tr>
+<tr><td>IO.SINGLE.B.E3</td><td>IO.M3, IO.M11</td></tr>
+<tr><td>IO.SINGLE.B.W3</td><td>IO.M3, IO.M10</td></tr>
+<tr><td>IO.SINGLE.B.E4</td><td>IO.M4, IO.M12</td></tr>
+<tr><td>IO.SINGLE.B.W4</td><td>IO.M4, IO.M11</td></tr>
+<tr><td>IO.SINGLE.B.E5</td><td>IO.M5, IO.M13</td></tr>
+<tr><td>IO.SINGLE.B.W5</td><td>IO.M5, IO.M12</td></tr>
+<tr><td>IO.SINGLE.B.E6</td><td>IO.M6, IO.M14</td></tr>
+<tr><td>IO.SINGLE.B.W6</td><td>IO.M6, IO.M13</td></tr>
+<tr><td>IO.SINGLE.B.E7</td><td>IO.M7, IO.M15</td></tr>
+<tr><td>IO.SINGLE.B.W7</td><td>IO.M7, IO.M14</td></tr>
+<tr><td>DBL.V0.M</td><td>IO.M12</td></tr>
+<tr><td>DBL.V0.S</td><td>IO.M0</td></tr>
+<tr><td>DBL.V6.M</td><td>IO.M13</td></tr>
+<tr><td>DBL.V6.S</td><td>IO.M6</td></tr>
+<tr><td>LONG.H0</td><td>OUT.TBUF0</td></tr>
+<tr><td>LONG.H1</td><td>OUT.TBUF1</td></tr>
+<tr><td>LONG.H2</td><td>OUT.TBUF2</td></tr>
+<tr><td>LONG.H3</td><td>OUT.TBUF3</td></tr>
+<tr><td>LONG.H4</td><td>OUT.TBUF0</td></tr>
+<tr><td>LONG.H5</td><td>OUT.TBUF1</td></tr>
+<tr><td>LONG.H6</td><td>OUT.TBUF2</td></tr>
+<tr><td>LONG.H7</td><td>OUT.TBUF3</td></tr>
+<tr><td>LONG.V0</td><td>OUT.TBUF0</td></tr>
+<tr><td>LONG.V1</td><td>OUT.TBUF1</td></tr>
+<tr><td>LONG.V2</td><td>OUT.TBUF2</td></tr>
+<tr><td>LONG.V3</td><td>OUT.TBUF3</td></tr>
+<tr><td>LONG.V4</td><td>OUT.TBUF0</td></tr>
+<tr><td>LONG.V5</td><td>OUT.TBUF1</td></tr>
+<tr><td>LONG.V6</td><td>OUT.TBUF2</td></tr>
+<tr><td>LONG.V7</td><td>OUT.TBUF3</td></tr>
+<tr><td>OMUX0</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M12.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OUT.IO0.I, OUT.IO1.I, OUT.IO2.I, OUT.IO3.I</td></tr>
+<tr><td>OMUX1</td><td>GND, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M8.BUF, IO.M9.BUF, IO.M14.BUF, IO.M15.BUF, OUT.IO0.I, OUT.IO1.I, OUT.IO2.I, OUT.IO3.I</td></tr>
+<tr><td>OMUX2</td><td>GND, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M8.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, OUT.IO0.I, OUT.IO1.I, OUT.IO2.I, OUT.IO3.I</td></tr>
+<tr><td>OMUX3</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M6.BUF, IO.M7.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, IO.M13.BUF, OUT.IO0.I, OUT.IO1.I, OUT.IO2.I, OUT.IO3.I</td></tr>
+<tr><td>IMUX.TS</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M10.BUF, IO.M11.BUF, IO.M14.BUF, IO.M15.BUF</td></tr>
+<tr><td>IMUX.GIN</td><td>GND, IO.M6.BUF, IO.M7.BUF, IO.M12.BUF, IO.M13.BUF, GLOBAL.BR</td></tr>
+<tr><td>IMUX.IO0.T</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, OMUX1.BUF.S</td></tr>
+<tr><td>IMUX.IO0.O</td><td>GND, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M8.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OMUX0.BUF.S</td></tr>
+<tr><td>IMUX.IO1.T</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, OMUX2.BUF.S</td></tr>
+<tr><td>IMUX.IO1.O</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M6.BUF, IO.M7.BUF, IO.M8.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OMUX1.BUF.S</td></tr>
+<tr><td>IMUX.IO2.T</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OMUX3.BUF.S</td></tr>
+<tr><td>IMUX.IO2.O</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M8.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OMUX2.BUF.S</td></tr>
+<tr><td>IMUX.IO3.T</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M8.BUF, IO.M14.BUF, IO.M15.BUF, OMUX0.BUF.S</td></tr>
+<tr><td>IMUX.IO3.O</td><td>GND, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M8.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OMUX3.BUF.S</td></tr>
+<tr><td>IMUX.BOT.CIN</td><td>IO.M14</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-tbuf0-2"><a class="header" href="#bel-tbuf0-2">Bel TBUF0</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.B bel TBUF0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>OMUX0.BUF</td></tr>
+<tr><td>O</td><td>output</td><td>OUT.TBUF0</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.TS</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-tbuf1-2"><a class="header" href="#bel-tbuf1-2">Bel TBUF1</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.B bel TBUF1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>OMUX1.BUF</td></tr>
+<tr><td>O</td><td>output</td><td>OUT.TBUF1</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.TS</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-tbuf2-2"><a class="header" href="#bel-tbuf2-2">Bel TBUF2</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.B bel TBUF2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>OMUX2.BUF</td></tr>
+<tr><td>O</td><td>output</td><td>OUT.TBUF2</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.TS</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-tbuf3-2"><a class="header" href="#bel-tbuf3-2">Bel TBUF3</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.B bel TBUF3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>OMUX3.BUF</td></tr>
+<tr><td>O</td><td>output</td><td>OUT.TBUF3</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.TS</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-io0-2"><a class="header" href="#bel-io0-2">Bel IO0</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.B bel IO0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>output</td><td>OUT.IO0.I</td></tr>
+<tr><td>O</td><td>input</td><td>IMUX.IO0.O</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.IO0.T</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-io1-2"><a class="header" href="#bel-io1-2">Bel IO1</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.B bel IO1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>output</td><td>OUT.IO1.I</td></tr>
+<tr><td>O</td><td>input</td><td>IMUX.IO1.O</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.IO1.T</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-io2-2"><a class="header" href="#bel-io2-2">Bel IO2</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.B bel IO2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>output</td><td>OUT.IO2.I</td></tr>
+<tr><td>O</td><td>input</td><td>IMUX.IO2.O</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.IO2.T</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-io3-2"><a class="header" href="#bel-io3-2">Bel IO3</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.B bel IO3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>output</td><td>OUT.IO3.I</td></tr>
+<tr><td>O</td><td>input</td><td>IMUX.IO3.O</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.IO3.T</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufr-2"><a class="header" href="#bel-bufr-2">Bel BUFR</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.B bel BUFR</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>IN</td><td>input</td><td>IMUX.GIN</td></tr>
+<tr><td>OUT</td><td>output</td><td>GLOBAL.B</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-scantest"><a class="header" href="#bel-scantest">Bel SCANTEST</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.B bel SCANTEST</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-cin"><a class="header" href="#bel-cin">Bel CIN</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.B bel CIN</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>IN</td><td>input</td><td>IMUX.BOT.CIN</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-2"><a class="header" href="#bel-wires-2">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.B bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>GLOBAL.B</td><td>BUFR.OUT</td></tr>
+<tr><td>OMUX0.BUF</td><td>TBUF0.I</td></tr>
+<tr><td>OMUX1.BUF</td><td>TBUF1.I</td></tr>
+<tr><td>OMUX2.BUF</td><td>TBUF2.I</td></tr>
+<tr><td>OMUX3.BUF</td><td>TBUF3.I</td></tr>
+<tr><td>OUT.TBUF0</td><td>TBUF0.O</td></tr>
+<tr><td>OUT.TBUF1</td><td>TBUF1.O</td></tr>
+<tr><td>OUT.TBUF2</td><td>TBUF2.O</td></tr>
+<tr><td>OUT.TBUF3</td><td>TBUF3.O</td></tr>
+<tr><td>OUT.IO0.I</td><td>IO0.I</td></tr>
+<tr><td>OUT.IO1.I</td><td>IO1.I</td></tr>
+<tr><td>OUT.IO2.I</td><td>IO2.I</td></tr>
+<tr><td>OUT.IO3.I</td><td>IO3.I</td></tr>
+<tr><td>IMUX.TS</td><td>TBUF0.T, TBUF1.T, TBUF2.T, TBUF3.T</td></tr>
+<tr><td>IMUX.GIN</td><td>BUFR.IN</td></tr>
+<tr><td>IMUX.IO0.T</td><td>IO0.T</td></tr>
+<tr><td>IMUX.IO0.O</td><td>IO0.O</td></tr>
+<tr><td>IMUX.IO1.T</td><td>IO1.T</td></tr>
+<tr><td>IMUX.IO1.O</td><td>IO1.O</td></tr>
+<tr><td>IMUX.IO2.T</td><td>IO2.T</td></tr>
+<tr><td>IMUX.IO2.O</td><td>IO2.O</td></tr>
+<tr><td>IMUX.IO3.T</td><td>IO3.T</td></tr>
+<tr><td>IMUX.IO3.O</td><td>IO3.O</td></tr>
+<tr><td>IMUX.BOT.CIN</td><td>CIN.IN</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-2"><a class="header" href="#bitstream-2">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>xc5200 IO.B bittile 0</caption>
 <thead>
@@ -9512,7 +10214,245 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
-<h2 id="iot"><a class="header" href="#iot"><code>IO.T</code></a></h2>
+<h2 id="tile-iot"><a class="header" href="#tile-iot">Tile IO.T</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="muxes-3"><a class="header" href="#muxes-3">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.T muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>IO.M0</td><td>IO.SINGLE.T.W0, IO.SINGLE.T.E0, DBL.V0.N, LONG.H0, OMUX0.BUF</td></tr>
+<tr><td>IO.M1</td><td>SINGLE.S1, IO.SINGLE.T.W1, IO.SINGLE.T.E1, LONG.H1, OMUX1.BUF</td></tr>
+<tr><td>IO.M2</td><td>SINGLE.S2, IO.SINGLE.T.W2, IO.SINGLE.T.E2, LONG.H2, OMUX2.BUF</td></tr>
+<tr><td>IO.M3</td><td>SINGLE.S3, IO.SINGLE.T.W3, IO.SINGLE.T.E3, LONG.H3, OMUX3.BUF</td></tr>
+<tr><td>IO.M4</td><td>SINGLE.S4, IO.SINGLE.T.W4, IO.SINGLE.T.E4, LONG.H4, OMUX1.BUF</td></tr>
+<tr><td>IO.M5</td><td>SINGLE.S5, IO.SINGLE.T.W5, IO.SINGLE.T.E5, LONG.H5, OMUX2.BUF</td></tr>
+<tr><td>IO.M6</td><td>IO.SINGLE.T.W6, IO.SINGLE.T.E6, DBL.V6.N, LONG.H6, OMUX3.BUF</td></tr>
+<tr><td>IO.M7</td><td>SINGLE.S7, IO.SINGLE.T.W7, IO.SINGLE.T.E7, LONG.H7, OMUX0.BUF</td></tr>
+<tr><td>IO.M8</td><td>SINGLE.S8, IO.SINGLE.T.E0, IO.SINGLE.T.W1, LONG.V0, OMUX2.BUF</td></tr>
+<tr><td>IO.M9</td><td>SINGLE.S9, IO.SINGLE.T.E1, IO.SINGLE.T.W2, LONG.V1, OMUX3.BUF</td></tr>
+<tr><td>IO.M10</td><td>SINGLE.S10, IO.SINGLE.T.E2, IO.SINGLE.T.W3, LONG.V2, OMUX0.BUF</td></tr>
+<tr><td>IO.M11</td><td>SINGLE.S11, IO.SINGLE.T.E3, IO.SINGLE.T.W4, LONG.V3, OMUX1.BUF</td></tr>
+<tr><td>IO.M12</td><td>IO.SINGLE.T.E4, IO.SINGLE.T.W5, DBL.V0.M, LONG.V4, OMUX3.BUF</td></tr>
+<tr><td>IO.M13</td><td>IO.SINGLE.T.E5, IO.SINGLE.T.W6, DBL.V6.M, LONG.V5, OMUX0.BUF</td></tr>
+<tr><td>IO.M14</td><td>IO.SINGLE.T.E6, IO.SINGLE.T.W7, LONG.V6, OMUX1.BUF, OUT.TOP.COUT</td></tr>
+<tr><td>IO.M15</td><td>IO.SINGLE.T.W0, IO.SINGLE.T.E7, LONG.V7, OMUX2.BUF</td></tr>
+<tr><td>SINGLE.S1</td><td>IO.M1</td></tr>
+<tr><td>SINGLE.S2</td><td>IO.M2</td></tr>
+<tr><td>SINGLE.S3</td><td>IO.M3</td></tr>
+<tr><td>SINGLE.S4</td><td>IO.M4</td></tr>
+<tr><td>SINGLE.S5</td><td>IO.M5</td></tr>
+<tr><td>SINGLE.S7</td><td>IO.M7</td></tr>
+<tr><td>SINGLE.S8</td><td>IO.M8</td></tr>
+<tr><td>SINGLE.S9</td><td>IO.M9</td></tr>
+<tr><td>SINGLE.S10</td><td>IO.M10</td></tr>
+<tr><td>SINGLE.S11</td><td>IO.M11</td></tr>
+<tr><td>IO.SINGLE.T.W0</td><td>IO.M0, IO.M15</td></tr>
+<tr><td>IO.SINGLE.T.E0</td><td>IO.M0, IO.M8</td></tr>
+<tr><td>IO.SINGLE.T.W1</td><td>IO.M1, IO.M8</td></tr>
+<tr><td>IO.SINGLE.T.E1</td><td>IO.M1, IO.M9</td></tr>
+<tr><td>IO.SINGLE.T.W2</td><td>IO.M2, IO.M9</td></tr>
+<tr><td>IO.SINGLE.T.E2</td><td>IO.M2, IO.M10</td></tr>
+<tr><td>IO.SINGLE.T.W3</td><td>IO.M3, IO.M10</td></tr>
+<tr><td>IO.SINGLE.T.E3</td><td>IO.M3, IO.M11</td></tr>
+<tr><td>IO.SINGLE.T.W4</td><td>IO.M4, IO.M11</td></tr>
+<tr><td>IO.SINGLE.T.E4</td><td>IO.M4, IO.M12</td></tr>
+<tr><td>IO.SINGLE.T.W5</td><td>IO.M5, IO.M12</td></tr>
+<tr><td>IO.SINGLE.T.E5</td><td>IO.M5, IO.M13</td></tr>
+<tr><td>IO.SINGLE.T.W6</td><td>IO.M6, IO.M13</td></tr>
+<tr><td>IO.SINGLE.T.E6</td><td>IO.M6, IO.M14</td></tr>
+<tr><td>IO.SINGLE.T.W7</td><td>IO.M7, IO.M14</td></tr>
+<tr><td>IO.SINGLE.T.E7</td><td>IO.M7, IO.M15</td></tr>
+<tr><td>DBL.V0.M</td><td>IO.M12</td></tr>
+<tr><td>DBL.V0.N</td><td>IO.M0</td></tr>
+<tr><td>DBL.V6.M</td><td>IO.M13</td></tr>
+<tr><td>DBL.V6.N</td><td>IO.M6</td></tr>
+<tr><td>LONG.H0</td><td>OUT.TBUF0</td></tr>
+<tr><td>LONG.H1</td><td>OUT.TBUF1</td></tr>
+<tr><td>LONG.H2</td><td>OUT.TBUF2</td></tr>
+<tr><td>LONG.H3</td><td>OUT.TBUF3</td></tr>
+<tr><td>LONG.H4</td><td>OUT.TBUF0</td></tr>
+<tr><td>LONG.H5</td><td>OUT.TBUF1</td></tr>
+<tr><td>LONG.H6</td><td>OUT.TBUF2</td></tr>
+<tr><td>LONG.H7</td><td>OUT.TBUF3</td></tr>
+<tr><td>LONG.V0</td><td>OUT.TBUF0</td></tr>
+<tr><td>LONG.V1</td><td>OUT.TBUF1</td></tr>
+<tr><td>LONG.V2</td><td>OUT.TBUF2</td></tr>
+<tr><td>LONG.V3</td><td>OUT.TBUF3</td></tr>
+<tr><td>LONG.V4</td><td>OUT.TBUF0</td></tr>
+<tr><td>LONG.V5</td><td>OUT.TBUF1</td></tr>
+<tr><td>LONG.V6</td><td>OUT.TBUF2</td></tr>
+<tr><td>LONG.V7</td><td>OUT.TBUF3</td></tr>
+<tr><td>OMUX0</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M12.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OUT.IO0.I, OUT.IO1.I, OUT.IO2.I, OUT.IO3.I</td></tr>
+<tr><td>OMUX1</td><td>GND, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M8.BUF, IO.M9.BUF, IO.M14.BUF, IO.M15.BUF, OUT.IO0.I, OUT.IO1.I, OUT.IO2.I, OUT.IO3.I</td></tr>
+<tr><td>OMUX2</td><td>GND, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M8.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, OUT.IO0.I, OUT.IO1.I, OUT.IO2.I, OUT.IO3.I</td></tr>
+<tr><td>OMUX3</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M6.BUF, IO.M7.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, IO.M13.BUF, OUT.IO0.I, OUT.IO1.I, OUT.IO2.I, OUT.IO3.I</td></tr>
+<tr><td>IMUX.TS</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M10.BUF, IO.M11.BUF, IO.M14.BUF, IO.M15.BUF</td></tr>
+<tr><td>IMUX.GIN</td><td>GND, IO.M6.BUF, IO.M7.BUF, IO.M12.BUF, IO.M13.BUF, GLOBAL.TL</td></tr>
+<tr><td>IMUX.IO0.T</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, OMUX1.BUF.N</td></tr>
+<tr><td>IMUX.IO0.O</td><td>GND, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M8.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OMUX0.BUF.N</td></tr>
+<tr><td>IMUX.IO1.T</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, OMUX2.BUF.N</td></tr>
+<tr><td>IMUX.IO1.O</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M6.BUF, IO.M7.BUF, IO.M8.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OMUX1.BUF.N</td></tr>
+<tr><td>IMUX.IO2.T</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OMUX3.BUF.N</td></tr>
+<tr><td>IMUX.IO2.O</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M8.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OMUX2.BUF.N</td></tr>
+<tr><td>IMUX.IO3.T</td><td>GND, IO.M0.BUF, IO.M1.BUF, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M6.BUF, IO.M7.BUF, IO.M8.BUF, IO.M14.BUF, IO.M15.BUF, OMUX0.BUF.N</td></tr>
+<tr><td>IMUX.IO3.O</td><td>GND, IO.M2.BUF, IO.M3.BUF, IO.M4.BUF, IO.M5.BUF, IO.M8.BUF, IO.M9.BUF, IO.M10.BUF, IO.M11.BUF, IO.M12.BUF, IO.M13.BUF, IO.M14.BUF, IO.M15.BUF, OMUX3.BUF.N</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-tbuf0-3"><a class="header" href="#bel-tbuf0-3">Bel TBUF0</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.T bel TBUF0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>OMUX0.BUF</td></tr>
+<tr><td>O</td><td>output</td><td>OUT.TBUF0</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.TS</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-tbuf1-3"><a class="header" href="#bel-tbuf1-3">Bel TBUF1</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.T bel TBUF1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>OMUX1.BUF</td></tr>
+<tr><td>O</td><td>output</td><td>OUT.TBUF1</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.TS</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-tbuf2-3"><a class="header" href="#bel-tbuf2-3">Bel TBUF2</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.T bel TBUF2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>OMUX2.BUF</td></tr>
+<tr><td>O</td><td>output</td><td>OUT.TBUF2</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.TS</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-tbuf3-3"><a class="header" href="#bel-tbuf3-3">Bel TBUF3</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.T bel TBUF3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>input</td><td>OMUX3.BUF</td></tr>
+<tr><td>O</td><td>output</td><td>OUT.TBUF3</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.TS</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-io0-3"><a class="header" href="#bel-io0-3">Bel IO0</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.T bel IO0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>output</td><td>OUT.IO0.I</td></tr>
+<tr><td>O</td><td>input</td><td>IMUX.IO0.O</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.IO0.T</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-io1-3"><a class="header" href="#bel-io1-3">Bel IO1</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.T bel IO1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>output</td><td>OUT.IO1.I</td></tr>
+<tr><td>O</td><td>input</td><td>IMUX.IO1.O</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.IO1.T</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-io2-3"><a class="header" href="#bel-io2-3">Bel IO2</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.T bel IO2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>output</td><td>OUT.IO2.I</td></tr>
+<tr><td>O</td><td>input</td><td>IMUX.IO2.O</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.IO2.T</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-io3-3"><a class="header" href="#bel-io3-3">Bel IO3</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.T bel IO3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>output</td><td>OUT.IO3.I</td></tr>
+<tr><td>O</td><td>input</td><td>IMUX.IO3.O</td></tr>
+<tr><td>T</td><td>input</td><td>IMUX.IO3.T</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufr-3"><a class="header" href="#bel-bufr-3">Bel BUFR</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.T bel BUFR</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>IN</td><td>input</td><td>IMUX.GIN</td></tr>
+<tr><td>OUT</td><td>output</td><td>GLOBAL.T</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-cout"><a class="header" href="#bel-cout">Bel COUT</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.T bel COUT</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>OUT</td><td>output</td><td>OUT.TOP.COUT</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-3"><a class="header" href="#bel-wires-3">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>xc5200 IO.T bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>GLOBAL.T</td><td>BUFR.OUT</td></tr>
+<tr><td>OMUX0.BUF</td><td>TBUF0.I</td></tr>
+<tr><td>OMUX1.BUF</td><td>TBUF1.I</td></tr>
+<tr><td>OMUX2.BUF</td><td>TBUF2.I</td></tr>
+<tr><td>OMUX3.BUF</td><td>TBUF3.I</td></tr>
+<tr><td>OUT.TBUF0</td><td>TBUF0.O</td></tr>
+<tr><td>OUT.TBUF1</td><td>TBUF1.O</td></tr>
+<tr><td>OUT.TBUF2</td><td>TBUF2.O</td></tr>
+<tr><td>OUT.TBUF3</td><td>TBUF3.O</td></tr>
+<tr><td>OUT.IO0.I</td><td>IO0.I</td></tr>
+<tr><td>OUT.IO1.I</td><td>IO1.I</td></tr>
+<tr><td>OUT.IO2.I</td><td>IO2.I</td></tr>
+<tr><td>OUT.IO3.I</td><td>IO3.I</td></tr>
+<tr><td>OUT.TOP.COUT</td><td>COUT.OUT</td></tr>
+<tr><td>IMUX.TS</td><td>TBUF0.T, TBUF1.T, TBUF2.T, TBUF3.T</td></tr>
+<tr><td>IMUX.GIN</td><td>BUFR.IN</td></tr>
+<tr><td>IMUX.IO0.T</td><td>IO0.T</td></tr>
+<tr><td>IMUX.IO0.O</td><td>IO0.O</td></tr>
+<tr><td>IMUX.IO1.T</td><td>IO1.T</td></tr>
+<tr><td>IMUX.IO1.O</td><td>IO1.O</td></tr>
+<tr><td>IMUX.IO2.T</td><td>IO2.T</td></tr>
+<tr><td>IMUX.IO2.O</td><td>IO2.O</td></tr>
+<tr><td>IMUX.IO3.T</td><td>IO3.T</td></tr>
+<tr><td>IMUX.IO3.O</td><td>IO3.O</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-3"><a class="header" href="#bitstream-3">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>xc5200 IO.T bittile 0</caption>
 <thead>

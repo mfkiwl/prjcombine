@@ -254,7 +254,222 @@
 <li><code>VP7/VN7</code>: left I/O column, row <code>r + 7</code></li>
 </ul>
 <p>Row <code>r + 4</code> is not used as <code>SYSMON</code> input — the "analog function" of that pin is considered to be VREF instead (they are controlled by the same bit).</p>
-<h2 id="bitstream"><a class="header" href="#bitstream">Bitstream</a></h2>
+<h2 id="tile-io"><a class="header" href="#tile-io">Tile IO</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="bel-ilogic0"><a class="header" href="#bel-ilogic0">Bel ILOGIC0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 IO bel ILOGIC0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>BITSLIP</td><td>input</td><td>IMUX.IMUX21</td></tr>
+<tr><td>CE1</td><td>input</td><td>IMUX.IMUX6</td></tr>
+<tr><td>CE2</td><td>input</td><td>IMUX.IMUX14</td></tr>
+<tr><td>CLKDIV</td><td>input</td><td>IMUX.CLK0</td></tr>
+<tr><td>CLKMUX</td><td>output</td><td>TEST1</td></tr>
+<tr><td>CLKMUX_INT</td><td>input</td><td>IMUX.BYP3</td></tr>
+<tr><td>DLYCE</td><td>input</td><td>IMUX.IMUX0</td></tr>
+<tr><td>DLYINC</td><td>input</td><td>IMUX.IMUX29</td></tr>
+<tr><td>DLYRST</td><td>input</td><td>IMUX.IMUX4</td></tr>
+<tr><td>O</td><td>output</td><td>OUT.BEST2</td></tr>
+<tr><td>Q1</td><td>output</td><td>OUT.BEST4</td></tr>
+<tr><td>Q2</td><td>output</td><td>OUT.BEST3</td></tr>
+<tr><td>Q3</td><td>output</td><td>OUT.BEST5</td></tr>
+<tr><td>Q4</td><td>output</td><td>OUT.SEC0</td></tr>
+<tr><td>Q5</td><td>output</td><td>OUT.SEC4</td></tr>
+<tr><td>Q6</td><td>output</td><td>OUT.SEC5</td></tr>
+<tr><td>REV</td><td>input</td><td>IMUX.SR2</td></tr>
+<tr><td>SR</td><td>input</td><td>IMUX.SR0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-ilogic1"><a class="header" href="#bel-ilogic1">Bel ILOGIC1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 IO bel ILOGIC1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>BITSLIP</td><td>input</td><td>IMUX.IMUX17</td></tr>
+<tr><td>CE1</td><td>input</td><td>IMUX.IMUX2</td></tr>
+<tr><td>CE2</td><td>input</td><td>IMUX.IMUX10</td></tr>
+<tr><td>CLKDIV</td><td>input</td><td>IMUX.CLK2</td></tr>
+<tr><td>CLKMUX</td><td>output</td><td>TEST3</td></tr>
+<tr><td>CLKMUX_INT</td><td>input</td><td>IMUX.BYP1</td></tr>
+<tr><td>DLYCE</td><td>input</td><td>IMUX.IMUX7</td></tr>
+<tr><td>DLYINC</td><td>input</td><td>IMUX.IMUX3</td></tr>
+<tr><td>DLYRST</td><td>input</td><td>IMUX.IMUX11</td></tr>
+<tr><td>O</td><td>output</td><td>OUT.BEST0</td></tr>
+<tr><td>Q1</td><td>output</td><td>OUT.BEST6</td></tr>
+<tr><td>Q2</td><td>output</td><td>OUT.BEST1</td></tr>
+<tr><td>Q3</td><td>output</td><td>OUT.BEST7</td></tr>
+<tr><td>Q4</td><td>output</td><td>OUT.SEC2</td></tr>
+<tr><td>Q5</td><td>output</td><td>OUT.SEC7</td></tr>
+<tr><td>Q6</td><td>output</td><td>OUT.SEC6</td></tr>
+<tr><td>REV</td><td>input</td><td>IMUX.SR3</td></tr>
+<tr><td>SR</td><td>input</td><td>IMUX.SR1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-ologic0"><a class="header" href="#bel-ologic0">Bel OLOGIC0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 IO bel OLOGIC0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLKDIV</td><td>input</td><td>IMUX.CLK1</td></tr>
+<tr><td>CLKMUX</td><td>output</td><td>TEST0</td></tr>
+<tr><td>CLKMUX_INT</td><td>input</td><td>IMUX.BYP6</td></tr>
+<tr><td>D1</td><td>input</td><td>IMUX.IMUX28</td></tr>
+<tr><td>D2</td><td>input</td><td>IMUX.IMUX24</td></tr>
+<tr><td>D3</td><td>input</td><td>IMUX.IMUX20</td></tr>
+<tr><td>D4</td><td>input</td><td>IMUX.IMUX16</td></tr>
+<tr><td>D5</td><td>input</td><td>IMUX.IMUX12</td></tr>
+<tr><td>D6</td><td>input</td><td>IMUX.IMUX8</td></tr>
+<tr><td>OCE</td><td>input</td><td>IMUX.CE0</td></tr>
+<tr><td>REV</td><td>input</td><td>IMUX.SR2</td></tr>
+<tr><td>SR</td><td>input</td><td>IMUX.SR0</td></tr>
+<tr><td>T1</td><td>input</td><td>IMUX.IMUX13</td></tr>
+<tr><td>T2</td><td>input</td><td>IMUX.IMUX5</td></tr>
+<tr><td>T3</td><td>input</td><td>IMUX.IMUX30</td></tr>
+<tr><td>T4</td><td>input</td><td>IMUX.IMUX22</td></tr>
+<tr><td>TCE</td><td>input</td><td>IMUX.CE2</td></tr>
+<tr><td>TQ</td><td>output</td><td>OUT.SEC1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-ologic1"><a class="header" href="#bel-ologic1">Bel OLOGIC1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 IO bel OLOGIC1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLKDIV</td><td>input</td><td>IMUX.CLK3</td></tr>
+<tr><td>CLKMUX</td><td>output</td><td>TEST2</td></tr>
+<tr><td>CLKMUX_INT</td><td>input</td><td>IMUX.BYP5</td></tr>
+<tr><td>D1</td><td>input</td><td>IMUX.IMUX25</td></tr>
+<tr><td>D2</td><td>input</td><td>IMUX.IMUX31</td></tr>
+<tr><td>D3</td><td>input</td><td>IMUX.IMUX27</td></tr>
+<tr><td>D4</td><td>input</td><td>IMUX.IMUX23</td></tr>
+<tr><td>D5</td><td>input</td><td>IMUX.IMUX19</td></tr>
+<tr><td>D6</td><td>input</td><td>IMUX.IMUX15</td></tr>
+<tr><td>OCE</td><td>input</td><td>IMUX.CE1</td></tr>
+<tr><td>REV</td><td>input</td><td>IMUX.SR3</td></tr>
+<tr><td>SR</td><td>input</td><td>IMUX.SR1</td></tr>
+<tr><td>T1</td><td>input</td><td>IMUX.IMUX9</td></tr>
+<tr><td>T2</td><td>input</td><td>IMUX.IMUX1</td></tr>
+<tr><td>T3</td><td>input</td><td>IMUX.IMUX26</td></tr>
+<tr><td>T4</td><td>input</td><td>IMUX.IMUX18</td></tr>
+<tr><td>TCE</td><td>input</td><td>IMUX.CE3</td></tr>
+<tr><td>TQ</td><td>output</td><td>OUT.SEC3</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-iob0"><a class="header" href="#bel-iob0">Bel IOB0</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 IO bel IOB0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-iob1"><a class="header" href="#bel-iob1">Bel IOB1</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 IO bel IOB1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-ioi"><a class="header" href="#bel-ioi">Bel IOI</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 IO bel IOI</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-wires"><a class="header" href="#bel-wires">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex4 IO bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>IMUX.SR0</td><td>ILOGIC0.SR, OLOGIC0.SR</td></tr>
+<tr><td>IMUX.SR1</td><td>ILOGIC1.SR, OLOGIC1.SR</td></tr>
+<tr><td>IMUX.SR2</td><td>ILOGIC0.REV, OLOGIC0.REV</td></tr>
+<tr><td>IMUX.SR3</td><td>ILOGIC1.REV, OLOGIC1.REV</td></tr>
+<tr><td>IMUX.CLK0</td><td>ILOGIC0.CLKDIV</td></tr>
+<tr><td>IMUX.CLK1</td><td>OLOGIC0.CLKDIV</td></tr>
+<tr><td>IMUX.CLK2</td><td>ILOGIC1.CLKDIV</td></tr>
+<tr><td>IMUX.CLK3</td><td>OLOGIC1.CLKDIV</td></tr>
+<tr><td>IMUX.CE0</td><td>OLOGIC0.OCE</td></tr>
+<tr><td>IMUX.CE1</td><td>OLOGIC1.OCE</td></tr>
+<tr><td>IMUX.CE2</td><td>OLOGIC0.TCE</td></tr>
+<tr><td>IMUX.CE3</td><td>OLOGIC1.TCE</td></tr>
+<tr><td>IMUX.BYP1</td><td>ILOGIC1.CLKMUX_INT</td></tr>
+<tr><td>IMUX.BYP3</td><td>ILOGIC0.CLKMUX_INT</td></tr>
+<tr><td>IMUX.BYP5</td><td>OLOGIC1.CLKMUX_INT</td></tr>
+<tr><td>IMUX.BYP6</td><td>OLOGIC0.CLKMUX_INT</td></tr>
+<tr><td>IMUX.IMUX0</td><td>ILOGIC0.DLYCE</td></tr>
+<tr><td>IMUX.IMUX1</td><td>OLOGIC1.T2</td></tr>
+<tr><td>IMUX.IMUX2</td><td>ILOGIC1.CE1</td></tr>
+<tr><td>IMUX.IMUX3</td><td>ILOGIC1.DLYINC</td></tr>
+<tr><td>IMUX.IMUX4</td><td>ILOGIC0.DLYRST</td></tr>
+<tr><td>IMUX.IMUX5</td><td>OLOGIC0.T2</td></tr>
+<tr><td>IMUX.IMUX6</td><td>ILOGIC0.CE1</td></tr>
+<tr><td>IMUX.IMUX7</td><td>ILOGIC1.DLYCE</td></tr>
+<tr><td>IMUX.IMUX8</td><td>OLOGIC0.D6</td></tr>
+<tr><td>IMUX.IMUX9</td><td>OLOGIC1.T1</td></tr>
+<tr><td>IMUX.IMUX10</td><td>ILOGIC1.CE2</td></tr>
+<tr><td>IMUX.IMUX11</td><td>ILOGIC1.DLYRST</td></tr>
+<tr><td>IMUX.IMUX12</td><td>OLOGIC0.D5</td></tr>
+<tr><td>IMUX.IMUX13</td><td>OLOGIC0.T1</td></tr>
+<tr><td>IMUX.IMUX14</td><td>ILOGIC0.CE2</td></tr>
+<tr><td>IMUX.IMUX15</td><td>OLOGIC1.D6</td></tr>
+<tr><td>IMUX.IMUX16</td><td>OLOGIC0.D4</td></tr>
+<tr><td>IMUX.IMUX17</td><td>ILOGIC1.BITSLIP</td></tr>
+<tr><td>IMUX.IMUX18</td><td>OLOGIC1.T4</td></tr>
+<tr><td>IMUX.IMUX19</td><td>OLOGIC1.D5</td></tr>
+<tr><td>IMUX.IMUX20</td><td>OLOGIC0.D3</td></tr>
+<tr><td>IMUX.IMUX21</td><td>ILOGIC0.BITSLIP</td></tr>
+<tr><td>IMUX.IMUX22</td><td>OLOGIC0.T4</td></tr>
+<tr><td>IMUX.IMUX23</td><td>OLOGIC1.D4</td></tr>
+<tr><td>IMUX.IMUX24</td><td>OLOGIC0.D2</td></tr>
+<tr><td>IMUX.IMUX25</td><td>OLOGIC1.D1</td></tr>
+<tr><td>IMUX.IMUX26</td><td>OLOGIC1.T3</td></tr>
+<tr><td>IMUX.IMUX27</td><td>OLOGIC1.D3</td></tr>
+<tr><td>IMUX.IMUX28</td><td>OLOGIC0.D1</td></tr>
+<tr><td>IMUX.IMUX29</td><td>ILOGIC0.DLYINC</td></tr>
+<tr><td>IMUX.IMUX30</td><td>OLOGIC0.T3</td></tr>
+<tr><td>IMUX.IMUX31</td><td>OLOGIC1.D2</td></tr>
+<tr><td>OUT.BEST0</td><td>ILOGIC1.O</td></tr>
+<tr><td>OUT.BEST1</td><td>ILOGIC1.Q2</td></tr>
+<tr><td>OUT.BEST2</td><td>ILOGIC0.O</td></tr>
+<tr><td>OUT.BEST3</td><td>ILOGIC0.Q2</td></tr>
+<tr><td>OUT.BEST4</td><td>ILOGIC0.Q1</td></tr>
+<tr><td>OUT.BEST5</td><td>ILOGIC0.Q3</td></tr>
+<tr><td>OUT.BEST6</td><td>ILOGIC1.Q1</td></tr>
+<tr><td>OUT.BEST7</td><td>ILOGIC1.Q3</td></tr>
+<tr><td>OUT.SEC0</td><td>ILOGIC0.Q4</td></tr>
+<tr><td>OUT.SEC1</td><td>OLOGIC0.TQ</td></tr>
+<tr><td>OUT.SEC2</td><td>ILOGIC1.Q4</td></tr>
+<tr><td>OUT.SEC3</td><td>OLOGIC1.TQ</td></tr>
+<tr><td>OUT.SEC4</td><td>ILOGIC0.Q5</td></tr>
+<tr><td>OUT.SEC5</td><td>ILOGIC0.Q6</td></tr>
+<tr><td>OUT.SEC6</td><td>ILOGIC1.Q6</td></tr>
+<tr><td>OUT.SEC7</td><td>ILOGIC1.Q5</td></tr>
+<tr><td>TEST0</td><td>OLOGIC0.CLKMUX</td></tr>
+<tr><td>TEST1</td><td>ILOGIC0.CLKMUX</td></tr>
+<tr><td>TEST2</td><td>OLOGIC1.CLKMUX</td></tr>
+<tr><td>TEST3</td><td>ILOGIC1.CLKMUX</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream"><a class="header" href="#bitstream">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex4 IO bittile 0</caption>
 <thead>

@@ -158,8 +158,111 @@
 <li>tile 1: 1×16 (Spartan 3, 3E) or 2×16 (Spartan 3A) tile located in the primary clock spine column, in the bits corresponding to the low special area (used for bottom <code>IOB</code> tiles and clock rows in normal columns)</li>
 </ul>
 <p>On Spartan 3A devices that have long line splitters, bitstream tile 0 is shared with the <code>LLH.CLKB.S3A</code> tile.</p>
-<h3 id="clkbs3"><a class="header" href="#clkbs3"><code>CLKB.S3</code></a></h3>
+<h2 id="clkbs3"><a class="header" href="#clkbs3"><code>CLKB.S3</code></a></h2>
 <p>This tile is used on Spartan 3.</p>
+<h2 id="tile-clkbs3"><a class="header" href="#tile-clkbs3">Tile CLKB.S3</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="muxes"><a class="header" href="#muxes">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3 muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>OMUX10.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX11.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX12.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX15.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>CLK.IMUX.SEL0</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
+<tr><td>CLK.IMUX.SEL1</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
+<tr><td>CLK.IMUX.SEL2</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
+<tr><td>CLK.IMUX.SEL3</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
+<tr><td>CLK.IMUX.CLK0</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
+<tr><td>CLK.IMUX.CLK1</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
+<tr><td>CLK.IMUX.CLK2</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
+<tr><td>CLK.IMUX.CLK3</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux0"><a class="header" href="#bel-bufgmux0">Bel BUFGMUX0</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3 bel BUFGMUX0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK0</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.0</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux1"><a class="header" href="#bel-bufgmux1">Bel BUFGMUX1</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3 bel BUFGMUX1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK1</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.1</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux2"><a class="header" href="#bel-bufgmux2">Bel BUFGMUX2</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3 bel BUFGMUX2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK2</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.2</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux3"><a class="header" href="#bel-bufgmux3">Bel BUFGMUX3</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3 bel BUFGMUX3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK3</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.3</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL3</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-globalsig_s"><a class="header" href="#bel-globalsig_s">Bel GLOBALSIG_S</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3 bel GLOBALSIG_S</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-wires"><a class="header" href="#bel-wires">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3 bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK.IMUX.SEL0</td><td>BUFGMUX0.S</td></tr>
+<tr><td>CLK.IMUX.SEL1</td><td>BUFGMUX1.S</td></tr>
+<tr><td>CLK.IMUX.SEL2</td><td>BUFGMUX2.S</td></tr>
+<tr><td>CLK.IMUX.SEL3</td><td>BUFGMUX3.S</td></tr>
+<tr><td>CLK.IMUX.CLK0</td><td>BUFGMUX0.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK1</td><td>BUFGMUX1.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK2</td><td>BUFGMUX2.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK3</td><td>BUFGMUX3.CLK</td></tr>
+<tr><td>CLK.OUT.0</td><td>BUFGMUX0.O</td></tr>
+<tr><td>CLK.OUT.1</td><td>BUFGMUX1.O</td></tr>
+<tr><td>CLK.OUT.2</td><td>BUFGMUX2.O</td></tr>
+<tr><td>CLK.OUT.3</td><td>BUFGMUX3.O</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream"><a class="header" href="#bitstream">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>spartan3 CLKB.S3 bittile 0</caption>
 <thead>
@@ -983,8 +1086,111 @@ inverted
 </tr>
 </tbody>
 </table></div>
-<h3 id="clkbs3e"><a class="header" href="#clkbs3e"><code>CLKB.S3E</code></a></h3>
+<h2 id="clkbs3e"><a class="header" href="#clkbs3e"><code>CLKB.S3E</code></a></h2>
 <p>This tile is used on Spartan 3E.</p>
+<h2 id="tile-clkbs3e"><a class="header" href="#tile-clkbs3e">Tile CLKB.S3E</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="muxes-1"><a class="header" href="#muxes-1">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3E muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>OMUX10.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX11.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX12.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX15.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>CLK.IMUX.SEL0</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
+<tr><td>CLK.IMUX.SEL1</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
+<tr><td>CLK.IMUX.SEL2</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
+<tr><td>CLK.IMUX.SEL3</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
+<tr><td>CLK.IMUX.CLK0</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
+<tr><td>CLK.IMUX.CLK1</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
+<tr><td>CLK.IMUX.CLK2</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
+<tr><td>CLK.IMUX.CLK3</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux0-1"><a class="header" href="#bel-bufgmux0-1">Bel BUFGMUX0</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3E bel BUFGMUX0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK0</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.0</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux1-1"><a class="header" href="#bel-bufgmux1-1">Bel BUFGMUX1</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3E bel BUFGMUX1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK1</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.1</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux2-1"><a class="header" href="#bel-bufgmux2-1">Bel BUFGMUX2</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3E bel BUFGMUX2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK2</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.2</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux3-1"><a class="header" href="#bel-bufgmux3-1">Bel BUFGMUX3</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3E bel BUFGMUX3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK3</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.3</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL3</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-globalsig_s-1"><a class="header" href="#bel-globalsig_s-1">Bel GLOBALSIG_S</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3E bel GLOBALSIG_S</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-wires-1"><a class="header" href="#bel-wires-1">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3E bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK.IMUX.SEL0</td><td>BUFGMUX0.S</td></tr>
+<tr><td>CLK.IMUX.SEL1</td><td>BUFGMUX1.S</td></tr>
+<tr><td>CLK.IMUX.SEL2</td><td>BUFGMUX2.S</td></tr>
+<tr><td>CLK.IMUX.SEL3</td><td>BUFGMUX3.S</td></tr>
+<tr><td>CLK.IMUX.CLK0</td><td>BUFGMUX0.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK1</td><td>BUFGMUX1.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK2</td><td>BUFGMUX2.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK3</td><td>BUFGMUX3.CLK</td></tr>
+<tr><td>CLK.OUT.0</td><td>BUFGMUX0.O</td></tr>
+<tr><td>CLK.OUT.1</td><td>BUFGMUX1.O</td></tr>
+<tr><td>CLK.OUT.2</td><td>BUFGMUX2.O</td></tr>
+<tr><td>CLK.OUT.3</td><td>BUFGMUX3.O</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-1"><a class="header" href="#bitstream-1">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>spartan3 CLKB.S3E bittile 0</caption>
 <thead>
@@ -1843,8 +2049,111 @@ inverted
 </tr>
 </tbody>
 </table></div>
-<h3 id="clkbs3a"><a class="header" href="#clkbs3a"><code>CLKB.S3A</code></a></h3>
+<h2 id="clkbs3a"><a class="header" href="#clkbs3a"><code>CLKB.S3A</code></a></h2>
 <p>This tile is used on Spartan 3A and 3A DSP.</p>
+<h2 id="tile-clkbs3a"><a class="header" href="#tile-clkbs3a">Tile CLKB.S3A</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="muxes-2"><a class="header" href="#muxes-2">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3A muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>OMUX10.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX11.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX12.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX15.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>CLK.IMUX.SEL0</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
+<tr><td>CLK.IMUX.SEL1</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
+<tr><td>CLK.IMUX.SEL2</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
+<tr><td>CLK.IMUX.SEL3</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
+<tr><td>CLK.IMUX.CLK0</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
+<tr><td>CLK.IMUX.CLK1</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
+<tr><td>CLK.IMUX.CLK2</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
+<tr><td>CLK.IMUX.CLK3</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux0-2"><a class="header" href="#bel-bufgmux0-2">Bel BUFGMUX0</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3A bel BUFGMUX0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK0</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.0</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux1-2"><a class="header" href="#bel-bufgmux1-2">Bel BUFGMUX1</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3A bel BUFGMUX1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK1</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.1</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux2-2"><a class="header" href="#bel-bufgmux2-2">Bel BUFGMUX2</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3A bel BUFGMUX2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK2</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.2</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux3-2"><a class="header" href="#bel-bufgmux3-2">Bel BUFGMUX3</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3A bel BUFGMUX3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK3</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.3</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL3</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-globalsig_s-2"><a class="header" href="#bel-globalsig_s-2">Bel GLOBALSIG_S</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3A bel GLOBALSIG_S</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-wires-2"><a class="header" href="#bel-wires-2">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKB.S3A bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK.IMUX.SEL0</td><td>BUFGMUX0.S</td></tr>
+<tr><td>CLK.IMUX.SEL1</td><td>BUFGMUX1.S</td></tr>
+<tr><td>CLK.IMUX.SEL2</td><td>BUFGMUX2.S</td></tr>
+<tr><td>CLK.IMUX.SEL3</td><td>BUFGMUX3.S</td></tr>
+<tr><td>CLK.IMUX.CLK0</td><td>BUFGMUX0.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK1</td><td>BUFGMUX1.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK2</td><td>BUFGMUX2.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK3</td><td>BUFGMUX3.CLK</td></tr>
+<tr><td>CLK.OUT.0</td><td>BUFGMUX0.O</td></tr>
+<tr><td>CLK.OUT.1</td><td>BUFGMUX1.O</td></tr>
+<tr><td>CLK.OUT.2</td><td>BUFGMUX2.O</td></tr>
+<tr><td>CLK.OUT.3</td><td>BUFGMUX3.O</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-2"><a class="header" href="#bitstream-2">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>spartan3 CLKB.S3A bittile 0</caption>
 <thead>
@@ -2687,8 +2996,111 @@ inverted
 <li>tile 1: 1×16 (Spartan 3, 3E) or 2×16 (Spartan 3A) tile located in the primary clock spine column, in the bits corresponding to the high special area (used for top <code>IOB</code> tiles and clock rows in normal columns)</li>
 </ul>
 <p>On Spartan 3A devices that have long line splitters, bitstream tile 0 is shared with the <code>LLH.CLKT.S3A</code> tile.</p>
-<h3 id="clkts3"><a class="header" href="#clkts3"><code>CLKT.S3</code></a></h3>
+<h2 id="clkts3"><a class="header" href="#clkts3"><code>CLKT.S3</code></a></h2>
 <p>This tile is used on Spartan 3.</p>
+<h2 id="tile-clkts3"><a class="header" href="#tile-clkts3">Tile CLKT.S3</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="muxes-3"><a class="header" href="#muxes-3">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3 muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>OMUX0.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX3.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX4.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX5.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>CLK.IMUX.SEL0</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
+<tr><td>CLK.IMUX.SEL1</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
+<tr><td>CLK.IMUX.SEL2</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
+<tr><td>CLK.IMUX.SEL3</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
+<tr><td>CLK.IMUX.CLK0</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
+<tr><td>CLK.IMUX.CLK1</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
+<tr><td>CLK.IMUX.CLK2</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
+<tr><td>CLK.IMUX.CLK3</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux0-3"><a class="header" href="#bel-bufgmux0-3">Bel BUFGMUX0</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3 bel BUFGMUX0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK0</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.0</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux1-3"><a class="header" href="#bel-bufgmux1-3">Bel BUFGMUX1</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3 bel BUFGMUX1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK1</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.1</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux2-3"><a class="header" href="#bel-bufgmux2-3">Bel BUFGMUX2</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3 bel BUFGMUX2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK2</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.2</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux3-3"><a class="header" href="#bel-bufgmux3-3">Bel BUFGMUX3</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3 bel BUFGMUX3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK3</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.3</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL3</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-globalsig_n"><a class="header" href="#bel-globalsig_n">Bel GLOBALSIG_N</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3 bel GLOBALSIG_N</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-wires-3"><a class="header" href="#bel-wires-3">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3 bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK.IMUX.SEL0</td><td>BUFGMUX0.S</td></tr>
+<tr><td>CLK.IMUX.SEL1</td><td>BUFGMUX1.S</td></tr>
+<tr><td>CLK.IMUX.SEL2</td><td>BUFGMUX2.S</td></tr>
+<tr><td>CLK.IMUX.SEL3</td><td>BUFGMUX3.S</td></tr>
+<tr><td>CLK.IMUX.CLK0</td><td>BUFGMUX0.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK1</td><td>BUFGMUX1.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK2</td><td>BUFGMUX2.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK3</td><td>BUFGMUX3.CLK</td></tr>
+<tr><td>CLK.OUT.0</td><td>BUFGMUX0.O</td></tr>
+<tr><td>CLK.OUT.1</td><td>BUFGMUX1.O</td></tr>
+<tr><td>CLK.OUT.2</td><td>BUFGMUX2.O</td></tr>
+<tr><td>CLK.OUT.3</td><td>BUFGMUX3.O</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-3"><a class="header" href="#bitstream-3">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>spartan3 CLKT.S3 bittile 0</caption>
 <thead>
@@ -3494,8 +3906,111 @@ inverted
 </tr>
 </tbody>
 </table></div>
-<h3 id="clkts3e"><a class="header" href="#clkts3e"><code>CLKT.S3E</code></a></h3>
+<h2 id="clkts3e"><a class="header" href="#clkts3e"><code>CLKT.S3E</code></a></h2>
 <p>This tile is used on Spartan 3E.</p>
+<h2 id="tile-clkts3e"><a class="header" href="#tile-clkts3e">Tile CLKT.S3E</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="muxes-4"><a class="header" href="#muxes-4">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3E muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>OMUX0.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX3.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX4.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX5.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>CLK.IMUX.SEL0</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
+<tr><td>CLK.IMUX.SEL1</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
+<tr><td>CLK.IMUX.SEL2</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
+<tr><td>CLK.IMUX.SEL3</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
+<tr><td>CLK.IMUX.CLK0</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
+<tr><td>CLK.IMUX.CLK1</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
+<tr><td>CLK.IMUX.CLK2</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
+<tr><td>CLK.IMUX.CLK3</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux0-4"><a class="header" href="#bel-bufgmux0-4">Bel BUFGMUX0</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3E bel BUFGMUX0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK0</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.0</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux1-4"><a class="header" href="#bel-bufgmux1-4">Bel BUFGMUX1</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3E bel BUFGMUX1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK1</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.1</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux2-4"><a class="header" href="#bel-bufgmux2-4">Bel BUFGMUX2</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3E bel BUFGMUX2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK2</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.2</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux3-4"><a class="header" href="#bel-bufgmux3-4">Bel BUFGMUX3</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3E bel BUFGMUX3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK3</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.3</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL3</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-globalsig_n-1"><a class="header" href="#bel-globalsig_n-1">Bel GLOBALSIG_N</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3E bel GLOBALSIG_N</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-wires-4"><a class="header" href="#bel-wires-4">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3E bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK.IMUX.SEL0</td><td>BUFGMUX0.S</td></tr>
+<tr><td>CLK.IMUX.SEL1</td><td>BUFGMUX1.S</td></tr>
+<tr><td>CLK.IMUX.SEL2</td><td>BUFGMUX2.S</td></tr>
+<tr><td>CLK.IMUX.SEL3</td><td>BUFGMUX3.S</td></tr>
+<tr><td>CLK.IMUX.CLK0</td><td>BUFGMUX0.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK1</td><td>BUFGMUX1.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK2</td><td>BUFGMUX2.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK3</td><td>BUFGMUX3.CLK</td></tr>
+<tr><td>CLK.OUT.0</td><td>BUFGMUX0.O</td></tr>
+<tr><td>CLK.OUT.1</td><td>BUFGMUX1.O</td></tr>
+<tr><td>CLK.OUT.2</td><td>BUFGMUX2.O</td></tr>
+<tr><td>CLK.OUT.3</td><td>BUFGMUX3.O</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-4"><a class="header" href="#bitstream-4">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>spartan3 CLKT.S3E bittile 0</caption>
 <thead>
@@ -4336,8 +4851,111 @@ inverted
 </tr>
 </tbody>
 </table></div>
-<h3 id="clkts3a"><a class="header" href="#clkts3a"><code>CLKT.S3A</code></a></h3>
+<h2 id="clkts3a"><a class="header" href="#clkts3a"><code>CLKT.S3A</code></a></h2>
 <p>This tile is used on Spartan 3A and 3A DSP.</p>
+<h2 id="tile-clkts3a"><a class="header" href="#tile-clkts3a">Tile CLKT.S3A</a></h2>
+<p>Cells: 1
+IRIs: 0</p>
+<h3 id="muxes-5"><a class="header" href="#muxes-5">Muxes</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3A muxes</caption>
+<thead>
+<tr><th>Destination</th><th>Sources</th></tr>
+</thead>
+<tbody>
+<tr><td>OMUX0.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX3.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX4.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>OMUX5.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
+<tr><td>CLK.IMUX.SEL0</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
+<tr><td>CLK.IMUX.SEL1</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
+<tr><td>CLK.IMUX.SEL2</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
+<tr><td>CLK.IMUX.SEL3</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
+<tr><td>CLK.IMUX.CLK0</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
+<tr><td>CLK.IMUX.CLK1</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
+<tr><td>CLK.IMUX.CLK2</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
+<tr><td>CLK.IMUX.CLK3</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux0-5"><a class="header" href="#bel-bufgmux0-5">Bel BUFGMUX0</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3A bel BUFGMUX0</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK0</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.0</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux1-5"><a class="header" href="#bel-bufgmux1-5">Bel BUFGMUX1</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3A bel BUFGMUX1</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK1</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.1</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux2-5"><a class="header" href="#bel-bufgmux2-5">Bel BUFGMUX2</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3A bel BUFGMUX2</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK2</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.2</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-bufgmux3-5"><a class="header" href="#bel-bufgmux3-5">Bel BUFGMUX3</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3A bel BUFGMUX3</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>CLK.IMUX.CLK3</td></tr>
+<tr><td>O</td><td>output</td><td>CLK.OUT.3</td></tr>
+<tr><td>S</td><td>input</td><td>CLK.IMUX.SEL3</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-globalsig_n-2"><a class="header" href="#bel-globalsig_n-2">Bel GLOBALSIG_N</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3A bel GLOBALSIG_N</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h3 id="bel-wires-5"><a class="header" href="#bel-wires-5">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>spartan3 CLKT.S3A bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK.IMUX.SEL0</td><td>BUFGMUX0.S</td></tr>
+<tr><td>CLK.IMUX.SEL1</td><td>BUFGMUX1.S</td></tr>
+<tr><td>CLK.IMUX.SEL2</td><td>BUFGMUX2.S</td></tr>
+<tr><td>CLK.IMUX.SEL3</td><td>BUFGMUX3.S</td></tr>
+<tr><td>CLK.IMUX.CLK0</td><td>BUFGMUX0.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK1</td><td>BUFGMUX1.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK2</td><td>BUFGMUX2.CLK</td></tr>
+<tr><td>CLK.IMUX.CLK3</td><td>BUFGMUX3.CLK</td></tr>
+<tr><td>CLK.OUT.0</td><td>BUFGMUX0.O</td></tr>
+<tr><td>CLK.OUT.1</td><td>BUFGMUX1.O</td></tr>
+<tr><td>CLK.OUT.2</td><td>BUFGMUX2.O</td></tr>
+<tr><td>CLK.OUT.3</td><td>BUFGMUX3.O</td></tr>
+</tbody>
+</table></div>
+<h3 id="bitstream-5"><a class="header" href="#bitstream-5">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>spartan3 CLKT.S3A bittile 0</caption>
 <thead>
