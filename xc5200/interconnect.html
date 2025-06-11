@@ -150,38 +150,51 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="general-interconnect"><a class="header" href="#general-interconnect">General interconnect</a></h1>
+<h2 id="tile-slots"><a class="header" href="#tile-slots">Tile slots</a></h2>
+<div class="table-wrapper"><table>
+<caption>xc5200 tile slots</caption>
+<thead>
+<tr><th>Slot</th><th>Tiles</th><th>Bel slots</th></tr>
+</thead>
+<tbody>
+<tr><td>MAIN</td><td>CLB, IO.L, IO.R, IO.B, IO.T, CNR.BL, CNR.BR, CNR.TL, CNR.TR</td><td>LC0, LC1, LC2, LC3, TBUF0, TBUF1, TBUF2, TBUF3, VCC_GND, IO0, IO1, IO2, IO3, BUFR, SCANTEST, CIN, COUT, BUFG, CLKIOB, RDBK, STARTUP, BSCAN, OSC, BYPOSC, BSUPD</td></tr>
+<tr><td>EXTRA_COL</td><td>CLKV, CLKB, CLKT</td><td></td></tr>
+<tr><td>EXTRA_ROW</td><td>CLKH, CLKL, CLKR</td><td></td></tr>
+<tr><td>EXTRA_CROSS</td><td></td><td></td></tr>
+</tbody>
+</table></div>
 <h2 id="bel-slots"><a class="header" href="#bel-slots">Bel slots</a></h2>
 <div class="table-wrapper"><table>
 <caption>xc5200 bel slots</caption>
 <thead>
-<tr><th>Slot</th><th>Tiles</th></tr>
+<tr><th>Slot</th><th>Tile slot</th><th>Tiles</th></tr>
 </thead>
 <tbody>
-<tr><td>LC0</td><td>CLB</td></tr>
-<tr><td>LC1</td><td>CLB</td></tr>
-<tr><td>LC2</td><td>CLB</td></tr>
-<tr><td>LC3</td><td>CLB</td></tr>
-<tr><td>TBUF0</td><td>CLB, IO.L, IO.R, IO.B, IO.T</td></tr>
-<tr><td>TBUF1</td><td>CLB, IO.L, IO.R, IO.B, IO.T</td></tr>
-<tr><td>TBUF2</td><td>CLB, IO.L, IO.R, IO.B, IO.T</td></tr>
-<tr><td>TBUF3</td><td>CLB, IO.L, IO.R, IO.B, IO.T</td></tr>
-<tr><td>VCC_GND</td><td>CLB</td></tr>
-<tr><td>IO0</td><td>IO.L, IO.R, IO.B, IO.T</td></tr>
-<tr><td>IO1</td><td>IO.L, IO.R, IO.B, IO.T</td></tr>
-<tr><td>IO2</td><td>IO.L, IO.R, IO.B, IO.T</td></tr>
-<tr><td>IO3</td><td>IO.L, IO.R, IO.B, IO.T</td></tr>
-<tr><td>BUFR</td><td>IO.L, IO.R, IO.B, IO.T</td></tr>
-<tr><td>SCANTEST</td><td>IO.B</td></tr>
-<tr><td>CIN</td><td>IO.B</td></tr>
-<tr><td>COUT</td><td>IO.T</td></tr>
-<tr><td>BUFG</td><td>CNR.BL, CNR.BR, CNR.TL, CNR.TR</td></tr>
-<tr><td>CLKIOB</td><td>CNR.BL, CNR.BR, CNR.TL, CNR.TR</td></tr>
-<tr><td>RDBK</td><td>CNR.BL</td></tr>
-<tr><td>STARTUP</td><td>CNR.BR</td></tr>
-<tr><td>BSCAN</td><td>CNR.TL</td></tr>
-<tr><td>OSC</td><td>CNR.TR</td></tr>
-<tr><td>BYPOSC</td><td>CNR.TR</td></tr>
-<tr><td>BSUPD</td><td>CNR.TR</td></tr>
+<tr><td>LC0</td><td>MAIN</td><td>CLB</td></tr>
+<tr><td>LC1</td><td>MAIN</td><td>CLB</td></tr>
+<tr><td>LC2</td><td>MAIN</td><td>CLB</td></tr>
+<tr><td>LC3</td><td>MAIN</td><td>CLB</td></tr>
+<tr><td>TBUF0</td><td>MAIN</td><td>CLB, IO.L, IO.R, IO.B, IO.T</td></tr>
+<tr><td>TBUF1</td><td>MAIN</td><td>CLB, IO.L, IO.R, IO.B, IO.T</td></tr>
+<tr><td>TBUF2</td><td>MAIN</td><td>CLB, IO.L, IO.R, IO.B, IO.T</td></tr>
+<tr><td>TBUF3</td><td>MAIN</td><td>CLB, IO.L, IO.R, IO.B, IO.T</td></tr>
+<tr><td>VCC_GND</td><td>MAIN</td><td>CLB</td></tr>
+<tr><td>IO0</td><td>MAIN</td><td>IO.L, IO.R, IO.B, IO.T</td></tr>
+<tr><td>IO1</td><td>MAIN</td><td>IO.L, IO.R, IO.B, IO.T</td></tr>
+<tr><td>IO2</td><td>MAIN</td><td>IO.L, IO.R, IO.B, IO.T</td></tr>
+<tr><td>IO3</td><td>MAIN</td><td>IO.L, IO.R, IO.B, IO.T</td></tr>
+<tr><td>BUFR</td><td>MAIN</td><td>IO.L, IO.R, IO.B, IO.T</td></tr>
+<tr><td>SCANTEST</td><td>MAIN</td><td>IO.B</td></tr>
+<tr><td>CIN</td><td>MAIN</td><td>IO.B</td></tr>
+<tr><td>COUT</td><td>MAIN</td><td>IO.T</td></tr>
+<tr><td>BUFG</td><td>MAIN</td><td>CNR.BL, CNR.BR, CNR.TL, CNR.TR</td></tr>
+<tr><td>CLKIOB</td><td>MAIN</td><td>CNR.BL, CNR.BR, CNR.TL, CNR.TR</td></tr>
+<tr><td>RDBK</td><td>MAIN</td><td>CNR.BL</td></tr>
+<tr><td>STARTUP</td><td>MAIN</td><td>CNR.BR</td></tr>
+<tr><td>BSCAN</td><td>MAIN</td><td>CNR.TL</td></tr>
+<tr><td>OSC</td><td>MAIN</td><td>CNR.TR</td></tr>
+<tr><td>BYPOSC</td><td>MAIN</td><td>CNR.TR</td></tr>
+<tr><td>BSUPD</td><td>MAIN</td><td>CNR.TR</td></tr>
 </tbody>
 </table></div>
 <h2 id="connector-slots"><a class="header" href="#connector-slots">Connector slots</a></h2>

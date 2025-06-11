@@ -288,53 +288,75 @@ are driven by the various bels within the FPGA:</p>
 </ul>
 <p>The <code>IMUX</code> wires can be driven by <code>LOCAL</code> wires.  Some of them can also be driven by <code>GLOBAL</code> wires.</p>
 <p>If an <code>IMUX</code> wire is not driven at all (the <code>MUX</code> field in the bitstream is set to <code>NONE</code>), it takes on a default value.  The default value is <code>1</code> for <code>IMUX.CE</code>, <code>0</code> for all other <code>IMUX</code> wires.</p>
+<h2 id="tile-slots"><a class="header" href="#tile-slots">Tile slots</a></h2>
+<div class="table-wrapper"><table>
+<caption>siliconblue tile slots</caption>
+<thead>
+<tr><th>Slot</th><th>Tiles</th><th>Bel slots</th></tr>
+</thead>
+<tbody>
+<tr><td>MAIN</td><td>PLB_L04, INT_BRAM, IOI_W_L04, IOI_E_L04, IOI_S_L04, IOI_N_L04, PLB_L08, IOI_W_L08, IOI_E_L08, IOI_S_L08, IOI_N_L08, PLB_P01, IOI_S_T04, IOI_N_T04</td><td>LC0, LC1, LC2, LC3, LC4, LC5, LC6, LC7, IO0, IO1</td></tr>
+<tr><td>COLBUF</td><td>COLBUF_L01, COLBUF_IO_W, COLBUF_IO_E, COLBUF_P08</td><td></td></tr>
+<tr><td>GB_ROOT</td><td>GB_ROOT_L04, GB_ROOT_L08</td><td>GB_ROOT</td></tr>
+<tr><td>BEL</td><td>BRAM_L04, IO_LATCH, GB_FABRIC, PLL_S_P04, BRAM_P01, PLL_S_P01, BRAM_P08, PLL_S_P08, PLL_N_P08, SPI_R04, I2C_R04, PLL_S_R04, PLL_N_R04, MAC16, SPI_T04, I2C_T04, MAC16_TRIM, SPI_T05, I3C, SPRAM, I2C_FIFO, PLL_S_T01</td><td>BRAM, IO_LATCH, GB_FABRIC, PLL, MAC16, SPI, I2C, I2C_FIFO, IO0_I3C, IO1_I3C, SPRAM0, SPRAM1, FILTER0, FILTER1</td></tr>
+<tr><td>IOB</td><td>IOB_W_L04, IOB_E_L04, IOB_S_L04, IOB_N_L04, IOB_W_P04, IOB_E_P04, IOB_S_P04, IOB_N_P04, IOB_W_L08, IOB_E_L08, IOB_S_L08, IOB_N_L08, IOB_W_L01, IOB_E_L01, IOB_S_L01, IOB_N_L01, IOB_W_P01, IOB_E_P01, IOB_S_P01, IOB_N_P01, IOB_W_P08, IOB_E_P08, IOB_S_P08, IOB_N_P08, IOB_W_P03, IOB_E_P03, IOB_S_P03, IOB_N_P03, IOB_S_R04, IOB_N_R04, IOB_S_T04, IOB_N_T04, IOB_S_T05, IOB_N_T05, IOB_S_T01, IOB_N_T01</td><td></td></tr>
+<tr><td>OSC</td><td>HSOSC, LSOSC, HFOSC_T04, LFOSC_T04, HFOSC_T01, LFOSC_T01</td><td>HSOSC, LSOSC, HFOSC, LFOSC</td></tr>
+<tr><td>TRIM</td><td>TRIM_T04, TRIM_T01</td><td></td></tr>
+<tr><td>LED_DRV</td><td>RGB_DRV, IR_DRV, RGBA_DRV_T05, RGBA_DRV_T01, IR500_DRV</td><td>RGB_DRV, IR_DRV, RGBA_DRV, IR400_DRV, BARCODE_DRV</td></tr>
+<tr><td>LED_IP</td><td>LEDD_IP, LEDDA_IP_T05, LEDDA_IP_T01, IR_IP</td><td>LEDD_IP, LEDDA_IP, IR_IP</td></tr>
+<tr><td>LED_DRV_CUR</td><td>LED_DRV_CUR_T04, LED_DRV_CUR_T05, LED_DRV_CUR_T01</td><td>LED_DRV_CUR</td></tr>
+<tr><td>PLL_STUB</td><td>PLL_STUB_S</td><td></td></tr>
+<tr><td>SMCCLK</td><td>SMCCLK_T04, SMCCLK_T05, SMCCLK_T01</td><td>SMCCLK</td></tr>
+<tr><td>WARMBOOT</td><td>WARMBOOT, WARMBOOT_T01</td><td>WARMBOOT</td></tr>
+</tbody>
+</table></div>
 <h2 id="bel-slots"><a class="header" href="#bel-slots">Bel slots</a></h2>
 <div class="table-wrapper"><table>
 <caption>siliconblue bel slots</caption>
 <thead>
-<tr><th>Slot</th><th>Tiles</th></tr>
+<tr><th>Slot</th><th>Tile slot</th><th>Tiles</th></tr>
 </thead>
 <tbody>
-<tr><td>LC0</td><td>PLB_L04, PLB_L08, PLB_P01</td></tr>
-<tr><td>LC1</td><td>PLB_L04, PLB_L08, PLB_P01</td></tr>
-<tr><td>LC2</td><td>PLB_L04, PLB_L08, PLB_P01</td></tr>
-<tr><td>LC3</td><td>PLB_L04, PLB_L08, PLB_P01</td></tr>
-<tr><td>LC4</td><td>PLB_L04, PLB_L08, PLB_P01</td></tr>
-<tr><td>LC5</td><td>PLB_L04, PLB_L08, PLB_P01</td></tr>
-<tr><td>LC6</td><td>PLB_L04, PLB_L08, PLB_P01</td></tr>
-<tr><td>LC7</td><td>PLB_L04, PLB_L08, PLB_P01</td></tr>
-<tr><td>IO0</td><td>IOI_W_L04, IOI_E_L04, IOI_S_L04, IOI_N_L04, IOI_W_L08, IOI_E_L08, IOI_S_L08, IOI_N_L08, IOI_S_T04, IOI_N_T04</td></tr>
-<tr><td>IO1</td><td>IOI_W_L04, IOI_E_L04, IOI_S_L04, IOI_N_L04, IOI_W_L08, IOI_E_L08, IOI_S_L08, IOI_N_L08, IOI_S_T04, IOI_N_T04</td></tr>
-<tr><td>BRAM</td><td>BRAM_L04, BRAM_P01, BRAM_P08</td></tr>
-<tr><td>IO_LATCH</td><td>IO_LATCH</td></tr>
-<tr><td>GB_FABRIC</td><td>GB_FABRIC</td></tr>
-<tr><td>GB_ROOT</td><td>GB_ROOT_L04, GB_ROOT_L08</td></tr>
-<tr><td>WARMBOOT</td><td>WARMBOOT, WARMBOOT_T01</td></tr>
-<tr><td>PLL</td><td>PLL_S_P04, PLL_S_P01, PLL_S_P08, PLL_N_P08, PLL_S_R04, PLL_N_R04, PLL_S_T01</td></tr>
-<tr><td>MAC16</td><td>MAC16, MAC16_TRIM</td></tr>
-<tr><td>SPI</td><td>SPI_R04, SPI_T04, SPI_T05</td></tr>
-<tr><td>I2C</td><td>I2C_R04, I2C_T04</td></tr>
-<tr><td>I2C_FIFO</td><td>I2C_FIFO</td></tr>
-<tr><td>HSOSC</td><td>HSOSC</td></tr>
-<tr><td>LSOSC</td><td>LSOSC</td></tr>
-<tr><td>HFOSC</td><td>HFOSC_T04, HFOSC_T01</td></tr>
-<tr><td>LFOSC</td><td>LFOSC_T04, LFOSC_T01</td></tr>
-<tr><td>LEDD_IP</td><td>LEDD_IP</td></tr>
-<tr><td>LEDDA_IP</td><td>LEDDA_IP_T05, LEDDA_IP_T01</td></tr>
-<tr><td>IR_IP</td><td>IR_IP</td></tr>
-<tr><td>IO0_I3C</td><td>I3C</td></tr>
-<tr><td>IO1_I3C</td><td>I3C</td></tr>
-<tr><td>RGB_DRV</td><td>RGB_DRV</td></tr>
-<tr><td>IR_DRV</td><td>IR_DRV</td></tr>
-<tr><td>RGBA_DRV</td><td>RGBA_DRV_T05, RGBA_DRV_T01</td></tr>
-<tr><td>IR400_DRV</td><td>IR500_DRV</td></tr>
-<tr><td>BARCODE_DRV</td><td>IR500_DRV</td></tr>
-<tr><td>LED_DRV_CUR</td><td>LED_DRV_CUR_T04, LED_DRV_CUR_T05, LED_DRV_CUR_T01</td></tr>
-<tr><td>SPRAM0</td><td>SPRAM</td></tr>
-<tr><td>SPRAM1</td><td>SPRAM</td></tr>
-<tr><td>FILTER0</td><td>I3C</td></tr>
-<tr><td>FILTER1</td><td>I3C</td></tr>
-<tr><td>SMCCLK</td><td>SMCCLK_T04, SMCCLK_T05, SMCCLK_T01</td></tr>
+<tr><td>LC0</td><td>MAIN</td><td>PLB_L04, PLB_L08, PLB_P01</td></tr>
+<tr><td>LC1</td><td>MAIN</td><td>PLB_L04, PLB_L08, PLB_P01</td></tr>
+<tr><td>LC2</td><td>MAIN</td><td>PLB_L04, PLB_L08, PLB_P01</td></tr>
+<tr><td>LC3</td><td>MAIN</td><td>PLB_L04, PLB_L08, PLB_P01</td></tr>
+<tr><td>LC4</td><td>MAIN</td><td>PLB_L04, PLB_L08, PLB_P01</td></tr>
+<tr><td>LC5</td><td>MAIN</td><td>PLB_L04, PLB_L08, PLB_P01</td></tr>
+<tr><td>LC6</td><td>MAIN</td><td>PLB_L04, PLB_L08, PLB_P01</td></tr>
+<tr><td>LC7</td><td>MAIN</td><td>PLB_L04, PLB_L08, PLB_P01</td></tr>
+<tr><td>IO0</td><td>MAIN</td><td>IOI_W_L04, IOI_E_L04, IOI_S_L04, IOI_N_L04, IOI_W_L08, IOI_E_L08, IOI_S_L08, IOI_N_L08, IOI_S_T04, IOI_N_T04</td></tr>
+<tr><td>IO1</td><td>MAIN</td><td>IOI_W_L04, IOI_E_L04, IOI_S_L04, IOI_N_L04, IOI_W_L08, IOI_E_L08, IOI_S_L08, IOI_N_L08, IOI_S_T04, IOI_N_T04</td></tr>
+<tr><td>BRAM</td><td>BEL</td><td>BRAM_L04, BRAM_P01, BRAM_P08</td></tr>
+<tr><td>IO_LATCH</td><td>BEL</td><td>IO_LATCH</td></tr>
+<tr><td>GB_FABRIC</td><td>BEL</td><td>GB_FABRIC</td></tr>
+<tr><td>GB_ROOT</td><td>GB_ROOT</td><td>GB_ROOT_L04, GB_ROOT_L08</td></tr>
+<tr><td>WARMBOOT</td><td>WARMBOOT</td><td>WARMBOOT, WARMBOOT_T01</td></tr>
+<tr><td>PLL</td><td>BEL</td><td>PLL_S_P04, PLL_S_P01, PLL_S_P08, PLL_N_P08, PLL_S_R04, PLL_N_R04, PLL_S_T01</td></tr>
+<tr><td>MAC16</td><td>BEL</td><td>MAC16, MAC16_TRIM</td></tr>
+<tr><td>SPI</td><td>BEL</td><td>SPI_R04, SPI_T04, SPI_T05</td></tr>
+<tr><td>I2C</td><td>BEL</td><td>I2C_R04, I2C_T04</td></tr>
+<tr><td>I2C_FIFO</td><td>BEL</td><td>I2C_FIFO</td></tr>
+<tr><td>HSOSC</td><td>OSC</td><td>HSOSC</td></tr>
+<tr><td>LSOSC</td><td>OSC</td><td>LSOSC</td></tr>
+<tr><td>HFOSC</td><td>OSC</td><td>HFOSC_T04, HFOSC_T01</td></tr>
+<tr><td>LFOSC</td><td>OSC</td><td>LFOSC_T04, LFOSC_T01</td></tr>
+<tr><td>LEDD_IP</td><td>LED_IP</td><td>LEDD_IP</td></tr>
+<tr><td>LEDDA_IP</td><td>LED_IP</td><td>LEDDA_IP_T05, LEDDA_IP_T01</td></tr>
+<tr><td>IR_IP</td><td>LED_IP</td><td>IR_IP</td></tr>
+<tr><td>IO0_I3C</td><td>BEL</td><td>I3C</td></tr>
+<tr><td>IO1_I3C</td><td>BEL</td><td>I3C</td></tr>
+<tr><td>RGB_DRV</td><td>LED_DRV</td><td>RGB_DRV</td></tr>
+<tr><td>IR_DRV</td><td>LED_DRV</td><td>IR_DRV</td></tr>
+<tr><td>RGBA_DRV</td><td>LED_DRV</td><td>RGBA_DRV_T05, RGBA_DRV_T01</td></tr>
+<tr><td>IR400_DRV</td><td>LED_DRV</td><td>IR500_DRV</td></tr>
+<tr><td>BARCODE_DRV</td><td>LED_DRV</td><td>IR500_DRV</td></tr>
+<tr><td>LED_DRV_CUR</td><td>LED_DRV_CUR</td><td>LED_DRV_CUR_T04, LED_DRV_CUR_T05, LED_DRV_CUR_T01</td></tr>
+<tr><td>SPRAM0</td><td>BEL</td><td>SPRAM</td></tr>
+<tr><td>SPRAM1</td><td>BEL</td><td>SPRAM</td></tr>
+<tr><td>FILTER0</td><td>BEL</td><td>I3C</td></tr>
+<tr><td>FILTER1</td><td>BEL</td><td>I3C</td></tr>
+<tr><td>SMCCLK</td><td>SMCCLK</td><td>SMCCLK_T04, SMCCLK_T05, SMCCLK_T01</td></tr>
 </tbody>
 </table></div>
 <h2 id="connector-slots"><a class="header" href="#connector-slots">Connector slots</a></h2>

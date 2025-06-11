@@ -150,42 +150,57 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="general-interconnect"><a class="header" href="#general-interconnect">General interconnect</a></h1>
+<h2 id="tile-slots"><a class="header" href="#tile-slots">Tile slots</a></h2>
+<div class="table-wrapper"><table>
+<caption>virtex tile slots</caption>
+<thead>
+<tr><th>Slot</th><th>Tiles</th><th>Bel slots</th></tr>
+</thead>
+<tbody>
+<tr><td>MAIN</td><td>CLB, IO.L, IO.R, IO.B, IO.T, CNR.BL, CNR.BR, CNR.TL, CNR.TR, LBRAM, RBRAM, BRAM_BOT, BRAM_TOP, MBRAM</td><td>SLICE0, SLICE1, TBUF0, TBUF1, TBUS, IO0, IO1, IO2, IO3, BRAM, CAPTURE, STARTUP, BSCAN, CLKV_BRAM</td></tr>
+<tr><td>DLL</td><td>DLL.BOT, DLL.TOP, DLLS.BOT, DLLS.TOP, DLLP.BOT, DLLP.TOP</td><td>DLL</td></tr>
+<tr><td>PCILOGIC</td><td>CLKL, CLKR</td><td>PCILOGIC</td></tr>
+<tr><td>CLKBT</td><td>CLKB, CLKT, CLKB_2DLL, CLKT_2DLL, CLKB_4DLL, CLKT_4DLL</td><td>GCLK_IO0, GCLK_IO1, BUFG0, BUFG1, IOFB0, IOFB1</td></tr>
+<tr><td>CLKC</td><td>CLKC, GCLKC, BRAM_CLKH</td><td>CLKC, GCLKC, CLKH, BRAM_CLKH</td></tr>
+<tr><td>CLKV</td><td>CLKV.CLKV, CLKV.NULL, CLKV_BRAM_S, CLKV_BRAM_N, CLKV.GCLKV</td><td>CLKV, CLKV_BRAM_S, CLKV_BRAM_N</td></tr>
+</tbody>
+</table></div>
 <h2 id="bel-slots"><a class="header" href="#bel-slots">Bel slots</a></h2>
 <div class="table-wrapper"><table>
 <caption>virtex bel slots</caption>
 <thead>
-<tr><th>Slot</th><th>Tiles</th></tr>
+<tr><th>Slot</th><th>Tile slot</th><th>Tiles</th></tr>
 </thead>
 <tbody>
-<tr><td>SLICE0</td><td>CLB</td></tr>
-<tr><td>SLICE1</td><td>CLB</td></tr>
-<tr><td>TBUF0</td><td>CLB, IO.L, IO.R</td></tr>
-<tr><td>TBUF1</td><td>CLB, IO.L, IO.R</td></tr>
-<tr><td>TBUS</td><td>CLB, IO.L, IO.R</td></tr>
-<tr><td>IO0</td><td>IO.L, IO.R, IO.B, IO.T</td></tr>
-<tr><td>IO1</td><td>IO.L, IO.R, IO.B, IO.T</td></tr>
-<tr><td>IO2</td><td>IO.L, IO.R, IO.B, IO.T</td></tr>
-<tr><td>IO3</td><td>IO.L, IO.R, IO.B, IO.T</td></tr>
-<tr><td>BRAM</td><td>LBRAM, RBRAM, MBRAM</td></tr>
-<tr><td>CAPTURE</td><td>CNR.BL</td></tr>
-<tr><td>STARTUP</td><td>CNR.TL</td></tr>
-<tr><td>BSCAN</td><td>CNR.TL</td></tr>
-<tr><td>DLL</td><td>DLL.BOT, DLL.TOP, DLLS.BOT, DLLS.TOP, DLLP.BOT, DLLP.TOP</td></tr>
-<tr><td>GCLK_IO0</td><td>CLKB, CLKT, CLKB_2DLL, CLKT_2DLL, CLKB_4DLL, CLKT_4DLL</td></tr>
-<tr><td>GCLK_IO1</td><td>CLKB, CLKT, CLKB_2DLL, CLKT_2DLL, CLKB_4DLL, CLKT_4DLL</td></tr>
-<tr><td>BUFG0</td><td>CLKB, CLKT, CLKB_2DLL, CLKT_2DLL, CLKB_4DLL, CLKT_4DLL</td></tr>
-<tr><td>BUFG1</td><td>CLKB, CLKT, CLKB_2DLL, CLKT_2DLL, CLKB_4DLL, CLKT_4DLL</td></tr>
-<tr><td>IOFB0</td><td>CLKB_2DLL, CLKT_2DLL, CLKB_4DLL, CLKT_4DLL</td></tr>
-<tr><td>IOFB1</td><td>CLKB_2DLL, CLKT_2DLL, CLKB_4DLL, CLKT_4DLL</td></tr>
-<tr><td>PCILOGIC</td><td>CLKL, CLKR</td></tr>
-<tr><td>CLKC</td><td>CLKC</td></tr>
-<tr><td>GCLKC</td><td>CLKC, GCLKC</td></tr>
-<tr><td>CLKH</td><td></td></tr>
-<tr><td>BRAM_CLKH</td><td>BRAM_CLKH</td></tr>
-<tr><td>CLKV</td><td>CLKV.CLKV, CLKV.NULL, CLKV.GCLKV</td></tr>
-<tr><td>CLKV_BRAM</td><td>LBRAM, RBRAM</td></tr>
-<tr><td>CLKV_BRAM_S</td><td>CLKV_BRAM_S</td></tr>
-<tr><td>CLKV_BRAM_N</td><td>CLKV_BRAM_N</td></tr>
+<tr><td>SLICE0</td><td>MAIN</td><td>CLB</td></tr>
+<tr><td>SLICE1</td><td>MAIN</td><td>CLB</td></tr>
+<tr><td>TBUF0</td><td>MAIN</td><td>CLB, IO.L, IO.R</td></tr>
+<tr><td>TBUF1</td><td>MAIN</td><td>CLB, IO.L, IO.R</td></tr>
+<tr><td>TBUS</td><td>MAIN</td><td>CLB, IO.L, IO.R</td></tr>
+<tr><td>IO0</td><td>MAIN</td><td>IO.L, IO.R, IO.B, IO.T</td></tr>
+<tr><td>IO1</td><td>MAIN</td><td>IO.L, IO.R, IO.B, IO.T</td></tr>
+<tr><td>IO2</td><td>MAIN</td><td>IO.L, IO.R, IO.B, IO.T</td></tr>
+<tr><td>IO3</td><td>MAIN</td><td>IO.L, IO.R, IO.B, IO.T</td></tr>
+<tr><td>BRAM</td><td>MAIN</td><td>LBRAM, RBRAM, MBRAM</td></tr>
+<tr><td>CAPTURE</td><td>MAIN</td><td>CNR.BL</td></tr>
+<tr><td>STARTUP</td><td>MAIN</td><td>CNR.TL</td></tr>
+<tr><td>BSCAN</td><td>MAIN</td><td>CNR.TL</td></tr>
+<tr><td>DLL</td><td>DLL</td><td>DLL.BOT, DLL.TOP, DLLS.BOT, DLLS.TOP, DLLP.BOT, DLLP.TOP</td></tr>
+<tr><td>GCLK_IO0</td><td>CLKBT</td><td>CLKB, CLKT, CLKB_2DLL, CLKT_2DLL, CLKB_4DLL, CLKT_4DLL</td></tr>
+<tr><td>GCLK_IO1</td><td>CLKBT</td><td>CLKB, CLKT, CLKB_2DLL, CLKT_2DLL, CLKB_4DLL, CLKT_4DLL</td></tr>
+<tr><td>BUFG0</td><td>CLKBT</td><td>CLKB, CLKT, CLKB_2DLL, CLKT_2DLL, CLKB_4DLL, CLKT_4DLL</td></tr>
+<tr><td>BUFG1</td><td>CLKBT</td><td>CLKB, CLKT, CLKB_2DLL, CLKT_2DLL, CLKB_4DLL, CLKT_4DLL</td></tr>
+<tr><td>IOFB0</td><td>CLKBT</td><td>CLKB_2DLL, CLKT_2DLL, CLKB_4DLL, CLKT_4DLL</td></tr>
+<tr><td>IOFB1</td><td>CLKBT</td><td>CLKB_2DLL, CLKT_2DLL, CLKB_4DLL, CLKT_4DLL</td></tr>
+<tr><td>PCILOGIC</td><td>PCILOGIC</td><td>CLKL, CLKR</td></tr>
+<tr><td>CLKC</td><td>CLKC</td><td>CLKC</td></tr>
+<tr><td>GCLKC</td><td>CLKC</td><td>CLKC, GCLKC</td></tr>
+<tr><td>CLKH</td><td>CLKC</td><td></td></tr>
+<tr><td>BRAM_CLKH</td><td>CLKC</td><td>BRAM_CLKH</td></tr>
+<tr><td>CLKV</td><td>CLKV</td><td>CLKV.CLKV, CLKV.NULL, CLKV.GCLKV</td></tr>
+<tr><td>CLKV_BRAM</td><td>MAIN</td><td>LBRAM, RBRAM</td></tr>
+<tr><td>CLKV_BRAM_S</td><td>CLKV</td><td>CLKV_BRAM_S</td></tr>
+<tr><td>CLKV_BRAM_N</td><td>CLKV</td><td>CLKV_BRAM_N</td></tr>
 </tbody>
 </table></div>
 <h2 id="connector-slots"><a class="header" href="#connector-slots">Connector slots</a></h2>
