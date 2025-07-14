@@ -1958,7 +1958,7 @@ non-inverted
 <tr><td>LEDDADDR1</td><td>input</td><td>TCELL0:IMUX.LC5.I0</td></tr>
 <tr><td>LEDDADDR2</td><td>input</td><td>TCELL0:IMUX.LC6.I0</td></tr>
 <tr><td>LEDDADDR3</td><td>input</td><td>TCELL0:IMUX.LC7.I0</td></tr>
-<tr><td>LEDDCLK</td><td>input</td><td>TCELL1:IMUX.CLK</td></tr>
+<tr><td>LEDDCLK</td><td>input</td><td>TCELL1:IMUX.CLK.OPTINV</td></tr>
 <tr><td>LEDDCS</td><td>input</td><td>TCELL0:IMUX.LC2.I0</td></tr>
 <tr><td>LEDDDAT0</td><td>input</td><td>TCELL0:IMUX.LC2.I1</td></tr>
 <tr><td>LEDDDAT1</td><td>input</td><td>TCELL0:IMUX.LC3.I1</td></tr>
@@ -2001,7 +2001,7 @@ non-inverted
 <tr><td>TCELL0:OUT.LC4</td><td>LEDDA_IP.PWMOUT0</td></tr>
 <tr><td>TCELL0:OUT.LC5</td><td>LEDDA_IP.PWMOUT1</td></tr>
 <tr><td>TCELL0:OUT.LC6</td><td>LEDDA_IP.PWMOUT2</td></tr>
-<tr><td>TCELL1:IMUX.CLK</td><td>LEDDA_IP.LEDDCLK</td></tr>
+<tr><td>TCELL1:IMUX.CLK.OPTINV</td><td>LEDDA_IP.LEDDCLK</td></tr>
 <tr><td>TCELL1:OUT.LC0</td><td>LEDDA_IP.LEDDON</td></tr>
 </tbody>
 </table></div>
@@ -2018,7 +2018,7 @@ non-inverted
 <tr><td>LEDDADDR1</td><td>input</td><td>TCELL0:IMUX.LC7.I0</td></tr>
 <tr><td>LEDDADDR2</td><td>input</td><td>TCELL1:IMUX.LC0.I3</td></tr>
 <tr><td>LEDDADDR3</td><td>input</td><td>TCELL1:IMUX.LC1.I3</td></tr>
-<tr><td>LEDDCLK</td><td>input</td><td>TCELL3:IMUX.CLK</td></tr>
+<tr><td>LEDDCLK</td><td>input</td><td>TCELL3:IMUX.CLK.OPTINV</td></tr>
 <tr><td>LEDDCS</td><td>input</td><td>TCELL0:IMUX.LC4.I0</td></tr>
 <tr><td>LEDDDAT0</td><td>input</td><td>TCELL0:IMUX.LC4.I1</td></tr>
 <tr><td>LEDDDAT1</td><td>input</td><td>TCELL0:IMUX.LC5.I1</td></tr>
@@ -2062,7 +2062,7 @@ non-inverted
 <tr><td>TCELL2:OUT.LC3</td><td>LEDDA_IP.PWMOUT0</td></tr>
 <tr><td>TCELL2:OUT.LC4</td><td>LEDDA_IP.PWMOUT1</td></tr>
 <tr><td>TCELL2:OUT.LC5</td><td>LEDDA_IP.PWMOUT2</td></tr>
-<tr><td>TCELL3:IMUX.CLK</td><td>LEDDA_IP.LEDDCLK</td></tr>
+<tr><td>TCELL3:IMUX.CLK.OPTINV</td><td>LEDDA_IP.LEDDCLK</td></tr>
 </tbody>
 </table></div>
 <h2 id="tile-ir500_drv"><a class="header" href="#tile-ir500_drv">Tile IR500_DRV</a></h2>
@@ -2459,7 +2459,7 @@ non-inverted
 <tr><td>ADRI2</td><td>input</td><td>TCELL1:IMUX.LC4.I3</td></tr>
 <tr><td>ADRI3</td><td>input</td><td>TCELL1:IMUX.LC5.I3</td></tr>
 <tr><td>BUSY</td><td>output</td><td>TCELL1:OUT.LC3</td></tr>
-<tr><td>CLKI</td><td>input</td><td>TCELL3:IMUX.CLK</td></tr>
+<tr><td>CLKI</td><td>input</td><td>TCELL3:IMUX.CLK.OPTINV</td></tr>
 <tr><td>CSI</td><td>input</td><td>TCELL1:IMUX.LC0.I1</td></tr>
 <tr><td>DENI</td><td>input</td><td>TCELL1:IMUX.LC7.I3</td></tr>
 <tr><td>DRDY</td><td>output</td><td>TCELL1:OUT.LC4</td></tr>
@@ -2524,7 +2524,7 @@ non-inverted
 <tr><td>TCELL2:OUT.LC4</td><td>IR_IP.RDATA6</td></tr>
 <tr><td>TCELL2:OUT.LC5</td><td>IR_IP.RDATA7</td></tr>
 <tr><td>TCELL2:OUT.LC6</td><td>IR_IP.IROUT</td></tr>
-<tr><td>TCELL3:IMUX.CLK</td><td>IR_IP.CLKI</td></tr>
+<tr><td>TCELL3:IMUX.CLK.OPTINV</td><td>IR_IP.CLKI</td></tr>
 </tbody>
 </table></div>
 

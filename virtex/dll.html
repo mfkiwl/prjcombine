@@ -152,16 +152,158 @@
                         <h1 id="delay-locked-loop"><a class="header" href="#delay-locked-loop">Delay-locked loop</a></h1>
 <h2 id="tile-dllbot"><a class="header" href="#tile-dllbot">Tile DLL.BOT</a></h2>
 <p>Cells: 2</p>
-<h3 id="muxes"><a class="header" href="#muxes">Muxes</a></h3>
+<h3 id="bel-dll_int"><a class="header" href="#bel-dll_int">Bel DLL_INT</a></h3>
+<h3 id="switchbox-dll_int"><a class="header" href="#switchbox-dll_int">Switchbox DLL_INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>virtex DLL.BOT muxes</caption>
+<caption>virtex DLL.BOT switchbox DLL_INT</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>TCELL0:DLL.IMUX.CLKIN</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1</td></tr>
-<tr><td>TCELL0:DLL.IMUX.CLKFB</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1</td></tr>
-<tr><td>TCELL0:DLL.IMUX.RST</td><td>TCELL1:HEX.H2.3, TCELL1:HEX.H2.2, TCELL1:HEX.H2.1, TCELL1:HEX.H2.0, TCELL1:HEX.H2.4, TCELL1:HEX.H2.5, TCELL1:HEX.H3.3, TCELL1:HEX.H3.2, TCELL1:HEX.H3.1, TCELL1:HEX.H3.0, TCELL1:HEX.H3.4, TCELL1:HEX.H3.5</td></tr>
+<tr><td rowspan="30">TCELL0_DLL.IMUX.CLKIN</td><td>TCELL0_GCLK0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.6</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.7</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.8</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.9</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.10</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.11</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD0</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD1</td><td>mux</td>
+</tr>
+<tr><td rowspan="30">TCELL0_DLL.IMUX.CLKFB</td><td>TCELL0_GCLK0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.6</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.7</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.8</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.9</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.10</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.11</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD0</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD1</td><td>mux</td>
+</tr>
+<tr><td rowspan="12">TCELL0_DLL.IMUX.RST</td><td>TCELL1_HEX.H2.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.5</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-dll"><a class="header" href="#bel-dll">Bel DLL</a></h3>
@@ -467,28 +609,28 @@
 </tr>
 <tr><td>6</td>
 <td title="0.0.6">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[9]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[9]</a>
 </td>
 <td title="0.1.6">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[5]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[5]</a>
 </td>
 <td title="0.2.6">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[6]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[6]</a>
 </td>
 <td title="0.3.6">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[7]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[7]</a>
 </td>
 <td title="0.4.6">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[8]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[8]</a>
 </td>
 <td title="0.5.6">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[10]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[10]</a>
 </td>
 <td title="0.6.6">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[11]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[11]</a>
 </td>
 <td title="0.7.6">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[9]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[9]</a>
 </td>
 <td title="0.8.6">
 <a href="#tile-virtex-DLL.BOT-DLL:CLKFB_PAD">DLL:CLKFB_PAD</a>
@@ -546,22 +688,22 @@
 <tr><td>4</td>
 <td>-</td>
 <td title="0.1.4">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[5]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[5]</a>
 </td>
 <td title="0.2.4">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[6]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[6]</a>
 </td>
 <td title="0.3.4">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[7]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[7]</a>
 </td>
 <td title="0.4.4">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[8]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[8]</a>
 </td>
 <td title="0.5.4">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[10]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[10]</a>
 </td>
 <td title="0.6.4">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[11]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[11]</a>
 </td>
 <td>-</td>
 <td title="0.8.4">
@@ -590,34 +732,34 @@
 </tr>
 <tr><td>3</td>
 <td title="0.0.3">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[0]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[0]</a>
 </td>
 <td title="0.1.3">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[0]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[0]</a>
 </td>
 <td title="0.2.3">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[1]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[1]</a>
 </td>
 <td title="0.3.3">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[3]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[3]</a>
 </td>
 <td title="0.4.3">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[3]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[3]</a>
 </td>
 <td title="0.5.3">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[2]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[2]</a>
 </td>
 <td title="0.6.3">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[4]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[4]</a>
 </td>
 <td title="0.7.3">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[4]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[4]</a>
 </td>
 <td title="0.8.3">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[1]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[1]</a>
 </td>
 <td title="0.9.3">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[2]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[2]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -666,15 +808,15 @@
 <td>-</td>
 <td>-</td>
 <td title="0.2.1">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[3]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[3]</a>
 </td>
 <td title="0.3.1">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[2]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[2]</a>
 </td>
 <td>-</td>
 <td>-</td>
 <td title="0.6.1">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[1]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[1]</a>
 </td>
 <td title="0.7.1">
 <a href="#tile-virtex-DLL.BOT-DLL:TESTDLL">DLL:TESTDLL[0]</a>
@@ -710,18 +852,18 @@
 <tr><td>0</td>
 <td>-</td>
 <td title="0.1.0">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[5]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[5]</a>
 </td>
 <td title="0.2.0">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[4]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[4]</a>
 </td>
 <td>-</td>
 <td title="0.4.0">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[6]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[6]</a>
 </td>
 <td>-</td>
 <td title="0.6.0">
-<a href="#tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[0]</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[0]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -732,7 +874,7 @@
 <td>-</td>
 <td>-</td>
 <td title="0.15.0">
-<a href="#tile-virtex-DLL.BOT-INT:INV.DLL.IMUX.RST">INT:INV.DLL.IMUX.RST</a>
+<a href="#tile-virtex-DLL.BOT-DLL_INT:INV.DLL.IMUX.RST">DLL_INT:INV.DLL.IMUX.RST</a>
 </td>
 <td title="0.16.0">
 <a href="#tile-virtex-DLL.BOT-DLL:HIGH_FREQUENCY">DLL:HIGH_FREQUENCY</a>
@@ -778,7 +920,7 @@
 <tr><th id="tile-virtex-DLL.BOT-DLL:TESTZD2OSC">DLL:TESTZD2OSC</th>
 <th>0.4.13</th>
 </tr>
-<tr><th id="tile-virtex-DLL.BOT-INT:INV.DLL.IMUX.RST">INT:INV.DLL.IMUX.RST</th>
+<tr><th id="tile-virtex-DLL.BOT-DLL_INT:INV.DLL.IMUX.RST">DLL_INT:INV.DLL.IMUX.RST</th>
 <th>0.15.0</th>
 </tr>
 </thead>
@@ -968,7 +1110,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB</th>
+<tr><th id="tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB</th>
 <th>0.6.4</th>
 <th>0.5.6</th>
 <th>0.0.6</th>
@@ -982,7 +1124,7 @@ non-inverted
 <th>0.2.3</th>
 <th>0.1.3</th>
 </tr>
-<tr><th id="tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN</th>
+<tr><th id="tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN</th>
 <th>0.6.6</th>
 <th>0.5.4</th>
 <th>0.7.6</th>
@@ -1436,7 +1578,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex-DLL.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST</th>
+<tr><th id="tile-virtex-DLL.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST</th>
 <th>0.4.0</th>
 <th>0.1.0</th>
 <th>0.2.0</th>
@@ -1568,16 +1710,168 @@ non-inverted
 </table></div>
 <h2 id="tile-dllpbot"><a class="header" href="#tile-dllpbot">Tile DLLP.BOT</a></h2>
 <p>Cells: 2</p>
-<h3 id="muxes-1"><a class="header" href="#muxes-1">Muxes</a></h3>
+<h3 id="bel-dll_int-1"><a class="header" href="#bel-dll_int-1">Bel DLL_INT</a></h3>
+<h3 id="switchbox-dll_int-1"><a class="header" href="#switchbox-dll_int-1">Switchbox DLL_INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>virtex DLLP.BOT muxes</caption>
+<caption>virtex DLLP.BOT switchbox DLL_INT</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>TCELL0:DLL.IMUX.CLKIN</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1, TCELL2:CLK.OUT.IOFB0, TCELL2:CLK.OUT.IOFB1, TCELL3:DLL.OUT.CLK2X</td></tr>
-<tr><td>TCELL0:DLL.IMUX.CLKFB</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1, TCELL2:CLK.OUT.IOFB0, TCELL2:CLK.OUT.IOFB1</td></tr>
-<tr><td>TCELL0:DLL.IMUX.RST</td><td>TCELL1:HEX.H2.3, TCELL1:HEX.H2.2, TCELL1:HEX.H2.1, TCELL1:HEX.H2.0, TCELL1:HEX.H2.4, TCELL1:HEX.H2.5, TCELL1:HEX.H3.3, TCELL1:HEX.H3.2, TCELL1:HEX.H3.1, TCELL1:HEX.H3.0, TCELL1:HEX.H3.4, TCELL1:HEX.H3.5</td></tr>
+<tr><td rowspan="33">TCELL0_DLL.IMUX.CLKIN</td><td>TCELL0_GCLK0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.6</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.7</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.8</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.9</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.10</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.11</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD0</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD1</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.IOFB0</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.IOFB1</td><td>mux</td>
+</tr>
+<tr><td>TCELL3_DLL.OUT.CLK2X</td><td>mux</td>
+</tr>
+<tr><td rowspan="32">TCELL0_DLL.IMUX.CLKFB</td><td>TCELL0_GCLK0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.6</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.7</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.8</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.9</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.10</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.11</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD0</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD1</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.IOFB0</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.IOFB1</td><td>mux</td>
+</tr>
+<tr><td rowspan="12">TCELL0_DLL.IMUX.RST</td><td>TCELL1_HEX.H2.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.5</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-dll-1"><a class="header" href="#bel-dll-1">Bel DLL</a></h3>
@@ -1883,46 +2177,46 @@ non-inverted
 </tr>
 <tr><td>6</td>
 <td title="0.0.6">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[11]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[11]</a>
 </td>
 <td title="0.1.6">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[7]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[7]</a>
 </td>
 <td title="0.2.6">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[8]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[8]</a>
 </td>
 <td title="0.3.6">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[9]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[9]</a>
 </td>
 <td title="0.4.6">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[10]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[10]</a>
 </td>
 <td title="0.5.6">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[12]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[12]</a>
 </td>
 <td title="0.6.6">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[13]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[13]</a>
 </td>
 <td title="0.7.6">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[11]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[11]</a>
 </td>
 <td title="0.8.6">
 <a href="#tile-virtex-DLLP.BOT-DLL:CLKFB_PAD">DLL:CLKFB_PAD</a>
 </td>
 <td title="0.9.6">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[5]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[5]</a>
 </td>
 <td title="0.10.6">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[6]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[6]</a>
 </td>
 <td title="0.11.6">
 <a href="#tile-virtex-DLLP.BOT-DLL:LVL1_MUX_24">DLL:LVL1_MUX_24</a>
 </td>
 <td title="0.12.6">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[6]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[6]</a>
 </td>
 <td title="0.13.6">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[5]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[5]</a>
 </td>
 <td title="0.14.6">
 <a href="#tile-virtex-DLLP.BOT-DLL:LVL1_MUX_21">DLL:LVL1_MUX_21</a>
@@ -1970,22 +2264,22 @@ non-inverted
 <tr><td>4</td>
 <td>-</td>
 <td title="0.1.4">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[7]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[7]</a>
 </td>
 <td title="0.2.4">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[8]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[8]</a>
 </td>
 <td title="0.3.4">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[9]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[9]</a>
 </td>
 <td title="0.4.4">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[10]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[10]</a>
 </td>
 <td title="0.5.4">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[12]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[12]</a>
 </td>
 <td title="0.6.4">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[13]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[13]</a>
 </td>
 <td>-</td>
 <td title="0.8.4">
@@ -2014,34 +2308,34 @@ non-inverted
 </tr>
 <tr><td>3</td>
 <td title="0.0.3">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[0]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[0]</a>
 </td>
 <td title="0.1.3">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[0]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[0]</a>
 </td>
 <td title="0.2.3">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[1]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[1]</a>
 </td>
 <td title="0.3.3">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[3]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[3]</a>
 </td>
 <td title="0.4.3">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[3]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[3]</a>
 </td>
 <td title="0.5.3">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[2]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[2]</a>
 </td>
 <td title="0.6.3">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[4]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[4]</a>
 </td>
 <td title="0.7.3">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[4]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[4]</a>
 </td>
 <td title="0.8.3">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[1]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[1]</a>
 </td>
 <td title="0.9.3">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[2]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[2]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -2090,15 +2384,15 @@ non-inverted
 <td>-</td>
 <td>-</td>
 <td title="0.2.1">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[3]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[3]</a>
 </td>
 <td title="0.3.1">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[2]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[2]</a>
 </td>
 <td>-</td>
 <td>-</td>
 <td title="0.6.1">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[1]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[1]</a>
 </td>
 <td title="0.7.1">
 <a href="#tile-virtex-DLLP.BOT-DLL:TESTDLL">DLL:TESTDLL[0]</a>
@@ -2136,18 +2430,18 @@ non-inverted
 <tr><td>0</td>
 <td>-</td>
 <td title="0.1.0">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[5]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[5]</a>
 </td>
 <td title="0.2.0">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[4]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[4]</a>
 </td>
 <td>-</td>
 <td title="0.4.0">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[6]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[6]</a>
 </td>
 <td>-</td>
 <td title="0.6.0">
-<a href="#tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[0]</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[0]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -2158,7 +2452,7 @@ non-inverted
 <td>-</td>
 <td>-</td>
 <td title="0.15.0">
-<a href="#tile-virtex-DLLP.BOT-INT:INV.DLL.IMUX.RST">INT:INV.DLL.IMUX.RST</a>
+<a href="#tile-virtex-DLLP.BOT-DLL_INT:INV.DLL.IMUX.RST">DLL_INT:INV.DLL.IMUX.RST</a>
 </td>
 <td title="0.16.0">
 <a href="#tile-virtex-DLLP.BOT-DLL:HIGH_FREQUENCY">DLL:HIGH_FREQUENCY</a>
@@ -2204,7 +2498,7 @@ non-inverted
 <tr><th id="tile-virtex-DLLP.BOT-DLL:TESTZD2OSC">DLL:TESTZD2OSC</th>
 <th>0.12.1</th>
 </tr>
-<tr><th id="tile-virtex-DLLP.BOT-INT:INV.DLL.IMUX.RST">INT:INV.DLL.IMUX.RST</th>
+<tr><th id="tile-virtex-DLLP.BOT-DLL_INT:INV.DLL.IMUX.RST">DLL_INT:INV.DLL.IMUX.RST</th>
 <th>0.15.0</th>
 </tr>
 </thead>
@@ -2408,7 +2702,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB</th>
+<tr><th id="tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB</th>
 <th>0.6.4</th>
 <th>0.5.6</th>
 <th>0.0.6</th>
@@ -2958,7 +3252,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN</th>
+<tr><th id="tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN</th>
 <th>0.6.6</th>
 <th>0.5.4</th>
 <th>0.7.6</th>
@@ -3524,7 +3818,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex-DLLP.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST</th>
+<tr><th id="tile-virtex-DLLP.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST</th>
 <th>0.4.0</th>
 <th>0.1.0</th>
 <th>0.2.0</th>
@@ -3656,16 +3950,168 @@ non-inverted
 </table></div>
 <h2 id="tile-dllsbot"><a class="header" href="#tile-dllsbot">Tile DLLS.BOT</a></h2>
 <p>Cells: 2</p>
-<h3 id="muxes-2"><a class="header" href="#muxes-2">Muxes</a></h3>
+<h3 id="bel-dll_int-2"><a class="header" href="#bel-dll_int-2">Bel DLL_INT</a></h3>
+<h3 id="switchbox-dll_int-2"><a class="header" href="#switchbox-dll_int-2">Switchbox DLL_INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>virtex DLLS.BOT muxes</caption>
+<caption>virtex DLLS.BOT switchbox DLL_INT</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>TCELL0:DLL.IMUX.CLKIN</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1, TCELL2:CLK.OUT.IOFB0, TCELL2:CLK.OUT.IOFB1</td></tr>
-<tr><td>TCELL0:DLL.IMUX.CLKFB</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL0:DLL.OUT.CLK2X, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1, TCELL2:CLK.OUT.IOFB0, TCELL2:CLK.OUT.IOFB1</td></tr>
-<tr><td>TCELL0:DLL.IMUX.RST</td><td>TCELL1:HEX.H2.3, TCELL1:HEX.H2.2, TCELL1:HEX.H2.1, TCELL1:HEX.H2.0, TCELL1:HEX.H2.4, TCELL1:HEX.H2.5, TCELL1:HEX.H3.3, TCELL1:HEX.H3.2, TCELL1:HEX.H3.1, TCELL1:HEX.H3.0, TCELL1:HEX.H3.4, TCELL1:HEX.H3.5</td></tr>
+<tr><td rowspan="32">TCELL0_DLL.IMUX.CLKIN</td><td>TCELL0_GCLK0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.6</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.7</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.8</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.9</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.10</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.11</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD0</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD1</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.IOFB0</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.IOFB1</td><td>mux</td>
+</tr>
+<tr><td rowspan="33">TCELL0_DLL.IMUX.CLKFB</td><td>TCELL0_GCLK0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.6</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.7</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.8</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.9</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.10</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.11</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_DLL.OUT.CLK2X</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD0</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD1</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.IOFB0</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.IOFB1</td><td>mux</td>
+</tr>
+<tr><td rowspan="12">TCELL0_DLL.IMUX.RST</td><td>TCELL1_HEX.H2.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.5</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-dll-2"><a class="header" href="#bel-dll-2">Bel DLL</a></h3>
@@ -3971,46 +4417,46 @@ non-inverted
 </tr>
 <tr><td>6</td>
 <td title="0.0.6">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[11]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[11]</a>
 </td>
 <td title="0.1.6">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[7]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[7]</a>
 </td>
 <td title="0.2.6">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[8]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[8]</a>
 </td>
 <td title="0.3.6">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[9]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[9]</a>
 </td>
 <td title="0.4.6">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[10]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[10]</a>
 </td>
 <td title="0.5.6">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[12]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[12]</a>
 </td>
 <td title="0.6.6">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[13]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[13]</a>
 </td>
 <td title="0.7.6">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[11]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[11]</a>
 </td>
 <td title="0.8.6">
 <a href="#tile-virtex-DLLS.BOT-DLL:CLKFB_PAD">DLL:CLKFB_PAD</a>
 </td>
 <td title="0.9.6">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[5]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[5]</a>
 </td>
 <td title="0.10.6">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[6]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[6]</a>
 </td>
 <td title="0.11.6">
 <a href="#tile-virtex-DLLS.BOT-DLL:LVL1_MUX_24">DLL:LVL1_MUX_24</a>
 </td>
 <td title="0.12.6">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[6]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[6]</a>
 </td>
 <td title="0.13.6">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[5]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[5]</a>
 </td>
 <td title="0.14.6">
 <a href="#tile-virtex-DLLS.BOT-DLL:LVL1_MUX_21">DLL:LVL1_MUX_21</a>
@@ -4058,22 +4504,22 @@ non-inverted
 <tr><td>4</td>
 <td>-</td>
 <td title="0.1.4">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[7]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[7]</a>
 </td>
 <td title="0.2.4">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[8]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[8]</a>
 </td>
 <td title="0.3.4">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[9]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[9]</a>
 </td>
 <td title="0.4.4">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[10]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[10]</a>
 </td>
 <td title="0.5.4">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[12]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[12]</a>
 </td>
 <td title="0.6.4">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[13]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[13]</a>
 </td>
 <td>-</td>
 <td title="0.8.4">
@@ -4102,34 +4548,34 @@ non-inverted
 </tr>
 <tr><td>3</td>
 <td title="0.0.3">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[0]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[0]</a>
 </td>
 <td title="0.1.3">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[0]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[0]</a>
 </td>
 <td title="0.2.3">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[1]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[1]</a>
 </td>
 <td title="0.3.3">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[3]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[3]</a>
 </td>
 <td title="0.4.3">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[3]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[3]</a>
 </td>
 <td title="0.5.3">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[2]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[2]</a>
 </td>
 <td title="0.6.3">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[4]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[4]</a>
 </td>
 <td title="0.7.3">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[4]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[4]</a>
 </td>
 <td title="0.8.3">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[1]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[1]</a>
 </td>
 <td title="0.9.3">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[2]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[2]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -4178,15 +4624,15 @@ non-inverted
 <td>-</td>
 <td>-</td>
 <td title="0.2.1">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[3]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[3]</a>
 </td>
 <td title="0.3.1">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[2]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[2]</a>
 </td>
 <td>-</td>
 <td>-</td>
 <td title="0.6.1">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[1]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[1]</a>
 </td>
 <td title="0.7.1">
 <a href="#tile-virtex-DLLS.BOT-DLL:TESTDLL">DLL:TESTDLL[0]</a>
@@ -4224,18 +4670,18 @@ non-inverted
 <tr><td>0</td>
 <td>-</td>
 <td title="0.1.0">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[5]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[5]</a>
 </td>
 <td title="0.2.0">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[4]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[4]</a>
 </td>
 <td>-</td>
 <td title="0.4.0">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[6]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[6]</a>
 </td>
 <td>-</td>
 <td title="0.6.0">
-<a href="#tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[0]</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[0]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -4246,7 +4692,7 @@ non-inverted
 <td>-</td>
 <td>-</td>
 <td title="0.15.0">
-<a href="#tile-virtex-DLLS.BOT-INT:INV.DLL.IMUX.RST">INT:INV.DLL.IMUX.RST</a>
+<a href="#tile-virtex-DLLS.BOT-DLL_INT:INV.DLL.IMUX.RST">DLL_INT:INV.DLL.IMUX.RST</a>
 </td>
 <td title="0.16.0">
 <a href="#tile-virtex-DLLS.BOT-DLL:HIGH_FREQUENCY">DLL:HIGH_FREQUENCY</a>
@@ -4292,7 +4738,7 @@ non-inverted
 <tr><th id="tile-virtex-DLLS.BOT-DLL:TESTZD2OSC">DLL:TESTZD2OSC</th>
 <th>0.12.1</th>
 </tr>
-<tr><th id="tile-virtex-DLLS.BOT-INT:INV.DLL.IMUX.RST">INT:INV.DLL.IMUX.RST</th>
+<tr><th id="tile-virtex-DLLS.BOT-DLL_INT:INV.DLL.IMUX.RST">DLL_INT:INV.DLL.IMUX.RST</th>
 <th>0.15.0</th>
 </tr>
 </thead>
@@ -4496,7 +4942,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB</th>
+<tr><th id="tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB</th>
 <th>0.6.4</th>
 <th>0.5.6</th>
 <th>0.0.6</th>
@@ -5062,7 +5508,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN</th>
+<tr><th id="tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN</th>
 <th>0.6.6</th>
 <th>0.5.4</th>
 <th>0.7.6</th>
@@ -5612,7 +6058,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex-DLLS.BOT-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST</th>
+<tr><th id="tile-virtex-DLLS.BOT-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST</th>
 <th>0.4.0</th>
 <th>0.1.0</th>
 <th>0.2.0</th>
@@ -5744,16 +6190,158 @@ non-inverted
 </table></div>
 <h2 id="tile-dlltop"><a class="header" href="#tile-dlltop">Tile DLL.TOP</a></h2>
 <p>Cells: 2</p>
-<h3 id="muxes-3"><a class="header" href="#muxes-3">Muxes</a></h3>
+<h3 id="bel-dll_int-3"><a class="header" href="#bel-dll_int-3">Bel DLL_INT</a></h3>
+<h3 id="switchbox-dll_int-3"><a class="header" href="#switchbox-dll_int-3">Switchbox DLL_INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>virtex DLL.TOP muxes</caption>
+<caption>virtex DLL.TOP switchbox DLL_INT</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>TCELL0:DLL.IMUX.CLKIN</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1</td></tr>
-<tr><td>TCELL0:DLL.IMUX.CLKFB</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1</td></tr>
-<tr><td>TCELL0:DLL.IMUX.RST</td><td>TCELL1:HEX.H2.3, TCELL1:HEX.H2.2, TCELL1:HEX.H2.1, TCELL1:HEX.H2.0, TCELL1:HEX.H2.4, TCELL1:HEX.H2.5, TCELL1:HEX.H3.3, TCELL1:HEX.H3.2, TCELL1:HEX.H3.1, TCELL1:HEX.H3.0, TCELL1:HEX.H3.4, TCELL1:HEX.H3.5</td></tr>
+<tr><td rowspan="30">TCELL0_DLL.IMUX.CLKIN</td><td>TCELL0_GCLK0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.6</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.7</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.8</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.9</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.10</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.11</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD0</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD1</td><td>mux</td>
+</tr>
+<tr><td rowspan="30">TCELL0_DLL.IMUX.CLKFB</td><td>TCELL0_GCLK0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.6</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.7</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.8</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.9</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.10</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.11</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD0</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD1</td><td>mux</td>
+</tr>
+<tr><td rowspan="12">TCELL0_DLL.IMUX.RST</td><td>TCELL1_HEX.H2.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.5</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-dll-3"><a class="header" href="#bel-dll-3">Bel DLL</a></h3>
@@ -6059,28 +6647,28 @@ non-inverted
 </tr>
 <tr><td>6</td>
 <td title="0.0.6">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[11]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[11]</a>
 </td>
 <td title="0.1.6">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[5]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[5]</a>
 </td>
 <td title="0.2.6">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[6]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[6]</a>
 </td>
 <td title="0.3.6">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[7]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[7]</a>
 </td>
 <td title="0.4.6">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[8]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[8]</a>
 </td>
 <td title="0.5.6">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[9]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[9]</a>
 </td>
 <td title="0.6.6">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[10]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[10]</a>
 </td>
 <td title="0.7.6">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[11]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[11]</a>
 </td>
 <td title="0.8.6">
 <a href="#tile-virtex-DLL.TOP-DLL:CLKFB_PAD">DLL:CLKFB_PAD</a>
@@ -6138,22 +6726,22 @@ non-inverted
 <tr><td>4</td>
 <td>-</td>
 <td title="0.1.4">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[5]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[5]</a>
 </td>
 <td title="0.2.4">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[6]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[6]</a>
 </td>
 <td title="0.3.4">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[7]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[7]</a>
 </td>
 <td title="0.4.4">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[8]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[8]</a>
 </td>
 <td title="0.5.4">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[9]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[9]</a>
 </td>
 <td title="0.6.4">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[10]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[10]</a>
 </td>
 <td>-</td>
 <td title="0.8.4">
@@ -6182,34 +6770,34 @@ non-inverted
 </tr>
 <tr><td>3</td>
 <td title="0.0.3">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[0]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[0]</a>
 </td>
 <td title="0.1.3">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[0]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[0]</a>
 </td>
 <td title="0.2.3">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[1]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[1]</a>
 </td>
 <td title="0.3.3">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[3]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[3]</a>
 </td>
 <td title="0.4.3">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[3]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[3]</a>
 </td>
 <td title="0.5.3">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[2]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[2]</a>
 </td>
 <td title="0.6.3">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[4]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[4]</a>
 </td>
 <td title="0.7.3">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[4]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[4]</a>
 </td>
 <td title="0.8.3">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[1]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[1]</a>
 </td>
 <td title="0.9.3">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[2]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[2]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -6258,15 +6846,15 @@ non-inverted
 <td>-</td>
 <td>-</td>
 <td title="0.2.1">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[3]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[3]</a>
 </td>
 <td title="0.3.1">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[2]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[2]</a>
 </td>
 <td>-</td>
 <td>-</td>
 <td title="0.6.1">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[1]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[1]</a>
 </td>
 <td title="0.7.1">
 <a href="#tile-virtex-DLL.TOP-DLL:TESTDLL">DLL:TESTDLL[0]</a>
@@ -6302,18 +6890,18 @@ non-inverted
 <tr><td>0</td>
 <td>-</td>
 <td title="0.1.0">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[5]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[5]</a>
 </td>
 <td title="0.2.0">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[4]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[4]</a>
 </td>
 <td>-</td>
 <td title="0.4.0">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[6]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[6]</a>
 </td>
 <td>-</td>
 <td title="0.6.0">
-<a href="#tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[0]</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[0]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -6324,7 +6912,7 @@ non-inverted
 <td>-</td>
 <td>-</td>
 <td title="0.15.0">
-<a href="#tile-virtex-DLL.TOP-INT:INV.DLL.IMUX.RST">INT:INV.DLL.IMUX.RST</a>
+<a href="#tile-virtex-DLL.TOP-DLL_INT:INV.DLL.IMUX.RST">DLL_INT:INV.DLL.IMUX.RST</a>
 </td>
 <td title="0.16.0">
 <a href="#tile-virtex-DLL.TOP-DLL:HIGH_FREQUENCY">DLL:HIGH_FREQUENCY</a>
@@ -6370,7 +6958,7 @@ non-inverted
 <tr><th id="tile-virtex-DLL.TOP-DLL:TESTZD2OSC">DLL:TESTZD2OSC</th>
 <th>0.4.13</th>
 </tr>
-<tr><th id="tile-virtex-DLL.TOP-INT:INV.DLL.IMUX.RST">INT:INV.DLL.IMUX.RST</th>
+<tr><th id="tile-virtex-DLL.TOP-DLL_INT:INV.DLL.IMUX.RST">DLL_INT:INV.DLL.IMUX.RST</th>
 <th>0.15.0</th>
 </tr>
 </thead>
@@ -6560,7 +7148,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB</th>
+<tr><th id="tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB</th>
 <th>0.0.6</th>
 <th>0.6.4</th>
 <th>0.5.6</th>
@@ -6574,7 +7162,7 @@ non-inverted
 <th>0.2.3</th>
 <th>0.1.3</th>
 </tr>
-<tr><th id="tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN</th>
+<tr><th id="tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN</th>
 <th>0.7.6</th>
 <th>0.6.6</th>
 <th>0.5.4</th>
@@ -7028,7 +7616,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex-DLL.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST</th>
+<tr><th id="tile-virtex-DLL.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST</th>
 <th>0.4.0</th>
 <th>0.1.0</th>
 <th>0.2.0</th>
@@ -7160,16 +7748,168 @@ non-inverted
 </table></div>
 <h2 id="tile-dllptop"><a class="header" href="#tile-dllptop">Tile DLLP.TOP</a></h2>
 <p>Cells: 2</p>
-<h3 id="muxes-4"><a class="header" href="#muxes-4">Muxes</a></h3>
+<h3 id="bel-dll_int-4"><a class="header" href="#bel-dll_int-4">Bel DLL_INT</a></h3>
+<h3 id="switchbox-dll_int-4"><a class="header" href="#switchbox-dll_int-4">Switchbox DLL_INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>virtex DLLP.TOP muxes</caption>
+<caption>virtex DLLP.TOP switchbox DLL_INT</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>TCELL0:DLL.IMUX.CLKIN</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1, TCELL2:CLK.OUT.IOFB0, TCELL2:CLK.OUT.IOFB1, TCELL3:DLL.OUT.CLK2X</td></tr>
-<tr><td>TCELL0:DLL.IMUX.CLKFB</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1, TCELL2:CLK.OUT.IOFB0, TCELL2:CLK.OUT.IOFB1</td></tr>
-<tr><td>TCELL0:DLL.IMUX.RST</td><td>TCELL1:HEX.H2.3, TCELL1:HEX.H2.2, TCELL1:HEX.H2.1, TCELL1:HEX.H2.0, TCELL1:HEX.H2.4, TCELL1:HEX.H2.5, TCELL1:HEX.H3.3, TCELL1:HEX.H3.2, TCELL1:HEX.H3.1, TCELL1:HEX.H3.0, TCELL1:HEX.H3.4, TCELL1:HEX.H3.5</td></tr>
+<tr><td rowspan="33">TCELL0_DLL.IMUX.CLKIN</td><td>TCELL0_GCLK0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.6</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.7</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.8</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.9</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.10</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.11</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD0</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD1</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.IOFB0</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.IOFB1</td><td>mux</td>
+</tr>
+<tr><td>TCELL3_DLL.OUT.CLK2X</td><td>mux</td>
+</tr>
+<tr><td rowspan="32">TCELL0_DLL.IMUX.CLKFB</td><td>TCELL0_GCLK0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.6</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.7</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.8</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.9</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.10</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.11</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD0</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD1</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.IOFB0</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.IOFB1</td><td>mux</td>
+</tr>
+<tr><td rowspan="12">TCELL0_DLL.IMUX.RST</td><td>TCELL1_HEX.H2.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.5</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-dll-4"><a class="header" href="#bel-dll-4">Bel DLL</a></h3>
@@ -7475,46 +8215,46 @@ non-inverted
 </tr>
 <tr><td>6</td>
 <td title="0.0.6">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[13]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[13]</a>
 </td>
 <td title="0.1.6">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[7]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[7]</a>
 </td>
 <td title="0.2.6">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[8]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[8]</a>
 </td>
 <td title="0.3.6">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[9]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[9]</a>
 </td>
 <td title="0.4.6">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[10]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[10]</a>
 </td>
 <td title="0.5.6">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[11]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[11]</a>
 </td>
 <td title="0.6.6">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[12]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[12]</a>
 </td>
 <td title="0.7.6">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[13]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[13]</a>
 </td>
 <td title="0.8.6">
 <a href="#tile-virtex-DLLP.TOP-DLL:CLKFB_PAD">DLL:CLKFB_PAD</a>
 </td>
 <td title="0.9.6">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[5]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[5]</a>
 </td>
 <td title="0.10.6">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[6]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[6]</a>
 </td>
 <td title="0.11.6">
 <a href="#tile-virtex-DLLP.TOP-DLL:LVL1_MUX_24">DLL:LVL1_MUX_24</a>
 </td>
 <td title="0.12.6">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[6]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[6]</a>
 </td>
 <td title="0.13.6">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[5]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[5]</a>
 </td>
 <td title="0.14.6">
 <a href="#tile-virtex-DLLP.TOP-DLL:LVL1_MUX_21">DLL:LVL1_MUX_21</a>
@@ -7562,22 +8302,22 @@ non-inverted
 <tr><td>4</td>
 <td>-</td>
 <td title="0.1.4">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[7]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[7]</a>
 </td>
 <td title="0.2.4">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[8]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[8]</a>
 </td>
 <td title="0.3.4">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[9]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[9]</a>
 </td>
 <td title="0.4.4">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[10]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[10]</a>
 </td>
 <td title="0.5.4">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[11]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[11]</a>
 </td>
 <td title="0.6.4">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[12]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[12]</a>
 </td>
 <td>-</td>
 <td title="0.8.4">
@@ -7606,34 +8346,34 @@ non-inverted
 </tr>
 <tr><td>3</td>
 <td title="0.0.3">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[0]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[0]</a>
 </td>
 <td title="0.1.3">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[0]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[0]</a>
 </td>
 <td title="0.2.3">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[1]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[1]</a>
 </td>
 <td title="0.3.3">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[3]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[3]</a>
 </td>
 <td title="0.4.3">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[3]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[3]</a>
 </td>
 <td title="0.5.3">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[2]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[2]</a>
 </td>
 <td title="0.6.3">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[4]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[4]</a>
 </td>
 <td title="0.7.3">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[4]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[4]</a>
 </td>
 <td title="0.8.3">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[1]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[1]</a>
 </td>
 <td title="0.9.3">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[2]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[2]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -7682,15 +8422,15 @@ non-inverted
 <td>-</td>
 <td>-</td>
 <td title="0.2.1">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[3]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[3]</a>
 </td>
 <td title="0.3.1">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[2]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[2]</a>
 </td>
 <td>-</td>
 <td>-</td>
 <td title="0.6.1">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[1]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[1]</a>
 </td>
 <td title="0.7.1">
 <a href="#tile-virtex-DLLP.TOP-DLL:TESTDLL">DLL:TESTDLL[0]</a>
@@ -7728,18 +8468,18 @@ non-inverted
 <tr><td>0</td>
 <td>-</td>
 <td title="0.1.0">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[5]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[5]</a>
 </td>
 <td title="0.2.0">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[4]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[4]</a>
 </td>
 <td>-</td>
 <td title="0.4.0">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[6]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[6]</a>
 </td>
 <td>-</td>
 <td title="0.6.0">
-<a href="#tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[0]</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[0]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -7750,7 +8490,7 @@ non-inverted
 <td>-</td>
 <td>-</td>
 <td title="0.15.0">
-<a href="#tile-virtex-DLLP.TOP-INT:INV.DLL.IMUX.RST">INT:INV.DLL.IMUX.RST</a>
+<a href="#tile-virtex-DLLP.TOP-DLL_INT:INV.DLL.IMUX.RST">DLL_INT:INV.DLL.IMUX.RST</a>
 </td>
 <td title="0.16.0">
 <a href="#tile-virtex-DLLP.TOP-DLL:HIGH_FREQUENCY">DLL:HIGH_FREQUENCY</a>
@@ -7796,7 +8536,7 @@ non-inverted
 <tr><th id="tile-virtex-DLLP.TOP-DLL:TESTZD2OSC">DLL:TESTZD2OSC</th>
 <th>0.12.1</th>
 </tr>
-<tr><th id="tile-virtex-DLLP.TOP-INT:INV.DLL.IMUX.RST">INT:INV.DLL.IMUX.RST</th>
+<tr><th id="tile-virtex-DLLP.TOP-DLL_INT:INV.DLL.IMUX.RST">DLL_INT:INV.DLL.IMUX.RST</th>
 <th>0.15.0</th>
 </tr>
 </thead>
@@ -8000,7 +8740,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB</th>
+<tr><th id="tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB</th>
 <th>0.0.6</th>
 <th>0.6.4</th>
 <th>0.5.6</th>
@@ -8550,7 +9290,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN</th>
+<tr><th id="tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN</th>
 <th>0.7.6</th>
 <th>0.6.6</th>
 <th>0.5.4</th>
@@ -9116,7 +9856,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex-DLLP.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST</th>
+<tr><th id="tile-virtex-DLLP.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST</th>
 <th>0.4.0</th>
 <th>0.1.0</th>
 <th>0.2.0</th>
@@ -9248,16 +9988,168 @@ non-inverted
 </table></div>
 <h2 id="tile-dllstop"><a class="header" href="#tile-dllstop">Tile DLLS.TOP</a></h2>
 <p>Cells: 2</p>
-<h3 id="muxes-5"><a class="header" href="#muxes-5">Muxes</a></h3>
+<h3 id="bel-dll_int-5"><a class="header" href="#bel-dll_int-5">Bel DLL_INT</a></h3>
+<h3 id="switchbox-dll_int-5"><a class="header" href="#switchbox-dll_int-5">Switchbox DLL_INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>virtex DLLS.TOP muxes</caption>
+<caption>virtex DLLS.TOP switchbox DLL_INT</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>TCELL0:DLL.IMUX.CLKIN</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1, TCELL2:CLK.OUT.IOFB0, TCELL2:CLK.OUT.IOFB1</td></tr>
-<tr><td>TCELL0:DLL.IMUX.CLKFB</td><td>TCELL0:GCLK0, TCELL0:GCLK1, TCELL0:GCLK2, TCELL0:GCLK3, TCELL0:LV.0, TCELL0:LV.1, TCELL0:LV.2, TCELL0:LV.3, TCELL0:LV.4, TCELL0:LV.5, TCELL0:LV.6, TCELL0:LV.7, TCELL0:LV.8, TCELL0:LV.9, TCELL0:LV.10, TCELL0:LV.11, TCELL0:DLL.OUT.CLK2X, TCELL1:HEX.H0.3, TCELL1:HEX.H0.2, TCELL1:HEX.H0.1, TCELL1:HEX.H0.0, TCELL1:HEX.H0.4, TCELL1:HEX.H0.5, TCELL1:HEX.H1.3, TCELL1:HEX.H1.2, TCELL1:HEX.H1.1, TCELL1:HEX.H1.0, TCELL1:HEX.H1.4, TCELL1:HEX.H1.5, TCELL2:CLK.OUT.CLKPAD0, TCELL2:CLK.OUT.CLKPAD1, TCELL2:CLK.OUT.IOFB0, TCELL2:CLK.OUT.IOFB1</td></tr>
-<tr><td>TCELL0:DLL.IMUX.RST</td><td>TCELL1:HEX.H2.3, TCELL1:HEX.H2.2, TCELL1:HEX.H2.1, TCELL1:HEX.H2.0, TCELL1:HEX.H2.4, TCELL1:HEX.H2.5, TCELL1:HEX.H3.3, TCELL1:HEX.H3.2, TCELL1:HEX.H3.1, TCELL1:HEX.H3.0, TCELL1:HEX.H3.4, TCELL1:HEX.H3.5</td></tr>
+<tr><td rowspan="32">TCELL0_DLL.IMUX.CLKIN</td><td>TCELL0_GCLK0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.6</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.7</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.8</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.9</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.10</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.11</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD0</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD1</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.IOFB0</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.IOFB1</td><td>mux</td>
+</tr>
+<tr><td rowspan="33">TCELL0_DLL.IMUX.CLKFB</td><td>TCELL0_GCLK0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_GCLK3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.6</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.7</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.8</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.9</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.10</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_LV.11</td><td>mux</td>
+</tr>
+<tr><td>TCELL0_DLL.OUT.CLK2X</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H0.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H1.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD0</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.CLKPAD1</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.IOFB0</td><td>mux</td>
+</tr>
+<tr><td>TCELL2_CLK.OUT.IOFB1</td><td>mux</td>
+</tr>
+<tr><td rowspan="12">TCELL0_DLL.IMUX.RST</td><td>TCELL1_HEX.H2.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H2.5</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.3</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.2</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.1</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.0</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.4</td><td>mux</td>
+</tr>
+<tr><td>TCELL1_HEX.H3.5</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-dll-5"><a class="header" href="#bel-dll-5">Bel DLL</a></h3>
@@ -9563,46 +10455,46 @@ non-inverted
 </tr>
 <tr><td>6</td>
 <td title="0.0.6">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[13]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[13]</a>
 </td>
 <td title="0.1.6">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[7]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[7]</a>
 </td>
 <td title="0.2.6">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[8]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[8]</a>
 </td>
 <td title="0.3.6">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[9]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[9]</a>
 </td>
 <td title="0.4.6">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[10]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[10]</a>
 </td>
 <td title="0.5.6">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[11]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[11]</a>
 </td>
 <td title="0.6.6">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[12]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[12]</a>
 </td>
 <td title="0.7.6">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[13]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[13]</a>
 </td>
 <td title="0.8.6">
 <a href="#tile-virtex-DLLS.TOP-DLL:CLKFB_PAD">DLL:CLKFB_PAD</a>
 </td>
 <td title="0.9.6">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[5]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[5]</a>
 </td>
 <td title="0.10.6">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[6]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[6]</a>
 </td>
 <td title="0.11.6">
 <a href="#tile-virtex-DLLS.TOP-DLL:LVL1_MUX_24">DLL:LVL1_MUX_24</a>
 </td>
 <td title="0.12.6">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[6]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[6]</a>
 </td>
 <td title="0.13.6">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[5]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[5]</a>
 </td>
 <td title="0.14.6">
 <a href="#tile-virtex-DLLS.TOP-DLL:LVL1_MUX_21">DLL:LVL1_MUX_21</a>
@@ -9650,22 +10542,22 @@ non-inverted
 <tr><td>4</td>
 <td>-</td>
 <td title="0.1.4">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[7]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[7]</a>
 </td>
 <td title="0.2.4">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[8]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[8]</a>
 </td>
 <td title="0.3.4">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[9]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[9]</a>
 </td>
 <td title="0.4.4">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[10]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[10]</a>
 </td>
 <td title="0.5.4">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[11]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[11]</a>
 </td>
 <td title="0.6.4">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[12]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[12]</a>
 </td>
 <td>-</td>
 <td title="0.8.4">
@@ -9694,34 +10586,34 @@ non-inverted
 </tr>
 <tr><td>3</td>
 <td title="0.0.3">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[0]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[0]</a>
 </td>
 <td title="0.1.3">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[0]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[0]</a>
 </td>
 <td title="0.2.3">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[1]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[1]</a>
 </td>
 <td title="0.3.3">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[3]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[3]</a>
 </td>
 <td title="0.4.3">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[3]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[3]</a>
 </td>
 <td title="0.5.3">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[2]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[2]</a>
 </td>
 <td title="0.6.3">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB[4]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB[4]</a>
 </td>
 <td title="0.7.3">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[4]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[4]</a>
 </td>
 <td title="0.8.3">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[1]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[1]</a>
 </td>
 <td title="0.9.3">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN[2]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN[2]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -9770,15 +10662,15 @@ non-inverted
 <td>-</td>
 <td>-</td>
 <td title="0.2.1">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[3]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[3]</a>
 </td>
 <td title="0.3.1">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[2]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[2]</a>
 </td>
 <td>-</td>
 <td>-</td>
 <td title="0.6.1">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[1]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[1]</a>
 </td>
 <td title="0.7.1">
 <a href="#tile-virtex-DLLS.TOP-DLL:TESTDLL">DLL:TESTDLL[0]</a>
@@ -9816,18 +10708,18 @@ non-inverted
 <tr><td>0</td>
 <td>-</td>
 <td title="0.1.0">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[5]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[5]</a>
 </td>
 <td title="0.2.0">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[4]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[4]</a>
 </td>
 <td>-</td>
 <td title="0.4.0">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[6]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[6]</a>
 </td>
 <td>-</td>
 <td title="0.6.0">
-<a href="#tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST[0]</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST[0]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -9838,7 +10730,7 @@ non-inverted
 <td>-</td>
 <td>-</td>
 <td title="0.15.0">
-<a href="#tile-virtex-DLLS.TOP-INT:INV.DLL.IMUX.RST">INT:INV.DLL.IMUX.RST</a>
+<a href="#tile-virtex-DLLS.TOP-DLL_INT:INV.DLL.IMUX.RST">DLL_INT:INV.DLL.IMUX.RST</a>
 </td>
 <td title="0.16.0">
 <a href="#tile-virtex-DLLS.TOP-DLL:HIGH_FREQUENCY">DLL:HIGH_FREQUENCY</a>
@@ -9884,7 +10776,7 @@ non-inverted
 <tr><th id="tile-virtex-DLLS.TOP-DLL:TESTZD2OSC">DLL:TESTZD2OSC</th>
 <th>0.12.1</th>
 </tr>
-<tr><th id="tile-virtex-DLLS.TOP-INT:INV.DLL.IMUX.RST">INT:INV.DLL.IMUX.RST</th>
+<tr><th id="tile-virtex-DLLS.TOP-DLL_INT:INV.DLL.IMUX.RST">DLL_INT:INV.DLL.IMUX.RST</th>
 <th>0.15.0</th>
 </tr>
 </thead>
@@ -10088,7 +10980,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKFB">INT:MUX.0.DLL.IMUX.CLKFB</th>
+<tr><th id="tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKFB">DLL_INT:MUX.0.DLL.IMUX.CLKFB</th>
 <th>0.0.6</th>
 <th>0.6.4</th>
 <th>0.5.6</th>
@@ -10654,7 +11546,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.CLKIN">INT:MUX.0.DLL.IMUX.CLKIN</th>
+<tr><th id="tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.CLKIN">DLL_INT:MUX.0.DLL.IMUX.CLKIN</th>
 <th>0.7.6</th>
 <th>0.6.6</th>
 <th>0.5.4</th>
@@ -11204,7 +12096,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex-DLLS.TOP-INT:MUX.0.DLL.IMUX.RST">INT:MUX.0.DLL.IMUX.RST</th>
+<tr><th id="tile-virtex-DLLS.TOP-DLL_INT:MUX.0.DLL.IMUX.RST">DLL_INT:MUX.0.DLL.IMUX.RST</th>
 <th>0.4.0</th>
 <th>0.1.0</th>
 <th>0.2.0</th>

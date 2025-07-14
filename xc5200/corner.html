@@ -152,40 +152,130 @@
                         <h1 id="corners"><a class="header" href="#corners">Corners</a></h1>
 <h2 id="tile-cnrbl"><a class="header" href="#tile-cnrbl">Tile CNR.BL</a></h2>
 <p>Cells: 1</p>
-<h3 id="muxes"><a class="header" href="#muxes">Muxes</a></h3>
+<h3 id="bel-int"><a class="header" href="#bel-int">Bel INT</a></h3>
+<h3 id="switchbox-int"><a class="header" href="#switchbox-int">Switchbox INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>xc5200 CNR.BL muxes</caption>
+<caption>xc5200 CNR.BL switchbox INT</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>IO.SINGLE.L.N0</td><td>OUT.RDBK.RIP</td></tr>
-<tr><td>IO.SINGLE.L.N1</td><td>OUT.RDBK.RIP</td></tr>
-<tr><td>IO.SINGLE.L.N2</td><td>OUT.RDBK.RIP</td></tr>
-<tr><td>IO.SINGLE.L.N3</td><td>OUT.RDBK.RIP</td></tr>
-<tr><td>IO.SINGLE.L.N4</td><td>OUT.RDBK.DATA</td></tr>
-<tr><td>IO.SINGLE.L.N5</td><td>OUT.RDBK.DATA</td></tr>
-<tr><td>IO.SINGLE.L.N6</td><td>OUT.RDBK.DATA</td></tr>
-<tr><td>IO.SINGLE.L.N7</td><td>OUT.RDBK.DATA</td></tr>
-<tr><td>LONG.H0</td><td>LONG.V0, OUT.RDBK.RIP</td></tr>
-<tr><td>LONG.H1</td><td>LONG.V1, OUT.RDBK.RIP</td></tr>
-<tr><td>LONG.H2</td><td>LONG.V2, OUT.RDBK.RIP</td></tr>
-<tr><td>LONG.H3</td><td>LONG.V3, OUT.RDBK.RIP</td></tr>
-<tr><td>LONG.H4</td><td>LONG.V4, OUT.RDBK.DATA</td></tr>
-<tr><td>LONG.H5</td><td>LONG.V5, OUT.RDBK.DATA</td></tr>
-<tr><td>LONG.H6</td><td>LONG.V6, OUT.RDBK.DATA</td></tr>
-<tr><td>LONG.H7</td><td>LONG.V7, OUT.RDBK.DATA</td></tr>
-<tr><td>LONG.V0</td><td>LONG.H0</td></tr>
-<tr><td>LONG.V1</td><td>LONG.H1</td></tr>
-<tr><td>LONG.V2</td><td>LONG.H2</td></tr>
-<tr><td>LONG.V3</td><td>LONG.H3</td></tr>
-<tr><td>LONG.V4</td><td>LONG.H4</td></tr>
-<tr><td>LONG.V5</td><td>LONG.H5</td></tr>
-<tr><td>LONG.V6</td><td>LONG.H6</td></tr>
-<tr><td>LONG.V7</td><td>LONG.H7</td></tr>
-<tr><td>IMUX.RDBK.RCLK</td><td>IO.SINGLE.L.N0, IO.SINGLE.L.N1, IO.SINGLE.L.N2, IO.SINGLE.L.N3, LONG.H0, LONG.H1, LONG.H2, LONG.H3</td></tr>
-<tr><td>IMUX.RDBK.TRIG</td><td>GND, IO.SINGLE.L.N4, IO.SINGLE.L.N5, IO.SINGLE.L.N6, LONG.H4, LONG.H5, LONG.H6, LONG.H7</td></tr>
-<tr><td>IMUX.BUFG</td><td>GND, IO.SINGLE.L.N0, IO.SINGLE.L.N1, IO.SINGLE.L.N2, IO.SINGLE.L.N3, LONG.V4, LONG.V5, LONG.V6, LONG.V7, OUT.CLKIOB</td></tr>
+<tr><td rowspan="1">IO.SINGLE.L.N0</td><td>OUT.RDBK.RIP</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.L.N1</td><td>OUT.RDBK.RIP</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.L.N2</td><td>OUT.RDBK.RIP</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.L.N3</td><td>OUT.RDBK.RIP</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.L.N4</td><td>OUT.RDBK.DATA</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.L.N5</td><td>OUT.RDBK.DATA</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.L.N6</td><td>OUT.RDBK.DATA</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.L.N7</td><td>OUT.RDBK.DATA</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.H0</td><td>OUT.RDBK.RIP</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.V0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.H1</td><td>OUT.RDBK.RIP</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.V1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.H2</td><td>OUT.RDBK.RIP</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.V2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.H3</td><td>OUT.RDBK.RIP</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.V3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.H4</td><td>OUT.RDBK.DATA</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.V4</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.H5</td><td>OUT.RDBK.DATA</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.V5</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.H6</td><td>OUT.RDBK.DATA</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.V6</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.H7</td><td>OUT.RDBK.DATA</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.V7</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V0</td><td>LONG.H0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V1</td><td>LONG.H1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V2</td><td>LONG.H2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V3</td><td>LONG.H3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V4</td><td>LONG.H4</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V5</td><td>LONG.H5</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V6</td><td>LONG.H6</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V7</td><td>LONG.H7</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="8">IMUX.RDBK.RCLK</td><td>IO.SINGLE.L.N0</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.L.N1</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.L.N2</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.L.N3</td><td>mux</td>
+</tr>
+<tr><td>LONG.H0</td><td>mux</td>
+</tr>
+<tr><td>LONG.H1</td><td>mux</td>
+</tr>
+<tr><td>LONG.H2</td><td>mux</td>
+</tr>
+<tr><td>LONG.H3</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.RDBK.TRIG</td><td>GND</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.L.N4</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.L.N5</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.L.N6</td><td>mux</td>
+</tr>
+<tr><td>LONG.H4</td><td>mux</td>
+</tr>
+<tr><td>LONG.H5</td><td>mux</td>
+</tr>
+<tr><td>LONG.H6</td><td>mux</td>
+</tr>
+<tr><td>LONG.H7</td><td>mux</td>
+</tr>
+<tr><td rowspan="10">IMUX.BUFG</td><td>GND</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.L.N0</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.L.N1</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.L.N2</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.L.N3</td><td>mux</td>
+</tr>
+<tr><td>LONG.V4</td><td>mux</td>
+</tr>
+<tr><td>LONG.V5</td><td>mux</td>
+</tr>
+<tr><td>LONG.V6</td><td>mux</td>
+</tr>
+<tr><td>LONG.V7</td><td>mux</td>
+</tr>
+<tr><td>OUT.CLKIOB</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-bufg"><a class="header" href="#bel-bufg">Bel BUFG</a></h3>
@@ -964,41 +1054,146 @@ inverted
 </table></div>
 <h2 id="tile-cnrbr"><a class="header" href="#tile-cnrbr">Tile CNR.BR</a></h2>
 <p>Cells: 1</p>
-<h3 id="muxes-1"><a class="header" href="#muxes-1">Muxes</a></h3>
+<h3 id="bel-int-1"><a class="header" href="#bel-int-1">Bel INT</a></h3>
+<h3 id="switchbox-int-1"><a class="header" href="#switchbox-int-1">Switchbox INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>xc5200 CNR.BR muxes</caption>
+<caption>xc5200 CNR.BR switchbox INT</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>IO.SINGLE.B.W0</td><td>OUT.STARTUP.DONEIN</td></tr>
-<tr><td>IO.SINGLE.B.W1</td><td>OUT.STARTUP.DONEIN</td></tr>
-<tr><td>IO.SINGLE.B.W2</td><td>OUT.STARTUP.Q3</td></tr>
-<tr><td>IO.SINGLE.B.W3</td><td>OUT.STARTUP.Q3</td></tr>
-<tr><td>IO.SINGLE.B.W4</td><td>OUT.STARTUP.Q2</td></tr>
-<tr><td>IO.SINGLE.B.W5</td><td>OUT.STARTUP.Q2</td></tr>
-<tr><td>IO.SINGLE.B.W6</td><td>OUT.STARTUP.Q1Q4</td></tr>
-<tr><td>IO.SINGLE.B.W7</td><td>OUT.STARTUP.Q1Q4</td></tr>
-<tr><td>LONG.H0</td><td>LONG.V0</td></tr>
-<tr><td>LONG.H1</td><td>LONG.V1</td></tr>
-<tr><td>LONG.H2</td><td>LONG.V2</td></tr>
-<tr><td>LONG.H3</td><td>LONG.V3</td></tr>
-<tr><td>LONG.H4</td><td>LONG.V4</td></tr>
-<tr><td>LONG.H5</td><td>LONG.V5</td></tr>
-<tr><td>LONG.H6</td><td>LONG.V6</td></tr>
-<tr><td>LONG.H7</td><td>LONG.V7</td></tr>
-<tr><td>LONG.V0</td><td>LONG.H0, OUT.STARTUP.DONEIN</td></tr>
-<tr><td>LONG.V1</td><td>LONG.H1, OUT.STARTUP.DONEIN</td></tr>
-<tr><td>LONG.V2</td><td>LONG.H2, OUT.STARTUP.Q3</td></tr>
-<tr><td>LONG.V3</td><td>LONG.H3, OUT.STARTUP.Q3</td></tr>
-<tr><td>LONG.V4</td><td>LONG.H4, OUT.STARTUP.Q2</td></tr>
-<tr><td>LONG.V5</td><td>LONG.H5, OUT.STARTUP.Q2</td></tr>
-<tr><td>LONG.V6</td><td>LONG.H6, OUT.STARTUP.Q1Q4</td></tr>
-<tr><td>LONG.V7</td><td>LONG.H7, OUT.STARTUP.Q1Q4</td></tr>
-<tr><td>IMUX.STARTUP.SCLK</td><td>LONG.V0, LONG.V1, LONG.V2, LONG.V3, LONG.V4, LONG.V5, LONG.V6, LONG.V7</td></tr>
-<tr><td>IMUX.STARTUP.GRST</td><td>IO.SINGLE.B.W4, IO.SINGLE.B.W5, IO.SINGLE.B.W6, IO.SINGLE.B.W7, LONG.V4, LONG.V5, LONG.V6, LONG.V7</td></tr>
-<tr><td>IMUX.STARTUP.GTS</td><td>IO.SINGLE.B.W0, IO.SINGLE.B.W1, IO.SINGLE.B.W2, IO.SINGLE.B.W3, LONG.V0, LONG.V1, LONG.V2, LONG.V3</td></tr>
-<tr><td>IMUX.BUFG</td><td>GND, IO.SINGLE.B.W0, IO.SINGLE.B.W1, IO.SINGLE.B.W2, IO.SINGLE.B.W3, LONG.H4, LONG.H5, LONG.H6, LONG.H7, OUT.CLKIOB</td></tr>
+<tr><td rowspan="1">IO.SINGLE.B.W0</td><td>OUT.STARTUP.DONEIN</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.B.W1</td><td>OUT.STARTUP.DONEIN</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.B.W2</td><td>OUT.STARTUP.Q3</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.B.W3</td><td>OUT.STARTUP.Q3</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.B.W4</td><td>OUT.STARTUP.Q2</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.B.W5</td><td>OUT.STARTUP.Q2</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.B.W6</td><td>OUT.STARTUP.Q1Q4</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.B.W7</td><td>OUT.STARTUP.Q1Q4</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H0</td><td>LONG.V0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H1</td><td>LONG.V1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H2</td><td>LONG.V2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H3</td><td>LONG.V3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H4</td><td>LONG.V4</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H5</td><td>LONG.V5</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H6</td><td>LONG.V6</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H7</td><td>LONG.V7</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.V0</td><td>OUT.STARTUP.DONEIN</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.H0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.V1</td><td>OUT.STARTUP.DONEIN</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.H1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.V2</td><td>OUT.STARTUP.Q3</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.H2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.V3</td><td>OUT.STARTUP.Q3</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.H3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.V4</td><td>OUT.STARTUP.Q2</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.H4</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.V5</td><td>OUT.STARTUP.Q2</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.H5</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.V6</td><td>OUT.STARTUP.Q1Q4</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.H6</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.V7</td><td>OUT.STARTUP.Q1Q4</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.H7</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="8">IMUX.STARTUP.SCLK</td><td>LONG.V0</td><td>mux</td>
+</tr>
+<tr><td>LONG.V1</td><td>mux</td>
+</tr>
+<tr><td>LONG.V2</td><td>mux</td>
+</tr>
+<tr><td>LONG.V3</td><td>mux</td>
+</tr>
+<tr><td>LONG.V4</td><td>mux</td>
+</tr>
+<tr><td>LONG.V5</td><td>mux</td>
+</tr>
+<tr><td>LONG.V6</td><td>mux</td>
+</tr>
+<tr><td>LONG.V7</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.STARTUP.GRST</td><td>IO.SINGLE.B.W4</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.B.W5</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.B.W6</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.B.W7</td><td>mux</td>
+</tr>
+<tr><td>LONG.V4</td><td>mux</td>
+</tr>
+<tr><td>LONG.V5</td><td>mux</td>
+</tr>
+<tr><td>LONG.V6</td><td>mux</td>
+</tr>
+<tr><td>LONG.V7</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.STARTUP.GTS</td><td>IO.SINGLE.B.W0</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.B.W1</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.B.W2</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.B.W3</td><td>mux</td>
+</tr>
+<tr><td>LONG.V0</td><td>mux</td>
+</tr>
+<tr><td>LONG.V1</td><td>mux</td>
+</tr>
+<tr><td>LONG.V2</td><td>mux</td>
+</tr>
+<tr><td>LONG.V3</td><td>mux</td>
+</tr>
+<tr><td rowspan="10">IMUX.BUFG</td><td>GND</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.B.W0</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.B.W1</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.B.W2</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.B.W3</td><td>mux</td>
+</tr>
+<tr><td>LONG.H4</td><td>mux</td>
+</tr>
+<tr><td>LONG.H5</td><td>mux</td>
+</tr>
+<tr><td>LONG.H6</td><td>mux</td>
+</tr>
+<tr><td>LONG.H7</td><td>mux</td>
+</tr>
+<tr><td>OUT.CLKIOB</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-bufg-1"><a class="header" href="#bel-bufg-1">Bel BUFG</a></h3>
@@ -2081,40 +2276,138 @@ non-inverted
 </table></div>
 <h2 id="tile-cnrtl"><a class="header" href="#tile-cnrtl">Tile CNR.TL</a></h2>
 <p>Cells: 1</p>
-<h3 id="muxes-2"><a class="header" href="#muxes-2">Muxes</a></h3>
+<h3 id="bel-int-2"><a class="header" href="#bel-int-2">Bel INT</a></h3>
+<h3 id="switchbox-int-2"><a class="header" href="#switchbox-int-2">Switchbox INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>xc5200 CNR.TL muxes</caption>
+<caption>xc5200 CNR.TL switchbox INT</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>IO.SINGLE.T.E0</td><td>OUT.BSCAN.DRCK, OUT.BSCAN.SEL2</td></tr>
-<tr><td>IO.SINGLE.T.E1</td><td>OUT.BSCAN.DRCK, OUT.BSCAN.SEL2</td></tr>
-<tr><td>IO.SINGLE.T.E2</td><td>OUT.BSCAN.SEL1, OUT.BSCAN.SHIFT</td></tr>
-<tr><td>IO.SINGLE.T.E3</td><td>OUT.BSCAN.SEL1, OUT.BSCAN.SHIFT</td></tr>
-<tr><td>IO.SINGLE.T.E4</td><td>OUT.BSCAN.UPDATE</td></tr>
-<tr><td>IO.SINGLE.T.E5</td><td>OUT.BSCAN.UPDATE</td></tr>
-<tr><td>IO.SINGLE.T.E6</td><td>OUT.BSCAN.IDLE, OUT.BSCAN.RESET</td></tr>
-<tr><td>IO.SINGLE.T.E7</td><td>OUT.BSCAN.IDLE, OUT.BSCAN.RESET</td></tr>
-<tr><td>LONG.H0</td><td>LONG.V0</td></tr>
-<tr><td>LONG.H1</td><td>LONG.V1</td></tr>
-<tr><td>LONG.H2</td><td>LONG.V2</td></tr>
-<tr><td>LONG.H3</td><td>LONG.V3</td></tr>
-<tr><td>LONG.H4</td><td>LONG.V4</td></tr>
-<tr><td>LONG.H5</td><td>LONG.V5</td></tr>
-<tr><td>LONG.H6</td><td>LONG.V6</td></tr>
-<tr><td>LONG.H7</td><td>LONG.V7</td></tr>
-<tr><td>LONG.V0</td><td>LONG.H0, OUT.BSCAN.DRCK, OUT.BSCAN.SEL2</td></tr>
-<tr><td>LONG.V1</td><td>LONG.H1, OUT.BSCAN.DRCK, OUT.BSCAN.SEL2</td></tr>
-<tr><td>LONG.V2</td><td>LONG.H2, OUT.BSCAN.SEL1, OUT.BSCAN.SHIFT</td></tr>
-<tr><td>LONG.V3</td><td>LONG.H3, OUT.BSCAN.SEL1, OUT.BSCAN.SHIFT</td></tr>
-<tr><td>LONG.V4</td><td>LONG.H4, OUT.BSCAN.UPDATE</td></tr>
-<tr><td>LONG.V5</td><td>LONG.H5, OUT.BSCAN.UPDATE</td></tr>
-<tr><td>LONG.V6</td><td>LONG.H6, OUT.BSCAN.IDLE, OUT.BSCAN.RESET</td></tr>
-<tr><td>LONG.V7</td><td>LONG.H7, OUT.BSCAN.IDLE, OUT.BSCAN.RESET</td></tr>
-<tr><td>IMUX.BSCAN.TDO1</td><td>IO.SINGLE.T.E6, IO.SINGLE.T.E7, LONG.V6, LONG.V7</td></tr>
-<tr><td>IMUX.BSCAN.TDO2</td><td>IO.SINGLE.T.E4, IO.SINGLE.T.E5, LONG.V4, LONG.V5</td></tr>
-<tr><td>IMUX.BUFG</td><td>GND, IO.SINGLE.T.E0, IO.SINGLE.T.E1, IO.SINGLE.T.E2, IO.SINGLE.T.E3, LONG.H4, LONG.H5, LONG.H6, LONG.H7, OUT.CLKIOB</td></tr>
+<tr><td rowspan="2">IO.SINGLE.T.E0</td><td>OUT.BSCAN.DRCK</td><td>pass transistor</td>
+</tr>
+<tr><td>OUT.BSCAN.SEL2</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="2">IO.SINGLE.T.E1</td><td>OUT.BSCAN.DRCK</td><td>pass transistor</td>
+</tr>
+<tr><td>OUT.BSCAN.SEL2</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="2">IO.SINGLE.T.E2</td><td>OUT.BSCAN.SEL1</td><td>pass transistor</td>
+</tr>
+<tr><td>OUT.BSCAN.SHIFT</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="2">IO.SINGLE.T.E3</td><td>OUT.BSCAN.SEL1</td><td>pass transistor</td>
+</tr>
+<tr><td>OUT.BSCAN.SHIFT</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.T.E4</td><td>OUT.BSCAN.UPDATE</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.T.E5</td><td>OUT.BSCAN.UPDATE</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="2">IO.SINGLE.T.E6</td><td>OUT.BSCAN.IDLE</td><td>pass transistor</td>
+</tr>
+<tr><td>OUT.BSCAN.RESET</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="2">IO.SINGLE.T.E7</td><td>OUT.BSCAN.IDLE</td><td>pass transistor</td>
+</tr>
+<tr><td>OUT.BSCAN.RESET</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H0</td><td>LONG.V0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H1</td><td>LONG.V1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H2</td><td>LONG.V2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H3</td><td>LONG.V3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H4</td><td>LONG.V4</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H5</td><td>LONG.V5</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H6</td><td>LONG.V6</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H7</td><td>LONG.V7</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="3">LONG.V0</td><td>OUT.BSCAN.DRCK</td><td>pass transistor</td>
+</tr>
+<tr><td>OUT.BSCAN.SEL2</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.H0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="3">LONG.V1</td><td>OUT.BSCAN.DRCK</td><td>pass transistor</td>
+</tr>
+<tr><td>OUT.BSCAN.SEL2</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.H1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="3">LONG.V2</td><td>OUT.BSCAN.SEL1</td><td>pass transistor</td>
+</tr>
+<tr><td>OUT.BSCAN.SHIFT</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.H2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="3">LONG.V3</td><td>OUT.BSCAN.SEL1</td><td>pass transistor</td>
+</tr>
+<tr><td>OUT.BSCAN.SHIFT</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.H3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.V4</td><td>OUT.BSCAN.UPDATE</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.H4</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.V5</td><td>OUT.BSCAN.UPDATE</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.H5</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="3">LONG.V6</td><td>OUT.BSCAN.IDLE</td><td>pass transistor</td>
+</tr>
+<tr><td>OUT.BSCAN.RESET</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.H6</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="3">LONG.V7</td><td>OUT.BSCAN.IDLE</td><td>pass transistor</td>
+</tr>
+<tr><td>OUT.BSCAN.RESET</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.H7</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="4">IMUX.BSCAN.TDO1</td><td>IO.SINGLE.T.E6</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.T.E7</td><td>mux</td>
+</tr>
+<tr><td>LONG.V6</td><td>mux</td>
+</tr>
+<tr><td>LONG.V7</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">IMUX.BSCAN.TDO2</td><td>IO.SINGLE.T.E4</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.T.E5</td><td>mux</td>
+</tr>
+<tr><td>LONG.V4</td><td>mux</td>
+</tr>
+<tr><td>LONG.V5</td><td>mux</td>
+</tr>
+<tr><td rowspan="10">IMUX.BUFG</td><td>GND</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.T.E0</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.T.E1</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.T.E2</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.T.E3</td><td>mux</td>
+</tr>
+<tr><td>LONG.H4</td><td>mux</td>
+</tr>
+<tr><td>LONG.H5</td><td>mux</td>
+</tr>
+<tr><td>LONG.H6</td><td>mux</td>
+</tr>
+<tr><td>LONG.H7</td><td>mux</td>
+</tr>
+<tr><td>OUT.CLKIOB</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-bufg-2"><a class="header" href="#bel-bufg-2">Bel BUFG</a></h3>
@@ -2752,38 +3045,116 @@ inverted
 </table></div>
 <h2 id="tile-cnrtr"><a class="header" href="#tile-cnrtr">Tile CNR.TR</a></h2>
 <p>Cells: 1</p>
-<h3 id="muxes-3"><a class="header" href="#muxes-3">Muxes</a></h3>
+<h3 id="bel-int-3"><a class="header" href="#bel-int-3">Bel INT</a></h3>
+<h3 id="switchbox-int-3"><a class="header" href="#switchbox-int-3">Switchbox INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>xc5200 CNR.TR muxes</caption>
+<caption>xc5200 CNR.TR switchbox INT</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>IO.SINGLE.R.S2</td><td>OUT.BSUPD</td></tr>
-<tr><td>IO.SINGLE.R.S3</td><td>OUT.BSUPD</td></tr>
-<tr><td>IO.SINGLE.R.S4</td><td>OUT.OSC.OSC1</td></tr>
-<tr><td>IO.SINGLE.R.S5</td><td>OUT.OSC.OSC1</td></tr>
-<tr><td>IO.SINGLE.R.S6</td><td>OUT.OSC.OSC2</td></tr>
-<tr><td>IO.SINGLE.R.S7</td><td>OUT.OSC.OSC2</td></tr>
-<tr><td>LONG.H0</td><td>LONG.V0</td></tr>
-<tr><td>LONG.H1</td><td>LONG.V1</td></tr>
-<tr><td>LONG.H2</td><td>LONG.V2, OUT.BSUPD</td></tr>
-<tr><td>LONG.H3</td><td>LONG.V3, OUT.BSUPD</td></tr>
-<tr><td>LONG.H4</td><td>LONG.V4, OUT.OSC.OSC1</td></tr>
-<tr><td>LONG.H5</td><td>LONG.V5, OUT.OSC.OSC1</td></tr>
-<tr><td>LONG.H6</td><td>LONG.V6, OUT.OSC.OSC2</td></tr>
-<tr><td>LONG.H7</td><td>LONG.V7, OUT.OSC.OSC2</td></tr>
-<tr><td>LONG.V0</td><td>LONG.H0</td></tr>
-<tr><td>LONG.V1</td><td>LONG.H1</td></tr>
-<tr><td>LONG.V2</td><td>LONG.H2</td></tr>
-<tr><td>LONG.V3</td><td>LONG.H3</td></tr>
-<tr><td>LONG.V4</td><td>LONG.H4</td></tr>
-<tr><td>LONG.V5</td><td>LONG.H5</td></tr>
-<tr><td>LONG.V6</td><td>LONG.H6</td></tr>
-<tr><td>LONG.V7</td><td>LONG.H7</td></tr>
-<tr><td>IMUX.OSC.OCLK</td><td>GND, IO.SINGLE.R.S0, IO.SINGLE.R.S1, IO.SINGLE.R.S2, IO.SINGLE.R.S3, LONG.H0, LONG.H1, LONG.H2, LONG.H3</td></tr>
-<tr><td>IMUX.BYPOSC.PUMP</td><td>IO.SINGLE.R.S4, IO.SINGLE.R.S5, LONG.H4, LONG.V3</td></tr>
-<tr><td>IMUX.BUFG</td><td>GND, IO.SINGLE.R.S0, IO.SINGLE.R.S1, IO.SINGLE.R.S2, IO.SINGLE.R.S3, LONG.V4, LONG.V5, LONG.V6, LONG.V7, OUT.CLKIOB</td></tr>
+<tr><td rowspan="1">IO.SINGLE.R.S2</td><td>OUT.BSUPD</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.R.S3</td><td>OUT.BSUPD</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.R.S4</td><td>OUT.OSC.OSC1</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.R.S5</td><td>OUT.OSC.OSC1</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.R.S6</td><td>OUT.OSC.OSC2</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">IO.SINGLE.R.S7</td><td>OUT.OSC.OSC2</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H0</td><td>LONG.V0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H1</td><td>LONG.V1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.H2</td><td>OUT.BSUPD</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.V2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.H3</td><td>OUT.BSUPD</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.V3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.H4</td><td>OUT.OSC.OSC1</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.V4</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.H5</td><td>OUT.OSC.OSC1</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.V5</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.H6</td><td>OUT.OSC.OSC2</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.V6</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">LONG.H7</td><td>OUT.OSC.OSC2</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.V7</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V0</td><td>LONG.H0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V1</td><td>LONG.H1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V2</td><td>LONG.H2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V3</td><td>LONG.H3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V4</td><td>LONG.H4</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V5</td><td>LONG.H5</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V6</td><td>LONG.H6</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V7</td><td>LONG.H7</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="9">IMUX.OSC.OCLK</td><td>GND</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.R.S0</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.R.S1</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.R.S2</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.R.S3</td><td>mux</td>
+</tr>
+<tr><td>LONG.H0</td><td>mux</td>
+</tr>
+<tr><td>LONG.H1</td><td>mux</td>
+</tr>
+<tr><td>LONG.H2</td><td>mux</td>
+</tr>
+<tr><td>LONG.H3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">IMUX.BYPOSC.PUMP</td><td>IO.SINGLE.R.S4</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.R.S5</td><td>mux</td>
+</tr>
+<tr><td>LONG.H4</td><td>mux</td>
+</tr>
+<tr><td>LONG.V3</td><td>mux</td>
+</tr>
+<tr><td rowspan="10">IMUX.BUFG</td><td>GND</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.R.S0</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.R.S1</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.R.S2</td><td>mux</td>
+</tr>
+<tr><td>IO.SINGLE.R.S3</td><td>mux</td>
+</tr>
+<tr><td>LONG.V4</td><td>mux</td>
+</tr>
+<tr><td>LONG.V5</td><td>mux</td>
+</tr>
+<tr><td>LONG.V6</td><td>mux</td>
+</tr>
+<tr><td>LONG.V7</td><td>mux</td>
+</tr>
+<tr><td>OUT.CLKIOB</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-bufg-3"><a class="header" href="#bel-bufg-3">Bel BUFG</a></h3>

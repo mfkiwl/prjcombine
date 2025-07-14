@@ -152,133 +152,1094 @@
                         <h1 id="configurable-logic-block"><a class="header" href="#configurable-logic-block">Configurable Logic Block</a></h1>
 <h2 id="tile-clb"><a class="header" href="#tile-clb">Tile CLB</a></h2>
 <p>Cells: 1</p>
-<h3 id="muxes"><a class="header" href="#muxes">Muxes</a></h3>
+<h3 id="bel-int"><a class="header" href="#bel-int">Bel INT</a></h3>
+<h3 id="switchbox-int"><a class="header" href="#switchbox-int">Switchbox INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>xc5200 CLB muxes</caption>
+<caption>xc5200 CLB switchbox INT</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>CLB.M0</td><td>DBL.H0.W, DBL.H0.E, DBL.V0.S, DBL.V0.N, GLOBAL.B, OMUX4.BUF</td></tr>
-<tr><td>CLB.M1</td><td>SINGLE.E1, SINGLE.W1, SINGLE.S1, SINGLE.N1, GLOBAL.L, OMUX5.BUF</td></tr>
-<tr><td>CLB.M2</td><td>SINGLE.E2, SINGLE.W2, SINGLE.S2, SINGLE.N2, GLOBAL.T, OMUX6.BUF</td></tr>
-<tr><td>CLB.M3</td><td>SINGLE.E3, SINGLE.W3, SINGLE.S3, SINGLE.N3, GLOBAL.R, OMUX7.BUF</td></tr>
-<tr><td>CLB.M4</td><td>SINGLE.E4, SINGLE.W4, SINGLE.S4, SINGLE.N4, LONG.V0, OMUX4.BUF</td></tr>
-<tr><td>CLB.M5</td><td>SINGLE.E5, SINGLE.W5, SINGLE.S5, SINGLE.N5, LONG.H0, OMUX5.BUF</td></tr>
-<tr><td>CLB.M6</td><td>DBL.H6.W, DBL.H6.E, DBL.V6.S, DBL.V6.N, LONG.V1, OMUX6.BUF</td></tr>
-<tr><td>CLB.M7</td><td>SINGLE.E7, SINGLE.W7, SINGLE.S7, SINGLE.N7, LONG.H1, OMUX7.BUF</td></tr>
-<tr><td>CLB.M8</td><td>SINGLE.E8, SINGLE.W8, SINGLE.S8, SINGLE.N8, LONG.V2, OMUX4.BUF</td></tr>
-<tr><td>CLB.M9</td><td>SINGLE.E9, SINGLE.W9, SINGLE.S9, SINGLE.N9, LONG.H2, OMUX5.BUF</td></tr>
-<tr><td>CLB.M10</td><td>SINGLE.E10, SINGLE.W10, SINGLE.S10, SINGLE.N10, LONG.V3, OMUX6.BUF</td></tr>
-<tr><td>CLB.M11</td><td>SINGLE.E11, SINGLE.W11, SINGLE.S11, SINGLE.N11, LONG.H3, OMUX7.BUF</td></tr>
-<tr><td>CLB.M12</td><td>SINGLE.W1, SINGLE.E5, SINGLE.S3, DBL.V0.S, LONG.V4, OMUX1.BUF</td></tr>
-<tr><td>CLB.M13</td><td>SINGLE.W2, SINGLE.N1, SINGLE.S4, DBL.H6.W, LONG.H4, OMUX0.BUF</td></tr>
-<tr><td>CLB.M14</td><td>SINGLE.W3, SINGLE.E7, SINGLE.N2, SINGLE.S5, LONG.V5, OMUX3.BUF</td></tr>
-<tr><td>CLB.M15</td><td>SINGLE.W4, SINGLE.E8, SINGLE.N3, DBL.V6.N, LONG.H5, OMUX2.BUF</td></tr>
-<tr><td>CLB.M16</td><td>SINGLE.W5, SINGLE.E9, SINGLE.N4, SINGLE.S7, LONG.V6, OMUX3.BUF</td></tr>
-<tr><td>CLB.M17</td><td>SINGLE.E10, SINGLE.N5, SINGLE.S8, DBL.H6.E, LONG.H6, OMUX2.BUF</td></tr>
-<tr><td>CLB.M18</td><td>SINGLE.W7, SINGLE.E11, SINGLE.S9, DBL.V6.S, LONG.V7, OMUX1.BUF</td></tr>
-<tr><td>CLB.M19</td><td>SINGLE.W8, SINGLE.N7, SINGLE.S10, DBL.H0.W, LONG.H7, OMUX0.BUF</td></tr>
-<tr><td>CLB.M20</td><td>SINGLE.E1, SINGLE.W9, SINGLE.N8, SINGLE.S11, LONG.H0, LONG.V0, OMUX3.BUF</td></tr>
-<tr><td>CLB.M21</td><td>SINGLE.E2, SINGLE.W10, SINGLE.N9, DBL.V0.N, LONG.H1, LONG.V1, OMUX2.BUF</td></tr>
-<tr><td>CLB.M22</td><td>SINGLE.E3, SINGLE.W11, SINGLE.S1, SINGLE.N10, LONG.H2, LONG.V2, OMUX1.BUF</td></tr>
-<tr><td>CLB.M23</td><td>SINGLE.E4, SINGLE.S2, SINGLE.N11, DBL.H0.E, LONG.H3, LONG.V3, OMUX0.BUF</td></tr>
-<tr><td>SINGLE.E1</td><td>CLB.M1, CLB.M20</td></tr>
-<tr><td>SINGLE.W1</td><td>CLB.M1, CLB.M12</td></tr>
-<tr><td>SINGLE.E2</td><td>CLB.M2, CLB.M21</td></tr>
-<tr><td>SINGLE.W2</td><td>CLB.M2, CLB.M13</td></tr>
-<tr><td>SINGLE.E3</td><td>CLB.M3, CLB.M22</td></tr>
-<tr><td>SINGLE.W3</td><td>CLB.M3, CLB.M14</td></tr>
-<tr><td>SINGLE.E4</td><td>CLB.M4, CLB.M23</td></tr>
-<tr><td>SINGLE.W4</td><td>CLB.M4, CLB.M15</td></tr>
-<tr><td>SINGLE.E5</td><td>CLB.M5, CLB.M12</td></tr>
-<tr><td>SINGLE.W5</td><td>CLB.M5, CLB.M16</td></tr>
-<tr><td>SINGLE.E7</td><td>CLB.M7, CLB.M14</td></tr>
-<tr><td>SINGLE.W7</td><td>CLB.M7, CLB.M18</td></tr>
-<tr><td>SINGLE.E8</td><td>CLB.M8, CLB.M15</td></tr>
-<tr><td>SINGLE.W8</td><td>CLB.M8, CLB.M19</td></tr>
-<tr><td>SINGLE.E9</td><td>CLB.M9, CLB.M16</td></tr>
-<tr><td>SINGLE.W9</td><td>CLB.M9, CLB.M20</td></tr>
-<tr><td>SINGLE.E10</td><td>CLB.M10, CLB.M17</td></tr>
-<tr><td>SINGLE.W10</td><td>CLB.M10, CLB.M21</td></tr>
-<tr><td>SINGLE.E11</td><td>CLB.M11, CLB.M18</td></tr>
-<tr><td>SINGLE.W11</td><td>CLB.M11, CLB.M22</td></tr>
-<tr><td>SINGLE.S1</td><td>CLB.M1, CLB.M22</td></tr>
-<tr><td>SINGLE.N1</td><td>CLB.M1, CLB.M13</td></tr>
-<tr><td>SINGLE.S2</td><td>CLB.M2, CLB.M23</td></tr>
-<tr><td>SINGLE.N2</td><td>CLB.M2, CLB.M14</td></tr>
-<tr><td>SINGLE.S3</td><td>CLB.M3, CLB.M12</td></tr>
-<tr><td>SINGLE.N3</td><td>CLB.M3, CLB.M15</td></tr>
-<tr><td>SINGLE.S4</td><td>CLB.M4, CLB.M13</td></tr>
-<tr><td>SINGLE.N4</td><td>CLB.M4, CLB.M16</td></tr>
-<tr><td>SINGLE.S5</td><td>CLB.M5, CLB.M14</td></tr>
-<tr><td>SINGLE.N5</td><td>CLB.M5, CLB.M17</td></tr>
-<tr><td>SINGLE.S7</td><td>CLB.M7, CLB.M16</td></tr>
-<tr><td>SINGLE.N7</td><td>CLB.M7, CLB.M19</td></tr>
-<tr><td>SINGLE.S8</td><td>CLB.M8, CLB.M17</td></tr>
-<tr><td>SINGLE.N8</td><td>CLB.M8, CLB.M20</td></tr>
-<tr><td>SINGLE.S9</td><td>CLB.M9, CLB.M18</td></tr>
-<tr><td>SINGLE.N9</td><td>CLB.M9, CLB.M21</td></tr>
-<tr><td>SINGLE.S10</td><td>CLB.M10, CLB.M19</td></tr>
-<tr><td>SINGLE.N10</td><td>CLB.M10, CLB.M22</td></tr>
-<tr><td>SINGLE.S11</td><td>CLB.M11, CLB.M20</td></tr>
-<tr><td>SINGLE.N11</td><td>CLB.M11, CLB.M23</td></tr>
-<tr><td>DBL.H0.W</td><td>CLB.M0, CLB.M19</td></tr>
-<tr><td>DBL.H0.E</td><td>CLB.M0, CLB.M23</td></tr>
-<tr><td>DBL.H6.W</td><td>CLB.M6, CLB.M13</td></tr>
-<tr><td>DBL.H6.E</td><td>CLB.M6, CLB.M17</td></tr>
-<tr><td>DBL.V0.S</td><td>CLB.M0, CLB.M12</td></tr>
-<tr><td>DBL.V0.N</td><td>CLB.M0, CLB.M21</td></tr>
-<tr><td>DBL.V6.S</td><td>CLB.M6, CLB.M18</td></tr>
-<tr><td>DBL.V6.N</td><td>CLB.M6, CLB.M15</td></tr>
-<tr><td>LONG.H0</td><td>OUT.TBUF0</td></tr>
-<tr><td>LONG.H1</td><td>OUT.TBUF1</td></tr>
-<tr><td>LONG.H2</td><td>OUT.TBUF2</td></tr>
-<tr><td>LONG.H3</td><td>OUT.TBUF3</td></tr>
-<tr><td>LONG.H4</td><td>OUT.TBUF0</td></tr>
-<tr><td>LONG.H5</td><td>OUT.TBUF1</td></tr>
-<tr><td>LONG.H6</td><td>OUT.TBUF2</td></tr>
-<tr><td>LONG.H7</td><td>OUT.TBUF3</td></tr>
-<tr><td>LONG.V0</td><td>OUT.TBUF0</td></tr>
-<tr><td>LONG.V1</td><td>OUT.TBUF1</td></tr>
-<tr><td>LONG.V2</td><td>OUT.TBUF2</td></tr>
-<tr><td>LONG.V3</td><td>OUT.TBUF3</td></tr>
-<tr><td>LONG.V4</td><td>OUT.TBUF0</td></tr>
-<tr><td>LONG.V5</td><td>OUT.TBUF1</td></tr>
-<tr><td>LONG.V6</td><td>OUT.TBUF2</td></tr>
-<tr><td>LONG.V7</td><td>OUT.TBUF3</td></tr>
-<tr><td>OMUX0</td><td>OUT.LC0.X, OUT.LC0.Q, OUT.LC0.DO, OUT.LC1.X, OUT.LC1.Q, OUT.LC1.DO, OUT.LC2.X, OUT.LC2.Q, OUT.LC2.DO, OUT.LC3.X, OUT.LC3.Q, OUT.LC3.DO, OUT.PWRGND</td></tr>
-<tr><td>OMUX1</td><td>OUT.LC0.X, OUT.LC0.Q, OUT.LC0.DO, OUT.LC1.X, OUT.LC1.Q, OUT.LC1.DO, OUT.LC2.X, OUT.LC2.Q, OUT.LC2.DO, OUT.LC3.X, OUT.LC3.Q, OUT.LC3.DO, OUT.PWRGND</td></tr>
-<tr><td>OMUX2</td><td>OUT.LC0.X, OUT.LC0.Q, OUT.LC0.DO, OUT.LC1.X, OUT.LC1.Q, OUT.LC1.DO, OUT.LC2.X, OUT.LC2.Q, OUT.LC2.DO, OUT.LC3.X, OUT.LC3.Q, OUT.LC3.DO, OUT.PWRGND</td></tr>
-<tr><td>OMUX3</td><td>OUT.LC0.X, OUT.LC0.Q, OUT.LC0.DO, OUT.LC1.X, OUT.LC1.Q, OUT.LC1.DO, OUT.LC2.X, OUT.LC2.Q, OUT.LC2.DO, OUT.LC3.X, OUT.LC3.Q, OUT.LC3.DO, OUT.PWRGND</td></tr>
-<tr><td>OMUX4</td><td>OUT.LC0.X, OUT.LC0.Q, OUT.LC0.DO, OUT.LC1.X, OUT.LC1.Q, OUT.LC1.DO, OUT.LC2.X, OUT.LC2.Q, OUT.LC2.DO, OUT.LC3.X, OUT.LC3.Q, OUT.LC3.DO, OUT.PWRGND</td></tr>
-<tr><td>OMUX5</td><td>OUT.LC0.X, OUT.LC0.Q, OUT.LC0.DO, OUT.LC1.X, OUT.LC1.Q, OUT.LC1.DO, OUT.LC2.X, OUT.LC2.Q, OUT.LC2.DO, OUT.LC3.X, OUT.LC3.Q, OUT.LC3.DO, OUT.PWRGND</td></tr>
-<tr><td>OMUX6</td><td>OUT.LC0.X, OUT.LC0.Q, OUT.LC0.DO, OUT.LC1.X, OUT.LC1.Q, OUT.LC1.DO, OUT.LC2.X, OUT.LC2.Q, OUT.LC2.DO, OUT.LC3.X, OUT.LC3.Q, OUT.LC3.DO, OUT.PWRGND</td></tr>
-<tr><td>OMUX7</td><td>OUT.LC0.X, OUT.LC0.Q, OUT.LC0.DO, OUT.LC1.X, OUT.LC1.Q, OUT.LC1.DO, OUT.LC2.X, OUT.LC2.Q, OUT.LC2.DO, OUT.LC3.X, OUT.LC3.Q, OUT.LC3.DO, OUT.PWRGND</td></tr>
-<tr><td>IMUX.LC0.F1</td><td>CLB.M6.BUF, CLB.M7.BUF, CLB.M8.BUF, CLB.M9.BUF, CLB.M14.BUF, CLB.M15.BUF, OMUX0.BUF.E, OMUX0.BUF.S</td></tr>
-<tr><td>IMUX.LC0.F2</td><td>CLB.M4.BUF, CLB.M5.BUF, CLB.M10.BUF, CLB.M11.BUF, CLB.M12.BUF, CLB.M13.BUF, OMUX0.BUF.W, OMUX0.BUF.N</td></tr>
-<tr><td>IMUX.LC0.F3</td><td>CLB.M2.BUF, CLB.M3.BUF, CLB.M16.BUF, CLB.M17.BUF, CLB.M22.BUF, CLB.M23.BUF, OMUX0.BUF, OMUX1.BUF</td></tr>
-<tr><td>IMUX.LC0.F4</td><td>CLB.M0.BUF, CLB.M1.BUF, CLB.M20.BUF, CLB.M21.BUF</td></tr>
-<tr><td>IMUX.LC0.DI</td><td>CLB.M4.BUF, CLB.M5.BUF, CLB.M6.BUF, CLB.M7.BUF, CLB.M18.BUF, CLB.M19.BUF, OMUX0.BUF.W, OMUX0.BUF.E</td></tr>
-<tr><td>IMUX.LC1.F1</td><td>CLB.M8.BUF, CLB.M9.BUF, CLB.M10.BUF, CLB.M11.BUF, CLB.M14.BUF, CLB.M15.BUF, OMUX1.BUF.E, OMUX1.BUF.S</td></tr>
-<tr><td>IMUX.LC1.F2</td><td>CLB.M0.BUF, CLB.M1.BUF, CLB.M6.BUF, CLB.M7.BUF, CLB.M12.BUF, CLB.M13.BUF, OMUX1.BUF.W, OMUX1.BUF.N</td></tr>
-<tr><td>IMUX.LC1.F3</td><td>CLB.M4.BUF, CLB.M5.BUF, CLB.M16.BUF, CLB.M17.BUF, CLB.M22.BUF, CLB.M23.BUF, OMUX1.BUF, OMUX2.BUF</td></tr>
-<tr><td>IMUX.LC1.F4</td><td>CLB.M2.BUF, CLB.M3.BUF, CLB.M20.BUF, CLB.M21.BUF</td></tr>
-<tr><td>IMUX.LC1.DI</td><td>CLB.M8.BUF, CLB.M9.BUF, CLB.M10.BUF, CLB.M11.BUF, CLB.M16.BUF, CLB.M17.BUF, OMUX1.BUF.W, OMUX1.BUF.E</td></tr>
-<tr><td>IMUX.LC2.F1</td><td>CLB.M0.BUF, CLB.M1.BUF, CLB.M10.BUF, CLB.M11.BUF, CLB.M18.BUF, CLB.M19.BUF, OMUX2.BUF.E, OMUX2.BUF.S</td></tr>
-<tr><td>IMUX.LC2.F2</td><td>CLB.M2.BUF, CLB.M3.BUF, CLB.M8.BUF, CLB.M9.BUF, CLB.M16.BUF, CLB.M17.BUF, OMUX2.BUF.W, OMUX2.BUF.N</td></tr>
-<tr><td>IMUX.LC2.F3</td><td>CLB.M6.BUF, CLB.M7.BUF, CLB.M14.BUF, CLB.M15.BUF, CLB.M22.BUF, CLB.M23.BUF, OMUX2.BUF, OMUX3.BUF</td></tr>
-<tr><td>IMUX.LC2.F4</td><td>CLB.M4.BUF, CLB.M5.BUF, CLB.M20.BUF, CLB.M21.BUF</td></tr>
-<tr><td>IMUX.LC2.DI</td><td>CLB.M0.BUF, CLB.M1.BUF, CLB.M14.BUF, CLB.M15.BUF, CLB.M22.BUF, CLB.M23.BUF, OMUX2.BUF.W, OMUX2.BUF.E</td></tr>
-<tr><td>IMUX.LC3.F1</td><td>CLB.M0.BUF, CLB.M1.BUF, CLB.M2.BUF, CLB.M3.BUF, CLB.M18.BUF, CLB.M19.BUF, OMUX3.BUF.E, OMUX3.BUF.S</td></tr>
-<tr><td>IMUX.LC3.F2</td><td>CLB.M4.BUF, CLB.M5.BUF, CLB.M10.BUF, CLB.M11.BUF, CLB.M16.BUF, CLB.M17.BUF, OMUX3.BUF.W, OMUX3.BUF.N</td></tr>
-<tr><td>IMUX.LC3.F3</td><td>CLB.M8.BUF, CLB.M9.BUF, CLB.M14.BUF, CLB.M15.BUF, CLB.M22.BUF, CLB.M23.BUF, OMUX0.BUF, OMUX3.BUF</td></tr>
-<tr><td>IMUX.LC3.F4</td><td>CLB.M6.BUF, CLB.M7.BUF, CLB.M20.BUF, CLB.M21.BUF</td></tr>
-<tr><td>IMUX.LC3.DI</td><td>CLB.M2.BUF, CLB.M3.BUF, CLB.M12.BUF, CLB.M13.BUF, CLB.M20.BUF, CLB.M21.BUF, OMUX3.BUF.W, OMUX3.BUF.E</td></tr>
-<tr><td>IMUX.CLB.CE</td><td>CLB.M0.BUF, CLB.M1.BUF, CLB.M2.BUF, CLB.M3.BUF, CLB.M16.BUF, CLB.M17.BUF, CLB.M18.BUF, CLB.M19.BUF</td></tr>
-<tr><td>IMUX.CLB.CLK</td><td>CLB.M20.BUF, CLB.M21.BUF, CLB.M22.BUF, CLB.M23.BUF, GLOBAL.L, GLOBAL.R, GLOBAL.B, GLOBAL.T</td></tr>
-<tr><td>IMUX.CLB.RST</td><td>CLB.M0.BUF, CLB.M1.BUF, CLB.M2.BUF, CLB.M3.BUF, CLB.M12.BUF, CLB.M13.BUF, CLB.M14.BUF, CLB.M15.BUF</td></tr>
-<tr><td>IMUX.TS</td><td>CLB.M16.BUF, CLB.M17.BUF, CLB.M18.BUF, CLB.M19.BUF, CLB.M20.BUF, CLB.M21.BUF, CLB.M22.BUF, CLB.M23.BUF</td></tr>
+<tr><td rowspan="6">CLB.M0</td><td>GLOBAL.B</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX4.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>DBL.H0.W</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>DBL.H0.E</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>DBL.V0.S</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>DBL.V0.N</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="6">CLB.M1</td><td>GLOBAL.L</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX5.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.E1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.W1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.S1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.N1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="6">CLB.M2</td><td>GLOBAL.T</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX6.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.E2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.W2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.S2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.N2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="6">CLB.M3</td><td>GLOBAL.R</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX7.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.E3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.W3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.S3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.N3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="6">CLB.M4</td><td>LONG.V0</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX4.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.E4</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.W4</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.S4</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.N4</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="6">CLB.M5</td><td>LONG.H0</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX5.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.E5</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.W5</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.S5</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.N5</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="6">CLB.M6</td><td>LONG.V1</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX6.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>DBL.H6.W</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>DBL.H6.E</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>DBL.V6.S</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>DBL.V6.N</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="6">CLB.M7</td><td>LONG.H1</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX7.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.E7</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.W7</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.S7</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.N7</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="6">CLB.M8</td><td>LONG.V2</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX4.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.E8</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.W8</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.S8</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.N8</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="6">CLB.M9</td><td>LONG.H2</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX5.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.E9</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.W9</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.S9</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.N9</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="6">CLB.M10</td><td>LONG.V3</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX6.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.E10</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.W10</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.S10</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.N10</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="6">CLB.M11</td><td>LONG.H3</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX7.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.E11</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.W11</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.S11</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.N11</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="6">CLB.M12</td><td>LONG.V4</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX1.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.W1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.E5</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.S3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>DBL.V0.S</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="6">CLB.M13</td><td>LONG.H4</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX0.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.W2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.N1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.S4</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>DBL.H6.W</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="6">CLB.M14</td><td>LONG.V5</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX3.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.W3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.E7</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.N2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.S5</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="6">CLB.M15</td><td>LONG.H5</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX2.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.W4</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.E8</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.N3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>DBL.V6.N</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="6">CLB.M16</td><td>LONG.V6</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX3.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.W5</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.E9</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.N4</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.S7</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="6">CLB.M17</td><td>LONG.H6</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX2.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.E10</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.N5</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.S8</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>DBL.H6.E</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="6">CLB.M18</td><td>LONG.V7</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX1.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.W7</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.E11</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.S9</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>DBL.V6.S</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="6">CLB.M19</td><td>LONG.H7</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX0.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.W8</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.N7</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.S10</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>DBL.H0.W</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="7">CLB.M20</td><td>LONG.H0</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.V0</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX3.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.E1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.W9</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.N8</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.S11</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="7">CLB.M21</td><td>LONG.H1</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.V1</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX2.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.E2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.W10</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.N9</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>DBL.V0.N</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="7">CLB.M22</td><td>LONG.H2</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.V2</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX1.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.E3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.W11</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.S1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.N10</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="7">CLB.M23</td><td>LONG.H3</td><td>pass transistor</td>
+</tr>
+<tr><td>LONG.V3</td><td>pass transistor</td>
+</tr>
+<tr><td>OMUX0.BUF</td><td>pass transistor</td>
+</tr>
+<tr><td>SINGLE.E4</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.S2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>SINGLE.N11</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>DBL.H0.E</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.E1</td><td>CLB.M1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M20</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.W1</td><td>CLB.M1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M12</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.E2</td><td>CLB.M2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M21</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.W2</td><td>CLB.M2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M13</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.E3</td><td>CLB.M3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M22</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.W3</td><td>CLB.M3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M14</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.E4</td><td>CLB.M4</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M23</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.W4</td><td>CLB.M4</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M15</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.E5</td><td>CLB.M5</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M12</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.W5</td><td>CLB.M5</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M16</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.E7</td><td>CLB.M7</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M14</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.W7</td><td>CLB.M7</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M18</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.E8</td><td>CLB.M8</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M15</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.W8</td><td>CLB.M8</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M19</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.E9</td><td>CLB.M9</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M16</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.W9</td><td>CLB.M9</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M20</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.E10</td><td>CLB.M10</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M17</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.W10</td><td>CLB.M10</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M21</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.E11</td><td>CLB.M11</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M18</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.W11</td><td>CLB.M11</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M22</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.S1</td><td>CLB.M1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M22</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.N1</td><td>CLB.M1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M13</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.S2</td><td>CLB.M2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M23</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.N2</td><td>CLB.M2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M14</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.S3</td><td>CLB.M3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M12</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.N3</td><td>CLB.M3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M15</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.S4</td><td>CLB.M4</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M13</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.N4</td><td>CLB.M4</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M16</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.S5</td><td>CLB.M5</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M14</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.N5</td><td>CLB.M5</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M17</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.S7</td><td>CLB.M7</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M16</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.N7</td><td>CLB.M7</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M19</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.S8</td><td>CLB.M8</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M17</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.N8</td><td>CLB.M8</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M20</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.S9</td><td>CLB.M9</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M18</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.N9</td><td>CLB.M9</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M21</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.S10</td><td>CLB.M10</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M19</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.N10</td><td>CLB.M10</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M22</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.S11</td><td>CLB.M11</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M20</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">SINGLE.N11</td><td>CLB.M11</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M23</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">DBL.H0.W</td><td>CLB.M0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M19</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">DBL.H0.E</td><td>CLB.M0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M23</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">DBL.H6.W</td><td>CLB.M6</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M13</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">DBL.H6.E</td><td>CLB.M6</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M17</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">DBL.V0.S</td><td>CLB.M0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M12</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">DBL.V0.N</td><td>CLB.M0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M21</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">DBL.V6.S</td><td>CLB.M6</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M18</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="2">DBL.V6.N</td><td>CLB.M6</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td>CLB.M15</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H0</td><td>OUT.TBUF0</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H1</td><td>OUT.TBUF1</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H2</td><td>OUT.TBUF2</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H3</td><td>OUT.TBUF3</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H4</td><td>OUT.TBUF0</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H5</td><td>OUT.TBUF1</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H6</td><td>OUT.TBUF2</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.H7</td><td>OUT.TBUF3</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V0</td><td>OUT.TBUF0</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V1</td><td>OUT.TBUF1</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V2</td><td>OUT.TBUF2</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V3</td><td>OUT.TBUF3</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V4</td><td>OUT.TBUF0</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V5</td><td>OUT.TBUF1</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V6</td><td>OUT.TBUF2</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="1">LONG.V7</td><td>OUT.TBUF3</td><td>pass transistor</td>
+</tr>
+<tr><td rowspan="13">OMUX0</td><td>OUT.LC0.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC0.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC0.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.PWRGND</td><td>mux</td>
+</tr>
+<tr><td rowspan="13">OMUX1</td><td>OUT.LC0.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC0.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC0.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.PWRGND</td><td>mux</td>
+</tr>
+<tr><td rowspan="13">OMUX2</td><td>OUT.LC0.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC0.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC0.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.PWRGND</td><td>mux</td>
+</tr>
+<tr><td rowspan="13">OMUX3</td><td>OUT.LC0.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC0.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC0.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.PWRGND</td><td>mux</td>
+</tr>
+<tr><td rowspan="13">OMUX4</td><td>OUT.LC0.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC0.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC0.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.PWRGND</td><td>mux</td>
+</tr>
+<tr><td rowspan="13">OMUX5</td><td>OUT.LC0.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC0.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC0.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.PWRGND</td><td>mux</td>
+</tr>
+<tr><td rowspan="13">OMUX6</td><td>OUT.LC0.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC0.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC0.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.PWRGND</td><td>mux</td>
+</tr>
+<tr><td rowspan="13">OMUX7</td><td>OUT.LC0.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC0.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC0.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC1.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC2.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.X</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.Q</td><td>mux</td>
+</tr>
+<tr><td>OUT.LC3.DO</td><td>mux</td>
+</tr>
+<tr><td>OUT.PWRGND</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.LC0.F1</td><td>CLB.M6.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M7.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M8.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M9.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M14.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M15.BUF</td><td>mux</td>
+</tr>
+<tr><td>OMUX0.BUF.E</td><td>mux</td>
+</tr>
+<tr><td>OMUX0.BUF.S</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.LC0.F2</td><td>CLB.M4.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M5.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M10.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M11.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M12.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M13.BUF</td><td>mux</td>
+</tr>
+<tr><td>OMUX0.BUF.W</td><td>mux</td>
+</tr>
+<tr><td>OMUX0.BUF.N</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.LC0.F3</td><td>CLB.M2.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M3.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M16.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M17.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M22.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M23.BUF</td><td>mux</td>
+</tr>
+<tr><td>OMUX0.BUF</td><td>mux</td>
+</tr>
+<tr><td>OMUX1.BUF</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">IMUX.LC0.F4</td><td>CLB.M0.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M1.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M20.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M21.BUF</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.LC0.DI</td><td>CLB.M4.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M5.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M6.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M7.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M18.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M19.BUF</td><td>mux</td>
+</tr>
+<tr><td>OMUX0.BUF.W</td><td>mux</td>
+</tr>
+<tr><td>OMUX0.BUF.E</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.LC1.F1</td><td>CLB.M8.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M9.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M10.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M11.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M14.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M15.BUF</td><td>mux</td>
+</tr>
+<tr><td>OMUX1.BUF.E</td><td>mux</td>
+</tr>
+<tr><td>OMUX1.BUF.S</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.LC1.F2</td><td>CLB.M0.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M1.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M6.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M7.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M12.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M13.BUF</td><td>mux</td>
+</tr>
+<tr><td>OMUX1.BUF.W</td><td>mux</td>
+</tr>
+<tr><td>OMUX1.BUF.N</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.LC1.F3</td><td>CLB.M4.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M5.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M16.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M17.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M22.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M23.BUF</td><td>mux</td>
+</tr>
+<tr><td>OMUX1.BUF</td><td>mux</td>
+</tr>
+<tr><td>OMUX2.BUF</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">IMUX.LC1.F4</td><td>CLB.M2.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M3.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M20.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M21.BUF</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.LC1.DI</td><td>CLB.M8.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M9.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M10.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M11.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M16.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M17.BUF</td><td>mux</td>
+</tr>
+<tr><td>OMUX1.BUF.W</td><td>mux</td>
+</tr>
+<tr><td>OMUX1.BUF.E</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.LC2.F1</td><td>CLB.M0.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M1.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M10.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M11.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M18.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M19.BUF</td><td>mux</td>
+</tr>
+<tr><td>OMUX2.BUF.E</td><td>mux</td>
+</tr>
+<tr><td>OMUX2.BUF.S</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.LC2.F2</td><td>CLB.M2.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M3.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M8.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M9.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M16.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M17.BUF</td><td>mux</td>
+</tr>
+<tr><td>OMUX2.BUF.W</td><td>mux</td>
+</tr>
+<tr><td>OMUX2.BUF.N</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.LC2.F3</td><td>CLB.M6.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M7.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M14.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M15.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M22.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M23.BUF</td><td>mux</td>
+</tr>
+<tr><td>OMUX2.BUF</td><td>mux</td>
+</tr>
+<tr><td>OMUX3.BUF</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">IMUX.LC2.F4</td><td>CLB.M4.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M5.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M20.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M21.BUF</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.LC2.DI</td><td>CLB.M0.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M1.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M14.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M15.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M22.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M23.BUF</td><td>mux</td>
+</tr>
+<tr><td>OMUX2.BUF.W</td><td>mux</td>
+</tr>
+<tr><td>OMUX2.BUF.E</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.LC3.F1</td><td>CLB.M0.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M1.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M2.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M3.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M18.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M19.BUF</td><td>mux</td>
+</tr>
+<tr><td>OMUX3.BUF.E</td><td>mux</td>
+</tr>
+<tr><td>OMUX3.BUF.S</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.LC3.F2</td><td>CLB.M4.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M5.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M10.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M11.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M16.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M17.BUF</td><td>mux</td>
+</tr>
+<tr><td>OMUX3.BUF.W</td><td>mux</td>
+</tr>
+<tr><td>OMUX3.BUF.N</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.LC3.F3</td><td>CLB.M8.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M9.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M14.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M15.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M22.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M23.BUF</td><td>mux</td>
+</tr>
+<tr><td>OMUX0.BUF</td><td>mux</td>
+</tr>
+<tr><td>OMUX3.BUF</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">IMUX.LC3.F4</td><td>CLB.M6.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M7.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M20.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M21.BUF</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.LC3.DI</td><td>CLB.M2.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M3.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M12.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M13.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M20.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M21.BUF</td><td>mux</td>
+</tr>
+<tr><td>OMUX3.BUF.W</td><td>mux</td>
+</tr>
+<tr><td>OMUX3.BUF.E</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.CLB.CE</td><td>CLB.M0.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M1.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M2.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M3.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M16.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M17.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M18.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M19.BUF</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.CLB.CLK</td><td>CLB.M20.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M21.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M22.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M23.BUF</td><td>mux</td>
+</tr>
+<tr><td>GLOBAL.L</td><td>mux</td>
+</tr>
+<tr><td>GLOBAL.R</td><td>mux</td>
+</tr>
+<tr><td>GLOBAL.B</td><td>mux</td>
+</tr>
+<tr><td>GLOBAL.T</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.CLB.RST</td><td>CLB.M0.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M1.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M2.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M3.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M12.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M13.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M14.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M15.BUF</td><td>mux</td>
+</tr>
+<tr><td rowspan="8">IMUX.TS</td><td>CLB.M16.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M17.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M18.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M19.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M20.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M21.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M22.BUF</td><td>mux</td>
+</tr>
+<tr><td>CLB.M23.BUF</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-lc0"><a class="header" href="#bel-lc0">Bel LC0</a></h3>

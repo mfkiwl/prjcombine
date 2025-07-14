@@ -295,7 +295,7 @@ are driven by the various bels within the FPGA:</p>
 <tr><th>Slot</th><th>Tiles</th><th>Bel slots</th></tr>
 </thead>
 <tbody>
-<tr><td>MAIN</td><td>PLB_L04, INT_BRAM, IOI_W_L04, IOI_E_L04, IOI_S_L04, IOI_N_L04, PLB_L08, IOI_W_L08, IOI_E_L08, IOI_S_L08, IOI_N_L08, PLB_P01, IOI_S_T04, IOI_N_T04</td><td>LC0, LC1, LC2, LC3, LC4, LC5, LC6, LC7, IO0, IO1</td></tr>
+<tr><td>MAIN</td><td>PLB_L04, INT_BRAM, IOI_W_L04, IOI_E_L04, IOI_S_L04, IOI_N_L04, PLB_L08, IOI_W_L08, IOI_E_L08, IOI_S_L08, IOI_N_L08, PLB_P01, IOI_S_T04, IOI_N_T04</td><td>INT, LC0, LC1, LC2, LC3, LC4, LC5, LC6, LC7, IO0, IO1</td></tr>
 <tr><td>COLBUF</td><td>COLBUF_L01, COLBUF_IO_W, COLBUF_IO_E, COLBUF_P08</td><td></td></tr>
 <tr><td>GB_ROOT</td><td>GB_ROOT_L04, GB_ROOT_L08</td><td>GB_ROOT</td></tr>
 <tr><td>BEL</td><td>BRAM_L04, IO_LATCH, GB_FABRIC, PLL_S_P04, BRAM_P01, PLL_S_P01, BRAM_P08, PLL_S_P08, PLL_N_P08, SPI_R04, I2C_R04, PLL_S_R04, PLL_N_R04, MAC16, SPI_T04, I2C_T04, MAC16_TRIM, SPI_T05, I3C, SPRAM, I2C_FIFO, PLL_S_T01</td><td>BRAM, IO_LATCH, GB_FABRIC, PLL, MAC16, SPI, I2C, I2C_FIFO, IO0_I3C, IO1_I3C, SPRAM0, SPRAM1, FILTER0, FILTER1</td></tr>
@@ -317,6 +317,7 @@ are driven by the various bels within the FPGA:</p>
 <tr><th>Slot</th><th>Tile slot</th><th>Tiles</th></tr>
 </thead>
 <tbody>
+<tr><td>INT</td><td>MAIN</td><td>PLB_L04, INT_BRAM, IOI_W_L04, IOI_E_L04, IOI_S_L04, IOI_N_L04, PLB_L08, IOI_W_L08, IOI_E_L08, IOI_S_L08, IOI_N_L08, PLB_P01, IOI_S_T04, IOI_N_T04</td></tr>
 <tr><td>LC0</td><td>MAIN</td><td>PLB_L04, PLB_L08, PLB_P01</td></tr>
 <tr><td>LC1</td><td>MAIN</td><td>PLB_L04, PLB_L08, PLB_P01</td></tr>
 <tr><td>LC2</td><td>MAIN</td><td>PLB_L04, PLB_L08, PLB_P01</td></tr>
@@ -688,6 +689,7 @@ are driven by the various bels within the FPGA:</p>
 <tr><td>IMUX.LC7.I2</td><td>MUX_OUT</td></tr>
 <tr><td>IMUX.LC7.I3</td><td>MUX_OUT</td></tr>
 <tr><td>IMUX.CLK</td><td>MUX_OUT</td></tr>
+<tr><td>IMUX.CLK.OPTINV</td><td>MUX_OUT</td></tr>
 <tr><td>IMUX.RST</td><td>MUX_OUT</td></tr>
 <tr><td>IMUX.CE</td><td>MUX_OUT</td></tr>
 <tr><td>IMUX.IO0.DOUT0</td><td>MUX_OUT</td></tr>
@@ -697,7 +699,9 @@ are driven by the various bels within the FPGA:</p>
 <tr><td>IMUX.IO1.DOUT1</td><td>MUX_OUT</td></tr>
 <tr><td>IMUX.IO1.OE</td><td>MUX_OUT</td></tr>
 <tr><td>IMUX.IO.ICLK</td><td>MUX_OUT</td></tr>
+<tr><td>IMUX.IO.ICLK.OPTINV</td><td>MUX_OUT</td></tr>
 <tr><td>IMUX.IO.OCLK</td><td>MUX_OUT</td></tr>
+<tr><td>IMUX.IO.OCLK.OPTINV</td><td>MUX_OUT</td></tr>
 <tr><td>IMUX.IO.EXTRA</td><td>MUX_OUT</td></tr>
 <tr><td>OUT.LC0</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.LC0.N</td><td>BRANCH:S</td></tr>

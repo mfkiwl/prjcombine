@@ -155,21 +155,118 @@
 <p>TODO: document</p>
 <h2 id="tile-clkbfc"><a class="header" href="#tile-clkbfc">Tile CLKB.FC</a></h2>
 <p>Cells: 1</p>
-<h3 id="muxes"><a class="header" href="#muxes">Muxes</a></h3>
+<h3 id="bel-clk_int"><a class="header" href="#bel-clk_int">Bel CLK_INT</a></h3>
+<h3 id="switchbox-clk_int"><a class="header" href="#switchbox-clk_int">Switchbox CLK_INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>fpgacore CLKB.FC muxes</caption>
+<caption>fpgacore CLKB.FC switchbox CLK_INT</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>OMUX10.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX11.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX12.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX15.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>CLK.IMUX.CLK0</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
-<tr><td>CLK.IMUX.CLK1</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
-<tr><td>CLK.IMUX.CLK2</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
-<tr><td>CLK.IMUX.CLK3</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
+<tr><td rowspan="4">OMUX10.N</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX11.N</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX12.N</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX15.N</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK0</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK1</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK2</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK3</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.1</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-bufgmux0"><a class="header" href="#bel-bufgmux0">Bel BUFGMUX0</a></h3>
@@ -254,12 +351,12 @@
 <tbody>
 <tr><td>57</td>
 <td title="0.0.57">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[1]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[1]</a>
 </td>
 </tr>
 <tr><td>56</td>
 <td title="0.0.56">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[0]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[0]</a>
 </td>
 </tr>
 <tr><td>55</td>
@@ -267,12 +364,12 @@
 </tr>
 <tr><td>54</td>
 <td title="0.0.54">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[3]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[3]</a>
 </td>
 </tr>
 <tr><td>53</td>
 <td title="0.0.53">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[2]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[2]</a>
 </td>
 </tr>
 <tr><td>52</td>
@@ -296,32 +393,32 @@
 </tr>
 <tr><td>47</td>
 <td title="0.0.47">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.OMUX15.N">INT:MUX.OMUX15.N[2]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.OMUX15.N">CLK_INT:MUX.OMUX15.N[2]</a>
 </td>
 </tr>
 <tr><td>46</td>
 <td title="0.0.46">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.OMUX15.N">INT:MUX.OMUX15.N[1]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.OMUX15.N">CLK_INT:MUX.OMUX15.N[1]</a>
 </td>
 </tr>
 <tr><td>45</td>
 <td title="0.0.45">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.OMUX12.N">INT:MUX.OMUX12.N[1]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.OMUX12.N">CLK_INT:MUX.OMUX12.N[1]</a>
 </td>
 </tr>
 <tr><td>44</td>
 <td title="0.0.44">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.OMUX12.N">INT:MUX.OMUX12.N[2]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.OMUX12.N">CLK_INT:MUX.OMUX12.N[2]</a>
 </td>
 </tr>
 <tr><td>43</td>
 <td title="0.0.43">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.OMUX15.N">INT:MUX.OMUX15.N[0]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.OMUX15.N">CLK_INT:MUX.OMUX15.N[0]</a>
 </td>
 </tr>
 <tr><td>42</td>
 <td title="0.0.42">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.OMUX12.N">INT:MUX.OMUX12.N[0]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.OMUX12.N">CLK_INT:MUX.OMUX12.N[0]</a>
 </td>
 </tr>
 <tr><td>41</td>
@@ -338,12 +435,12 @@
 </tr>
 <tr><td>37</td>
 <td title="0.0.37">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[1]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[1]</a>
 </td>
 </tr>
 <tr><td>36</td>
 <td title="0.0.36">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[0]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[0]</a>
 </td>
 </tr>
 <tr><td>35</td>
@@ -351,12 +448,12 @@
 </tr>
 <tr><td>34</td>
 <td title="0.0.34">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[3]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[3]</a>
 </td>
 </tr>
 <tr><td>33</td>
 <td title="0.0.33">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[2]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[2]</a>
 </td>
 </tr>
 <tr><td>32</td>
@@ -392,12 +489,12 @@
 </tr>
 <tr><td>23</td>
 <td title="0.0.23">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[1]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[1]</a>
 </td>
 </tr>
 <tr><td>22</td>
 <td title="0.0.22">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[0]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[0]</a>
 </td>
 </tr>
 <tr><td>21</td>
@@ -405,12 +502,12 @@
 </tr>
 <tr><td>20</td>
 <td title="0.0.20">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[3]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[3]</a>
 </td>
 </tr>
 <tr><td>19</td>
 <td title="0.0.19">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[2]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[2]</a>
 </td>
 </tr>
 <tr><td>18</td>
@@ -450,12 +547,12 @@
 </tr>
 <tr><td>9</td>
 <td title="0.0.9">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[3]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[3]</a>
 </td>
 </tr>
 <tr><td>8</td>
 <td title="0.0.8">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[2]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[2]</a>
 </td>
 </tr>
 <tr><td>7</td>
@@ -463,12 +560,12 @@
 </tr>
 <tr><td>6</td>
 <td title="0.0.6">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[1]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[1]</a>
 </td>
 </tr>
 <tr><td>5</td>
 <td title="0.0.5">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[0]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[0]</a>
 </td>
 </tr>
 <tr><td>4</td>
@@ -485,7 +582,7 @@
 </tr>
 <tr><td>0</td>
 <td title="0.0.0">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.OMUX10.N">INT:MUX.OMUX10.N[0]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.OMUX10.N">CLK_INT:MUX.OMUX10.N[0]</a>
 </td>
 </tr>
 </tbody>
@@ -501,27 +598,27 @@
 <tbody>
 <tr><td>11</td>
 <td title="1.0.11">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.OMUX11.N">INT:MUX.OMUX11.N[2]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.OMUX11.N">CLK_INT:MUX.OMUX11.N[2]</a>
 </td>
 </tr>
 <tr><td>10</td>
 <td title="1.0.10">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.OMUX11.N">INT:MUX.OMUX11.N[0]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.OMUX11.N">CLK_INT:MUX.OMUX11.N[0]</a>
 </td>
 </tr>
 <tr><td>9</td>
 <td title="1.0.9">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.OMUX10.N">INT:MUX.OMUX10.N[1]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.OMUX10.N">CLK_INT:MUX.OMUX10.N[1]</a>
 </td>
 </tr>
 <tr><td>8</td>
 <td title="1.0.8">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.OMUX10.N">INT:MUX.OMUX10.N[2]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.OMUX10.N">CLK_INT:MUX.OMUX10.N[2]</a>
 </td>
 </tr>
 <tr><td>7</td>
 <td title="1.0.7">
-<a href="#tile-fpgacore-CLKB.FC-INT:MUX.OMUX11.N">INT:MUX.OMUX11.N[1]</a>
+<a href="#tile-fpgacore-CLKB.FC-CLK_INT:MUX.OMUX11.N">CLK_INT:MUX.OMUX11.N[1]</a>
 </td>
 </tr>
 <tr><td>6</td>
@@ -579,7 +676,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-fpgacore-CLKB.FC-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0</th>
+<tr><th id="tile-fpgacore-CLKB.FC-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0</th>
 <th>0.0.9</th>
 <th>0.0.8</th>
 <th>0.0.6</th>
@@ -645,7 +742,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-fpgacore-CLKB.FC-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1</th>
+<tr><th id="tile-fpgacore-CLKB.FC-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1</th>
 <th>0.0.20</th>
 <th>0.0.19</th>
 <th>0.0.23</th>
@@ -711,7 +808,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-fpgacore-CLKB.FC-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2</th>
+<tr><th id="tile-fpgacore-CLKB.FC-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2</th>
 <th>0.0.34</th>
 <th>0.0.33</th>
 <th>0.0.37</th>
@@ -777,7 +874,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-fpgacore-CLKB.FC-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3</th>
+<tr><th id="tile-fpgacore-CLKB.FC-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3</th>
 <th>0.0.54</th>
 <th>0.0.53</th>
 <th>0.0.57</th>
@@ -843,22 +940,22 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-fpgacore-CLKB.FC-INT:MUX.OMUX10.N">INT:MUX.OMUX10.N</th>
+<tr><th id="tile-fpgacore-CLKB.FC-CLK_INT:MUX.OMUX10.N">CLK_INT:MUX.OMUX10.N</th>
 <th>1.0.8</th>
 <th>1.0.9</th>
 <th>0.0.0</th>
 </tr>
-<tr><th id="tile-fpgacore-CLKB.FC-INT:MUX.OMUX11.N">INT:MUX.OMUX11.N</th>
+<tr><th id="tile-fpgacore-CLKB.FC-CLK_INT:MUX.OMUX11.N">CLK_INT:MUX.OMUX11.N</th>
 <th>1.0.11</th>
 <th>1.0.7</th>
 <th>1.0.10</th>
 </tr>
-<tr><th id="tile-fpgacore-CLKB.FC-INT:MUX.OMUX12.N">INT:MUX.OMUX12.N</th>
+<tr><th id="tile-fpgacore-CLKB.FC-CLK_INT:MUX.OMUX12.N">CLK_INT:MUX.OMUX12.N</th>
 <th>0.0.44</th>
 <th>0.0.45</th>
 <th>0.0.42</th>
 </tr>
-<tr><th id="tile-fpgacore-CLKB.FC-INT:MUX.OMUX15.N">INT:MUX.OMUX15.N</th>
+<tr><th id="tile-fpgacore-CLKB.FC-CLK_INT:MUX.OMUX15.N">CLK_INT:MUX.OMUX15.N</th>
 <th>0.0.47</th>
 <th>0.0.46</th>
 <th>0.0.43</th>
@@ -896,21 +993,118 @@
 <p>TODO: document</p>
 <h2 id="tile-clktfc"><a class="header" href="#tile-clktfc">Tile CLKT.FC</a></h2>
 <p>Cells: 1</p>
-<h3 id="muxes-1"><a class="header" href="#muxes-1">Muxes</a></h3>
+<h3 id="bel-clk_int-1"><a class="header" href="#bel-clk_int-1">Bel CLK_INT</a></h3>
+<h3 id="switchbox-clk_int-1"><a class="header" href="#switchbox-clk_int-1">Switchbox CLK_INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>fpgacore CLKT.FC muxes</caption>
+<caption>fpgacore CLKT.FC switchbox CLK_INT</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>OMUX0.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX3.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX4.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX5.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>CLK.IMUX.CLK0</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
-<tr><td>CLK.IMUX.CLK1</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
-<tr><td>CLK.IMUX.CLK2</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
-<tr><td>CLK.IMUX.CLK3</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
+<tr><td rowspan="4">OMUX0.S</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX3.S</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX4.S</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX5.S</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK0</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK1</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK2</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK3</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.1</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-bufgmux0-1"><a class="header" href="#bel-bufgmux0-1">Bel BUFGMUX0</a></h3>
@@ -995,7 +1189,7 @@
 <tbody>
 <tr><td>63</td>
 <td title="0.0.63">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.OMUX0.S">INT:MUX.OMUX0.S[0]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.OMUX0.S">CLK_INT:MUX.OMUX0.S[0]</a>
 </td>
 </tr>
 <tr><td>62</td>
@@ -1012,12 +1206,12 @@
 </tr>
 <tr><td>58</td>
 <td title="0.0.58">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[1]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[1]</a>
 </td>
 </tr>
 <tr><td>57</td>
 <td title="0.0.57">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[0]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[0]</a>
 </td>
 </tr>
 <tr><td>56</td>
@@ -1025,12 +1219,12 @@
 </tr>
 <tr><td>55</td>
 <td title="0.0.55">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[2]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[2]</a>
 </td>
 </tr>
 <tr><td>54</td>
 <td title="0.0.54">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[3]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[3]</a>
 </td>
 </tr>
 <tr><td>53</td>
@@ -1070,12 +1264,12 @@
 </tr>
 <tr><td>44</td>
 <td title="0.0.44">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[2]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[2]</a>
 </td>
 </tr>
 <tr><td>43</td>
 <td title="0.0.43">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[3]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[3]</a>
 </td>
 </tr>
 <tr><td>42</td>
@@ -1083,12 +1277,12 @@
 </tr>
 <tr><td>41</td>
 <td title="0.0.41">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[1]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[1]</a>
 </td>
 </tr>
 <tr><td>40</td>
 <td title="0.0.40">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[0]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[0]</a>
 </td>
 </tr>
 <tr><td>39</td>
@@ -1124,12 +1318,12 @@
 </tr>
 <tr><td>30</td>
 <td title="0.0.30">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[2]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[2]</a>
 </td>
 </tr>
 <tr><td>29</td>
 <td title="0.0.29">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[3]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[3]</a>
 </td>
 </tr>
 <tr><td>28</td>
@@ -1137,12 +1331,12 @@
 </tr>
 <tr><td>27</td>
 <td title="0.0.27">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[1]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[1]</a>
 </td>
 </tr>
 <tr><td>26</td>
 <td title="0.0.26">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[0]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[0]</a>
 </td>
 </tr>
 <tr><td>25</td>
@@ -1159,32 +1353,32 @@
 </tr>
 <tr><td>21</td>
 <td title="0.0.21">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.OMUX4.S">INT:MUX.OMUX4.S[0]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.OMUX4.S">CLK_INT:MUX.OMUX4.S[0]</a>
 </td>
 </tr>
 <tr><td>20</td>
 <td title="0.0.20">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.OMUX5.S">INT:MUX.OMUX5.S[0]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.OMUX5.S">CLK_INT:MUX.OMUX5.S[0]</a>
 </td>
 </tr>
 <tr><td>19</td>
 <td title="0.0.19">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.OMUX4.S">INT:MUX.OMUX4.S[2]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.OMUX4.S">CLK_INT:MUX.OMUX4.S[2]</a>
 </td>
 </tr>
 <tr><td>18</td>
 <td title="0.0.18">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.OMUX4.S">INT:MUX.OMUX4.S[1]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.OMUX4.S">CLK_INT:MUX.OMUX4.S[1]</a>
 </td>
 </tr>
 <tr><td>17</td>
 <td title="0.0.17">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.OMUX5.S">INT:MUX.OMUX5.S[1]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.OMUX5.S">CLK_INT:MUX.OMUX5.S[1]</a>
 </td>
 </tr>
 <tr><td>16</td>
 <td title="0.0.16">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.OMUX5.S">INT:MUX.OMUX5.S[2]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.OMUX5.S">CLK_INT:MUX.OMUX5.S[2]</a>
 </td>
 </tr>
 <tr><td>15</td>
@@ -1208,12 +1402,12 @@
 </tr>
 <tr><td>10</td>
 <td title="0.0.10">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[2]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[2]</a>
 </td>
 </tr>
 <tr><td>9</td>
 <td title="0.0.9">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[3]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[3]</a>
 </td>
 </tr>
 <tr><td>8</td>
@@ -1221,12 +1415,12 @@
 </tr>
 <tr><td>7</td>
 <td title="0.0.7">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[1]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[1]</a>
 </td>
 </tr>
 <tr><td>6</td>
 <td title="0.0.6">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[0]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[0]</a>
 </td>
 </tr>
 <tr><td>5</td>
@@ -1260,27 +1454,27 @@
 <tbody>
 <tr><td>4</td>
 <td title="1.0.4">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.OMUX3.S">INT:MUX.OMUX3.S[1]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.OMUX3.S">CLK_INT:MUX.OMUX3.S[1]</a>
 </td>
 </tr>
 <tr><td>3</td>
 <td title="1.0.3">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.OMUX0.S">INT:MUX.OMUX0.S[2]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.OMUX0.S">CLK_INT:MUX.OMUX0.S[2]</a>
 </td>
 </tr>
 <tr><td>2</td>
 <td title="1.0.2">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.OMUX0.S">INT:MUX.OMUX0.S[1]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.OMUX0.S">CLK_INT:MUX.OMUX0.S[1]</a>
 </td>
 </tr>
 <tr><td>1</td>
 <td title="1.0.1">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.OMUX3.S">INT:MUX.OMUX3.S[0]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.OMUX3.S">CLK_INT:MUX.OMUX3.S[0]</a>
 </td>
 </tr>
 <tr><td>0</td>
 <td title="1.0.0">
-<a href="#tile-fpgacore-CLKT.FC-INT:MUX.OMUX3.S">INT:MUX.OMUX3.S[2]</a>
+<a href="#tile-fpgacore-CLKT.FC-CLK_INT:MUX.OMUX3.S">CLK_INT:MUX.OMUX3.S[2]</a>
 </td>
 </tr>
 </tbody>
@@ -1317,7 +1511,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-fpgacore-CLKT.FC-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0</th>
+<tr><th id="tile-fpgacore-CLKT.FC-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0</th>
 <th>0.0.9</th>
 <th>0.0.10</th>
 <th>0.0.7</th>
@@ -1383,7 +1577,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-fpgacore-CLKT.FC-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1</th>
+<tr><th id="tile-fpgacore-CLKT.FC-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1</th>
 <th>0.0.29</th>
 <th>0.0.30</th>
 <th>0.0.27</th>
@@ -1449,7 +1643,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-fpgacore-CLKT.FC-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2</th>
+<tr><th id="tile-fpgacore-CLKT.FC-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2</th>
 <th>0.0.43</th>
 <th>0.0.44</th>
 <th>0.0.41</th>
@@ -1515,7 +1709,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-fpgacore-CLKT.FC-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3</th>
+<tr><th id="tile-fpgacore-CLKT.FC-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3</th>
 <th>0.0.54</th>
 <th>0.0.55</th>
 <th>0.0.58</th>
@@ -1581,22 +1775,22 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-fpgacore-CLKT.FC-INT:MUX.OMUX0.S">INT:MUX.OMUX0.S</th>
+<tr><th id="tile-fpgacore-CLKT.FC-CLK_INT:MUX.OMUX0.S">CLK_INT:MUX.OMUX0.S</th>
 <th>1.0.3</th>
 <th>1.0.2</th>
 <th>0.0.63</th>
 </tr>
-<tr><th id="tile-fpgacore-CLKT.FC-INT:MUX.OMUX3.S">INT:MUX.OMUX3.S</th>
+<tr><th id="tile-fpgacore-CLKT.FC-CLK_INT:MUX.OMUX3.S">CLK_INT:MUX.OMUX3.S</th>
 <th>1.0.0</th>
 <th>1.0.4</th>
 <th>1.0.1</th>
 </tr>
-<tr><th id="tile-fpgacore-CLKT.FC-INT:MUX.OMUX4.S">INT:MUX.OMUX4.S</th>
+<tr><th id="tile-fpgacore-CLKT.FC-CLK_INT:MUX.OMUX4.S">CLK_INT:MUX.OMUX4.S</th>
 <th>0.0.19</th>
 <th>0.0.18</th>
 <th>0.0.21</th>
 </tr>
-<tr><th id="tile-fpgacore-CLKT.FC-INT:MUX.OMUX5.S">INT:MUX.OMUX5.S</th>
+<tr><th id="tile-fpgacore-CLKT.FC-CLK_INT:MUX.OMUX5.S">CLK_INT:MUX.OMUX5.S</th>
 <th>0.0.16</th>
 <th>0.0.17</th>
 <th>0.0.20</th>

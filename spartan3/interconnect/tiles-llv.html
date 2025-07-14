@@ -155,61 +155,110 @@
 <p>On Spartan 3E, the data for <code>LLV</code> tiles is split into two bitstream tiles: a 19×1 tile that lives in the bottom special area of every interconnect column, and a 19×2 tile that lives in the top special area of every interconnect column.</p>
 <h2 id="tile-llvs3e"><a class="header" href="#tile-llvs3e">Tile LLV.S3E</a></h2>
 <p>Cells: 2</p>
-<h3 id="muxes"><a class="header" href="#muxes">Muxes</a></h3>
+<h3 id="bel-llv"><a class="header" href="#bel-llv">Bel LLV</a></h3>
+<h3 id="switchbox-llv"><a class="header" href="#switchbox-llv">Switchbox LLV</a></h3>
 <div class="table-wrapper"><table>
-<caption>spartan3 LLV.S3E muxes</caption>
+<caption>spartan3 LLV.S3E switchbox LLV</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>TCELL0:LV.0</td><td>TCELL1:LV.23</td></tr>
-<tr><td>TCELL0:LV.1</td><td>TCELL1:LV.0</td></tr>
-<tr><td>TCELL0:LV.2</td><td>TCELL1:LV.1</td></tr>
-<tr><td>TCELL0:LV.3</td><td>TCELL1:LV.2</td></tr>
-<tr><td>TCELL0:LV.4</td><td>TCELL1:LV.3</td></tr>
-<tr><td>TCELL0:LV.5</td><td>TCELL1:LV.4</td></tr>
-<tr><td>TCELL0:LV.6</td><td>TCELL1:LV.5</td></tr>
-<tr><td>TCELL0:LV.7</td><td>TCELL1:LV.6</td></tr>
-<tr><td>TCELL0:LV.8</td><td>TCELL1:LV.7</td></tr>
-<tr><td>TCELL0:LV.9</td><td>TCELL1:LV.8</td></tr>
-<tr><td>TCELL0:LV.10</td><td>TCELL1:LV.9</td></tr>
-<tr><td>TCELL0:LV.11</td><td>TCELL1:LV.10</td></tr>
-<tr><td>TCELL0:LV.12</td><td>TCELL1:LV.11</td></tr>
-<tr><td>TCELL0:LV.13</td><td>TCELL1:LV.12</td></tr>
-<tr><td>TCELL0:LV.14</td><td>TCELL1:LV.13</td></tr>
-<tr><td>TCELL0:LV.15</td><td>TCELL1:LV.14</td></tr>
-<tr><td>TCELL0:LV.16</td><td>TCELL1:LV.15</td></tr>
-<tr><td>TCELL0:LV.17</td><td>TCELL1:LV.16</td></tr>
-<tr><td>TCELL0:LV.18</td><td>TCELL1:LV.17</td></tr>
-<tr><td>TCELL0:LV.19</td><td>TCELL1:LV.18</td></tr>
-<tr><td>TCELL0:LV.20</td><td>TCELL1:LV.19</td></tr>
-<tr><td>TCELL0:LV.21</td><td>TCELL1:LV.20</td></tr>
-<tr><td>TCELL0:LV.22</td><td>TCELL1:LV.21</td></tr>
-<tr><td>TCELL0:LV.23</td><td>TCELL1:LV.22</td></tr>
-<tr><td>TCELL1:LV.0</td><td>TCELL0:LV.1</td></tr>
-<tr><td>TCELL1:LV.1</td><td>TCELL0:LV.2</td></tr>
-<tr><td>TCELL1:LV.2</td><td>TCELL0:LV.3</td></tr>
-<tr><td>TCELL1:LV.3</td><td>TCELL0:LV.4</td></tr>
-<tr><td>TCELL1:LV.4</td><td>TCELL0:LV.5</td></tr>
-<tr><td>TCELL1:LV.5</td><td>TCELL0:LV.6</td></tr>
-<tr><td>TCELL1:LV.6</td><td>TCELL0:LV.7</td></tr>
-<tr><td>TCELL1:LV.7</td><td>TCELL0:LV.8</td></tr>
-<tr><td>TCELL1:LV.8</td><td>TCELL0:LV.9</td></tr>
-<tr><td>TCELL1:LV.9</td><td>TCELL0:LV.10</td></tr>
-<tr><td>TCELL1:LV.10</td><td>TCELL0:LV.11</td></tr>
-<tr><td>TCELL1:LV.11</td><td>TCELL0:LV.12</td></tr>
-<tr><td>TCELL1:LV.12</td><td>TCELL0:LV.13</td></tr>
-<tr><td>TCELL1:LV.13</td><td>TCELL0:LV.14</td></tr>
-<tr><td>TCELL1:LV.14</td><td>TCELL0:LV.15</td></tr>
-<tr><td>TCELL1:LV.15</td><td>TCELL0:LV.16</td></tr>
-<tr><td>TCELL1:LV.16</td><td>TCELL0:LV.17</td></tr>
-<tr><td>TCELL1:LV.17</td><td>TCELL0:LV.18</td></tr>
-<tr><td>TCELL1:LV.18</td><td>TCELL0:LV.19</td></tr>
-<tr><td>TCELL1:LV.19</td><td>TCELL0:LV.20</td></tr>
-<tr><td>TCELL1:LV.20</td><td>TCELL0:LV.21</td></tr>
-<tr><td>TCELL1:LV.21</td><td>TCELL0:LV.22</td></tr>
-<tr><td>TCELL1:LV.22</td><td>TCELL0:LV.23</td></tr>
-<tr><td>TCELL1:LV.23</td><td>TCELL0:LV.0</td></tr>
+<tr><td rowspan="1">TCELL0_LV.0</td><td>TCELL1_LV.23</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.1</td><td>TCELL1_LV.0</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.2</td><td>TCELL1_LV.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.3</td><td>TCELL1_LV.2</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.4</td><td>TCELL1_LV.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.5</td><td>TCELL1_LV.4</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.6</td><td>TCELL1_LV.5</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.7</td><td>TCELL1_LV.6</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.8</td><td>TCELL1_LV.7</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.9</td><td>TCELL1_LV.8</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.10</td><td>TCELL1_LV.9</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.11</td><td>TCELL1_LV.10</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.12</td><td>TCELL1_LV.11</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.13</td><td>TCELL1_LV.12</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.14</td><td>TCELL1_LV.13</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.15</td><td>TCELL1_LV.14</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.16</td><td>TCELL1_LV.15</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.17</td><td>TCELL1_LV.16</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.18</td><td>TCELL1_LV.17</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.19</td><td>TCELL1_LV.18</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.20</td><td>TCELL1_LV.19</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.21</td><td>TCELL1_LV.20</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.22</td><td>TCELL1_LV.21</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.23</td><td>TCELL1_LV.22</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.0</td><td>TCELL0_LV.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.1</td><td>TCELL0_LV.2</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.2</td><td>TCELL0_LV.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.3</td><td>TCELL0_LV.4</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.4</td><td>TCELL0_LV.5</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.5</td><td>TCELL0_LV.6</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.6</td><td>TCELL0_LV.7</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.7</td><td>TCELL0_LV.8</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.8</td><td>TCELL0_LV.9</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.9</td><td>TCELL0_LV.10</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.10</td><td>TCELL0_LV.11</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.11</td><td>TCELL0_LV.12</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.12</td><td>TCELL0_LV.13</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.13</td><td>TCELL0_LV.14</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.14</td><td>TCELL0_LV.15</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.15</td><td>TCELL0_LV.16</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.16</td><td>TCELL0_LV.17</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.17</td><td>TCELL0_LV.18</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.18</td><td>TCELL0_LV.19</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.19</td><td>TCELL0_LV.20</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.20</td><td>TCELL0_LV.21</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.21</td><td>TCELL0_LV.22</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.22</td><td>TCELL0_LV.23</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.23</td><td>TCELL0_LV.0</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bitstream"><a class="header" href="#bitstream">Bitstream</a></h3>
@@ -245,52 +294,52 @@
 <td>-</td>
 <td>-</td>
 <td title="0.3.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.22">INT:MUX.1.LV.22[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.22">LLV:MUX.1.LV.22[0]</a>
 </td>
 <td title="0.4.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.22">INT:MUX.0.LV.22[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.22">LLV:MUX.0.LV.22[0]</a>
 </td>
 <td title="0.5.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.19">INT:MUX.1.LV.19[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.19">LLV:MUX.1.LV.19[0]</a>
 </td>
 <td title="0.6.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.19">INT:MUX.0.LV.19[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.19">LLV:MUX.0.LV.19[0]</a>
 </td>
 <td title="0.7.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.16">INT:MUX.1.LV.16[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.16">LLV:MUX.1.LV.16[0]</a>
 </td>
 <td title="0.8.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.16">INT:MUX.0.LV.16[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.16">LLV:MUX.0.LV.16[0]</a>
 </td>
 <td title="0.9.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.13">INT:MUX.1.LV.13[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.13">LLV:MUX.1.LV.13[0]</a>
 </td>
 <td title="0.10.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.13">INT:MUX.0.LV.13[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.13">LLV:MUX.0.LV.13[0]</a>
 </td>
 <td title="0.11.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.10">INT:MUX.1.LV.10[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.10">LLV:MUX.1.LV.10[0]</a>
 </td>
 <td title="0.12.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.10">INT:MUX.0.LV.10[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.10">LLV:MUX.0.LV.10[0]</a>
 </td>
 <td title="0.13.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.7">INT:MUX.1.LV.7[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.7">LLV:MUX.1.LV.7[0]</a>
 </td>
 <td title="0.14.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.7">INT:MUX.0.LV.7[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.7">LLV:MUX.0.LV.7[0]</a>
 </td>
 <td title="0.15.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.4">INT:MUX.1.LV.4[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.4">LLV:MUX.1.LV.4[0]</a>
 </td>
 <td title="0.16.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.4">INT:MUX.0.LV.4[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.4">LLV:MUX.0.LV.4[0]</a>
 </td>
 <td title="0.17.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.1">INT:MUX.1.LV.1[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.1">LLV:MUX.1.LV.1[0]</a>
 </td>
 <td title="0.18.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.1">INT:MUX.0.LV.1[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.1">LLV:MUX.0.LV.1[0]</a>
 </td>
 </tr>
 </tbody>
@@ -327,52 +376,52 @@
 <td>-</td>
 <td>-</td>
 <td title="1.3.1">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.0">INT:MUX.0.LV.0[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.0">LLV:MUX.0.LV.0[0]</a>
 </td>
 <td title="1.4.1">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.21">INT:MUX.1.LV.21[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.21">LLV:MUX.1.LV.21[0]</a>
 </td>
 <td title="1.5.1">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.21">INT:MUX.0.LV.21[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.21">LLV:MUX.0.LV.21[0]</a>
 </td>
 <td title="1.6.1">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.18">INT:MUX.1.LV.18[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.18">LLV:MUX.1.LV.18[0]</a>
 </td>
 <td title="1.7.1">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.18">INT:MUX.0.LV.18[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.18">LLV:MUX.0.LV.18[0]</a>
 </td>
 <td title="1.8.1">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.15">INT:MUX.1.LV.15[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.15">LLV:MUX.1.LV.15[0]</a>
 </td>
 <td title="1.9.1">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.15">INT:MUX.0.LV.15[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.15">LLV:MUX.0.LV.15[0]</a>
 </td>
 <td title="1.10.1">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.12">INT:MUX.1.LV.12[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.12">LLV:MUX.1.LV.12[0]</a>
 </td>
 <td title="1.11.1">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.12">INT:MUX.0.LV.12[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.12">LLV:MUX.0.LV.12[0]</a>
 </td>
 <td title="1.12.1">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.9">INT:MUX.1.LV.9[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.9">LLV:MUX.1.LV.9[0]</a>
 </td>
 <td title="1.13.1">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.9">INT:MUX.0.LV.9[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.9">LLV:MUX.0.LV.9[0]</a>
 </td>
 <td title="1.14.1">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.6">INT:MUX.1.LV.6[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.6">LLV:MUX.1.LV.6[0]</a>
 </td>
 <td title="1.15.1">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.6">INT:MUX.0.LV.6[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.6">LLV:MUX.0.LV.6[0]</a>
 </td>
 <td title="1.16.1">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.3">INT:MUX.1.LV.3[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.3">LLV:MUX.1.LV.3[0]</a>
 </td>
 <td title="1.17.1">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.3">INT:MUX.0.LV.3[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.3">LLV:MUX.0.LV.3[0]</a>
 </td>
 <td title="1.18.1">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.0">INT:MUX.1.LV.0[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.0">LLV:MUX.1.LV.0[0]</a>
 </td>
 </tr>
 <tr><td>0</td>
@@ -380,59 +429,59 @@
 <td>-</td>
 <td>-</td>
 <td title="1.3.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.23">INT:MUX.1.LV.23[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.23">LLV:MUX.1.LV.23[0]</a>
 </td>
 <td title="1.4.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.23">INT:MUX.0.LV.23[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.23">LLV:MUX.0.LV.23[0]</a>
 </td>
 <td title="1.5.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.20">INT:MUX.1.LV.20[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.20">LLV:MUX.1.LV.20[0]</a>
 </td>
 <td title="1.6.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.20">INT:MUX.0.LV.20[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.20">LLV:MUX.0.LV.20[0]</a>
 </td>
 <td title="1.7.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.17">INT:MUX.1.LV.17[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.17">LLV:MUX.1.LV.17[0]</a>
 </td>
 <td title="1.8.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.17">INT:MUX.0.LV.17[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.17">LLV:MUX.0.LV.17[0]</a>
 </td>
 <td title="1.9.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.14">INT:MUX.1.LV.14[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.14">LLV:MUX.1.LV.14[0]</a>
 </td>
 <td title="1.10.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.14">INT:MUX.0.LV.14[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.14">LLV:MUX.0.LV.14[0]</a>
 </td>
 <td title="1.11.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.11">INT:MUX.1.LV.11[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.11">LLV:MUX.1.LV.11[0]</a>
 </td>
 <td title="1.12.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.11">INT:MUX.0.LV.11[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.11">LLV:MUX.0.LV.11[0]</a>
 </td>
 <td title="1.13.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.8">INT:MUX.1.LV.8[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.8">LLV:MUX.1.LV.8[0]</a>
 </td>
 <td title="1.14.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.8">INT:MUX.0.LV.8[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.8">LLV:MUX.0.LV.8[0]</a>
 </td>
 <td title="1.15.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.5">INT:MUX.1.LV.5[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.5">LLV:MUX.1.LV.5[0]</a>
 </td>
 <td title="1.16.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.5">INT:MUX.0.LV.5[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.5">LLV:MUX.0.LV.5[0]</a>
 </td>
 <td title="1.17.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.1.LV.2">INT:MUX.1.LV.2[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.1.LV.2">LLV:MUX.1.LV.2[0]</a>
 </td>
 <td title="1.18.0">
-<a href="#tile-spartan3-LLV.S3E-INT:MUX.0.LV.2">INT:MUX.0.LV.2[0]</a>
+<a href="#tile-spartan3-LLV.S3E-LLV:MUX.0.LV.2">LLV:MUX.0.LV.2[0]</a>
 </td>
 </tr>
 </tbody>
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.0">INT:MUX.0.LV.0</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.0">LLV:MUX.0.LV.0</th>
 <th>1.3.1</th>
 </tr>
 </thead>
@@ -447,7 +496,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.1">INT:MUX.0.LV.1</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.1">LLV:MUX.0.LV.1</th>
 <th>0.18.0</th>
 </tr>
 </thead>
@@ -462,7 +511,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.10">INT:MUX.0.LV.10</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.10">LLV:MUX.0.LV.10</th>
 <th>0.12.0</th>
 </tr>
 </thead>
@@ -477,7 +526,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.11">INT:MUX.0.LV.11</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.11">LLV:MUX.0.LV.11</th>
 <th>1.12.0</th>
 </tr>
 </thead>
@@ -492,7 +541,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.12">INT:MUX.0.LV.12</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.12">LLV:MUX.0.LV.12</th>
 <th>1.11.1</th>
 </tr>
 </thead>
@@ -507,7 +556,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.13">INT:MUX.0.LV.13</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.13">LLV:MUX.0.LV.13</th>
 <th>0.10.0</th>
 </tr>
 </thead>
@@ -522,7 +571,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.14">INT:MUX.0.LV.14</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.14">LLV:MUX.0.LV.14</th>
 <th>1.10.0</th>
 </tr>
 </thead>
@@ -537,7 +586,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.15">INT:MUX.0.LV.15</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.15">LLV:MUX.0.LV.15</th>
 <th>1.9.1</th>
 </tr>
 </thead>
@@ -552,7 +601,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.16">INT:MUX.0.LV.16</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.16">LLV:MUX.0.LV.16</th>
 <th>0.8.0</th>
 </tr>
 </thead>
@@ -567,7 +616,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.17">INT:MUX.0.LV.17</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.17">LLV:MUX.0.LV.17</th>
 <th>1.8.0</th>
 </tr>
 </thead>
@@ -582,7 +631,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.18">INT:MUX.0.LV.18</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.18">LLV:MUX.0.LV.18</th>
 <th>1.7.1</th>
 </tr>
 </thead>
@@ -597,7 +646,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.19">INT:MUX.0.LV.19</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.19">LLV:MUX.0.LV.19</th>
 <th>0.6.0</th>
 </tr>
 </thead>
@@ -612,7 +661,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.2">INT:MUX.0.LV.2</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.2">LLV:MUX.0.LV.2</th>
 <th>1.18.0</th>
 </tr>
 </thead>
@@ -627,7 +676,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.20">INT:MUX.0.LV.20</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.20">LLV:MUX.0.LV.20</th>
 <th>1.6.0</th>
 </tr>
 </thead>
@@ -642,7 +691,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.21">INT:MUX.0.LV.21</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.21">LLV:MUX.0.LV.21</th>
 <th>1.5.1</th>
 </tr>
 </thead>
@@ -657,7 +706,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.22">INT:MUX.0.LV.22</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.22">LLV:MUX.0.LV.22</th>
 <th>0.4.0</th>
 </tr>
 </thead>
@@ -672,7 +721,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.23">INT:MUX.0.LV.23</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.23">LLV:MUX.0.LV.23</th>
 <th>1.4.0</th>
 </tr>
 </thead>
@@ -687,7 +736,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.3">INT:MUX.0.LV.3</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.3">LLV:MUX.0.LV.3</th>
 <th>1.17.1</th>
 </tr>
 </thead>
@@ -702,7 +751,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.4">INT:MUX.0.LV.4</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.4">LLV:MUX.0.LV.4</th>
 <th>0.16.0</th>
 </tr>
 </thead>
@@ -717,7 +766,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.5">INT:MUX.0.LV.5</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.5">LLV:MUX.0.LV.5</th>
 <th>1.16.0</th>
 </tr>
 </thead>
@@ -732,7 +781,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.6">INT:MUX.0.LV.6</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.6">LLV:MUX.0.LV.6</th>
 <th>1.15.1</th>
 </tr>
 </thead>
@@ -747,7 +796,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.7">INT:MUX.0.LV.7</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.7">LLV:MUX.0.LV.7</th>
 <th>0.14.0</th>
 </tr>
 </thead>
@@ -762,7 +811,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.8">INT:MUX.0.LV.8</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.8">LLV:MUX.0.LV.8</th>
 <th>1.14.0</th>
 </tr>
 </thead>
@@ -777,7 +826,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.0.LV.9">INT:MUX.0.LV.9</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.0.LV.9">LLV:MUX.0.LV.9</th>
 <th>1.13.1</th>
 </tr>
 </thead>
@@ -792,7 +841,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.0">INT:MUX.1.LV.0</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.0">LLV:MUX.1.LV.0</th>
 <th>1.18.1</th>
 </tr>
 </thead>
@@ -807,7 +856,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.1">INT:MUX.1.LV.1</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.1">LLV:MUX.1.LV.1</th>
 <th>0.17.0</th>
 </tr>
 </thead>
@@ -822,7 +871,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.10">INT:MUX.1.LV.10</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.10">LLV:MUX.1.LV.10</th>
 <th>0.11.0</th>
 </tr>
 </thead>
@@ -837,7 +886,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.11">INT:MUX.1.LV.11</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.11">LLV:MUX.1.LV.11</th>
 <th>1.11.0</th>
 </tr>
 </thead>
@@ -852,7 +901,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.12">INT:MUX.1.LV.12</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.12">LLV:MUX.1.LV.12</th>
 <th>1.10.1</th>
 </tr>
 </thead>
@@ -867,7 +916,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.13">INT:MUX.1.LV.13</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.13">LLV:MUX.1.LV.13</th>
 <th>0.9.0</th>
 </tr>
 </thead>
@@ -882,7 +931,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.14">INT:MUX.1.LV.14</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.14">LLV:MUX.1.LV.14</th>
 <th>1.9.0</th>
 </tr>
 </thead>
@@ -897,7 +946,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.15">INT:MUX.1.LV.15</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.15">LLV:MUX.1.LV.15</th>
 <th>1.8.1</th>
 </tr>
 </thead>
@@ -912,7 +961,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.16">INT:MUX.1.LV.16</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.16">LLV:MUX.1.LV.16</th>
 <th>0.7.0</th>
 </tr>
 </thead>
@@ -927,7 +976,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.17">INT:MUX.1.LV.17</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.17">LLV:MUX.1.LV.17</th>
 <th>1.7.0</th>
 </tr>
 </thead>
@@ -942,7 +991,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.18">INT:MUX.1.LV.18</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.18">LLV:MUX.1.LV.18</th>
 <th>1.6.1</th>
 </tr>
 </thead>
@@ -957,7 +1006,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.19">INT:MUX.1.LV.19</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.19">LLV:MUX.1.LV.19</th>
 <th>0.5.0</th>
 </tr>
 </thead>
@@ -972,7 +1021,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.2">INT:MUX.1.LV.2</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.2">LLV:MUX.1.LV.2</th>
 <th>1.17.0</th>
 </tr>
 </thead>
@@ -987,7 +1036,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.20">INT:MUX.1.LV.20</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.20">LLV:MUX.1.LV.20</th>
 <th>1.5.0</th>
 </tr>
 </thead>
@@ -1002,7 +1051,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.21">INT:MUX.1.LV.21</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.21">LLV:MUX.1.LV.21</th>
 <th>1.4.1</th>
 </tr>
 </thead>
@@ -1017,7 +1066,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.22">INT:MUX.1.LV.22</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.22">LLV:MUX.1.LV.22</th>
 <th>0.3.0</th>
 </tr>
 </thead>
@@ -1032,7 +1081,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.23">INT:MUX.1.LV.23</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.23">LLV:MUX.1.LV.23</th>
 <th>1.3.0</th>
 </tr>
 </thead>
@@ -1047,7 +1096,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.3">INT:MUX.1.LV.3</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.3">LLV:MUX.1.LV.3</th>
 <th>1.16.1</th>
 </tr>
 </thead>
@@ -1062,7 +1111,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.4">INT:MUX.1.LV.4</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.4">LLV:MUX.1.LV.4</th>
 <th>0.15.0</th>
 </tr>
 </thead>
@@ -1077,7 +1126,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.5">INT:MUX.1.LV.5</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.5">LLV:MUX.1.LV.5</th>
 <th>1.15.0</th>
 </tr>
 </thead>
@@ -1092,7 +1141,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.6">INT:MUX.1.LV.6</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.6">LLV:MUX.1.LV.6</th>
 <th>1.14.1</th>
 </tr>
 </thead>
@@ -1107,7 +1156,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.7">INT:MUX.1.LV.7</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.7">LLV:MUX.1.LV.7</th>
 <th>0.13.0</th>
 </tr>
 </thead>
@@ -1122,7 +1171,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.8">INT:MUX.1.LV.8</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.8">LLV:MUX.1.LV.8</th>
 <th>1.13.0</th>
 </tr>
 </thead>
@@ -1137,7 +1186,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3E-INT:MUX.1.LV.9">INT:MUX.1.LV.9</th>
+<tr><th id="tile-spartan3-LLV.S3E-LLV:MUX.1.LV.9">LLV:MUX.1.LV.9</th>
 <th>1.12.1</th>
 </tr>
 </thead>
@@ -1154,61 +1203,110 @@
 <p>On Spartan 3A and Spartan 3A DSP, the data for <code>LLV</code> tiles lives in 19×3 bitstream tiles in the top special area of every interconnect column.</p>
 <h2 id="tile-llvs3a"><a class="header" href="#tile-llvs3a">Tile LLV.S3A</a></h2>
 <p>Cells: 2</p>
-<h3 id="muxes-1"><a class="header" href="#muxes-1">Muxes</a></h3>
+<h3 id="bel-llv-1"><a class="header" href="#bel-llv-1">Bel LLV</a></h3>
+<h3 id="switchbox-llv-1"><a class="header" href="#switchbox-llv-1">Switchbox LLV</a></h3>
 <div class="table-wrapper"><table>
-<caption>spartan3 LLV.S3A muxes</caption>
+<caption>spartan3 LLV.S3A switchbox LLV</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>TCELL0:LV.0</td><td>TCELL1:LV.23</td></tr>
-<tr><td>TCELL0:LV.1</td><td>TCELL1:LV.0</td></tr>
-<tr><td>TCELL0:LV.2</td><td>TCELL1:LV.1</td></tr>
-<tr><td>TCELL0:LV.3</td><td>TCELL1:LV.2</td></tr>
-<tr><td>TCELL0:LV.4</td><td>TCELL1:LV.3</td></tr>
-<tr><td>TCELL0:LV.5</td><td>TCELL1:LV.4</td></tr>
-<tr><td>TCELL0:LV.6</td><td>TCELL1:LV.5</td></tr>
-<tr><td>TCELL0:LV.7</td><td>TCELL1:LV.6</td></tr>
-<tr><td>TCELL0:LV.8</td><td>TCELL1:LV.7</td></tr>
-<tr><td>TCELL0:LV.9</td><td>TCELL1:LV.8</td></tr>
-<tr><td>TCELL0:LV.10</td><td>TCELL1:LV.9</td></tr>
-<tr><td>TCELL0:LV.11</td><td>TCELL1:LV.10</td></tr>
-<tr><td>TCELL0:LV.12</td><td>TCELL1:LV.11</td></tr>
-<tr><td>TCELL0:LV.13</td><td>TCELL1:LV.12</td></tr>
-<tr><td>TCELL0:LV.14</td><td>TCELL1:LV.13</td></tr>
-<tr><td>TCELL0:LV.15</td><td>TCELL1:LV.14</td></tr>
-<tr><td>TCELL0:LV.16</td><td>TCELL1:LV.15</td></tr>
-<tr><td>TCELL0:LV.17</td><td>TCELL1:LV.16</td></tr>
-<tr><td>TCELL0:LV.18</td><td>TCELL1:LV.17</td></tr>
-<tr><td>TCELL0:LV.19</td><td>TCELL1:LV.18</td></tr>
-<tr><td>TCELL0:LV.20</td><td>TCELL1:LV.19</td></tr>
-<tr><td>TCELL0:LV.21</td><td>TCELL1:LV.20</td></tr>
-<tr><td>TCELL0:LV.22</td><td>TCELL1:LV.21</td></tr>
-<tr><td>TCELL0:LV.23</td><td>TCELL1:LV.22</td></tr>
-<tr><td>TCELL1:LV.0</td><td>TCELL0:LV.1</td></tr>
-<tr><td>TCELL1:LV.1</td><td>TCELL0:LV.2</td></tr>
-<tr><td>TCELL1:LV.2</td><td>TCELL0:LV.3</td></tr>
-<tr><td>TCELL1:LV.3</td><td>TCELL0:LV.4</td></tr>
-<tr><td>TCELL1:LV.4</td><td>TCELL0:LV.5</td></tr>
-<tr><td>TCELL1:LV.5</td><td>TCELL0:LV.6</td></tr>
-<tr><td>TCELL1:LV.6</td><td>TCELL0:LV.7</td></tr>
-<tr><td>TCELL1:LV.7</td><td>TCELL0:LV.8</td></tr>
-<tr><td>TCELL1:LV.8</td><td>TCELL0:LV.9</td></tr>
-<tr><td>TCELL1:LV.9</td><td>TCELL0:LV.10</td></tr>
-<tr><td>TCELL1:LV.10</td><td>TCELL0:LV.11</td></tr>
-<tr><td>TCELL1:LV.11</td><td>TCELL0:LV.12</td></tr>
-<tr><td>TCELL1:LV.12</td><td>TCELL0:LV.13</td></tr>
-<tr><td>TCELL1:LV.13</td><td>TCELL0:LV.14</td></tr>
-<tr><td>TCELL1:LV.14</td><td>TCELL0:LV.15</td></tr>
-<tr><td>TCELL1:LV.15</td><td>TCELL0:LV.16</td></tr>
-<tr><td>TCELL1:LV.16</td><td>TCELL0:LV.17</td></tr>
-<tr><td>TCELL1:LV.17</td><td>TCELL0:LV.18</td></tr>
-<tr><td>TCELL1:LV.18</td><td>TCELL0:LV.19</td></tr>
-<tr><td>TCELL1:LV.19</td><td>TCELL0:LV.20</td></tr>
-<tr><td>TCELL1:LV.20</td><td>TCELL0:LV.21</td></tr>
-<tr><td>TCELL1:LV.21</td><td>TCELL0:LV.22</td></tr>
-<tr><td>TCELL1:LV.22</td><td>TCELL0:LV.23</td></tr>
-<tr><td>TCELL1:LV.23</td><td>TCELL0:LV.0</td></tr>
+<tr><td rowspan="1">TCELL0_LV.0</td><td>TCELL1_LV.23</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.1</td><td>TCELL1_LV.0</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.2</td><td>TCELL1_LV.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.3</td><td>TCELL1_LV.2</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.4</td><td>TCELL1_LV.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.5</td><td>TCELL1_LV.4</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.6</td><td>TCELL1_LV.5</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.7</td><td>TCELL1_LV.6</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.8</td><td>TCELL1_LV.7</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.9</td><td>TCELL1_LV.8</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.10</td><td>TCELL1_LV.9</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.11</td><td>TCELL1_LV.10</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.12</td><td>TCELL1_LV.11</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.13</td><td>TCELL1_LV.12</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.14</td><td>TCELL1_LV.13</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.15</td><td>TCELL1_LV.14</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.16</td><td>TCELL1_LV.15</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.17</td><td>TCELL1_LV.16</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.18</td><td>TCELL1_LV.17</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.19</td><td>TCELL1_LV.18</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.20</td><td>TCELL1_LV.19</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.21</td><td>TCELL1_LV.20</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.22</td><td>TCELL1_LV.21</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LV.23</td><td>TCELL1_LV.22</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.0</td><td>TCELL0_LV.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.1</td><td>TCELL0_LV.2</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.2</td><td>TCELL0_LV.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.3</td><td>TCELL0_LV.4</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.4</td><td>TCELL0_LV.5</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.5</td><td>TCELL0_LV.6</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.6</td><td>TCELL0_LV.7</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.7</td><td>TCELL0_LV.8</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.8</td><td>TCELL0_LV.9</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.9</td><td>TCELL0_LV.10</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.10</td><td>TCELL0_LV.11</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.11</td><td>TCELL0_LV.12</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.12</td><td>TCELL0_LV.13</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.13</td><td>TCELL0_LV.14</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.14</td><td>TCELL0_LV.15</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.15</td><td>TCELL0_LV.16</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.16</td><td>TCELL0_LV.17</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.17</td><td>TCELL0_LV.18</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.18</td><td>TCELL0_LV.19</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.19</td><td>TCELL0_LV.20</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.20</td><td>TCELL0_LV.21</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.21</td><td>TCELL0_LV.22</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.22</td><td>TCELL0_LV.23</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LV.23</td><td>TCELL0_LV.0</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bitstream-1"><a class="header" href="#bitstream-1">Bitstream</a></h3>
@@ -1244,52 +1342,52 @@
 <td>-</td>
 <td>-</td>
 <td title="0.3.2">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.0">INT:MUX.1.LV.0[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.0">LLV:MUX.1.LV.0[0]</a>
 </td>
 <td title="0.4.2">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.0">INT:MUX.0.LV.0[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.0">LLV:MUX.0.LV.0[0]</a>
 </td>
 <td title="0.5.2">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.21">INT:MUX.1.LV.21[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.21">LLV:MUX.1.LV.21[0]</a>
 </td>
 <td title="0.6.2">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.21">INT:MUX.0.LV.21[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.21">LLV:MUX.0.LV.21[0]</a>
 </td>
 <td title="0.7.2">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.18">INT:MUX.1.LV.18[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.18">LLV:MUX.1.LV.18[0]</a>
 </td>
 <td title="0.8.2">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.18">INT:MUX.0.LV.18[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.18">LLV:MUX.0.LV.18[0]</a>
 </td>
 <td title="0.9.2">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.15">INT:MUX.1.LV.15[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.15">LLV:MUX.1.LV.15[0]</a>
 </td>
 <td title="0.10.2">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.15">INT:MUX.0.LV.15[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.15">LLV:MUX.0.LV.15[0]</a>
 </td>
 <td title="0.11.2">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.12">INT:MUX.1.LV.12[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.12">LLV:MUX.1.LV.12[0]</a>
 </td>
 <td title="0.12.2">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.12">INT:MUX.0.LV.12[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.12">LLV:MUX.0.LV.12[0]</a>
 </td>
 <td title="0.13.2">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.9">INT:MUX.1.LV.9[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.9">LLV:MUX.1.LV.9[0]</a>
 </td>
 <td title="0.14.2">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.9">INT:MUX.0.LV.9[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.9">LLV:MUX.0.LV.9[0]</a>
 </td>
 <td title="0.15.2">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.6">INT:MUX.1.LV.6[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.6">LLV:MUX.1.LV.6[0]</a>
 </td>
 <td title="0.16.2">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.6">INT:MUX.0.LV.6[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.6">LLV:MUX.0.LV.6[0]</a>
 </td>
 <td title="0.17.2">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.3">INT:MUX.1.LV.3[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.3">LLV:MUX.1.LV.3[0]</a>
 </td>
 <td title="0.18.2">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.3">INT:MUX.0.LV.3[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.3">LLV:MUX.0.LV.3[0]</a>
 </td>
 </tr>
 <tr><td>1</td>
@@ -1297,52 +1395,52 @@
 <td>-</td>
 <td>-</td>
 <td title="0.3.1">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.1">INT:MUX.0.LV.1[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.1">LLV:MUX.0.LV.1[0]</a>
 </td>
 <td title="0.4.1">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.22">INT:MUX.1.LV.22[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.22">LLV:MUX.1.LV.22[0]</a>
 </td>
 <td title="0.5.1">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.22">INT:MUX.0.LV.22[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.22">LLV:MUX.0.LV.22[0]</a>
 </td>
 <td title="0.6.1">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.19">INT:MUX.1.LV.19[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.19">LLV:MUX.1.LV.19[0]</a>
 </td>
 <td title="0.7.1">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.19">INT:MUX.0.LV.19[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.19">LLV:MUX.0.LV.19[0]</a>
 </td>
 <td title="0.8.1">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.16">INT:MUX.1.LV.16[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.16">LLV:MUX.1.LV.16[0]</a>
 </td>
 <td title="0.9.1">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.16">INT:MUX.0.LV.16[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.16">LLV:MUX.0.LV.16[0]</a>
 </td>
 <td title="0.10.1">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.13">INT:MUX.1.LV.13[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.13">LLV:MUX.1.LV.13[0]</a>
 </td>
 <td title="0.11.1">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.13">INT:MUX.0.LV.13[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.13">LLV:MUX.0.LV.13[0]</a>
 </td>
 <td title="0.12.1">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.10">INT:MUX.1.LV.10[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.10">LLV:MUX.1.LV.10[0]</a>
 </td>
 <td title="0.13.1">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.10">INT:MUX.0.LV.10[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.10">LLV:MUX.0.LV.10[0]</a>
 </td>
 <td title="0.14.1">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.7">INT:MUX.1.LV.7[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.7">LLV:MUX.1.LV.7[0]</a>
 </td>
 <td title="0.15.1">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.7">INT:MUX.0.LV.7[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.7">LLV:MUX.0.LV.7[0]</a>
 </td>
 <td title="0.16.1">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.4">INT:MUX.1.LV.4[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.4">LLV:MUX.1.LV.4[0]</a>
 </td>
 <td title="0.17.1">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.4">INT:MUX.0.LV.4[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.4">LLV:MUX.0.LV.4[0]</a>
 </td>
 <td title="0.18.1">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.1">INT:MUX.1.LV.1[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.1">LLV:MUX.1.LV.1[0]</a>
 </td>
 </tr>
 <tr><td>0</td>
@@ -1350,59 +1448,59 @@
 <td>-</td>
 <td>-</td>
 <td title="0.3.0">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.23">INT:MUX.1.LV.23[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.23">LLV:MUX.1.LV.23[0]</a>
 </td>
 <td title="0.4.0">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.23">INT:MUX.0.LV.23[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.23">LLV:MUX.0.LV.23[0]</a>
 </td>
 <td title="0.5.0">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.20">INT:MUX.1.LV.20[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.20">LLV:MUX.1.LV.20[0]</a>
 </td>
 <td title="0.6.0">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.20">INT:MUX.0.LV.20[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.20">LLV:MUX.0.LV.20[0]</a>
 </td>
 <td title="0.7.0">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.17">INT:MUX.1.LV.17[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.17">LLV:MUX.1.LV.17[0]</a>
 </td>
 <td title="0.8.0">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.17">INT:MUX.0.LV.17[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.17">LLV:MUX.0.LV.17[0]</a>
 </td>
 <td title="0.9.0">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.14">INT:MUX.1.LV.14[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.14">LLV:MUX.1.LV.14[0]</a>
 </td>
 <td title="0.10.0">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.14">INT:MUX.0.LV.14[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.14">LLV:MUX.0.LV.14[0]</a>
 </td>
 <td title="0.11.0">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.11">INT:MUX.1.LV.11[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.11">LLV:MUX.1.LV.11[0]</a>
 </td>
 <td title="0.12.0">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.11">INT:MUX.0.LV.11[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.11">LLV:MUX.0.LV.11[0]</a>
 </td>
 <td title="0.13.0">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.8">INT:MUX.1.LV.8[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.8">LLV:MUX.1.LV.8[0]</a>
 </td>
 <td title="0.14.0">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.8">INT:MUX.0.LV.8[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.8">LLV:MUX.0.LV.8[0]</a>
 </td>
 <td title="0.15.0">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.5">INT:MUX.1.LV.5[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.5">LLV:MUX.1.LV.5[0]</a>
 </td>
 <td title="0.16.0">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.5">INT:MUX.0.LV.5[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.5">LLV:MUX.0.LV.5[0]</a>
 </td>
 <td title="0.17.0">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.1.LV.2">INT:MUX.1.LV.2[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.1.LV.2">LLV:MUX.1.LV.2[0]</a>
 </td>
 <td title="0.18.0">
-<a href="#tile-spartan3-LLV.S3A-INT:MUX.0.LV.2">INT:MUX.0.LV.2[0]</a>
+<a href="#tile-spartan3-LLV.S3A-LLV:MUX.0.LV.2">LLV:MUX.0.LV.2[0]</a>
 </td>
 </tr>
 </tbody>
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.0">INT:MUX.0.LV.0</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.0">LLV:MUX.0.LV.0</th>
 <th>0.4.2</th>
 </tr>
 </thead>
@@ -1417,7 +1515,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.1">INT:MUX.0.LV.1</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.1">LLV:MUX.0.LV.1</th>
 <th>0.3.1</th>
 </tr>
 </thead>
@@ -1432,7 +1530,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.10">INT:MUX.0.LV.10</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.10">LLV:MUX.0.LV.10</th>
 <th>0.13.1</th>
 </tr>
 </thead>
@@ -1447,7 +1545,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.11">INT:MUX.0.LV.11</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.11">LLV:MUX.0.LV.11</th>
 <th>0.12.0</th>
 </tr>
 </thead>
@@ -1462,7 +1560,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.12">INT:MUX.0.LV.12</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.12">LLV:MUX.0.LV.12</th>
 <th>0.12.2</th>
 </tr>
 </thead>
@@ -1477,7 +1575,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.13">INT:MUX.0.LV.13</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.13">LLV:MUX.0.LV.13</th>
 <th>0.11.1</th>
 </tr>
 </thead>
@@ -1492,7 +1590,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.14">INT:MUX.0.LV.14</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.14">LLV:MUX.0.LV.14</th>
 <th>0.10.0</th>
 </tr>
 </thead>
@@ -1507,7 +1605,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.15">INT:MUX.0.LV.15</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.15">LLV:MUX.0.LV.15</th>
 <th>0.10.2</th>
 </tr>
 </thead>
@@ -1522,7 +1620,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.16">INT:MUX.0.LV.16</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.16">LLV:MUX.0.LV.16</th>
 <th>0.9.1</th>
 </tr>
 </thead>
@@ -1537,7 +1635,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.17">INT:MUX.0.LV.17</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.17">LLV:MUX.0.LV.17</th>
 <th>0.8.0</th>
 </tr>
 </thead>
@@ -1552,7 +1650,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.18">INT:MUX.0.LV.18</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.18">LLV:MUX.0.LV.18</th>
 <th>0.8.2</th>
 </tr>
 </thead>
@@ -1567,7 +1665,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.19">INT:MUX.0.LV.19</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.19">LLV:MUX.0.LV.19</th>
 <th>0.7.1</th>
 </tr>
 </thead>
@@ -1582,7 +1680,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.2">INT:MUX.0.LV.2</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.2">LLV:MUX.0.LV.2</th>
 <th>0.18.0</th>
 </tr>
 </thead>
@@ -1597,7 +1695,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.20">INT:MUX.0.LV.20</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.20">LLV:MUX.0.LV.20</th>
 <th>0.6.0</th>
 </tr>
 </thead>
@@ -1612,7 +1710,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.21">INT:MUX.0.LV.21</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.21">LLV:MUX.0.LV.21</th>
 <th>0.6.2</th>
 </tr>
 </thead>
@@ -1627,7 +1725,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.22">INT:MUX.0.LV.22</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.22">LLV:MUX.0.LV.22</th>
 <th>0.5.1</th>
 </tr>
 </thead>
@@ -1642,7 +1740,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.23">INT:MUX.0.LV.23</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.23">LLV:MUX.0.LV.23</th>
 <th>0.4.0</th>
 </tr>
 </thead>
@@ -1657,7 +1755,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.3">INT:MUX.0.LV.3</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.3">LLV:MUX.0.LV.3</th>
 <th>0.18.2</th>
 </tr>
 </thead>
@@ -1672,7 +1770,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.4">INT:MUX.0.LV.4</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.4">LLV:MUX.0.LV.4</th>
 <th>0.17.1</th>
 </tr>
 </thead>
@@ -1687,7 +1785,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.5">INT:MUX.0.LV.5</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.5">LLV:MUX.0.LV.5</th>
 <th>0.16.0</th>
 </tr>
 </thead>
@@ -1702,7 +1800,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.6">INT:MUX.0.LV.6</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.6">LLV:MUX.0.LV.6</th>
 <th>0.16.2</th>
 </tr>
 </thead>
@@ -1717,7 +1815,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.7">INT:MUX.0.LV.7</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.7">LLV:MUX.0.LV.7</th>
 <th>0.15.1</th>
 </tr>
 </thead>
@@ -1732,7 +1830,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.8">INT:MUX.0.LV.8</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.8">LLV:MUX.0.LV.8</th>
 <th>0.14.0</th>
 </tr>
 </thead>
@@ -1747,7 +1845,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.0.LV.9">INT:MUX.0.LV.9</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.0.LV.9">LLV:MUX.0.LV.9</th>
 <th>0.14.2</th>
 </tr>
 </thead>
@@ -1762,7 +1860,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.0">INT:MUX.1.LV.0</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.0">LLV:MUX.1.LV.0</th>
 <th>0.3.2</th>
 </tr>
 </thead>
@@ -1777,7 +1875,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.1">INT:MUX.1.LV.1</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.1">LLV:MUX.1.LV.1</th>
 <th>0.18.1</th>
 </tr>
 </thead>
@@ -1792,7 +1890,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.10">INT:MUX.1.LV.10</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.10">LLV:MUX.1.LV.10</th>
 <th>0.12.1</th>
 </tr>
 </thead>
@@ -1807,7 +1905,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.11">INT:MUX.1.LV.11</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.11">LLV:MUX.1.LV.11</th>
 <th>0.11.0</th>
 </tr>
 </thead>
@@ -1822,7 +1920,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.12">INT:MUX.1.LV.12</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.12">LLV:MUX.1.LV.12</th>
 <th>0.11.2</th>
 </tr>
 </thead>
@@ -1837,7 +1935,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.13">INT:MUX.1.LV.13</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.13">LLV:MUX.1.LV.13</th>
 <th>0.10.1</th>
 </tr>
 </thead>
@@ -1852,7 +1950,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.14">INT:MUX.1.LV.14</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.14">LLV:MUX.1.LV.14</th>
 <th>0.9.0</th>
 </tr>
 </thead>
@@ -1867,7 +1965,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.15">INT:MUX.1.LV.15</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.15">LLV:MUX.1.LV.15</th>
 <th>0.9.2</th>
 </tr>
 </thead>
@@ -1882,7 +1980,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.16">INT:MUX.1.LV.16</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.16">LLV:MUX.1.LV.16</th>
 <th>0.8.1</th>
 </tr>
 </thead>
@@ -1897,7 +1995,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.17">INT:MUX.1.LV.17</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.17">LLV:MUX.1.LV.17</th>
 <th>0.7.0</th>
 </tr>
 </thead>
@@ -1912,7 +2010,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.18">INT:MUX.1.LV.18</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.18">LLV:MUX.1.LV.18</th>
 <th>0.7.2</th>
 </tr>
 </thead>
@@ -1927,7 +2025,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.19">INT:MUX.1.LV.19</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.19">LLV:MUX.1.LV.19</th>
 <th>0.6.1</th>
 </tr>
 </thead>
@@ -1942,7 +2040,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.2">INT:MUX.1.LV.2</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.2">LLV:MUX.1.LV.2</th>
 <th>0.17.0</th>
 </tr>
 </thead>
@@ -1957,7 +2055,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.20">INT:MUX.1.LV.20</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.20">LLV:MUX.1.LV.20</th>
 <th>0.5.0</th>
 </tr>
 </thead>
@@ -1972,7 +2070,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.21">INT:MUX.1.LV.21</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.21">LLV:MUX.1.LV.21</th>
 <th>0.5.2</th>
 </tr>
 </thead>
@@ -1987,7 +2085,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.22">INT:MUX.1.LV.22</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.22">LLV:MUX.1.LV.22</th>
 <th>0.4.1</th>
 </tr>
 </thead>
@@ -2002,7 +2100,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.23">INT:MUX.1.LV.23</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.23">LLV:MUX.1.LV.23</th>
 <th>0.3.0</th>
 </tr>
 </thead>
@@ -2017,7 +2115,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.3">INT:MUX.1.LV.3</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.3">LLV:MUX.1.LV.3</th>
 <th>0.17.2</th>
 </tr>
 </thead>
@@ -2032,7 +2130,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.4">INT:MUX.1.LV.4</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.4">LLV:MUX.1.LV.4</th>
 <th>0.16.1</th>
 </tr>
 </thead>
@@ -2047,7 +2145,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.5">INT:MUX.1.LV.5</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.5">LLV:MUX.1.LV.5</th>
 <th>0.15.0</th>
 </tr>
 </thead>
@@ -2062,7 +2160,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.6">INT:MUX.1.LV.6</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.6">LLV:MUX.1.LV.6</th>
 <th>0.15.2</th>
 </tr>
 </thead>
@@ -2077,7 +2175,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.7">INT:MUX.1.LV.7</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.7">LLV:MUX.1.LV.7</th>
 <th>0.14.1</th>
 </tr>
 </thead>
@@ -2092,7 +2190,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.8">INT:MUX.1.LV.8</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.8">LLV:MUX.1.LV.8</th>
 <th>0.13.0</th>
 </tr>
 </thead>
@@ -2107,7 +2205,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-LLV.S3A-INT:MUX.1.LV.9">INT:MUX.1.LV.9</th>
+<tr><th id="tile-spartan3-LLV.S3A-LLV:MUX.1.LV.9">LLV:MUX.1.LV.9</th>
 <th>0.13.2</th>
 </tr>
 </thead>

@@ -152,87 +152,384 @@
                         <h1 id="south-west"><a class="header" href="#south-west">South-west</a></h1>
 <h2 id="tile-cnrbl"><a class="header" href="#tile-cnrbl">Tile CNR.BL</a></h2>
 <p>Cells: 1</p>
-<h3 id="muxes"><a class="header" href="#muxes">Muxes</a></h3>
+<h3 id="bel-int"><a class="header" href="#bel-int">Bel INT</a></h3>
+<h3 id="switchbox-int"><a class="header" href="#switchbox-int">Switchbox INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>virtex CNR.BL muxes</caption>
+<caption>virtex CNR.BL switchbox INT</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>HEX.H0.3</td><td>HEX.V0.2, LH.9</td></tr>
-<tr><td>HEX.H0.2</td><td>HEX.V0.3, LH.10</td></tr>
-<tr><td>HEX.H0.1</td><td>HEX.V0.4, LH.11</td></tr>
-<tr><td>HEX.H0.0</td><td>HEX.V0.5, LH.0</td></tr>
-<tr><td>HEX.H0.4</td><td>HEX.V0.1, LH.8</td></tr>
-<tr><td>HEX.H0.5</td><td>HEX.V0.0, LH.7</td></tr>
-<tr><td>HEX.H1.3</td><td>HEX.V1.2, LH.9</td></tr>
-<tr><td>HEX.H1.2</td><td>HEX.V1.3, LH.10</td></tr>
-<tr><td>HEX.H1.1</td><td>HEX.V1.4, LH.11</td></tr>
-<tr><td>HEX.H1.0</td><td>HEX.V1.5, LH.0</td></tr>
-<tr><td>HEX.H1.4</td><td>HEX.V1.1, LH.8</td></tr>
-<tr><td>HEX.H1.5</td><td>HEX.V1.0, LH.7</td></tr>
-<tr><td>HEX.H2.3</td><td>HEX.V2.2, LH.3</td></tr>
-<tr><td>HEX.H2.2</td><td>HEX.V2.3, LH.4</td></tr>
-<tr><td>HEX.H2.1</td><td>HEX.V2.4, LH.5</td></tr>
-<tr><td>HEX.H2.0</td><td>HEX.V2.5, LH.6</td></tr>
-<tr><td>HEX.H2.4</td><td>HEX.V2.1, LH.2</td></tr>
-<tr><td>HEX.H2.5</td><td>HEX.V2.0, LH.1</td></tr>
-<tr><td>HEX.H3.3</td><td>HEX.V3.2, LH.3</td></tr>
-<tr><td>HEX.H3.2</td><td>HEX.V3.3, LH.4</td></tr>
-<tr><td>HEX.H3.1</td><td>HEX.V3.4, LH.5</td></tr>
-<tr><td>HEX.H3.0</td><td>PCI_CE, HEX.V3.5, LH.6</td></tr>
-<tr><td>HEX.H3.4</td><td>HEX.V3.1, LH.2</td></tr>
-<tr><td>HEX.H3.5</td><td>HEX.V3.0, LH.1</td></tr>
-<tr><td>HEX.H4.3</td><td>LH.3, LH.9</td></tr>
-<tr><td>HEX.H4.2</td><td>LH.4, LH.10</td></tr>
-<tr><td>HEX.H4.1</td><td>LH.5, LH.11</td></tr>
-<tr><td>HEX.H4.0</td><td>LH.0, LH.6</td></tr>
-<tr><td>HEX.H4.4</td><td>LH.2, LH.8</td></tr>
-<tr><td>HEX.H4.5</td><td>LH.1, LH.7</td></tr>
-<tr><td>HEX.H5.3</td><td>LH.3, LH.9</td></tr>
-<tr><td>HEX.H5.2</td><td>LH.4, LH.10</td></tr>
-<tr><td>HEX.H5.1</td><td>LH.5, LH.11</td></tr>
-<tr><td>HEX.H5.0</td><td>LH.0, LH.6</td></tr>
-<tr><td>HEX.H5.4</td><td>LH.2, LH.8</td></tr>
-<tr><td>HEX.H5.5</td><td>LH.1, LH.7</td></tr>
-<tr><td>HEX.V0.3</td><td>HEX.H0.2, LV.9</td></tr>
-<tr><td>HEX.V0.2</td><td>HEX.H0.3, LV.10</td></tr>
-<tr><td>HEX.V0.1</td><td>HEX.H0.4, LV.11</td></tr>
-<tr><td>HEX.V0.0</td><td>HEX.H0.5, LV.0</td></tr>
-<tr><td>HEX.V0.4</td><td>HEX.H0.1, LV.8</td></tr>
-<tr><td>HEX.V0.5</td><td>HEX.H0.0, LV.7</td></tr>
-<tr><td>HEX.V1.3</td><td>HEX.H1.2, LV.9</td></tr>
-<tr><td>HEX.V1.2</td><td>HEX.H1.3, LV.10</td></tr>
-<tr><td>HEX.V1.1</td><td>HEX.H1.4, LV.11</td></tr>
-<tr><td>HEX.V1.0</td><td>HEX.H1.5, LV.0</td></tr>
-<tr><td>HEX.V1.4</td><td>HEX.H1.1, LV.8</td></tr>
-<tr><td>HEX.V1.5</td><td>HEX.H1.0, LV.7</td></tr>
-<tr><td>HEX.V2.3</td><td>HEX.H2.2, LV.3</td></tr>
-<tr><td>HEX.V2.2</td><td>HEX.H2.3, LV.4</td></tr>
-<tr><td>HEX.V2.1</td><td>HEX.H2.4, LV.5</td></tr>
-<tr><td>HEX.V2.0</td><td>HEX.H2.5, LV.6</td></tr>
-<tr><td>HEX.V2.4</td><td>HEX.H2.1, LV.2</td></tr>
-<tr><td>HEX.V2.5</td><td>HEX.H2.0, LV.1</td></tr>
-<tr><td>HEX.V3.3</td><td>HEX.H3.2, LV.3</td></tr>
-<tr><td>HEX.V3.2</td><td>HEX.H3.3, LV.4</td></tr>
-<tr><td>HEX.V3.1</td><td>HEX.H3.4, LV.5</td></tr>
-<tr><td>HEX.V3.0</td><td>HEX.H3.5, LV.6</td></tr>
-<tr><td>HEX.V3.4</td><td>HEX.H3.1, LV.2</td></tr>
-<tr><td>HEX.V3.5</td><td>HEX.H3.0, LV.1</td></tr>
-<tr><td>LV.0</td><td>HEX.H5.0</td></tr>
-<tr><td>LV.1</td><td>HEX.H5.5</td></tr>
-<tr><td>LV.2</td><td>HEX.H5.4</td></tr>
-<tr><td>LV.3</td><td>HEX.H5.3</td></tr>
-<tr><td>LV.4</td><td>HEX.H5.2</td></tr>
-<tr><td>LV.5</td><td>HEX.H5.1</td></tr>
-<tr><td>LV.6</td><td>HEX.H4.0</td></tr>
-<tr><td>LV.7</td><td>HEX.H4.5</td></tr>
-<tr><td>LV.8</td><td>HEX.H4.4</td></tr>
-<tr><td>LV.9</td><td>HEX.H4.3</td></tr>
-<tr><td>LV.10</td><td>HEX.H4.2</td></tr>
-<tr><td>LV.11</td><td>HEX.H4.1</td></tr>
-<tr><td>IMUX.CAP.CLK</td><td>GCLK0, GCLK1, GCLK2, GCLK3, HEX.H0.3, HEX.H0.2, HEX.H0.1, HEX.H0.0, HEX.H0.4, HEX.H0.5, HEX.H1.3, HEX.H1.2, HEX.H1.1, HEX.H1.0, HEX.H1.4, HEX.H1.5, HEX.V2.3, HEX.V2.2, HEX.V2.1, HEX.V2.0, HEX.V2.4, HEX.V2.5, HEX.V3.3, HEX.V3.2, HEX.V3.1, HEX.V3.0, HEX.V3.4, HEX.V3.5</td></tr>
-<tr><td>IMUX.CAP.CAP</td><td>HEX.H2.3, HEX.H2.2, HEX.H2.1, HEX.H2.0, HEX.H2.4, HEX.H2.5, HEX.H3.3, HEX.H3.2, HEX.H3.1, HEX.H3.0, HEX.H3.4, HEX.H3.5, HEX.V0.3, HEX.V0.2, HEX.V0.1, HEX.V0.0, HEX.V0.4, HEX.V0.5, HEX.V1.3, HEX.V1.2, HEX.V1.1, HEX.V1.0, HEX.V1.4, HEX.V1.5</td></tr>
+<tr><td rowspan="2">HEX.H0.3</td><td>HEX.V0.2</td><td>mux</td>
+</tr>
+<tr><td>LH.9</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H0.2</td><td>HEX.V0.3</td><td>mux</td>
+</tr>
+<tr><td>LH.10</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H0.1</td><td>HEX.V0.4</td><td>mux</td>
+</tr>
+<tr><td>LH.11</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H0.0</td><td>HEX.V0.5</td><td>mux</td>
+</tr>
+<tr><td>LH.0</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H0.4</td><td>HEX.V0.1</td><td>mux</td>
+</tr>
+<tr><td>LH.8</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H0.5</td><td>HEX.V0.0</td><td>mux</td>
+</tr>
+<tr><td>LH.7</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H1.3</td><td>HEX.V1.2</td><td>mux</td>
+</tr>
+<tr><td>LH.9</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H1.2</td><td>HEX.V1.3</td><td>mux</td>
+</tr>
+<tr><td>LH.10</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H1.1</td><td>HEX.V1.4</td><td>mux</td>
+</tr>
+<tr><td>LH.11</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H1.0</td><td>HEX.V1.5</td><td>mux</td>
+</tr>
+<tr><td>LH.0</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H1.4</td><td>HEX.V1.1</td><td>mux</td>
+</tr>
+<tr><td>LH.8</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H1.5</td><td>HEX.V1.0</td><td>mux</td>
+</tr>
+<tr><td>LH.7</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H2.3</td><td>HEX.V2.2</td><td>mux</td>
+</tr>
+<tr><td>LH.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H2.2</td><td>HEX.V2.3</td><td>mux</td>
+</tr>
+<tr><td>LH.4</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H2.1</td><td>HEX.V2.4</td><td>mux</td>
+</tr>
+<tr><td>LH.5</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H2.0</td><td>HEX.V2.5</td><td>mux</td>
+</tr>
+<tr><td>LH.6</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H2.4</td><td>HEX.V2.1</td><td>mux</td>
+</tr>
+<tr><td>LH.2</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H2.5</td><td>HEX.V2.0</td><td>mux</td>
+</tr>
+<tr><td>LH.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H3.3</td><td>HEX.V3.2</td><td>mux</td>
+</tr>
+<tr><td>LH.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H3.2</td><td>HEX.V3.3</td><td>mux</td>
+</tr>
+<tr><td>LH.4</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H3.1</td><td>HEX.V3.4</td><td>mux</td>
+</tr>
+<tr><td>LH.5</td><td>mux</td>
+</tr>
+<tr><td rowspan="3">HEX.H3.0</td><td>PCI_CE</td><td>mux</td>
+</tr>
+<tr><td>HEX.V3.5</td><td>mux</td>
+</tr>
+<tr><td>LH.6</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H3.4</td><td>HEX.V3.1</td><td>mux</td>
+</tr>
+<tr><td>LH.2</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H3.5</td><td>HEX.V3.0</td><td>mux</td>
+</tr>
+<tr><td>LH.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H4.3</td><td>LH.3</td><td>mux</td>
+</tr>
+<tr><td>LH.9</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H4.2</td><td>LH.4</td><td>mux</td>
+</tr>
+<tr><td>LH.10</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H4.1</td><td>LH.5</td><td>mux</td>
+</tr>
+<tr><td>LH.11</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H4.0</td><td>LH.0</td><td>mux</td>
+</tr>
+<tr><td>LH.6</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H4.4</td><td>LH.2</td><td>mux</td>
+</tr>
+<tr><td>LH.8</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H4.5</td><td>LH.1</td><td>mux</td>
+</tr>
+<tr><td>LH.7</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H5.3</td><td>LH.3</td><td>mux</td>
+</tr>
+<tr><td>LH.9</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H5.2</td><td>LH.4</td><td>mux</td>
+</tr>
+<tr><td>LH.10</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H5.1</td><td>LH.5</td><td>mux</td>
+</tr>
+<tr><td>LH.11</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H5.0</td><td>LH.0</td><td>mux</td>
+</tr>
+<tr><td>LH.6</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H5.4</td><td>LH.2</td><td>mux</td>
+</tr>
+<tr><td>LH.8</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.H5.5</td><td>LH.1</td><td>mux</td>
+</tr>
+<tr><td>LH.7</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V0.3</td><td>HEX.H0.2</td><td>mux</td>
+</tr>
+<tr><td>LV.9</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V0.2</td><td>HEX.H0.3</td><td>mux</td>
+</tr>
+<tr><td>LV.10</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V0.1</td><td>HEX.H0.4</td><td>mux</td>
+</tr>
+<tr><td>LV.11</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V0.0</td><td>HEX.H0.5</td><td>mux</td>
+</tr>
+<tr><td>LV.0</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V0.4</td><td>HEX.H0.1</td><td>mux</td>
+</tr>
+<tr><td>LV.8</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V0.5</td><td>HEX.H0.0</td><td>mux</td>
+</tr>
+<tr><td>LV.7</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V1.3</td><td>HEX.H1.2</td><td>mux</td>
+</tr>
+<tr><td>LV.9</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V1.2</td><td>HEX.H1.3</td><td>mux</td>
+</tr>
+<tr><td>LV.10</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V1.1</td><td>HEX.H1.4</td><td>mux</td>
+</tr>
+<tr><td>LV.11</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V1.0</td><td>HEX.H1.5</td><td>mux</td>
+</tr>
+<tr><td>LV.0</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V1.4</td><td>HEX.H1.1</td><td>mux</td>
+</tr>
+<tr><td>LV.8</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V1.5</td><td>HEX.H1.0</td><td>mux</td>
+</tr>
+<tr><td>LV.7</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V2.3</td><td>HEX.H2.2</td><td>mux</td>
+</tr>
+<tr><td>LV.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V2.2</td><td>HEX.H2.3</td><td>mux</td>
+</tr>
+<tr><td>LV.4</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V2.1</td><td>HEX.H2.4</td><td>mux</td>
+</tr>
+<tr><td>LV.5</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V2.0</td><td>HEX.H2.5</td><td>mux</td>
+</tr>
+<tr><td>LV.6</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V2.4</td><td>HEX.H2.1</td><td>mux</td>
+</tr>
+<tr><td>LV.2</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V2.5</td><td>HEX.H2.0</td><td>mux</td>
+</tr>
+<tr><td>LV.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V3.3</td><td>HEX.H3.2</td><td>mux</td>
+</tr>
+<tr><td>LV.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V3.2</td><td>HEX.H3.3</td><td>mux</td>
+</tr>
+<tr><td>LV.4</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V3.1</td><td>HEX.H3.4</td><td>mux</td>
+</tr>
+<tr><td>LV.5</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V3.0</td><td>HEX.H3.5</td><td>mux</td>
+</tr>
+<tr><td>LV.6</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V3.4</td><td>HEX.H3.1</td><td>mux</td>
+</tr>
+<tr><td>LV.2</td><td>mux</td>
+</tr>
+<tr><td rowspan="2">HEX.V3.5</td><td>HEX.H3.0</td><td>mux</td>
+</tr>
+<tr><td>LV.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">LV.0</td><td>HEX.H5.0</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">LV.1</td><td>HEX.H5.5</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">LV.2</td><td>HEX.H5.4</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">LV.3</td><td>HEX.H5.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">LV.4</td><td>HEX.H5.2</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">LV.5</td><td>HEX.H5.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">LV.6</td><td>HEX.H4.0</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">LV.7</td><td>HEX.H4.5</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">LV.8</td><td>HEX.H4.4</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">LV.9</td><td>HEX.H4.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">LV.10</td><td>HEX.H4.2</td><td>mux</td>
+</tr>
+<tr><td rowspan="1">LV.11</td><td>HEX.H4.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="28">IMUX.CAP.CLK</td><td>GCLK0</td><td>mux</td>
+</tr>
+<tr><td>GCLK1</td><td>mux</td>
+</tr>
+<tr><td>GCLK2</td><td>mux</td>
+</tr>
+<tr><td>GCLK3</td><td>mux</td>
+</tr>
+<tr><td>HEX.H0.3</td><td>mux</td>
+</tr>
+<tr><td>HEX.H0.2</td><td>mux</td>
+</tr>
+<tr><td>HEX.H0.1</td><td>mux</td>
+</tr>
+<tr><td>HEX.H0.0</td><td>mux</td>
+</tr>
+<tr><td>HEX.H0.4</td><td>mux</td>
+</tr>
+<tr><td>HEX.H0.5</td><td>mux</td>
+</tr>
+<tr><td>HEX.H1.3</td><td>mux</td>
+</tr>
+<tr><td>HEX.H1.2</td><td>mux</td>
+</tr>
+<tr><td>HEX.H1.1</td><td>mux</td>
+</tr>
+<tr><td>HEX.H1.0</td><td>mux</td>
+</tr>
+<tr><td>HEX.H1.4</td><td>mux</td>
+</tr>
+<tr><td>HEX.H1.5</td><td>mux</td>
+</tr>
+<tr><td>HEX.V2.3</td><td>mux</td>
+</tr>
+<tr><td>HEX.V2.2</td><td>mux</td>
+</tr>
+<tr><td>HEX.V2.1</td><td>mux</td>
+</tr>
+<tr><td>HEX.V2.0</td><td>mux</td>
+</tr>
+<tr><td>HEX.V2.4</td><td>mux</td>
+</tr>
+<tr><td>HEX.V2.5</td><td>mux</td>
+</tr>
+<tr><td>HEX.V3.3</td><td>mux</td>
+</tr>
+<tr><td>HEX.V3.2</td><td>mux</td>
+</tr>
+<tr><td>HEX.V3.1</td><td>mux</td>
+</tr>
+<tr><td>HEX.V3.0</td><td>mux</td>
+</tr>
+<tr><td>HEX.V3.4</td><td>mux</td>
+</tr>
+<tr><td>HEX.V3.5</td><td>mux</td>
+</tr>
+<tr><td rowspan="24">IMUX.CAP.CAP</td><td>HEX.H2.3</td><td>mux</td>
+</tr>
+<tr><td>HEX.H2.2</td><td>mux</td>
+</tr>
+<tr><td>HEX.H2.1</td><td>mux</td>
+</tr>
+<tr><td>HEX.H2.0</td><td>mux</td>
+</tr>
+<tr><td>HEX.H2.4</td><td>mux</td>
+</tr>
+<tr><td>HEX.H2.5</td><td>mux</td>
+</tr>
+<tr><td>HEX.H3.3</td><td>mux</td>
+</tr>
+<tr><td>HEX.H3.2</td><td>mux</td>
+</tr>
+<tr><td>HEX.H3.1</td><td>mux</td>
+</tr>
+<tr><td>HEX.H3.0</td><td>mux</td>
+</tr>
+<tr><td>HEX.H3.4</td><td>mux</td>
+</tr>
+<tr><td>HEX.H3.5</td><td>mux</td>
+</tr>
+<tr><td>HEX.V0.3</td><td>mux</td>
+</tr>
+<tr><td>HEX.V0.2</td><td>mux</td>
+</tr>
+<tr><td>HEX.V0.1</td><td>mux</td>
+</tr>
+<tr><td>HEX.V0.0</td><td>mux</td>
+</tr>
+<tr><td>HEX.V0.4</td><td>mux</td>
+</tr>
+<tr><td>HEX.V0.5</td><td>mux</td>
+</tr>
+<tr><td>HEX.V1.3</td><td>mux</td>
+</tr>
+<tr><td>HEX.V1.2</td><td>mux</td>
+</tr>
+<tr><td>HEX.V1.1</td><td>mux</td>
+</tr>
+<tr><td>HEX.V1.0</td><td>mux</td>
+</tr>
+<tr><td>HEX.V1.4</td><td>mux</td>
+</tr>
+<tr><td>HEX.V1.5</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-capture"><a class="header" href="#bel-capture">Bel CAPTURE</a></h3>

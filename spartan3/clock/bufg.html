@@ -162,25 +162,190 @@
 <p>This tile is used on Spartan 3.</p>
 <h2 id="tile-clkbs3"><a class="header" href="#tile-clkbs3">Tile CLKB.S3</a></h2>
 <p>Cells: 1</p>
-<h3 id="muxes"><a class="header" href="#muxes">Muxes</a></h3>
+<h3 id="bel-clk_int"><a class="header" href="#bel-clk_int">Bel CLK_INT</a></h3>
+<h3 id="switchbox-clk_int"><a class="header" href="#switchbox-clk_int">Switchbox CLK_INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>spartan3 CLKB.S3 muxes</caption>
+<caption>spartan3 CLKB.S3 switchbox CLK_INT</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>OMUX10.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX11.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX12.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX15.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>CLK.IMUX.SEL0</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
-<tr><td>CLK.IMUX.SEL1</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
-<tr><td>CLK.IMUX.SEL2</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
-<tr><td>CLK.IMUX.SEL3</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
-<tr><td>CLK.IMUX.CLK0</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
-<tr><td>CLK.IMUX.CLK1</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
-<tr><td>CLK.IMUX.CLK2</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
-<tr><td>CLK.IMUX.CLK3</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
+<tr><td rowspan="4">OMUX10.N</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX11.N</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX12.N</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX15.N</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL0</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL1</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL2</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL3</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK0</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK1</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK2</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK3</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.1</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-bufgmux0"><a class="header" href="#bel-bufgmux0">Bel BUFGMUX0</a></h3>
@@ -278,47 +443,47 @@
 </tr>
 <tr><td>61</td>
 <td title="0.0.61">
-<a href="#tile-spartan3-CLKB.S3-INT:INV.0.CLK.IMUX.SEL3">~INT:INV.0.CLK.IMUX.SEL3</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:INV.0.CLK.IMUX.SEL3">~CLK_INT:INV.0.CLK.IMUX.SEL3</a>
 </td>
 </tr>
 <tr><td>60</td>
 <td title="0.0.60">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[2]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[2]</a>
 </td>
 </tr>
 <tr><td>59</td>
 <td title="0.0.59">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[3]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[3]</a>
 </td>
 </tr>
 <tr><td>58</td>
 <td title="0.0.58">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[1]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[1]</a>
 </td>
 </tr>
 <tr><td>57</td>
 <td title="0.0.57">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[1]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[1]</a>
 </td>
 </tr>
 <tr><td>56</td>
 <td title="0.0.56">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[0]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[0]</a>
 </td>
 </tr>
 <tr><td>55</td>
 <td title="0.0.55">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[0]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[0]</a>
 </td>
 </tr>
 <tr><td>54</td>
 <td title="0.0.54">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[3]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[3]</a>
 </td>
 </tr>
 <tr><td>53</td>
 <td title="0.0.53">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[2]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[2]</a>
 </td>
 </tr>
 <tr><td>52</td>
@@ -348,77 +513,77 @@
 </tr>
 <tr><td>47</td>
 <td title="0.0.47">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.OMUX15.N">INT:MUX.OMUX15.N[2]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.OMUX15.N">CLK_INT:MUX.OMUX15.N[2]</a>
 </td>
 </tr>
 <tr><td>46</td>
 <td title="0.0.46">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.OMUX15.N">INT:MUX.OMUX15.N[1]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.OMUX15.N">CLK_INT:MUX.OMUX15.N[1]</a>
 </td>
 </tr>
 <tr><td>45</td>
 <td title="0.0.45">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.OMUX12.N">INT:MUX.OMUX12.N[1]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.OMUX12.N">CLK_INT:MUX.OMUX12.N[1]</a>
 </td>
 </tr>
 <tr><td>44</td>
 <td title="0.0.44">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.OMUX12.N">INT:MUX.OMUX12.N[2]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.OMUX12.N">CLK_INT:MUX.OMUX12.N[2]</a>
 </td>
 </tr>
 <tr><td>43</td>
 <td title="0.0.43">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.OMUX15.N">INT:MUX.OMUX15.N[0]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.OMUX15.N">CLK_INT:MUX.OMUX15.N[0]</a>
 </td>
 </tr>
 <tr><td>42</td>
 <td title="0.0.42">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.OMUX12.N">INT:MUX.OMUX12.N[0]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.OMUX12.N">CLK_INT:MUX.OMUX12.N[0]</a>
 </td>
 </tr>
 <tr><td>41</td>
 <td title="0.0.41">
-<a href="#tile-spartan3-CLKB.S3-INT:INV.0.CLK.IMUX.SEL2">~INT:INV.0.CLK.IMUX.SEL2</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:INV.0.CLK.IMUX.SEL2">~CLK_INT:INV.0.CLK.IMUX.SEL2</a>
 </td>
 </tr>
 <tr><td>40</td>
 <td title="0.0.40">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[2]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[2]</a>
 </td>
 </tr>
 <tr><td>39</td>
 <td title="0.0.39">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[3]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[3]</a>
 </td>
 </tr>
 <tr><td>38</td>
 <td title="0.0.38">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[1]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[1]</a>
 </td>
 </tr>
 <tr><td>37</td>
 <td title="0.0.37">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[1]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[1]</a>
 </td>
 </tr>
 <tr><td>36</td>
 <td title="0.0.36">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[0]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[0]</a>
 </td>
 </tr>
 <tr><td>35</td>
 <td title="0.0.35">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[0]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[0]</a>
 </td>
 </tr>
 <tr><td>34</td>
 <td title="0.0.34">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[3]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[3]</a>
 </td>
 </tr>
 <tr><td>33</td>
 <td title="0.0.33">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[2]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[2]</a>
 </td>
 </tr>
 <tr><td>32</td>
@@ -448,47 +613,47 @@
 </tr>
 <tr><td>27</td>
 <td title="0.0.27">
-<a href="#tile-spartan3-CLKB.S3-INT:INV.0.CLK.IMUX.SEL1">~INT:INV.0.CLK.IMUX.SEL1</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:INV.0.CLK.IMUX.SEL1">~CLK_INT:INV.0.CLK.IMUX.SEL1</a>
 </td>
 </tr>
 <tr><td>26</td>
 <td title="0.0.26">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[2]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[2]</a>
 </td>
 </tr>
 <tr><td>25</td>
 <td title="0.0.25">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[3]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[3]</a>
 </td>
 </tr>
 <tr><td>24</td>
 <td title="0.0.24">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[1]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[1]</a>
 </td>
 </tr>
 <tr><td>23</td>
 <td title="0.0.23">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[1]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[1]</a>
 </td>
 </tr>
 <tr><td>22</td>
 <td title="0.0.22">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[0]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[0]</a>
 </td>
 </tr>
 <tr><td>21</td>
 <td title="0.0.21">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[0]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[0]</a>
 </td>
 </tr>
 <tr><td>20</td>
 <td title="0.0.20">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[3]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[3]</a>
 </td>
 </tr>
 <tr><td>19</td>
 <td title="0.0.19">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[2]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[2]</a>
 </td>
 </tr>
 <tr><td>18</td>
@@ -538,52 +703,52 @@
 </tr>
 <tr><td>9</td>
 <td title="0.0.9">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[3]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[3]</a>
 </td>
 </tr>
 <tr><td>8</td>
 <td title="0.0.8">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[2]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[2]</a>
 </td>
 </tr>
 <tr><td>7</td>
 <td title="0.0.7">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[1]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[1]</a>
 </td>
 </tr>
 <tr><td>6</td>
 <td title="0.0.6">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[1]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[1]</a>
 </td>
 </tr>
 <tr><td>5</td>
 <td title="0.0.5">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[0]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[0]</a>
 </td>
 </tr>
 <tr><td>4</td>
 <td title="0.0.4">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[0]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[0]</a>
 </td>
 </tr>
 <tr><td>3</td>
 <td title="0.0.3">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[2]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[2]</a>
 </td>
 </tr>
 <tr><td>2</td>
 <td title="0.0.2">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[3]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[3]</a>
 </td>
 </tr>
 <tr><td>1</td>
 <td title="0.0.1">
-<a href="#tile-spartan3-CLKB.S3-INT:INV.0.CLK.IMUX.SEL0">~INT:INV.0.CLK.IMUX.SEL0</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:INV.0.CLK.IMUX.SEL0">~CLK_INT:INV.0.CLK.IMUX.SEL0</a>
 </td>
 </tr>
 <tr><td>0</td>
 <td title="0.0.0">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.OMUX10.N">INT:MUX.OMUX10.N[0]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.OMUX10.N">CLK_INT:MUX.OMUX10.N[0]</a>
 </td>
 </tr>
 </tbody>
@@ -599,27 +764,27 @@
 <tbody>
 <tr><td>11</td>
 <td title="1.0.11">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.OMUX11.N">INT:MUX.OMUX11.N[2]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.OMUX11.N">CLK_INT:MUX.OMUX11.N[2]</a>
 </td>
 </tr>
 <tr><td>10</td>
 <td title="1.0.10">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.OMUX11.N">INT:MUX.OMUX11.N[0]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.OMUX11.N">CLK_INT:MUX.OMUX11.N[0]</a>
 </td>
 </tr>
 <tr><td>9</td>
 <td title="1.0.9">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.OMUX10.N">INT:MUX.OMUX10.N[1]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.OMUX10.N">CLK_INT:MUX.OMUX10.N[1]</a>
 </td>
 </tr>
 <tr><td>8</td>
 <td title="1.0.8">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.OMUX10.N">INT:MUX.OMUX10.N[2]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.OMUX10.N">CLK_INT:MUX.OMUX10.N[2]</a>
 </td>
 </tr>
 <tr><td>7</td>
 <td title="1.0.7">
-<a href="#tile-spartan3-CLKB.S3-INT:MUX.OMUX11.N">INT:MUX.OMUX11.N[1]</a>
+<a href="#tile-spartan3-CLKB.S3-CLK_INT:MUX.OMUX11.N">CLK_INT:MUX.OMUX11.N[1]</a>
 </td>
 </tr>
 <tr><td>6</td>
@@ -725,16 +890,16 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKB.S3-INT:INV.0.CLK.IMUX.SEL0">INT:INV.0.CLK.IMUX.SEL0</th>
+<tr><th id="tile-spartan3-CLKB.S3-CLK_INT:INV.0.CLK.IMUX.SEL0">CLK_INT:INV.0.CLK.IMUX.SEL0</th>
 <th>0.0.1</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3-INT:INV.0.CLK.IMUX.SEL1">INT:INV.0.CLK.IMUX.SEL1</th>
+<tr><th id="tile-spartan3-CLKB.S3-CLK_INT:INV.0.CLK.IMUX.SEL1">CLK_INT:INV.0.CLK.IMUX.SEL1</th>
 <th>0.0.27</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3-INT:INV.0.CLK.IMUX.SEL2">INT:INV.0.CLK.IMUX.SEL2</th>
+<tr><th id="tile-spartan3-CLKB.S3-CLK_INT:INV.0.CLK.IMUX.SEL2">CLK_INT:INV.0.CLK.IMUX.SEL2</th>
 <th>0.0.41</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3-INT:INV.0.CLK.IMUX.SEL3">INT:INV.0.CLK.IMUX.SEL3</th>
+<tr><th id="tile-spartan3-CLKB.S3-CLK_INT:INV.0.CLK.IMUX.SEL3">CLK_INT:INV.0.CLK.IMUX.SEL3</th>
 <th>0.0.61</th>
 </tr>
 </thead>
@@ -748,13 +913,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0</th>
+<tr><th id="tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0</th>
 <th>0.0.9</th>
 <th>0.0.8</th>
 <th>0.0.6</th>
 <th>0.0.5</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0</th>
+<tr><th id="tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0</th>
 <th>0.0.2</th>
 <th>0.0.3</th>
 <th>0.0.7</th>
@@ -820,13 +985,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1</th>
+<tr><th id="tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1</th>
 <th>0.0.20</th>
 <th>0.0.19</th>
 <th>0.0.23</th>
 <th>0.0.22</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1</th>
+<tr><th id="tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1</th>
 <th>0.0.25</th>
 <th>0.0.26</th>
 <th>0.0.24</th>
@@ -892,13 +1057,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2</th>
+<tr><th id="tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2</th>
 <th>0.0.34</th>
 <th>0.0.33</th>
 <th>0.0.37</th>
 <th>0.0.36</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2</th>
+<tr><th id="tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2</th>
 <th>0.0.39</th>
 <th>0.0.40</th>
 <th>0.0.38</th>
@@ -964,13 +1129,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3</th>
+<tr><th id="tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3</th>
 <th>0.0.54</th>
 <th>0.0.53</th>
 <th>0.0.57</th>
 <th>0.0.56</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3</th>
+<tr><th id="tile-spartan3-CLKB.S3-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3</th>
 <th>0.0.59</th>
 <th>0.0.60</th>
 <th>0.0.58</th>
@@ -1036,22 +1201,22 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKB.S3-INT:MUX.OMUX10.N">INT:MUX.OMUX10.N</th>
+<tr><th id="tile-spartan3-CLKB.S3-CLK_INT:MUX.OMUX10.N">CLK_INT:MUX.OMUX10.N</th>
 <th>1.0.8</th>
 <th>1.0.9</th>
 <th>0.0.0</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3-INT:MUX.OMUX11.N">INT:MUX.OMUX11.N</th>
+<tr><th id="tile-spartan3-CLKB.S3-CLK_INT:MUX.OMUX11.N">CLK_INT:MUX.OMUX11.N</th>
 <th>1.0.11</th>
 <th>1.0.7</th>
 <th>1.0.10</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3-INT:MUX.OMUX12.N">INT:MUX.OMUX12.N</th>
+<tr><th id="tile-spartan3-CLKB.S3-CLK_INT:MUX.OMUX12.N">CLK_INT:MUX.OMUX12.N</th>
 <th>0.0.44</th>
 <th>0.0.45</th>
 <th>0.0.42</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3-INT:MUX.OMUX15.N">INT:MUX.OMUX15.N</th>
+<tr><th id="tile-spartan3-CLKB.S3-CLK_INT:MUX.OMUX15.N">CLK_INT:MUX.OMUX15.N</th>
 <th>0.0.47</th>
 <th>0.0.46</th>
 <th>0.0.43</th>
@@ -1089,25 +1254,190 @@ inverted
 <p>This tile is used on Spartan 3E.</p>
 <h2 id="tile-clkbs3e"><a class="header" href="#tile-clkbs3e">Tile CLKB.S3E</a></h2>
 <p>Cells: 1</p>
-<h3 id="muxes-1"><a class="header" href="#muxes-1">Muxes</a></h3>
+<h3 id="bel-clk_int-1"><a class="header" href="#bel-clk_int-1">Bel CLK_INT</a></h3>
+<h3 id="switchbox-clk_int-1"><a class="header" href="#switchbox-clk_int-1">Switchbox CLK_INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>spartan3 CLKB.S3E muxes</caption>
+<caption>spartan3 CLKB.S3E switchbox CLK_INT</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>OMUX10.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX11.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX12.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX15.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>CLK.IMUX.SEL0</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
-<tr><td>CLK.IMUX.SEL1</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
-<tr><td>CLK.IMUX.SEL2</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
-<tr><td>CLK.IMUX.SEL3</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
-<tr><td>CLK.IMUX.CLK0</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
-<tr><td>CLK.IMUX.CLK1</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
-<tr><td>CLK.IMUX.CLK2</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
-<tr><td>CLK.IMUX.CLK3</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
+<tr><td rowspan="4">OMUX10.N</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX11.N</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX12.N</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX15.N</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL0</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL1</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL2</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL3</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK0</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK1</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK2</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK3</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.1</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-bufgmux0-1"><a class="header" href="#bel-bufgmux0-1">Bel BUFGMUX0</a></h3>
@@ -1205,47 +1535,47 @@ inverted
 </tr>
 <tr><td>61</td>
 <td title="0.0.61">
-<a href="#tile-spartan3-CLKB.S3E-INT:INV.0.CLK.IMUX.SEL0">~INT:INV.0.CLK.IMUX.SEL0</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:INV.0.CLK.IMUX.SEL0">~CLK_INT:INV.0.CLK.IMUX.SEL0</a>
 </td>
 </tr>
 <tr><td>60</td>
 <td title="0.0.60">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[3]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[3]</a>
 </td>
 </tr>
 <tr><td>59</td>
 <td title="0.0.59">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[2]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[2]</a>
 </td>
 </tr>
 <tr><td>58</td>
 <td title="0.0.58">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[0]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[0]</a>
 </td>
 </tr>
 <tr><td>57</td>
 <td title="0.0.57">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[0]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[0]</a>
 </td>
 </tr>
 <tr><td>56</td>
 <td title="0.0.56">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[1]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[1]</a>
 </td>
 </tr>
 <tr><td>55</td>
 <td title="0.0.55">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[1]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[1]</a>
 </td>
 </tr>
 <tr><td>54</td>
 <td title="0.0.54">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[2]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[2]</a>
 </td>
 </tr>
 <tr><td>53</td>
 <td title="0.0.53">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[3]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[3]</a>
 </td>
 </tr>
 <tr><td>52</td>
@@ -1280,77 +1610,77 @@ inverted
 </tr>
 <tr><td>46</td>
 <td title="0.0.46">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.OMUX15.N">INT:MUX.OMUX15.N[2]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.OMUX15.N">CLK_INT:MUX.OMUX15.N[2]</a>
 </td>
 </tr>
 <tr><td>45</td>
 <td title="0.0.45">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.OMUX15.N">INT:MUX.OMUX15.N[1]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.OMUX15.N">CLK_INT:MUX.OMUX15.N[1]</a>
 </td>
 </tr>
 <tr><td>44</td>
 <td title="0.0.44">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.OMUX12.N">INT:MUX.OMUX12.N[1]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.OMUX12.N">CLK_INT:MUX.OMUX12.N[1]</a>
 </td>
 </tr>
 <tr><td>43</td>
 <td title="0.0.43">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.OMUX12.N">INT:MUX.OMUX12.N[2]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.OMUX12.N">CLK_INT:MUX.OMUX12.N[2]</a>
 </td>
 </tr>
 <tr><td>42</td>
 <td title="0.0.42">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.OMUX15.N">INT:MUX.OMUX15.N[0]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.OMUX15.N">CLK_INT:MUX.OMUX15.N[0]</a>
 </td>
 </tr>
 <tr><td>41</td>
 <td title="0.0.41">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.OMUX12.N">INT:MUX.OMUX12.N[0]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.OMUX12.N">CLK_INT:MUX.OMUX12.N[0]</a>
 </td>
 </tr>
 <tr><td>40</td>
 <td title="0.0.40">
-<a href="#tile-spartan3-CLKB.S3E-INT:INV.0.CLK.IMUX.SEL1">~INT:INV.0.CLK.IMUX.SEL1</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:INV.0.CLK.IMUX.SEL1">~CLK_INT:INV.0.CLK.IMUX.SEL1</a>
 </td>
 </tr>
 <tr><td>39</td>
 <td title="0.0.39">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[3]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[3]</a>
 </td>
 </tr>
 <tr><td>38</td>
 <td title="0.0.38">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[2]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[2]</a>
 </td>
 </tr>
 <tr><td>37</td>
 <td title="0.0.37">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[0]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[0]</a>
 </td>
 </tr>
 <tr><td>36</td>
 <td title="0.0.36">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[0]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[0]</a>
 </td>
 </tr>
 <tr><td>35</td>
 <td title="0.0.35">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[1]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[1]</a>
 </td>
 </tr>
 <tr><td>34</td>
 <td title="0.0.34">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[1]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[1]</a>
 </td>
 </tr>
 <tr><td>33</td>
 <td title="0.0.33">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[2]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[2]</a>
 </td>
 </tr>
 <tr><td>32</td>
 <td title="0.0.32">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[3]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[3]</a>
 </td>
 </tr>
 <tr><td>31</td>
@@ -1390,47 +1720,47 @@ inverted
 </tr>
 <tr><td>24</td>
 <td title="0.0.24">
-<a href="#tile-spartan3-CLKB.S3E-INT:INV.0.CLK.IMUX.SEL2">~INT:INV.0.CLK.IMUX.SEL2</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:INV.0.CLK.IMUX.SEL2">~CLK_INT:INV.0.CLK.IMUX.SEL2</a>
 </td>
 </tr>
 <tr><td>23</td>
 <td title="0.0.23">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[3]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[3]</a>
 </td>
 </tr>
 <tr><td>22</td>
 <td title="0.0.22">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[2]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[2]</a>
 </td>
 </tr>
 <tr><td>21</td>
 <td title="0.0.21">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[0]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[0]</a>
 </td>
 </tr>
 <tr><td>20</td>
 <td title="0.0.20">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[0]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[0]</a>
 </td>
 </tr>
 <tr><td>19</td>
 <td title="0.0.19">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[1]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[1]</a>
 </td>
 </tr>
 <tr><td>18</td>
 <td title="0.0.18">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[1]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[1]</a>
 </td>
 </tr>
 <tr><td>17</td>
 <td title="0.0.17">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[2]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[2]</a>
 </td>
 </tr>
 <tr><td>16</td>
 <td title="0.0.16">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[3]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[3]</a>
 </td>
 </tr>
 <tr><td>15</td>
@@ -1485,32 +1815,32 @@ inverted
 </tr>
 <tr><td>5</td>
 <td title="0.0.5">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[3]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[3]</a>
 </td>
 </tr>
 <tr><td>4</td>
 <td title="0.0.4">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[2]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[2]</a>
 </td>
 </tr>
 <tr><td>3</td>
 <td title="0.0.3">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[0]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[0]</a>
 </td>
 </tr>
 <tr><td>2</td>
 <td title="0.0.2">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[0]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[0]</a>
 </td>
 </tr>
 <tr><td>1</td>
 <td title="0.0.1">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[1]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[1]</a>
 </td>
 </tr>
 <tr><td>0</td>
 <td title="0.0.0">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[1]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[1]</a>
 </td>
 </tr>
 </tbody>
@@ -1526,47 +1856,47 @@ inverted
 <tbody>
 <tr><td>15</td>
 <td title="1.0.15">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.OMUX11.N">INT:MUX.OMUX11.N[0]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.OMUX11.N">CLK_INT:MUX.OMUX11.N[0]</a>
 </td>
 </tr>
 <tr><td>14</td>
 <td title="1.0.14">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.OMUX11.N">INT:MUX.OMUX11.N[1]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.OMUX11.N">CLK_INT:MUX.OMUX11.N[1]</a>
 </td>
 </tr>
 <tr><td>13</td>
 <td title="1.0.13">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.OMUX10.N">INT:MUX.OMUX10.N[1]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.OMUX10.N">CLK_INT:MUX.OMUX10.N[1]</a>
 </td>
 </tr>
 <tr><td>12</td>
 <td title="1.0.12">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.OMUX10.N">INT:MUX.OMUX10.N[2]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.OMUX10.N">CLK_INT:MUX.OMUX10.N[2]</a>
 </td>
 </tr>
 <tr><td>11</td>
 <td title="1.0.11">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[2]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[2]</a>
 </td>
 </tr>
 <tr><td>10</td>
 <td title="1.0.10">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[3]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[3]</a>
 </td>
 </tr>
 <tr><td>9</td>
 <td title="1.0.9">
-<a href="#tile-spartan3-CLKB.S3E-INT:INV.0.CLK.IMUX.SEL3">~INT:INV.0.CLK.IMUX.SEL3</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:INV.0.CLK.IMUX.SEL3">~CLK_INT:INV.0.CLK.IMUX.SEL3</a>
 </td>
 </tr>
 <tr><td>8</td>
 <td title="1.0.8">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.OMUX10.N">INT:MUX.OMUX10.N[0]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.OMUX10.N">CLK_INT:MUX.OMUX10.N[0]</a>
 </td>
 </tr>
 <tr><td>7</td>
 <td title="1.0.7">
-<a href="#tile-spartan3-CLKB.S3E-INT:MUX.OMUX11.N">INT:MUX.OMUX11.N[2]</a>
+<a href="#tile-spartan3-CLKB.S3E-CLK_INT:MUX.OMUX11.N">CLK_INT:MUX.OMUX11.N[2]</a>
 </td>
 </tr>
 <tr><td>6</td>
@@ -1687,16 +2017,16 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKB.S3E-INT:INV.0.CLK.IMUX.SEL0">INT:INV.0.CLK.IMUX.SEL0</th>
+<tr><th id="tile-spartan3-CLKB.S3E-CLK_INT:INV.0.CLK.IMUX.SEL0">CLK_INT:INV.0.CLK.IMUX.SEL0</th>
 <th>0.0.61</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3E-INT:INV.0.CLK.IMUX.SEL1">INT:INV.0.CLK.IMUX.SEL1</th>
+<tr><th id="tile-spartan3-CLKB.S3E-CLK_INT:INV.0.CLK.IMUX.SEL1">CLK_INT:INV.0.CLK.IMUX.SEL1</th>
 <th>0.0.40</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3E-INT:INV.0.CLK.IMUX.SEL2">INT:INV.0.CLK.IMUX.SEL2</th>
+<tr><th id="tile-spartan3-CLKB.S3E-CLK_INT:INV.0.CLK.IMUX.SEL2">CLK_INT:INV.0.CLK.IMUX.SEL2</th>
 <th>0.0.24</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3E-INT:INV.0.CLK.IMUX.SEL3">INT:INV.0.CLK.IMUX.SEL3</th>
+<tr><th id="tile-spartan3-CLKB.S3E-CLK_INT:INV.0.CLK.IMUX.SEL3">CLK_INT:INV.0.CLK.IMUX.SEL3</th>
 <th>1.0.9</th>
 </tr>
 </thead>
@@ -1710,13 +2040,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0</th>
+<tr><th id="tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0</th>
 <th>0.0.53</th>
 <th>0.0.54</th>
 <th>0.0.56</th>
 <th>0.0.57</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0</th>
+<tr><th id="tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0</th>
 <th>0.0.60</th>
 <th>0.0.59</th>
 <th>0.0.55</th>
@@ -1782,13 +2112,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1</th>
+<tr><th id="tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1</th>
 <th>0.0.32</th>
 <th>0.0.33</th>
 <th>0.0.35</th>
 <th>0.0.36</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1</th>
+<tr><th id="tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1</th>
 <th>0.0.39</th>
 <th>0.0.38</th>
 <th>0.0.34</th>
@@ -1854,13 +2184,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2</th>
+<tr><th id="tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2</th>
 <th>0.0.16</th>
 <th>0.0.17</th>
 <th>0.0.19</th>
 <th>0.0.20</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2</th>
+<tr><th id="tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2</th>
 <th>0.0.23</th>
 <th>0.0.22</th>
 <th>0.0.18</th>
@@ -1926,13 +2256,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3</th>
+<tr><th id="tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3</th>
 <th>0.0.5</th>
 <th>0.0.4</th>
 <th>0.0.1</th>
 <th>0.0.2</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3E-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3</th>
+<tr><th id="tile-spartan3-CLKB.S3E-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3</th>
 <th>1.0.10</th>
 <th>1.0.11</th>
 <th>0.0.0</th>
@@ -1998,22 +2328,22 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKB.S3E-INT:MUX.OMUX10.N">INT:MUX.OMUX10.N</th>
+<tr><th id="tile-spartan3-CLKB.S3E-CLK_INT:MUX.OMUX10.N">CLK_INT:MUX.OMUX10.N</th>
 <th>1.0.12</th>
 <th>1.0.13</th>
 <th>1.0.8</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3E-INT:MUX.OMUX11.N">INT:MUX.OMUX11.N</th>
+<tr><th id="tile-spartan3-CLKB.S3E-CLK_INT:MUX.OMUX11.N">CLK_INT:MUX.OMUX11.N</th>
 <th>1.0.7</th>
 <th>1.0.14</th>
 <th>1.0.15</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3E-INT:MUX.OMUX12.N">INT:MUX.OMUX12.N</th>
+<tr><th id="tile-spartan3-CLKB.S3E-CLK_INT:MUX.OMUX12.N">CLK_INT:MUX.OMUX12.N</th>
 <th>0.0.43</th>
 <th>0.0.44</th>
 <th>0.0.41</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3E-INT:MUX.OMUX15.N">INT:MUX.OMUX15.N</th>
+<tr><th id="tile-spartan3-CLKB.S3E-CLK_INT:MUX.OMUX15.N">CLK_INT:MUX.OMUX15.N</th>
 <th>0.0.46</th>
 <th>0.0.45</th>
 <th>0.0.42</th>
@@ -2051,25 +2381,190 @@ inverted
 <p>This tile is used on Spartan 3A and 3A DSP.</p>
 <h2 id="tile-clkbs3a"><a class="header" href="#tile-clkbs3a">Tile CLKB.S3A</a></h2>
 <p>Cells: 1</p>
-<h3 id="muxes-2"><a class="header" href="#muxes-2">Muxes</a></h3>
+<h3 id="bel-clk_int-2"><a class="header" href="#bel-clk_int-2">Bel CLK_INT</a></h3>
+<h3 id="switchbox-clk_int-2"><a class="header" href="#switchbox-clk_int-2">Switchbox CLK_INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>spartan3 CLKB.S3A muxes</caption>
+<caption>spartan3 CLKB.S3A switchbox CLK_INT</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>OMUX10.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX11.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX12.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX15.N</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>CLK.IMUX.SEL0</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
-<tr><td>CLK.IMUX.SEL1</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
-<tr><td>CLK.IMUX.SEL2</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
-<tr><td>CLK.IMUX.SEL3</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
-<tr><td>CLK.IMUX.CLK0</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
-<tr><td>CLK.IMUX.CLK1</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
-<tr><td>CLK.IMUX.CLK2</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
-<tr><td>CLK.IMUX.CLK3</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
+<tr><td rowspan="4">OMUX10.N</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX11.N</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX12.N</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX15.N</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL0</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL1</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL2</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL3</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK0</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK1</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK2</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK3</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.1</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-bufgmux0-2"><a class="header" href="#bel-bufgmux0-2">Bel BUFGMUX0</a></h3>
@@ -2167,47 +2662,47 @@ inverted
 </tr>
 <tr><td>61</td>
 <td title="0.0.61">
-<a href="#tile-spartan3-CLKB.S3A-INT:INV.0.CLK.IMUX.SEL0">~INT:INV.0.CLK.IMUX.SEL0</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:INV.0.CLK.IMUX.SEL0">~CLK_INT:INV.0.CLK.IMUX.SEL0</a>
 </td>
 </tr>
 <tr><td>60</td>
 <td title="0.0.60">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[3]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[3]</a>
 </td>
 </tr>
 <tr><td>59</td>
 <td title="0.0.59">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[2]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[2]</a>
 </td>
 </tr>
 <tr><td>58</td>
 <td title="0.0.58">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[0]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[0]</a>
 </td>
 </tr>
 <tr><td>57</td>
 <td title="0.0.57">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[0]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[0]</a>
 </td>
 </tr>
 <tr><td>56</td>
 <td title="0.0.56">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[1]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[1]</a>
 </td>
 </tr>
 <tr><td>55</td>
 <td title="0.0.55">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[1]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[1]</a>
 </td>
 </tr>
 <tr><td>54</td>
 <td title="0.0.54">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[2]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[2]</a>
 </td>
 </tr>
 <tr><td>53</td>
 <td title="0.0.53">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[3]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[3]</a>
 </td>
 </tr>
 <tr><td>52</td>
@@ -2242,77 +2737,77 @@ inverted
 </tr>
 <tr><td>46</td>
 <td title="0.0.46">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.OMUX15.N">INT:MUX.OMUX15.N[2]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.OMUX15.N">CLK_INT:MUX.OMUX15.N[2]</a>
 </td>
 </tr>
 <tr><td>45</td>
 <td title="0.0.45">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.OMUX15.N">INT:MUX.OMUX15.N[1]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.OMUX15.N">CLK_INT:MUX.OMUX15.N[1]</a>
 </td>
 </tr>
 <tr><td>44</td>
 <td title="0.0.44">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.OMUX12.N">INT:MUX.OMUX12.N[1]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.OMUX12.N">CLK_INT:MUX.OMUX12.N[1]</a>
 </td>
 </tr>
 <tr><td>43</td>
 <td title="0.0.43">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.OMUX12.N">INT:MUX.OMUX12.N[2]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.OMUX12.N">CLK_INT:MUX.OMUX12.N[2]</a>
 </td>
 </tr>
 <tr><td>42</td>
 <td title="0.0.42">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.OMUX15.N">INT:MUX.OMUX15.N[0]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.OMUX15.N">CLK_INT:MUX.OMUX15.N[0]</a>
 </td>
 </tr>
 <tr><td>41</td>
 <td title="0.0.41">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.OMUX12.N">INT:MUX.OMUX12.N[0]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.OMUX12.N">CLK_INT:MUX.OMUX12.N[0]</a>
 </td>
 </tr>
 <tr><td>40</td>
 <td title="0.0.40">
-<a href="#tile-spartan3-CLKB.S3A-INT:INV.0.CLK.IMUX.SEL1">~INT:INV.0.CLK.IMUX.SEL1</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:INV.0.CLK.IMUX.SEL1">~CLK_INT:INV.0.CLK.IMUX.SEL1</a>
 </td>
 </tr>
 <tr><td>39</td>
 <td title="0.0.39">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[3]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[3]</a>
 </td>
 </tr>
 <tr><td>38</td>
 <td title="0.0.38">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[2]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[2]</a>
 </td>
 </tr>
 <tr><td>37</td>
 <td title="0.0.37">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[0]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[0]</a>
 </td>
 </tr>
 <tr><td>36</td>
 <td title="0.0.36">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[0]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[0]</a>
 </td>
 </tr>
 <tr><td>35</td>
 <td title="0.0.35">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[1]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[1]</a>
 </td>
 </tr>
 <tr><td>34</td>
 <td title="0.0.34">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[1]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[1]</a>
 </td>
 </tr>
 <tr><td>33</td>
 <td title="0.0.33">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[2]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[2]</a>
 </td>
 </tr>
 <tr><td>32</td>
 <td title="0.0.32">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[3]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[3]</a>
 </td>
 </tr>
 <tr><td>31</td>
@@ -2352,47 +2847,47 @@ inverted
 </tr>
 <tr><td>24</td>
 <td title="0.0.24">
-<a href="#tile-spartan3-CLKB.S3A-INT:INV.0.CLK.IMUX.SEL2">~INT:INV.0.CLK.IMUX.SEL2</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:INV.0.CLK.IMUX.SEL2">~CLK_INT:INV.0.CLK.IMUX.SEL2</a>
 </td>
 </tr>
 <tr><td>23</td>
 <td title="0.0.23">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[3]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[3]</a>
 </td>
 </tr>
 <tr><td>22</td>
 <td title="0.0.22">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[2]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[2]</a>
 </td>
 </tr>
 <tr><td>21</td>
 <td title="0.0.21">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[0]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[0]</a>
 </td>
 </tr>
 <tr><td>20</td>
 <td title="0.0.20">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[0]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[0]</a>
 </td>
 </tr>
 <tr><td>19</td>
 <td title="0.0.19">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[1]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[1]</a>
 </td>
 </tr>
 <tr><td>18</td>
 <td title="0.0.18">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[1]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[1]</a>
 </td>
 </tr>
 <tr><td>17</td>
 <td title="0.0.17">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[2]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[2]</a>
 </td>
 </tr>
 <tr><td>16</td>
 <td title="0.0.16">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[3]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[3]</a>
 </td>
 </tr>
 <tr><td>15</td>
@@ -2447,32 +2942,32 @@ inverted
 </tr>
 <tr><td>5</td>
 <td title="0.0.5">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[3]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[3]</a>
 </td>
 </tr>
 <tr><td>4</td>
 <td title="0.0.4">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[2]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[2]</a>
 </td>
 </tr>
 <tr><td>3</td>
 <td title="0.0.3">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[0]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[0]</a>
 </td>
 </tr>
 <tr><td>2</td>
 <td title="0.0.2">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[0]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[0]</a>
 </td>
 </tr>
 <tr><td>1</td>
 <td title="0.0.1">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[1]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[1]</a>
 </td>
 </tr>
 <tr><td>0</td>
 <td title="0.0.0">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[1]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[1]</a>
 </td>
 </tr>
 </tbody>
@@ -2490,43 +2985,43 @@ inverted
 <tr><td>5</td>
 <td>-</td>
 <td title="1.1.5">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.OMUX10.N">INT:MUX.OMUX10.N[2]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.OMUX10.N">CLK_INT:MUX.OMUX10.N[2]</a>
 </td>
 </tr>
 <tr><td>4</td>
 <td title="1.0.4">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[2]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[2]</a>
 </td>
 <td title="1.1.4">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.OMUX11.N">INT:MUX.OMUX11.N[0]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.OMUX11.N">CLK_INT:MUX.OMUX11.N[0]</a>
 </td>
 </tr>
 <tr><td>3</td>
 <td title="1.0.3">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[3]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[3]</a>
 </td>
 <td title="1.1.3">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.OMUX11.N">INT:MUX.OMUX11.N[1]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.OMUX11.N">CLK_INT:MUX.OMUX11.N[1]</a>
 </td>
 </tr>
 <tr><td>2</td>
 <td title="1.0.2">
-<a href="#tile-spartan3-CLKB.S3A-INT:INV.0.CLK.IMUX.SEL3">~INT:INV.0.CLK.IMUX.SEL3</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:INV.0.CLK.IMUX.SEL3">~CLK_INT:INV.0.CLK.IMUX.SEL3</a>
 </td>
 <td title="1.1.2">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.OMUX10.N">INT:MUX.OMUX10.N[1]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.OMUX10.N">CLK_INT:MUX.OMUX10.N[1]</a>
 </td>
 </tr>
 <tr><td>1</td>
 <td>-</td>
 <td title="1.1.1">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.OMUX10.N">INT:MUX.OMUX10.N[0]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.OMUX10.N">CLK_INT:MUX.OMUX10.N[0]</a>
 </td>
 </tr>
 <tr><td>0</td>
 <td>-</td>
 <td title="1.1.0">
-<a href="#tile-spartan3-CLKB.S3A-INT:MUX.OMUX11.N">INT:MUX.OMUX11.N[2]</a>
+<a href="#tile-spartan3-CLKB.S3A-CLK_INT:MUX.OMUX11.N">CLK_INT:MUX.OMUX11.N[2]</a>
 </td>
 </tr>
 </tbody>
@@ -2626,16 +3121,16 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKB.S3A-INT:INV.0.CLK.IMUX.SEL0">INT:INV.0.CLK.IMUX.SEL0</th>
+<tr><th id="tile-spartan3-CLKB.S3A-CLK_INT:INV.0.CLK.IMUX.SEL0">CLK_INT:INV.0.CLK.IMUX.SEL0</th>
 <th>0.0.61</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3A-INT:INV.0.CLK.IMUX.SEL1">INT:INV.0.CLK.IMUX.SEL1</th>
+<tr><th id="tile-spartan3-CLKB.S3A-CLK_INT:INV.0.CLK.IMUX.SEL1">CLK_INT:INV.0.CLK.IMUX.SEL1</th>
 <th>0.0.40</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3A-INT:INV.0.CLK.IMUX.SEL2">INT:INV.0.CLK.IMUX.SEL2</th>
+<tr><th id="tile-spartan3-CLKB.S3A-CLK_INT:INV.0.CLK.IMUX.SEL2">CLK_INT:INV.0.CLK.IMUX.SEL2</th>
 <th>0.0.24</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3A-INT:INV.0.CLK.IMUX.SEL3">INT:INV.0.CLK.IMUX.SEL3</th>
+<tr><th id="tile-spartan3-CLKB.S3A-CLK_INT:INV.0.CLK.IMUX.SEL3">CLK_INT:INV.0.CLK.IMUX.SEL3</th>
 <th>1.0.2</th>
 </tr>
 </thead>
@@ -2649,13 +3144,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0</th>
+<tr><th id="tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0</th>
 <th>0.0.53</th>
 <th>0.0.54</th>
 <th>0.0.56</th>
 <th>0.0.57</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0</th>
+<tr><th id="tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0</th>
 <th>0.0.60</th>
 <th>0.0.59</th>
 <th>0.0.55</th>
@@ -2721,13 +3216,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1</th>
+<tr><th id="tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1</th>
 <th>0.0.32</th>
 <th>0.0.33</th>
 <th>0.0.35</th>
 <th>0.0.36</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1</th>
+<tr><th id="tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1</th>
 <th>0.0.39</th>
 <th>0.0.38</th>
 <th>0.0.34</th>
@@ -2793,13 +3288,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2</th>
+<tr><th id="tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2</th>
 <th>0.0.16</th>
 <th>0.0.17</th>
 <th>0.0.19</th>
 <th>0.0.20</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2</th>
+<tr><th id="tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2</th>
 <th>0.0.23</th>
 <th>0.0.22</th>
 <th>0.0.18</th>
@@ -2865,13 +3360,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3</th>
+<tr><th id="tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3</th>
 <th>0.0.5</th>
 <th>0.0.4</th>
 <th>0.0.1</th>
 <th>0.0.2</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3A-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3</th>
+<tr><th id="tile-spartan3-CLKB.S3A-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3</th>
 <th>1.0.3</th>
 <th>1.0.4</th>
 <th>0.0.0</th>
@@ -2937,22 +3432,22 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKB.S3A-INT:MUX.OMUX10.N">INT:MUX.OMUX10.N</th>
+<tr><th id="tile-spartan3-CLKB.S3A-CLK_INT:MUX.OMUX10.N">CLK_INT:MUX.OMUX10.N</th>
 <th>1.1.5</th>
 <th>1.1.2</th>
 <th>1.1.1</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3A-INT:MUX.OMUX11.N">INT:MUX.OMUX11.N</th>
+<tr><th id="tile-spartan3-CLKB.S3A-CLK_INT:MUX.OMUX11.N">CLK_INT:MUX.OMUX11.N</th>
 <th>1.1.0</th>
 <th>1.1.3</th>
 <th>1.1.4</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3A-INT:MUX.OMUX12.N">INT:MUX.OMUX12.N</th>
+<tr><th id="tile-spartan3-CLKB.S3A-CLK_INT:MUX.OMUX12.N">CLK_INT:MUX.OMUX12.N</th>
 <th>0.0.43</th>
 <th>0.0.44</th>
 <th>0.0.41</th>
 </tr>
-<tr><th id="tile-spartan3-CLKB.S3A-INT:MUX.OMUX15.N">INT:MUX.OMUX15.N</th>
+<tr><th id="tile-spartan3-CLKB.S3A-CLK_INT:MUX.OMUX15.N">CLK_INT:MUX.OMUX15.N</th>
 <th>0.0.46</th>
 <th>0.0.45</th>
 <th>0.0.42</th>
@@ -2997,25 +3492,190 @@ inverted
 <p>This tile is used on Spartan 3.</p>
 <h2 id="tile-clkts3"><a class="header" href="#tile-clkts3">Tile CLKT.S3</a></h2>
 <p>Cells: 1</p>
-<h3 id="muxes-3"><a class="header" href="#muxes-3">Muxes</a></h3>
+<h3 id="bel-clk_int-3"><a class="header" href="#bel-clk_int-3">Bel CLK_INT</a></h3>
+<h3 id="switchbox-clk_int-3"><a class="header" href="#switchbox-clk_int-3">Switchbox CLK_INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>spartan3 CLKT.S3 muxes</caption>
+<caption>spartan3 CLKT.S3 switchbox CLK_INT</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>OMUX0.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX3.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX4.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX5.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>CLK.IMUX.SEL0</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
-<tr><td>CLK.IMUX.SEL1</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
-<tr><td>CLK.IMUX.SEL2</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
-<tr><td>CLK.IMUX.SEL3</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
-<tr><td>CLK.IMUX.CLK0</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
-<tr><td>CLK.IMUX.CLK1</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
-<tr><td>CLK.IMUX.CLK2</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
-<tr><td>CLK.IMUX.CLK3</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
+<tr><td rowspan="4">OMUX0.S</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX3.S</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX4.S</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX5.S</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL0</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL1</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL2</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL3</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK0</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK1</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK2</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK3</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.1</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-bufgmux0-3"><a class="header" href="#bel-bufgmux0-3">Bel BUFGMUX0</a></h3>
@@ -3108,52 +3768,52 @@ inverted
 <tbody>
 <tr><td>63</td>
 <td title="0.0.63">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.OMUX0.S">INT:MUX.OMUX0.S[0]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.OMUX0.S">CLK_INT:MUX.OMUX0.S[0]</a>
 </td>
 </tr>
 <tr><td>62</td>
 <td title="0.0.62">
-<a href="#tile-spartan3-CLKT.S3-INT:INV.0.CLK.IMUX.SEL3">~INT:INV.0.CLK.IMUX.SEL3</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:INV.0.CLK.IMUX.SEL3">~CLK_INT:INV.0.CLK.IMUX.SEL3</a>
 </td>
 </tr>
 <tr><td>61</td>
 <td title="0.0.61">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[3]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[3]</a>
 </td>
 </tr>
 <tr><td>60</td>
 <td title="0.0.60">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[2]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[2]</a>
 </td>
 </tr>
 <tr><td>59</td>
 <td title="0.0.59">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[1]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[1]</a>
 </td>
 </tr>
 <tr><td>58</td>
 <td title="0.0.58">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[1]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[1]</a>
 </td>
 </tr>
 <tr><td>57</td>
 <td title="0.0.57">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[0]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[0]</a>
 </td>
 </tr>
 <tr><td>56</td>
 <td title="0.0.56">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[0]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[0]</a>
 </td>
 </tr>
 <tr><td>55</td>
 <td title="0.0.55">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[2]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[2]</a>
 </td>
 </tr>
 <tr><td>54</td>
 <td title="0.0.54">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[3]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[3]</a>
 </td>
 </tr>
 <tr><td>53</td>
@@ -3203,47 +3863,47 @@ inverted
 </tr>
 <tr><td>44</td>
 <td title="0.0.44">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[2]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[2]</a>
 </td>
 </tr>
 <tr><td>43</td>
 <td title="0.0.43">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[3]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[3]</a>
 </td>
 </tr>
 <tr><td>42</td>
 <td title="0.0.42">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[1]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[1]</a>
 </td>
 </tr>
 <tr><td>41</td>
 <td title="0.0.41">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[1]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[1]</a>
 </td>
 </tr>
 <tr><td>40</td>
 <td title="0.0.40">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[0]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[0]</a>
 </td>
 </tr>
 <tr><td>39</td>
 <td title="0.0.39">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[0]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[0]</a>
 </td>
 </tr>
 <tr><td>38</td>
 <td title="0.0.38">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[3]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[3]</a>
 </td>
 </tr>
 <tr><td>37</td>
 <td title="0.0.37">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[2]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[2]</a>
 </td>
 </tr>
 <tr><td>36</td>
 <td title="0.0.36">
-<a href="#tile-spartan3-CLKT.S3-INT:INV.0.CLK.IMUX.SEL2">~INT:INV.0.CLK.IMUX.SEL2</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:INV.0.CLK.IMUX.SEL2">~CLK_INT:INV.0.CLK.IMUX.SEL2</a>
 </td>
 </tr>
 <tr><td>35</td>
@@ -3273,77 +3933,77 @@ inverted
 </tr>
 <tr><td>30</td>
 <td title="0.0.30">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[2]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[2]</a>
 </td>
 </tr>
 <tr><td>29</td>
 <td title="0.0.29">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[3]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[3]</a>
 </td>
 </tr>
 <tr><td>28</td>
 <td title="0.0.28">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[1]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[1]</a>
 </td>
 </tr>
 <tr><td>27</td>
 <td title="0.0.27">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[1]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[1]</a>
 </td>
 </tr>
 <tr><td>26</td>
 <td title="0.0.26">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[0]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[0]</a>
 </td>
 </tr>
 <tr><td>25</td>
 <td title="0.0.25">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[0]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[0]</a>
 </td>
 </tr>
 <tr><td>24</td>
 <td title="0.0.24">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[3]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[3]</a>
 </td>
 </tr>
 <tr><td>23</td>
 <td title="0.0.23">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[2]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[2]</a>
 </td>
 </tr>
 <tr><td>22</td>
 <td title="0.0.22">
-<a href="#tile-spartan3-CLKT.S3-INT:INV.0.CLK.IMUX.SEL1">~INT:INV.0.CLK.IMUX.SEL1</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:INV.0.CLK.IMUX.SEL1">~CLK_INT:INV.0.CLK.IMUX.SEL1</a>
 </td>
 </tr>
 <tr><td>21</td>
 <td title="0.0.21">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.OMUX4.S">INT:MUX.OMUX4.S[0]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.OMUX4.S">CLK_INT:MUX.OMUX4.S[0]</a>
 </td>
 </tr>
 <tr><td>20</td>
 <td title="0.0.20">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.OMUX5.S">INT:MUX.OMUX5.S[0]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.OMUX5.S">CLK_INT:MUX.OMUX5.S[0]</a>
 </td>
 </tr>
 <tr><td>19</td>
 <td title="0.0.19">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.OMUX4.S">INT:MUX.OMUX4.S[2]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.OMUX4.S">CLK_INT:MUX.OMUX4.S[2]</a>
 </td>
 </tr>
 <tr><td>18</td>
 <td title="0.0.18">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.OMUX4.S">INT:MUX.OMUX4.S[1]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.OMUX4.S">CLK_INT:MUX.OMUX4.S[1]</a>
 </td>
 </tr>
 <tr><td>17</td>
 <td title="0.0.17">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.OMUX5.S">INT:MUX.OMUX5.S[1]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.OMUX5.S">CLK_INT:MUX.OMUX5.S[1]</a>
 </td>
 </tr>
 <tr><td>16</td>
 <td title="0.0.16">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.OMUX5.S">INT:MUX.OMUX5.S[2]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.OMUX5.S">CLK_INT:MUX.OMUX5.S[2]</a>
 </td>
 </tr>
 <tr><td>15</td>
@@ -3373,47 +4033,47 @@ inverted
 </tr>
 <tr><td>10</td>
 <td title="0.0.10">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[2]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[2]</a>
 </td>
 </tr>
 <tr><td>9</td>
 <td title="0.0.9">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[3]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[3]</a>
 </td>
 </tr>
 <tr><td>8</td>
 <td title="0.0.8">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[1]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[1]</a>
 </td>
 </tr>
 <tr><td>7</td>
 <td title="0.0.7">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[1]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[1]</a>
 </td>
 </tr>
 <tr><td>6</td>
 <td title="0.0.6">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[0]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[0]</a>
 </td>
 </tr>
 <tr><td>5</td>
 <td title="0.0.5">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[0]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[0]</a>
 </td>
 </tr>
 <tr><td>4</td>
 <td title="0.0.4">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[3]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[3]</a>
 </td>
 </tr>
 <tr><td>3</td>
 <td title="0.0.3">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[2]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[2]</a>
 </td>
 </tr>
 <tr><td>2</td>
 <td title="0.0.2">
-<a href="#tile-spartan3-CLKT.S3-INT:INV.0.CLK.IMUX.SEL0">~INT:INV.0.CLK.IMUX.SEL0</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:INV.0.CLK.IMUX.SEL0">~CLK_INT:INV.0.CLK.IMUX.SEL0</a>
 </td>
 </tr>
 <tr><td>1</td>
@@ -3437,27 +4097,27 @@ inverted
 <tbody>
 <tr><td>4</td>
 <td title="1.0.4">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.OMUX3.S">INT:MUX.OMUX3.S[1]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.OMUX3.S">CLK_INT:MUX.OMUX3.S[1]</a>
 </td>
 </tr>
 <tr><td>3</td>
 <td title="1.0.3">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.OMUX0.S">INT:MUX.OMUX0.S[2]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.OMUX0.S">CLK_INT:MUX.OMUX0.S[2]</a>
 </td>
 </tr>
 <tr><td>2</td>
 <td title="1.0.2">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.OMUX0.S">INT:MUX.OMUX0.S[1]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.OMUX0.S">CLK_INT:MUX.OMUX0.S[1]</a>
 </td>
 </tr>
 <tr><td>1</td>
 <td title="1.0.1">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.OMUX3.S">INT:MUX.OMUX3.S[0]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.OMUX3.S">CLK_INT:MUX.OMUX3.S[0]</a>
 </td>
 </tr>
 <tr><td>0</td>
 <td title="1.0.0">
-<a href="#tile-spartan3-CLKT.S3-INT:MUX.OMUX3.S">INT:MUX.OMUX3.S[2]</a>
+<a href="#tile-spartan3-CLKT.S3-CLK_INT:MUX.OMUX3.S">CLK_INT:MUX.OMUX3.S[2]</a>
 </td>
 </tr>
 </tbody>
@@ -3542,16 +4202,16 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKT.S3-INT:INV.0.CLK.IMUX.SEL0">INT:INV.0.CLK.IMUX.SEL0</th>
+<tr><th id="tile-spartan3-CLKT.S3-CLK_INT:INV.0.CLK.IMUX.SEL0">CLK_INT:INV.0.CLK.IMUX.SEL0</th>
 <th>0.0.2</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3-INT:INV.0.CLK.IMUX.SEL1">INT:INV.0.CLK.IMUX.SEL1</th>
+<tr><th id="tile-spartan3-CLKT.S3-CLK_INT:INV.0.CLK.IMUX.SEL1">CLK_INT:INV.0.CLK.IMUX.SEL1</th>
 <th>0.0.22</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3-INT:INV.0.CLK.IMUX.SEL2">INT:INV.0.CLK.IMUX.SEL2</th>
+<tr><th id="tile-spartan3-CLKT.S3-CLK_INT:INV.0.CLK.IMUX.SEL2">CLK_INT:INV.0.CLK.IMUX.SEL2</th>
 <th>0.0.36</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3-INT:INV.0.CLK.IMUX.SEL3">INT:INV.0.CLK.IMUX.SEL3</th>
+<tr><th id="tile-spartan3-CLKT.S3-CLK_INT:INV.0.CLK.IMUX.SEL3">CLK_INT:INV.0.CLK.IMUX.SEL3</th>
 <th>0.0.62</th>
 </tr>
 </thead>
@@ -3565,13 +4225,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0</th>
+<tr><th id="tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0</th>
 <th>0.0.9</th>
 <th>0.0.10</th>
 <th>0.0.7</th>
 <th>0.0.6</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0</th>
+<tr><th id="tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0</th>
 <th>0.0.4</th>
 <th>0.0.3</th>
 <th>0.0.8</th>
@@ -3637,13 +4297,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1</th>
+<tr><th id="tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1</th>
 <th>0.0.29</th>
 <th>0.0.30</th>
 <th>0.0.27</th>
 <th>0.0.26</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1</th>
+<tr><th id="tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1</th>
 <th>0.0.24</th>
 <th>0.0.23</th>
 <th>0.0.28</th>
@@ -3709,13 +4369,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2</th>
+<tr><th id="tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2</th>
 <th>0.0.43</th>
 <th>0.0.44</th>
 <th>0.0.41</th>
 <th>0.0.40</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2</th>
+<tr><th id="tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2</th>
 <th>0.0.38</th>
 <th>0.0.37</th>
 <th>0.0.42</th>
@@ -3781,13 +4441,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3</th>
+<tr><th id="tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3</th>
 <th>0.0.54</th>
 <th>0.0.55</th>
 <th>0.0.58</th>
 <th>0.0.57</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3</th>
+<tr><th id="tile-spartan3-CLKT.S3-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3</th>
 <th>0.0.61</th>
 <th>0.0.60</th>
 <th>0.0.59</th>
@@ -3853,22 +4513,22 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKT.S3-INT:MUX.OMUX0.S">INT:MUX.OMUX0.S</th>
+<tr><th id="tile-spartan3-CLKT.S3-CLK_INT:MUX.OMUX0.S">CLK_INT:MUX.OMUX0.S</th>
 <th>1.0.3</th>
 <th>1.0.2</th>
 <th>0.0.63</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3-INT:MUX.OMUX3.S">INT:MUX.OMUX3.S</th>
+<tr><th id="tile-spartan3-CLKT.S3-CLK_INT:MUX.OMUX3.S">CLK_INT:MUX.OMUX3.S</th>
 <th>1.0.0</th>
 <th>1.0.4</th>
 <th>1.0.1</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3-INT:MUX.OMUX4.S">INT:MUX.OMUX4.S</th>
+<tr><th id="tile-spartan3-CLKT.S3-CLK_INT:MUX.OMUX4.S">CLK_INT:MUX.OMUX4.S</th>
 <th>0.0.19</th>
 <th>0.0.18</th>
 <th>0.0.21</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3-INT:MUX.OMUX5.S">INT:MUX.OMUX5.S</th>
+<tr><th id="tile-spartan3-CLKT.S3-CLK_INT:MUX.OMUX5.S">CLK_INT:MUX.OMUX5.S</th>
 <th>0.0.16</th>
 <th>0.0.17</th>
 <th>0.0.20</th>
@@ -3906,25 +4566,190 @@ inverted
 <p>This tile is used on Spartan 3E.</p>
 <h2 id="tile-clkts3e"><a class="header" href="#tile-clkts3e">Tile CLKT.S3E</a></h2>
 <p>Cells: 1</p>
-<h3 id="muxes-4"><a class="header" href="#muxes-4">Muxes</a></h3>
+<h3 id="bel-clk_int-4"><a class="header" href="#bel-clk_int-4">Bel CLK_INT</a></h3>
+<h3 id="switchbox-clk_int-4"><a class="header" href="#switchbox-clk_int-4">Switchbox CLK_INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>spartan3 CLKT.S3E muxes</caption>
+<caption>spartan3 CLKT.S3E switchbox CLK_INT</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>OMUX0.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX3.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX4.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX5.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>CLK.IMUX.SEL0</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
-<tr><td>CLK.IMUX.SEL1</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
-<tr><td>CLK.IMUX.SEL2</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
-<tr><td>CLK.IMUX.SEL3</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
-<tr><td>CLK.IMUX.CLK0</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
-<tr><td>CLK.IMUX.CLK1</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
-<tr><td>CLK.IMUX.CLK2</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
-<tr><td>CLK.IMUX.CLK3</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
+<tr><td rowspan="4">OMUX0.S</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX3.S</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX4.S</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX5.S</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL0</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL1</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL2</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL3</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK0</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK1</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK2</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK3</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.1</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-bufgmux0-4"><a class="header" href="#bel-bufgmux0-4">Bel BUFGMUX0</a></h3>
@@ -4017,32 +4842,32 @@ inverted
 <tbody>
 <tr><td>63</td>
 <td title="0.0.63">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[1]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[1]</a>
 </td>
 </tr>
 <tr><td>62</td>
 <td title="0.0.62">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[1]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[1]</a>
 </td>
 </tr>
 <tr><td>61</td>
 <td title="0.0.61">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[0]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[0]</a>
 </td>
 </tr>
 <tr><td>60</td>
 <td title="0.0.60">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[0]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[0]</a>
 </td>
 </tr>
 <tr><td>59</td>
 <td title="0.0.59">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[2]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[2]</a>
 </td>
 </tr>
 <tr><td>58</td>
 <td title="0.0.58">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[3]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[3]</a>
 </td>
 </tr>
 <tr><td>57</td>
@@ -4097,47 +4922,47 @@ inverted
 </tr>
 <tr><td>47</td>
 <td title="0.0.47">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[3]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[3]</a>
 </td>
 </tr>
 <tr><td>46</td>
 <td title="0.0.46">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[2]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[2]</a>
 </td>
 </tr>
 <tr><td>45</td>
 <td title="0.0.45">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[1]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[1]</a>
 </td>
 </tr>
 <tr><td>44</td>
 <td title="0.0.44">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[1]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[1]</a>
 </td>
 </tr>
 <tr><td>43</td>
 <td title="0.0.43">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[0]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[0]</a>
 </td>
 </tr>
 <tr><td>42</td>
 <td title="0.0.42">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[0]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[0]</a>
 </td>
 </tr>
 <tr><td>41</td>
 <td title="0.0.41">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[2]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[2]</a>
 </td>
 </tr>
 <tr><td>40</td>
 <td title="0.0.40">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[3]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[3]</a>
 </td>
 </tr>
 <tr><td>39</td>
 <td title="0.0.39">
-<a href="#tile-spartan3-CLKT.S3E-INT:INV.0.CLK.IMUX.SEL2">~INT:INV.0.CLK.IMUX.SEL2</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:INV.0.CLK.IMUX.SEL2">~CLK_INT:INV.0.CLK.IMUX.SEL2</a>
 </td>
 </tr>
 <tr><td>38</td>
@@ -4177,77 +5002,77 @@ inverted
 </tr>
 <tr><td>31</td>
 <td title="0.0.31">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[3]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[3]</a>
 </td>
 </tr>
 <tr><td>30</td>
 <td title="0.0.30">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[2]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[2]</a>
 </td>
 </tr>
 <tr><td>29</td>
 <td title="0.0.29">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[1]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[1]</a>
 </td>
 </tr>
 <tr><td>28</td>
 <td title="0.0.28">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[1]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[1]</a>
 </td>
 </tr>
 <tr><td>27</td>
 <td title="0.0.27">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[0]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[0]</a>
 </td>
 </tr>
 <tr><td>26</td>
 <td title="0.0.26">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[0]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[0]</a>
 </td>
 </tr>
 <tr><td>25</td>
 <td title="0.0.25">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[2]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[2]</a>
 </td>
 </tr>
 <tr><td>24</td>
 <td title="0.0.24">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[3]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[3]</a>
 </td>
 </tr>
 <tr><td>23</td>
 <td title="0.0.23">
-<a href="#tile-spartan3-CLKT.S3E-INT:INV.0.CLK.IMUX.SEL1">~INT:INV.0.CLK.IMUX.SEL1</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:INV.0.CLK.IMUX.SEL1">~CLK_INT:INV.0.CLK.IMUX.SEL1</a>
 </td>
 </tr>
 <tr><td>22</td>
 <td title="0.0.22">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.OMUX4.S">INT:MUX.OMUX4.S[0]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.OMUX4.S">CLK_INT:MUX.OMUX4.S[0]</a>
 </td>
 </tr>
 <tr><td>21</td>
 <td title="0.0.21">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.OMUX5.S">INT:MUX.OMUX5.S[0]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.OMUX5.S">CLK_INT:MUX.OMUX5.S[0]</a>
 </td>
 </tr>
 <tr><td>20</td>
 <td title="0.0.20">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.OMUX4.S">INT:MUX.OMUX4.S[2]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.OMUX4.S">CLK_INT:MUX.OMUX4.S[2]</a>
 </td>
 </tr>
 <tr><td>19</td>
 <td title="0.0.19">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.OMUX4.S">INT:MUX.OMUX4.S[1]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.OMUX4.S">CLK_INT:MUX.OMUX4.S[1]</a>
 </td>
 </tr>
 <tr><td>18</td>
 <td title="0.0.18">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.OMUX5.S">INT:MUX.OMUX5.S[1]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.OMUX5.S">CLK_INT:MUX.OMUX5.S[1]</a>
 </td>
 </tr>
 <tr><td>17</td>
 <td title="0.0.17">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.OMUX5.S">INT:MUX.OMUX5.S[2]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.OMUX5.S">CLK_INT:MUX.OMUX5.S[2]</a>
 </td>
 </tr>
 <tr><td>16</td>
@@ -4282,47 +5107,47 @@ inverted
 </tr>
 <tr><td>10</td>
 <td title="0.0.10">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[3]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[3]</a>
 </td>
 </tr>
 <tr><td>9</td>
 <td title="0.0.9">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[2]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[2]</a>
 </td>
 </tr>
 <tr><td>8</td>
 <td title="0.0.8">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[1]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[1]</a>
 </td>
 </tr>
 <tr><td>7</td>
 <td title="0.0.7">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[1]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[1]</a>
 </td>
 </tr>
 <tr><td>6</td>
 <td title="0.0.6">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[0]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[0]</a>
 </td>
 </tr>
 <tr><td>5</td>
 <td title="0.0.5">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[0]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[0]</a>
 </td>
 </tr>
 <tr><td>4</td>
 <td title="0.0.4">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[2]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[2]</a>
 </td>
 </tr>
 <tr><td>3</td>
 <td title="0.0.3">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[3]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[3]</a>
 </td>
 </tr>
 <tr><td>2</td>
 <td title="0.0.2">
-<a href="#tile-spartan3-CLKT.S3E-INT:INV.0.CLK.IMUX.SEL0">~INT:INV.0.CLK.IMUX.SEL0</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:INV.0.CLK.IMUX.SEL0">~CLK_INT:INV.0.CLK.IMUX.SEL0</a>
 </td>
 </tr>
 <tr><td>1</td>
@@ -4346,47 +5171,47 @@ inverted
 <tbody>
 <tr><td>8</td>
 <td title="1.0.8">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.OMUX3.S">INT:MUX.OMUX3.S[0]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.OMUX3.S">CLK_INT:MUX.OMUX3.S[0]</a>
 </td>
 </tr>
 <tr><td>7</td>
 <td title="1.0.7">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.OMUX0.S">INT:MUX.OMUX0.S[1]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.OMUX0.S">CLK_INT:MUX.OMUX0.S[1]</a>
 </td>
 </tr>
 <tr><td>6</td>
 <td title="1.0.6">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.OMUX0.S">INT:MUX.OMUX0.S[2]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.OMUX0.S">CLK_INT:MUX.OMUX0.S[2]</a>
 </td>
 </tr>
 <tr><td>5</td>
 <td title="1.0.5">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.OMUX3.S">INT:MUX.OMUX3.S[1]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.OMUX3.S">CLK_INT:MUX.OMUX3.S[1]</a>
 </td>
 </tr>
 <tr><td>4</td>
 <td title="1.0.4">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.OMUX3.S">INT:MUX.OMUX3.S[2]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.OMUX3.S">CLK_INT:MUX.OMUX3.S[2]</a>
 </td>
 </tr>
 <tr><td>3</td>
 <td title="1.0.3">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.OMUX0.S">INT:MUX.OMUX0.S[0]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.OMUX0.S">CLK_INT:MUX.OMUX0.S[0]</a>
 </td>
 </tr>
 <tr><td>2</td>
 <td title="1.0.2">
-<a href="#tile-spartan3-CLKT.S3E-INT:INV.0.CLK.IMUX.SEL3">~INT:INV.0.CLK.IMUX.SEL3</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:INV.0.CLK.IMUX.SEL3">~CLK_INT:INV.0.CLK.IMUX.SEL3</a>
 </td>
 </tr>
 <tr><td>1</td>
 <td title="1.0.1">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[3]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[3]</a>
 </td>
 </tr>
 <tr><td>0</td>
 <td title="1.0.0">
-<a href="#tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[2]</a>
+<a href="#tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[2]</a>
 </td>
 </tr>
 </tbody>
@@ -4486,16 +5311,16 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKT.S3E-INT:INV.0.CLK.IMUX.SEL0">INT:INV.0.CLK.IMUX.SEL0</th>
+<tr><th id="tile-spartan3-CLKT.S3E-CLK_INT:INV.0.CLK.IMUX.SEL0">CLK_INT:INV.0.CLK.IMUX.SEL0</th>
 <th>0.0.2</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3E-INT:INV.0.CLK.IMUX.SEL1">INT:INV.0.CLK.IMUX.SEL1</th>
+<tr><th id="tile-spartan3-CLKT.S3E-CLK_INT:INV.0.CLK.IMUX.SEL1">CLK_INT:INV.0.CLK.IMUX.SEL1</th>
 <th>0.0.23</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3E-INT:INV.0.CLK.IMUX.SEL2">INT:INV.0.CLK.IMUX.SEL2</th>
+<tr><th id="tile-spartan3-CLKT.S3E-CLK_INT:INV.0.CLK.IMUX.SEL2">CLK_INT:INV.0.CLK.IMUX.SEL2</th>
 <th>0.0.39</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3E-INT:INV.0.CLK.IMUX.SEL3">INT:INV.0.CLK.IMUX.SEL3</th>
+<tr><th id="tile-spartan3-CLKT.S3E-CLK_INT:INV.0.CLK.IMUX.SEL3">CLK_INT:INV.0.CLK.IMUX.SEL3</th>
 <th>1.0.2</th>
 </tr>
 </thead>
@@ -4509,13 +5334,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0</th>
+<tr><th id="tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0</th>
 <th>0.0.10</th>
 <th>0.0.9</th>
 <th>0.0.7</th>
 <th>0.0.6</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0</th>
+<tr><th id="tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0</th>
 <th>0.0.3</th>
 <th>0.0.4</th>
 <th>0.0.8</th>
@@ -4581,13 +5406,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1</th>
+<tr><th id="tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1</th>
 <th>0.0.31</th>
 <th>0.0.30</th>
 <th>0.0.28</th>
 <th>0.0.27</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1</th>
+<tr><th id="tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1</th>
 <th>0.0.24</th>
 <th>0.0.25</th>
 <th>0.0.29</th>
@@ -4653,13 +5478,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2</th>
+<tr><th id="tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2</th>
 <th>0.0.47</th>
 <th>0.0.46</th>
 <th>0.0.44</th>
 <th>0.0.43</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2</th>
+<tr><th id="tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2</th>
 <th>0.0.40</th>
 <th>0.0.41</th>
 <th>0.0.45</th>
@@ -4725,13 +5550,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3</th>
+<tr><th id="tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3</th>
 <th>0.0.58</th>
 <th>0.0.59</th>
 <th>0.0.62</th>
 <th>0.0.61</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3E-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3</th>
+<tr><th id="tile-spartan3-CLKT.S3E-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3</th>
 <th>1.0.1</th>
 <th>1.0.0</th>
 <th>0.0.63</th>
@@ -4797,22 +5622,22 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKT.S3E-INT:MUX.OMUX0.S">INT:MUX.OMUX0.S</th>
+<tr><th id="tile-spartan3-CLKT.S3E-CLK_INT:MUX.OMUX0.S">CLK_INT:MUX.OMUX0.S</th>
 <th>1.0.6</th>
 <th>1.0.7</th>
 <th>1.0.3</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3E-INT:MUX.OMUX3.S">INT:MUX.OMUX3.S</th>
+<tr><th id="tile-spartan3-CLKT.S3E-CLK_INT:MUX.OMUX3.S">CLK_INT:MUX.OMUX3.S</th>
 <th>1.0.4</th>
 <th>1.0.5</th>
 <th>1.0.8</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3E-INT:MUX.OMUX4.S">INT:MUX.OMUX4.S</th>
+<tr><th id="tile-spartan3-CLKT.S3E-CLK_INT:MUX.OMUX4.S">CLK_INT:MUX.OMUX4.S</th>
 <th>0.0.20</th>
 <th>0.0.19</th>
 <th>0.0.22</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3E-INT:MUX.OMUX5.S">INT:MUX.OMUX5.S</th>
+<tr><th id="tile-spartan3-CLKT.S3E-CLK_INT:MUX.OMUX5.S">CLK_INT:MUX.OMUX5.S</th>
 <th>0.0.17</th>
 <th>0.0.18</th>
 <th>0.0.21</th>
@@ -4850,25 +5675,190 @@ inverted
 <p>This tile is used on Spartan 3A and 3A DSP.</p>
 <h2 id="tile-clkts3a"><a class="header" href="#tile-clkts3a">Tile CLKT.S3A</a></h2>
 <p>Cells: 1</p>
-<h3 id="muxes-5"><a class="header" href="#muxes-5">Muxes</a></h3>
+<h3 id="bel-clk_int-5"><a class="header" href="#bel-clk_int-5">Bel CLK_INT</a></h3>
+<h3 id="switchbox-clk_int-5"><a class="header" href="#switchbox-clk_int-5">Switchbox CLK_INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>spartan3 CLKT.S3A muxes</caption>
+<caption>spartan3 CLKT.S3A switchbox CLK_INT</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>OMUX0.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX3.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX4.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>OMUX5.S</td><td>CLK.OUT.0, CLK.OUT.1, CLK.OUT.2, CLK.OUT.3</td></tr>
-<tr><td>CLK.IMUX.SEL0</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
-<tr><td>CLK.IMUX.SEL1</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
-<tr><td>CLK.IMUX.SEL2</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
-<tr><td>CLK.IMUX.SEL3</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
-<tr><td>CLK.IMUX.CLK0</td><td>PULLUP, DBL.W0.1, DBL.W0.2, DBL.W1.1, DBL.W1.2, DBL.E0.0, DBL.E0.1, DBL.E1.0, DBL.E1.1</td></tr>
-<tr><td>CLK.IMUX.CLK1</td><td>PULLUP, DBL.W2.1, DBL.W2.2, DBL.W3.1, DBL.W3.2, DBL.E2.0, DBL.E2.1, DBL.E3.0, DBL.E3.1</td></tr>
-<tr><td>CLK.IMUX.CLK2</td><td>PULLUP, DBL.W4.1, DBL.W4.2, DBL.W5.1, DBL.W5.2, DBL.E4.0, DBL.E4.1, DBL.E5.0, DBL.E5.1</td></tr>
-<tr><td>CLK.IMUX.CLK3</td><td>PULLUP, DBL.W6.1, DBL.W6.2, DBL.W7.1, DBL.W7.2, DBL.E6.0, DBL.E6.1, DBL.E7.0, DBL.E7.1</td></tr>
+<tr><td rowspan="4">OMUX0.S</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX3.S</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX4.S</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="4">OMUX5.S</td><td>CLK.OUT.0</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.1</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.2</td><td>mux</td>
+</tr>
+<tr><td>CLK.OUT.3</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL0</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL1</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL2</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.SEL3</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK0</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W0.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W1.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E0.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E1.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK1</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W2.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W3.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E2.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E3.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK2</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W4.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W5.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E4.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E5.1</td><td>mux</td>
+</tr>
+<tr><td rowspan="9">CLK.IMUX.CLK3</td><td>PULLUP</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W6.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.W7.2</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E6.1</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.0</td><td>mux</td>
+</tr>
+<tr><td>DBL.E7.1</td><td>mux</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-bufgmux0-5"><a class="header" href="#bel-bufgmux0-5">Bel BUFGMUX0</a></h3>
@@ -4961,32 +5951,32 @@ inverted
 <tbody>
 <tr><td>63</td>
 <td title="0.0.63">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[1]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[1]</a>
 </td>
 </tr>
 <tr><td>62</td>
 <td title="0.0.62">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[1]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[1]</a>
 </td>
 </tr>
 <tr><td>61</td>
 <td title="0.0.61">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[0]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[0]</a>
 </td>
 </tr>
 <tr><td>60</td>
 <td title="0.0.60">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[0]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[0]</a>
 </td>
 </tr>
 <tr><td>59</td>
 <td title="0.0.59">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[2]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[2]</a>
 </td>
 </tr>
 <tr><td>58</td>
 <td title="0.0.58">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3[3]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3[3]</a>
 </td>
 </tr>
 <tr><td>57</td>
@@ -5041,47 +6031,47 @@ inverted
 </tr>
 <tr><td>47</td>
 <td title="0.0.47">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[3]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[3]</a>
 </td>
 </tr>
 <tr><td>46</td>
 <td title="0.0.46">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[2]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[2]</a>
 </td>
 </tr>
 <tr><td>45</td>
 <td title="0.0.45">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[0]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[0]</a>
 </td>
 </tr>
 <tr><td>44</td>
 <td title="0.0.44">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[0]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[0]</a>
 </td>
 </tr>
 <tr><td>43</td>
 <td title="0.0.43">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2[1]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2[1]</a>
 </td>
 </tr>
 <tr><td>42</td>
 <td title="0.0.42">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[1]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[1]</a>
 </td>
 </tr>
 <tr><td>41</td>
 <td title="0.0.41">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[2]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[2]</a>
 </td>
 </tr>
 <tr><td>40</td>
 <td title="0.0.40">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2[3]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2[3]</a>
 </td>
 </tr>
 <tr><td>39</td>
 <td title="0.0.39">
-<a href="#tile-spartan3-CLKT.S3A-INT:INV.0.CLK.IMUX.SEL2">~INT:INV.0.CLK.IMUX.SEL2</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:INV.0.CLK.IMUX.SEL2">~CLK_INT:INV.0.CLK.IMUX.SEL2</a>
 </td>
 </tr>
 <tr><td>38</td>
@@ -5121,77 +6111,77 @@ inverted
 </tr>
 <tr><td>31</td>
 <td title="0.0.31">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[3]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[3]</a>
 </td>
 </tr>
 <tr><td>30</td>
 <td title="0.0.30">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[2]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[2]</a>
 </td>
 </tr>
 <tr><td>29</td>
 <td title="0.0.29">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[0]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[0]</a>
 </td>
 </tr>
 <tr><td>28</td>
 <td title="0.0.28">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[0]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[0]</a>
 </td>
 </tr>
 <tr><td>27</td>
 <td title="0.0.27">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1[1]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1[1]</a>
 </td>
 </tr>
 <tr><td>26</td>
 <td title="0.0.26">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[1]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[1]</a>
 </td>
 </tr>
 <tr><td>25</td>
 <td title="0.0.25">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[2]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[2]</a>
 </td>
 </tr>
 <tr><td>24</td>
 <td title="0.0.24">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1[3]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1[3]</a>
 </td>
 </tr>
 <tr><td>23</td>
 <td title="0.0.23">
-<a href="#tile-spartan3-CLKT.S3A-INT:INV.0.CLK.IMUX.SEL1">~INT:INV.0.CLK.IMUX.SEL1</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:INV.0.CLK.IMUX.SEL1">~CLK_INT:INV.0.CLK.IMUX.SEL1</a>
 </td>
 </tr>
 <tr><td>22</td>
 <td title="0.0.22">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.OMUX4.S">INT:MUX.OMUX4.S[0]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.OMUX4.S">CLK_INT:MUX.OMUX4.S[0]</a>
 </td>
 </tr>
 <tr><td>21</td>
 <td title="0.0.21">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.OMUX5.S">INT:MUX.OMUX5.S[0]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.OMUX5.S">CLK_INT:MUX.OMUX5.S[0]</a>
 </td>
 </tr>
 <tr><td>20</td>
 <td title="0.0.20">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.OMUX4.S">INT:MUX.OMUX4.S[2]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.OMUX4.S">CLK_INT:MUX.OMUX4.S[2]</a>
 </td>
 </tr>
 <tr><td>19</td>
 <td title="0.0.19">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.OMUX4.S">INT:MUX.OMUX4.S[1]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.OMUX4.S">CLK_INT:MUX.OMUX4.S[1]</a>
 </td>
 </tr>
 <tr><td>18</td>
 <td title="0.0.18">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.OMUX5.S">INT:MUX.OMUX5.S[1]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.OMUX5.S">CLK_INT:MUX.OMUX5.S[1]</a>
 </td>
 </tr>
 <tr><td>17</td>
 <td title="0.0.17">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.OMUX5.S">INT:MUX.OMUX5.S[2]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.OMUX5.S">CLK_INT:MUX.OMUX5.S[2]</a>
 </td>
 </tr>
 <tr><td>16</td>
@@ -5226,47 +6216,47 @@ inverted
 </tr>
 <tr><td>10</td>
 <td title="0.0.10">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[3]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[3]</a>
 </td>
 </tr>
 <tr><td>9</td>
 <td title="0.0.9">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[2]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[2]</a>
 </td>
 </tr>
 <tr><td>8</td>
 <td title="0.0.8">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[1]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[1]</a>
 </td>
 </tr>
 <tr><td>7</td>
 <td title="0.0.7">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[1]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[1]</a>
 </td>
 </tr>
 <tr><td>6</td>
 <td title="0.0.6">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0[0]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0[0]</a>
 </td>
 </tr>
 <tr><td>5</td>
 <td title="0.0.5">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[0]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[0]</a>
 </td>
 </tr>
 <tr><td>4</td>
 <td title="0.0.4">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[2]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[2]</a>
 </td>
 </tr>
 <tr><td>3</td>
 <td title="0.0.3">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0[3]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0[3]</a>
 </td>
 </tr>
 <tr><td>2</td>
 <td title="0.0.2">
-<a href="#tile-spartan3-CLKT.S3A-INT:INV.0.CLK.IMUX.SEL0">~INT:INV.0.CLK.IMUX.SEL0</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:INV.0.CLK.IMUX.SEL0">~CLK_INT:INV.0.CLK.IMUX.SEL0</a>
 </td>
 </tr>
 <tr><td>1</td>
@@ -5292,43 +6282,43 @@ inverted
 <tr><td>5</td>
 <td>-</td>
 <td title="1.1.5">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.OMUX3.S">INT:MUX.OMUX3.S[1]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.OMUX3.S">CLK_INT:MUX.OMUX3.S[1]</a>
 </td>
 </tr>
 <tr><td>4</td>
 <td>-</td>
 <td title="1.1.4">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.OMUX3.S">INT:MUX.OMUX3.S[2]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.OMUX3.S">CLK_INT:MUX.OMUX3.S[2]</a>
 </td>
 </tr>
 <tr><td>3</td>
 <td>-</td>
 <td title="1.1.3">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.OMUX0.S">INT:MUX.OMUX0.S[0]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.OMUX0.S">CLK_INT:MUX.OMUX0.S[0]</a>
 </td>
 </tr>
 <tr><td>2</td>
 <td title="1.0.2">
-<a href="#tile-spartan3-CLKT.S3A-INT:INV.0.CLK.IMUX.SEL3">~INT:INV.0.CLK.IMUX.SEL3</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:INV.0.CLK.IMUX.SEL3">~CLK_INT:INV.0.CLK.IMUX.SEL3</a>
 </td>
 <td title="1.1.2">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.OMUX0.S">INT:MUX.OMUX0.S[2]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.OMUX0.S">CLK_INT:MUX.OMUX0.S[2]</a>
 </td>
 </tr>
 <tr><td>1</td>
 <td title="1.0.1">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[3]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[3]</a>
 </td>
 <td title="1.1.1">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.OMUX3.S">INT:MUX.OMUX3.S[0]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.OMUX3.S">CLK_INT:MUX.OMUX3.S[0]</a>
 </td>
 </tr>
 <tr><td>0</td>
 <td title="1.0.0">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3[2]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3[2]</a>
 </td>
 <td title="1.1.0">
-<a href="#tile-spartan3-CLKT.S3A-INT:MUX.OMUX0.S">INT:MUX.OMUX0.S[1]</a>
+<a href="#tile-spartan3-CLKT.S3A-CLK_INT:MUX.OMUX0.S">CLK_INT:MUX.OMUX0.S[1]</a>
 </td>
 </tr>
 </tbody>
@@ -5428,16 +6418,16 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKT.S3A-INT:INV.0.CLK.IMUX.SEL0">INT:INV.0.CLK.IMUX.SEL0</th>
+<tr><th id="tile-spartan3-CLKT.S3A-CLK_INT:INV.0.CLK.IMUX.SEL0">CLK_INT:INV.0.CLK.IMUX.SEL0</th>
 <th>0.0.2</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3A-INT:INV.0.CLK.IMUX.SEL1">INT:INV.0.CLK.IMUX.SEL1</th>
+<tr><th id="tile-spartan3-CLKT.S3A-CLK_INT:INV.0.CLK.IMUX.SEL1">CLK_INT:INV.0.CLK.IMUX.SEL1</th>
 <th>0.0.23</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3A-INT:INV.0.CLK.IMUX.SEL2">INT:INV.0.CLK.IMUX.SEL2</th>
+<tr><th id="tile-spartan3-CLKT.S3A-CLK_INT:INV.0.CLK.IMUX.SEL2">CLK_INT:INV.0.CLK.IMUX.SEL2</th>
 <th>0.0.39</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3A-INT:INV.0.CLK.IMUX.SEL3">INT:INV.0.CLK.IMUX.SEL3</th>
+<tr><th id="tile-spartan3-CLKT.S3A-CLK_INT:INV.0.CLK.IMUX.SEL3">CLK_INT:INV.0.CLK.IMUX.SEL3</th>
 <th>1.0.2</th>
 </tr>
 </thead>
@@ -5451,13 +6441,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.CLK0">INT:MUX.CLK.IMUX.CLK0</th>
+<tr><th id="tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.CLK0">CLK_INT:MUX.CLK.IMUX.CLK0</th>
 <th>0.0.10</th>
 <th>0.0.9</th>
 <th>0.0.7</th>
 <th>0.0.6</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.SEL0">INT:MUX.CLK.IMUX.SEL0</th>
+<tr><th id="tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.SEL0">CLK_INT:MUX.CLK.IMUX.SEL0</th>
 <th>0.0.3</th>
 <th>0.0.4</th>
 <th>0.0.8</th>
@@ -5523,13 +6513,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.CLK1">INT:MUX.CLK.IMUX.CLK1</th>
+<tr><th id="tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.CLK1">CLK_INT:MUX.CLK.IMUX.CLK1</th>
 <th>0.0.31</th>
 <th>0.0.30</th>
 <th>0.0.27</th>
 <th>0.0.28</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.SEL1">INT:MUX.CLK.IMUX.SEL1</th>
+<tr><th id="tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.SEL1">CLK_INT:MUX.CLK.IMUX.SEL1</th>
 <th>0.0.24</th>
 <th>0.0.25</th>
 <th>0.0.26</th>
@@ -5595,13 +6585,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.CLK2">INT:MUX.CLK.IMUX.CLK2</th>
+<tr><th id="tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.CLK2">CLK_INT:MUX.CLK.IMUX.CLK2</th>
 <th>0.0.47</th>
 <th>0.0.46</th>
 <th>0.0.43</th>
 <th>0.0.44</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.SEL2">INT:MUX.CLK.IMUX.SEL2</th>
+<tr><th id="tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.SEL2">CLK_INT:MUX.CLK.IMUX.SEL2</th>
 <th>0.0.40</th>
 <th>0.0.41</th>
 <th>0.0.42</th>
@@ -5667,13 +6657,13 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.CLK3">INT:MUX.CLK.IMUX.CLK3</th>
+<tr><th id="tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.CLK3">CLK_INT:MUX.CLK.IMUX.CLK3</th>
 <th>0.0.58</th>
 <th>0.0.59</th>
 <th>0.0.62</th>
 <th>0.0.61</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3A-INT:MUX.CLK.IMUX.SEL3">INT:MUX.CLK.IMUX.SEL3</th>
+<tr><th id="tile-spartan3-CLKT.S3A-CLK_INT:MUX.CLK.IMUX.SEL3">CLK_INT:MUX.CLK.IMUX.SEL3</th>
 <th>1.0.1</th>
 <th>1.0.0</th>
 <th>0.0.63</th>
@@ -5739,22 +6729,22 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-CLKT.S3A-INT:MUX.OMUX0.S">INT:MUX.OMUX0.S</th>
+<tr><th id="tile-spartan3-CLKT.S3A-CLK_INT:MUX.OMUX0.S">CLK_INT:MUX.OMUX0.S</th>
 <th>1.1.2</th>
 <th>1.1.0</th>
 <th>1.1.3</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3A-INT:MUX.OMUX3.S">INT:MUX.OMUX3.S</th>
+<tr><th id="tile-spartan3-CLKT.S3A-CLK_INT:MUX.OMUX3.S">CLK_INT:MUX.OMUX3.S</th>
 <th>1.1.4</th>
 <th>1.1.5</th>
 <th>1.1.1</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3A-INT:MUX.OMUX4.S">INT:MUX.OMUX4.S</th>
+<tr><th id="tile-spartan3-CLKT.S3A-CLK_INT:MUX.OMUX4.S">CLK_INT:MUX.OMUX4.S</th>
 <th>0.0.20</th>
 <th>0.0.19</th>
 <th>0.0.22</th>
 </tr>
-<tr><th id="tile-spartan3-CLKT.S3A-INT:MUX.OMUX5.S">INT:MUX.OMUX5.S</th>
+<tr><th id="tile-spartan3-CLKT.S3A-CLK_INT:MUX.OMUX5.S">CLK_INT:MUX.OMUX5.S</th>
 <th>0.0.17</th>
 <th>0.0.18</th>
 <th>0.0.21</th>

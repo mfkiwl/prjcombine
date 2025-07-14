@@ -535,13 +535,13 @@ Only <code>.0</code>, <code>.6</code>, <code>.12</code>, <code>.18</code> segmen
 <tr><th>Slot</th><th>Tiles</th><th>Bel slots</th></tr>
 </thead>
 <tbody>
-<tr><td>INT</td><td>INT.CLB, INT.IOI, INT.BRAM, INT.DCM.V2, INT.CNR, INT.DCM.V2P, INT.PPC, INT.GT.CLKPAD, INT.IOI.CLK_B, INT.IOI.CLK_T</td><td>RLL, PTE2OMUX0, PTE2OMUX1, PTE2OMUX2, PTE2OMUX3</td></tr>
+<tr><td>INT</td><td>INT.CLB, INT.IOI, INT.BRAM, INT.DCM.V2, INT.CNR, INT.DCM.V2P, INT.PPC, INT.GT.CLKPAD, INT.IOI.CLK_B, INT.IOI.CLK_T</td><td>INT, RLL, PTE2OMUX0, PTE2OMUX1, PTE2OMUX2, PTE2OMUX3</td></tr>
 <tr><td>INTF</td><td>INTF.GT.B0, INTF.GT.B123, INTF.GT.BCLKPAD, INTF.GT.T0, INTF.GT.T123, INTF.GT.TCLKPAD, INTF.PPC</td><td></td></tr>
 <tr><td>BEL</td><td>CLB, IOI, DCM.V2, LL.V2, LR.V2, UL.V2, UR.V2, BRAM, DCM.V2P, LL.V2P, LR.V2P, UL.V2P, UR.V2P, GIGABIT.B, GIGABIT.T, RBPPC, LBPPC, IOI.CLK_B, IOI.CLK_T, GIGABIT10.B, GIGABIT10.T</td><td>SLICE0, SLICE1, SLICE2, SLICE3, TBUF0, TBUF1, TBUS, IO0, IO1, IO2, IO3, IBUF0, IBUF1, IBUF2, IBUF3, OBUF0, OBUF1, OBUF2, OBUF3, BRAM, MULT, DSP, DCM, GT, GT10, IPAD_RXP, IPAD_RXN, OPAD_TXP, OPAD_TXN, PPC405, DCI0, DCI1, DCIRESET0, DCIRESET1, STARTUP, CAPTURE, ICAP, SPI_ACCESS, PMV, DNA_PORT, BSCAN, JTAGPPC, DCMCONN_S3E, BREFCLK_INT, RANDOR_OUT, MISR</td></tr>
-<tr><td>HTERM</td><td>TERM.W, TERM.E, PPC.W, PPC.E</td><td></td></tr>
-<tr><td>VTERM</td><td>TERM.S, TERM.N, PPC.S, PPC.N</td><td></td></tr>
+<tr><td>TERM_H</td><td>TERM.W, TERM.E, PPC.W, PPC.E</td><td>TERM_W, TERM_E, PPC_TERM_W, PPC_TERM_E, LLH</td></tr>
+<tr><td>TERM_V</td><td>TERM.S, TERM.N, PPC.S, PPC.N</td><td>TERM_S, TERM_N, PPC_TERM_S, PPC_TERM_N, LLV</td></tr>
 <tr><td>IOB</td><td>IOBS.V2.B.L2, IOBS.V2.B.R2, IOBS.V2.T.L2, IOBS.V2.T.R2, IOBS.V2.L.B2, IOBS.V2.L.T2, IOBS.V2.R.B2, IOBS.V2.R.T2, IOBS.V2P.B.L2, IOBS.V2P.B.R2, IOBS.V2P.B.R2.CLK, IOBS.V2P.B.L1, IOBS.V2P.B.L1.ALT, IOBS.V2P.B.R1, IOBS.V2P.B.R1.ALT, IOBS.V2P.T.L2, IOBS.V2P.T.R2, IOBS.V2P.T.R2.CLK, IOBS.V2P.T.L1, IOBS.V2P.T.L1.ALT, IOBS.V2P.T.R1, IOBS.V2P.T.R1.ALT, IOBS.V2P.L.B2, IOBS.V2P.L.T2, IOBS.V2P.R.B2, IOBS.V2P.R.T2</td><td></td></tr>
-<tr><td>CLK</td><td>CLKB.V2, CLKT.V2, CLKC, DCMCONN.BOT, DCMCONN.TOP, REG_L, REG_R, CLKB.V2P, CLKT.V2P, CLKB.V2PX, CLKT.V2PX</td><td>BUFGMUX0, BUFGMUX1, BUFGMUX2, BUFGMUX3, BUFGMUX4, BUFGMUX5, BUFGMUX6, BUFGMUX7, PCILOGIC, PCILOGICSE, VCC, GLOBALSIG_S0, GLOBALSIG_S1, GLOBALSIG_N0, GLOBALSIG_N1, GLOBALSIG_S, GLOBALSIG_N, GLOBALSIG_WE, DCMCONN, BREFCLK, CLKC, CLKC_50A, GCLKVM, GLOBALSIG_DSP</td></tr>
+<tr><td>CLK</td><td>CLKB.V2, CLKT.V2, CLKC, DCMCONN.BOT, DCMCONN.TOP, REG_L, REG_R, CLKB.V2P, CLKT.V2P, CLKB.V2PX, CLKT.V2PX</td><td>CLK_INT, BUFGMUX0, BUFGMUX1, BUFGMUX2, BUFGMUX3, BUFGMUX4, BUFGMUX5, BUFGMUX6, BUFGMUX7, PCILOGIC, PCILOGICSE, VCC, GLOBALSIG_S0, GLOBALSIG_S1, GLOBALSIG_N0, GLOBALSIG_N1, GLOBALSIG_S, GLOBALSIG_N, GLOBALSIG_WE, DCMCONN, BREFCLK, CLKC, CLKC_50A, GCLKVM, GLOBALSIG_DSP</td></tr>
 <tr><td>HROW</td><td>GCLKC, GCLKC.B, GCLKC.T</td><td>GCLKC, GCLKVC</td></tr>
 <tr><td>HCLK</td><td>GCLKH</td><td>GCLKH, GLOBALSIG</td></tr>
 <tr><td>PCI_CE</td><td></td><td>PCI_CE_N, PCI_CE_S, PCI_CE_W, PCI_CE_E, PCI_CE_CNR</td></tr>
@@ -555,7 +555,19 @@ Only <code>.0</code>, <code>.6</code>, <code>.12</code>, <code>.18</code> segmen
 <tr><th>Slot</th><th>Tile slot</th><th>Tiles</th></tr>
 </thead>
 <tbody>
+<tr><td>INT</td><td>INT</td><td>INT.CLB, INT.IOI, INT.BRAM, INT.DCM.V2, INT.CNR, INT.DCM.V2P, INT.PPC, INT.GT.CLKPAD, INT.IOI.CLK_B, INT.IOI.CLK_T</td></tr>
 <tr><td>RLL</td><td>INT</td><td>INT.CLB, INT.IOI, INT.BRAM, INT.DCM.V2, INT.CNR, INT.DCM.V2P, INT.PPC, INT.GT.CLKPAD, INT.IOI.CLK_B, INT.IOI.CLK_T</td></tr>
+<tr><td>CLK_INT</td><td>CLK</td><td>CLKB.V2, CLKT.V2, CLKB.V2P, CLKT.V2P, CLKB.V2PX, CLKT.V2PX</td></tr>
+<tr><td>TERM_W</td><td>TERM_H</td><td>TERM.W</td></tr>
+<tr><td>TERM_E</td><td>TERM_H</td><td>TERM.E</td></tr>
+<tr><td>TERM_S</td><td>TERM_V</td><td>TERM.S, TERM.N</td></tr>
+<tr><td>TERM_N</td><td>TERM_V</td><td></td></tr>
+<tr><td>PPC_TERM_W</td><td>TERM_H</td><td>PPC.W</td></tr>
+<tr><td>PPC_TERM_E</td><td>TERM_H</td><td>PPC.E</td></tr>
+<tr><td>PPC_TERM_S</td><td>TERM_V</td><td>PPC.S</td></tr>
+<tr><td>PPC_TERM_N</td><td>TERM_V</td><td>PPC.N</td></tr>
+<tr><td>LLH</td><td>TERM_H</td><td></td></tr>
+<tr><td>LLV</td><td>TERM_V</td><td></td></tr>
 <tr><td>SLICE0</td><td>BEL</td><td>CLB</td></tr>
 <tr><td>SLICE1</td><td>BEL</td><td>CLB</td></tr>
 <tr><td>SLICE2</td><td>BEL</td><td>CLB</td></tr>

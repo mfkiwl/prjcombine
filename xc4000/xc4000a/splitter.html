@@ -152,21 +152,30 @@
                         <h1 id="splitters"><a class="header" href="#splitters">Splitters</a></h1>
 <h2 id="tile-llhclb"><a class="header" href="#tile-llhclb">Tile LLH.CLB</a></h2>
 <p>Cells: 2</p>
-<h3 id="muxes"><a class="header" href="#muxes">Muxes</a></h3>
+<h3 id="bel-llh"><a class="header" href="#bel-llh">Bel LLH</a></h3>
+<h3 id="switchbox-llh"><a class="header" href="#switchbox-llh">Switchbox LLH</a></h3>
 <div class="table-wrapper"><table>
-<caption>xc4000a LLH.CLB muxes</caption>
+<caption>xc4000a LLH.CLB switchbox LLH</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>TCELL0:LONG.H0</td><td>TCELL1:LONG.H0</td></tr>
-<tr><td>TCELL0:LONG.H1</td><td>TCELL1:LONG.H1</td></tr>
-<tr><td>TCELL0:LONG.H2</td><td>TCELL1:LONG.H2</td></tr>
-<tr><td>TCELL0:LONG.H3</td><td>TCELL1:LONG.H3</td></tr>
-<tr><td>TCELL1:LONG.H0</td><td>TCELL0:LONG.H0</td></tr>
-<tr><td>TCELL1:LONG.H1</td><td>TCELL0:LONG.H1</td></tr>
-<tr><td>TCELL1:LONG.H2</td><td>TCELL0:LONG.H2</td></tr>
-<tr><td>TCELL1:LONG.H3</td><td>TCELL0:LONG.H3</td></tr>
+<tr><td rowspan="1">TCELL0_LONG.H0</td><td>TCELL1_LONG.H0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.H1</td><td>TCELL1_LONG.H1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.H2</td><td>TCELL1_LONG.H2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.H3</td><td>TCELL1_LONG.H3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.H0</td><td>TCELL0_LONG.H0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.H1</td><td>TCELL0_LONG.H1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.H2</td><td>TCELL0_LONG.H2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.H3</td><td>TCELL0_LONG.H3</td><td>bidirectional pass transistor</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bitstream"><a class="header" href="#bitstream">Bitstream</a></h3>
@@ -181,12 +190,12 @@
 <tbody>
 <tr><td>7</td>
 <td title="0.0.7">
-<a href="#tile-xc4000a-LLH.CLB-INT:BIPASS.0.LONG.H3.1.LONG.H3">~INT:BIPASS.0.LONG.H3.1.LONG.H3</a>
+<a href="#tile-xc4000a-LLH.CLB-LLH:BIPASS.0.LONG.H3.1.LONG.H3">~LLH:BIPASS.0.LONG.H3.1.LONG.H3</a>
 </td>
 </tr>
 <tr><td>6</td>
 <td title="0.0.6">
-<a href="#tile-xc4000a-LLH.CLB-INT:BIPASS.0.LONG.H2.1.LONG.H2">~INT:BIPASS.0.LONG.H2.1.LONG.H2</a>
+<a href="#tile-xc4000a-LLH.CLB-LLH:BIPASS.0.LONG.H2.1.LONG.H2">~LLH:BIPASS.0.LONG.H2.1.LONG.H2</a>
 </td>
 </tr>
 <tr><td>5</td>
@@ -220,7 +229,7 @@
 <tbody>
 <tr><td>8</td>
 <td title="1.0.8">
-<a href="#tile-xc4000a-LLH.CLB-INT:BIPASS.0.LONG.H1.1.LONG.H1">~INT:BIPASS.0.LONG.H1.1.LONG.H1</a>
+<a href="#tile-xc4000a-LLH.CLB-LLH:BIPASS.0.LONG.H1.1.LONG.H1">~LLH:BIPASS.0.LONG.H1.1.LONG.H1</a>
 </td>
 </tr>
 <tr><td>7</td>
@@ -234,7 +243,7 @@
 </tr>
 <tr><td>4</td>
 <td title="1.0.4">
-<a href="#tile-xc4000a-LLH.CLB-INT:BIPASS.0.LONG.H0.1.LONG.H0">~INT:BIPASS.0.LONG.H0.1.LONG.H0</a>
+<a href="#tile-xc4000a-LLH.CLB-LLH:BIPASS.0.LONG.H0.1.LONG.H0">~LLH:BIPASS.0.LONG.H0.1.LONG.H0</a>
 </td>
 </tr>
 <tr><td>3</td>
@@ -253,16 +262,16 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-xc4000a-LLH.CLB-INT:BIPASS.0.LONG.H0.1.LONG.H0">INT:BIPASS.0.LONG.H0.1.LONG.H0</th>
+<tr><th id="tile-xc4000a-LLH.CLB-LLH:BIPASS.0.LONG.H0.1.LONG.H0">LLH:BIPASS.0.LONG.H0.1.LONG.H0</th>
 <th>1.0.4</th>
 </tr>
-<tr><th id="tile-xc4000a-LLH.CLB-INT:BIPASS.0.LONG.H1.1.LONG.H1">INT:BIPASS.0.LONG.H1.1.LONG.H1</th>
+<tr><th id="tile-xc4000a-LLH.CLB-LLH:BIPASS.0.LONG.H1.1.LONG.H1">LLH:BIPASS.0.LONG.H1.1.LONG.H1</th>
 <th>1.0.8</th>
 </tr>
-<tr><th id="tile-xc4000a-LLH.CLB-INT:BIPASS.0.LONG.H2.1.LONG.H2">INT:BIPASS.0.LONG.H2.1.LONG.H2</th>
+<tr><th id="tile-xc4000a-LLH.CLB-LLH:BIPASS.0.LONG.H2.1.LONG.H2">LLH:BIPASS.0.LONG.H2.1.LONG.H2</th>
 <th>0.0.6</th>
 </tr>
-<tr><th id="tile-xc4000a-LLH.CLB-INT:BIPASS.0.LONG.H3.1.LONG.H3">INT:BIPASS.0.LONG.H3.1.LONG.H3</th>
+<tr><th id="tile-xc4000a-LLH.CLB-LLH:BIPASS.0.LONG.H3.1.LONG.H3">LLH:BIPASS.0.LONG.H3.1.LONG.H3</th>
 <th>0.0.7</th>
 </tr>
 </thead>
@@ -276,21 +285,30 @@ inverted
 </table></div>
 <h2 id="tile-llhclbb"><a class="header" href="#tile-llhclbb">Tile LLH.CLB.B</a></h2>
 <p>Cells: 2</p>
-<h3 id="muxes-1"><a class="header" href="#muxes-1">Muxes</a></h3>
+<h3 id="bel-llh-1"><a class="header" href="#bel-llh-1">Bel LLH</a></h3>
+<h3 id="switchbox-llh-1"><a class="header" href="#switchbox-llh-1">Switchbox LLH</a></h3>
 <div class="table-wrapper"><table>
-<caption>xc4000a LLH.CLB.B muxes</caption>
+<caption>xc4000a LLH.CLB.B switchbox LLH</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>TCELL0:LONG.H0</td><td>TCELL1:LONG.H0</td></tr>
-<tr><td>TCELL0:LONG.H1</td><td>TCELL1:LONG.H1</td></tr>
-<tr><td>TCELL0:LONG.H2</td><td>TCELL1:LONG.H2</td></tr>
-<tr><td>TCELL0:LONG.H3</td><td>TCELL1:LONG.H3</td></tr>
-<tr><td>TCELL1:LONG.H0</td><td>TCELL0:LONG.H0</td></tr>
-<tr><td>TCELL1:LONG.H1</td><td>TCELL0:LONG.H1</td></tr>
-<tr><td>TCELL1:LONG.H2</td><td>TCELL0:LONG.H2</td></tr>
-<tr><td>TCELL1:LONG.H3</td><td>TCELL0:LONG.H3</td></tr>
+<tr><td rowspan="1">TCELL0_LONG.H0</td><td>TCELL1_LONG.H0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.H1</td><td>TCELL1_LONG.H1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.H2</td><td>TCELL1_LONG.H2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.H3</td><td>TCELL1_LONG.H3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.H0</td><td>TCELL0_LONG.H0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.H1</td><td>TCELL0_LONG.H1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.H2</td><td>TCELL0_LONG.H2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.H3</td><td>TCELL0_LONG.H3</td><td>bidirectional pass transistor</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bitstream-1"><a class="header" href="#bitstream-1">Bitstream</a></h3>
@@ -305,12 +323,12 @@ inverted
 <tbody>
 <tr><td>7</td>
 <td title="0.0.7">
-<a href="#tile-xc4000a-LLH.CLB.B-INT:BIPASS.0.LONG.H3.1.LONG.H3">~INT:BIPASS.0.LONG.H3.1.LONG.H3</a>
+<a href="#tile-xc4000a-LLH.CLB.B-LLH:BIPASS.0.LONG.H3.1.LONG.H3">~LLH:BIPASS.0.LONG.H3.1.LONG.H3</a>
 </td>
 </tr>
 <tr><td>6</td>
 <td title="0.0.6">
-<a href="#tile-xc4000a-LLH.CLB.B-INT:BIPASS.0.LONG.H2.1.LONG.H2">~INT:BIPASS.0.LONG.H2.1.LONG.H2</a>
+<a href="#tile-xc4000a-LLH.CLB.B-LLH:BIPASS.0.LONG.H2.1.LONG.H2">~LLH:BIPASS.0.LONG.H2.1.LONG.H2</a>
 </td>
 </tr>
 <tr><td>5</td>
@@ -344,12 +362,12 @@ inverted
 <tbody>
 <tr><td>9</td>
 <td title="1.0.9">
-<a href="#tile-xc4000a-LLH.CLB.B-INT:BIPASS.0.LONG.H0.1.LONG.H0">~INT:BIPASS.0.LONG.H0.1.LONG.H0</a>
+<a href="#tile-xc4000a-LLH.CLB.B-LLH:BIPASS.0.LONG.H0.1.LONG.H0">~LLH:BIPASS.0.LONG.H0.1.LONG.H0</a>
 </td>
 </tr>
 <tr><td>8</td>
 <td title="1.0.8">
-<a href="#tile-xc4000a-LLH.CLB.B-INT:BIPASS.0.LONG.H1.1.LONG.H1">~INT:BIPASS.0.LONG.H1.1.LONG.H1</a>
+<a href="#tile-xc4000a-LLH.CLB.B-LLH:BIPASS.0.LONG.H1.1.LONG.H1">~LLH:BIPASS.0.LONG.H1.1.LONG.H1</a>
 </td>
 </tr>
 <tr><td>7</td>
@@ -380,16 +398,16 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-xc4000a-LLH.CLB.B-INT:BIPASS.0.LONG.H0.1.LONG.H0">INT:BIPASS.0.LONG.H0.1.LONG.H0</th>
+<tr><th id="tile-xc4000a-LLH.CLB.B-LLH:BIPASS.0.LONG.H0.1.LONG.H0">LLH:BIPASS.0.LONG.H0.1.LONG.H0</th>
 <th>1.0.9</th>
 </tr>
-<tr><th id="tile-xc4000a-LLH.CLB.B-INT:BIPASS.0.LONG.H1.1.LONG.H1">INT:BIPASS.0.LONG.H1.1.LONG.H1</th>
+<tr><th id="tile-xc4000a-LLH.CLB.B-LLH:BIPASS.0.LONG.H1.1.LONG.H1">LLH:BIPASS.0.LONG.H1.1.LONG.H1</th>
 <th>1.0.8</th>
 </tr>
-<tr><th id="tile-xc4000a-LLH.CLB.B-INT:BIPASS.0.LONG.H2.1.LONG.H2">INT:BIPASS.0.LONG.H2.1.LONG.H2</th>
+<tr><th id="tile-xc4000a-LLH.CLB.B-LLH:BIPASS.0.LONG.H2.1.LONG.H2">LLH:BIPASS.0.LONG.H2.1.LONG.H2</th>
 <th>0.0.6</th>
 </tr>
-<tr><th id="tile-xc4000a-LLH.CLB.B-INT:BIPASS.0.LONG.H3.1.LONG.H3">INT:BIPASS.0.LONG.H3.1.LONG.H3</th>
+<tr><th id="tile-xc4000a-LLH.CLB.B-LLH:BIPASS.0.LONG.H3.1.LONG.H3">LLH:BIPASS.0.LONG.H3.1.LONG.H3</th>
 <th>0.0.7</th>
 </tr>
 </thead>
@@ -403,25 +421,38 @@ inverted
 </table></div>
 <h2 id="tile-llhiob"><a class="header" href="#tile-llhiob">Tile LLH.IO.B</a></h2>
 <p>Cells: 2</p>
-<h3 id="muxes-2"><a class="header" href="#muxes-2">Muxes</a></h3>
+<h3 id="bel-llh-2"><a class="header" href="#bel-llh-2">Bel LLH</a></h3>
+<h3 id="switchbox-llh-2"><a class="header" href="#switchbox-llh-2">Switchbox LLH</a></h3>
 <div class="table-wrapper"><table>
-<caption>xc4000a LLH.IO.B muxes</caption>
+<caption>xc4000a LLH.IO.B switchbox LLH</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>TCELL0:LONG.H2</td><td>TCELL1:LONG.H2</td></tr>
-<tr><td>TCELL0:LONG.H3</td><td>TCELL1:LONG.H3</td></tr>
-<tr><td>TCELL0:LONG.IO.H0</td><td>TCELL1:LONG.IO.H0</td></tr>
-<tr><td>TCELL0:LONG.IO.H1</td><td>TCELL1:LONG.IO.H1</td></tr>
-<tr><td>TCELL0:DEC.H0</td><td>TCELL1:DEC.H0</td></tr>
-<tr><td>TCELL0:DEC.H1</td><td>TCELL1:DEC.H1</td></tr>
-<tr><td>TCELL1:LONG.H2</td><td>TCELL0:LONG.H2</td></tr>
-<tr><td>TCELL1:LONG.H3</td><td>TCELL0:LONG.H3</td></tr>
-<tr><td>TCELL1:LONG.IO.H0</td><td>TCELL0:LONG.IO.H0</td></tr>
-<tr><td>TCELL1:LONG.IO.H1</td><td>TCELL0:LONG.IO.H1</td></tr>
-<tr><td>TCELL1:DEC.H0</td><td>TCELL0:DEC.H0</td></tr>
-<tr><td>TCELL1:DEC.H1</td><td>TCELL0:DEC.H1</td></tr>
+<tr><td rowspan="1">TCELL0_LONG.H2</td><td>TCELL1_LONG.H2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.H3</td><td>TCELL1_LONG.H3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.IO.H0</td><td>TCELL1_LONG.IO.H0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.IO.H1</td><td>TCELL1_LONG.IO.H1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_DEC.H0</td><td>TCELL1_DEC.H0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_DEC.H1</td><td>TCELL1_DEC.H1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.H2</td><td>TCELL0_LONG.H2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.H3</td><td>TCELL0_LONG.H3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.IO.H0</td><td>TCELL0_LONG.IO.H0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.IO.H1</td><td>TCELL0_LONG.IO.H1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_DEC.H0</td><td>TCELL0_DEC.H0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_DEC.H1</td><td>TCELL0_DEC.H1</td><td>bidirectional pass transistor</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bitstream-2"><a class="header" href="#bitstream-2">Bitstream</a></h3>
@@ -436,32 +467,32 @@ inverted
 <tbody>
 <tr><td>7</td>
 <td title="0.0.7">
-<a href="#tile-xc4000a-LLH.IO.B-INT:BIPASS.0.LONG.H3.1.LONG.H3">~INT:BIPASS.0.LONG.H3.1.LONG.H3</a>
+<a href="#tile-xc4000a-LLH.IO.B-LLH:BIPASS.0.LONG.H3.1.LONG.H3">~LLH:BIPASS.0.LONG.H3.1.LONG.H3</a>
 </td>
 </tr>
 <tr><td>6</td>
 <td title="0.0.6">
-<a href="#tile-xc4000a-LLH.IO.B-INT:BIPASS.0.LONG.H2.1.LONG.H2">~INT:BIPASS.0.LONG.H2.1.LONG.H2</a>
+<a href="#tile-xc4000a-LLH.IO.B-LLH:BIPASS.0.LONG.H2.1.LONG.H2">~LLH:BIPASS.0.LONG.H2.1.LONG.H2</a>
 </td>
 </tr>
 <tr><td>5</td>
 <td title="0.0.5">
-<a href="#tile-xc4000a-LLH.IO.B-INT:BIPASS.0.DEC.H1.1.DEC.H1">~INT:BIPASS.0.DEC.H1.1.DEC.H1</a>
+<a href="#tile-xc4000a-LLH.IO.B-LLH:BIPASS.0.DEC.H1.1.DEC.H1">~LLH:BIPASS.0.DEC.H1.1.DEC.H1</a>
 </td>
 </tr>
 <tr><td>4</td>
 <td title="0.0.4">
-<a href="#tile-xc4000a-LLH.IO.B-INT:BIPASS.0.DEC.H0.1.DEC.H0">~INT:BIPASS.0.DEC.H0.1.DEC.H0</a>
+<a href="#tile-xc4000a-LLH.IO.B-LLH:BIPASS.0.DEC.H0.1.DEC.H0">~LLH:BIPASS.0.DEC.H0.1.DEC.H0</a>
 </td>
 </tr>
 <tr><td>3</td>
 <td title="0.0.3">
-<a href="#tile-xc4000a-LLH.IO.B-INT:BIPASS.0.LONG.IO.H0.1.LONG.IO.H0">~INT:BIPASS.0.LONG.IO.H0.1.LONG.IO.H0</a>
+<a href="#tile-xc4000a-LLH.IO.B-LLH:BIPASS.0.LONG.IO.H0.1.LONG.IO.H0">~LLH:BIPASS.0.LONG.IO.H0.1.LONG.IO.H0</a>
 </td>
 </tr>
 <tr><td>2</td>
 <td title="0.0.2">
-<a href="#tile-xc4000a-LLH.IO.B-INT:BIPASS.0.LONG.IO.H1.1.LONG.IO.H1">~INT:BIPASS.0.LONG.IO.H1.1.LONG.IO.H1</a>
+<a href="#tile-xc4000a-LLH.IO.B-LLH:BIPASS.0.LONG.IO.H1.1.LONG.IO.H1">~LLH:BIPASS.0.LONG.IO.H1.1.LONG.IO.H1</a>
 </td>
 </tr>
 <tr><td>1</td>
@@ -474,22 +505,22 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-xc4000a-LLH.IO.B-INT:BIPASS.0.DEC.H0.1.DEC.H0">INT:BIPASS.0.DEC.H0.1.DEC.H0</th>
+<tr><th id="tile-xc4000a-LLH.IO.B-LLH:BIPASS.0.DEC.H0.1.DEC.H0">LLH:BIPASS.0.DEC.H0.1.DEC.H0</th>
 <th>0.0.4</th>
 </tr>
-<tr><th id="tile-xc4000a-LLH.IO.B-INT:BIPASS.0.DEC.H1.1.DEC.H1">INT:BIPASS.0.DEC.H1.1.DEC.H1</th>
+<tr><th id="tile-xc4000a-LLH.IO.B-LLH:BIPASS.0.DEC.H1.1.DEC.H1">LLH:BIPASS.0.DEC.H1.1.DEC.H1</th>
 <th>0.0.5</th>
 </tr>
-<tr><th id="tile-xc4000a-LLH.IO.B-INT:BIPASS.0.LONG.H2.1.LONG.H2">INT:BIPASS.0.LONG.H2.1.LONG.H2</th>
+<tr><th id="tile-xc4000a-LLH.IO.B-LLH:BIPASS.0.LONG.H2.1.LONG.H2">LLH:BIPASS.0.LONG.H2.1.LONG.H2</th>
 <th>0.0.6</th>
 </tr>
-<tr><th id="tile-xc4000a-LLH.IO.B-INT:BIPASS.0.LONG.H3.1.LONG.H3">INT:BIPASS.0.LONG.H3.1.LONG.H3</th>
+<tr><th id="tile-xc4000a-LLH.IO.B-LLH:BIPASS.0.LONG.H3.1.LONG.H3">LLH:BIPASS.0.LONG.H3.1.LONG.H3</th>
 <th>0.0.7</th>
 </tr>
-<tr><th id="tile-xc4000a-LLH.IO.B-INT:BIPASS.0.LONG.IO.H0.1.LONG.IO.H0">INT:BIPASS.0.LONG.IO.H0.1.LONG.IO.H0</th>
+<tr><th id="tile-xc4000a-LLH.IO.B-LLH:BIPASS.0.LONG.IO.H0.1.LONG.IO.H0">LLH:BIPASS.0.LONG.IO.H0.1.LONG.IO.H0</th>
 <th>0.0.3</th>
 </tr>
-<tr><th id="tile-xc4000a-LLH.IO.B-INT:BIPASS.0.LONG.IO.H1.1.LONG.IO.H1">INT:BIPASS.0.LONG.IO.H1.1.LONG.IO.H1</th>
+<tr><th id="tile-xc4000a-LLH.IO.B-LLH:BIPASS.0.LONG.IO.H1.1.LONG.IO.H1">LLH:BIPASS.0.LONG.IO.H1.1.LONG.IO.H1</th>
 <th>0.0.2</th>
 </tr>
 </thead>
@@ -503,25 +534,38 @@ inverted
 </table></div>
 <h2 id="tile-llhiot"><a class="header" href="#tile-llhiot">Tile LLH.IO.T</a></h2>
 <p>Cells: 2</p>
-<h3 id="muxes-3"><a class="header" href="#muxes-3">Muxes</a></h3>
+<h3 id="bel-llh-3"><a class="header" href="#bel-llh-3">Bel LLH</a></h3>
+<h3 id="switchbox-llh-3"><a class="header" href="#switchbox-llh-3">Switchbox LLH</a></h3>
 <div class="table-wrapper"><table>
-<caption>xc4000a LLH.IO.T muxes</caption>
+<caption>xc4000a LLH.IO.T switchbox LLH</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>TCELL0:LONG.H0</td><td>TCELL1:LONG.H0</td></tr>
-<tr><td>TCELL0:LONG.H1</td><td>TCELL1:LONG.H1</td></tr>
-<tr><td>TCELL0:LONG.IO.H0</td><td>TCELL1:LONG.IO.H0</td></tr>
-<tr><td>TCELL0:LONG.IO.H1</td><td>TCELL1:LONG.IO.H1</td></tr>
-<tr><td>TCELL0:DEC.H0</td><td>TCELL1:DEC.H0</td></tr>
-<tr><td>TCELL0:DEC.H1</td><td>TCELL1:DEC.H1</td></tr>
-<tr><td>TCELL1:LONG.H0</td><td>TCELL0:LONG.H0</td></tr>
-<tr><td>TCELL1:LONG.H1</td><td>TCELL0:LONG.H1</td></tr>
-<tr><td>TCELL1:LONG.IO.H0</td><td>TCELL0:LONG.IO.H0</td></tr>
-<tr><td>TCELL1:LONG.IO.H1</td><td>TCELL0:LONG.IO.H1</td></tr>
-<tr><td>TCELL1:DEC.H0</td><td>TCELL0:DEC.H0</td></tr>
-<tr><td>TCELL1:DEC.H1</td><td>TCELL0:DEC.H1</td></tr>
+<tr><td rowspan="1">TCELL0_LONG.H0</td><td>TCELL1_LONG.H0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.H1</td><td>TCELL1_LONG.H1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.IO.H0</td><td>TCELL1_LONG.IO.H0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.IO.H1</td><td>TCELL1_LONG.IO.H1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_DEC.H0</td><td>TCELL1_DEC.H0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_DEC.H1</td><td>TCELL1_DEC.H1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.H0</td><td>TCELL0_LONG.H0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.H1</td><td>TCELL0_LONG.H1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.IO.H0</td><td>TCELL0_LONG.IO.H0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.IO.H1</td><td>TCELL0_LONG.IO.H1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_DEC.H0</td><td>TCELL0_DEC.H0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_DEC.H1</td><td>TCELL0_DEC.H1</td><td>bidirectional pass transistor</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bitstream-3"><a class="header" href="#bitstream-3">Bitstream</a></h3>
@@ -536,22 +580,22 @@ inverted
 <tbody>
 <tr><td>3</td>
 <td title="0.0.3">
-<a href="#tile-xc4000a-LLH.IO.T-INT:BIPASS.0.LONG.IO.H1.1.LONG.IO.H1">~INT:BIPASS.0.LONG.IO.H1.1.LONG.IO.H1</a>
+<a href="#tile-xc4000a-LLH.IO.T-LLH:BIPASS.0.LONG.IO.H1.1.LONG.IO.H1">~LLH:BIPASS.0.LONG.IO.H1.1.LONG.IO.H1</a>
 </td>
 </tr>
 <tr><td>2</td>
 <td title="0.0.2">
-<a href="#tile-xc4000a-LLH.IO.T-INT:BIPASS.0.LONG.IO.H0.1.LONG.IO.H0">~INT:BIPASS.0.LONG.IO.H0.1.LONG.IO.H0</a>
+<a href="#tile-xc4000a-LLH.IO.T-LLH:BIPASS.0.LONG.IO.H0.1.LONG.IO.H0">~LLH:BIPASS.0.LONG.IO.H0.1.LONG.IO.H0</a>
 </td>
 </tr>
 <tr><td>1</td>
 <td title="0.0.1">
-<a href="#tile-xc4000a-LLH.IO.T-INT:BIPASS.0.DEC.H1.1.DEC.H1">~INT:BIPASS.0.DEC.H1.1.DEC.H1</a>
+<a href="#tile-xc4000a-LLH.IO.T-LLH:BIPASS.0.DEC.H1.1.DEC.H1">~LLH:BIPASS.0.DEC.H1.1.DEC.H1</a>
 </td>
 </tr>
 <tr><td>0</td>
 <td title="0.0.0">
-<a href="#tile-xc4000a-LLH.IO.T-INT:BIPASS.0.DEC.H0.1.DEC.H0">~INT:BIPASS.0.DEC.H0.1.DEC.H0</a>
+<a href="#tile-xc4000a-LLH.IO.T-LLH:BIPASS.0.DEC.H0.1.DEC.H0">~LLH:BIPASS.0.DEC.H0.1.DEC.H0</a>
 </td>
 </tr>
 </tbody>
@@ -567,7 +611,7 @@ inverted
 <tbody>
 <tr><td>8</td>
 <td title="1.0.8">
-<a href="#tile-xc4000a-LLH.IO.T-INT:BIPASS.0.LONG.H1.1.LONG.H1">~INT:BIPASS.0.LONG.H1.1.LONG.H1</a>
+<a href="#tile-xc4000a-LLH.IO.T-LLH:BIPASS.0.LONG.H1.1.LONG.H1">~LLH:BIPASS.0.LONG.H1.1.LONG.H1</a>
 </td>
 </tr>
 <tr><td>7</td>
@@ -581,7 +625,7 @@ inverted
 </tr>
 <tr><td>4</td>
 <td title="1.0.4">
-<a href="#tile-xc4000a-LLH.IO.T-INT:BIPASS.0.LONG.H0.1.LONG.H0">~INT:BIPASS.0.LONG.H0.1.LONG.H0</a>
+<a href="#tile-xc4000a-LLH.IO.T-LLH:BIPASS.0.LONG.H0.1.LONG.H0">~LLH:BIPASS.0.LONG.H0.1.LONG.H0</a>
 </td>
 </tr>
 <tr><td>3</td>
@@ -600,22 +644,22 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-xc4000a-LLH.IO.T-INT:BIPASS.0.DEC.H0.1.DEC.H0">INT:BIPASS.0.DEC.H0.1.DEC.H0</th>
+<tr><th id="tile-xc4000a-LLH.IO.T-LLH:BIPASS.0.DEC.H0.1.DEC.H0">LLH:BIPASS.0.DEC.H0.1.DEC.H0</th>
 <th>0.0.0</th>
 </tr>
-<tr><th id="tile-xc4000a-LLH.IO.T-INT:BIPASS.0.DEC.H1.1.DEC.H1">INT:BIPASS.0.DEC.H1.1.DEC.H1</th>
+<tr><th id="tile-xc4000a-LLH.IO.T-LLH:BIPASS.0.DEC.H1.1.DEC.H1">LLH:BIPASS.0.DEC.H1.1.DEC.H1</th>
 <th>0.0.1</th>
 </tr>
-<tr><th id="tile-xc4000a-LLH.IO.T-INT:BIPASS.0.LONG.H0.1.LONG.H0">INT:BIPASS.0.LONG.H0.1.LONG.H0</th>
+<tr><th id="tile-xc4000a-LLH.IO.T-LLH:BIPASS.0.LONG.H0.1.LONG.H0">LLH:BIPASS.0.LONG.H0.1.LONG.H0</th>
 <th>1.0.4</th>
 </tr>
-<tr><th id="tile-xc4000a-LLH.IO.T-INT:BIPASS.0.LONG.H1.1.LONG.H1">INT:BIPASS.0.LONG.H1.1.LONG.H1</th>
+<tr><th id="tile-xc4000a-LLH.IO.T-LLH:BIPASS.0.LONG.H1.1.LONG.H1">LLH:BIPASS.0.LONG.H1.1.LONG.H1</th>
 <th>1.0.8</th>
 </tr>
-<tr><th id="tile-xc4000a-LLH.IO.T-INT:BIPASS.0.LONG.IO.H0.1.LONG.IO.H0">INT:BIPASS.0.LONG.IO.H0.1.LONG.IO.H0</th>
+<tr><th id="tile-xc4000a-LLH.IO.T-LLH:BIPASS.0.LONG.IO.H0.1.LONG.IO.H0">LLH:BIPASS.0.LONG.IO.H0.1.LONG.IO.H0</th>
 <th>0.0.2</th>
 </tr>
-<tr><th id="tile-xc4000a-LLH.IO.T-INT:BIPASS.0.LONG.IO.H1.1.LONG.IO.H1">INT:BIPASS.0.LONG.IO.H1.1.LONG.IO.H1</th>
+<tr><th id="tile-xc4000a-LLH.IO.T-LLH:BIPASS.0.LONG.IO.H1.1.LONG.IO.H1">LLH:BIPASS.0.LONG.IO.H1.1.LONG.IO.H1</th>
 <th>0.0.3</th>
 </tr>
 </thead>
@@ -629,21 +673,30 @@ inverted
 </table></div>
 <h2 id="tile-llvclb"><a class="header" href="#tile-llvclb">Tile LLV.CLB</a></h2>
 <p>Cells: 2</p>
-<h3 id="muxes-4"><a class="header" href="#muxes-4">Muxes</a></h3>
+<h3 id="bel-llv"><a class="header" href="#bel-llv">Bel LLV</a></h3>
+<h3 id="switchbox-llv"><a class="header" href="#switchbox-llv">Switchbox LLV</a></h3>
 <div class="table-wrapper"><table>
-<caption>xc4000a LLV.CLB muxes</caption>
+<caption>xc4000a LLV.CLB switchbox LLV</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>TCELL0:LONG.V0</td><td>TCELL1:LONG.V0</td></tr>
-<tr><td>TCELL0:LONG.V1</td><td>TCELL1:LONG.V1</td></tr>
-<tr><td>TCELL0:LONG.V2</td><td>TCELL1:LONG.V2</td></tr>
-<tr><td>TCELL0:LONG.V3</td><td>TCELL1:LONG.V3</td></tr>
-<tr><td>TCELL1:LONG.V0</td><td>TCELL0:LONG.V0</td></tr>
-<tr><td>TCELL1:LONG.V1</td><td>TCELL0:LONG.V1</td></tr>
-<tr><td>TCELL1:LONG.V2</td><td>TCELL0:LONG.V2</td></tr>
-<tr><td>TCELL1:LONG.V3</td><td>TCELL0:LONG.V3</td></tr>
+<tr><td rowspan="1">TCELL0_LONG.V0</td><td>TCELL1_LONG.V0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.V1</td><td>TCELL1_LONG.V1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.V2</td><td>TCELL1_LONG.V2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.V3</td><td>TCELL1_LONG.V3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.V0</td><td>TCELL0_LONG.V0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.V1</td><td>TCELL0_LONG.V1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.V2</td><td>TCELL0_LONG.V2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.V3</td><td>TCELL0_LONG.V3</td><td>bidirectional pass transistor</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-clkh"><a class="header" href="#bel-clkh">Bel CLKH</a></h3>
@@ -711,16 +764,16 @@ inverted
 <tbody>
 <tr><td>0</td>
 <td title="0.27.0">
-<a href="#tile-xc4000a-LLV.CLB-INT:BIPASS.0.LONG.V3.1.LONG.V3">~INT:BIPASS.0.LONG.V3.1.LONG.V3</a>
+<a href="#tile-xc4000a-LLV.CLB-LLV:BIPASS.0.LONG.V3.1.LONG.V3">~LLV:BIPASS.0.LONG.V3.1.LONG.V3</a>
 </td>
 <td title="0.26.0">
-<a href="#tile-xc4000a-LLV.CLB-INT:BIPASS.0.LONG.V0.1.LONG.V0">~INT:BIPASS.0.LONG.V0.1.LONG.V0</a>
+<a href="#tile-xc4000a-LLV.CLB-LLV:BIPASS.0.LONG.V0.1.LONG.V0">~LLV:BIPASS.0.LONG.V0.1.LONG.V0</a>
 </td>
 <td title="0.25.0">
-<a href="#tile-xc4000a-LLV.CLB-INT:BIPASS.0.LONG.V1.1.LONG.V1">~INT:BIPASS.0.LONG.V1.1.LONG.V1</a>
+<a href="#tile-xc4000a-LLV.CLB-LLV:BIPASS.0.LONG.V1.1.LONG.V1">~LLV:BIPASS.0.LONG.V1.1.LONG.V1</a>
 </td>
 <td title="0.24.0">
-<a href="#tile-xc4000a-LLV.CLB-INT:BIPASS.0.LONG.V2.1.LONG.V2">~INT:BIPASS.0.LONG.V2.1.LONG.V2</a>
+<a href="#tile-xc4000a-LLV.CLB-LLV:BIPASS.0.LONG.V2.1.LONG.V2">~LLV:BIPASS.0.LONG.V2.1.LONG.V2</a>
 </td>
 <td>-</td>
 <td title="0.22.0">
@@ -1011,16 +1064,16 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-xc4000a-LLV.CLB-INT:BIPASS.0.LONG.V0.1.LONG.V0">INT:BIPASS.0.LONG.V0.1.LONG.V0</th>
+<tr><th id="tile-xc4000a-LLV.CLB-LLV:BIPASS.0.LONG.V0.1.LONG.V0">LLV:BIPASS.0.LONG.V0.1.LONG.V0</th>
 <th>0.26.0</th>
 </tr>
-<tr><th id="tile-xc4000a-LLV.CLB-INT:BIPASS.0.LONG.V1.1.LONG.V1">INT:BIPASS.0.LONG.V1.1.LONG.V1</th>
+<tr><th id="tile-xc4000a-LLV.CLB-LLV:BIPASS.0.LONG.V1.1.LONG.V1">LLV:BIPASS.0.LONG.V1.1.LONG.V1</th>
 <th>0.25.0</th>
 </tr>
-<tr><th id="tile-xc4000a-LLV.CLB-INT:BIPASS.0.LONG.V2.1.LONG.V2">INT:BIPASS.0.LONG.V2.1.LONG.V2</th>
+<tr><th id="tile-xc4000a-LLV.CLB-LLV:BIPASS.0.LONG.V2.1.LONG.V2">LLV:BIPASS.0.LONG.V2.1.LONG.V2</th>
 <th>0.24.0</th>
 </tr>
-<tr><th id="tile-xc4000a-LLV.CLB-INT:BIPASS.0.LONG.V3.1.LONG.V3">INT:BIPASS.0.LONG.V3.1.LONG.V3</th>
+<tr><th id="tile-xc4000a-LLV.CLB-LLV:BIPASS.0.LONG.V3.1.LONG.V3">LLV:BIPASS.0.LONG.V3.1.LONG.V3</th>
 <th>0.27.0</th>
 </tr>
 </thead>
@@ -1034,21 +1087,30 @@ inverted
 </table></div>
 <h2 id="tile-llviol"><a class="header" href="#tile-llviol">Tile LLV.IO.L</a></h2>
 <p>Cells: 2</p>
-<h3 id="muxes-5"><a class="header" href="#muxes-5">Muxes</a></h3>
+<h3 id="bel-llv-1"><a class="header" href="#bel-llv-1">Bel LLV</a></h3>
+<h3 id="switchbox-llv-1"><a class="header" href="#switchbox-llv-1">Switchbox LLV</a></h3>
 <div class="table-wrapper"><table>
-<caption>xc4000a LLV.IO.L muxes</caption>
+<caption>xc4000a LLV.IO.L switchbox LLV</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>TCELL0:LONG.IO.V0</td><td>TCELL1:LONG.IO.V0</td></tr>
-<tr><td>TCELL0:LONG.IO.V1</td><td>TCELL1:LONG.IO.V1</td></tr>
-<tr><td>TCELL0:DEC.V0</td><td>TCELL1:DEC.V0</td></tr>
-<tr><td>TCELL0:DEC.V1</td><td>TCELL1:DEC.V1</td></tr>
-<tr><td>TCELL1:LONG.IO.V0</td><td>TCELL0:LONG.IO.V0</td></tr>
-<tr><td>TCELL1:LONG.IO.V1</td><td>TCELL0:LONG.IO.V1</td></tr>
-<tr><td>TCELL1:DEC.V0</td><td>TCELL0:DEC.V0</td></tr>
-<tr><td>TCELL1:DEC.V1</td><td>TCELL0:DEC.V1</td></tr>
+<tr><td rowspan="1">TCELL0_LONG.IO.V0</td><td>TCELL1_LONG.IO.V0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.IO.V1</td><td>TCELL1_LONG.IO.V1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_DEC.V0</td><td>TCELL1_DEC.V0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_DEC.V1</td><td>TCELL1_DEC.V1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.IO.V0</td><td>TCELL0_LONG.IO.V0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.IO.V1</td><td>TCELL0_LONG.IO.V1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_DEC.V0</td><td>TCELL0_DEC.V0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_DEC.V1</td><td>TCELL0_DEC.V1</td><td>bidirectional pass transistor</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-clkh-1"><a class="header" href="#bel-clkh-1">Bel CLKH</a></h3>
@@ -1124,7 +1186,7 @@ inverted
 <a href="#tile-xc4000a-LLV.IO.L-CLKH:MUX.O3">CLKH:MUX.O3[3]</a>
 </td>
 <td title="0.15.0">
-<a href="#tile-xc4000a-LLV.IO.L-INT:BIPASS.0.DEC.V1.1.DEC.V1">~INT:BIPASS.0.DEC.V1.1.DEC.V1</a>
+<a href="#tile-xc4000a-LLV.IO.L-LLV:BIPASS.0.DEC.V1.1.DEC.V1">~LLV:BIPASS.0.DEC.V1.1.DEC.V1</a>
 </td>
 <td title="0.14.0">
 <a href="#tile-xc4000a-LLV.IO.L-CLKH:MUX.O1">CLKH:MUX.O1[4]</a>
@@ -1142,7 +1204,7 @@ inverted
 <a href="#tile-xc4000a-LLV.IO.L-CLKH:MUX.O1">CLKH:MUX.O1[3]</a>
 </td>
 <td title="0.9.0">
-<a href="#tile-xc4000a-LLV.IO.L-INT:BIPASS.0.LONG.IO.V1.1.LONG.IO.V1">~INT:BIPASS.0.LONG.IO.V1.1.LONG.IO.V1</a>
+<a href="#tile-xc4000a-LLV.IO.L-LLV:BIPASS.0.LONG.IO.V1.1.LONG.IO.V1">~LLV:BIPASS.0.LONG.IO.V1.1.LONG.IO.V1</a>
 </td>
 <td title="0.8.0">
 <a href="#tile-xc4000a-LLV.IO.L-CLKH:MUX.O0">CLKH:MUX.O0[4]</a>
@@ -1160,7 +1222,7 @@ inverted
 <a href="#tile-xc4000a-LLV.IO.L-CLKH:MUX.O0">CLKH:MUX.O0[3]</a>
 </td>
 <td title="0.3.0">
-<a href="#tile-xc4000a-LLV.IO.L-INT:BIPASS.0.LONG.IO.V0.1.LONG.IO.V0">~INT:BIPASS.0.LONG.IO.V0.1.LONG.IO.V0</a>
+<a href="#tile-xc4000a-LLV.IO.L-LLV:BIPASS.0.LONG.IO.V0.1.LONG.IO.V0">~LLV:BIPASS.0.LONG.IO.V0.1.LONG.IO.V0</a>
 </td>
 <td title="0.2.0">
 <a href="#tile-xc4000a-LLV.IO.L-CLKH:MUX.O2">CLKH:MUX.O2[4]</a>
@@ -1221,7 +1283,7 @@ inverted
 <a href="#tile-xc4000a-LLV.IO.L-CLKH:MUX.O2">CLKH:MUX.O2[3]</a>
 </td>
 <td title="1.28.0">
-<a href="#tile-xc4000a-LLV.IO.L-INT:BIPASS.0.DEC.V0.1.DEC.V0">~INT:BIPASS.0.DEC.V0.1.DEC.V0</a>
+<a href="#tile-xc4000a-LLV.IO.L-LLV:BIPASS.0.DEC.V0.1.DEC.V0">~LLV:BIPASS.0.DEC.V0.1.DEC.V0</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -1476,16 +1538,16 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-xc4000a-LLV.IO.L-INT:BIPASS.0.DEC.V0.1.DEC.V0">INT:BIPASS.0.DEC.V0.1.DEC.V0</th>
+<tr><th id="tile-xc4000a-LLV.IO.L-LLV:BIPASS.0.DEC.V0.1.DEC.V0">LLV:BIPASS.0.DEC.V0.1.DEC.V0</th>
 <th>1.28.0</th>
 </tr>
-<tr><th id="tile-xc4000a-LLV.IO.L-INT:BIPASS.0.DEC.V1.1.DEC.V1">INT:BIPASS.0.DEC.V1.1.DEC.V1</th>
+<tr><th id="tile-xc4000a-LLV.IO.L-LLV:BIPASS.0.DEC.V1.1.DEC.V1">LLV:BIPASS.0.DEC.V1.1.DEC.V1</th>
 <th>0.15.0</th>
 </tr>
-<tr><th id="tile-xc4000a-LLV.IO.L-INT:BIPASS.0.LONG.IO.V0.1.LONG.IO.V0">INT:BIPASS.0.LONG.IO.V0.1.LONG.IO.V0</th>
+<tr><th id="tile-xc4000a-LLV.IO.L-LLV:BIPASS.0.LONG.IO.V0.1.LONG.IO.V0">LLV:BIPASS.0.LONG.IO.V0.1.LONG.IO.V0</th>
 <th>0.3.0</th>
 </tr>
-<tr><th id="tile-xc4000a-LLV.IO.L-INT:BIPASS.0.LONG.IO.V1.1.LONG.IO.V1">INT:BIPASS.0.LONG.IO.V1.1.LONG.IO.V1</th>
+<tr><th id="tile-xc4000a-LLV.IO.L-LLV:BIPASS.0.LONG.IO.V1.1.LONG.IO.V1">LLV:BIPASS.0.LONG.IO.V1.1.LONG.IO.V1</th>
 <th>0.9.0</th>
 </tr>
 </thead>
@@ -1499,29 +1561,46 @@ inverted
 </table></div>
 <h2 id="tile-llvior"><a class="header" href="#tile-llvior">Tile LLV.IO.R</a></h2>
 <p>Cells: 2</p>
-<h3 id="muxes-6"><a class="header" href="#muxes-6">Muxes</a></h3>
+<h3 id="bel-llv-2"><a class="header" href="#bel-llv-2">Bel LLV</a></h3>
+<h3 id="switchbox-llv-2"><a class="header" href="#switchbox-llv-2">Switchbox LLV</a></h3>
 <div class="table-wrapper"><table>
-<caption>xc4000a LLV.IO.R muxes</caption>
+<caption>xc4000a LLV.IO.R switchbox LLV</caption>
 <thead>
-<tr><th>Destination</th><th>Sources</th></tr>
+<tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
 <tbody>
-<tr><td>TCELL0:LONG.V0</td><td>TCELL1:LONG.V0</td></tr>
-<tr><td>TCELL0:LONG.V1</td><td>TCELL1:LONG.V1</td></tr>
-<tr><td>TCELL0:LONG.V2</td><td>TCELL1:LONG.V2</td></tr>
-<tr><td>TCELL0:LONG.V3</td><td>TCELL1:LONG.V3</td></tr>
-<tr><td>TCELL0:LONG.IO.V0</td><td>TCELL1:LONG.IO.V0</td></tr>
-<tr><td>TCELL0:LONG.IO.V1</td><td>TCELL1:LONG.IO.V1</td></tr>
-<tr><td>TCELL0:DEC.V0</td><td>TCELL1:DEC.V0</td></tr>
-<tr><td>TCELL0:DEC.V1</td><td>TCELL1:DEC.V1</td></tr>
-<tr><td>TCELL1:LONG.V0</td><td>TCELL0:LONG.V0</td></tr>
-<tr><td>TCELL1:LONG.V1</td><td>TCELL0:LONG.V1</td></tr>
-<tr><td>TCELL1:LONG.V2</td><td>TCELL0:LONG.V2</td></tr>
-<tr><td>TCELL1:LONG.V3</td><td>TCELL0:LONG.V3</td></tr>
-<tr><td>TCELL1:LONG.IO.V0</td><td>TCELL0:LONG.IO.V0</td></tr>
-<tr><td>TCELL1:LONG.IO.V1</td><td>TCELL0:LONG.IO.V1</td></tr>
-<tr><td>TCELL1:DEC.V0</td><td>TCELL0:DEC.V0</td></tr>
-<tr><td>TCELL1:DEC.V1</td><td>TCELL0:DEC.V1</td></tr>
+<tr><td rowspan="1">TCELL0_LONG.V0</td><td>TCELL1_LONG.V0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.V1</td><td>TCELL1_LONG.V1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.V2</td><td>TCELL1_LONG.V2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.V3</td><td>TCELL1_LONG.V3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.IO.V0</td><td>TCELL1_LONG.IO.V0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_LONG.IO.V1</td><td>TCELL1_LONG.IO.V1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_DEC.V0</td><td>TCELL1_DEC.V0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL0_DEC.V1</td><td>TCELL1_DEC.V1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.V0</td><td>TCELL0_LONG.V0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.V1</td><td>TCELL0_LONG.V1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.V2</td><td>TCELL0_LONG.V2</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.V3</td><td>TCELL0_LONG.V3</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.IO.V0</td><td>TCELL0_LONG.IO.V0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_LONG.IO.V1</td><td>TCELL0_LONG.IO.V1</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_DEC.V0</td><td>TCELL0_DEC.V0</td><td>bidirectional pass transistor</td>
+</tr>
+<tr><td rowspan="1">TCELL1_DEC.V1</td><td>TCELL0_DEC.V1</td><td>bidirectional pass transistor</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bel-clkh-2"><a class="header" href="#bel-clkh-2">Bel CLKH</a></h3>
@@ -1593,19 +1672,19 @@ inverted
 <a href="#tile-xc4000a-LLV.IO.R-MISC:TLC">~MISC:TLC</a>
 </td>
 <td title="0.27.0">
-<a href="#tile-xc4000a-LLV.IO.R-INT:BIPASS.0.LONG.V3.1.LONG.V3">~INT:BIPASS.0.LONG.V3.1.LONG.V3</a>
+<a href="#tile-xc4000a-LLV.IO.R-LLV:BIPASS.0.LONG.V3.1.LONG.V3">~LLV:BIPASS.0.LONG.V3.1.LONG.V3</a>
 </td>
 <td title="0.26.0">
-<a href="#tile-xc4000a-LLV.IO.R-INT:BIPASS.0.LONG.V0.1.LONG.V0">~INT:BIPASS.0.LONG.V0.1.LONG.V0</a>
+<a href="#tile-xc4000a-LLV.IO.R-LLV:BIPASS.0.LONG.V0.1.LONG.V0">~LLV:BIPASS.0.LONG.V0.1.LONG.V0</a>
 </td>
 <td title="0.25.0">
-<a href="#tile-xc4000a-LLV.IO.R-INT:BIPASS.0.LONG.V1.1.LONG.V1">~INT:BIPASS.0.LONG.V1.1.LONG.V1</a>
+<a href="#tile-xc4000a-LLV.IO.R-LLV:BIPASS.0.LONG.V1.1.LONG.V1">~LLV:BIPASS.0.LONG.V1.1.LONG.V1</a>
 </td>
 <td title="0.24.0">
-<a href="#tile-xc4000a-LLV.IO.R-INT:BIPASS.0.LONG.V2.1.LONG.V2">~INT:BIPASS.0.LONG.V2.1.LONG.V2</a>
+<a href="#tile-xc4000a-LLV.IO.R-LLV:BIPASS.0.LONG.V2.1.LONG.V2">~LLV:BIPASS.0.LONG.V2.1.LONG.V2</a>
 </td>
 <td title="0.23.0">
-<a href="#tile-xc4000a-LLV.IO.R-INT:BIPASS.0.DEC.V1.1.DEC.V1">~INT:BIPASS.0.DEC.V1.1.DEC.V1</a>
+<a href="#tile-xc4000a-LLV.IO.R-LLV:BIPASS.0.DEC.V1.1.DEC.V1">~LLV:BIPASS.0.DEC.V1.1.DEC.V1</a>
 </td>
 <td title="0.22.0">
 <a href="#tile-xc4000a-LLV.IO.R-CLKH:MUX.O2">CLKH:MUX.O2[3]</a>
@@ -1623,7 +1702,7 @@ inverted
 <a href="#tile-xc4000a-LLV.IO.R-CLKH:MUX.O2">CLKH:MUX.O2[4]</a>
 </td>
 <td title="0.17.0">
-<a href="#tile-xc4000a-LLV.IO.R-INT:BIPASS.0.LONG.IO.V0.1.LONG.IO.V0">~INT:BIPASS.0.LONG.IO.V0.1.LONG.IO.V0</a>
+<a href="#tile-xc4000a-LLV.IO.R-LLV:BIPASS.0.LONG.IO.V0.1.LONG.IO.V0">~LLV:BIPASS.0.LONG.IO.V0.1.LONG.IO.V0</a>
 </td>
 <td title="0.16.0">
 <a href="#tile-xc4000a-LLV.IO.R-CLKH:MUX.O0">CLKH:MUX.O0[3]</a>
@@ -1641,7 +1720,7 @@ inverted
 <a href="#tile-xc4000a-LLV.IO.R-CLKH:MUX.O0">CLKH:MUX.O0[4]</a>
 </td>
 <td title="0.11.0">
-<a href="#tile-xc4000a-LLV.IO.R-INT:BIPASS.0.LONG.IO.V1.1.LONG.IO.V1">~INT:BIPASS.0.LONG.IO.V1.1.LONG.IO.V1</a>
+<a href="#tile-xc4000a-LLV.IO.R-LLV:BIPASS.0.LONG.IO.V1.1.LONG.IO.V1">~LLV:BIPASS.0.LONG.IO.V1.1.LONG.IO.V1</a>
 </td>
 <td title="0.10.0">
 <a href="#tile-xc4000a-LLV.IO.R-CLKH:MUX.O1">CLKH:MUX.O1[3]</a>
@@ -1659,7 +1738,7 @@ inverted
 <a href="#tile-xc4000a-LLV.IO.R-CLKH:MUX.O1">CLKH:MUX.O1[4]</a>
 </td>
 <td title="0.5.0">
-<a href="#tile-xc4000a-LLV.IO.R-INT:BIPASS.0.DEC.V0.1.DEC.V0">~INT:BIPASS.0.DEC.V0.1.DEC.V0</a>
+<a href="#tile-xc4000a-LLV.IO.R-LLV:BIPASS.0.DEC.V0.1.DEC.V0">~LLV:BIPASS.0.DEC.V0.1.DEC.V0</a>
 </td>
 <td title="0.4.0">
 <a href="#tile-xc4000a-LLV.IO.R-CLKH:MUX.O3">CLKH:MUX.O3[3]</a>
@@ -1901,28 +1980,28 @@ inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-xc4000a-LLV.IO.R-INT:BIPASS.0.DEC.V0.1.DEC.V0">INT:BIPASS.0.DEC.V0.1.DEC.V0</th>
+<tr><th id="tile-xc4000a-LLV.IO.R-LLV:BIPASS.0.DEC.V0.1.DEC.V0">LLV:BIPASS.0.DEC.V0.1.DEC.V0</th>
 <th>0.5.0</th>
 </tr>
-<tr><th id="tile-xc4000a-LLV.IO.R-INT:BIPASS.0.DEC.V1.1.DEC.V1">INT:BIPASS.0.DEC.V1.1.DEC.V1</th>
+<tr><th id="tile-xc4000a-LLV.IO.R-LLV:BIPASS.0.DEC.V1.1.DEC.V1">LLV:BIPASS.0.DEC.V1.1.DEC.V1</th>
 <th>0.23.0</th>
 </tr>
-<tr><th id="tile-xc4000a-LLV.IO.R-INT:BIPASS.0.LONG.IO.V0.1.LONG.IO.V0">INT:BIPASS.0.LONG.IO.V0.1.LONG.IO.V0</th>
+<tr><th id="tile-xc4000a-LLV.IO.R-LLV:BIPASS.0.LONG.IO.V0.1.LONG.IO.V0">LLV:BIPASS.0.LONG.IO.V0.1.LONG.IO.V0</th>
 <th>0.17.0</th>
 </tr>
-<tr><th id="tile-xc4000a-LLV.IO.R-INT:BIPASS.0.LONG.IO.V1.1.LONG.IO.V1">INT:BIPASS.0.LONG.IO.V1.1.LONG.IO.V1</th>
+<tr><th id="tile-xc4000a-LLV.IO.R-LLV:BIPASS.0.LONG.IO.V1.1.LONG.IO.V1">LLV:BIPASS.0.LONG.IO.V1.1.LONG.IO.V1</th>
 <th>0.11.0</th>
 </tr>
-<tr><th id="tile-xc4000a-LLV.IO.R-INT:BIPASS.0.LONG.V0.1.LONG.V0">INT:BIPASS.0.LONG.V0.1.LONG.V0</th>
+<tr><th id="tile-xc4000a-LLV.IO.R-LLV:BIPASS.0.LONG.V0.1.LONG.V0">LLV:BIPASS.0.LONG.V0.1.LONG.V0</th>
 <th>0.26.0</th>
 </tr>
-<tr><th id="tile-xc4000a-LLV.IO.R-INT:BIPASS.0.LONG.V1.1.LONG.V1">INT:BIPASS.0.LONG.V1.1.LONG.V1</th>
+<tr><th id="tile-xc4000a-LLV.IO.R-LLV:BIPASS.0.LONG.V1.1.LONG.V1">LLV:BIPASS.0.LONG.V1.1.LONG.V1</th>
 <th>0.25.0</th>
 </tr>
-<tr><th id="tile-xc4000a-LLV.IO.R-INT:BIPASS.0.LONG.V2.1.LONG.V2">INT:BIPASS.0.LONG.V2.1.LONG.V2</th>
+<tr><th id="tile-xc4000a-LLV.IO.R-LLV:BIPASS.0.LONG.V2.1.LONG.V2">LLV:BIPASS.0.LONG.V2.1.LONG.V2</th>
 <th>0.24.0</th>
 </tr>
-<tr><th id="tile-xc4000a-LLV.IO.R-INT:BIPASS.0.LONG.V3.1.LONG.V3">INT:BIPASS.0.LONG.V3.1.LONG.V3</th>
+<tr><th id="tile-xc4000a-LLV.IO.R-LLV:BIPASS.0.LONG.V3.1.LONG.V3">LLV:BIPASS.0.LONG.V3.1.LONG.V3</th>
 <th>0.27.0</th>
 </tr>
 <tr><th id="tile-xc4000a-LLV.IO.R-MISC:TLC">MISC:TLC</th>
