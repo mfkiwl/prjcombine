@@ -91,10 +91,13 @@
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -159,10 +162,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL0:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL0:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL0:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL0:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL0:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL0:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL0:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL0:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob1"><a class="header" href="#bel-hriob1">Bel HRIOB1</a></h3>
@@ -172,10 +175,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL1:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL1:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL1:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL1:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL1:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL1:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL1:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL1:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob2"><a class="header" href="#bel-hriob2">Bel HRIOB2</a></h3>
@@ -185,10 +188,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL2:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL2:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL2:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL2:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL2:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL2:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL2:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL2:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob3"><a class="header" href="#bel-hriob3">Bel HRIOB3</a></h3>
@@ -198,10 +201,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL4:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL4:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL4:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL4:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL4:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL4:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL4:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL4:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob4"><a class="header" href="#bel-hriob4">Bel HRIOB4</a></h3>
@@ -211,10 +214,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL5:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL5:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL5:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL5:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL5:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL5:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL5:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL5:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob5"><a class="header" href="#bel-hriob5">Bel HRIOB5</a></h3>
@@ -224,10 +227,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL6:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL6:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL6:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL6:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL6:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL6:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL6:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL6:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob6"><a class="header" href="#bel-hriob6">Bel HRIOB6</a></h3>
@@ -237,10 +240,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL8:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL8:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL8:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL8:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL8:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL8:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL8:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL8:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob7"><a class="header" href="#bel-hriob7">Bel HRIOB7</a></h3>
@@ -250,10 +253,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL9:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL9:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL9:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL9:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL9:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL9:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL9:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL9:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob8"><a class="header" href="#bel-hriob8">Bel HRIOB8</a></h3>
@@ -263,10 +266,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL10:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL10:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL10:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL10:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL10:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL10:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL10:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL10:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob9"><a class="header" href="#bel-hriob9">Bel HRIOB9</a></h3>
@@ -276,10 +279,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL12:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL12:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL12:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL12:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL12:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL12:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL12:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL12:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob10"><a class="header" href="#bel-hriob10">Bel HRIOB10</a></h3>
@@ -289,10 +292,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL13:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL13:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL13:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL13:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL13:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL13:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL13:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL13:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob11"><a class="header" href="#bel-hriob11">Bel HRIOB11</a></h3>
@@ -302,10 +305,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL14:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL14:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL14:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL14:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL14:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL14:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL14:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL14:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob12"><a class="header" href="#bel-hriob12">Bel HRIOB12</a></h3>
@@ -315,10 +318,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL7:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL7:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL7:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL7:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL7:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL7:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL7:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL7:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob13"><a class="header" href="#bel-hriob13">Bel HRIOB13</a></h3>
@@ -328,10 +331,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL15:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL15:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL15:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL15:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL15:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL15:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL15:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL15:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob14"><a class="header" href="#bel-hriob14">Bel HRIOB14</a></h3>
@@ -341,10 +344,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL16:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL16:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL16:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL16:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL16:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL16:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL16:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL16:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob15"><a class="header" href="#bel-hriob15">Bel HRIOB15</a></h3>
@@ -354,10 +357,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL17:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL17:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL17:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL17:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL17:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL17:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL17:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL17:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob16"><a class="header" href="#bel-hriob16">Bel HRIOB16</a></h3>
@@ -367,10 +370,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL19:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL19:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL19:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL19:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL19:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL19:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL19:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL19:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob17"><a class="header" href="#bel-hriob17">Bel HRIOB17</a></h3>
@@ -380,10 +383,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL20:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL20:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL20:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL20:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL20:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL20:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL20:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL20:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob18"><a class="header" href="#bel-hriob18">Bel HRIOB18</a></h3>
@@ -393,10 +396,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL21:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL21:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL21:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL21:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL21:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL21:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL21:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL21:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob19"><a class="header" href="#bel-hriob19">Bel HRIOB19</a></h3>
@@ -406,10 +409,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL23:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL23:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL23:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL23:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL23:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL23:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL23:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL23:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob20"><a class="header" href="#bel-hriob20">Bel HRIOB20</a></h3>
@@ -419,10 +422,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL24:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL24:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL24:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL24:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL24:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL24:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL24:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL24:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob21"><a class="header" href="#bel-hriob21">Bel HRIOB21</a></h3>
@@ -432,10 +435,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL25:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL25:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL25:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL25:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL25:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL25:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL25:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL25:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob22"><a class="header" href="#bel-hriob22">Bel HRIOB22</a></h3>
@@ -445,10 +448,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL27:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL27:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL27:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL27:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL27:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL27:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL27:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL27:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob23"><a class="header" href="#bel-hriob23">Bel HRIOB23</a></h3>
@@ -458,10 +461,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL28:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL28:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL28:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL28:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL28:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL28:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL28:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL28:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob24"><a class="header" href="#bel-hriob24">Bel HRIOB24</a></h3>
@@ -471,10 +474,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL29:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL29:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL29:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL29:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL29:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL29:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL29:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL29:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob25"><a class="header" href="#bel-hriob25">Bel HRIOB25</a></h3>
@@ -484,10 +487,10 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL22:IMUX.IMUX.5</td></tr>
-<tr><td>KEEPER_EN</td><td>input</td><td>TCELL22:IMUX.IMUX.2</td></tr>
-<tr><td>PD_EN</td><td>input</td><td>TCELL22:IMUX.IMUX.3</td></tr>
-<tr><td>PU_EN</td><td>input</td><td>TCELL22:IMUX.IMUX.4</td></tr>
+<tr><td>IBUF_DISABLE</td><td>input</td><td>TCELL22:IMUX.IMUX.5.DELAY</td></tr>
+<tr><td>KEEPER_EN</td><td>input</td><td>TCELL22:IMUX.IMUX.2.DELAY</td></tr>
+<tr><td>PD_EN</td><td>input</td><td>TCELL22:IMUX.IMUX.3.DELAY</td></tr>
+<tr><td>PU_EN</td><td>input</td><td>TCELL22:IMUX.IMUX.4.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob_diff_in0"><a class="header" href="#bel-hriob_diff_in0">Bel HRIOB_DIFF_IN0</a></h3>
@@ -605,7 +608,7 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL3:IMUX.IMUX.1</td></tr>
+<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL3:IMUX.IMUX.1.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob_diff_out1"><a class="header" href="#bel-hriob_diff_out1">Bel HRIOB_DIFF_OUT1</a></h3>
@@ -615,7 +618,7 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL3:IMUX.IMUX.2</td></tr>
+<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL3:IMUX.IMUX.2.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob_diff_out2"><a class="header" href="#bel-hriob_diff_out2">Bel HRIOB_DIFF_OUT2</a></h3>
@@ -625,7 +628,7 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL3:IMUX.IMUX.3</td></tr>
+<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL3:IMUX.IMUX.3.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob_diff_out3"><a class="header" href="#bel-hriob_diff_out3">Bel HRIOB_DIFF_OUT3</a></h3>
@@ -635,7 +638,7 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL11:IMUX.IMUX.1</td></tr>
+<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL11:IMUX.IMUX.1.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob_diff_out4"><a class="header" href="#bel-hriob_diff_out4">Bel HRIOB_DIFF_OUT4</a></h3>
@@ -645,7 +648,7 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL11:IMUX.IMUX.2</td></tr>
+<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL11:IMUX.IMUX.2.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob_diff_out5"><a class="header" href="#bel-hriob_diff_out5">Bel HRIOB_DIFF_OUT5</a></h3>
@@ -655,7 +658,7 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL11:IMUX.IMUX.3</td></tr>
+<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL11:IMUX.IMUX.3.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob_diff_out6"><a class="header" href="#bel-hriob_diff_out6">Bel HRIOB_DIFF_OUT6</a></h3>
@@ -665,7 +668,7 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL18:IMUX.IMUX.1</td></tr>
+<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL18:IMUX.IMUX.1.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob_diff_out7"><a class="header" href="#bel-hriob_diff_out7">Bel HRIOB_DIFF_OUT7</a></h3>
@@ -675,7 +678,7 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL18:IMUX.IMUX.2</td></tr>
+<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL18:IMUX.IMUX.2.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob_diff_out8"><a class="header" href="#bel-hriob_diff_out8">Bel HRIOB_DIFF_OUT8</a></h3>
@@ -685,7 +688,7 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL18:IMUX.IMUX.3</td></tr>
+<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL18:IMUX.IMUX.3.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob_diff_out9"><a class="header" href="#bel-hriob_diff_out9">Bel HRIOB_DIFF_OUT9</a></h3>
@@ -695,7 +698,7 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL26:IMUX.IMUX.1</td></tr>
+<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL26:IMUX.IMUX.1.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob_diff_out10"><a class="header" href="#bel-hriob_diff_out10">Bel HRIOB_DIFF_OUT10</a></h3>
@@ -705,7 +708,7 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL26:IMUX.IMUX.2</td></tr>
+<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL26:IMUX.IMUX.2.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-hriob_diff_out11"><a class="header" href="#bel-hriob_diff_out11">Bel HRIOB_DIFF_OUT11</a></h3>
@@ -715,7 +718,7 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL26:IMUX.IMUX.3</td></tr>
+<tr><td>TERM_EN_TEST</td><td>input</td><td>TCELL26:IMUX.IMUX.3.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-wires"><a class="header" href="#bel-wires">Bel wires</a></h3>
@@ -725,122 +728,122 @@
 <tr><th>Wire</th><th>Pins</th></tr>
 </thead>
 <tbody>
-<tr><td>TCELL0:IMUX.IMUX.2</td><td>HRIOB0.KEEPER_EN</td></tr>
-<tr><td>TCELL0:IMUX.IMUX.3</td><td>HRIOB0.PD_EN</td></tr>
-<tr><td>TCELL0:IMUX.IMUX.4</td><td>HRIOB0.PU_EN</td></tr>
-<tr><td>TCELL0:IMUX.IMUX.5</td><td>HRIOB0.IBUF_DISABLE</td></tr>
-<tr><td>TCELL1:IMUX.IMUX.2</td><td>HRIOB1.KEEPER_EN</td></tr>
-<tr><td>TCELL1:IMUX.IMUX.3</td><td>HRIOB1.PD_EN</td></tr>
-<tr><td>TCELL1:IMUX.IMUX.4</td><td>HRIOB1.PU_EN</td></tr>
-<tr><td>TCELL1:IMUX.IMUX.5</td><td>HRIOB1.IBUF_DISABLE</td></tr>
-<tr><td>TCELL2:IMUX.IMUX.2</td><td>HRIOB2.KEEPER_EN</td></tr>
-<tr><td>TCELL2:IMUX.IMUX.3</td><td>HRIOB2.PD_EN</td></tr>
-<tr><td>TCELL2:IMUX.IMUX.4</td><td>HRIOB2.PU_EN</td></tr>
-<tr><td>TCELL2:IMUX.IMUX.5</td><td>HRIOB2.IBUF_DISABLE</td></tr>
-<tr><td>TCELL3:IMUX.IMUX.1</td><td>HRIOB_DIFF_OUT0.TERM_EN_TEST</td></tr>
-<tr><td>TCELL3:IMUX.IMUX.2</td><td>HRIOB_DIFF_OUT1.TERM_EN_TEST</td></tr>
-<tr><td>TCELL3:IMUX.IMUX.3</td><td>HRIOB_DIFF_OUT2.TERM_EN_TEST</td></tr>
-<tr><td>TCELL4:IMUX.IMUX.2</td><td>HRIOB3.KEEPER_EN</td></tr>
-<tr><td>TCELL4:IMUX.IMUX.3</td><td>HRIOB3.PD_EN</td></tr>
-<tr><td>TCELL4:IMUX.IMUX.4</td><td>HRIOB3.PU_EN</td></tr>
-<tr><td>TCELL4:IMUX.IMUX.5</td><td>HRIOB3.IBUF_DISABLE</td></tr>
-<tr><td>TCELL5:IMUX.IMUX.2</td><td>HRIOB4.KEEPER_EN</td></tr>
-<tr><td>TCELL5:IMUX.IMUX.3</td><td>HRIOB4.PD_EN</td></tr>
-<tr><td>TCELL5:IMUX.IMUX.4</td><td>HRIOB4.PU_EN</td></tr>
-<tr><td>TCELL5:IMUX.IMUX.5</td><td>HRIOB4.IBUF_DISABLE</td></tr>
-<tr><td>TCELL6:IMUX.IMUX.2</td><td>HRIOB5.KEEPER_EN</td></tr>
-<tr><td>TCELL6:IMUX.IMUX.3</td><td>HRIOB5.PD_EN</td></tr>
-<tr><td>TCELL6:IMUX.IMUX.4</td><td>HRIOB5.PU_EN</td></tr>
-<tr><td>TCELL6:IMUX.IMUX.5</td><td>HRIOB5.IBUF_DISABLE</td></tr>
-<tr><td>TCELL7:IMUX.IMUX.2</td><td>HRIOB12.KEEPER_EN</td></tr>
-<tr><td>TCELL7:IMUX.IMUX.3</td><td>HRIOB12.PD_EN</td></tr>
-<tr><td>TCELL7:IMUX.IMUX.4</td><td>HRIOB12.PU_EN</td></tr>
-<tr><td>TCELL7:IMUX.IMUX.5</td><td>HRIOB12.IBUF_DISABLE</td></tr>
-<tr><td>TCELL8:IMUX.IMUX.2</td><td>HRIOB6.KEEPER_EN</td></tr>
-<tr><td>TCELL8:IMUX.IMUX.3</td><td>HRIOB6.PD_EN</td></tr>
-<tr><td>TCELL8:IMUX.IMUX.4</td><td>HRIOB6.PU_EN</td></tr>
-<tr><td>TCELL8:IMUX.IMUX.5</td><td>HRIOB6.IBUF_DISABLE</td></tr>
-<tr><td>TCELL9:IMUX.IMUX.2</td><td>HRIOB7.KEEPER_EN</td></tr>
-<tr><td>TCELL9:IMUX.IMUX.3</td><td>HRIOB7.PD_EN</td></tr>
-<tr><td>TCELL9:IMUX.IMUX.4</td><td>HRIOB7.PU_EN</td></tr>
-<tr><td>TCELL9:IMUX.IMUX.5</td><td>HRIOB7.IBUF_DISABLE</td></tr>
-<tr><td>TCELL10:IMUX.IMUX.2</td><td>HRIOB8.KEEPER_EN</td></tr>
-<tr><td>TCELL10:IMUX.IMUX.3</td><td>HRIOB8.PD_EN</td></tr>
-<tr><td>TCELL10:IMUX.IMUX.4</td><td>HRIOB8.PU_EN</td></tr>
-<tr><td>TCELL10:IMUX.IMUX.5</td><td>HRIOB8.IBUF_DISABLE</td></tr>
-<tr><td>TCELL11:IMUX.IMUX.1</td><td>HRIOB_DIFF_OUT3.TERM_EN_TEST</td></tr>
-<tr><td>TCELL11:IMUX.IMUX.2</td><td>HRIOB_DIFF_OUT4.TERM_EN_TEST</td></tr>
-<tr><td>TCELL11:IMUX.IMUX.3</td><td>HRIOB_DIFF_OUT5.TERM_EN_TEST</td></tr>
-<tr><td>TCELL12:IMUX.IMUX.2</td><td>HRIOB9.KEEPER_EN</td></tr>
-<tr><td>TCELL12:IMUX.IMUX.3</td><td>HRIOB9.PD_EN</td></tr>
-<tr><td>TCELL12:IMUX.IMUX.4</td><td>HRIOB9.PU_EN</td></tr>
-<tr><td>TCELL12:IMUX.IMUX.5</td><td>HRIOB9.IBUF_DISABLE</td></tr>
-<tr><td>TCELL13:IMUX.IMUX.2</td><td>HRIOB10.KEEPER_EN</td></tr>
-<tr><td>TCELL13:IMUX.IMUX.3</td><td>HRIOB10.PD_EN</td></tr>
-<tr><td>TCELL13:IMUX.IMUX.4</td><td>HRIOB10.PU_EN</td></tr>
-<tr><td>TCELL13:IMUX.IMUX.5</td><td>HRIOB10.IBUF_DISABLE</td></tr>
-<tr><td>TCELL14:IMUX.IMUX.2</td><td>HRIOB11.KEEPER_EN</td></tr>
-<tr><td>TCELL14:IMUX.IMUX.3</td><td>HRIOB11.PD_EN</td></tr>
-<tr><td>TCELL14:IMUX.IMUX.4</td><td>HRIOB11.PU_EN</td></tr>
-<tr><td>TCELL14:IMUX.IMUX.5</td><td>HRIOB11.IBUF_DISABLE</td></tr>
-<tr><td>TCELL15:IMUX.IMUX.2</td><td>HRIOB13.KEEPER_EN</td></tr>
-<tr><td>TCELL15:IMUX.IMUX.3</td><td>HRIOB13.PD_EN</td></tr>
-<tr><td>TCELL15:IMUX.IMUX.4</td><td>HRIOB13.PU_EN</td></tr>
-<tr><td>TCELL15:IMUX.IMUX.5</td><td>HRIOB13.IBUF_DISABLE</td></tr>
-<tr><td>TCELL16:IMUX.IMUX.2</td><td>HRIOB14.KEEPER_EN</td></tr>
-<tr><td>TCELL16:IMUX.IMUX.3</td><td>HRIOB14.PD_EN</td></tr>
-<tr><td>TCELL16:IMUX.IMUX.4</td><td>HRIOB14.PU_EN</td></tr>
-<tr><td>TCELL16:IMUX.IMUX.5</td><td>HRIOB14.IBUF_DISABLE</td></tr>
-<tr><td>TCELL17:IMUX.IMUX.2</td><td>HRIOB15.KEEPER_EN</td></tr>
-<tr><td>TCELL17:IMUX.IMUX.3</td><td>HRIOB15.PD_EN</td></tr>
-<tr><td>TCELL17:IMUX.IMUX.4</td><td>HRIOB15.PU_EN</td></tr>
-<tr><td>TCELL17:IMUX.IMUX.5</td><td>HRIOB15.IBUF_DISABLE</td></tr>
-<tr><td>TCELL18:IMUX.IMUX.1</td><td>HRIOB_DIFF_OUT6.TERM_EN_TEST</td></tr>
-<tr><td>TCELL18:IMUX.IMUX.2</td><td>HRIOB_DIFF_OUT7.TERM_EN_TEST</td></tr>
-<tr><td>TCELL18:IMUX.IMUX.3</td><td>HRIOB_DIFF_OUT8.TERM_EN_TEST</td></tr>
-<tr><td>TCELL19:IMUX.IMUX.2</td><td>HRIOB16.KEEPER_EN</td></tr>
-<tr><td>TCELL19:IMUX.IMUX.3</td><td>HRIOB16.PD_EN</td></tr>
-<tr><td>TCELL19:IMUX.IMUX.4</td><td>HRIOB16.PU_EN</td></tr>
-<tr><td>TCELL19:IMUX.IMUX.5</td><td>HRIOB16.IBUF_DISABLE</td></tr>
-<tr><td>TCELL20:IMUX.IMUX.2</td><td>HRIOB17.KEEPER_EN</td></tr>
-<tr><td>TCELL20:IMUX.IMUX.3</td><td>HRIOB17.PD_EN</td></tr>
-<tr><td>TCELL20:IMUX.IMUX.4</td><td>HRIOB17.PU_EN</td></tr>
-<tr><td>TCELL20:IMUX.IMUX.5</td><td>HRIOB17.IBUF_DISABLE</td></tr>
-<tr><td>TCELL21:IMUX.IMUX.2</td><td>HRIOB18.KEEPER_EN</td></tr>
-<tr><td>TCELL21:IMUX.IMUX.3</td><td>HRIOB18.PD_EN</td></tr>
-<tr><td>TCELL21:IMUX.IMUX.4</td><td>HRIOB18.PU_EN</td></tr>
-<tr><td>TCELL21:IMUX.IMUX.5</td><td>HRIOB18.IBUF_DISABLE</td></tr>
-<tr><td>TCELL22:IMUX.IMUX.2</td><td>HRIOB25.KEEPER_EN</td></tr>
-<tr><td>TCELL22:IMUX.IMUX.3</td><td>HRIOB25.PD_EN</td></tr>
-<tr><td>TCELL22:IMUX.IMUX.4</td><td>HRIOB25.PU_EN</td></tr>
-<tr><td>TCELL22:IMUX.IMUX.5</td><td>HRIOB25.IBUF_DISABLE</td></tr>
-<tr><td>TCELL23:IMUX.IMUX.2</td><td>HRIOB19.KEEPER_EN</td></tr>
-<tr><td>TCELL23:IMUX.IMUX.3</td><td>HRIOB19.PD_EN</td></tr>
-<tr><td>TCELL23:IMUX.IMUX.4</td><td>HRIOB19.PU_EN</td></tr>
-<tr><td>TCELL23:IMUX.IMUX.5</td><td>HRIOB19.IBUF_DISABLE</td></tr>
-<tr><td>TCELL24:IMUX.IMUX.2</td><td>HRIOB20.KEEPER_EN</td></tr>
-<tr><td>TCELL24:IMUX.IMUX.3</td><td>HRIOB20.PD_EN</td></tr>
-<tr><td>TCELL24:IMUX.IMUX.4</td><td>HRIOB20.PU_EN</td></tr>
-<tr><td>TCELL24:IMUX.IMUX.5</td><td>HRIOB20.IBUF_DISABLE</td></tr>
-<tr><td>TCELL25:IMUX.IMUX.2</td><td>HRIOB21.KEEPER_EN</td></tr>
-<tr><td>TCELL25:IMUX.IMUX.3</td><td>HRIOB21.PD_EN</td></tr>
-<tr><td>TCELL25:IMUX.IMUX.4</td><td>HRIOB21.PU_EN</td></tr>
-<tr><td>TCELL25:IMUX.IMUX.5</td><td>HRIOB21.IBUF_DISABLE</td></tr>
-<tr><td>TCELL26:IMUX.IMUX.1</td><td>HRIOB_DIFF_OUT9.TERM_EN_TEST</td></tr>
-<tr><td>TCELL26:IMUX.IMUX.2</td><td>HRIOB_DIFF_OUT10.TERM_EN_TEST</td></tr>
-<tr><td>TCELL26:IMUX.IMUX.3</td><td>HRIOB_DIFF_OUT11.TERM_EN_TEST</td></tr>
-<tr><td>TCELL27:IMUX.IMUX.2</td><td>HRIOB22.KEEPER_EN</td></tr>
-<tr><td>TCELL27:IMUX.IMUX.3</td><td>HRIOB22.PD_EN</td></tr>
-<tr><td>TCELL27:IMUX.IMUX.4</td><td>HRIOB22.PU_EN</td></tr>
-<tr><td>TCELL27:IMUX.IMUX.5</td><td>HRIOB22.IBUF_DISABLE</td></tr>
-<tr><td>TCELL28:IMUX.IMUX.2</td><td>HRIOB23.KEEPER_EN</td></tr>
-<tr><td>TCELL28:IMUX.IMUX.3</td><td>HRIOB23.PD_EN</td></tr>
-<tr><td>TCELL28:IMUX.IMUX.4</td><td>HRIOB23.PU_EN</td></tr>
-<tr><td>TCELL28:IMUX.IMUX.5</td><td>HRIOB23.IBUF_DISABLE</td></tr>
-<tr><td>TCELL29:IMUX.IMUX.2</td><td>HRIOB24.KEEPER_EN</td></tr>
-<tr><td>TCELL29:IMUX.IMUX.3</td><td>HRIOB24.PD_EN</td></tr>
-<tr><td>TCELL29:IMUX.IMUX.4</td><td>HRIOB24.PU_EN</td></tr>
-<tr><td>TCELL29:IMUX.IMUX.5</td><td>HRIOB24.IBUF_DISABLE</td></tr>
+<tr><td>TCELL0:IMUX.IMUX.2.DELAY</td><td>HRIOB0.KEEPER_EN</td></tr>
+<tr><td>TCELL0:IMUX.IMUX.3.DELAY</td><td>HRIOB0.PD_EN</td></tr>
+<tr><td>TCELL0:IMUX.IMUX.4.DELAY</td><td>HRIOB0.PU_EN</td></tr>
+<tr><td>TCELL0:IMUX.IMUX.5.DELAY</td><td>HRIOB0.IBUF_DISABLE</td></tr>
+<tr><td>TCELL1:IMUX.IMUX.2.DELAY</td><td>HRIOB1.KEEPER_EN</td></tr>
+<tr><td>TCELL1:IMUX.IMUX.3.DELAY</td><td>HRIOB1.PD_EN</td></tr>
+<tr><td>TCELL1:IMUX.IMUX.4.DELAY</td><td>HRIOB1.PU_EN</td></tr>
+<tr><td>TCELL1:IMUX.IMUX.5.DELAY</td><td>HRIOB1.IBUF_DISABLE</td></tr>
+<tr><td>TCELL2:IMUX.IMUX.2.DELAY</td><td>HRIOB2.KEEPER_EN</td></tr>
+<tr><td>TCELL2:IMUX.IMUX.3.DELAY</td><td>HRIOB2.PD_EN</td></tr>
+<tr><td>TCELL2:IMUX.IMUX.4.DELAY</td><td>HRIOB2.PU_EN</td></tr>
+<tr><td>TCELL2:IMUX.IMUX.5.DELAY</td><td>HRIOB2.IBUF_DISABLE</td></tr>
+<tr><td>TCELL3:IMUX.IMUX.1.DELAY</td><td>HRIOB_DIFF_OUT0.TERM_EN_TEST</td></tr>
+<tr><td>TCELL3:IMUX.IMUX.2.DELAY</td><td>HRIOB_DIFF_OUT1.TERM_EN_TEST</td></tr>
+<tr><td>TCELL3:IMUX.IMUX.3.DELAY</td><td>HRIOB_DIFF_OUT2.TERM_EN_TEST</td></tr>
+<tr><td>TCELL4:IMUX.IMUX.2.DELAY</td><td>HRIOB3.KEEPER_EN</td></tr>
+<tr><td>TCELL4:IMUX.IMUX.3.DELAY</td><td>HRIOB3.PD_EN</td></tr>
+<tr><td>TCELL4:IMUX.IMUX.4.DELAY</td><td>HRIOB3.PU_EN</td></tr>
+<tr><td>TCELL4:IMUX.IMUX.5.DELAY</td><td>HRIOB3.IBUF_DISABLE</td></tr>
+<tr><td>TCELL5:IMUX.IMUX.2.DELAY</td><td>HRIOB4.KEEPER_EN</td></tr>
+<tr><td>TCELL5:IMUX.IMUX.3.DELAY</td><td>HRIOB4.PD_EN</td></tr>
+<tr><td>TCELL5:IMUX.IMUX.4.DELAY</td><td>HRIOB4.PU_EN</td></tr>
+<tr><td>TCELL5:IMUX.IMUX.5.DELAY</td><td>HRIOB4.IBUF_DISABLE</td></tr>
+<tr><td>TCELL6:IMUX.IMUX.2.DELAY</td><td>HRIOB5.KEEPER_EN</td></tr>
+<tr><td>TCELL6:IMUX.IMUX.3.DELAY</td><td>HRIOB5.PD_EN</td></tr>
+<tr><td>TCELL6:IMUX.IMUX.4.DELAY</td><td>HRIOB5.PU_EN</td></tr>
+<tr><td>TCELL6:IMUX.IMUX.5.DELAY</td><td>HRIOB5.IBUF_DISABLE</td></tr>
+<tr><td>TCELL7:IMUX.IMUX.2.DELAY</td><td>HRIOB12.KEEPER_EN</td></tr>
+<tr><td>TCELL7:IMUX.IMUX.3.DELAY</td><td>HRIOB12.PD_EN</td></tr>
+<tr><td>TCELL7:IMUX.IMUX.4.DELAY</td><td>HRIOB12.PU_EN</td></tr>
+<tr><td>TCELL7:IMUX.IMUX.5.DELAY</td><td>HRIOB12.IBUF_DISABLE</td></tr>
+<tr><td>TCELL8:IMUX.IMUX.2.DELAY</td><td>HRIOB6.KEEPER_EN</td></tr>
+<tr><td>TCELL8:IMUX.IMUX.3.DELAY</td><td>HRIOB6.PD_EN</td></tr>
+<tr><td>TCELL8:IMUX.IMUX.4.DELAY</td><td>HRIOB6.PU_EN</td></tr>
+<tr><td>TCELL8:IMUX.IMUX.5.DELAY</td><td>HRIOB6.IBUF_DISABLE</td></tr>
+<tr><td>TCELL9:IMUX.IMUX.2.DELAY</td><td>HRIOB7.KEEPER_EN</td></tr>
+<tr><td>TCELL9:IMUX.IMUX.3.DELAY</td><td>HRIOB7.PD_EN</td></tr>
+<tr><td>TCELL9:IMUX.IMUX.4.DELAY</td><td>HRIOB7.PU_EN</td></tr>
+<tr><td>TCELL9:IMUX.IMUX.5.DELAY</td><td>HRIOB7.IBUF_DISABLE</td></tr>
+<tr><td>TCELL10:IMUX.IMUX.2.DELAY</td><td>HRIOB8.KEEPER_EN</td></tr>
+<tr><td>TCELL10:IMUX.IMUX.3.DELAY</td><td>HRIOB8.PD_EN</td></tr>
+<tr><td>TCELL10:IMUX.IMUX.4.DELAY</td><td>HRIOB8.PU_EN</td></tr>
+<tr><td>TCELL10:IMUX.IMUX.5.DELAY</td><td>HRIOB8.IBUF_DISABLE</td></tr>
+<tr><td>TCELL11:IMUX.IMUX.1.DELAY</td><td>HRIOB_DIFF_OUT3.TERM_EN_TEST</td></tr>
+<tr><td>TCELL11:IMUX.IMUX.2.DELAY</td><td>HRIOB_DIFF_OUT4.TERM_EN_TEST</td></tr>
+<tr><td>TCELL11:IMUX.IMUX.3.DELAY</td><td>HRIOB_DIFF_OUT5.TERM_EN_TEST</td></tr>
+<tr><td>TCELL12:IMUX.IMUX.2.DELAY</td><td>HRIOB9.KEEPER_EN</td></tr>
+<tr><td>TCELL12:IMUX.IMUX.3.DELAY</td><td>HRIOB9.PD_EN</td></tr>
+<tr><td>TCELL12:IMUX.IMUX.4.DELAY</td><td>HRIOB9.PU_EN</td></tr>
+<tr><td>TCELL12:IMUX.IMUX.5.DELAY</td><td>HRIOB9.IBUF_DISABLE</td></tr>
+<tr><td>TCELL13:IMUX.IMUX.2.DELAY</td><td>HRIOB10.KEEPER_EN</td></tr>
+<tr><td>TCELL13:IMUX.IMUX.3.DELAY</td><td>HRIOB10.PD_EN</td></tr>
+<tr><td>TCELL13:IMUX.IMUX.4.DELAY</td><td>HRIOB10.PU_EN</td></tr>
+<tr><td>TCELL13:IMUX.IMUX.5.DELAY</td><td>HRIOB10.IBUF_DISABLE</td></tr>
+<tr><td>TCELL14:IMUX.IMUX.2.DELAY</td><td>HRIOB11.KEEPER_EN</td></tr>
+<tr><td>TCELL14:IMUX.IMUX.3.DELAY</td><td>HRIOB11.PD_EN</td></tr>
+<tr><td>TCELL14:IMUX.IMUX.4.DELAY</td><td>HRIOB11.PU_EN</td></tr>
+<tr><td>TCELL14:IMUX.IMUX.5.DELAY</td><td>HRIOB11.IBUF_DISABLE</td></tr>
+<tr><td>TCELL15:IMUX.IMUX.2.DELAY</td><td>HRIOB13.KEEPER_EN</td></tr>
+<tr><td>TCELL15:IMUX.IMUX.3.DELAY</td><td>HRIOB13.PD_EN</td></tr>
+<tr><td>TCELL15:IMUX.IMUX.4.DELAY</td><td>HRIOB13.PU_EN</td></tr>
+<tr><td>TCELL15:IMUX.IMUX.5.DELAY</td><td>HRIOB13.IBUF_DISABLE</td></tr>
+<tr><td>TCELL16:IMUX.IMUX.2.DELAY</td><td>HRIOB14.KEEPER_EN</td></tr>
+<tr><td>TCELL16:IMUX.IMUX.3.DELAY</td><td>HRIOB14.PD_EN</td></tr>
+<tr><td>TCELL16:IMUX.IMUX.4.DELAY</td><td>HRIOB14.PU_EN</td></tr>
+<tr><td>TCELL16:IMUX.IMUX.5.DELAY</td><td>HRIOB14.IBUF_DISABLE</td></tr>
+<tr><td>TCELL17:IMUX.IMUX.2.DELAY</td><td>HRIOB15.KEEPER_EN</td></tr>
+<tr><td>TCELL17:IMUX.IMUX.3.DELAY</td><td>HRIOB15.PD_EN</td></tr>
+<tr><td>TCELL17:IMUX.IMUX.4.DELAY</td><td>HRIOB15.PU_EN</td></tr>
+<tr><td>TCELL17:IMUX.IMUX.5.DELAY</td><td>HRIOB15.IBUF_DISABLE</td></tr>
+<tr><td>TCELL18:IMUX.IMUX.1.DELAY</td><td>HRIOB_DIFF_OUT6.TERM_EN_TEST</td></tr>
+<tr><td>TCELL18:IMUX.IMUX.2.DELAY</td><td>HRIOB_DIFF_OUT7.TERM_EN_TEST</td></tr>
+<tr><td>TCELL18:IMUX.IMUX.3.DELAY</td><td>HRIOB_DIFF_OUT8.TERM_EN_TEST</td></tr>
+<tr><td>TCELL19:IMUX.IMUX.2.DELAY</td><td>HRIOB16.KEEPER_EN</td></tr>
+<tr><td>TCELL19:IMUX.IMUX.3.DELAY</td><td>HRIOB16.PD_EN</td></tr>
+<tr><td>TCELL19:IMUX.IMUX.4.DELAY</td><td>HRIOB16.PU_EN</td></tr>
+<tr><td>TCELL19:IMUX.IMUX.5.DELAY</td><td>HRIOB16.IBUF_DISABLE</td></tr>
+<tr><td>TCELL20:IMUX.IMUX.2.DELAY</td><td>HRIOB17.KEEPER_EN</td></tr>
+<tr><td>TCELL20:IMUX.IMUX.3.DELAY</td><td>HRIOB17.PD_EN</td></tr>
+<tr><td>TCELL20:IMUX.IMUX.4.DELAY</td><td>HRIOB17.PU_EN</td></tr>
+<tr><td>TCELL20:IMUX.IMUX.5.DELAY</td><td>HRIOB17.IBUF_DISABLE</td></tr>
+<tr><td>TCELL21:IMUX.IMUX.2.DELAY</td><td>HRIOB18.KEEPER_EN</td></tr>
+<tr><td>TCELL21:IMUX.IMUX.3.DELAY</td><td>HRIOB18.PD_EN</td></tr>
+<tr><td>TCELL21:IMUX.IMUX.4.DELAY</td><td>HRIOB18.PU_EN</td></tr>
+<tr><td>TCELL21:IMUX.IMUX.5.DELAY</td><td>HRIOB18.IBUF_DISABLE</td></tr>
+<tr><td>TCELL22:IMUX.IMUX.2.DELAY</td><td>HRIOB25.KEEPER_EN</td></tr>
+<tr><td>TCELL22:IMUX.IMUX.3.DELAY</td><td>HRIOB25.PD_EN</td></tr>
+<tr><td>TCELL22:IMUX.IMUX.4.DELAY</td><td>HRIOB25.PU_EN</td></tr>
+<tr><td>TCELL22:IMUX.IMUX.5.DELAY</td><td>HRIOB25.IBUF_DISABLE</td></tr>
+<tr><td>TCELL23:IMUX.IMUX.2.DELAY</td><td>HRIOB19.KEEPER_EN</td></tr>
+<tr><td>TCELL23:IMUX.IMUX.3.DELAY</td><td>HRIOB19.PD_EN</td></tr>
+<tr><td>TCELL23:IMUX.IMUX.4.DELAY</td><td>HRIOB19.PU_EN</td></tr>
+<tr><td>TCELL23:IMUX.IMUX.5.DELAY</td><td>HRIOB19.IBUF_DISABLE</td></tr>
+<tr><td>TCELL24:IMUX.IMUX.2.DELAY</td><td>HRIOB20.KEEPER_EN</td></tr>
+<tr><td>TCELL24:IMUX.IMUX.3.DELAY</td><td>HRIOB20.PD_EN</td></tr>
+<tr><td>TCELL24:IMUX.IMUX.4.DELAY</td><td>HRIOB20.PU_EN</td></tr>
+<tr><td>TCELL24:IMUX.IMUX.5.DELAY</td><td>HRIOB20.IBUF_DISABLE</td></tr>
+<tr><td>TCELL25:IMUX.IMUX.2.DELAY</td><td>HRIOB21.KEEPER_EN</td></tr>
+<tr><td>TCELL25:IMUX.IMUX.3.DELAY</td><td>HRIOB21.PD_EN</td></tr>
+<tr><td>TCELL25:IMUX.IMUX.4.DELAY</td><td>HRIOB21.PU_EN</td></tr>
+<tr><td>TCELL25:IMUX.IMUX.5.DELAY</td><td>HRIOB21.IBUF_DISABLE</td></tr>
+<tr><td>TCELL26:IMUX.IMUX.1.DELAY</td><td>HRIOB_DIFF_OUT9.TERM_EN_TEST</td></tr>
+<tr><td>TCELL26:IMUX.IMUX.2.DELAY</td><td>HRIOB_DIFF_OUT10.TERM_EN_TEST</td></tr>
+<tr><td>TCELL26:IMUX.IMUX.3.DELAY</td><td>HRIOB_DIFF_OUT11.TERM_EN_TEST</td></tr>
+<tr><td>TCELL27:IMUX.IMUX.2.DELAY</td><td>HRIOB22.KEEPER_EN</td></tr>
+<tr><td>TCELL27:IMUX.IMUX.3.DELAY</td><td>HRIOB22.PD_EN</td></tr>
+<tr><td>TCELL27:IMUX.IMUX.4.DELAY</td><td>HRIOB22.PU_EN</td></tr>
+<tr><td>TCELL27:IMUX.IMUX.5.DELAY</td><td>HRIOB22.IBUF_DISABLE</td></tr>
+<tr><td>TCELL28:IMUX.IMUX.2.DELAY</td><td>HRIOB23.KEEPER_EN</td></tr>
+<tr><td>TCELL28:IMUX.IMUX.3.DELAY</td><td>HRIOB23.PD_EN</td></tr>
+<tr><td>TCELL28:IMUX.IMUX.4.DELAY</td><td>HRIOB23.PU_EN</td></tr>
+<tr><td>TCELL28:IMUX.IMUX.5.DELAY</td><td>HRIOB23.IBUF_DISABLE</td></tr>
+<tr><td>TCELL29:IMUX.IMUX.2.DELAY</td><td>HRIOB24.KEEPER_EN</td></tr>
+<tr><td>TCELL29:IMUX.IMUX.3.DELAY</td><td>HRIOB24.PD_EN</td></tr>
+<tr><td>TCELL29:IMUX.IMUX.4.DELAY</td><td>HRIOB24.PU_EN</td></tr>
+<tr><td>TCELL29:IMUX.IMUX.5.DELAY</td><td>HRIOB24.IBUF_DISABLE</td></tr>
 </tbody>
 </table></div>
 <h2 id="tile-rclk_hrio"><a class="header" href="#tile-rclk_hrio">Tile RCLK_HRIO</a></h2>
@@ -961,6 +964,7 @@
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>

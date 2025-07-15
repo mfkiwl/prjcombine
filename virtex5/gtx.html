@@ -91,10 +91,13 @@
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -160,27 +163,27 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>DADDR0</td><td>input</td><td>TCELL10:IMUX.IMUX32</td></tr>
-<tr><td>DADDR1</td><td>input</td><td>TCELL10:IMUX.IMUX31</td></tr>
-<tr><td>DADDR2</td><td>input</td><td>TCELL10:IMUX.IMUX24</td></tr>
-<tr><td>DADDR3</td><td>input</td><td>TCELL9:IMUX.IMUX29</td></tr>
-<tr><td>DADDR4</td><td>input</td><td>TCELL9:IMUX.IMUX28</td></tr>
-<tr><td>DADDR5</td><td>input</td><td>TCELL9:IMUX.IMUX27</td></tr>
-<tr><td>DADDR6</td><td>input</td><td>TCELL9:IMUX.IMUX26</td></tr>
+<tr><td>DADDR0</td><td>input</td><td>TCELL10:IMUX.IMUX32.DELAY</td></tr>
+<tr><td>DADDR1</td><td>input</td><td>TCELL10:IMUX.IMUX31.DELAY</td></tr>
+<tr><td>DADDR2</td><td>input</td><td>TCELL10:IMUX.IMUX24.DELAY</td></tr>
+<tr><td>DADDR3</td><td>input</td><td>TCELL9:IMUX.IMUX29.DELAY</td></tr>
+<tr><td>DADDR4</td><td>input</td><td>TCELL9:IMUX.IMUX28.DELAY</td></tr>
+<tr><td>DADDR5</td><td>input</td><td>TCELL9:IMUX.IMUX27.DELAY</td></tr>
+<tr><td>DADDR6</td><td>input</td><td>TCELL9:IMUX.IMUX26.DELAY</td></tr>
 <tr><td>DCLK</td><td>input</td><td>TCELL7:IMUX.CLK1</td></tr>
-<tr><td>DEN</td><td>input</td><td>TCELL10:IMUX.IMUX39</td></tr>
-<tr><td>DFECLKDLYADJ00</td><td>input</td><td>TCELL14:IMUX.IMUX23</td></tr>
-<tr><td>DFECLKDLYADJ01</td><td>input</td><td>TCELL15:IMUX.IMUX36</td></tr>
-<tr><td>DFECLKDLYADJ02</td><td>input</td><td>TCELL15:IMUX.IMUX19</td></tr>
-<tr><td>DFECLKDLYADJ03</td><td>input</td><td>TCELL15:IMUX.IMUX38</td></tr>
-<tr><td>DFECLKDLYADJ04</td><td>input</td><td>TCELL15:IMUX.IMUX39</td></tr>
-<tr><td>DFECLKDLYADJ05</td><td>input</td><td>TCELL15:IMUX.IMUX40</td></tr>
-<tr><td>DFECLKDLYADJ10</td><td>input</td><td>TCELL5:IMUX.IMUX24</td></tr>
-<tr><td>DFECLKDLYADJ11</td><td>input</td><td>TCELL4:IMUX.IMUX29</td></tr>
-<tr><td>DFECLKDLYADJ12</td><td>input</td><td>TCELL4:IMUX.IMUX34</td></tr>
-<tr><td>DFECLKDLYADJ13</td><td>input</td><td>TCELL4:IMUX.IMUX27</td></tr>
-<tr><td>DFECLKDLYADJ14</td><td>input</td><td>TCELL4:IMUX.IMUX32</td></tr>
-<tr><td>DFECLKDLYADJ15</td><td>input</td><td>TCELL4:IMUX.IMUX31</td></tr>
+<tr><td>DEN</td><td>input</td><td>TCELL10:IMUX.IMUX39.DELAY</td></tr>
+<tr><td>DFECLKDLYADJ00</td><td>input</td><td>TCELL14:IMUX.IMUX23.DELAY</td></tr>
+<tr><td>DFECLKDLYADJ01</td><td>input</td><td>TCELL15:IMUX.IMUX36.DELAY</td></tr>
+<tr><td>DFECLKDLYADJ02</td><td>input</td><td>TCELL15:IMUX.IMUX19.DELAY</td></tr>
+<tr><td>DFECLKDLYADJ03</td><td>input</td><td>TCELL15:IMUX.IMUX38.DELAY</td></tr>
+<tr><td>DFECLKDLYADJ04</td><td>input</td><td>TCELL15:IMUX.IMUX39.DELAY</td></tr>
+<tr><td>DFECLKDLYADJ05</td><td>input</td><td>TCELL15:IMUX.IMUX40.DELAY</td></tr>
+<tr><td>DFECLKDLYADJ10</td><td>input</td><td>TCELL5:IMUX.IMUX24.DELAY</td></tr>
+<tr><td>DFECLKDLYADJ11</td><td>input</td><td>TCELL4:IMUX.IMUX29.DELAY</td></tr>
+<tr><td>DFECLKDLYADJ12</td><td>input</td><td>TCELL4:IMUX.IMUX34.DELAY</td></tr>
+<tr><td>DFECLKDLYADJ13</td><td>input</td><td>TCELL4:IMUX.IMUX27.DELAY</td></tr>
+<tr><td>DFECLKDLYADJ14</td><td>input</td><td>TCELL4:IMUX.IMUX32.DELAY</td></tr>
+<tr><td>DFECLKDLYADJ15</td><td>input</td><td>TCELL4:IMUX.IMUX31.DELAY</td></tr>
 <tr><td>DFECLKDLYADJMONITOR00</td><td>output</td><td>TCELL15:OUT4</td></tr>
 <tr><td>DFECLKDLYADJMONITOR01</td><td>output</td><td>TCELL15:OUT0</td></tr>
 <tr><td>DFECLKDLYADJMONITOR02</td><td>output</td><td>TCELL15:OUT19</td></tr>
@@ -209,16 +212,16 @@
 <tr><td>DFESENSCAL10</td><td>output</td><td>TCELL9:OUT7</td></tr>
 <tr><td>DFESENSCAL11</td><td>output</td><td>TCELL9:OUT9</td></tr>
 <tr><td>DFESENSCAL12</td><td>output</td><td>TCELL9:OUT22</td></tr>
-<tr><td>DFETAP100</td><td>input</td><td>TCELL14:IMUX.IMUX31</td></tr>
-<tr><td>DFETAP101</td><td>input</td><td>TCELL14:IMUX.IMUX26</td></tr>
-<tr><td>DFETAP102</td><td>input</td><td>TCELL14:IMUX.IMUX33</td></tr>
-<tr><td>DFETAP103</td><td>input</td><td>TCELL14:IMUX.IMUX34</td></tr>
-<tr><td>DFETAP104</td><td>input</td><td>TCELL14:IMUX.IMUX35</td></tr>
-<tr><td>DFETAP110</td><td>input</td><td>TCELL5:IMUX.IMUX28</td></tr>
-<tr><td>DFETAP111</td><td>input</td><td>TCELL5:IMUX.IMUX33</td></tr>
-<tr><td>DFETAP112</td><td>input</td><td>TCELL5:IMUX.IMUX26</td></tr>
-<tr><td>DFETAP113</td><td>input</td><td>TCELL5:IMUX.IMUX25</td></tr>
-<tr><td>DFETAP114</td><td>input</td><td>TCELL5:IMUX.IMUX12</td></tr>
+<tr><td>DFETAP100</td><td>input</td><td>TCELL14:IMUX.IMUX31.DELAY</td></tr>
+<tr><td>DFETAP101</td><td>input</td><td>TCELL14:IMUX.IMUX26.DELAY</td></tr>
+<tr><td>DFETAP102</td><td>input</td><td>TCELL14:IMUX.IMUX33.DELAY</td></tr>
+<tr><td>DFETAP103</td><td>input</td><td>TCELL14:IMUX.IMUX34.DELAY</td></tr>
+<tr><td>DFETAP104</td><td>input</td><td>TCELL14:IMUX.IMUX35.DELAY</td></tr>
+<tr><td>DFETAP110</td><td>input</td><td>TCELL5:IMUX.IMUX28.DELAY</td></tr>
+<tr><td>DFETAP111</td><td>input</td><td>TCELL5:IMUX.IMUX33.DELAY</td></tr>
+<tr><td>DFETAP112</td><td>input</td><td>TCELL5:IMUX.IMUX26.DELAY</td></tr>
+<tr><td>DFETAP113</td><td>input</td><td>TCELL5:IMUX.IMUX25.DELAY</td></tr>
+<tr><td>DFETAP114</td><td>input</td><td>TCELL5:IMUX.IMUX12.DELAY</td></tr>
 <tr><td>DFETAP1MONITOR00</td><td>output</td><td>TCELL13:OUT8</td></tr>
 <tr><td>DFETAP1MONITOR01</td><td>output</td><td>TCELL13:OUT0</td></tr>
 <tr><td>DFETAP1MONITOR02</td><td>output</td><td>TCELL13:OUT16</td></tr>
@@ -229,16 +232,16 @@
 <tr><td>DFETAP1MONITOR12</td><td>output</td><td>TCELL6:OUT7</td></tr>
 <tr><td>DFETAP1MONITOR13</td><td>output</td><td>TCELL6:OUT23</td></tr>
 <tr><td>DFETAP1MONITOR14</td><td>output</td><td>TCELL6:OUT5</td></tr>
-<tr><td>DFETAP200</td><td>input</td><td>TCELL14:IMUX.IMUX12</td></tr>
-<tr><td>DFETAP201</td><td>input</td><td>TCELL14:IMUX.IMUX36</td></tr>
-<tr><td>DFETAP202</td><td>input</td><td>TCELL14:IMUX.IMUX37</td></tr>
-<tr><td>DFETAP203</td><td>input</td><td>TCELL14:IMUX.IMUX38</td></tr>
-<tr><td>DFETAP204</td><td>input</td><td>TCELL14:IMUX.IMUX39</td></tr>
-<tr><td>DFETAP210</td><td>input</td><td>TCELL5:IMUX.IMUX29</td></tr>
-<tr><td>DFETAP211</td><td>input</td><td>TCELL5:IMUX.IMUX11</td></tr>
-<tr><td>DFETAP212</td><td>input</td><td>TCELL5:IMUX.IMUX22</td></tr>
-<tr><td>DFETAP213</td><td>input</td><td>TCELL5:IMUX.IMUX27</td></tr>
-<tr><td>DFETAP214</td><td>input</td><td>TCELL5:IMUX.IMUX20</td></tr>
+<tr><td>DFETAP200</td><td>input</td><td>TCELL14:IMUX.IMUX12.DELAY</td></tr>
+<tr><td>DFETAP201</td><td>input</td><td>TCELL14:IMUX.IMUX36.DELAY</td></tr>
+<tr><td>DFETAP202</td><td>input</td><td>TCELL14:IMUX.IMUX37.DELAY</td></tr>
+<tr><td>DFETAP203</td><td>input</td><td>TCELL14:IMUX.IMUX38.DELAY</td></tr>
+<tr><td>DFETAP204</td><td>input</td><td>TCELL14:IMUX.IMUX39.DELAY</td></tr>
+<tr><td>DFETAP210</td><td>input</td><td>TCELL5:IMUX.IMUX29.DELAY</td></tr>
+<tr><td>DFETAP211</td><td>input</td><td>TCELL5:IMUX.IMUX11.DELAY</td></tr>
+<tr><td>DFETAP212</td><td>input</td><td>TCELL5:IMUX.IMUX22.DELAY</td></tr>
+<tr><td>DFETAP213</td><td>input</td><td>TCELL5:IMUX.IMUX27.DELAY</td></tr>
+<tr><td>DFETAP214</td><td>input</td><td>TCELL5:IMUX.IMUX20.DELAY</td></tr>
 <tr><td>DFETAP2MONITOR00</td><td>output</td><td>TCELL12:OUT12</td></tr>
 <tr><td>DFETAP2MONITOR01</td><td>output</td><td>TCELL12:OUT19</td></tr>
 <tr><td>DFETAP2MONITOR02</td><td>output</td><td>TCELL12:OUT16</td></tr>
@@ -249,14 +252,14 @@
 <tr><td>DFETAP2MONITOR12</td><td>output</td><td>TCELL7:OUT14</td></tr>
 <tr><td>DFETAP2MONITOR13</td><td>output</td><td>TCELL7:OUT13</td></tr>
 <tr><td>DFETAP2MONITOR14</td><td>output</td><td>TCELL7:OUT1</td></tr>
-<tr><td>DFETAP300</td><td>input</td><td>TCELL13:IMUX.IMUX25</td></tr>
-<tr><td>DFETAP301</td><td>input</td><td>TCELL13:IMUX.IMUX26</td></tr>
-<tr><td>DFETAP302</td><td>input</td><td>TCELL13:IMUX.IMUX27</td></tr>
-<tr><td>DFETAP303</td><td>input</td><td>TCELL13:IMUX.IMUX28</td></tr>
-<tr><td>DFETAP310</td><td>input</td><td>TCELL6:IMUX.IMUX34</td></tr>
-<tr><td>DFETAP311</td><td>input</td><td>TCELL6:IMUX.IMUX39</td></tr>
-<tr><td>DFETAP312</td><td>input</td><td>TCELL6:IMUX.IMUX32</td></tr>
-<tr><td>DFETAP313</td><td>input</td><td>TCELL6:IMUX.IMUX31</td></tr>
+<tr><td>DFETAP300</td><td>input</td><td>TCELL13:IMUX.IMUX25.DELAY</td></tr>
+<tr><td>DFETAP301</td><td>input</td><td>TCELL13:IMUX.IMUX26.DELAY</td></tr>
+<tr><td>DFETAP302</td><td>input</td><td>TCELL13:IMUX.IMUX27.DELAY</td></tr>
+<tr><td>DFETAP303</td><td>input</td><td>TCELL13:IMUX.IMUX28.DELAY</td></tr>
+<tr><td>DFETAP310</td><td>input</td><td>TCELL6:IMUX.IMUX34.DELAY</td></tr>
+<tr><td>DFETAP311</td><td>input</td><td>TCELL6:IMUX.IMUX39.DELAY</td></tr>
+<tr><td>DFETAP312</td><td>input</td><td>TCELL6:IMUX.IMUX32.DELAY</td></tr>
+<tr><td>DFETAP313</td><td>input</td><td>TCELL6:IMUX.IMUX31.DELAY</td></tr>
 <tr><td>DFETAP3MONITOR00</td><td>output</td><td>TCELL11:OUT8</td></tr>
 <tr><td>DFETAP3MONITOR01</td><td>output</td><td>TCELL11:OUT18</td></tr>
 <tr><td>DFETAP3MONITOR02</td><td>output</td><td>TCELL11:OUT1</td></tr>
@@ -265,14 +268,14 @@
 <tr><td>DFETAP3MONITOR11</td><td>output</td><td>TCELL8:OUT7</td></tr>
 <tr><td>DFETAP3MONITOR12</td><td>output</td><td>TCELL8:OUT20</td></tr>
 <tr><td>DFETAP3MONITOR13</td><td>output</td><td>TCELL8:OUT4</td></tr>
-<tr><td>DFETAP400</td><td>input</td><td>TCELL12:IMUX.IMUX37</td></tr>
-<tr><td>DFETAP401</td><td>input</td><td>TCELL12:IMUX.IMUX40</td></tr>
-<tr><td>DFETAP402</td><td>input</td><td>TCELL12:IMUX.IMUX41</td></tr>
-<tr><td>DFETAP403</td><td>input</td><td>TCELL13:IMUX.IMUX36</td></tr>
-<tr><td>DFETAP410</td><td>input</td><td>TCELL7:IMUX.IMUX28</td></tr>
-<tr><td>DFETAP411</td><td>input</td><td>TCELL7:IMUX.IMUX25</td></tr>
-<tr><td>DFETAP412</td><td>input</td><td>TCELL7:IMUX.IMUX24</td></tr>
-<tr><td>DFETAP413</td><td>input</td><td>TCELL6:IMUX.IMUX11</td></tr>
+<tr><td>DFETAP400</td><td>input</td><td>TCELL12:IMUX.IMUX37.DELAY</td></tr>
+<tr><td>DFETAP401</td><td>input</td><td>TCELL12:IMUX.IMUX40.DELAY</td></tr>
+<tr><td>DFETAP402</td><td>input</td><td>TCELL12:IMUX.IMUX41.DELAY</td></tr>
+<tr><td>DFETAP403</td><td>input</td><td>TCELL13:IMUX.IMUX36.DELAY</td></tr>
+<tr><td>DFETAP410</td><td>input</td><td>TCELL7:IMUX.IMUX28.DELAY</td></tr>
+<tr><td>DFETAP411</td><td>input</td><td>TCELL7:IMUX.IMUX25.DELAY</td></tr>
+<tr><td>DFETAP412</td><td>input</td><td>TCELL7:IMUX.IMUX24.DELAY</td></tr>
+<tr><td>DFETAP413</td><td>input</td><td>TCELL6:IMUX.IMUX11.DELAY</td></tr>
 <tr><td>DFETAP4MONITOR00</td><td>output</td><td>TCELL10:OUT1</td></tr>
 <tr><td>DFETAP4MONITOR01</td><td>output</td><td>TCELL10:OUT14</td></tr>
 <tr><td>DFETAP4MONITOR02</td><td>output</td><td>TCELL10:OUT20</td></tr>
@@ -281,22 +284,22 @@
 <tr><td>DFETAP4MONITOR11</td><td>output</td><td>TCELL9:OUT16</td></tr>
 <tr><td>DFETAP4MONITOR12</td><td>output</td><td>TCELL9:OUT19</td></tr>
 <tr><td>DFETAP4MONITOR13</td><td>output</td><td>TCELL9:OUT5</td></tr>
-<tr><td>DI0</td><td>input</td><td>TCELL11:IMUX.IMUX3</td></tr>
-<tr><td>DI1</td><td>input</td><td>TCELL11:IMUX.IMUX2</td></tr>
-<tr><td>DI10</td><td>input</td><td>TCELL9:IMUX.IMUX43</td></tr>
-<tr><td>DI11</td><td>input</td><td>TCELL9:IMUX.IMUX42</td></tr>
-<tr><td>DI12</td><td>input</td><td>TCELL8:IMUX.IMUX47</td></tr>
-<tr><td>DI13</td><td>input</td><td>TCELL8:IMUX.IMUX46</td></tr>
-<tr><td>DI14</td><td>input</td><td>TCELL8:IMUX.IMUX45</td></tr>
-<tr><td>DI15</td><td>input</td><td>TCELL8:IMUX.IMUX44</td></tr>
-<tr><td>DI2</td><td>input</td><td>TCELL11:IMUX.IMUX1</td></tr>
-<tr><td>DI3</td><td>input</td><td>TCELL11:IMUX.IMUX0</td></tr>
-<tr><td>DI4</td><td>input</td><td>TCELL10:IMUX.IMUX3</td></tr>
-<tr><td>DI5</td><td>input</td><td>TCELL10:IMUX.IMUX2</td></tr>
-<tr><td>DI6</td><td>input</td><td>TCELL10:IMUX.IMUX1</td></tr>
-<tr><td>DI7</td><td>input</td><td>TCELL10:IMUX.IMUX0</td></tr>
-<tr><td>DI8</td><td>input</td><td>TCELL9:IMUX.IMUX45</td></tr>
-<tr><td>DI9</td><td>input</td><td>TCELL9:IMUX.IMUX44</td></tr>
+<tr><td>DI0</td><td>input</td><td>TCELL11:IMUX.IMUX3.DELAY</td></tr>
+<tr><td>DI1</td><td>input</td><td>TCELL11:IMUX.IMUX2.DELAY</td></tr>
+<tr><td>DI10</td><td>input</td><td>TCELL9:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>DI11</td><td>input</td><td>TCELL9:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>DI12</td><td>input</td><td>TCELL8:IMUX.IMUX47.DELAY</td></tr>
+<tr><td>DI13</td><td>input</td><td>TCELL8:IMUX.IMUX46.DELAY</td></tr>
+<tr><td>DI14</td><td>input</td><td>TCELL8:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>DI15</td><td>input</td><td>TCELL8:IMUX.IMUX44.DELAY</td></tr>
+<tr><td>DI2</td><td>input</td><td>TCELL11:IMUX.IMUX1.DELAY</td></tr>
+<tr><td>DI3</td><td>input</td><td>TCELL11:IMUX.IMUX0.DELAY</td></tr>
+<tr><td>DI4</td><td>input</td><td>TCELL10:IMUX.IMUX3.DELAY</td></tr>
+<tr><td>DI5</td><td>input</td><td>TCELL10:IMUX.IMUX2.DELAY</td></tr>
+<tr><td>DI6</td><td>input</td><td>TCELL10:IMUX.IMUX1.DELAY</td></tr>
+<tr><td>DI7</td><td>input</td><td>TCELL10:IMUX.IMUX0.DELAY</td></tr>
+<tr><td>DI8</td><td>input</td><td>TCELL9:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>DI9</td><td>input</td><td>TCELL9:IMUX.IMUX44.DELAY</td></tr>
 <tr><td>DO0</td><td>output</td><td>TCELL11:OUT21</td></tr>
 <tr><td>DO1</td><td>output</td><td>TCELL11:OUT17</td></tr>
 <tr><td>DO10</td><td>output</td><td>TCELL9:OUT20</td></tr>
@@ -314,50 +317,50 @@
 <tr><td>DO8</td><td>output</td><td>TCELL9:OUT21</td></tr>
 <tr><td>DO9</td><td>output</td><td>TCELL9:OUT6</td></tr>
 <tr><td>DRDY</td><td>output</td><td>TCELL9:OUT15</td></tr>
-<tr><td>DWE</td><td>input</td><td>TCELL9:IMUX.IMUX19</td></tr>
+<tr><td>DWE</td><td>input</td><td>TCELL9:IMUX.IMUX19.DELAY</td></tr>
 <tr><td>GREFCLK</td><td>input</td><td>TCELL12:IMUX.CLK0</td></tr>
-<tr><td>GTXRESET</td><td>input</td><td>TCELL11:IMUX.IMUX36</td></tr>
-<tr><td>GTXTEST0</td><td>input</td><td>TCELL19:IMUX.IMUX27</td></tr>
-<tr><td>GTXTEST1</td><td>input</td><td>TCELL0:IMUX.IMUX13</td></tr>
-<tr><td>GTXTEST10</td><td>input</td><td>TCELL0:IMUX.IMUX12</td></tr>
-<tr><td>GTXTEST11</td><td>input</td><td>TCELL0:IMUX.IMUX11</td></tr>
-<tr><td>GTXTEST12</td><td>input</td><td>TCELL0:IMUX.IMUX14</td></tr>
-<tr><td>GTXTEST13</td><td>input</td><td>TCELL10:IMUX.IMUX33</td></tr>
-<tr><td>GTXTEST2</td><td>input</td><td>TCELL9:IMUX.IMUX16</td></tr>
-<tr><td>GTXTEST3</td><td>input</td><td>TCELL9:IMUX.IMUX17</td></tr>
-<tr><td>GTXTEST4</td><td>input</td><td>TCELL14:IMUX.IMUX22</td></tr>
-<tr><td>GTXTEST5</td><td>input</td><td>TCELL19:IMUX.IMUX28</td></tr>
-<tr><td>GTXTEST6</td><td>input</td><td>TCELL19:IMUX.IMUX6</td></tr>
-<tr><td>GTXTEST7</td><td>input</td><td>TCELL19:IMUX.IMUX29</td></tr>
-<tr><td>GTXTEST8</td><td>input</td><td>TCELL10:IMUX.IMUX40</td></tr>
-<tr><td>GTXTEST9</td><td>input</td><td>TCELL5:IMUX.IMUX13</td></tr>
-<tr><td>INTDATAWIDTH</td><td>input</td><td>TCELL10:IMUX.IMUX6</td></tr>
-<tr><td>LOOPBACK00</td><td>input</td><td>TCELL12:IMUX.IMUX15</td></tr>
-<tr><td>LOOPBACK01</td><td>input</td><td>TCELL12:IMUX.IMUX16</td></tr>
-<tr><td>LOOPBACK02</td><td>input</td><td>TCELL12:IMUX.IMUX17</td></tr>
-<tr><td>LOOPBACK10</td><td>input</td><td>TCELL7:IMUX.IMUX20</td></tr>
-<tr><td>LOOPBACK11</td><td>input</td><td>TCELL7:IMUX.IMUX19</td></tr>
-<tr><td>LOOPBACK12</td><td>input</td><td>TCELL7:IMUX.IMUX18</td></tr>
+<tr><td>GTXRESET</td><td>input</td><td>TCELL11:IMUX.IMUX36.DELAY</td></tr>
+<tr><td>GTXTEST0</td><td>input</td><td>TCELL19:IMUX.IMUX27.DELAY</td></tr>
+<tr><td>GTXTEST1</td><td>input</td><td>TCELL0:IMUX.IMUX13.DELAY</td></tr>
+<tr><td>GTXTEST10</td><td>input</td><td>TCELL0:IMUX.IMUX12.DELAY</td></tr>
+<tr><td>GTXTEST11</td><td>input</td><td>TCELL0:IMUX.IMUX11.DELAY</td></tr>
+<tr><td>GTXTEST12</td><td>input</td><td>TCELL0:IMUX.IMUX14.DELAY</td></tr>
+<tr><td>GTXTEST13</td><td>input</td><td>TCELL10:IMUX.IMUX33.DELAY</td></tr>
+<tr><td>GTXTEST2</td><td>input</td><td>TCELL9:IMUX.IMUX16.DELAY</td></tr>
+<tr><td>GTXTEST3</td><td>input</td><td>TCELL9:IMUX.IMUX17.DELAY</td></tr>
+<tr><td>GTXTEST4</td><td>input</td><td>TCELL14:IMUX.IMUX22.DELAY</td></tr>
+<tr><td>GTXTEST5</td><td>input</td><td>TCELL19:IMUX.IMUX28.DELAY</td></tr>
+<tr><td>GTXTEST6</td><td>input</td><td>TCELL19:IMUX.IMUX6.DELAY</td></tr>
+<tr><td>GTXTEST7</td><td>input</td><td>TCELL19:IMUX.IMUX29.DELAY</td></tr>
+<tr><td>GTXTEST8</td><td>input</td><td>TCELL10:IMUX.IMUX40.DELAY</td></tr>
+<tr><td>GTXTEST9</td><td>input</td><td>TCELL5:IMUX.IMUX13.DELAY</td></tr>
+<tr><td>INTDATAWIDTH</td><td>input</td><td>TCELL10:IMUX.IMUX6.DELAY</td></tr>
+<tr><td>LOOPBACK00</td><td>input</td><td>TCELL12:IMUX.IMUX15.DELAY</td></tr>
+<tr><td>LOOPBACK01</td><td>input</td><td>TCELL12:IMUX.IMUX16.DELAY</td></tr>
+<tr><td>LOOPBACK02</td><td>input</td><td>TCELL12:IMUX.IMUX17.DELAY</td></tr>
+<tr><td>LOOPBACK10</td><td>input</td><td>TCELL7:IMUX.IMUX20.DELAY</td></tr>
+<tr><td>LOOPBACK11</td><td>input</td><td>TCELL7:IMUX.IMUX19.DELAY</td></tr>
+<tr><td>LOOPBACK12</td><td>input</td><td>TCELL7:IMUX.IMUX18.DELAY</td></tr>
 <tr><td>PHYSTATUS0</td><td>output</td><td>TCELL15:OUT12</td></tr>
 <tr><td>PHYSTATUS1</td><td>output</td><td>TCELL4:OUT17</td></tr>
 <tr><td>PLLLKDET</td><td>output</td><td>TCELL9:OUT23</td></tr>
-<tr><td>PLLLKDETEN</td><td>input</td><td>TCELL9:IMUX.IMUX8</td></tr>
-<tr><td>PLLPOWERDOWN</td><td>input</td><td>TCELL10:IMUX.IMUX36</td></tr>
-<tr><td>PMAAMUX0</td><td>input</td><td>TCELL9:IMUX.IMUX3</td></tr>
-<tr><td>PMAAMUX1</td><td>input</td><td>TCELL9:IMUX.IMUX4</td></tr>
-<tr><td>PMAAMUX2</td><td>input</td><td>TCELL9:IMUX.IMUX5</td></tr>
+<tr><td>PLLLKDETEN</td><td>input</td><td>TCELL9:IMUX.IMUX8.DELAY</td></tr>
+<tr><td>PLLPOWERDOWN</td><td>input</td><td>TCELL10:IMUX.IMUX36.DELAY</td></tr>
+<tr><td>PMAAMUX0</td><td>input</td><td>TCELL9:IMUX.IMUX3.DELAY</td></tr>
+<tr><td>PMAAMUX1</td><td>input</td><td>TCELL9:IMUX.IMUX4.DELAY</td></tr>
+<tr><td>PMAAMUX2</td><td>input</td><td>TCELL9:IMUX.IMUX5.DELAY</td></tr>
 <tr><td>PMATSTCLK</td><td>output</td><td>TCELL10:OUT22</td></tr>
-<tr><td>PMATSTCLKSEL0</td><td>input</td><td>TCELL10:IMUX.IMUX14</td></tr>
-<tr><td>PMATSTCLKSEL1</td><td>input</td><td>TCELL10:IMUX.IMUX13</td></tr>
-<tr><td>PMATSTCLKSEL2</td><td>input</td><td>TCELL10:IMUX.IMUX12</td></tr>
-<tr><td>PRBSCNTRESET0</td><td>input</td><td>TCELL11:IMUX.IMUX45</td></tr>
-<tr><td>PRBSCNTRESET1</td><td>input</td><td>TCELL8:IMUX.IMUX2</td></tr>
+<tr><td>PMATSTCLKSEL0</td><td>input</td><td>TCELL10:IMUX.IMUX14.DELAY</td></tr>
+<tr><td>PMATSTCLKSEL1</td><td>input</td><td>TCELL10:IMUX.IMUX13.DELAY</td></tr>
+<tr><td>PMATSTCLKSEL2</td><td>input</td><td>TCELL10:IMUX.IMUX12.DELAY</td></tr>
+<tr><td>PRBSCNTRESET0</td><td>input</td><td>TCELL11:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>PRBSCNTRESET1</td><td>input</td><td>TCELL8:IMUX.IMUX2.DELAY</td></tr>
 <tr><td>REFCLKOUT</td><td>output</td><td>TCELL10:OUT8</td></tr>
-<tr><td>REFCLKPWRDNB</td><td>input</td><td>TCELL9:IMUX.IMUX18</td></tr>
+<tr><td>REFCLKPWRDNB</td><td>input</td><td>TCELL9:IMUX.IMUX18.DELAY</td></tr>
 <tr><td>RESETDONE0</td><td>output</td><td>TCELL15:OUT7</td></tr>
 <tr><td>RESETDONE1</td><td>output</td><td>TCELL4:OUT0</td></tr>
-<tr><td>RXBUFRESET0</td><td>input</td><td>TCELL12:IMUX.IMUX43</td></tr>
-<tr><td>RXBUFRESET1</td><td>input</td><td>TCELL7:IMUX.IMUX4</td></tr>
+<tr><td>RXBUFRESET0</td><td>input</td><td>TCELL12:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>RXBUFRESET1</td><td>input</td><td>TCELL7:IMUX.IMUX4.DELAY</td></tr>
 <tr><td>RXBUFSTATUS00</td><td>output</td><td>TCELL15:OUT1</td></tr>
 <tr><td>RXBUFSTATUS01</td><td>output</td><td>TCELL15:OUT13</td></tr>
 <tr><td>RXBUFSTATUS02</td><td>output</td><td>TCELL15:OUT14</td></tr>
@@ -368,8 +371,8 @@
 <tr><td>RXBYTEISALIGNED1</td><td>output</td><td>TCELL5:OUT0</td></tr>
 <tr><td>RXBYTEREALIGN0</td><td>output</td><td>TCELL14:OUT15</td></tr>
 <tr><td>RXBYTEREALIGN1</td><td>output</td><td>TCELL5:OUT18</td></tr>
-<tr><td>RXCDRRESET0</td><td>input</td><td>TCELL12:IMUX.IMUX47</td></tr>
-<tr><td>RXCDRRESET1</td><td>input</td><td>TCELL7:IMUX.IMUX0</td></tr>
+<tr><td>RXCDRRESET0</td><td>input</td><td>TCELL12:IMUX.IMUX47.DELAY</td></tr>
+<tr><td>RXCDRRESET1</td><td>input</td><td>TCELL7:IMUX.IMUX0.DELAY</td></tr>
 <tr><td>RXCHANBONDSEQ0</td><td>output</td><td>TCELL12:OUT1</td></tr>
 <tr><td>RXCHANBONDSEQ1</td><td>output</td><td>TCELL7:OUT6</td></tr>
 <tr><td>RXCHANISALIGNED0</td><td>output</td><td>TCELL12:OUT15</td></tr>
@@ -392,14 +395,14 @@
 <tr><td>RXCHARISK11</td><td>output</td><td>TCELL6:OUT16</td></tr>
 <tr><td>RXCHARISK12</td><td>output</td><td>TCELL3:OUT12</td></tr>
 <tr><td>RXCHARISK13</td><td>output</td><td>TCELL1:OUT21</td></tr>
-<tr><td>RXCHBONDI00</td><td>input</td><td>TCELL13:IMUX.IMUX44</td></tr>
-<tr><td>RXCHBONDI01</td><td>input</td><td>TCELL13:IMUX.IMUX45</td></tr>
-<tr><td>RXCHBONDI02</td><td>input</td><td>TCELL13:IMUX.IMUX46</td></tr>
-<tr><td>RXCHBONDI03</td><td>input</td><td>TCELL13:IMUX.IMUX43</td></tr>
-<tr><td>RXCHBONDI10</td><td>input</td><td>TCELL6:IMUX.IMUX3</td></tr>
-<tr><td>RXCHBONDI11</td><td>input</td><td>TCELL6:IMUX.IMUX2</td></tr>
-<tr><td>RXCHBONDI12</td><td>input</td><td>TCELL6:IMUX.IMUX1</td></tr>
-<tr><td>RXCHBONDI13</td><td>input</td><td>TCELL6:IMUX.IMUX23</td></tr>
+<tr><td>RXCHBONDI00</td><td>input</td><td>TCELL13:IMUX.IMUX44.DELAY</td></tr>
+<tr><td>RXCHBONDI01</td><td>input</td><td>TCELL13:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>RXCHBONDI02</td><td>input</td><td>TCELL13:IMUX.IMUX46.DELAY</td></tr>
+<tr><td>RXCHBONDI03</td><td>input</td><td>TCELL13:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>RXCHBONDI10</td><td>input</td><td>TCELL6:IMUX.IMUX3.DELAY</td></tr>
+<tr><td>RXCHBONDI11</td><td>input</td><td>TCELL6:IMUX.IMUX2.DELAY</td></tr>
+<tr><td>RXCHBONDI12</td><td>input</td><td>TCELL6:IMUX.IMUX1.DELAY</td></tr>
+<tr><td>RXCHBONDI13</td><td>input</td><td>TCELL6:IMUX.IMUX23.DELAY</td></tr>
 <tr><td>RXCHBONDO00</td><td>output</td><td>TCELL12:OUT14</td></tr>
 <tr><td>RXCHBONDO01</td><td>output</td><td>TCELL12:OUT7</td></tr>
 <tr><td>RXCHBONDO02</td><td>output</td><td>TCELL12:OUT21</td></tr>
@@ -416,8 +419,8 @@
 <tr><td>RXCLKCORCNT12</td><td>output</td><td>TCELL3:OUT9</td></tr>
 <tr><td>RXCOMMADET0</td><td>output</td><td>TCELL14:OUT21</td></tr>
 <tr><td>RXCOMMADET1</td><td>output</td><td>TCELL5:OUT8</td></tr>
-<tr><td>RXCOMMADETUSE0</td><td>input</td><td>TCELL15:IMUX.IMUX30</td></tr>
-<tr><td>RXCOMMADETUSE1</td><td>input</td><td>TCELL4:IMUX.IMUX17</td></tr>
+<tr><td>RXCOMMADETUSE0</td><td>input</td><td>TCELL15:IMUX.IMUX30.DELAY</td></tr>
+<tr><td>RXCOMMADETUSE1</td><td>input</td><td>TCELL4:IMUX.IMUX17.DELAY</td></tr>
 <tr><td>RXDATA00</td><td>output</td><td>TCELL15:OUT20</td></tr>
 <tr><td>RXDATA01</td><td>output</td><td>TCELL15:OUT23</td></tr>
 <tr><td>RXDATA010</td><td>output</td><td>TCELL13:OUT5</td></tr>
@@ -484,12 +487,12 @@
 <tr><td>RXDATA19</td><td>output</td><td>TCELL6:OUT10</td></tr>
 <tr><td>RXDATAVALID0</td><td>output</td><td>TCELL19:OUT23</td></tr>
 <tr><td>RXDATAVALID1</td><td>output</td><td>TCELL0:OUT12</td></tr>
-<tr><td>RXDATAWIDTH00</td><td>input</td><td>TCELL15:IMUX.IMUX37</td></tr>
-<tr><td>RXDATAWIDTH01</td><td>input</td><td>TCELL15:IMUX.IMUX18</td></tr>
-<tr><td>RXDATAWIDTH10</td><td>input</td><td>TCELL4:IMUX.IMUX10</td></tr>
-<tr><td>RXDATAWIDTH11</td><td>input</td><td>TCELL4:IMUX.IMUX15</td></tr>
-<tr><td>RXDEC8B10BUSE0</td><td>input</td><td>TCELL13:IMUX.IMUX41</td></tr>
-<tr><td>RXDEC8B10BUSE1</td><td>input</td><td>TCELL6:IMUX.IMUX6</td></tr>
+<tr><td>RXDATAWIDTH00</td><td>input</td><td>TCELL15:IMUX.IMUX37.DELAY</td></tr>
+<tr><td>RXDATAWIDTH01</td><td>input</td><td>TCELL15:IMUX.IMUX18.DELAY</td></tr>
+<tr><td>RXDATAWIDTH10</td><td>input</td><td>TCELL4:IMUX.IMUX10.DELAY</td></tr>
+<tr><td>RXDATAWIDTH11</td><td>input</td><td>TCELL4:IMUX.IMUX15.DELAY</td></tr>
+<tr><td>RXDEC8B10BUSE0</td><td>input</td><td>TCELL13:IMUX.IMUX41.DELAY</td></tr>
+<tr><td>RXDEC8B10BUSE1</td><td>input</td><td>TCELL6:IMUX.IMUX6.DELAY</td></tr>
 <tr><td>RXDISPERR00</td><td>output</td><td>TCELL14:OUT14</td></tr>
 <tr><td>RXDISPERR01</td><td>output</td><td>TCELL13:OUT14</td></tr>
 <tr><td>RXDISPERR02</td><td>output</td><td>TCELL17:OUT4</td></tr>
@@ -500,36 +503,36 @@
 <tr><td>RXDISPERR13</td><td>output</td><td>TCELL1:OUT15</td></tr>
 <tr><td>RXELECIDLE0</td><td>output</td><td>TCELL17:OUT5</td></tr>
 <tr><td>RXELECIDLE1</td><td>output</td><td>TCELL2:OUT2</td></tr>
-<tr><td>RXENCHANSYNC0</td><td>input</td><td>TCELL13:IMUX.IMUX23</td></tr>
-<tr><td>RXENCHANSYNC1</td><td>input</td><td>TCELL6:IMUX.IMUX24</td></tr>
-<tr><td>RXENEQB0</td><td>input</td><td>TCELL15:IMUX.IMUX42</td></tr>
-<tr><td>RXENEQB1</td><td>input</td><td>TCELL4:IMUX.IMUX5</td></tr>
-<tr><td>RXENMCOMMAALIGN0</td><td>input</td><td>TCELL15:IMUX.IMUX45</td></tr>
-<tr><td>RXENMCOMMAALIGN1</td><td>input</td><td>TCELL4:IMUX.IMUX2</td></tr>
-<tr><td>RXENPCOMMAALIGN0</td><td>input</td><td>TCELL15:IMUX.IMUX46</td></tr>
-<tr><td>RXENPCOMMAALIGN1</td><td>input</td><td>TCELL4:IMUX.IMUX1</td></tr>
-<tr><td>RXENPMAPHASEALIGN0</td><td>input</td><td>TCELL12:IMUX.IMUX13</td></tr>
-<tr><td>RXENPMAPHASEALIGN1</td><td>input</td><td>TCELL7:IMUX.IMUX34</td></tr>
-<tr><td>RXENPRBSTST00</td><td>input</td><td>TCELL15:IMUX.IMUX28</td></tr>
-<tr><td>RXENPRBSTST01</td><td>input</td><td>TCELL15:IMUX.IMUX29</td></tr>
-<tr><td>RXENPRBSTST10</td><td>input</td><td>TCELL4:IMUX.IMUX25</td></tr>
-<tr><td>RXENPRBSTST11</td><td>input</td><td>TCELL4:IMUX.IMUX24</td></tr>
-<tr><td>RXENSAMPLEALIGN0</td><td>input</td><td>TCELL15:IMUX.IMUX14</td></tr>
-<tr><td>RXENSAMPLEALIGN1</td><td>input</td><td>TCELL4:IMUX.IMUX33</td></tr>
-<tr><td>RXEQMIX00</td><td>input</td><td>TCELL14:IMUX.IMUX46</td></tr>
-<tr><td>RXEQMIX01</td><td>input</td><td>TCELL14:IMUX.IMUX47</td></tr>
-<tr><td>RXEQMIX10</td><td>input</td><td>TCELL5:IMUX.IMUX1</td></tr>
-<tr><td>RXEQMIX11</td><td>input</td><td>TCELL5:IMUX.IMUX0</td></tr>
-<tr><td>RXEQPOLE00</td><td>input</td><td>TCELL14:IMUX.IMUX42</td></tr>
-<tr><td>RXEQPOLE01</td><td>input</td><td>TCELL14:IMUX.IMUX43</td></tr>
-<tr><td>RXEQPOLE02</td><td>input</td><td>TCELL14:IMUX.IMUX44</td></tr>
-<tr><td>RXEQPOLE03</td><td>input</td><td>TCELL14:IMUX.IMUX45</td></tr>
-<tr><td>RXEQPOLE10</td><td>input</td><td>TCELL5:IMUX.IMUX5</td></tr>
-<tr><td>RXEQPOLE11</td><td>input</td><td>TCELL5:IMUX.IMUX4</td></tr>
-<tr><td>RXEQPOLE12</td><td>input</td><td>TCELL5:IMUX.IMUX3</td></tr>
-<tr><td>RXEQPOLE13</td><td>input</td><td>TCELL5:IMUX.IMUX2</td></tr>
-<tr><td>RXGEARBOXSLIP0</td><td>input</td><td>TCELL15:IMUX.IMUX17</td></tr>
-<tr><td>RXGEARBOXSLIP1</td><td>input</td><td>TCELL4:IMUX.IMUX22</td></tr>
+<tr><td>RXENCHANSYNC0</td><td>input</td><td>TCELL13:IMUX.IMUX23.DELAY</td></tr>
+<tr><td>RXENCHANSYNC1</td><td>input</td><td>TCELL6:IMUX.IMUX24.DELAY</td></tr>
+<tr><td>RXENEQB0</td><td>input</td><td>TCELL15:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>RXENEQB1</td><td>input</td><td>TCELL4:IMUX.IMUX5.DELAY</td></tr>
+<tr><td>RXENMCOMMAALIGN0</td><td>input</td><td>TCELL15:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>RXENMCOMMAALIGN1</td><td>input</td><td>TCELL4:IMUX.IMUX2.DELAY</td></tr>
+<tr><td>RXENPCOMMAALIGN0</td><td>input</td><td>TCELL15:IMUX.IMUX46.DELAY</td></tr>
+<tr><td>RXENPCOMMAALIGN1</td><td>input</td><td>TCELL4:IMUX.IMUX1.DELAY</td></tr>
+<tr><td>RXENPMAPHASEALIGN0</td><td>input</td><td>TCELL12:IMUX.IMUX13.DELAY</td></tr>
+<tr><td>RXENPMAPHASEALIGN1</td><td>input</td><td>TCELL7:IMUX.IMUX34.DELAY</td></tr>
+<tr><td>RXENPRBSTST00</td><td>input</td><td>TCELL15:IMUX.IMUX28.DELAY</td></tr>
+<tr><td>RXENPRBSTST01</td><td>input</td><td>TCELL15:IMUX.IMUX29.DELAY</td></tr>
+<tr><td>RXENPRBSTST10</td><td>input</td><td>TCELL4:IMUX.IMUX25.DELAY</td></tr>
+<tr><td>RXENPRBSTST11</td><td>input</td><td>TCELL4:IMUX.IMUX24.DELAY</td></tr>
+<tr><td>RXENSAMPLEALIGN0</td><td>input</td><td>TCELL15:IMUX.IMUX14.DELAY</td></tr>
+<tr><td>RXENSAMPLEALIGN1</td><td>input</td><td>TCELL4:IMUX.IMUX33.DELAY</td></tr>
+<tr><td>RXEQMIX00</td><td>input</td><td>TCELL14:IMUX.IMUX46.DELAY</td></tr>
+<tr><td>RXEQMIX01</td><td>input</td><td>TCELL14:IMUX.IMUX47.DELAY</td></tr>
+<tr><td>RXEQMIX10</td><td>input</td><td>TCELL5:IMUX.IMUX1.DELAY</td></tr>
+<tr><td>RXEQMIX11</td><td>input</td><td>TCELL5:IMUX.IMUX0.DELAY</td></tr>
+<tr><td>RXEQPOLE00</td><td>input</td><td>TCELL14:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>RXEQPOLE01</td><td>input</td><td>TCELL14:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>RXEQPOLE02</td><td>input</td><td>TCELL14:IMUX.IMUX44.DELAY</td></tr>
+<tr><td>RXEQPOLE03</td><td>input</td><td>TCELL14:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>RXEQPOLE10</td><td>input</td><td>TCELL5:IMUX.IMUX5.DELAY</td></tr>
+<tr><td>RXEQPOLE11</td><td>input</td><td>TCELL5:IMUX.IMUX4.DELAY</td></tr>
+<tr><td>RXEQPOLE12</td><td>input</td><td>TCELL5:IMUX.IMUX3.DELAY</td></tr>
+<tr><td>RXEQPOLE13</td><td>input</td><td>TCELL5:IMUX.IMUX2.DELAY</td></tr>
+<tr><td>RXGEARBOXSLIP0</td><td>input</td><td>TCELL15:IMUX.IMUX17.DELAY</td></tr>
+<tr><td>RXGEARBOXSLIP1</td><td>input</td><td>TCELL4:IMUX.IMUX22.DELAY</td></tr>
 <tr><td>RXHEADER00</td><td>output</td><td>TCELL19:OUT22</td></tr>
 <tr><td>RXHEADER01</td><td>output</td><td>TCELL19:OUT0</td></tr>
 <tr><td>RXHEADER02</td><td>output</td><td>TCELL19:OUT9</td></tr>
@@ -552,20 +555,20 @@
 <tr><td>RXNOTINTABLE13</td><td>output</td><td>TCELL2:OUT4</td></tr>
 <tr><td>RXOVERSAMPLEERR0</td><td>output</td><td>TCELL15:OUT3</td></tr>
 <tr><td>RXOVERSAMPLEERR1</td><td>output</td><td>TCELL4:OUT4</td></tr>
-<tr><td>RXPMASETPHASE0</td><td>input</td><td>TCELL12:IMUX.IMUX7</td></tr>
-<tr><td>RXPMASETPHASE1</td><td>input</td><td>TCELL7:IMUX.IMUX40</td></tr>
-<tr><td>RXPOLARITY0</td><td>input</td><td>TCELL15:IMUX.IMUX41</td></tr>
-<tr><td>RXPOLARITY1</td><td>input</td><td>TCELL4:IMUX.IMUX0</td></tr>
-<tr><td>RXPOWERDOWN00</td><td>input</td><td>TCELL12:IMUX.IMUX38</td></tr>
-<tr><td>RXPOWERDOWN01</td><td>input</td><td>TCELL12:IMUX.IMUX39</td></tr>
-<tr><td>RXPOWERDOWN10</td><td>input</td><td>TCELL7:IMUX.IMUX9</td></tr>
-<tr><td>RXPOWERDOWN11</td><td>input</td><td>TCELL7:IMUX.IMUX8</td></tr>
+<tr><td>RXPMASETPHASE0</td><td>input</td><td>TCELL12:IMUX.IMUX7.DELAY</td></tr>
+<tr><td>RXPMASETPHASE1</td><td>input</td><td>TCELL7:IMUX.IMUX40.DELAY</td></tr>
+<tr><td>RXPOLARITY0</td><td>input</td><td>TCELL15:IMUX.IMUX41.DELAY</td></tr>
+<tr><td>RXPOLARITY1</td><td>input</td><td>TCELL4:IMUX.IMUX0.DELAY</td></tr>
+<tr><td>RXPOWERDOWN00</td><td>input</td><td>TCELL12:IMUX.IMUX38.DELAY</td></tr>
+<tr><td>RXPOWERDOWN01</td><td>input</td><td>TCELL12:IMUX.IMUX39.DELAY</td></tr>
+<tr><td>RXPOWERDOWN10</td><td>input</td><td>TCELL7:IMUX.IMUX9.DELAY</td></tr>
+<tr><td>RXPOWERDOWN11</td><td>input</td><td>TCELL7:IMUX.IMUX8.DELAY</td></tr>
 <tr><td>RXPRBSERR0</td><td>output</td><td>TCELL16:OUT22</td></tr>
 <tr><td>RXPRBSERR1</td><td>output</td><td>TCELL3:OUT11</td></tr>
 <tr><td>RXRECCLK0</td><td>output</td><td>TCELL12:OUT13</td></tr>
 <tr><td>RXRECCLK1</td><td>output</td><td>TCELL7:OUT20</td></tr>
-<tr><td>RXRESET0</td><td>input</td><td>TCELL12:IMUX.IMUX42</td></tr>
-<tr><td>RXRESET1</td><td>input</td><td>TCELL7:IMUX.IMUX5</td></tr>
+<tr><td>RXRESET0</td><td>input</td><td>TCELL12:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>RXRESET1</td><td>input</td><td>TCELL7:IMUX.IMUX5.DELAY</td></tr>
 <tr><td>RXRUNDISP00</td><td>output</td><td>TCELL14:OUT1</td></tr>
 <tr><td>RXRUNDISP01</td><td>output</td><td>TCELL13:OUT1</td></tr>
 <tr><td>RXRUNDISP02</td><td>output</td><td>TCELL16:OUT19</td></tr>
@@ -574,8 +577,8 @@
 <tr><td>RXRUNDISP11</td><td>output</td><td>TCELL6:OUT6</td></tr>
 <tr><td>RXRUNDISP12</td><td>output</td><td>TCELL3:OUT20</td></tr>
 <tr><td>RXRUNDISP13</td><td>output</td><td>TCELL2:OUT18</td></tr>
-<tr><td>RXSLIDE0</td><td>input</td><td>TCELL15:IMUX.IMUX44</td></tr>
-<tr><td>RXSLIDE1</td><td>input</td><td>TCELL4:IMUX.IMUX3</td></tr>
+<tr><td>RXSLIDE0</td><td>input</td><td>TCELL15:IMUX.IMUX44.DELAY</td></tr>
+<tr><td>RXSLIDE1</td><td>input</td><td>TCELL4:IMUX.IMUX3.DELAY</td></tr>
 <tr><td>RXSTARTOFSEQ0</td><td>output</td><td>TCELL19:OUT18</td></tr>
 <tr><td>RXSTARTOFSEQ1</td><td>output</td><td>TCELL0:OUT2</td></tr>
 <tr><td>RXSTATUS00</td><td>output</td><td>TCELL16:OUT14</td></tr>
@@ -590,168 +593,168 @@
 <tr><td>RXUSRCLK21</td><td>input</td><td>TCELL9:IMUX.CLK0</td></tr>
 <tr><td>RXVALID0</td><td>output</td><td>TCELL13:OUT7</td></tr>
 <tr><td>RXVALID1</td><td>output</td><td>TCELL6:OUT0</td></tr>
-<tr><td>SCANEN</td><td>input</td><td>TCELL19:IMUX.IMUX17</td></tr>
-<tr><td>SCANINPCS0</td><td>input</td><td>TCELL19:IMUX.IMUX47</td></tr>
-<tr><td>SCANINPCS1</td><td>input</td><td>TCELL0:IMUX.IMUX30</td></tr>
-<tr><td>SCANINPCSCOMMON</td><td>input</td><td>TCELL11:IMUX.IMUX29</td></tr>
-<tr><td>SCANMODE</td><td>input</td><td>TCELL0:IMUX.IMUX36</td></tr>
+<tr><td>SCANEN</td><td>input</td><td>TCELL19:IMUX.IMUX17.DELAY</td></tr>
+<tr><td>SCANINPCS0</td><td>input</td><td>TCELL19:IMUX.IMUX47.DELAY</td></tr>
+<tr><td>SCANINPCS1</td><td>input</td><td>TCELL0:IMUX.IMUX30.DELAY</td></tr>
+<tr><td>SCANINPCSCOMMON</td><td>input</td><td>TCELL11:IMUX.IMUX29.DELAY</td></tr>
+<tr><td>SCANMODE</td><td>input</td><td>TCELL0:IMUX.IMUX36.DELAY</td></tr>
 <tr><td>SCANOUTPCS0</td><td>output</td><td>TCELL12:OUT10</td></tr>
 <tr><td>SCANOUTPCS1</td><td>output</td><td>TCELL7:OUT7</td></tr>
 <tr><td>SCANOUTPCSCOMMON</td><td>output</td><td>TCELL8:OUT1</td></tr>
-<tr><td>TSTPWRDN00</td><td>input</td><td>TCELL13:IMUX.IMUX31</td></tr>
-<tr><td>TSTPWRDN01</td><td>input</td><td>TCELL13:IMUX.IMUX32</td></tr>
-<tr><td>TSTPWRDN02</td><td>input</td><td>TCELL13:IMUX.IMUX33</td></tr>
-<tr><td>TSTPWRDN03</td><td>input</td><td>TCELL13:IMUX.IMUX34</td></tr>
-<tr><td>TSTPWRDN04</td><td>input</td><td>TCELL13:IMUX.IMUX35</td></tr>
-<tr><td>TSTPWRDN10</td><td>input</td><td>TCELL6:IMUX.IMUX16</td></tr>
-<tr><td>TSTPWRDN11</td><td>input</td><td>TCELL6:IMUX.IMUX15</td></tr>
-<tr><td>TSTPWRDN12</td><td>input</td><td>TCELL6:IMUX.IMUX14</td></tr>
-<tr><td>TSTPWRDN13</td><td>input</td><td>TCELL6:IMUX.IMUX13</td></tr>
-<tr><td>TSTPWRDN14</td><td>input</td><td>TCELL6:IMUX.IMUX12</td></tr>
-<tr><td>TSTPWRDNOVRD0</td><td>input</td><td>TCELL18:IMUX.IMUX30</td></tr>
-<tr><td>TSTPWRDNOVRD1</td><td>input</td><td>TCELL1:IMUX.IMUX47</td></tr>
-<tr><td>TXBUFDIFFCTRL00</td><td>input</td><td>TCELL19:IMUX.IMUX30</td></tr>
-<tr><td>TXBUFDIFFCTRL01</td><td>input</td><td>TCELL19:IMUX.IMUX31</td></tr>
-<tr><td>TXBUFDIFFCTRL02</td><td>input</td><td>TCELL19:IMUX.IMUX32</td></tr>
-<tr><td>TXBUFDIFFCTRL10</td><td>input</td><td>TCELL0:IMUX.IMUX17</td></tr>
-<tr><td>TXBUFDIFFCTRL11</td><td>input</td><td>TCELL0:IMUX.IMUX16</td></tr>
-<tr><td>TXBUFDIFFCTRL12</td><td>input</td><td>TCELL0:IMUX.IMUX15</td></tr>
+<tr><td>TSTPWRDN00</td><td>input</td><td>TCELL13:IMUX.IMUX31.DELAY</td></tr>
+<tr><td>TSTPWRDN01</td><td>input</td><td>TCELL13:IMUX.IMUX32.DELAY</td></tr>
+<tr><td>TSTPWRDN02</td><td>input</td><td>TCELL13:IMUX.IMUX33.DELAY</td></tr>
+<tr><td>TSTPWRDN03</td><td>input</td><td>TCELL13:IMUX.IMUX34.DELAY</td></tr>
+<tr><td>TSTPWRDN04</td><td>input</td><td>TCELL13:IMUX.IMUX35.DELAY</td></tr>
+<tr><td>TSTPWRDN10</td><td>input</td><td>TCELL6:IMUX.IMUX16.DELAY</td></tr>
+<tr><td>TSTPWRDN11</td><td>input</td><td>TCELL6:IMUX.IMUX15.DELAY</td></tr>
+<tr><td>TSTPWRDN12</td><td>input</td><td>TCELL6:IMUX.IMUX14.DELAY</td></tr>
+<tr><td>TSTPWRDN13</td><td>input</td><td>TCELL6:IMUX.IMUX13.DELAY</td></tr>
+<tr><td>TSTPWRDN14</td><td>input</td><td>TCELL6:IMUX.IMUX12.DELAY</td></tr>
+<tr><td>TSTPWRDNOVRD0</td><td>input</td><td>TCELL18:IMUX.IMUX30.DELAY</td></tr>
+<tr><td>TSTPWRDNOVRD1</td><td>input</td><td>TCELL1:IMUX.IMUX47.DELAY</td></tr>
+<tr><td>TXBUFDIFFCTRL00</td><td>input</td><td>TCELL19:IMUX.IMUX30.DELAY</td></tr>
+<tr><td>TXBUFDIFFCTRL01</td><td>input</td><td>TCELL19:IMUX.IMUX31.DELAY</td></tr>
+<tr><td>TXBUFDIFFCTRL02</td><td>input</td><td>TCELL19:IMUX.IMUX32.DELAY</td></tr>
+<tr><td>TXBUFDIFFCTRL10</td><td>input</td><td>TCELL0:IMUX.IMUX17.DELAY</td></tr>
+<tr><td>TXBUFDIFFCTRL11</td><td>input</td><td>TCELL0:IMUX.IMUX16.DELAY</td></tr>
+<tr><td>TXBUFDIFFCTRL12</td><td>input</td><td>TCELL0:IMUX.IMUX15.DELAY</td></tr>
 <tr><td>TXBUFSTATUS00</td><td>output</td><td>TCELL18:OUT0</td></tr>
 <tr><td>TXBUFSTATUS01</td><td>output</td><td>TCELL18:OUT23</td></tr>
 <tr><td>TXBUFSTATUS10</td><td>output</td><td>TCELL1:OUT2</td></tr>
 <tr><td>TXBUFSTATUS11</td><td>output</td><td>TCELL1:OUT10</td></tr>
-<tr><td>TXBYPASS8B10B00</td><td>input</td><td>TCELL18:IMUX.IMUX29</td></tr>
-<tr><td>TXBYPASS8B10B01</td><td>input</td><td>TCELL17:IMUX.IMUX29</td></tr>
-<tr><td>TXBYPASS8B10B02</td><td>input</td><td>TCELL15:IMUX.IMUX27</td></tr>
-<tr><td>TXBYPASS8B10B03</td><td>input</td><td>TCELL15:IMUX.IMUX21</td></tr>
-<tr><td>TXBYPASS8B10B10</td><td>input</td><td>TCELL1:IMUX.IMUX12</td></tr>
-<tr><td>TXBYPASS8B10B11</td><td>input</td><td>TCELL2:IMUX.IMUX24</td></tr>
-<tr><td>TXBYPASS8B10B12</td><td>input</td><td>TCELL4:IMUX.IMUX20</td></tr>
-<tr><td>TXBYPASS8B10B13</td><td>input</td><td>TCELL4:IMUX.IMUX14</td></tr>
-<tr><td>TXCHARDISPMODE00</td><td>input</td><td>TCELL18:IMUX.IMUX27</td></tr>
-<tr><td>TXCHARDISPMODE01</td><td>input</td><td>TCELL17:IMUX.IMUX27</td></tr>
-<tr><td>TXCHARDISPMODE02</td><td>input</td><td>TCELL19:IMUX.IMUX15</td></tr>
-<tr><td>TXCHARDISPMODE03</td><td>input</td><td>TCELL17:IMUX.IMUX7</td></tr>
-<tr><td>TXCHARDISPMODE10</td><td>input</td><td>TCELL1:IMUX.IMUX8</td></tr>
-<tr><td>TXCHARDISPMODE11</td><td>input</td><td>TCELL2:IMUX.IMUX20</td></tr>
-<tr><td>TXCHARDISPMODE12</td><td>input</td><td>TCELL0:IMUX.IMUX38</td></tr>
-<tr><td>TXCHARDISPMODE13</td><td>input</td><td>TCELL2:IMUX.IMUX40</td></tr>
-<tr><td>TXCHARDISPVAL00</td><td>input</td><td>TCELL18:IMUX.IMUX26</td></tr>
-<tr><td>TXCHARDISPVAL01</td><td>input</td><td>TCELL17:IMUX.IMUX26</td></tr>
-<tr><td>TXCHARDISPVAL02</td><td>input</td><td>TCELL19:IMUX.IMUX2</td></tr>
-<tr><td>TXCHARDISPVAL03</td><td>input</td><td>TCELL17:IMUX.IMUX25</td></tr>
-<tr><td>TXCHARDISPVAL10</td><td>input</td><td>TCELL1:IMUX.IMUX21</td></tr>
-<tr><td>TXCHARDISPVAL11</td><td>input</td><td>TCELL2:IMUX.IMUX21</td></tr>
-<tr><td>TXCHARDISPVAL12</td><td>input</td><td>TCELL0:IMUX.IMUX9</td></tr>
-<tr><td>TXCHARDISPVAL13</td><td>input</td><td>TCELL2:IMUX.IMUX28</td></tr>
-<tr><td>TXCHARISK00</td><td>input</td><td>TCELL18:IMUX.IMUX46</td></tr>
-<tr><td>TXCHARISK01</td><td>input</td><td>TCELL17:IMUX.IMUX28</td></tr>
-<tr><td>TXCHARISK02</td><td>input</td><td>TCELL18:IMUX.IMUX28</td></tr>
-<tr><td>TXCHARISK03</td><td>input</td><td>TCELL17:IMUX.IMUX8</td></tr>
-<tr><td>TXCHARISK10</td><td>input</td><td>TCELL1:IMUX.IMUX1</td></tr>
-<tr><td>TXCHARISK11</td><td>input</td><td>TCELL2:IMUX.IMUX25</td></tr>
-<tr><td>TXCHARISK12</td><td>input</td><td>TCELL1:IMUX.IMUX13</td></tr>
-<tr><td>TXCHARISK13</td><td>input</td><td>TCELL2:IMUX.IMUX39</td></tr>
-<tr><td>TXCOMSTART0</td><td>input</td><td>TCELL18:IMUX.IMUX4</td></tr>
-<tr><td>TXCOMSTART1</td><td>input</td><td>TCELL1:IMUX.IMUX37</td></tr>
-<tr><td>TXCOMTYPE0</td><td>input</td><td>TCELL18:IMUX.IMUX5</td></tr>
-<tr><td>TXCOMTYPE1</td><td>input</td><td>TCELL1:IMUX.IMUX0</td></tr>
-<tr><td>TXDATA00</td><td>input</td><td>TCELL19:IMUX.IMUX45</td></tr>
-<tr><td>TXDATA01</td><td>input</td><td>TCELL19:IMUX.IMUX44</td></tr>
-<tr><td>TXDATA010</td><td>input</td><td>TCELL17:IMUX.IMUX43</td></tr>
-<tr><td>TXDATA011</td><td>input</td><td>TCELL17:IMUX.IMUX42</td></tr>
-<tr><td>TXDATA012</td><td>input</td><td>TCELL16:IMUX.IMUX45</td></tr>
-<tr><td>TXDATA013</td><td>input</td><td>TCELL16:IMUX.IMUX44</td></tr>
-<tr><td>TXDATA014</td><td>input</td><td>TCELL16:IMUX.IMUX43</td></tr>
-<tr><td>TXDATA015</td><td>input</td><td>TCELL16:IMUX.IMUX42</td></tr>
-<tr><td>TXDATA016</td><td>input</td><td>TCELL19:IMUX.IMUX23</td></tr>
-<tr><td>TXDATA017</td><td>input</td><td>TCELL19:IMUX.IMUX22</td></tr>
-<tr><td>TXDATA018</td><td>input</td><td>TCELL19:IMUX.IMUX20</td></tr>
-<tr><td>TXDATA019</td><td>input</td><td>TCELL19:IMUX.IMUX12</td></tr>
-<tr><td>TXDATA02</td><td>input</td><td>TCELL19:IMUX.IMUX43</td></tr>
-<tr><td>TXDATA020</td><td>input</td><td>TCELL18:IMUX.IMUX35</td></tr>
-<tr><td>TXDATA021</td><td>input</td><td>TCELL18:IMUX.IMUX33</td></tr>
-<tr><td>TXDATA022</td><td>input</td><td>TCELL18:IMUX.IMUX32</td></tr>
-<tr><td>TXDATA023</td><td>input</td><td>TCELL18:IMUX.IMUX31</td></tr>
-<tr><td>TXDATA024</td><td>input</td><td>TCELL17:IMUX.IMUX23</td></tr>
-<tr><td>TXDATA025</td><td>input</td><td>TCELL17:IMUX.IMUX22</td></tr>
-<tr><td>TXDATA026</td><td>input</td><td>TCELL17:IMUX.IMUX21</td></tr>
-<tr><td>TXDATA027</td><td>input</td><td>TCELL17:IMUX.IMUX20</td></tr>
-<tr><td>TXDATA028</td><td>input</td><td>TCELL16:IMUX.IMUX23</td></tr>
-<tr><td>TXDATA029</td><td>input</td><td>TCELL16:IMUX.IMUX22</td></tr>
-<tr><td>TXDATA03</td><td>input</td><td>TCELL19:IMUX.IMUX42</td></tr>
-<tr><td>TXDATA030</td><td>input</td><td>TCELL16:IMUX.IMUX21</td></tr>
-<tr><td>TXDATA031</td><td>input</td><td>TCELL16:IMUX.IMUX20</td></tr>
-<tr><td>TXDATA04</td><td>input</td><td>TCELL18:IMUX.IMUX45</td></tr>
-<tr><td>TXDATA05</td><td>input</td><td>TCELL18:IMUX.IMUX44</td></tr>
-<tr><td>TXDATA06</td><td>input</td><td>TCELL18:IMUX.IMUX43</td></tr>
-<tr><td>TXDATA07</td><td>input</td><td>TCELL18:IMUX.IMUX42</td></tr>
-<tr><td>TXDATA08</td><td>input</td><td>TCELL17:IMUX.IMUX45</td></tr>
-<tr><td>TXDATA09</td><td>input</td><td>TCELL17:IMUX.IMUX44</td></tr>
-<tr><td>TXDATA10</td><td>input</td><td>TCELL0:IMUX.IMUX32</td></tr>
-<tr><td>TXDATA11</td><td>input</td><td>TCELL0:IMUX.IMUX33</td></tr>
-<tr><td>TXDATA110</td><td>input</td><td>TCELL2:IMUX.IMUX34</td></tr>
-<tr><td>TXDATA111</td><td>input</td><td>TCELL2:IMUX.IMUX35</td></tr>
-<tr><td>TXDATA112</td><td>input</td><td>TCELL3:IMUX.IMUX32</td></tr>
-<tr><td>TXDATA113</td><td>input</td><td>TCELL3:IMUX.IMUX33</td></tr>
-<tr><td>TXDATA114</td><td>input</td><td>TCELL3:IMUX.IMUX34</td></tr>
-<tr><td>TXDATA115</td><td>input</td><td>TCELL3:IMUX.IMUX35</td></tr>
-<tr><td>TXDATA116</td><td>input</td><td>TCELL0:IMUX.IMUX0</td></tr>
-<tr><td>TXDATA117</td><td>input</td><td>TCELL0:IMUX.IMUX31</td></tr>
-<tr><td>TXDATA118</td><td>input</td><td>TCELL0:IMUX.IMUX27</td></tr>
-<tr><td>TXDATA119</td><td>input</td><td>TCELL0:IMUX.IMUX29</td></tr>
-<tr><td>TXDATA12</td><td>input</td><td>TCELL0:IMUX.IMUX34</td></tr>
-<tr><td>TXDATA120</td><td>input</td><td>TCELL1:IMUX.IMUX6</td></tr>
-<tr><td>TXDATA121</td><td>input</td><td>TCELL1:IMUX.IMUX20</td></tr>
-<tr><td>TXDATA122</td><td>input</td><td>TCELL1:IMUX.IMUX39</td></tr>
-<tr><td>TXDATA123</td><td>input</td><td>TCELL1:IMUX.IMUX28</td></tr>
-<tr><td>TXDATA124</td><td>input</td><td>TCELL2:IMUX.IMUX30</td></tr>
-<tr><td>TXDATA125</td><td>input</td><td>TCELL2:IMUX.IMUX31</td></tr>
-<tr><td>TXDATA126</td><td>input</td><td>TCELL2:IMUX.IMUX38</td></tr>
-<tr><td>TXDATA127</td><td>input</td><td>TCELL2:IMUX.IMUX27</td></tr>
-<tr><td>TXDATA128</td><td>input</td><td>TCELL3:IMUX.IMUX30</td></tr>
-<tr><td>TXDATA129</td><td>input</td><td>TCELL3:IMUX.IMUX31</td></tr>
-<tr><td>TXDATA13</td><td>input</td><td>TCELL0:IMUX.IMUX35</td></tr>
-<tr><td>TXDATA130</td><td>input</td><td>TCELL3:IMUX.IMUX38</td></tr>
-<tr><td>TXDATA131</td><td>input</td><td>TCELL3:IMUX.IMUX39</td></tr>
-<tr><td>TXDATA14</td><td>input</td><td>TCELL1:IMUX.IMUX32</td></tr>
-<tr><td>TXDATA15</td><td>input</td><td>TCELL1:IMUX.IMUX33</td></tr>
-<tr><td>TXDATA16</td><td>input</td><td>TCELL1:IMUX.IMUX34</td></tr>
-<tr><td>TXDATA17</td><td>input</td><td>TCELL1:IMUX.IMUX35</td></tr>
-<tr><td>TXDATA18</td><td>input</td><td>TCELL2:IMUX.IMUX32</td></tr>
-<tr><td>TXDATA19</td><td>input</td><td>TCELL2:IMUX.IMUX33</td></tr>
-<tr><td>TXDATAWIDTH00</td><td>input</td><td>TCELL16:IMUX.IMUX31</td></tr>
-<tr><td>TXDATAWIDTH01</td><td>input</td><td>TCELL16:IMUX.IMUX24</td></tr>
-<tr><td>TXDATAWIDTH10</td><td>input</td><td>TCELL3:IMUX.IMUX4</td></tr>
-<tr><td>TXDATAWIDTH11</td><td>input</td><td>TCELL3:IMUX.IMUX5</td></tr>
-<tr><td>TXDETECTRX0</td><td>input</td><td>TCELL19:IMUX.IMUX18</td></tr>
-<tr><td>TXDETECTRX1</td><td>input</td><td>TCELL0:IMUX.IMUX47</td></tr>
-<tr><td>TXDIFFCTRL00</td><td>input</td><td>TCELL19:IMUX.IMUX33</td></tr>
-<tr><td>TXDIFFCTRL01</td><td>input</td><td>TCELL19:IMUX.IMUX34</td></tr>
-<tr><td>TXDIFFCTRL02</td><td>input</td><td>TCELL19:IMUX.IMUX35</td></tr>
-<tr><td>TXDIFFCTRL10</td><td>input</td><td>TCELL0:IMUX.IMUX8</td></tr>
-<tr><td>TXDIFFCTRL11</td><td>input</td><td>TCELL0:IMUX.IMUX7</td></tr>
-<tr><td>TXDIFFCTRL12</td><td>input</td><td>TCELL0:IMUX.IMUX6</td></tr>
-<tr><td>TXELECIDLE0</td><td>input</td><td>TCELL19:IMUX.IMUX19</td></tr>
-<tr><td>TXELECIDLE1</td><td>input</td><td>TCELL0:IMUX.IMUX4</td></tr>
-<tr><td>TXENC8B10BUSE0</td><td>input</td><td>TCELL16:IMUX.IMUX30</td></tr>
-<tr><td>TXENC8B10BUSE1</td><td>input</td><td>TCELL3:IMUX.IMUX47</td></tr>
-<tr><td>TXENPMAPHASEALIGN0</td><td>input</td><td>TCELL10:IMUX.IMUX16</td></tr>
-<tr><td>TXENPMAPHASEALIGN1</td><td>input</td><td>TCELL9:IMUX.IMUX20</td></tr>
-<tr><td>TXENPRBSTST00</td><td>input</td><td>TCELL18:IMUX.IMUX24</td></tr>
-<tr><td>TXENPRBSTST01</td><td>input</td><td>TCELL18:IMUX.IMUX25</td></tr>
-<tr><td>TXENPRBSTST10</td><td>input</td><td>TCELL1:IMUX.IMUX11</td></tr>
-<tr><td>TXENPRBSTST11</td><td>input</td><td>TCELL1:IMUX.IMUX10</td></tr>
+<tr><td>TXBYPASS8B10B00</td><td>input</td><td>TCELL18:IMUX.IMUX29.DELAY</td></tr>
+<tr><td>TXBYPASS8B10B01</td><td>input</td><td>TCELL17:IMUX.IMUX29.DELAY</td></tr>
+<tr><td>TXBYPASS8B10B02</td><td>input</td><td>TCELL15:IMUX.IMUX27.DELAY</td></tr>
+<tr><td>TXBYPASS8B10B03</td><td>input</td><td>TCELL15:IMUX.IMUX21.DELAY</td></tr>
+<tr><td>TXBYPASS8B10B10</td><td>input</td><td>TCELL1:IMUX.IMUX12.DELAY</td></tr>
+<tr><td>TXBYPASS8B10B11</td><td>input</td><td>TCELL2:IMUX.IMUX24.DELAY</td></tr>
+<tr><td>TXBYPASS8B10B12</td><td>input</td><td>TCELL4:IMUX.IMUX20.DELAY</td></tr>
+<tr><td>TXBYPASS8B10B13</td><td>input</td><td>TCELL4:IMUX.IMUX14.DELAY</td></tr>
+<tr><td>TXCHARDISPMODE00</td><td>input</td><td>TCELL18:IMUX.IMUX27.DELAY</td></tr>
+<tr><td>TXCHARDISPMODE01</td><td>input</td><td>TCELL17:IMUX.IMUX27.DELAY</td></tr>
+<tr><td>TXCHARDISPMODE02</td><td>input</td><td>TCELL19:IMUX.IMUX15.DELAY</td></tr>
+<tr><td>TXCHARDISPMODE03</td><td>input</td><td>TCELL17:IMUX.IMUX7.DELAY</td></tr>
+<tr><td>TXCHARDISPMODE10</td><td>input</td><td>TCELL1:IMUX.IMUX8.DELAY</td></tr>
+<tr><td>TXCHARDISPMODE11</td><td>input</td><td>TCELL2:IMUX.IMUX20.DELAY</td></tr>
+<tr><td>TXCHARDISPMODE12</td><td>input</td><td>TCELL0:IMUX.IMUX38.DELAY</td></tr>
+<tr><td>TXCHARDISPMODE13</td><td>input</td><td>TCELL2:IMUX.IMUX40.DELAY</td></tr>
+<tr><td>TXCHARDISPVAL00</td><td>input</td><td>TCELL18:IMUX.IMUX26.DELAY</td></tr>
+<tr><td>TXCHARDISPVAL01</td><td>input</td><td>TCELL17:IMUX.IMUX26.DELAY</td></tr>
+<tr><td>TXCHARDISPVAL02</td><td>input</td><td>TCELL19:IMUX.IMUX2.DELAY</td></tr>
+<tr><td>TXCHARDISPVAL03</td><td>input</td><td>TCELL17:IMUX.IMUX25.DELAY</td></tr>
+<tr><td>TXCHARDISPVAL10</td><td>input</td><td>TCELL1:IMUX.IMUX21.DELAY</td></tr>
+<tr><td>TXCHARDISPVAL11</td><td>input</td><td>TCELL2:IMUX.IMUX21.DELAY</td></tr>
+<tr><td>TXCHARDISPVAL12</td><td>input</td><td>TCELL0:IMUX.IMUX9.DELAY</td></tr>
+<tr><td>TXCHARDISPVAL13</td><td>input</td><td>TCELL2:IMUX.IMUX28.DELAY</td></tr>
+<tr><td>TXCHARISK00</td><td>input</td><td>TCELL18:IMUX.IMUX46.DELAY</td></tr>
+<tr><td>TXCHARISK01</td><td>input</td><td>TCELL17:IMUX.IMUX28.DELAY</td></tr>
+<tr><td>TXCHARISK02</td><td>input</td><td>TCELL18:IMUX.IMUX28.DELAY</td></tr>
+<tr><td>TXCHARISK03</td><td>input</td><td>TCELL17:IMUX.IMUX8.DELAY</td></tr>
+<tr><td>TXCHARISK10</td><td>input</td><td>TCELL1:IMUX.IMUX1.DELAY</td></tr>
+<tr><td>TXCHARISK11</td><td>input</td><td>TCELL2:IMUX.IMUX25.DELAY</td></tr>
+<tr><td>TXCHARISK12</td><td>input</td><td>TCELL1:IMUX.IMUX13.DELAY</td></tr>
+<tr><td>TXCHARISK13</td><td>input</td><td>TCELL2:IMUX.IMUX39.DELAY</td></tr>
+<tr><td>TXCOMSTART0</td><td>input</td><td>TCELL18:IMUX.IMUX4.DELAY</td></tr>
+<tr><td>TXCOMSTART1</td><td>input</td><td>TCELL1:IMUX.IMUX37.DELAY</td></tr>
+<tr><td>TXCOMTYPE0</td><td>input</td><td>TCELL18:IMUX.IMUX5.DELAY</td></tr>
+<tr><td>TXCOMTYPE1</td><td>input</td><td>TCELL1:IMUX.IMUX0.DELAY</td></tr>
+<tr><td>TXDATA00</td><td>input</td><td>TCELL19:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>TXDATA01</td><td>input</td><td>TCELL19:IMUX.IMUX44.DELAY</td></tr>
+<tr><td>TXDATA010</td><td>input</td><td>TCELL17:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>TXDATA011</td><td>input</td><td>TCELL17:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>TXDATA012</td><td>input</td><td>TCELL16:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>TXDATA013</td><td>input</td><td>TCELL16:IMUX.IMUX44.DELAY</td></tr>
+<tr><td>TXDATA014</td><td>input</td><td>TCELL16:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>TXDATA015</td><td>input</td><td>TCELL16:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>TXDATA016</td><td>input</td><td>TCELL19:IMUX.IMUX23.DELAY</td></tr>
+<tr><td>TXDATA017</td><td>input</td><td>TCELL19:IMUX.IMUX22.DELAY</td></tr>
+<tr><td>TXDATA018</td><td>input</td><td>TCELL19:IMUX.IMUX20.DELAY</td></tr>
+<tr><td>TXDATA019</td><td>input</td><td>TCELL19:IMUX.IMUX12.DELAY</td></tr>
+<tr><td>TXDATA02</td><td>input</td><td>TCELL19:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>TXDATA020</td><td>input</td><td>TCELL18:IMUX.IMUX35.DELAY</td></tr>
+<tr><td>TXDATA021</td><td>input</td><td>TCELL18:IMUX.IMUX33.DELAY</td></tr>
+<tr><td>TXDATA022</td><td>input</td><td>TCELL18:IMUX.IMUX32.DELAY</td></tr>
+<tr><td>TXDATA023</td><td>input</td><td>TCELL18:IMUX.IMUX31.DELAY</td></tr>
+<tr><td>TXDATA024</td><td>input</td><td>TCELL17:IMUX.IMUX23.DELAY</td></tr>
+<tr><td>TXDATA025</td><td>input</td><td>TCELL17:IMUX.IMUX22.DELAY</td></tr>
+<tr><td>TXDATA026</td><td>input</td><td>TCELL17:IMUX.IMUX21.DELAY</td></tr>
+<tr><td>TXDATA027</td><td>input</td><td>TCELL17:IMUX.IMUX20.DELAY</td></tr>
+<tr><td>TXDATA028</td><td>input</td><td>TCELL16:IMUX.IMUX23.DELAY</td></tr>
+<tr><td>TXDATA029</td><td>input</td><td>TCELL16:IMUX.IMUX22.DELAY</td></tr>
+<tr><td>TXDATA03</td><td>input</td><td>TCELL19:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>TXDATA030</td><td>input</td><td>TCELL16:IMUX.IMUX21.DELAY</td></tr>
+<tr><td>TXDATA031</td><td>input</td><td>TCELL16:IMUX.IMUX20.DELAY</td></tr>
+<tr><td>TXDATA04</td><td>input</td><td>TCELL18:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>TXDATA05</td><td>input</td><td>TCELL18:IMUX.IMUX44.DELAY</td></tr>
+<tr><td>TXDATA06</td><td>input</td><td>TCELL18:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>TXDATA07</td><td>input</td><td>TCELL18:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>TXDATA08</td><td>input</td><td>TCELL17:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>TXDATA09</td><td>input</td><td>TCELL17:IMUX.IMUX44.DELAY</td></tr>
+<tr><td>TXDATA10</td><td>input</td><td>TCELL0:IMUX.IMUX32.DELAY</td></tr>
+<tr><td>TXDATA11</td><td>input</td><td>TCELL0:IMUX.IMUX33.DELAY</td></tr>
+<tr><td>TXDATA110</td><td>input</td><td>TCELL2:IMUX.IMUX34.DELAY</td></tr>
+<tr><td>TXDATA111</td><td>input</td><td>TCELL2:IMUX.IMUX35.DELAY</td></tr>
+<tr><td>TXDATA112</td><td>input</td><td>TCELL3:IMUX.IMUX32.DELAY</td></tr>
+<tr><td>TXDATA113</td><td>input</td><td>TCELL3:IMUX.IMUX33.DELAY</td></tr>
+<tr><td>TXDATA114</td><td>input</td><td>TCELL3:IMUX.IMUX34.DELAY</td></tr>
+<tr><td>TXDATA115</td><td>input</td><td>TCELL3:IMUX.IMUX35.DELAY</td></tr>
+<tr><td>TXDATA116</td><td>input</td><td>TCELL0:IMUX.IMUX0.DELAY</td></tr>
+<tr><td>TXDATA117</td><td>input</td><td>TCELL0:IMUX.IMUX31.DELAY</td></tr>
+<tr><td>TXDATA118</td><td>input</td><td>TCELL0:IMUX.IMUX27.DELAY</td></tr>
+<tr><td>TXDATA119</td><td>input</td><td>TCELL0:IMUX.IMUX29.DELAY</td></tr>
+<tr><td>TXDATA12</td><td>input</td><td>TCELL0:IMUX.IMUX34.DELAY</td></tr>
+<tr><td>TXDATA120</td><td>input</td><td>TCELL1:IMUX.IMUX6.DELAY</td></tr>
+<tr><td>TXDATA121</td><td>input</td><td>TCELL1:IMUX.IMUX20.DELAY</td></tr>
+<tr><td>TXDATA122</td><td>input</td><td>TCELL1:IMUX.IMUX39.DELAY</td></tr>
+<tr><td>TXDATA123</td><td>input</td><td>TCELL1:IMUX.IMUX28.DELAY</td></tr>
+<tr><td>TXDATA124</td><td>input</td><td>TCELL2:IMUX.IMUX30.DELAY</td></tr>
+<tr><td>TXDATA125</td><td>input</td><td>TCELL2:IMUX.IMUX31.DELAY</td></tr>
+<tr><td>TXDATA126</td><td>input</td><td>TCELL2:IMUX.IMUX38.DELAY</td></tr>
+<tr><td>TXDATA127</td><td>input</td><td>TCELL2:IMUX.IMUX27.DELAY</td></tr>
+<tr><td>TXDATA128</td><td>input</td><td>TCELL3:IMUX.IMUX30.DELAY</td></tr>
+<tr><td>TXDATA129</td><td>input</td><td>TCELL3:IMUX.IMUX31.DELAY</td></tr>
+<tr><td>TXDATA13</td><td>input</td><td>TCELL0:IMUX.IMUX35.DELAY</td></tr>
+<tr><td>TXDATA130</td><td>input</td><td>TCELL3:IMUX.IMUX38.DELAY</td></tr>
+<tr><td>TXDATA131</td><td>input</td><td>TCELL3:IMUX.IMUX39.DELAY</td></tr>
+<tr><td>TXDATA14</td><td>input</td><td>TCELL1:IMUX.IMUX32.DELAY</td></tr>
+<tr><td>TXDATA15</td><td>input</td><td>TCELL1:IMUX.IMUX33.DELAY</td></tr>
+<tr><td>TXDATA16</td><td>input</td><td>TCELL1:IMUX.IMUX34.DELAY</td></tr>
+<tr><td>TXDATA17</td><td>input</td><td>TCELL1:IMUX.IMUX35.DELAY</td></tr>
+<tr><td>TXDATA18</td><td>input</td><td>TCELL2:IMUX.IMUX32.DELAY</td></tr>
+<tr><td>TXDATA19</td><td>input</td><td>TCELL2:IMUX.IMUX33.DELAY</td></tr>
+<tr><td>TXDATAWIDTH00</td><td>input</td><td>TCELL16:IMUX.IMUX31.DELAY</td></tr>
+<tr><td>TXDATAWIDTH01</td><td>input</td><td>TCELL16:IMUX.IMUX24.DELAY</td></tr>
+<tr><td>TXDATAWIDTH10</td><td>input</td><td>TCELL3:IMUX.IMUX4.DELAY</td></tr>
+<tr><td>TXDATAWIDTH11</td><td>input</td><td>TCELL3:IMUX.IMUX5.DELAY</td></tr>
+<tr><td>TXDETECTRX0</td><td>input</td><td>TCELL19:IMUX.IMUX18.DELAY</td></tr>
+<tr><td>TXDETECTRX1</td><td>input</td><td>TCELL0:IMUX.IMUX47.DELAY</td></tr>
+<tr><td>TXDIFFCTRL00</td><td>input</td><td>TCELL19:IMUX.IMUX33.DELAY</td></tr>
+<tr><td>TXDIFFCTRL01</td><td>input</td><td>TCELL19:IMUX.IMUX34.DELAY</td></tr>
+<tr><td>TXDIFFCTRL02</td><td>input</td><td>TCELL19:IMUX.IMUX35.DELAY</td></tr>
+<tr><td>TXDIFFCTRL10</td><td>input</td><td>TCELL0:IMUX.IMUX8.DELAY</td></tr>
+<tr><td>TXDIFFCTRL11</td><td>input</td><td>TCELL0:IMUX.IMUX7.DELAY</td></tr>
+<tr><td>TXDIFFCTRL12</td><td>input</td><td>TCELL0:IMUX.IMUX6.DELAY</td></tr>
+<tr><td>TXELECIDLE0</td><td>input</td><td>TCELL19:IMUX.IMUX19.DELAY</td></tr>
+<tr><td>TXELECIDLE1</td><td>input</td><td>TCELL0:IMUX.IMUX4.DELAY</td></tr>
+<tr><td>TXENC8B10BUSE0</td><td>input</td><td>TCELL16:IMUX.IMUX30.DELAY</td></tr>
+<tr><td>TXENC8B10BUSE1</td><td>input</td><td>TCELL3:IMUX.IMUX47.DELAY</td></tr>
+<tr><td>TXENPMAPHASEALIGN0</td><td>input</td><td>TCELL10:IMUX.IMUX16.DELAY</td></tr>
+<tr><td>TXENPMAPHASEALIGN1</td><td>input</td><td>TCELL9:IMUX.IMUX20.DELAY</td></tr>
+<tr><td>TXENPRBSTST00</td><td>input</td><td>TCELL18:IMUX.IMUX24.DELAY</td></tr>
+<tr><td>TXENPRBSTST01</td><td>input</td><td>TCELL18:IMUX.IMUX25.DELAY</td></tr>
+<tr><td>TXENPRBSTST10</td><td>input</td><td>TCELL1:IMUX.IMUX11.DELAY</td></tr>
+<tr><td>TXENPRBSTST11</td><td>input</td><td>TCELL1:IMUX.IMUX10.DELAY</td></tr>
 <tr><td>TXGEARBOXREADY0</td><td>output</td><td>TCELL19:OUT16</td></tr>
 <tr><td>TXGEARBOXREADY1</td><td>output</td><td>TCELL0:OUT0</td></tr>
-<tr><td>TXHEADER00</td><td>input</td><td>TCELL16:IMUX.IMUX32</td></tr>
-<tr><td>TXHEADER01</td><td>input</td><td>TCELL16:IMUX.IMUX33</td></tr>
-<tr><td>TXHEADER02</td><td>input</td><td>TCELL16:IMUX.IMUX4</td></tr>
-<tr><td>TXHEADER10</td><td>input</td><td>TCELL3:IMUX.IMUX9</td></tr>
-<tr><td>TXHEADER11</td><td>input</td><td>TCELL3:IMUX.IMUX20</td></tr>
-<tr><td>TXHEADER12</td><td>input</td><td>TCELL3:IMUX.IMUX7</td></tr>
-<tr><td>TXINHIBIT0</td><td>input</td><td>TCELL16:IMUX.IMUX28</td></tr>
-<tr><td>TXINHIBIT1</td><td>input</td><td>TCELL3:IMUX.IMUX1</td></tr>
+<tr><td>TXHEADER00</td><td>input</td><td>TCELL16:IMUX.IMUX32.DELAY</td></tr>
+<tr><td>TXHEADER01</td><td>input</td><td>TCELL16:IMUX.IMUX33.DELAY</td></tr>
+<tr><td>TXHEADER02</td><td>input</td><td>TCELL16:IMUX.IMUX4.DELAY</td></tr>
+<tr><td>TXHEADER10</td><td>input</td><td>TCELL3:IMUX.IMUX9.DELAY</td></tr>
+<tr><td>TXHEADER11</td><td>input</td><td>TCELL3:IMUX.IMUX20.DELAY</td></tr>
+<tr><td>TXHEADER12</td><td>input</td><td>TCELL3:IMUX.IMUX7.DELAY</td></tr>
+<tr><td>TXINHIBIT0</td><td>input</td><td>TCELL16:IMUX.IMUX28.DELAY</td></tr>
+<tr><td>TXINHIBIT1</td><td>input</td><td>TCELL3:IMUX.IMUX1.DELAY</td></tr>
 <tr><td>TXKERR00</td><td>output</td><td>TCELL18:OUT5</td></tr>
 <tr><td>TXKERR01</td><td>output</td><td>TCELL17:OUT18</td></tr>
 <tr><td>TXKERR02</td><td>output</td><td>TCELL18:OUT13</td></tr>
@@ -762,24 +765,24 @@
 <tr><td>TXKERR13</td><td>output</td><td>TCELL2:OUT10</td></tr>
 <tr><td>TXOUTCLK0</td><td>output</td><td>TCELL10:OUT13</td></tr>
 <tr><td>TXOUTCLK1</td><td>output</td><td>TCELL9:OUT2</td></tr>
-<tr><td>TXPMASETPHASE0</td><td>input</td><td>TCELL10:IMUX.IMUX17</td></tr>
-<tr><td>TXPMASETPHASE1</td><td>input</td><td>TCELL9:IMUX.IMUX33</td></tr>
-<tr><td>TXPOLARITY0</td><td>input</td><td>TCELL17:IMUX.IMUX15</td></tr>
-<tr><td>TXPOLARITY1</td><td>input</td><td>TCELL2:IMUX.IMUX2</td></tr>
-<tr><td>TXPOWERDOWN00</td><td>input</td><td>TCELL17:IMUX.IMUX10</td></tr>
-<tr><td>TXPOWERDOWN01</td><td>input</td><td>TCELL17:IMUX.IMUX11</td></tr>
-<tr><td>TXPOWERDOWN10</td><td>input</td><td>TCELL2:IMUX.IMUX43</td></tr>
-<tr><td>TXPOWERDOWN11</td><td>input</td><td>TCELL2:IMUX.IMUX42</td></tr>
-<tr><td>TXPREEMPHASIS00</td><td>input</td><td>TCELL18:IMUX.IMUX15</td></tr>
-<tr><td>TXPREEMPHASIS01</td><td>input</td><td>TCELL18:IMUX.IMUX16</td></tr>
-<tr><td>TXPREEMPHASIS02</td><td>input</td><td>TCELL18:IMUX.IMUX17</td></tr>
-<tr><td>TXPREEMPHASIS03</td><td>input</td><td>TCELL17:IMUX.IMUX37</td></tr>
-<tr><td>TXPREEMPHASIS10</td><td>input</td><td>TCELL1:IMUX.IMUX26</td></tr>
-<tr><td>TXPREEMPHASIS11</td><td>input</td><td>TCELL1:IMUX.IMUX25</td></tr>
-<tr><td>TXPREEMPHASIS12</td><td>input</td><td>TCELL1:IMUX.IMUX24</td></tr>
-<tr><td>TXPREEMPHASIS13</td><td>input</td><td>TCELL2:IMUX.IMUX10</td></tr>
-<tr><td>TXRESET0</td><td>input</td><td>TCELL16:IMUX.IMUX47</td></tr>
-<tr><td>TXRESET1</td><td>input</td><td>TCELL3:IMUX.IMUX0</td></tr>
+<tr><td>TXPMASETPHASE0</td><td>input</td><td>TCELL10:IMUX.IMUX17.DELAY</td></tr>
+<tr><td>TXPMASETPHASE1</td><td>input</td><td>TCELL9:IMUX.IMUX33.DELAY</td></tr>
+<tr><td>TXPOLARITY0</td><td>input</td><td>TCELL17:IMUX.IMUX15.DELAY</td></tr>
+<tr><td>TXPOLARITY1</td><td>input</td><td>TCELL2:IMUX.IMUX2.DELAY</td></tr>
+<tr><td>TXPOWERDOWN00</td><td>input</td><td>TCELL17:IMUX.IMUX10.DELAY</td></tr>
+<tr><td>TXPOWERDOWN01</td><td>input</td><td>TCELL17:IMUX.IMUX11.DELAY</td></tr>
+<tr><td>TXPOWERDOWN10</td><td>input</td><td>TCELL2:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>TXPOWERDOWN11</td><td>input</td><td>TCELL2:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>TXPREEMPHASIS00</td><td>input</td><td>TCELL18:IMUX.IMUX15.DELAY</td></tr>
+<tr><td>TXPREEMPHASIS01</td><td>input</td><td>TCELL18:IMUX.IMUX16.DELAY</td></tr>
+<tr><td>TXPREEMPHASIS02</td><td>input</td><td>TCELL18:IMUX.IMUX17.DELAY</td></tr>
+<tr><td>TXPREEMPHASIS03</td><td>input</td><td>TCELL17:IMUX.IMUX37.DELAY</td></tr>
+<tr><td>TXPREEMPHASIS10</td><td>input</td><td>TCELL1:IMUX.IMUX26.DELAY</td></tr>
+<tr><td>TXPREEMPHASIS11</td><td>input</td><td>TCELL1:IMUX.IMUX25.DELAY</td></tr>
+<tr><td>TXPREEMPHASIS12</td><td>input</td><td>TCELL1:IMUX.IMUX24.DELAY</td></tr>
+<tr><td>TXPREEMPHASIS13</td><td>input</td><td>TCELL2:IMUX.IMUX10.DELAY</td></tr>
+<tr><td>TXRESET0</td><td>input</td><td>TCELL16:IMUX.IMUX47.DELAY</td></tr>
+<tr><td>TXRESET1</td><td>input</td><td>TCELL3:IMUX.IMUX0.DELAY</td></tr>
 <tr><td>TXRUNDISP00</td><td>output</td><td>TCELL18:OUT22</td></tr>
 <tr><td>TXRUNDISP01</td><td>output</td><td>TCELL17:OUT2</td></tr>
 <tr><td>TXRUNDISP02</td><td>output</td><td>TCELL18:OUT15</td></tr>
@@ -788,22 +791,22 @@
 <tr><td>TXRUNDISP11</td><td>output</td><td>TCELL2:OUT5</td></tr>
 <tr><td>TXRUNDISP12</td><td>output</td><td>TCELL1:OUT18</td></tr>
 <tr><td>TXRUNDISP13</td><td>output</td><td>TCELL3:OUT21</td></tr>
-<tr><td>TXSEQUENCE00</td><td>input</td><td>TCELL18:IMUX.IMUX2</td></tr>
-<tr><td>TXSEQUENCE01</td><td>input</td><td>TCELL18:IMUX.IMUX3</td></tr>
-<tr><td>TXSEQUENCE02</td><td>input</td><td>TCELL19:IMUX.IMUX0</td></tr>
-<tr><td>TXSEQUENCE03</td><td>input</td><td>TCELL19:IMUX.IMUX1</td></tr>
-<tr><td>TXSEQUENCE04</td><td>input</td><td>TCELL19:IMUX.IMUX3</td></tr>
-<tr><td>TXSEQUENCE05</td><td>input</td><td>TCELL19:IMUX.IMUX4</td></tr>
-<tr><td>TXSEQUENCE06</td><td>input</td><td>TCELL19:IMUX.IMUX5</td></tr>
-<tr><td>TXSEQUENCE10</td><td>input</td><td>TCELL1:IMUX.IMUX46</td></tr>
-<tr><td>TXSEQUENCE11</td><td>input</td><td>TCELL1:IMUX.IMUX3</td></tr>
-<tr><td>TXSEQUENCE12</td><td>input</td><td>TCELL0:IMUX.IMUX41</td></tr>
-<tr><td>TXSEQUENCE13</td><td>input</td><td>TCELL0:IMUX.IMUX46</td></tr>
-<tr><td>TXSEQUENCE14</td><td>input</td><td>TCELL0:IMUX.IMUX45</td></tr>
-<tr><td>TXSEQUENCE15</td><td>input</td><td>TCELL0:IMUX.IMUX44</td></tr>
-<tr><td>TXSEQUENCE16</td><td>input</td><td>TCELL0:IMUX.IMUX37</td></tr>
-<tr><td>TXSTARTSEQ0</td><td>input</td><td>TCELL16:IMUX.IMUX9</td></tr>
-<tr><td>TXSTARTSEQ1</td><td>input</td><td>TCELL3:IMUX.IMUX8</td></tr>
+<tr><td>TXSEQUENCE00</td><td>input</td><td>TCELL18:IMUX.IMUX2.DELAY</td></tr>
+<tr><td>TXSEQUENCE01</td><td>input</td><td>TCELL18:IMUX.IMUX3.DELAY</td></tr>
+<tr><td>TXSEQUENCE02</td><td>input</td><td>TCELL19:IMUX.IMUX0.DELAY</td></tr>
+<tr><td>TXSEQUENCE03</td><td>input</td><td>TCELL19:IMUX.IMUX1.DELAY</td></tr>
+<tr><td>TXSEQUENCE04</td><td>input</td><td>TCELL19:IMUX.IMUX3.DELAY</td></tr>
+<tr><td>TXSEQUENCE05</td><td>input</td><td>TCELL19:IMUX.IMUX4.DELAY</td></tr>
+<tr><td>TXSEQUENCE06</td><td>input</td><td>TCELL19:IMUX.IMUX5.DELAY</td></tr>
+<tr><td>TXSEQUENCE10</td><td>input</td><td>TCELL1:IMUX.IMUX46.DELAY</td></tr>
+<tr><td>TXSEQUENCE11</td><td>input</td><td>TCELL1:IMUX.IMUX3.DELAY</td></tr>
+<tr><td>TXSEQUENCE12</td><td>input</td><td>TCELL0:IMUX.IMUX41.DELAY</td></tr>
+<tr><td>TXSEQUENCE13</td><td>input</td><td>TCELL0:IMUX.IMUX46.DELAY</td></tr>
+<tr><td>TXSEQUENCE14</td><td>input</td><td>TCELL0:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>TXSEQUENCE15</td><td>input</td><td>TCELL0:IMUX.IMUX44.DELAY</td></tr>
+<tr><td>TXSEQUENCE16</td><td>input</td><td>TCELL0:IMUX.IMUX37.DELAY</td></tr>
+<tr><td>TXSTARTSEQ0</td><td>input</td><td>TCELL16:IMUX.IMUX9.DELAY</td></tr>
+<tr><td>TXSTARTSEQ1</td><td>input</td><td>TCELL3:IMUX.IMUX8.DELAY</td></tr>
 <tr><td>TXUSRCLK0</td><td>input</td><td>TCELL11:IMUX.CLK0</td></tr>
 <tr><td>TXUSRCLK1</td><td>input</td><td>TCELL8:IMUX.CLK1</td></tr>
 <tr><td>TXUSRCLK20</td><td>input</td><td>TCELL11:IMUX.CLK1</td></tr>
@@ -827,42 +830,42 @@
 </thead>
 <tbody>
 <tr><td>CRCCLK</td><td>input</td><td>TCELL1:IMUX.CLK1</td></tr>
-<tr><td>CRCDATAVALID</td><td>input</td><td>TCELL3:IMUX.IMUX22</td></tr>
-<tr><td>CRCDATAWIDTH0</td><td>input</td><td>TCELL3:IMUX.IMUX40</td></tr>
-<tr><td>CRCDATAWIDTH1</td><td>input</td><td>TCELL3:IMUX.IMUX23</td></tr>
-<tr><td>CRCDATAWIDTH2</td><td>input</td><td>TCELL3:IMUX.IMUX21</td></tr>
-<tr><td>CRCIN0</td><td>input</td><td>TCELL3:IMUX.IMUX17</td></tr>
-<tr><td>CRCIN1</td><td>input</td><td>TCELL3:IMUX.IMUX16</td></tr>
-<tr><td>CRCIN10</td><td>input</td><td>TCELL2:IMUX.IMUX15</td></tr>
-<tr><td>CRCIN11</td><td>input</td><td>TCELL2:IMUX.IMUX14</td></tr>
-<tr><td>CRCIN12</td><td>input</td><td>TCELL2:IMUX.IMUX13</td></tr>
-<tr><td>CRCIN13</td><td>input</td><td>TCELL2:IMUX.IMUX12</td></tr>
-<tr><td>CRCIN14</td><td>input</td><td>TCELL2:IMUX.IMUX37</td></tr>
-<tr><td>CRCIN15</td><td>input</td><td>TCELL2:IMUX.IMUX36</td></tr>
-<tr><td>CRCIN16</td><td>input</td><td>TCELL1:IMUX.IMUX23</td></tr>
-<tr><td>CRCIN17</td><td>input</td><td>TCELL1:IMUX.IMUX22</td></tr>
-<tr><td>CRCIN18</td><td>input</td><td>TCELL1:IMUX.IMUX45</td></tr>
-<tr><td>CRCIN19</td><td>input</td><td>TCELL1:IMUX.IMUX44</td></tr>
-<tr><td>CRCIN2</td><td>input</td><td>TCELL3:IMUX.IMUX15</td></tr>
-<tr><td>CRCIN20</td><td>input</td><td>TCELL1:IMUX.IMUX43</td></tr>
-<tr><td>CRCIN21</td><td>input</td><td>TCELL1:IMUX.IMUX42</td></tr>
-<tr><td>CRCIN22</td><td>input</td><td>TCELL1:IMUX.IMUX19</td></tr>
-<tr><td>CRCIN23</td><td>input</td><td>TCELL1:IMUX.IMUX18</td></tr>
-<tr><td>CRCIN24</td><td>input</td><td>TCELL0:IMUX.IMUX23</td></tr>
-<tr><td>CRCIN25</td><td>input</td><td>TCELL0:IMUX.IMUX22</td></tr>
-<tr><td>CRCIN26</td><td>input</td><td>TCELL0:IMUX.IMUX21</td></tr>
-<tr><td>CRCIN27</td><td>input</td><td>TCELL0:IMUX.IMUX20</td></tr>
-<tr><td>CRCIN28</td><td>input</td><td>TCELL0:IMUX.IMUX25</td></tr>
-<tr><td>CRCIN29</td><td>input</td><td>TCELL0:IMUX.IMUX24</td></tr>
-<tr><td>CRCIN3</td><td>input</td><td>TCELL3:IMUX.IMUX14</td></tr>
-<tr><td>CRCIN30</td><td>input</td><td>TCELL0:IMUX.IMUX43</td></tr>
-<tr><td>CRCIN31</td><td>input</td><td>TCELL0:IMUX.IMUX42</td></tr>
-<tr><td>CRCIN4</td><td>input</td><td>TCELL3:IMUX.IMUX13</td></tr>
-<tr><td>CRCIN5</td><td>input</td><td>TCELL3:IMUX.IMUX12</td></tr>
-<tr><td>CRCIN6</td><td>input</td><td>TCELL3:IMUX.IMUX37</td></tr>
-<tr><td>CRCIN7</td><td>input</td><td>TCELL3:IMUX.IMUX36</td></tr>
-<tr><td>CRCIN8</td><td>input</td><td>TCELL2:IMUX.IMUX17</td></tr>
-<tr><td>CRCIN9</td><td>input</td><td>TCELL2:IMUX.IMUX16</td></tr>
+<tr><td>CRCDATAVALID</td><td>input</td><td>TCELL3:IMUX.IMUX22.DELAY</td></tr>
+<tr><td>CRCDATAWIDTH0</td><td>input</td><td>TCELL3:IMUX.IMUX40.DELAY</td></tr>
+<tr><td>CRCDATAWIDTH1</td><td>input</td><td>TCELL3:IMUX.IMUX23.DELAY</td></tr>
+<tr><td>CRCDATAWIDTH2</td><td>input</td><td>TCELL3:IMUX.IMUX21.DELAY</td></tr>
+<tr><td>CRCIN0</td><td>input</td><td>TCELL3:IMUX.IMUX17.DELAY</td></tr>
+<tr><td>CRCIN1</td><td>input</td><td>TCELL3:IMUX.IMUX16.DELAY</td></tr>
+<tr><td>CRCIN10</td><td>input</td><td>TCELL2:IMUX.IMUX15.DELAY</td></tr>
+<tr><td>CRCIN11</td><td>input</td><td>TCELL2:IMUX.IMUX14.DELAY</td></tr>
+<tr><td>CRCIN12</td><td>input</td><td>TCELL2:IMUX.IMUX13.DELAY</td></tr>
+<tr><td>CRCIN13</td><td>input</td><td>TCELL2:IMUX.IMUX12.DELAY</td></tr>
+<tr><td>CRCIN14</td><td>input</td><td>TCELL2:IMUX.IMUX37.DELAY</td></tr>
+<tr><td>CRCIN15</td><td>input</td><td>TCELL2:IMUX.IMUX36.DELAY</td></tr>
+<tr><td>CRCIN16</td><td>input</td><td>TCELL1:IMUX.IMUX23.DELAY</td></tr>
+<tr><td>CRCIN17</td><td>input</td><td>TCELL1:IMUX.IMUX22.DELAY</td></tr>
+<tr><td>CRCIN18</td><td>input</td><td>TCELL1:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>CRCIN19</td><td>input</td><td>TCELL1:IMUX.IMUX44.DELAY</td></tr>
+<tr><td>CRCIN2</td><td>input</td><td>TCELL3:IMUX.IMUX15.DELAY</td></tr>
+<tr><td>CRCIN20</td><td>input</td><td>TCELL1:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>CRCIN21</td><td>input</td><td>TCELL1:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>CRCIN22</td><td>input</td><td>TCELL1:IMUX.IMUX19.DELAY</td></tr>
+<tr><td>CRCIN23</td><td>input</td><td>TCELL1:IMUX.IMUX18.DELAY</td></tr>
+<tr><td>CRCIN24</td><td>input</td><td>TCELL0:IMUX.IMUX23.DELAY</td></tr>
+<tr><td>CRCIN25</td><td>input</td><td>TCELL0:IMUX.IMUX22.DELAY</td></tr>
+<tr><td>CRCIN26</td><td>input</td><td>TCELL0:IMUX.IMUX21.DELAY</td></tr>
+<tr><td>CRCIN27</td><td>input</td><td>TCELL0:IMUX.IMUX20.DELAY</td></tr>
+<tr><td>CRCIN28</td><td>input</td><td>TCELL0:IMUX.IMUX25.DELAY</td></tr>
+<tr><td>CRCIN29</td><td>input</td><td>TCELL0:IMUX.IMUX24.DELAY</td></tr>
+<tr><td>CRCIN3</td><td>input</td><td>TCELL3:IMUX.IMUX14.DELAY</td></tr>
+<tr><td>CRCIN30</td><td>input</td><td>TCELL0:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>CRCIN31</td><td>input</td><td>TCELL0:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>CRCIN4</td><td>input</td><td>TCELL3:IMUX.IMUX13.DELAY</td></tr>
+<tr><td>CRCIN5</td><td>input</td><td>TCELL3:IMUX.IMUX12.DELAY</td></tr>
+<tr><td>CRCIN6</td><td>input</td><td>TCELL3:IMUX.IMUX37.DELAY</td></tr>
+<tr><td>CRCIN7</td><td>input</td><td>TCELL3:IMUX.IMUX36.DELAY</td></tr>
+<tr><td>CRCIN8</td><td>input</td><td>TCELL2:IMUX.IMUX17.DELAY</td></tr>
+<tr><td>CRCIN9</td><td>input</td><td>TCELL2:IMUX.IMUX16.DELAY</td></tr>
 <tr><td>CRCOUT0</td><td>output</td><td>TCELL3:OUT6</td></tr>
 <tr><td>CRCOUT1</td><td>output</td><td>TCELL3:OUT4</td></tr>
 <tr><td>CRCOUT10</td><td>output</td><td>TCELL2:OUT22</td></tr>
@@ -895,7 +898,7 @@
 <tr><td>CRCOUT7</td><td>output</td><td>TCELL2:OUT23</td></tr>
 <tr><td>CRCOUT8</td><td>output</td><td>TCELL2:OUT13</td></tr>
 <tr><td>CRCOUT9</td><td>output</td><td>TCELL2:OUT1</td></tr>
-<tr><td>CRCRESET</td><td>input</td><td>TCELL2:IMUX.IMUX5</td></tr>
+<tr><td>CRCRESET</td><td>input</td><td>TCELL2:IMUX.IMUX5.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-crc32_1"><a class="header" href="#bel-crc32_1">Bel CRC32_1</a></h3>
@@ -906,42 +909,42 @@
 </thead>
 <tbody>
 <tr><td>CRCCLK</td><td>input</td><td>TCELL6:IMUX.CLK1</td></tr>
-<tr><td>CRCDATAVALID</td><td>input</td><td>TCELL8:IMUX.IMUX35</td></tr>
-<tr><td>CRCDATAWIDTH0</td><td>input</td><td>TCELL8:IMUX.IMUX11</td></tr>
-<tr><td>CRCDATAWIDTH1</td><td>input</td><td>TCELL8:IMUX.IMUX34</td></tr>
-<tr><td>CRCDATAWIDTH2</td><td>input</td><td>TCELL3:IMUX.IMUX21</td></tr>
-<tr><td>CRCIN0</td><td>input</td><td>TCELL7:IMUX.IMUX47</td></tr>
-<tr><td>CRCIN1</td><td>input</td><td>TCELL7:IMUX.IMUX46</td></tr>
-<tr><td>CRCIN10</td><td>input</td><td>TCELL6:IMUX.IMUX45</td></tr>
-<tr><td>CRCIN11</td><td>input</td><td>TCELL6:IMUX.IMUX44</td></tr>
-<tr><td>CRCIN12</td><td>input</td><td>TCELL6:IMUX.IMUX43</td></tr>
-<tr><td>CRCIN13</td><td>input</td><td>TCELL6:IMUX.IMUX42</td></tr>
-<tr><td>CRCIN14</td><td>input</td><td>TCELL6:IMUX.IMUX37</td></tr>
-<tr><td>CRCIN15</td><td>input</td><td>TCELL6:IMUX.IMUX36</td></tr>
-<tr><td>CRCIN16</td><td>input</td><td>TCELL5:IMUX.IMUX47</td></tr>
-<tr><td>CRCIN17</td><td>input</td><td>TCELL5:IMUX.IMUX46</td></tr>
-<tr><td>CRCIN18</td><td>input</td><td>TCELL5:IMUX.IMUX45</td></tr>
-<tr><td>CRCIN19</td><td>input</td><td>TCELL5:IMUX.IMUX44</td></tr>
-<tr><td>CRCIN2</td><td>input</td><td>TCELL7:IMUX.IMUX45</td></tr>
-<tr><td>CRCIN20</td><td>input</td><td>TCELL5:IMUX.IMUX43</td></tr>
-<tr><td>CRCIN21</td><td>input</td><td>TCELL5:IMUX.IMUX42</td></tr>
-<tr><td>CRCIN22</td><td>input</td><td>TCELL5:IMUX.IMUX37</td></tr>
-<tr><td>CRCIN23</td><td>input</td><td>TCELL5:IMUX.IMUX36</td></tr>
-<tr><td>CRCIN24</td><td>input</td><td>TCELL4:IMUX.IMUX47</td></tr>
-<tr><td>CRCIN25</td><td>input</td><td>TCELL4:IMUX.IMUX46</td></tr>
-<tr><td>CRCIN26</td><td>input</td><td>TCELL4:IMUX.IMUX45</td></tr>
-<tr><td>CRCIN27</td><td>input</td><td>TCELL4:IMUX.IMUX44</td></tr>
-<tr><td>CRCIN28</td><td>input</td><td>TCELL4:IMUX.IMUX43</td></tr>
-<tr><td>CRCIN29</td><td>input</td><td>TCELL4:IMUX.IMUX42</td></tr>
-<tr><td>CRCIN3</td><td>input</td><td>TCELL7:IMUX.IMUX44</td></tr>
-<tr><td>CRCIN30</td><td>input</td><td>TCELL4:IMUX.IMUX37</td></tr>
-<tr><td>CRCIN31</td><td>input</td><td>TCELL4:IMUX.IMUX36</td></tr>
-<tr><td>CRCIN4</td><td>input</td><td>TCELL7:IMUX.IMUX43</td></tr>
-<tr><td>CRCIN5</td><td>input</td><td>TCELL7:IMUX.IMUX42</td></tr>
-<tr><td>CRCIN6</td><td>input</td><td>TCELL7:IMUX.IMUX37</td></tr>
-<tr><td>CRCIN7</td><td>input</td><td>TCELL7:IMUX.IMUX36</td></tr>
-<tr><td>CRCIN8</td><td>input</td><td>TCELL6:IMUX.IMUX47</td></tr>
-<tr><td>CRCIN9</td><td>input</td><td>TCELL6:IMUX.IMUX46</td></tr>
+<tr><td>CRCDATAVALID</td><td>input</td><td>TCELL8:IMUX.IMUX35.DELAY</td></tr>
+<tr><td>CRCDATAWIDTH0</td><td>input</td><td>TCELL8:IMUX.IMUX11.DELAY</td></tr>
+<tr><td>CRCDATAWIDTH1</td><td>input</td><td>TCELL8:IMUX.IMUX34.DELAY</td></tr>
+<tr><td>CRCDATAWIDTH2</td><td>input</td><td>TCELL3:IMUX.IMUX21.DELAY</td></tr>
+<tr><td>CRCIN0</td><td>input</td><td>TCELL7:IMUX.IMUX47.DELAY</td></tr>
+<tr><td>CRCIN1</td><td>input</td><td>TCELL7:IMUX.IMUX46.DELAY</td></tr>
+<tr><td>CRCIN10</td><td>input</td><td>TCELL6:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>CRCIN11</td><td>input</td><td>TCELL6:IMUX.IMUX44.DELAY</td></tr>
+<tr><td>CRCIN12</td><td>input</td><td>TCELL6:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>CRCIN13</td><td>input</td><td>TCELL6:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>CRCIN14</td><td>input</td><td>TCELL6:IMUX.IMUX37.DELAY</td></tr>
+<tr><td>CRCIN15</td><td>input</td><td>TCELL6:IMUX.IMUX36.DELAY</td></tr>
+<tr><td>CRCIN16</td><td>input</td><td>TCELL5:IMUX.IMUX47.DELAY</td></tr>
+<tr><td>CRCIN17</td><td>input</td><td>TCELL5:IMUX.IMUX46.DELAY</td></tr>
+<tr><td>CRCIN18</td><td>input</td><td>TCELL5:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>CRCIN19</td><td>input</td><td>TCELL5:IMUX.IMUX44.DELAY</td></tr>
+<tr><td>CRCIN2</td><td>input</td><td>TCELL7:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>CRCIN20</td><td>input</td><td>TCELL5:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>CRCIN21</td><td>input</td><td>TCELL5:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>CRCIN22</td><td>input</td><td>TCELL5:IMUX.IMUX37.DELAY</td></tr>
+<tr><td>CRCIN23</td><td>input</td><td>TCELL5:IMUX.IMUX36.DELAY</td></tr>
+<tr><td>CRCIN24</td><td>input</td><td>TCELL4:IMUX.IMUX47.DELAY</td></tr>
+<tr><td>CRCIN25</td><td>input</td><td>TCELL4:IMUX.IMUX46.DELAY</td></tr>
+<tr><td>CRCIN26</td><td>input</td><td>TCELL4:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>CRCIN27</td><td>input</td><td>TCELL4:IMUX.IMUX44.DELAY</td></tr>
+<tr><td>CRCIN28</td><td>input</td><td>TCELL4:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>CRCIN29</td><td>input</td><td>TCELL4:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>CRCIN3</td><td>input</td><td>TCELL7:IMUX.IMUX44.DELAY</td></tr>
+<tr><td>CRCIN30</td><td>input</td><td>TCELL4:IMUX.IMUX37.DELAY</td></tr>
+<tr><td>CRCIN31</td><td>input</td><td>TCELL4:IMUX.IMUX36.DELAY</td></tr>
+<tr><td>CRCIN4</td><td>input</td><td>TCELL7:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>CRCIN5</td><td>input</td><td>TCELL7:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>CRCIN6</td><td>input</td><td>TCELL7:IMUX.IMUX37.DELAY</td></tr>
+<tr><td>CRCIN7</td><td>input</td><td>TCELL7:IMUX.IMUX36.DELAY</td></tr>
+<tr><td>CRCIN8</td><td>input</td><td>TCELL6:IMUX.IMUX47.DELAY</td></tr>
+<tr><td>CRCIN9</td><td>input</td><td>TCELL6:IMUX.IMUX46.DELAY</td></tr>
 <tr><td>CRCOUT0</td><td>output</td><td>TCELL9:OUT11</td></tr>
 <tr><td>CRCOUT1</td><td>output</td><td>TCELL9:OUT3</td></tr>
 <tr><td>CRCOUT10</td><td>output</td><td>TCELL8:OUT15</td></tr>
@@ -974,7 +977,7 @@
 <tr><td>CRCOUT7</td><td>output</td><td>TCELL9:OUT12</td></tr>
 <tr><td>CRCOUT8</td><td>output</td><td>TCELL9:OUT8</td></tr>
 <tr><td>CRCOUT9</td><td>output</td><td>TCELL8:OUT17</td></tr>
-<tr><td>CRCRESET</td><td>input</td><td>TCELL8:IMUX.IMUX0</td></tr>
+<tr><td>CRCRESET</td><td>input</td><td>TCELL8:IMUX.IMUX0.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-crc32_2"><a class="header" href="#bel-crc32_2">Bel CRC32_2</a></h3>
@@ -985,42 +988,42 @@
 </thead>
 <tbody>
 <tr><td>CRCCLK</td><td>input</td><td>TCELL13:IMUX.CLK0</td></tr>
-<tr><td>CRCDATAVALID</td><td>input</td><td>TCELL11:IMUX.IMUX30</td></tr>
-<tr><td>CRCDATAWIDTH0</td><td>input</td><td>TCELL11:IMUX.IMUX24</td></tr>
-<tr><td>CRCDATAWIDTH1</td><td>input</td><td>TCELL11:IMUX.IMUX13</td></tr>
-<tr><td>CRCDATAWIDTH2</td><td>input</td><td>TCELL16:IMUX.IMUX8</td></tr>
-<tr><td>CRCIN0</td><td>input</td><td>TCELL12:IMUX.IMUX0</td></tr>
-<tr><td>CRCIN1</td><td>input</td><td>TCELL12:IMUX.IMUX1</td></tr>
-<tr><td>CRCIN10</td><td>input</td><td>TCELL13:IMUX.IMUX8</td></tr>
-<tr><td>CRCIN11</td><td>input</td><td>TCELL13:IMUX.IMUX9</td></tr>
-<tr><td>CRCIN12</td><td>input</td><td>TCELL13:IMUX.IMUX4</td></tr>
-<tr><td>CRCIN13</td><td>input</td><td>TCELL13:IMUX.IMUX5</td></tr>
-<tr><td>CRCIN14</td><td>input</td><td>TCELL13:IMUX.IMUX10</td></tr>
-<tr><td>CRCIN15</td><td>input</td><td>TCELL13:IMUX.IMUX11</td></tr>
-<tr><td>CRCIN16</td><td>input</td><td>TCELL14:IMUX.IMUX6</td></tr>
-<tr><td>CRCIN17</td><td>input</td><td>TCELL14:IMUX.IMUX7</td></tr>
-<tr><td>CRCIN18</td><td>input</td><td>TCELL14:IMUX.IMUX8</td></tr>
-<tr><td>CRCIN19</td><td>input</td><td>TCELL14:IMUX.IMUX9</td></tr>
-<tr><td>CRCIN2</td><td>input</td><td>TCELL12:IMUX.IMUX2</td></tr>
-<tr><td>CRCIN20</td><td>input</td><td>TCELL14:IMUX.IMUX4</td></tr>
-<tr><td>CRCIN21</td><td>input</td><td>TCELL14:IMUX.IMUX5</td></tr>
-<tr><td>CRCIN22</td><td>input</td><td>TCELL14:IMUX.IMUX10</td></tr>
-<tr><td>CRCIN23</td><td>input</td><td>TCELL14:IMUX.IMUX11</td></tr>
-<tr><td>CRCIN24</td><td>input</td><td>TCELL15:IMUX.IMUX6</td></tr>
-<tr><td>CRCIN25</td><td>input</td><td>TCELL15:IMUX.IMUX7</td></tr>
-<tr><td>CRCIN26</td><td>input</td><td>TCELL15:IMUX.IMUX8</td></tr>
-<tr><td>CRCIN27</td><td>input</td><td>TCELL15:IMUX.IMUX9</td></tr>
-<tr><td>CRCIN28</td><td>input</td><td>TCELL15:IMUX.IMUX4</td></tr>
-<tr><td>CRCIN29</td><td>input</td><td>TCELL15:IMUX.IMUX5</td></tr>
-<tr><td>CRCIN3</td><td>input</td><td>TCELL12:IMUX.IMUX9</td></tr>
-<tr><td>CRCIN30</td><td>input</td><td>TCELL15:IMUX.IMUX10</td></tr>
-<tr><td>CRCIN31</td><td>input</td><td>TCELL15:IMUX.IMUX11</td></tr>
-<tr><td>CRCIN4</td><td>input</td><td>TCELL12:IMUX.IMUX45</td></tr>
-<tr><td>CRCIN5</td><td>input</td><td>TCELL12:IMUX.IMUX35</td></tr>
-<tr><td>CRCIN6</td><td>input</td><td>TCELL12:IMUX.IMUX10</td></tr>
-<tr><td>CRCIN7</td><td>input</td><td>TCELL12:IMUX.IMUX11</td></tr>
-<tr><td>CRCIN8</td><td>input</td><td>TCELL13:IMUX.IMUX6</td></tr>
-<tr><td>CRCIN9</td><td>input</td><td>TCELL13:IMUX.IMUX7</td></tr>
+<tr><td>CRCDATAVALID</td><td>input</td><td>TCELL11:IMUX.IMUX30.DELAY</td></tr>
+<tr><td>CRCDATAWIDTH0</td><td>input</td><td>TCELL11:IMUX.IMUX24.DELAY</td></tr>
+<tr><td>CRCDATAWIDTH1</td><td>input</td><td>TCELL11:IMUX.IMUX13.DELAY</td></tr>
+<tr><td>CRCDATAWIDTH2</td><td>input</td><td>TCELL16:IMUX.IMUX8.DELAY</td></tr>
+<tr><td>CRCIN0</td><td>input</td><td>TCELL12:IMUX.IMUX0.DELAY</td></tr>
+<tr><td>CRCIN1</td><td>input</td><td>TCELL12:IMUX.IMUX1.DELAY</td></tr>
+<tr><td>CRCIN10</td><td>input</td><td>TCELL13:IMUX.IMUX8.DELAY</td></tr>
+<tr><td>CRCIN11</td><td>input</td><td>TCELL13:IMUX.IMUX9.DELAY</td></tr>
+<tr><td>CRCIN12</td><td>input</td><td>TCELL13:IMUX.IMUX4.DELAY</td></tr>
+<tr><td>CRCIN13</td><td>input</td><td>TCELL13:IMUX.IMUX5.DELAY</td></tr>
+<tr><td>CRCIN14</td><td>input</td><td>TCELL13:IMUX.IMUX10.DELAY</td></tr>
+<tr><td>CRCIN15</td><td>input</td><td>TCELL13:IMUX.IMUX11.DELAY</td></tr>
+<tr><td>CRCIN16</td><td>input</td><td>TCELL14:IMUX.IMUX6.DELAY</td></tr>
+<tr><td>CRCIN17</td><td>input</td><td>TCELL14:IMUX.IMUX7.DELAY</td></tr>
+<tr><td>CRCIN18</td><td>input</td><td>TCELL14:IMUX.IMUX8.DELAY</td></tr>
+<tr><td>CRCIN19</td><td>input</td><td>TCELL14:IMUX.IMUX9.DELAY</td></tr>
+<tr><td>CRCIN2</td><td>input</td><td>TCELL12:IMUX.IMUX2.DELAY</td></tr>
+<tr><td>CRCIN20</td><td>input</td><td>TCELL14:IMUX.IMUX4.DELAY</td></tr>
+<tr><td>CRCIN21</td><td>input</td><td>TCELL14:IMUX.IMUX5.DELAY</td></tr>
+<tr><td>CRCIN22</td><td>input</td><td>TCELL14:IMUX.IMUX10.DELAY</td></tr>
+<tr><td>CRCIN23</td><td>input</td><td>TCELL14:IMUX.IMUX11.DELAY</td></tr>
+<tr><td>CRCIN24</td><td>input</td><td>TCELL15:IMUX.IMUX6.DELAY</td></tr>
+<tr><td>CRCIN25</td><td>input</td><td>TCELL15:IMUX.IMUX7.DELAY</td></tr>
+<tr><td>CRCIN26</td><td>input</td><td>TCELL15:IMUX.IMUX8.DELAY</td></tr>
+<tr><td>CRCIN27</td><td>input</td><td>TCELL15:IMUX.IMUX9.DELAY</td></tr>
+<tr><td>CRCIN28</td><td>input</td><td>TCELL15:IMUX.IMUX4.DELAY</td></tr>
+<tr><td>CRCIN29</td><td>input</td><td>TCELL15:IMUX.IMUX5.DELAY</td></tr>
+<tr><td>CRCIN3</td><td>input</td><td>TCELL12:IMUX.IMUX9.DELAY</td></tr>
+<tr><td>CRCIN30</td><td>input</td><td>TCELL15:IMUX.IMUX10.DELAY</td></tr>
+<tr><td>CRCIN31</td><td>input</td><td>TCELL15:IMUX.IMUX11.DELAY</td></tr>
+<tr><td>CRCIN4</td><td>input</td><td>TCELL12:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>CRCIN5</td><td>input</td><td>TCELL12:IMUX.IMUX35.DELAY</td></tr>
+<tr><td>CRCIN6</td><td>input</td><td>TCELL12:IMUX.IMUX10.DELAY</td></tr>
+<tr><td>CRCIN7</td><td>input</td><td>TCELL12:IMUX.IMUX11.DELAY</td></tr>
+<tr><td>CRCIN8</td><td>input</td><td>TCELL13:IMUX.IMUX6.DELAY</td></tr>
+<tr><td>CRCIN9</td><td>input</td><td>TCELL13:IMUX.IMUX7.DELAY</td></tr>
 <tr><td>CRCOUT0</td><td>output</td><td>TCELL10:OUT4</td></tr>
 <tr><td>CRCOUT1</td><td>output</td><td>TCELL10:OUT23</td></tr>
 <tr><td>CRCOUT10</td><td>output</td><td>TCELL11:OUT4</td></tr>
@@ -1053,7 +1056,7 @@
 <tr><td>CRCOUT7</td><td>output</td><td>TCELL10:OUT15</td></tr>
 <tr><td>CRCOUT8</td><td>output</td><td>TCELL10:OUT21</td></tr>
 <tr><td>CRCOUT9</td><td>output</td><td>TCELL11:OUT12</td></tr>
-<tr><td>CRCRESET</td><td>input</td><td>TCELL11:IMUX.IMUX5</td></tr>
+<tr><td>CRCRESET</td><td>input</td><td>TCELL11:IMUX.IMUX5.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-crc32_3"><a class="header" href="#bel-crc32_3">Bel CRC32_3</a></h3>
@@ -1064,42 +1067,42 @@
 </thead>
 <tbody>
 <tr><td>CRCCLK</td><td>input</td><td>TCELL18:IMUX.CLK0</td></tr>
-<tr><td>CRCDATAVALID</td><td>input</td><td>TCELL16:IMUX.IMUX7</td></tr>
-<tr><td>CRCDATAWIDTH0</td><td>input</td><td>TCELL16:IMUX.IMUX6</td></tr>
-<tr><td>CRCDATAWIDTH1</td><td>input</td><td>TCELL16:IMUX.IMUX1</td></tr>
-<tr><td>CRCDATAWIDTH2</td><td>input</td><td>TCELL16:IMUX.IMUX8</td></tr>
-<tr><td>CRCIN0</td><td>input</td><td>TCELL16:IMUX.IMUX36</td></tr>
-<tr><td>CRCIN1</td><td>input</td><td>TCELL16:IMUX.IMUX37</td></tr>
-<tr><td>CRCIN10</td><td>input</td><td>TCELL17:IMUX.IMUX32</td></tr>
-<tr><td>CRCIN11</td><td>input</td><td>TCELL17:IMUX.IMUX33</td></tr>
-<tr><td>CRCIN12</td><td>input</td><td>TCELL17:IMUX.IMUX34</td></tr>
-<tr><td>CRCIN13</td><td>input</td><td>TCELL17:IMUX.IMUX35</td></tr>
-<tr><td>CRCIN14</td><td>input</td><td>TCELL17:IMUX.IMUX46</td></tr>
-<tr><td>CRCIN15</td><td>input</td><td>TCELL17:IMUX.IMUX47</td></tr>
-<tr><td>CRCIN16</td><td>input</td><td>TCELL18:IMUX.IMUX6</td></tr>
-<tr><td>CRCIN17</td><td>input</td><td>TCELL18:IMUX.IMUX7</td></tr>
-<tr><td>CRCIN18</td><td>input</td><td>TCELL18:IMUX.IMUX8</td></tr>
-<tr><td>CRCIN19</td><td>input</td><td>TCELL18:IMUX.IMUX21</td></tr>
-<tr><td>CRCIN2</td><td>input</td><td>TCELL16:IMUX.IMUX38</td></tr>
-<tr><td>CRCIN20</td><td>input</td><td>TCELL18:IMUX.IMUX10</td></tr>
-<tr><td>CRCIN21</td><td>input</td><td>TCELL18:IMUX.IMUX11</td></tr>
-<tr><td>CRCIN22</td><td>input</td><td>TCELL18:IMUX.IMUX40</td></tr>
-<tr><td>CRCIN23</td><td>input</td><td>TCELL18:IMUX.IMUX41</td></tr>
-<tr><td>CRCIN24</td><td>input</td><td>TCELL19:IMUX.IMUX24</td></tr>
-<tr><td>CRCIN25</td><td>input</td><td>TCELL19:IMUX.IMUX25</td></tr>
-<tr><td>CRCIN26</td><td>input</td><td>TCELL19:IMUX.IMUX26</td></tr>
-<tr><td>CRCIN27</td><td>input</td><td>TCELL19:IMUX.IMUX21</td></tr>
-<tr><td>CRCIN28</td><td>input</td><td>TCELL19:IMUX.IMUX10</td></tr>
-<tr><td>CRCIN29</td><td>input</td><td>TCELL19:IMUX.IMUX11</td></tr>
-<tr><td>CRCIN3</td><td>input</td><td>TCELL16:IMUX.IMUX39</td></tr>
-<tr><td>CRCIN30</td><td>input</td><td>TCELL19:IMUX.IMUX40</td></tr>
-<tr><td>CRCIN31</td><td>input</td><td>TCELL19:IMUX.IMUX41</td></tr>
-<tr><td>CRCIN4</td><td>input</td><td>TCELL16:IMUX.IMUX40</td></tr>
-<tr><td>CRCIN5</td><td>input</td><td>TCELL16:IMUX.IMUX35</td></tr>
-<tr><td>CRCIN6</td><td>input</td><td>TCELL16:IMUX.IMUX10</td></tr>
-<tr><td>CRCIN7</td><td>input</td><td>TCELL16:IMUX.IMUX11</td></tr>
-<tr><td>CRCIN8</td><td>input</td><td>TCELL17:IMUX.IMUX30</td></tr>
-<tr><td>CRCIN9</td><td>input</td><td>TCELL17:IMUX.IMUX31</td></tr>
+<tr><td>CRCDATAVALID</td><td>input</td><td>TCELL16:IMUX.IMUX7.DELAY</td></tr>
+<tr><td>CRCDATAWIDTH0</td><td>input</td><td>TCELL16:IMUX.IMUX6.DELAY</td></tr>
+<tr><td>CRCDATAWIDTH1</td><td>input</td><td>TCELL16:IMUX.IMUX1.DELAY</td></tr>
+<tr><td>CRCDATAWIDTH2</td><td>input</td><td>TCELL16:IMUX.IMUX8.DELAY</td></tr>
+<tr><td>CRCIN0</td><td>input</td><td>TCELL16:IMUX.IMUX36.DELAY</td></tr>
+<tr><td>CRCIN1</td><td>input</td><td>TCELL16:IMUX.IMUX37.DELAY</td></tr>
+<tr><td>CRCIN10</td><td>input</td><td>TCELL17:IMUX.IMUX32.DELAY</td></tr>
+<tr><td>CRCIN11</td><td>input</td><td>TCELL17:IMUX.IMUX33.DELAY</td></tr>
+<tr><td>CRCIN12</td><td>input</td><td>TCELL17:IMUX.IMUX34.DELAY</td></tr>
+<tr><td>CRCIN13</td><td>input</td><td>TCELL17:IMUX.IMUX35.DELAY</td></tr>
+<tr><td>CRCIN14</td><td>input</td><td>TCELL17:IMUX.IMUX46.DELAY</td></tr>
+<tr><td>CRCIN15</td><td>input</td><td>TCELL17:IMUX.IMUX47.DELAY</td></tr>
+<tr><td>CRCIN16</td><td>input</td><td>TCELL18:IMUX.IMUX6.DELAY</td></tr>
+<tr><td>CRCIN17</td><td>input</td><td>TCELL18:IMUX.IMUX7.DELAY</td></tr>
+<tr><td>CRCIN18</td><td>input</td><td>TCELL18:IMUX.IMUX8.DELAY</td></tr>
+<tr><td>CRCIN19</td><td>input</td><td>TCELL18:IMUX.IMUX21.DELAY</td></tr>
+<tr><td>CRCIN2</td><td>input</td><td>TCELL16:IMUX.IMUX38.DELAY</td></tr>
+<tr><td>CRCIN20</td><td>input</td><td>TCELL18:IMUX.IMUX10.DELAY</td></tr>
+<tr><td>CRCIN21</td><td>input</td><td>TCELL18:IMUX.IMUX11.DELAY</td></tr>
+<tr><td>CRCIN22</td><td>input</td><td>TCELL18:IMUX.IMUX40.DELAY</td></tr>
+<tr><td>CRCIN23</td><td>input</td><td>TCELL18:IMUX.IMUX41.DELAY</td></tr>
+<tr><td>CRCIN24</td><td>input</td><td>TCELL19:IMUX.IMUX24.DELAY</td></tr>
+<tr><td>CRCIN25</td><td>input</td><td>TCELL19:IMUX.IMUX25.DELAY</td></tr>
+<tr><td>CRCIN26</td><td>input</td><td>TCELL19:IMUX.IMUX26.DELAY</td></tr>
+<tr><td>CRCIN27</td><td>input</td><td>TCELL19:IMUX.IMUX21.DELAY</td></tr>
+<tr><td>CRCIN28</td><td>input</td><td>TCELL19:IMUX.IMUX10.DELAY</td></tr>
+<tr><td>CRCIN29</td><td>input</td><td>TCELL19:IMUX.IMUX11.DELAY</td></tr>
+<tr><td>CRCIN3</td><td>input</td><td>TCELL16:IMUX.IMUX39.DELAY</td></tr>
+<tr><td>CRCIN30</td><td>input</td><td>TCELL19:IMUX.IMUX40.DELAY</td></tr>
+<tr><td>CRCIN31</td><td>input</td><td>TCELL19:IMUX.IMUX41.DELAY</td></tr>
+<tr><td>CRCIN4</td><td>input</td><td>TCELL16:IMUX.IMUX40.DELAY</td></tr>
+<tr><td>CRCIN5</td><td>input</td><td>TCELL16:IMUX.IMUX35.DELAY</td></tr>
+<tr><td>CRCIN6</td><td>input</td><td>TCELL16:IMUX.IMUX10.DELAY</td></tr>
+<tr><td>CRCIN7</td><td>input</td><td>TCELL16:IMUX.IMUX11.DELAY</td></tr>
+<tr><td>CRCIN8</td><td>input</td><td>TCELL17:IMUX.IMUX30.DELAY</td></tr>
+<tr><td>CRCIN9</td><td>input</td><td>TCELL17:IMUX.IMUX31.DELAY</td></tr>
 <tr><td>CRCOUT0</td><td>output</td><td>TCELL16:OUT13</td></tr>
 <tr><td>CRCOUT1</td><td>output</td><td>TCELL16:OUT3</td></tr>
 <tr><td>CRCOUT10</td><td>output</td><td>TCELL17:OUT15</td></tr>
@@ -1132,7 +1135,7 @@
 <tr><td>CRCOUT7</td><td>output</td><td>TCELL17:OUT14</td></tr>
 <tr><td>CRCOUT8</td><td>output</td><td>TCELL17:OUT20</td></tr>
 <tr><td>CRCOUT9</td><td>output</td><td>TCELL17:OUT6</td></tr>
-<tr><td>CRCRESET</td><td>input</td><td>TCELL17:IMUX.IMUX0</td></tr>
+<tr><td>CRCRESET</td><td>input</td><td>TCELL17:IMUX.IMUX0.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-crc64_0"><a class="header" href="#bel-crc64_0">Bel CRC64_0</a></h3>
@@ -1143,74 +1146,74 @@
 </thead>
 <tbody>
 <tr><td>CRCCLK</td><td>input</td><td>TCELL1:IMUX.CLK1</td></tr>
-<tr><td>CRCDATAVALID</td><td>input</td><td>TCELL3:IMUX.IMUX22</td></tr>
-<tr><td>CRCDATAWIDTH0</td><td>input</td><td>TCELL3:IMUX.IMUX40</td></tr>
-<tr><td>CRCDATAWIDTH1</td><td>input</td><td>TCELL3:IMUX.IMUX23</td></tr>
-<tr><td>CRCDATAWIDTH2</td><td>input</td><td>TCELL3:IMUX.IMUX21</td></tr>
-<tr><td>CRCIN0</td><td>input</td><td>TCELL7:IMUX.IMUX47</td></tr>
-<tr><td>CRCIN1</td><td>input</td><td>TCELL7:IMUX.IMUX46</td></tr>
-<tr><td>CRCIN10</td><td>input</td><td>TCELL6:IMUX.IMUX45</td></tr>
-<tr><td>CRCIN11</td><td>input</td><td>TCELL6:IMUX.IMUX44</td></tr>
-<tr><td>CRCIN12</td><td>input</td><td>TCELL6:IMUX.IMUX43</td></tr>
-<tr><td>CRCIN13</td><td>input</td><td>TCELL6:IMUX.IMUX42</td></tr>
-<tr><td>CRCIN14</td><td>input</td><td>TCELL6:IMUX.IMUX37</td></tr>
-<tr><td>CRCIN15</td><td>input</td><td>TCELL6:IMUX.IMUX36</td></tr>
-<tr><td>CRCIN16</td><td>input</td><td>TCELL5:IMUX.IMUX47</td></tr>
-<tr><td>CRCIN17</td><td>input</td><td>TCELL5:IMUX.IMUX46</td></tr>
-<tr><td>CRCIN18</td><td>input</td><td>TCELL5:IMUX.IMUX45</td></tr>
-<tr><td>CRCIN19</td><td>input</td><td>TCELL5:IMUX.IMUX44</td></tr>
-<tr><td>CRCIN2</td><td>input</td><td>TCELL7:IMUX.IMUX45</td></tr>
-<tr><td>CRCIN20</td><td>input</td><td>TCELL5:IMUX.IMUX43</td></tr>
-<tr><td>CRCIN21</td><td>input</td><td>TCELL5:IMUX.IMUX42</td></tr>
-<tr><td>CRCIN22</td><td>input</td><td>TCELL5:IMUX.IMUX37</td></tr>
-<tr><td>CRCIN23</td><td>input</td><td>TCELL5:IMUX.IMUX36</td></tr>
-<tr><td>CRCIN24</td><td>input</td><td>TCELL4:IMUX.IMUX47</td></tr>
-<tr><td>CRCIN25</td><td>input</td><td>TCELL4:IMUX.IMUX46</td></tr>
-<tr><td>CRCIN26</td><td>input</td><td>TCELL4:IMUX.IMUX45</td></tr>
-<tr><td>CRCIN27</td><td>input</td><td>TCELL4:IMUX.IMUX44</td></tr>
-<tr><td>CRCIN28</td><td>input</td><td>TCELL4:IMUX.IMUX43</td></tr>
-<tr><td>CRCIN29</td><td>input</td><td>TCELL4:IMUX.IMUX42</td></tr>
-<tr><td>CRCIN3</td><td>input</td><td>TCELL7:IMUX.IMUX44</td></tr>
-<tr><td>CRCIN30</td><td>input</td><td>TCELL4:IMUX.IMUX37</td></tr>
-<tr><td>CRCIN31</td><td>input</td><td>TCELL4:IMUX.IMUX36</td></tr>
-<tr><td>CRCIN32</td><td>input</td><td>TCELL3:IMUX.IMUX17</td></tr>
-<tr><td>CRCIN33</td><td>input</td><td>TCELL3:IMUX.IMUX16</td></tr>
-<tr><td>CRCIN34</td><td>input</td><td>TCELL3:IMUX.IMUX15</td></tr>
-<tr><td>CRCIN35</td><td>input</td><td>TCELL3:IMUX.IMUX14</td></tr>
-<tr><td>CRCIN36</td><td>input</td><td>TCELL3:IMUX.IMUX13</td></tr>
-<tr><td>CRCIN37</td><td>input</td><td>TCELL3:IMUX.IMUX12</td></tr>
-<tr><td>CRCIN38</td><td>input</td><td>TCELL3:IMUX.IMUX37</td></tr>
-<tr><td>CRCIN39</td><td>input</td><td>TCELL3:IMUX.IMUX36</td></tr>
-<tr><td>CRCIN4</td><td>input</td><td>TCELL7:IMUX.IMUX43</td></tr>
-<tr><td>CRCIN40</td><td>input</td><td>TCELL2:IMUX.IMUX17</td></tr>
-<tr><td>CRCIN41</td><td>input</td><td>TCELL2:IMUX.IMUX16</td></tr>
-<tr><td>CRCIN42</td><td>input</td><td>TCELL2:IMUX.IMUX15</td></tr>
-<tr><td>CRCIN43</td><td>input</td><td>TCELL2:IMUX.IMUX14</td></tr>
-<tr><td>CRCIN44</td><td>input</td><td>TCELL2:IMUX.IMUX13</td></tr>
-<tr><td>CRCIN45</td><td>input</td><td>TCELL2:IMUX.IMUX12</td></tr>
-<tr><td>CRCIN46</td><td>input</td><td>TCELL2:IMUX.IMUX37</td></tr>
-<tr><td>CRCIN47</td><td>input</td><td>TCELL2:IMUX.IMUX36</td></tr>
-<tr><td>CRCIN48</td><td>input</td><td>TCELL1:IMUX.IMUX23</td></tr>
-<tr><td>CRCIN49</td><td>input</td><td>TCELL1:IMUX.IMUX22</td></tr>
-<tr><td>CRCIN5</td><td>input</td><td>TCELL7:IMUX.IMUX42</td></tr>
-<tr><td>CRCIN50</td><td>input</td><td>TCELL1:IMUX.IMUX45</td></tr>
-<tr><td>CRCIN51</td><td>input</td><td>TCELL1:IMUX.IMUX44</td></tr>
-<tr><td>CRCIN52</td><td>input</td><td>TCELL1:IMUX.IMUX43</td></tr>
-<tr><td>CRCIN53</td><td>input</td><td>TCELL1:IMUX.IMUX42</td></tr>
-<tr><td>CRCIN54</td><td>input</td><td>TCELL1:IMUX.IMUX19</td></tr>
-<tr><td>CRCIN55</td><td>input</td><td>TCELL1:IMUX.IMUX18</td></tr>
-<tr><td>CRCIN56</td><td>input</td><td>TCELL0:IMUX.IMUX23</td></tr>
-<tr><td>CRCIN57</td><td>input</td><td>TCELL0:IMUX.IMUX22</td></tr>
-<tr><td>CRCIN58</td><td>input</td><td>TCELL0:IMUX.IMUX21</td></tr>
-<tr><td>CRCIN59</td><td>input</td><td>TCELL0:IMUX.IMUX20</td></tr>
-<tr><td>CRCIN6</td><td>input</td><td>TCELL7:IMUX.IMUX37</td></tr>
-<tr><td>CRCIN60</td><td>input</td><td>TCELL0:IMUX.IMUX25</td></tr>
-<tr><td>CRCIN61</td><td>input</td><td>TCELL0:IMUX.IMUX24</td></tr>
-<tr><td>CRCIN62</td><td>input</td><td>TCELL0:IMUX.IMUX43</td></tr>
-<tr><td>CRCIN63</td><td>input</td><td>TCELL0:IMUX.IMUX42</td></tr>
-<tr><td>CRCIN7</td><td>input</td><td>TCELL7:IMUX.IMUX36</td></tr>
-<tr><td>CRCIN8</td><td>input</td><td>TCELL6:IMUX.IMUX47</td></tr>
-<tr><td>CRCIN9</td><td>input</td><td>TCELL6:IMUX.IMUX46</td></tr>
+<tr><td>CRCDATAVALID</td><td>input</td><td>TCELL3:IMUX.IMUX22.DELAY</td></tr>
+<tr><td>CRCDATAWIDTH0</td><td>input</td><td>TCELL3:IMUX.IMUX40.DELAY</td></tr>
+<tr><td>CRCDATAWIDTH1</td><td>input</td><td>TCELL3:IMUX.IMUX23.DELAY</td></tr>
+<tr><td>CRCDATAWIDTH2</td><td>input</td><td>TCELL3:IMUX.IMUX21.DELAY</td></tr>
+<tr><td>CRCIN0</td><td>input</td><td>TCELL7:IMUX.IMUX47.DELAY</td></tr>
+<tr><td>CRCIN1</td><td>input</td><td>TCELL7:IMUX.IMUX46.DELAY</td></tr>
+<tr><td>CRCIN10</td><td>input</td><td>TCELL6:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>CRCIN11</td><td>input</td><td>TCELL6:IMUX.IMUX44.DELAY</td></tr>
+<tr><td>CRCIN12</td><td>input</td><td>TCELL6:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>CRCIN13</td><td>input</td><td>TCELL6:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>CRCIN14</td><td>input</td><td>TCELL6:IMUX.IMUX37.DELAY</td></tr>
+<tr><td>CRCIN15</td><td>input</td><td>TCELL6:IMUX.IMUX36.DELAY</td></tr>
+<tr><td>CRCIN16</td><td>input</td><td>TCELL5:IMUX.IMUX47.DELAY</td></tr>
+<tr><td>CRCIN17</td><td>input</td><td>TCELL5:IMUX.IMUX46.DELAY</td></tr>
+<tr><td>CRCIN18</td><td>input</td><td>TCELL5:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>CRCIN19</td><td>input</td><td>TCELL5:IMUX.IMUX44.DELAY</td></tr>
+<tr><td>CRCIN2</td><td>input</td><td>TCELL7:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>CRCIN20</td><td>input</td><td>TCELL5:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>CRCIN21</td><td>input</td><td>TCELL5:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>CRCIN22</td><td>input</td><td>TCELL5:IMUX.IMUX37.DELAY</td></tr>
+<tr><td>CRCIN23</td><td>input</td><td>TCELL5:IMUX.IMUX36.DELAY</td></tr>
+<tr><td>CRCIN24</td><td>input</td><td>TCELL4:IMUX.IMUX47.DELAY</td></tr>
+<tr><td>CRCIN25</td><td>input</td><td>TCELL4:IMUX.IMUX46.DELAY</td></tr>
+<tr><td>CRCIN26</td><td>input</td><td>TCELL4:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>CRCIN27</td><td>input</td><td>TCELL4:IMUX.IMUX44.DELAY</td></tr>
+<tr><td>CRCIN28</td><td>input</td><td>TCELL4:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>CRCIN29</td><td>input</td><td>TCELL4:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>CRCIN3</td><td>input</td><td>TCELL7:IMUX.IMUX44.DELAY</td></tr>
+<tr><td>CRCIN30</td><td>input</td><td>TCELL4:IMUX.IMUX37.DELAY</td></tr>
+<tr><td>CRCIN31</td><td>input</td><td>TCELL4:IMUX.IMUX36.DELAY</td></tr>
+<tr><td>CRCIN32</td><td>input</td><td>TCELL3:IMUX.IMUX17.DELAY</td></tr>
+<tr><td>CRCIN33</td><td>input</td><td>TCELL3:IMUX.IMUX16.DELAY</td></tr>
+<tr><td>CRCIN34</td><td>input</td><td>TCELL3:IMUX.IMUX15.DELAY</td></tr>
+<tr><td>CRCIN35</td><td>input</td><td>TCELL3:IMUX.IMUX14.DELAY</td></tr>
+<tr><td>CRCIN36</td><td>input</td><td>TCELL3:IMUX.IMUX13.DELAY</td></tr>
+<tr><td>CRCIN37</td><td>input</td><td>TCELL3:IMUX.IMUX12.DELAY</td></tr>
+<tr><td>CRCIN38</td><td>input</td><td>TCELL3:IMUX.IMUX37.DELAY</td></tr>
+<tr><td>CRCIN39</td><td>input</td><td>TCELL3:IMUX.IMUX36.DELAY</td></tr>
+<tr><td>CRCIN4</td><td>input</td><td>TCELL7:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>CRCIN40</td><td>input</td><td>TCELL2:IMUX.IMUX17.DELAY</td></tr>
+<tr><td>CRCIN41</td><td>input</td><td>TCELL2:IMUX.IMUX16.DELAY</td></tr>
+<tr><td>CRCIN42</td><td>input</td><td>TCELL2:IMUX.IMUX15.DELAY</td></tr>
+<tr><td>CRCIN43</td><td>input</td><td>TCELL2:IMUX.IMUX14.DELAY</td></tr>
+<tr><td>CRCIN44</td><td>input</td><td>TCELL2:IMUX.IMUX13.DELAY</td></tr>
+<tr><td>CRCIN45</td><td>input</td><td>TCELL2:IMUX.IMUX12.DELAY</td></tr>
+<tr><td>CRCIN46</td><td>input</td><td>TCELL2:IMUX.IMUX37.DELAY</td></tr>
+<tr><td>CRCIN47</td><td>input</td><td>TCELL2:IMUX.IMUX36.DELAY</td></tr>
+<tr><td>CRCIN48</td><td>input</td><td>TCELL1:IMUX.IMUX23.DELAY</td></tr>
+<tr><td>CRCIN49</td><td>input</td><td>TCELL1:IMUX.IMUX22.DELAY</td></tr>
+<tr><td>CRCIN5</td><td>input</td><td>TCELL7:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>CRCIN50</td><td>input</td><td>TCELL1:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>CRCIN51</td><td>input</td><td>TCELL1:IMUX.IMUX44.DELAY</td></tr>
+<tr><td>CRCIN52</td><td>input</td><td>TCELL1:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>CRCIN53</td><td>input</td><td>TCELL1:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>CRCIN54</td><td>input</td><td>TCELL1:IMUX.IMUX19.DELAY</td></tr>
+<tr><td>CRCIN55</td><td>input</td><td>TCELL1:IMUX.IMUX18.DELAY</td></tr>
+<tr><td>CRCIN56</td><td>input</td><td>TCELL0:IMUX.IMUX23.DELAY</td></tr>
+<tr><td>CRCIN57</td><td>input</td><td>TCELL0:IMUX.IMUX22.DELAY</td></tr>
+<tr><td>CRCIN58</td><td>input</td><td>TCELL0:IMUX.IMUX21.DELAY</td></tr>
+<tr><td>CRCIN59</td><td>input</td><td>TCELL0:IMUX.IMUX20.DELAY</td></tr>
+<tr><td>CRCIN6</td><td>input</td><td>TCELL7:IMUX.IMUX37.DELAY</td></tr>
+<tr><td>CRCIN60</td><td>input</td><td>TCELL0:IMUX.IMUX25.DELAY</td></tr>
+<tr><td>CRCIN61</td><td>input</td><td>TCELL0:IMUX.IMUX24.DELAY</td></tr>
+<tr><td>CRCIN62</td><td>input</td><td>TCELL0:IMUX.IMUX43.DELAY</td></tr>
+<tr><td>CRCIN63</td><td>input</td><td>TCELL0:IMUX.IMUX42.DELAY</td></tr>
+<tr><td>CRCIN7</td><td>input</td><td>TCELL7:IMUX.IMUX36.DELAY</td></tr>
+<tr><td>CRCIN8</td><td>input</td><td>TCELL6:IMUX.IMUX47.DELAY</td></tr>
+<tr><td>CRCIN9</td><td>input</td><td>TCELL6:IMUX.IMUX46.DELAY</td></tr>
 <tr><td>CRCOUT0</td><td>output</td><td>TCELL3:OUT6</td></tr>
 <tr><td>CRCOUT1</td><td>output</td><td>TCELL3:OUT4</td></tr>
 <tr><td>CRCOUT10</td><td>output</td><td>TCELL2:OUT22</td></tr>
@@ -1243,7 +1246,7 @@
 <tr><td>CRCOUT7</td><td>output</td><td>TCELL2:OUT23</td></tr>
 <tr><td>CRCOUT8</td><td>output</td><td>TCELL2:OUT13</td></tr>
 <tr><td>CRCOUT9</td><td>output</td><td>TCELL2:OUT1</td></tr>
-<tr><td>CRCRESET</td><td>input</td><td>TCELL2:IMUX.IMUX5</td></tr>
+<tr><td>CRCRESET</td><td>input</td><td>TCELL2:IMUX.IMUX5.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-crc64_1"><a class="header" href="#bel-crc64_1">Bel CRC64_1</a></h3>
@@ -1254,74 +1257,74 @@
 </thead>
 <tbody>
 <tr><td>CRCCLK</td><td>input</td><td>TCELL18:IMUX.CLK0</td></tr>
-<tr><td>CRCDATAVALID</td><td>input</td><td>TCELL16:IMUX.IMUX7</td></tr>
-<tr><td>CRCDATAWIDTH0</td><td>input</td><td>TCELL16:IMUX.IMUX6</td></tr>
-<tr><td>CRCDATAWIDTH1</td><td>input</td><td>TCELL16:IMUX.IMUX1</td></tr>
-<tr><td>CRCDATAWIDTH2</td><td>input</td><td>TCELL16:IMUX.IMUX8</td></tr>
-<tr><td>CRCIN0</td><td>input</td><td>TCELL12:IMUX.IMUX0</td></tr>
-<tr><td>CRCIN1</td><td>input</td><td>TCELL12:IMUX.IMUX1</td></tr>
-<tr><td>CRCIN10</td><td>input</td><td>TCELL13:IMUX.IMUX8</td></tr>
-<tr><td>CRCIN11</td><td>input</td><td>TCELL13:IMUX.IMUX9</td></tr>
-<tr><td>CRCIN12</td><td>input</td><td>TCELL13:IMUX.IMUX4</td></tr>
-<tr><td>CRCIN13</td><td>input</td><td>TCELL13:IMUX.IMUX5</td></tr>
-<tr><td>CRCIN14</td><td>input</td><td>TCELL13:IMUX.IMUX10</td></tr>
-<tr><td>CRCIN15</td><td>input</td><td>TCELL13:IMUX.IMUX11</td></tr>
-<tr><td>CRCIN16</td><td>input</td><td>TCELL14:IMUX.IMUX6</td></tr>
-<tr><td>CRCIN17</td><td>input</td><td>TCELL14:IMUX.IMUX7</td></tr>
-<tr><td>CRCIN18</td><td>input</td><td>TCELL14:IMUX.IMUX8</td></tr>
-<tr><td>CRCIN19</td><td>input</td><td>TCELL14:IMUX.IMUX9</td></tr>
-<tr><td>CRCIN2</td><td>input</td><td>TCELL12:IMUX.IMUX2</td></tr>
-<tr><td>CRCIN20</td><td>input</td><td>TCELL14:IMUX.IMUX4</td></tr>
-<tr><td>CRCIN21</td><td>input</td><td>TCELL14:IMUX.IMUX5</td></tr>
-<tr><td>CRCIN22</td><td>input</td><td>TCELL14:IMUX.IMUX10</td></tr>
-<tr><td>CRCIN23</td><td>input</td><td>TCELL14:IMUX.IMUX11</td></tr>
-<tr><td>CRCIN24</td><td>input</td><td>TCELL15:IMUX.IMUX6</td></tr>
-<tr><td>CRCIN25</td><td>input</td><td>TCELL15:IMUX.IMUX7</td></tr>
-<tr><td>CRCIN26</td><td>input</td><td>TCELL15:IMUX.IMUX8</td></tr>
-<tr><td>CRCIN27</td><td>input</td><td>TCELL15:IMUX.IMUX9</td></tr>
-<tr><td>CRCIN28</td><td>input</td><td>TCELL15:IMUX.IMUX4</td></tr>
-<tr><td>CRCIN29</td><td>input</td><td>TCELL15:IMUX.IMUX5</td></tr>
-<tr><td>CRCIN3</td><td>input</td><td>TCELL12:IMUX.IMUX9</td></tr>
-<tr><td>CRCIN30</td><td>input</td><td>TCELL15:IMUX.IMUX10</td></tr>
-<tr><td>CRCIN31</td><td>input</td><td>TCELL15:IMUX.IMUX11</td></tr>
-<tr><td>CRCIN32</td><td>input</td><td>TCELL16:IMUX.IMUX36</td></tr>
-<tr><td>CRCIN33</td><td>input</td><td>TCELL16:IMUX.IMUX37</td></tr>
-<tr><td>CRCIN34</td><td>input</td><td>TCELL16:IMUX.IMUX38</td></tr>
-<tr><td>CRCIN35</td><td>input</td><td>TCELL16:IMUX.IMUX39</td></tr>
-<tr><td>CRCIN36</td><td>input</td><td>TCELL16:IMUX.IMUX40</td></tr>
-<tr><td>CRCIN37</td><td>input</td><td>TCELL16:IMUX.IMUX35</td></tr>
-<tr><td>CRCIN38</td><td>input</td><td>TCELL16:IMUX.IMUX10</td></tr>
-<tr><td>CRCIN39</td><td>input</td><td>TCELL16:IMUX.IMUX11</td></tr>
-<tr><td>CRCIN4</td><td>input</td><td>TCELL12:IMUX.IMUX45</td></tr>
-<tr><td>CRCIN40</td><td>input</td><td>TCELL17:IMUX.IMUX30</td></tr>
-<tr><td>CRCIN41</td><td>input</td><td>TCELL17:IMUX.IMUX31</td></tr>
-<tr><td>CRCIN42</td><td>input</td><td>TCELL17:IMUX.IMUX32</td></tr>
-<tr><td>CRCIN43</td><td>input</td><td>TCELL17:IMUX.IMUX33</td></tr>
-<tr><td>CRCIN44</td><td>input</td><td>TCELL17:IMUX.IMUX34</td></tr>
-<tr><td>CRCIN45</td><td>input</td><td>TCELL17:IMUX.IMUX35</td></tr>
-<tr><td>CRCIN46</td><td>input</td><td>TCELL17:IMUX.IMUX46</td></tr>
-<tr><td>CRCIN47</td><td>input</td><td>TCELL17:IMUX.IMUX47</td></tr>
-<tr><td>CRCIN48</td><td>input</td><td>TCELL18:IMUX.IMUX6</td></tr>
-<tr><td>CRCIN49</td><td>input</td><td>TCELL18:IMUX.IMUX7</td></tr>
-<tr><td>CRCIN5</td><td>input</td><td>TCELL12:IMUX.IMUX35</td></tr>
-<tr><td>CRCIN50</td><td>input</td><td>TCELL18:IMUX.IMUX8</td></tr>
-<tr><td>CRCIN51</td><td>input</td><td>TCELL18:IMUX.IMUX21</td></tr>
-<tr><td>CRCIN52</td><td>input</td><td>TCELL18:IMUX.IMUX10</td></tr>
-<tr><td>CRCIN53</td><td>input</td><td>TCELL18:IMUX.IMUX11</td></tr>
-<tr><td>CRCIN54</td><td>input</td><td>TCELL18:IMUX.IMUX40</td></tr>
-<tr><td>CRCIN55</td><td>input</td><td>TCELL18:IMUX.IMUX41</td></tr>
-<tr><td>CRCIN56</td><td>input</td><td>TCELL19:IMUX.IMUX24</td></tr>
-<tr><td>CRCIN57</td><td>input</td><td>TCELL19:IMUX.IMUX25</td></tr>
-<tr><td>CRCIN58</td><td>input</td><td>TCELL19:IMUX.IMUX26</td></tr>
-<tr><td>CRCIN59</td><td>input</td><td>TCELL19:IMUX.IMUX21</td></tr>
-<tr><td>CRCIN6</td><td>input</td><td>TCELL12:IMUX.IMUX10</td></tr>
-<tr><td>CRCIN60</td><td>input</td><td>TCELL19:IMUX.IMUX10</td></tr>
-<tr><td>CRCIN61</td><td>input</td><td>TCELL19:IMUX.IMUX11</td></tr>
-<tr><td>CRCIN62</td><td>input</td><td>TCELL19:IMUX.IMUX40</td></tr>
-<tr><td>CRCIN63</td><td>input</td><td>TCELL19:IMUX.IMUX41</td></tr>
-<tr><td>CRCIN7</td><td>input</td><td>TCELL12:IMUX.IMUX11</td></tr>
-<tr><td>CRCIN8</td><td>input</td><td>TCELL13:IMUX.IMUX6</td></tr>
-<tr><td>CRCIN9</td><td>input</td><td>TCELL13:IMUX.IMUX7</td></tr>
+<tr><td>CRCDATAVALID</td><td>input</td><td>TCELL16:IMUX.IMUX7.DELAY</td></tr>
+<tr><td>CRCDATAWIDTH0</td><td>input</td><td>TCELL16:IMUX.IMUX6.DELAY</td></tr>
+<tr><td>CRCDATAWIDTH1</td><td>input</td><td>TCELL16:IMUX.IMUX1.DELAY</td></tr>
+<tr><td>CRCDATAWIDTH2</td><td>input</td><td>TCELL16:IMUX.IMUX8.DELAY</td></tr>
+<tr><td>CRCIN0</td><td>input</td><td>TCELL12:IMUX.IMUX0.DELAY</td></tr>
+<tr><td>CRCIN1</td><td>input</td><td>TCELL12:IMUX.IMUX1.DELAY</td></tr>
+<tr><td>CRCIN10</td><td>input</td><td>TCELL13:IMUX.IMUX8.DELAY</td></tr>
+<tr><td>CRCIN11</td><td>input</td><td>TCELL13:IMUX.IMUX9.DELAY</td></tr>
+<tr><td>CRCIN12</td><td>input</td><td>TCELL13:IMUX.IMUX4.DELAY</td></tr>
+<tr><td>CRCIN13</td><td>input</td><td>TCELL13:IMUX.IMUX5.DELAY</td></tr>
+<tr><td>CRCIN14</td><td>input</td><td>TCELL13:IMUX.IMUX10.DELAY</td></tr>
+<tr><td>CRCIN15</td><td>input</td><td>TCELL13:IMUX.IMUX11.DELAY</td></tr>
+<tr><td>CRCIN16</td><td>input</td><td>TCELL14:IMUX.IMUX6.DELAY</td></tr>
+<tr><td>CRCIN17</td><td>input</td><td>TCELL14:IMUX.IMUX7.DELAY</td></tr>
+<tr><td>CRCIN18</td><td>input</td><td>TCELL14:IMUX.IMUX8.DELAY</td></tr>
+<tr><td>CRCIN19</td><td>input</td><td>TCELL14:IMUX.IMUX9.DELAY</td></tr>
+<tr><td>CRCIN2</td><td>input</td><td>TCELL12:IMUX.IMUX2.DELAY</td></tr>
+<tr><td>CRCIN20</td><td>input</td><td>TCELL14:IMUX.IMUX4.DELAY</td></tr>
+<tr><td>CRCIN21</td><td>input</td><td>TCELL14:IMUX.IMUX5.DELAY</td></tr>
+<tr><td>CRCIN22</td><td>input</td><td>TCELL14:IMUX.IMUX10.DELAY</td></tr>
+<tr><td>CRCIN23</td><td>input</td><td>TCELL14:IMUX.IMUX11.DELAY</td></tr>
+<tr><td>CRCIN24</td><td>input</td><td>TCELL15:IMUX.IMUX6.DELAY</td></tr>
+<tr><td>CRCIN25</td><td>input</td><td>TCELL15:IMUX.IMUX7.DELAY</td></tr>
+<tr><td>CRCIN26</td><td>input</td><td>TCELL15:IMUX.IMUX8.DELAY</td></tr>
+<tr><td>CRCIN27</td><td>input</td><td>TCELL15:IMUX.IMUX9.DELAY</td></tr>
+<tr><td>CRCIN28</td><td>input</td><td>TCELL15:IMUX.IMUX4.DELAY</td></tr>
+<tr><td>CRCIN29</td><td>input</td><td>TCELL15:IMUX.IMUX5.DELAY</td></tr>
+<tr><td>CRCIN3</td><td>input</td><td>TCELL12:IMUX.IMUX9.DELAY</td></tr>
+<tr><td>CRCIN30</td><td>input</td><td>TCELL15:IMUX.IMUX10.DELAY</td></tr>
+<tr><td>CRCIN31</td><td>input</td><td>TCELL15:IMUX.IMUX11.DELAY</td></tr>
+<tr><td>CRCIN32</td><td>input</td><td>TCELL16:IMUX.IMUX36.DELAY</td></tr>
+<tr><td>CRCIN33</td><td>input</td><td>TCELL16:IMUX.IMUX37.DELAY</td></tr>
+<tr><td>CRCIN34</td><td>input</td><td>TCELL16:IMUX.IMUX38.DELAY</td></tr>
+<tr><td>CRCIN35</td><td>input</td><td>TCELL16:IMUX.IMUX39.DELAY</td></tr>
+<tr><td>CRCIN36</td><td>input</td><td>TCELL16:IMUX.IMUX40.DELAY</td></tr>
+<tr><td>CRCIN37</td><td>input</td><td>TCELL16:IMUX.IMUX35.DELAY</td></tr>
+<tr><td>CRCIN38</td><td>input</td><td>TCELL16:IMUX.IMUX10.DELAY</td></tr>
+<tr><td>CRCIN39</td><td>input</td><td>TCELL16:IMUX.IMUX11.DELAY</td></tr>
+<tr><td>CRCIN4</td><td>input</td><td>TCELL12:IMUX.IMUX45.DELAY</td></tr>
+<tr><td>CRCIN40</td><td>input</td><td>TCELL17:IMUX.IMUX30.DELAY</td></tr>
+<tr><td>CRCIN41</td><td>input</td><td>TCELL17:IMUX.IMUX31.DELAY</td></tr>
+<tr><td>CRCIN42</td><td>input</td><td>TCELL17:IMUX.IMUX32.DELAY</td></tr>
+<tr><td>CRCIN43</td><td>input</td><td>TCELL17:IMUX.IMUX33.DELAY</td></tr>
+<tr><td>CRCIN44</td><td>input</td><td>TCELL17:IMUX.IMUX34.DELAY</td></tr>
+<tr><td>CRCIN45</td><td>input</td><td>TCELL17:IMUX.IMUX35.DELAY</td></tr>
+<tr><td>CRCIN46</td><td>input</td><td>TCELL17:IMUX.IMUX46.DELAY</td></tr>
+<tr><td>CRCIN47</td><td>input</td><td>TCELL17:IMUX.IMUX47.DELAY</td></tr>
+<tr><td>CRCIN48</td><td>input</td><td>TCELL18:IMUX.IMUX6.DELAY</td></tr>
+<tr><td>CRCIN49</td><td>input</td><td>TCELL18:IMUX.IMUX7.DELAY</td></tr>
+<tr><td>CRCIN5</td><td>input</td><td>TCELL12:IMUX.IMUX35.DELAY</td></tr>
+<tr><td>CRCIN50</td><td>input</td><td>TCELL18:IMUX.IMUX8.DELAY</td></tr>
+<tr><td>CRCIN51</td><td>input</td><td>TCELL18:IMUX.IMUX21.DELAY</td></tr>
+<tr><td>CRCIN52</td><td>input</td><td>TCELL18:IMUX.IMUX10.DELAY</td></tr>
+<tr><td>CRCIN53</td><td>input</td><td>TCELL18:IMUX.IMUX11.DELAY</td></tr>
+<tr><td>CRCIN54</td><td>input</td><td>TCELL18:IMUX.IMUX40.DELAY</td></tr>
+<tr><td>CRCIN55</td><td>input</td><td>TCELL18:IMUX.IMUX41.DELAY</td></tr>
+<tr><td>CRCIN56</td><td>input</td><td>TCELL19:IMUX.IMUX24.DELAY</td></tr>
+<tr><td>CRCIN57</td><td>input</td><td>TCELL19:IMUX.IMUX25.DELAY</td></tr>
+<tr><td>CRCIN58</td><td>input</td><td>TCELL19:IMUX.IMUX26.DELAY</td></tr>
+<tr><td>CRCIN59</td><td>input</td><td>TCELL19:IMUX.IMUX21.DELAY</td></tr>
+<tr><td>CRCIN6</td><td>input</td><td>TCELL12:IMUX.IMUX10.DELAY</td></tr>
+<tr><td>CRCIN60</td><td>input</td><td>TCELL19:IMUX.IMUX10.DELAY</td></tr>
+<tr><td>CRCIN61</td><td>input</td><td>TCELL19:IMUX.IMUX11.DELAY</td></tr>
+<tr><td>CRCIN62</td><td>input</td><td>TCELL19:IMUX.IMUX40.DELAY</td></tr>
+<tr><td>CRCIN63</td><td>input</td><td>TCELL19:IMUX.IMUX41.DELAY</td></tr>
+<tr><td>CRCIN7</td><td>input</td><td>TCELL12:IMUX.IMUX11.DELAY</td></tr>
+<tr><td>CRCIN8</td><td>input</td><td>TCELL13:IMUX.IMUX6.DELAY</td></tr>
+<tr><td>CRCIN9</td><td>input</td><td>TCELL13:IMUX.IMUX7.DELAY</td></tr>
 <tr><td>CRCOUT0</td><td>output</td><td>TCELL16:OUT13</td></tr>
 <tr><td>CRCOUT1</td><td>output</td><td>TCELL16:OUT3</td></tr>
 <tr><td>CRCOUT10</td><td>output</td><td>TCELL17:OUT15</td></tr>
@@ -1354,7 +1357,7 @@
 <tr><td>CRCOUT7</td><td>output</td><td>TCELL17:OUT14</td></tr>
 <tr><td>CRCOUT8</td><td>output</td><td>TCELL17:OUT20</td></tr>
 <tr><td>CRCOUT9</td><td>output</td><td>TCELL17:OUT6</td></tr>
-<tr><td>CRCRESET</td><td>input</td><td>TCELL17:IMUX.IMUX0</td></tr>
+<tr><td>CRCRESET</td><td>input</td><td>TCELL17:IMUX.IMUX0.DELAY</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-ipad_clkp0"><a class="header" href="#bel-ipad_clkp0">Bel IPAD_CLKP0</a></h3>
@@ -1454,43 +1457,43 @@
 <tr><th>Wire</th><th>Pins</th></tr>
 </thead>
 <tbody>
-<tr><td>TCELL0:IMUX.IMUX0</td><td>GTX_DUAL.TXDATA116</td></tr>
-<tr><td>TCELL0:IMUX.IMUX4</td><td>GTX_DUAL.TXELECIDLE1</td></tr>
-<tr><td>TCELL0:IMUX.IMUX6</td><td>GTX_DUAL.TXDIFFCTRL12</td></tr>
-<tr><td>TCELL0:IMUX.IMUX7</td><td>GTX_DUAL.TXDIFFCTRL11</td></tr>
-<tr><td>TCELL0:IMUX.IMUX8</td><td>GTX_DUAL.TXDIFFCTRL10</td></tr>
-<tr><td>TCELL0:IMUX.IMUX9</td><td>GTX_DUAL.TXCHARDISPVAL12</td></tr>
-<tr><td>TCELL0:IMUX.IMUX11</td><td>GTX_DUAL.GTXTEST11</td></tr>
-<tr><td>TCELL0:IMUX.IMUX12</td><td>GTX_DUAL.GTXTEST10</td></tr>
-<tr><td>TCELL0:IMUX.IMUX13</td><td>GTX_DUAL.GTXTEST1</td></tr>
-<tr><td>TCELL0:IMUX.IMUX14</td><td>GTX_DUAL.GTXTEST12</td></tr>
-<tr><td>TCELL0:IMUX.IMUX15</td><td>GTX_DUAL.TXBUFDIFFCTRL12</td></tr>
-<tr><td>TCELL0:IMUX.IMUX16</td><td>GTX_DUAL.TXBUFDIFFCTRL11</td></tr>
-<tr><td>TCELL0:IMUX.IMUX17</td><td>GTX_DUAL.TXBUFDIFFCTRL10</td></tr>
-<tr><td>TCELL0:IMUX.IMUX20</td><td>CRC32_0.CRCIN27, CRC64_0.CRCIN59</td></tr>
-<tr><td>TCELL0:IMUX.IMUX21</td><td>CRC32_0.CRCIN26, CRC64_0.CRCIN58</td></tr>
-<tr><td>TCELL0:IMUX.IMUX22</td><td>CRC32_0.CRCIN25, CRC64_0.CRCIN57</td></tr>
-<tr><td>TCELL0:IMUX.IMUX23</td><td>CRC32_0.CRCIN24, CRC64_0.CRCIN56</td></tr>
-<tr><td>TCELL0:IMUX.IMUX24</td><td>CRC32_0.CRCIN29, CRC64_0.CRCIN61</td></tr>
-<tr><td>TCELL0:IMUX.IMUX25</td><td>CRC32_0.CRCIN28, CRC64_0.CRCIN60</td></tr>
-<tr><td>TCELL0:IMUX.IMUX27</td><td>GTX_DUAL.TXDATA118</td></tr>
-<tr><td>TCELL0:IMUX.IMUX29</td><td>GTX_DUAL.TXDATA119</td></tr>
-<tr><td>TCELL0:IMUX.IMUX30</td><td>GTX_DUAL.SCANINPCS1</td></tr>
-<tr><td>TCELL0:IMUX.IMUX31</td><td>GTX_DUAL.TXDATA117</td></tr>
-<tr><td>TCELL0:IMUX.IMUX32</td><td>GTX_DUAL.TXDATA10</td></tr>
-<tr><td>TCELL0:IMUX.IMUX33</td><td>GTX_DUAL.TXDATA11</td></tr>
-<tr><td>TCELL0:IMUX.IMUX34</td><td>GTX_DUAL.TXDATA12</td></tr>
-<tr><td>TCELL0:IMUX.IMUX35</td><td>GTX_DUAL.TXDATA13</td></tr>
-<tr><td>TCELL0:IMUX.IMUX36</td><td>GTX_DUAL.SCANMODE</td></tr>
-<tr><td>TCELL0:IMUX.IMUX37</td><td>GTX_DUAL.TXSEQUENCE16</td></tr>
-<tr><td>TCELL0:IMUX.IMUX38</td><td>GTX_DUAL.TXCHARDISPMODE12</td></tr>
-<tr><td>TCELL0:IMUX.IMUX41</td><td>GTX_DUAL.TXSEQUENCE12</td></tr>
-<tr><td>TCELL0:IMUX.IMUX42</td><td>CRC32_0.CRCIN31, CRC64_0.CRCIN63</td></tr>
-<tr><td>TCELL0:IMUX.IMUX43</td><td>CRC32_0.CRCIN30, CRC64_0.CRCIN62</td></tr>
-<tr><td>TCELL0:IMUX.IMUX44</td><td>GTX_DUAL.TXSEQUENCE15</td></tr>
-<tr><td>TCELL0:IMUX.IMUX45</td><td>GTX_DUAL.TXSEQUENCE14</td></tr>
-<tr><td>TCELL0:IMUX.IMUX46</td><td>GTX_DUAL.TXSEQUENCE13</td></tr>
-<tr><td>TCELL0:IMUX.IMUX47</td><td>GTX_DUAL.TXDETECTRX1</td></tr>
+<tr><td>TCELL0:IMUX.IMUX0.DELAY</td><td>GTX_DUAL.TXDATA116</td></tr>
+<tr><td>TCELL0:IMUX.IMUX4.DELAY</td><td>GTX_DUAL.TXELECIDLE1</td></tr>
+<tr><td>TCELL0:IMUX.IMUX6.DELAY</td><td>GTX_DUAL.TXDIFFCTRL12</td></tr>
+<tr><td>TCELL0:IMUX.IMUX7.DELAY</td><td>GTX_DUAL.TXDIFFCTRL11</td></tr>
+<tr><td>TCELL0:IMUX.IMUX8.DELAY</td><td>GTX_DUAL.TXDIFFCTRL10</td></tr>
+<tr><td>TCELL0:IMUX.IMUX9.DELAY</td><td>GTX_DUAL.TXCHARDISPVAL12</td></tr>
+<tr><td>TCELL0:IMUX.IMUX11.DELAY</td><td>GTX_DUAL.GTXTEST11</td></tr>
+<tr><td>TCELL0:IMUX.IMUX12.DELAY</td><td>GTX_DUAL.GTXTEST10</td></tr>
+<tr><td>TCELL0:IMUX.IMUX13.DELAY</td><td>GTX_DUAL.GTXTEST1</td></tr>
+<tr><td>TCELL0:IMUX.IMUX14.DELAY</td><td>GTX_DUAL.GTXTEST12</td></tr>
+<tr><td>TCELL0:IMUX.IMUX15.DELAY</td><td>GTX_DUAL.TXBUFDIFFCTRL12</td></tr>
+<tr><td>TCELL0:IMUX.IMUX16.DELAY</td><td>GTX_DUAL.TXBUFDIFFCTRL11</td></tr>
+<tr><td>TCELL0:IMUX.IMUX17.DELAY</td><td>GTX_DUAL.TXBUFDIFFCTRL10</td></tr>
+<tr><td>TCELL0:IMUX.IMUX20.DELAY</td><td>CRC32_0.CRCIN27, CRC64_0.CRCIN59</td></tr>
+<tr><td>TCELL0:IMUX.IMUX21.DELAY</td><td>CRC32_0.CRCIN26, CRC64_0.CRCIN58</td></tr>
+<tr><td>TCELL0:IMUX.IMUX22.DELAY</td><td>CRC32_0.CRCIN25, CRC64_0.CRCIN57</td></tr>
+<tr><td>TCELL0:IMUX.IMUX23.DELAY</td><td>CRC32_0.CRCIN24, CRC64_0.CRCIN56</td></tr>
+<tr><td>TCELL0:IMUX.IMUX24.DELAY</td><td>CRC32_0.CRCIN29, CRC64_0.CRCIN61</td></tr>
+<tr><td>TCELL0:IMUX.IMUX25.DELAY</td><td>CRC32_0.CRCIN28, CRC64_0.CRCIN60</td></tr>
+<tr><td>TCELL0:IMUX.IMUX27.DELAY</td><td>GTX_DUAL.TXDATA118</td></tr>
+<tr><td>TCELL0:IMUX.IMUX29.DELAY</td><td>GTX_DUAL.TXDATA119</td></tr>
+<tr><td>TCELL0:IMUX.IMUX30.DELAY</td><td>GTX_DUAL.SCANINPCS1</td></tr>
+<tr><td>TCELL0:IMUX.IMUX31.DELAY</td><td>GTX_DUAL.TXDATA117</td></tr>
+<tr><td>TCELL0:IMUX.IMUX32.DELAY</td><td>GTX_DUAL.TXDATA10</td></tr>
+<tr><td>TCELL0:IMUX.IMUX33.DELAY</td><td>GTX_DUAL.TXDATA11</td></tr>
+<tr><td>TCELL0:IMUX.IMUX34.DELAY</td><td>GTX_DUAL.TXDATA12</td></tr>
+<tr><td>TCELL0:IMUX.IMUX35.DELAY</td><td>GTX_DUAL.TXDATA13</td></tr>
+<tr><td>TCELL0:IMUX.IMUX36.DELAY</td><td>GTX_DUAL.SCANMODE</td></tr>
+<tr><td>TCELL0:IMUX.IMUX37.DELAY</td><td>GTX_DUAL.TXSEQUENCE16</td></tr>
+<tr><td>TCELL0:IMUX.IMUX38.DELAY</td><td>GTX_DUAL.TXCHARDISPMODE12</td></tr>
+<tr><td>TCELL0:IMUX.IMUX41.DELAY</td><td>GTX_DUAL.TXSEQUENCE12</td></tr>
+<tr><td>TCELL0:IMUX.IMUX42.DELAY</td><td>CRC32_0.CRCIN31, CRC64_0.CRCIN63</td></tr>
+<tr><td>TCELL0:IMUX.IMUX43.DELAY</td><td>CRC32_0.CRCIN30, CRC64_0.CRCIN62</td></tr>
+<tr><td>TCELL0:IMUX.IMUX44.DELAY</td><td>GTX_DUAL.TXSEQUENCE15</td></tr>
+<tr><td>TCELL0:IMUX.IMUX45.DELAY</td><td>GTX_DUAL.TXSEQUENCE14</td></tr>
+<tr><td>TCELL0:IMUX.IMUX46.DELAY</td><td>GTX_DUAL.TXSEQUENCE13</td></tr>
+<tr><td>TCELL0:IMUX.IMUX47.DELAY</td><td>GTX_DUAL.TXDETECTRX1</td></tr>
 <tr><td>TCELL0:OUT0</td><td>GTX_DUAL.TXGEARBOXREADY1</td></tr>
 <tr><td>TCELL0:OUT1</td><td>CRC32_0.CRCOUT29, CRC64_0.CRCOUT29</td></tr>
 <tr><td>TCELL0:OUT2</td><td>GTX_DUAL.RXSTARTOFSEQ1</td></tr>
@@ -1511,37 +1514,37 @@
 <tr><td>TCELL0:OUT22</td><td>CRC32_0.CRCOUT30, CRC64_0.CRCOUT30</td></tr>
 <tr><td>TCELL0:OUT23</td><td>CRC32_0.CRCOUT26, CRC64_0.CRCOUT26</td></tr>
 <tr><td>TCELL1:IMUX.CLK1</td><td>CRC32_0.CRCCLK, CRC64_0.CRCCLK</td></tr>
-<tr><td>TCELL1:IMUX.IMUX0</td><td>GTX_DUAL.TXCOMTYPE1</td></tr>
-<tr><td>TCELL1:IMUX.IMUX1</td><td>GTX_DUAL.TXCHARISK10</td></tr>
-<tr><td>TCELL1:IMUX.IMUX3</td><td>GTX_DUAL.TXSEQUENCE11</td></tr>
-<tr><td>TCELL1:IMUX.IMUX6</td><td>GTX_DUAL.TXDATA120</td></tr>
-<tr><td>TCELL1:IMUX.IMUX8</td><td>GTX_DUAL.TXCHARDISPMODE10</td></tr>
-<tr><td>TCELL1:IMUX.IMUX10</td><td>GTX_DUAL.TXENPRBSTST11</td></tr>
-<tr><td>TCELL1:IMUX.IMUX11</td><td>GTX_DUAL.TXENPRBSTST10</td></tr>
-<tr><td>TCELL1:IMUX.IMUX12</td><td>GTX_DUAL.TXBYPASS8B10B10</td></tr>
-<tr><td>TCELL1:IMUX.IMUX13</td><td>GTX_DUAL.TXCHARISK12</td></tr>
-<tr><td>TCELL1:IMUX.IMUX18</td><td>CRC32_0.CRCIN23, CRC64_0.CRCIN55</td></tr>
-<tr><td>TCELL1:IMUX.IMUX19</td><td>CRC32_0.CRCIN22, CRC64_0.CRCIN54</td></tr>
-<tr><td>TCELL1:IMUX.IMUX20</td><td>GTX_DUAL.TXDATA121</td></tr>
-<tr><td>TCELL1:IMUX.IMUX21</td><td>GTX_DUAL.TXCHARDISPVAL10</td></tr>
-<tr><td>TCELL1:IMUX.IMUX22</td><td>CRC32_0.CRCIN17, CRC64_0.CRCIN49</td></tr>
-<tr><td>TCELL1:IMUX.IMUX23</td><td>CRC32_0.CRCIN16, CRC64_0.CRCIN48</td></tr>
-<tr><td>TCELL1:IMUX.IMUX24</td><td>GTX_DUAL.TXPREEMPHASIS12</td></tr>
-<tr><td>TCELL1:IMUX.IMUX25</td><td>GTX_DUAL.TXPREEMPHASIS11</td></tr>
-<tr><td>TCELL1:IMUX.IMUX26</td><td>GTX_DUAL.TXPREEMPHASIS10</td></tr>
-<tr><td>TCELL1:IMUX.IMUX28</td><td>GTX_DUAL.TXDATA123</td></tr>
-<tr><td>TCELL1:IMUX.IMUX32</td><td>GTX_DUAL.TXDATA14</td></tr>
-<tr><td>TCELL1:IMUX.IMUX33</td><td>GTX_DUAL.TXDATA15</td></tr>
-<tr><td>TCELL1:IMUX.IMUX34</td><td>GTX_DUAL.TXDATA16</td></tr>
-<tr><td>TCELL1:IMUX.IMUX35</td><td>GTX_DUAL.TXDATA17</td></tr>
-<tr><td>TCELL1:IMUX.IMUX37</td><td>GTX_DUAL.TXCOMSTART1</td></tr>
-<tr><td>TCELL1:IMUX.IMUX39</td><td>GTX_DUAL.TXDATA122</td></tr>
-<tr><td>TCELL1:IMUX.IMUX42</td><td>CRC32_0.CRCIN21, CRC64_0.CRCIN53</td></tr>
-<tr><td>TCELL1:IMUX.IMUX43</td><td>CRC32_0.CRCIN20, CRC64_0.CRCIN52</td></tr>
-<tr><td>TCELL1:IMUX.IMUX44</td><td>CRC32_0.CRCIN19, CRC64_0.CRCIN51</td></tr>
-<tr><td>TCELL1:IMUX.IMUX45</td><td>CRC32_0.CRCIN18, CRC64_0.CRCIN50</td></tr>
-<tr><td>TCELL1:IMUX.IMUX46</td><td>GTX_DUAL.TXSEQUENCE10</td></tr>
-<tr><td>TCELL1:IMUX.IMUX47</td><td>GTX_DUAL.TSTPWRDNOVRD1</td></tr>
+<tr><td>TCELL1:IMUX.IMUX0.DELAY</td><td>GTX_DUAL.TXCOMTYPE1</td></tr>
+<tr><td>TCELL1:IMUX.IMUX1.DELAY</td><td>GTX_DUAL.TXCHARISK10</td></tr>
+<tr><td>TCELL1:IMUX.IMUX3.DELAY</td><td>GTX_DUAL.TXSEQUENCE11</td></tr>
+<tr><td>TCELL1:IMUX.IMUX6.DELAY</td><td>GTX_DUAL.TXDATA120</td></tr>
+<tr><td>TCELL1:IMUX.IMUX8.DELAY</td><td>GTX_DUAL.TXCHARDISPMODE10</td></tr>
+<tr><td>TCELL1:IMUX.IMUX10.DELAY</td><td>GTX_DUAL.TXENPRBSTST11</td></tr>
+<tr><td>TCELL1:IMUX.IMUX11.DELAY</td><td>GTX_DUAL.TXENPRBSTST10</td></tr>
+<tr><td>TCELL1:IMUX.IMUX12.DELAY</td><td>GTX_DUAL.TXBYPASS8B10B10</td></tr>
+<tr><td>TCELL1:IMUX.IMUX13.DELAY</td><td>GTX_DUAL.TXCHARISK12</td></tr>
+<tr><td>TCELL1:IMUX.IMUX18.DELAY</td><td>CRC32_0.CRCIN23, CRC64_0.CRCIN55</td></tr>
+<tr><td>TCELL1:IMUX.IMUX19.DELAY</td><td>CRC32_0.CRCIN22, CRC64_0.CRCIN54</td></tr>
+<tr><td>TCELL1:IMUX.IMUX20.DELAY</td><td>GTX_DUAL.TXDATA121</td></tr>
+<tr><td>TCELL1:IMUX.IMUX21.DELAY</td><td>GTX_DUAL.TXCHARDISPVAL10</td></tr>
+<tr><td>TCELL1:IMUX.IMUX22.DELAY</td><td>CRC32_0.CRCIN17, CRC64_0.CRCIN49</td></tr>
+<tr><td>TCELL1:IMUX.IMUX23.DELAY</td><td>CRC32_0.CRCIN16, CRC64_0.CRCIN48</td></tr>
+<tr><td>TCELL1:IMUX.IMUX24.DELAY</td><td>GTX_DUAL.TXPREEMPHASIS12</td></tr>
+<tr><td>TCELL1:IMUX.IMUX25.DELAY</td><td>GTX_DUAL.TXPREEMPHASIS11</td></tr>
+<tr><td>TCELL1:IMUX.IMUX26.DELAY</td><td>GTX_DUAL.TXPREEMPHASIS10</td></tr>
+<tr><td>TCELL1:IMUX.IMUX28.DELAY</td><td>GTX_DUAL.TXDATA123</td></tr>
+<tr><td>TCELL1:IMUX.IMUX32.DELAY</td><td>GTX_DUAL.TXDATA14</td></tr>
+<tr><td>TCELL1:IMUX.IMUX33.DELAY</td><td>GTX_DUAL.TXDATA15</td></tr>
+<tr><td>TCELL1:IMUX.IMUX34.DELAY</td><td>GTX_DUAL.TXDATA16</td></tr>
+<tr><td>TCELL1:IMUX.IMUX35.DELAY</td><td>GTX_DUAL.TXDATA17</td></tr>
+<tr><td>TCELL1:IMUX.IMUX37.DELAY</td><td>GTX_DUAL.TXCOMSTART1</td></tr>
+<tr><td>TCELL1:IMUX.IMUX39.DELAY</td><td>GTX_DUAL.TXDATA122</td></tr>
+<tr><td>TCELL1:IMUX.IMUX42.DELAY</td><td>CRC32_0.CRCIN21, CRC64_0.CRCIN53</td></tr>
+<tr><td>TCELL1:IMUX.IMUX43.DELAY</td><td>CRC32_0.CRCIN20, CRC64_0.CRCIN52</td></tr>
+<tr><td>TCELL1:IMUX.IMUX44.DELAY</td><td>CRC32_0.CRCIN19, CRC64_0.CRCIN51</td></tr>
+<tr><td>TCELL1:IMUX.IMUX45.DELAY</td><td>CRC32_0.CRCIN18, CRC64_0.CRCIN50</td></tr>
+<tr><td>TCELL1:IMUX.IMUX46.DELAY</td><td>GTX_DUAL.TXSEQUENCE10</td></tr>
+<tr><td>TCELL1:IMUX.IMUX47.DELAY</td><td>GTX_DUAL.TSTPWRDNOVRD1</td></tr>
 <tr><td>TCELL1:OUT1</td><td>CRC32_0.CRCOUT17, CRC64_0.CRCOUT17</td></tr>
 <tr><td>TCELL1:OUT2</td><td>GTX_DUAL.TXBUFSTATUS10</td></tr>
 <tr><td>TCELL1:OUT4</td><td>GTX_DUAL.RXDATA131</td></tr>
@@ -1562,34 +1565,34 @@
 <tr><td>TCELL1:OUT21</td><td>GTX_DUAL.RXCHARISK13</td></tr>
 <tr><td>TCELL1:OUT22</td><td>CRC32_0.CRCOUT18, CRC64_0.CRCOUT18</td></tr>
 <tr><td>TCELL1:OUT23</td><td>CRC32_0.CRCOUT14, CRC64_0.CRCOUT14</td></tr>
-<tr><td>TCELL2:IMUX.IMUX2</td><td>GTX_DUAL.TXPOLARITY1</td></tr>
-<tr><td>TCELL2:IMUX.IMUX5</td><td>CRC32_0.CRCRESET, CRC64_0.CRCRESET</td></tr>
-<tr><td>TCELL2:IMUX.IMUX10</td><td>GTX_DUAL.TXPREEMPHASIS13</td></tr>
-<tr><td>TCELL2:IMUX.IMUX12</td><td>CRC32_0.CRCIN13, CRC64_0.CRCIN45</td></tr>
-<tr><td>TCELL2:IMUX.IMUX13</td><td>CRC32_0.CRCIN12, CRC64_0.CRCIN44</td></tr>
-<tr><td>TCELL2:IMUX.IMUX14</td><td>CRC32_0.CRCIN11, CRC64_0.CRCIN43</td></tr>
-<tr><td>TCELL2:IMUX.IMUX15</td><td>CRC32_0.CRCIN10, CRC64_0.CRCIN42</td></tr>
-<tr><td>TCELL2:IMUX.IMUX16</td><td>CRC32_0.CRCIN9, CRC64_0.CRCIN41</td></tr>
-<tr><td>TCELL2:IMUX.IMUX17</td><td>CRC32_0.CRCIN8, CRC64_0.CRCIN40</td></tr>
-<tr><td>TCELL2:IMUX.IMUX20</td><td>GTX_DUAL.TXCHARDISPMODE11</td></tr>
-<tr><td>TCELL2:IMUX.IMUX21</td><td>GTX_DUAL.TXCHARDISPVAL11</td></tr>
-<tr><td>TCELL2:IMUX.IMUX24</td><td>GTX_DUAL.TXBYPASS8B10B11</td></tr>
-<tr><td>TCELL2:IMUX.IMUX25</td><td>GTX_DUAL.TXCHARISK11</td></tr>
-<tr><td>TCELL2:IMUX.IMUX27</td><td>GTX_DUAL.TXDATA127</td></tr>
-<tr><td>TCELL2:IMUX.IMUX28</td><td>GTX_DUAL.TXCHARDISPVAL13</td></tr>
-<tr><td>TCELL2:IMUX.IMUX30</td><td>GTX_DUAL.TXDATA124</td></tr>
-<tr><td>TCELL2:IMUX.IMUX31</td><td>GTX_DUAL.TXDATA125</td></tr>
-<tr><td>TCELL2:IMUX.IMUX32</td><td>GTX_DUAL.TXDATA18</td></tr>
-<tr><td>TCELL2:IMUX.IMUX33</td><td>GTX_DUAL.TXDATA19</td></tr>
-<tr><td>TCELL2:IMUX.IMUX34</td><td>GTX_DUAL.TXDATA110</td></tr>
-<tr><td>TCELL2:IMUX.IMUX35</td><td>GTX_DUAL.TXDATA111</td></tr>
-<tr><td>TCELL2:IMUX.IMUX36</td><td>CRC32_0.CRCIN15, CRC64_0.CRCIN47</td></tr>
-<tr><td>TCELL2:IMUX.IMUX37</td><td>CRC32_0.CRCIN14, CRC64_0.CRCIN46</td></tr>
-<tr><td>TCELL2:IMUX.IMUX38</td><td>GTX_DUAL.TXDATA126</td></tr>
-<tr><td>TCELL2:IMUX.IMUX39</td><td>GTX_DUAL.TXCHARISK13</td></tr>
-<tr><td>TCELL2:IMUX.IMUX40</td><td>GTX_DUAL.TXCHARDISPMODE13</td></tr>
-<tr><td>TCELL2:IMUX.IMUX42</td><td>GTX_DUAL.TXPOWERDOWN11</td></tr>
-<tr><td>TCELL2:IMUX.IMUX43</td><td>GTX_DUAL.TXPOWERDOWN10</td></tr>
+<tr><td>TCELL2:IMUX.IMUX2.DELAY</td><td>GTX_DUAL.TXPOLARITY1</td></tr>
+<tr><td>TCELL2:IMUX.IMUX5.DELAY</td><td>CRC32_0.CRCRESET, CRC64_0.CRCRESET</td></tr>
+<tr><td>TCELL2:IMUX.IMUX10.DELAY</td><td>GTX_DUAL.TXPREEMPHASIS13</td></tr>
+<tr><td>TCELL2:IMUX.IMUX12.DELAY</td><td>CRC32_0.CRCIN13, CRC64_0.CRCIN45</td></tr>
+<tr><td>TCELL2:IMUX.IMUX13.DELAY</td><td>CRC32_0.CRCIN12, CRC64_0.CRCIN44</td></tr>
+<tr><td>TCELL2:IMUX.IMUX14.DELAY</td><td>CRC32_0.CRCIN11, CRC64_0.CRCIN43</td></tr>
+<tr><td>TCELL2:IMUX.IMUX15.DELAY</td><td>CRC32_0.CRCIN10, CRC64_0.CRCIN42</td></tr>
+<tr><td>TCELL2:IMUX.IMUX16.DELAY</td><td>CRC32_0.CRCIN9, CRC64_0.CRCIN41</td></tr>
+<tr><td>TCELL2:IMUX.IMUX17.DELAY</td><td>CRC32_0.CRCIN8, CRC64_0.CRCIN40</td></tr>
+<tr><td>TCELL2:IMUX.IMUX20.DELAY</td><td>GTX_DUAL.TXCHARDISPMODE11</td></tr>
+<tr><td>TCELL2:IMUX.IMUX21.DELAY</td><td>GTX_DUAL.TXCHARDISPVAL11</td></tr>
+<tr><td>TCELL2:IMUX.IMUX24.DELAY</td><td>GTX_DUAL.TXBYPASS8B10B11</td></tr>
+<tr><td>TCELL2:IMUX.IMUX25.DELAY</td><td>GTX_DUAL.TXCHARISK11</td></tr>
+<tr><td>TCELL2:IMUX.IMUX27.DELAY</td><td>GTX_DUAL.TXDATA127</td></tr>
+<tr><td>TCELL2:IMUX.IMUX28.DELAY</td><td>GTX_DUAL.TXCHARDISPVAL13</td></tr>
+<tr><td>TCELL2:IMUX.IMUX30.DELAY</td><td>GTX_DUAL.TXDATA124</td></tr>
+<tr><td>TCELL2:IMUX.IMUX31.DELAY</td><td>GTX_DUAL.TXDATA125</td></tr>
+<tr><td>TCELL2:IMUX.IMUX32.DELAY</td><td>GTX_DUAL.TXDATA18</td></tr>
+<tr><td>TCELL2:IMUX.IMUX33.DELAY</td><td>GTX_DUAL.TXDATA19</td></tr>
+<tr><td>TCELL2:IMUX.IMUX34.DELAY</td><td>GTX_DUAL.TXDATA110</td></tr>
+<tr><td>TCELL2:IMUX.IMUX35.DELAY</td><td>GTX_DUAL.TXDATA111</td></tr>
+<tr><td>TCELL2:IMUX.IMUX36.DELAY</td><td>CRC32_0.CRCIN15, CRC64_0.CRCIN47</td></tr>
+<tr><td>TCELL2:IMUX.IMUX37.DELAY</td><td>CRC32_0.CRCIN14, CRC64_0.CRCIN46</td></tr>
+<tr><td>TCELL2:IMUX.IMUX38.DELAY</td><td>GTX_DUAL.TXDATA126</td></tr>
+<tr><td>TCELL2:IMUX.IMUX39.DELAY</td><td>GTX_DUAL.TXCHARISK13</td></tr>
+<tr><td>TCELL2:IMUX.IMUX40.DELAY</td><td>GTX_DUAL.TXCHARDISPMODE13</td></tr>
+<tr><td>TCELL2:IMUX.IMUX42.DELAY</td><td>GTX_DUAL.TXPOWERDOWN11</td></tr>
+<tr><td>TCELL2:IMUX.IMUX43.DELAY</td><td>GTX_DUAL.TXPOWERDOWN10</td></tr>
 <tr><td>TCELL2:OUT1</td><td>CRC32_0.CRCOUT9, CRC64_0.CRCOUT9</td></tr>
 <tr><td>TCELL2:OUT2</td><td>GTX_DUAL.RXELECIDLE1</td></tr>
 <tr><td>TCELL2:OUT3</td><td>GTX_DUAL.RXCHARISCOMMA13</td></tr>
@@ -1611,35 +1614,35 @@
 <tr><td>TCELL2:OUT21</td><td>CRC32_0.CRCOUT3, CRC64_0.CRCOUT3</td></tr>
 <tr><td>TCELL2:OUT22</td><td>CRC32_0.CRCOUT10, CRC64_0.CRCOUT10</td></tr>
 <tr><td>TCELL2:OUT23</td><td>CRC32_0.CRCOUT7, CRC64_0.CRCOUT7</td></tr>
-<tr><td>TCELL3:IMUX.IMUX0</td><td>GTX_DUAL.TXRESET1</td></tr>
-<tr><td>TCELL3:IMUX.IMUX1</td><td>GTX_DUAL.TXINHIBIT1</td></tr>
-<tr><td>TCELL3:IMUX.IMUX4</td><td>GTX_DUAL.TXDATAWIDTH10</td></tr>
-<tr><td>TCELL3:IMUX.IMUX5</td><td>GTX_DUAL.TXDATAWIDTH11</td></tr>
-<tr><td>TCELL3:IMUX.IMUX7</td><td>GTX_DUAL.TXHEADER12</td></tr>
-<tr><td>TCELL3:IMUX.IMUX8</td><td>GTX_DUAL.TXSTARTSEQ1</td></tr>
-<tr><td>TCELL3:IMUX.IMUX9</td><td>GTX_DUAL.TXHEADER10</td></tr>
-<tr><td>TCELL3:IMUX.IMUX12</td><td>CRC32_0.CRCIN5, CRC64_0.CRCIN37</td></tr>
-<tr><td>TCELL3:IMUX.IMUX13</td><td>CRC32_0.CRCIN4, CRC64_0.CRCIN36</td></tr>
-<tr><td>TCELL3:IMUX.IMUX14</td><td>CRC32_0.CRCIN3, CRC64_0.CRCIN35</td></tr>
-<tr><td>TCELL3:IMUX.IMUX15</td><td>CRC32_0.CRCIN2, CRC64_0.CRCIN34</td></tr>
-<tr><td>TCELL3:IMUX.IMUX16</td><td>CRC32_0.CRCIN1, CRC64_0.CRCIN33</td></tr>
-<tr><td>TCELL3:IMUX.IMUX17</td><td>CRC32_0.CRCIN0, CRC64_0.CRCIN32</td></tr>
-<tr><td>TCELL3:IMUX.IMUX20</td><td>GTX_DUAL.TXHEADER11</td></tr>
-<tr><td>TCELL3:IMUX.IMUX21</td><td>CRC32_0.CRCDATAWIDTH2, CRC32_1.CRCDATAWIDTH2, CRC64_0.CRCDATAWIDTH2</td></tr>
-<tr><td>TCELL3:IMUX.IMUX22</td><td>CRC32_0.CRCDATAVALID, CRC64_0.CRCDATAVALID</td></tr>
-<tr><td>TCELL3:IMUX.IMUX23</td><td>CRC32_0.CRCDATAWIDTH1, CRC64_0.CRCDATAWIDTH1</td></tr>
-<tr><td>TCELL3:IMUX.IMUX30</td><td>GTX_DUAL.TXDATA128</td></tr>
-<tr><td>TCELL3:IMUX.IMUX31</td><td>GTX_DUAL.TXDATA129</td></tr>
-<tr><td>TCELL3:IMUX.IMUX32</td><td>GTX_DUAL.TXDATA112</td></tr>
-<tr><td>TCELL3:IMUX.IMUX33</td><td>GTX_DUAL.TXDATA113</td></tr>
-<tr><td>TCELL3:IMUX.IMUX34</td><td>GTX_DUAL.TXDATA114</td></tr>
-<tr><td>TCELL3:IMUX.IMUX35</td><td>GTX_DUAL.TXDATA115</td></tr>
-<tr><td>TCELL3:IMUX.IMUX36</td><td>CRC32_0.CRCIN7, CRC64_0.CRCIN39</td></tr>
-<tr><td>TCELL3:IMUX.IMUX37</td><td>CRC32_0.CRCIN6, CRC64_0.CRCIN38</td></tr>
-<tr><td>TCELL3:IMUX.IMUX38</td><td>GTX_DUAL.TXDATA130</td></tr>
-<tr><td>TCELL3:IMUX.IMUX39</td><td>GTX_DUAL.TXDATA131</td></tr>
-<tr><td>TCELL3:IMUX.IMUX40</td><td>CRC32_0.CRCDATAWIDTH0, CRC64_0.CRCDATAWIDTH0</td></tr>
-<tr><td>TCELL3:IMUX.IMUX47</td><td>GTX_DUAL.TXENC8B10BUSE1</td></tr>
+<tr><td>TCELL3:IMUX.IMUX0.DELAY</td><td>GTX_DUAL.TXRESET1</td></tr>
+<tr><td>TCELL3:IMUX.IMUX1.DELAY</td><td>GTX_DUAL.TXINHIBIT1</td></tr>
+<tr><td>TCELL3:IMUX.IMUX4.DELAY</td><td>GTX_DUAL.TXDATAWIDTH10</td></tr>
+<tr><td>TCELL3:IMUX.IMUX5.DELAY</td><td>GTX_DUAL.TXDATAWIDTH11</td></tr>
+<tr><td>TCELL3:IMUX.IMUX7.DELAY</td><td>GTX_DUAL.TXHEADER12</td></tr>
+<tr><td>TCELL3:IMUX.IMUX8.DELAY</td><td>GTX_DUAL.TXSTARTSEQ1</td></tr>
+<tr><td>TCELL3:IMUX.IMUX9.DELAY</td><td>GTX_DUAL.TXHEADER10</td></tr>
+<tr><td>TCELL3:IMUX.IMUX12.DELAY</td><td>CRC32_0.CRCIN5, CRC64_0.CRCIN37</td></tr>
+<tr><td>TCELL3:IMUX.IMUX13.DELAY</td><td>CRC32_0.CRCIN4, CRC64_0.CRCIN36</td></tr>
+<tr><td>TCELL3:IMUX.IMUX14.DELAY</td><td>CRC32_0.CRCIN3, CRC64_0.CRCIN35</td></tr>
+<tr><td>TCELL3:IMUX.IMUX15.DELAY</td><td>CRC32_0.CRCIN2, CRC64_0.CRCIN34</td></tr>
+<tr><td>TCELL3:IMUX.IMUX16.DELAY</td><td>CRC32_0.CRCIN1, CRC64_0.CRCIN33</td></tr>
+<tr><td>TCELL3:IMUX.IMUX17.DELAY</td><td>CRC32_0.CRCIN0, CRC64_0.CRCIN32</td></tr>
+<tr><td>TCELL3:IMUX.IMUX20.DELAY</td><td>GTX_DUAL.TXHEADER11</td></tr>
+<tr><td>TCELL3:IMUX.IMUX21.DELAY</td><td>CRC32_0.CRCDATAWIDTH2, CRC32_1.CRCDATAWIDTH2, CRC64_0.CRCDATAWIDTH2</td></tr>
+<tr><td>TCELL3:IMUX.IMUX22.DELAY</td><td>CRC32_0.CRCDATAVALID, CRC64_0.CRCDATAVALID</td></tr>
+<tr><td>TCELL3:IMUX.IMUX23.DELAY</td><td>CRC32_0.CRCDATAWIDTH1, CRC64_0.CRCDATAWIDTH1</td></tr>
+<tr><td>TCELL3:IMUX.IMUX30.DELAY</td><td>GTX_DUAL.TXDATA128</td></tr>
+<tr><td>TCELL3:IMUX.IMUX31.DELAY</td><td>GTX_DUAL.TXDATA129</td></tr>
+<tr><td>TCELL3:IMUX.IMUX32.DELAY</td><td>GTX_DUAL.TXDATA112</td></tr>
+<tr><td>TCELL3:IMUX.IMUX33.DELAY</td><td>GTX_DUAL.TXDATA113</td></tr>
+<tr><td>TCELL3:IMUX.IMUX34.DELAY</td><td>GTX_DUAL.TXDATA114</td></tr>
+<tr><td>TCELL3:IMUX.IMUX35.DELAY</td><td>GTX_DUAL.TXDATA115</td></tr>
+<tr><td>TCELL3:IMUX.IMUX36.DELAY</td><td>CRC32_0.CRCIN7, CRC64_0.CRCIN39</td></tr>
+<tr><td>TCELL3:IMUX.IMUX37.DELAY</td><td>CRC32_0.CRCIN6, CRC64_0.CRCIN38</td></tr>
+<tr><td>TCELL3:IMUX.IMUX38.DELAY</td><td>GTX_DUAL.TXDATA130</td></tr>
+<tr><td>TCELL3:IMUX.IMUX39.DELAY</td><td>GTX_DUAL.TXDATA131</td></tr>
+<tr><td>TCELL3:IMUX.IMUX40.DELAY</td><td>CRC32_0.CRCDATAWIDTH0, CRC64_0.CRCDATAWIDTH0</td></tr>
+<tr><td>TCELL3:IMUX.IMUX47.DELAY</td><td>GTX_DUAL.TXENC8B10BUSE1</td></tr>
 <tr><td>TCELL3:OUT0</td><td>GTX_DUAL.RXSTATUS11</td></tr>
 <tr><td>TCELL3:OUT2</td><td>GTX_DUAL.RXCLKCORCNT10</td></tr>
 <tr><td>TCELL3:OUT4</td><td>CRC32_0.CRCOUT1, CRC64_0.CRCOUT1</td></tr>
@@ -1660,33 +1663,33 @@
 <tr><td>TCELL3:OUT21</td><td>GTX_DUAL.TXRUNDISP13</td></tr>
 <tr><td>TCELL3:OUT22</td><td>GTX_DUAL.RXDATA123</td></tr>
 <tr><td>TCELL3:OUT23</td><td>GTX_DUAL.RXDATA121</td></tr>
-<tr><td>TCELL4:IMUX.IMUX0</td><td>GTX_DUAL.RXPOLARITY1</td></tr>
-<tr><td>TCELL4:IMUX.IMUX1</td><td>GTX_DUAL.RXENPCOMMAALIGN1</td></tr>
-<tr><td>TCELL4:IMUX.IMUX2</td><td>GTX_DUAL.RXENMCOMMAALIGN1</td></tr>
-<tr><td>TCELL4:IMUX.IMUX3</td><td>GTX_DUAL.RXSLIDE1</td></tr>
-<tr><td>TCELL4:IMUX.IMUX5</td><td>GTX_DUAL.RXENEQB1</td></tr>
-<tr><td>TCELL4:IMUX.IMUX10</td><td>GTX_DUAL.RXDATAWIDTH10</td></tr>
-<tr><td>TCELL4:IMUX.IMUX14</td><td>GTX_DUAL.TXBYPASS8B10B13</td></tr>
-<tr><td>TCELL4:IMUX.IMUX15</td><td>GTX_DUAL.RXDATAWIDTH11</td></tr>
-<tr><td>TCELL4:IMUX.IMUX17</td><td>GTX_DUAL.RXCOMMADETUSE1</td></tr>
-<tr><td>TCELL4:IMUX.IMUX20</td><td>GTX_DUAL.TXBYPASS8B10B12</td></tr>
-<tr><td>TCELL4:IMUX.IMUX22</td><td>GTX_DUAL.RXGEARBOXSLIP1</td></tr>
-<tr><td>TCELL4:IMUX.IMUX24</td><td>GTX_DUAL.RXENPRBSTST11</td></tr>
-<tr><td>TCELL4:IMUX.IMUX25</td><td>GTX_DUAL.RXENPRBSTST10</td></tr>
-<tr><td>TCELL4:IMUX.IMUX27</td><td>GTX_DUAL.DFECLKDLYADJ13</td></tr>
-<tr><td>TCELL4:IMUX.IMUX29</td><td>GTX_DUAL.DFECLKDLYADJ11</td></tr>
-<tr><td>TCELL4:IMUX.IMUX31</td><td>GTX_DUAL.DFECLKDLYADJ15</td></tr>
-<tr><td>TCELL4:IMUX.IMUX32</td><td>GTX_DUAL.DFECLKDLYADJ14</td></tr>
-<tr><td>TCELL4:IMUX.IMUX33</td><td>GTX_DUAL.RXENSAMPLEALIGN1</td></tr>
-<tr><td>TCELL4:IMUX.IMUX34</td><td>GTX_DUAL.DFECLKDLYADJ12</td></tr>
-<tr><td>TCELL4:IMUX.IMUX36</td><td>CRC32_1.CRCIN31, CRC64_0.CRCIN31</td></tr>
-<tr><td>TCELL4:IMUX.IMUX37</td><td>CRC32_1.CRCIN30, CRC64_0.CRCIN30</td></tr>
-<tr><td>TCELL4:IMUX.IMUX42</td><td>CRC32_1.CRCIN29, CRC64_0.CRCIN29</td></tr>
-<tr><td>TCELL4:IMUX.IMUX43</td><td>CRC32_1.CRCIN28, CRC64_0.CRCIN28</td></tr>
-<tr><td>TCELL4:IMUX.IMUX44</td><td>CRC32_1.CRCIN27, CRC64_0.CRCIN27</td></tr>
-<tr><td>TCELL4:IMUX.IMUX45</td><td>CRC32_1.CRCIN26, CRC64_0.CRCIN26</td></tr>
-<tr><td>TCELL4:IMUX.IMUX46</td><td>CRC32_1.CRCIN25, CRC64_0.CRCIN25</td></tr>
-<tr><td>TCELL4:IMUX.IMUX47</td><td>CRC32_1.CRCIN24, CRC64_0.CRCIN24</td></tr>
+<tr><td>TCELL4:IMUX.IMUX0.DELAY</td><td>GTX_DUAL.RXPOLARITY1</td></tr>
+<tr><td>TCELL4:IMUX.IMUX1.DELAY</td><td>GTX_DUAL.RXENPCOMMAALIGN1</td></tr>
+<tr><td>TCELL4:IMUX.IMUX2.DELAY</td><td>GTX_DUAL.RXENMCOMMAALIGN1</td></tr>
+<tr><td>TCELL4:IMUX.IMUX3.DELAY</td><td>GTX_DUAL.RXSLIDE1</td></tr>
+<tr><td>TCELL4:IMUX.IMUX5.DELAY</td><td>GTX_DUAL.RXENEQB1</td></tr>
+<tr><td>TCELL4:IMUX.IMUX10.DELAY</td><td>GTX_DUAL.RXDATAWIDTH10</td></tr>
+<tr><td>TCELL4:IMUX.IMUX14.DELAY</td><td>GTX_DUAL.TXBYPASS8B10B13</td></tr>
+<tr><td>TCELL4:IMUX.IMUX15.DELAY</td><td>GTX_DUAL.RXDATAWIDTH11</td></tr>
+<tr><td>TCELL4:IMUX.IMUX17.DELAY</td><td>GTX_DUAL.RXCOMMADETUSE1</td></tr>
+<tr><td>TCELL4:IMUX.IMUX20.DELAY</td><td>GTX_DUAL.TXBYPASS8B10B12</td></tr>
+<tr><td>TCELL4:IMUX.IMUX22.DELAY</td><td>GTX_DUAL.RXGEARBOXSLIP1</td></tr>
+<tr><td>TCELL4:IMUX.IMUX24.DELAY</td><td>GTX_DUAL.RXENPRBSTST11</td></tr>
+<tr><td>TCELL4:IMUX.IMUX25.DELAY</td><td>GTX_DUAL.RXENPRBSTST10</td></tr>
+<tr><td>TCELL4:IMUX.IMUX27.DELAY</td><td>GTX_DUAL.DFECLKDLYADJ13</td></tr>
+<tr><td>TCELL4:IMUX.IMUX29.DELAY</td><td>GTX_DUAL.DFECLKDLYADJ11</td></tr>
+<tr><td>TCELL4:IMUX.IMUX31.DELAY</td><td>GTX_DUAL.DFECLKDLYADJ15</td></tr>
+<tr><td>TCELL4:IMUX.IMUX32.DELAY</td><td>GTX_DUAL.DFECLKDLYADJ14</td></tr>
+<tr><td>TCELL4:IMUX.IMUX33.DELAY</td><td>GTX_DUAL.RXENSAMPLEALIGN1</td></tr>
+<tr><td>TCELL4:IMUX.IMUX34.DELAY</td><td>GTX_DUAL.DFECLKDLYADJ12</td></tr>
+<tr><td>TCELL4:IMUX.IMUX36.DELAY</td><td>CRC32_1.CRCIN31, CRC64_0.CRCIN31</td></tr>
+<tr><td>TCELL4:IMUX.IMUX37.DELAY</td><td>CRC32_1.CRCIN30, CRC64_0.CRCIN30</td></tr>
+<tr><td>TCELL4:IMUX.IMUX42.DELAY</td><td>CRC32_1.CRCIN29, CRC64_0.CRCIN29</td></tr>
+<tr><td>TCELL4:IMUX.IMUX43.DELAY</td><td>CRC32_1.CRCIN28, CRC64_0.CRCIN28</td></tr>
+<tr><td>TCELL4:IMUX.IMUX44.DELAY</td><td>CRC32_1.CRCIN27, CRC64_0.CRCIN27</td></tr>
+<tr><td>TCELL4:IMUX.IMUX45.DELAY</td><td>CRC32_1.CRCIN26, CRC64_0.CRCIN26</td></tr>
+<tr><td>TCELL4:IMUX.IMUX46.DELAY</td><td>CRC32_1.CRCIN25, CRC64_0.CRCIN25</td></tr>
+<tr><td>TCELL4:IMUX.IMUX47.DELAY</td><td>CRC32_1.CRCIN24, CRC64_0.CRCIN24</td></tr>
 <tr><td>TCELL4:OUT0</td><td>GTX_DUAL.RESETDONE1</td></tr>
 <tr><td>TCELL4:OUT1</td><td>GTX_DUAL.DFECLKDLYADJMONITOR15</td></tr>
 <tr><td>TCELL4:OUT2</td><td>GTX_DUAL.RXDATA12</td></tr>
@@ -1707,32 +1710,32 @@
 <tr><td>TCELL4:OUT19</td><td>GTX_DUAL.RXBUFSTATUS12</td></tr>
 <tr><td>TCELL4:OUT21</td><td>CRC32_1.CRCOUT31</td></tr>
 <tr><td>TCELL4:OUT22</td><td>GTX_DUAL.RXDATA116</td></tr>
-<tr><td>TCELL5:IMUX.IMUX0</td><td>GTX_DUAL.RXEQMIX11</td></tr>
-<tr><td>TCELL5:IMUX.IMUX1</td><td>GTX_DUAL.RXEQMIX10</td></tr>
-<tr><td>TCELL5:IMUX.IMUX2</td><td>GTX_DUAL.RXEQPOLE13</td></tr>
-<tr><td>TCELL5:IMUX.IMUX3</td><td>GTX_DUAL.RXEQPOLE12</td></tr>
-<tr><td>TCELL5:IMUX.IMUX4</td><td>GTX_DUAL.RXEQPOLE11</td></tr>
-<tr><td>TCELL5:IMUX.IMUX5</td><td>GTX_DUAL.RXEQPOLE10</td></tr>
-<tr><td>TCELL5:IMUX.IMUX11</td><td>GTX_DUAL.DFETAP211</td></tr>
-<tr><td>TCELL5:IMUX.IMUX12</td><td>GTX_DUAL.DFETAP114</td></tr>
-<tr><td>TCELL5:IMUX.IMUX13</td><td>GTX_DUAL.GTXTEST9</td></tr>
-<tr><td>TCELL5:IMUX.IMUX20</td><td>GTX_DUAL.DFETAP214</td></tr>
-<tr><td>TCELL5:IMUX.IMUX22</td><td>GTX_DUAL.DFETAP212</td></tr>
-<tr><td>TCELL5:IMUX.IMUX24</td><td>GTX_DUAL.DFECLKDLYADJ10</td></tr>
-<tr><td>TCELL5:IMUX.IMUX25</td><td>GTX_DUAL.DFETAP113</td></tr>
-<tr><td>TCELL5:IMUX.IMUX26</td><td>GTX_DUAL.DFETAP112</td></tr>
-<tr><td>TCELL5:IMUX.IMUX27</td><td>GTX_DUAL.DFETAP213</td></tr>
-<tr><td>TCELL5:IMUX.IMUX28</td><td>GTX_DUAL.DFETAP110</td></tr>
-<tr><td>TCELL5:IMUX.IMUX29</td><td>GTX_DUAL.DFETAP210</td></tr>
-<tr><td>TCELL5:IMUX.IMUX33</td><td>GTX_DUAL.DFETAP111</td></tr>
-<tr><td>TCELL5:IMUX.IMUX36</td><td>CRC32_1.CRCIN23, CRC64_0.CRCIN23</td></tr>
-<tr><td>TCELL5:IMUX.IMUX37</td><td>CRC32_1.CRCIN22, CRC64_0.CRCIN22</td></tr>
-<tr><td>TCELL5:IMUX.IMUX42</td><td>CRC32_1.CRCIN21, CRC64_0.CRCIN21</td></tr>
-<tr><td>TCELL5:IMUX.IMUX43</td><td>CRC32_1.CRCIN20, CRC64_0.CRCIN20</td></tr>
-<tr><td>TCELL5:IMUX.IMUX44</td><td>CRC32_1.CRCIN19, CRC64_0.CRCIN19</td></tr>
-<tr><td>TCELL5:IMUX.IMUX45</td><td>CRC32_1.CRCIN18, CRC64_0.CRCIN18</td></tr>
-<tr><td>TCELL5:IMUX.IMUX46</td><td>CRC32_1.CRCIN17, CRC64_0.CRCIN17</td></tr>
-<tr><td>TCELL5:IMUX.IMUX47</td><td>CRC32_1.CRCIN16, CRC64_0.CRCIN16</td></tr>
+<tr><td>TCELL5:IMUX.IMUX0.DELAY</td><td>GTX_DUAL.RXEQMIX11</td></tr>
+<tr><td>TCELL5:IMUX.IMUX1.DELAY</td><td>GTX_DUAL.RXEQMIX10</td></tr>
+<tr><td>TCELL5:IMUX.IMUX2.DELAY</td><td>GTX_DUAL.RXEQPOLE13</td></tr>
+<tr><td>TCELL5:IMUX.IMUX3.DELAY</td><td>GTX_DUAL.RXEQPOLE12</td></tr>
+<tr><td>TCELL5:IMUX.IMUX4.DELAY</td><td>GTX_DUAL.RXEQPOLE11</td></tr>
+<tr><td>TCELL5:IMUX.IMUX5.DELAY</td><td>GTX_DUAL.RXEQPOLE10</td></tr>
+<tr><td>TCELL5:IMUX.IMUX11.DELAY</td><td>GTX_DUAL.DFETAP211</td></tr>
+<tr><td>TCELL5:IMUX.IMUX12.DELAY</td><td>GTX_DUAL.DFETAP114</td></tr>
+<tr><td>TCELL5:IMUX.IMUX13.DELAY</td><td>GTX_DUAL.GTXTEST9</td></tr>
+<tr><td>TCELL5:IMUX.IMUX20.DELAY</td><td>GTX_DUAL.DFETAP214</td></tr>
+<tr><td>TCELL5:IMUX.IMUX22.DELAY</td><td>GTX_DUAL.DFETAP212</td></tr>
+<tr><td>TCELL5:IMUX.IMUX24.DELAY</td><td>GTX_DUAL.DFECLKDLYADJ10</td></tr>
+<tr><td>TCELL5:IMUX.IMUX25.DELAY</td><td>GTX_DUAL.DFETAP113</td></tr>
+<tr><td>TCELL5:IMUX.IMUX26.DELAY</td><td>GTX_DUAL.DFETAP112</td></tr>
+<tr><td>TCELL5:IMUX.IMUX27.DELAY</td><td>GTX_DUAL.DFETAP213</td></tr>
+<tr><td>TCELL5:IMUX.IMUX28.DELAY</td><td>GTX_DUAL.DFETAP110</td></tr>
+<tr><td>TCELL5:IMUX.IMUX29.DELAY</td><td>GTX_DUAL.DFETAP210</td></tr>
+<tr><td>TCELL5:IMUX.IMUX33.DELAY</td><td>GTX_DUAL.DFETAP111</td></tr>
+<tr><td>TCELL5:IMUX.IMUX36.DELAY</td><td>CRC32_1.CRCIN23, CRC64_0.CRCIN23</td></tr>
+<tr><td>TCELL5:IMUX.IMUX37.DELAY</td><td>CRC32_1.CRCIN22, CRC64_0.CRCIN22</td></tr>
+<tr><td>TCELL5:IMUX.IMUX42.DELAY</td><td>CRC32_1.CRCIN21, CRC64_0.CRCIN21</td></tr>
+<tr><td>TCELL5:IMUX.IMUX43.DELAY</td><td>CRC32_1.CRCIN20, CRC64_0.CRCIN20</td></tr>
+<tr><td>TCELL5:IMUX.IMUX44.DELAY</td><td>CRC32_1.CRCIN19, CRC64_0.CRCIN19</td></tr>
+<tr><td>TCELL5:IMUX.IMUX45.DELAY</td><td>CRC32_1.CRCIN18, CRC64_0.CRCIN18</td></tr>
+<tr><td>TCELL5:IMUX.IMUX46.DELAY</td><td>CRC32_1.CRCIN17, CRC64_0.CRCIN17</td></tr>
+<tr><td>TCELL5:IMUX.IMUX47.DELAY</td><td>CRC32_1.CRCIN16, CRC64_0.CRCIN16</td></tr>
 <tr><td>TCELL5:OUT0</td><td>GTX_DUAL.RXBYTEISALIGNED1</td></tr>
 <tr><td>TCELL5:OUT2</td><td>GTX_DUAL.RXDATA16</td></tr>
 <tr><td>TCELL5:OUT4</td><td>GTX_DUAL.RXNOTINTABLE10</td></tr>
@@ -1754,30 +1757,30 @@
 <tr><td>TCELL5:OUT21</td><td>CRC32_1.CRCOUT27</td></tr>
 <tr><td>TCELL5:OUT22</td><td>CRC32_1.CRCOUT30</td></tr>
 <tr><td>TCELL6:IMUX.CLK1</td><td>CRC32_1.CRCCLK</td></tr>
-<tr><td>TCELL6:IMUX.IMUX1</td><td>GTX_DUAL.RXCHBONDI12</td></tr>
-<tr><td>TCELL6:IMUX.IMUX2</td><td>GTX_DUAL.RXCHBONDI11</td></tr>
-<tr><td>TCELL6:IMUX.IMUX3</td><td>GTX_DUAL.RXCHBONDI10</td></tr>
-<tr><td>TCELL6:IMUX.IMUX6</td><td>GTX_DUAL.RXDEC8B10BUSE1</td></tr>
-<tr><td>TCELL6:IMUX.IMUX11</td><td>GTX_DUAL.DFETAP413</td></tr>
-<tr><td>TCELL6:IMUX.IMUX12</td><td>GTX_DUAL.TSTPWRDN14</td></tr>
-<tr><td>TCELL6:IMUX.IMUX13</td><td>GTX_DUAL.TSTPWRDN13</td></tr>
-<tr><td>TCELL6:IMUX.IMUX14</td><td>GTX_DUAL.TSTPWRDN12</td></tr>
-<tr><td>TCELL6:IMUX.IMUX15</td><td>GTX_DUAL.TSTPWRDN11</td></tr>
-<tr><td>TCELL6:IMUX.IMUX16</td><td>GTX_DUAL.TSTPWRDN10</td></tr>
-<tr><td>TCELL6:IMUX.IMUX23</td><td>GTX_DUAL.RXCHBONDI13</td></tr>
-<tr><td>TCELL6:IMUX.IMUX24</td><td>GTX_DUAL.RXENCHANSYNC1</td></tr>
-<tr><td>TCELL6:IMUX.IMUX31</td><td>GTX_DUAL.DFETAP313</td></tr>
-<tr><td>TCELL6:IMUX.IMUX32</td><td>GTX_DUAL.DFETAP312</td></tr>
-<tr><td>TCELL6:IMUX.IMUX34</td><td>GTX_DUAL.DFETAP310</td></tr>
-<tr><td>TCELL6:IMUX.IMUX36</td><td>CRC32_1.CRCIN15, CRC64_0.CRCIN15</td></tr>
-<tr><td>TCELL6:IMUX.IMUX37</td><td>CRC32_1.CRCIN14, CRC64_0.CRCIN14</td></tr>
-<tr><td>TCELL6:IMUX.IMUX39</td><td>GTX_DUAL.DFETAP311</td></tr>
-<tr><td>TCELL6:IMUX.IMUX42</td><td>CRC32_1.CRCIN13, CRC64_0.CRCIN13</td></tr>
-<tr><td>TCELL6:IMUX.IMUX43</td><td>CRC32_1.CRCIN12, CRC64_0.CRCIN12</td></tr>
-<tr><td>TCELL6:IMUX.IMUX44</td><td>CRC32_1.CRCIN11, CRC64_0.CRCIN11</td></tr>
-<tr><td>TCELL6:IMUX.IMUX45</td><td>CRC32_1.CRCIN10, CRC64_0.CRCIN10</td></tr>
-<tr><td>TCELL6:IMUX.IMUX46</td><td>CRC32_1.CRCIN9, CRC64_0.CRCIN9</td></tr>
-<tr><td>TCELL6:IMUX.IMUX47</td><td>CRC32_1.CRCIN8, CRC64_0.CRCIN8</td></tr>
+<tr><td>TCELL6:IMUX.IMUX1.DELAY</td><td>GTX_DUAL.RXCHBONDI12</td></tr>
+<tr><td>TCELL6:IMUX.IMUX2.DELAY</td><td>GTX_DUAL.RXCHBONDI11</td></tr>
+<tr><td>TCELL6:IMUX.IMUX3.DELAY</td><td>GTX_DUAL.RXCHBONDI10</td></tr>
+<tr><td>TCELL6:IMUX.IMUX6.DELAY</td><td>GTX_DUAL.RXDEC8B10BUSE1</td></tr>
+<tr><td>TCELL6:IMUX.IMUX11.DELAY</td><td>GTX_DUAL.DFETAP413</td></tr>
+<tr><td>TCELL6:IMUX.IMUX12.DELAY</td><td>GTX_DUAL.TSTPWRDN14</td></tr>
+<tr><td>TCELL6:IMUX.IMUX13.DELAY</td><td>GTX_DUAL.TSTPWRDN13</td></tr>
+<tr><td>TCELL6:IMUX.IMUX14.DELAY</td><td>GTX_DUAL.TSTPWRDN12</td></tr>
+<tr><td>TCELL6:IMUX.IMUX15.DELAY</td><td>GTX_DUAL.TSTPWRDN11</td></tr>
+<tr><td>TCELL6:IMUX.IMUX16.DELAY</td><td>GTX_DUAL.TSTPWRDN10</td></tr>
+<tr><td>TCELL6:IMUX.IMUX23.DELAY</td><td>GTX_DUAL.RXCHBONDI13</td></tr>
+<tr><td>TCELL6:IMUX.IMUX24.DELAY</td><td>GTX_DUAL.RXENCHANSYNC1</td></tr>
+<tr><td>TCELL6:IMUX.IMUX31.DELAY</td><td>GTX_DUAL.DFETAP313</td></tr>
+<tr><td>TCELL6:IMUX.IMUX32.DELAY</td><td>GTX_DUAL.DFETAP312</td></tr>
+<tr><td>TCELL6:IMUX.IMUX34.DELAY</td><td>GTX_DUAL.DFETAP310</td></tr>
+<tr><td>TCELL6:IMUX.IMUX36.DELAY</td><td>CRC32_1.CRCIN15, CRC64_0.CRCIN15</td></tr>
+<tr><td>TCELL6:IMUX.IMUX37.DELAY</td><td>CRC32_1.CRCIN14, CRC64_0.CRCIN14</td></tr>
+<tr><td>TCELL6:IMUX.IMUX39.DELAY</td><td>GTX_DUAL.DFETAP311</td></tr>
+<tr><td>TCELL6:IMUX.IMUX42.DELAY</td><td>CRC32_1.CRCIN13, CRC64_0.CRCIN13</td></tr>
+<tr><td>TCELL6:IMUX.IMUX43.DELAY</td><td>CRC32_1.CRCIN12, CRC64_0.CRCIN12</td></tr>
+<tr><td>TCELL6:IMUX.IMUX44.DELAY</td><td>CRC32_1.CRCIN11, CRC64_0.CRCIN11</td></tr>
+<tr><td>TCELL6:IMUX.IMUX45.DELAY</td><td>CRC32_1.CRCIN10, CRC64_0.CRCIN10</td></tr>
+<tr><td>TCELL6:IMUX.IMUX46.DELAY</td><td>CRC32_1.CRCIN9, CRC64_0.CRCIN9</td></tr>
+<tr><td>TCELL6:IMUX.IMUX47.DELAY</td><td>CRC32_1.CRCIN8, CRC64_0.CRCIN8</td></tr>
 <tr><td>TCELL6:OUT0</td><td>GTX_DUAL.RXVALID1</td></tr>
 <tr><td>TCELL6:OUT2</td><td>GTX_DUAL.RXDATA110</td></tr>
 <tr><td>TCELL6:OUT4</td><td>GTX_DUAL.RXNOTINTABLE11</td></tr>
@@ -1799,27 +1802,27 @@
 <tr><td>TCELL6:OUT22</td><td>GTX_DUAL.RXLOSSOFSYNC10</td></tr>
 <tr><td>TCELL6:OUT23</td><td>GTX_DUAL.DFETAP1MONITOR13</td></tr>
 <tr><td>TCELL7:IMUX.CLK1</td><td>GTX_DUAL.DCLK</td></tr>
-<tr><td>TCELL7:IMUX.IMUX0</td><td>GTX_DUAL.RXCDRRESET1</td></tr>
-<tr><td>TCELL7:IMUX.IMUX4</td><td>GTX_DUAL.RXBUFRESET1</td></tr>
-<tr><td>TCELL7:IMUX.IMUX5</td><td>GTX_DUAL.RXRESET1</td></tr>
-<tr><td>TCELL7:IMUX.IMUX8</td><td>GTX_DUAL.RXPOWERDOWN11</td></tr>
-<tr><td>TCELL7:IMUX.IMUX9</td><td>GTX_DUAL.RXPOWERDOWN10</td></tr>
-<tr><td>TCELL7:IMUX.IMUX18</td><td>GTX_DUAL.LOOPBACK12</td></tr>
-<tr><td>TCELL7:IMUX.IMUX19</td><td>GTX_DUAL.LOOPBACK11</td></tr>
-<tr><td>TCELL7:IMUX.IMUX20</td><td>GTX_DUAL.LOOPBACK10</td></tr>
-<tr><td>TCELL7:IMUX.IMUX24</td><td>GTX_DUAL.DFETAP412</td></tr>
-<tr><td>TCELL7:IMUX.IMUX25</td><td>GTX_DUAL.DFETAP411</td></tr>
-<tr><td>TCELL7:IMUX.IMUX28</td><td>GTX_DUAL.DFETAP410</td></tr>
-<tr><td>TCELL7:IMUX.IMUX34</td><td>GTX_DUAL.RXENPMAPHASEALIGN1</td></tr>
-<tr><td>TCELL7:IMUX.IMUX36</td><td>CRC32_1.CRCIN7, CRC64_0.CRCIN7</td></tr>
-<tr><td>TCELL7:IMUX.IMUX37</td><td>CRC32_1.CRCIN6, CRC64_0.CRCIN6</td></tr>
-<tr><td>TCELL7:IMUX.IMUX40</td><td>GTX_DUAL.RXPMASETPHASE1</td></tr>
-<tr><td>TCELL7:IMUX.IMUX42</td><td>CRC32_1.CRCIN5, CRC64_0.CRCIN5</td></tr>
-<tr><td>TCELL7:IMUX.IMUX43</td><td>CRC32_1.CRCIN4, CRC64_0.CRCIN4</td></tr>
-<tr><td>TCELL7:IMUX.IMUX44</td><td>CRC32_1.CRCIN3, CRC64_0.CRCIN3</td></tr>
-<tr><td>TCELL7:IMUX.IMUX45</td><td>CRC32_1.CRCIN2, CRC64_0.CRCIN2</td></tr>
-<tr><td>TCELL7:IMUX.IMUX46</td><td>CRC32_1.CRCIN1, CRC64_0.CRCIN1</td></tr>
-<tr><td>TCELL7:IMUX.IMUX47</td><td>CRC32_1.CRCIN0, CRC64_0.CRCIN0</td></tr>
+<tr><td>TCELL7:IMUX.IMUX0.DELAY</td><td>GTX_DUAL.RXCDRRESET1</td></tr>
+<tr><td>TCELL7:IMUX.IMUX4.DELAY</td><td>GTX_DUAL.RXBUFRESET1</td></tr>
+<tr><td>TCELL7:IMUX.IMUX5.DELAY</td><td>GTX_DUAL.RXRESET1</td></tr>
+<tr><td>TCELL7:IMUX.IMUX8.DELAY</td><td>GTX_DUAL.RXPOWERDOWN11</td></tr>
+<tr><td>TCELL7:IMUX.IMUX9.DELAY</td><td>GTX_DUAL.RXPOWERDOWN10</td></tr>
+<tr><td>TCELL7:IMUX.IMUX18.DELAY</td><td>GTX_DUAL.LOOPBACK12</td></tr>
+<tr><td>TCELL7:IMUX.IMUX19.DELAY</td><td>GTX_DUAL.LOOPBACK11</td></tr>
+<tr><td>TCELL7:IMUX.IMUX20.DELAY</td><td>GTX_DUAL.LOOPBACK10</td></tr>
+<tr><td>TCELL7:IMUX.IMUX24.DELAY</td><td>GTX_DUAL.DFETAP412</td></tr>
+<tr><td>TCELL7:IMUX.IMUX25.DELAY</td><td>GTX_DUAL.DFETAP411</td></tr>
+<tr><td>TCELL7:IMUX.IMUX28.DELAY</td><td>GTX_DUAL.DFETAP410</td></tr>
+<tr><td>TCELL7:IMUX.IMUX34.DELAY</td><td>GTX_DUAL.RXENPMAPHASEALIGN1</td></tr>
+<tr><td>TCELL7:IMUX.IMUX36.DELAY</td><td>CRC32_1.CRCIN7, CRC64_0.CRCIN7</td></tr>
+<tr><td>TCELL7:IMUX.IMUX37.DELAY</td><td>CRC32_1.CRCIN6, CRC64_0.CRCIN6</td></tr>
+<tr><td>TCELL7:IMUX.IMUX40.DELAY</td><td>GTX_DUAL.RXPMASETPHASE1</td></tr>
+<tr><td>TCELL7:IMUX.IMUX42.DELAY</td><td>CRC32_1.CRCIN5, CRC64_0.CRCIN5</td></tr>
+<tr><td>TCELL7:IMUX.IMUX43.DELAY</td><td>CRC32_1.CRCIN4, CRC64_0.CRCIN4</td></tr>
+<tr><td>TCELL7:IMUX.IMUX44.DELAY</td><td>CRC32_1.CRCIN3, CRC64_0.CRCIN3</td></tr>
+<tr><td>TCELL7:IMUX.IMUX45.DELAY</td><td>CRC32_1.CRCIN2, CRC64_0.CRCIN2</td></tr>
+<tr><td>TCELL7:IMUX.IMUX46.DELAY</td><td>CRC32_1.CRCIN1, CRC64_0.CRCIN1</td></tr>
+<tr><td>TCELL7:IMUX.IMUX47.DELAY</td><td>CRC32_1.CRCIN0, CRC64_0.CRCIN0</td></tr>
 <tr><td>TCELL7:OUT0</td><td>GTX_DUAL.RXCHBONDO11</td></tr>
 <tr><td>TCELL7:OUT1</td><td>GTX_DUAL.DFETAP2MONITOR14</td></tr>
 <tr><td>TCELL7:OUT2</td><td>GTX_DUAL.RXDATA114</td></tr>
@@ -1844,15 +1847,15 @@
 <tr><td>TCELL7:OUT22</td><td>GTX_DUAL.DFETAP1MONITOR10</td></tr>
 <tr><td>TCELL8:IMUX.CLK0</td><td>GTX_DUAL.TXUSRCLK21</td></tr>
 <tr><td>TCELL8:IMUX.CLK1</td><td>GTX_DUAL.TXUSRCLK1</td></tr>
-<tr><td>TCELL8:IMUX.IMUX0</td><td>CRC32_1.CRCRESET</td></tr>
-<tr><td>TCELL8:IMUX.IMUX2</td><td>GTX_DUAL.PRBSCNTRESET1</td></tr>
-<tr><td>TCELL8:IMUX.IMUX11</td><td>CRC32_1.CRCDATAWIDTH0</td></tr>
-<tr><td>TCELL8:IMUX.IMUX34</td><td>CRC32_1.CRCDATAWIDTH1</td></tr>
-<tr><td>TCELL8:IMUX.IMUX35</td><td>CRC32_1.CRCDATAVALID</td></tr>
-<tr><td>TCELL8:IMUX.IMUX44</td><td>GTX_DUAL.DI15</td></tr>
-<tr><td>TCELL8:IMUX.IMUX45</td><td>GTX_DUAL.DI14</td></tr>
-<tr><td>TCELL8:IMUX.IMUX46</td><td>GTX_DUAL.DI13</td></tr>
-<tr><td>TCELL8:IMUX.IMUX47</td><td>GTX_DUAL.DI12</td></tr>
+<tr><td>TCELL8:IMUX.IMUX0.DELAY</td><td>CRC32_1.CRCRESET</td></tr>
+<tr><td>TCELL8:IMUX.IMUX2.DELAY</td><td>GTX_DUAL.PRBSCNTRESET1</td></tr>
+<tr><td>TCELL8:IMUX.IMUX11.DELAY</td><td>CRC32_1.CRCDATAWIDTH0</td></tr>
+<tr><td>TCELL8:IMUX.IMUX34.DELAY</td><td>CRC32_1.CRCDATAWIDTH1</td></tr>
+<tr><td>TCELL8:IMUX.IMUX35.DELAY</td><td>CRC32_1.CRCDATAVALID</td></tr>
+<tr><td>TCELL8:IMUX.IMUX44.DELAY</td><td>GTX_DUAL.DI15</td></tr>
+<tr><td>TCELL8:IMUX.IMUX45.DELAY</td><td>GTX_DUAL.DI14</td></tr>
+<tr><td>TCELL8:IMUX.IMUX46.DELAY</td><td>GTX_DUAL.DI13</td></tr>
+<tr><td>TCELL8:IMUX.IMUX47.DELAY</td><td>GTX_DUAL.DI12</td></tr>
 <tr><td>TCELL8:OUT0</td><td>CRC32_1.CRCOUT19</td></tr>
 <tr><td>TCELL8:OUT1</td><td>GTX_DUAL.SCANOUTPCSCOMMON</td></tr>
 <tr><td>TCELL8:OUT2</td><td>CRC32_1.CRCOUT13</td></tr>
@@ -1876,24 +1879,24 @@
 <tr><td>TCELL8:OUT23</td><td>CRC32_1.CRCOUT16</td></tr>
 <tr><td>TCELL9:IMUX.CLK0</td><td>GTX_DUAL.RXUSRCLK21</td></tr>
 <tr><td>TCELL9:IMUX.CLK1</td><td>GTX_DUAL.RXUSRCLK1</td></tr>
-<tr><td>TCELL9:IMUX.IMUX3</td><td>GTX_DUAL.PMAAMUX0</td></tr>
-<tr><td>TCELL9:IMUX.IMUX4</td><td>GTX_DUAL.PMAAMUX1</td></tr>
-<tr><td>TCELL9:IMUX.IMUX5</td><td>GTX_DUAL.PMAAMUX2</td></tr>
-<tr><td>TCELL9:IMUX.IMUX8</td><td>GTX_DUAL.PLLLKDETEN</td></tr>
-<tr><td>TCELL9:IMUX.IMUX16</td><td>GTX_DUAL.GTXTEST2</td></tr>
-<tr><td>TCELL9:IMUX.IMUX17</td><td>GTX_DUAL.GTXTEST3</td></tr>
-<tr><td>TCELL9:IMUX.IMUX18</td><td>GTX_DUAL.REFCLKPWRDNB</td></tr>
-<tr><td>TCELL9:IMUX.IMUX19</td><td>GTX_DUAL.DWE</td></tr>
-<tr><td>TCELL9:IMUX.IMUX20</td><td>GTX_DUAL.TXENPMAPHASEALIGN1</td></tr>
-<tr><td>TCELL9:IMUX.IMUX26</td><td>GTX_DUAL.DADDR6</td></tr>
-<tr><td>TCELL9:IMUX.IMUX27</td><td>GTX_DUAL.DADDR5</td></tr>
-<tr><td>TCELL9:IMUX.IMUX28</td><td>GTX_DUAL.DADDR4</td></tr>
-<tr><td>TCELL9:IMUX.IMUX29</td><td>GTX_DUAL.DADDR3</td></tr>
-<tr><td>TCELL9:IMUX.IMUX33</td><td>GTX_DUAL.TXPMASETPHASE1</td></tr>
-<tr><td>TCELL9:IMUX.IMUX42</td><td>GTX_DUAL.DI11</td></tr>
-<tr><td>TCELL9:IMUX.IMUX43</td><td>GTX_DUAL.DI10</td></tr>
-<tr><td>TCELL9:IMUX.IMUX44</td><td>GTX_DUAL.DI9</td></tr>
-<tr><td>TCELL9:IMUX.IMUX45</td><td>GTX_DUAL.DI8</td></tr>
+<tr><td>TCELL9:IMUX.IMUX3.DELAY</td><td>GTX_DUAL.PMAAMUX0</td></tr>
+<tr><td>TCELL9:IMUX.IMUX4.DELAY</td><td>GTX_DUAL.PMAAMUX1</td></tr>
+<tr><td>TCELL9:IMUX.IMUX5.DELAY</td><td>GTX_DUAL.PMAAMUX2</td></tr>
+<tr><td>TCELL9:IMUX.IMUX8.DELAY</td><td>GTX_DUAL.PLLLKDETEN</td></tr>
+<tr><td>TCELL9:IMUX.IMUX16.DELAY</td><td>GTX_DUAL.GTXTEST2</td></tr>
+<tr><td>TCELL9:IMUX.IMUX17.DELAY</td><td>GTX_DUAL.GTXTEST3</td></tr>
+<tr><td>TCELL9:IMUX.IMUX18.DELAY</td><td>GTX_DUAL.REFCLKPWRDNB</td></tr>
+<tr><td>TCELL9:IMUX.IMUX19.DELAY</td><td>GTX_DUAL.DWE</td></tr>
+<tr><td>TCELL9:IMUX.IMUX20.DELAY</td><td>GTX_DUAL.TXENPMAPHASEALIGN1</td></tr>
+<tr><td>TCELL9:IMUX.IMUX26.DELAY</td><td>GTX_DUAL.DADDR6</td></tr>
+<tr><td>TCELL9:IMUX.IMUX27.DELAY</td><td>GTX_DUAL.DADDR5</td></tr>
+<tr><td>TCELL9:IMUX.IMUX28.DELAY</td><td>GTX_DUAL.DADDR4</td></tr>
+<tr><td>TCELL9:IMUX.IMUX29.DELAY</td><td>GTX_DUAL.DADDR3</td></tr>
+<tr><td>TCELL9:IMUX.IMUX33.DELAY</td><td>GTX_DUAL.TXPMASETPHASE1</td></tr>
+<tr><td>TCELL9:IMUX.IMUX42.DELAY</td><td>GTX_DUAL.DI11</td></tr>
+<tr><td>TCELL9:IMUX.IMUX43.DELAY</td><td>GTX_DUAL.DI10</td></tr>
+<tr><td>TCELL9:IMUX.IMUX44.DELAY</td><td>GTX_DUAL.DI9</td></tr>
+<tr><td>TCELL9:IMUX.IMUX45.DELAY</td><td>GTX_DUAL.DI8</td></tr>
 <tr><td>TCELL9:OUT0</td><td>CRC32_1.CRCOUT5</td></tr>
 <tr><td>TCELL9:OUT2</td><td>GTX_DUAL.TXOUTCLK1</td></tr>
 <tr><td>TCELL9:OUT3</td><td>CRC32_1.CRCOUT1</td></tr>
@@ -1919,23 +1922,23 @@
 <tr><td>TCELL9:OUT23</td><td>GTX_DUAL.PLLLKDET</td></tr>
 <tr><td>TCELL10:IMUX.CLK0</td><td>GTX_DUAL.RXUSRCLK0</td></tr>
 <tr><td>TCELL10:IMUX.CLK1</td><td>GTX_DUAL.RXUSRCLK20</td></tr>
-<tr><td>TCELL10:IMUX.IMUX0</td><td>GTX_DUAL.DI7</td></tr>
-<tr><td>TCELL10:IMUX.IMUX1</td><td>GTX_DUAL.DI6</td></tr>
-<tr><td>TCELL10:IMUX.IMUX2</td><td>GTX_DUAL.DI5</td></tr>
-<tr><td>TCELL10:IMUX.IMUX3</td><td>GTX_DUAL.DI4</td></tr>
-<tr><td>TCELL10:IMUX.IMUX6</td><td>GTX_DUAL.INTDATAWIDTH</td></tr>
-<tr><td>TCELL10:IMUX.IMUX12</td><td>GTX_DUAL.PMATSTCLKSEL2</td></tr>
-<tr><td>TCELL10:IMUX.IMUX13</td><td>GTX_DUAL.PMATSTCLKSEL1</td></tr>
-<tr><td>TCELL10:IMUX.IMUX14</td><td>GTX_DUAL.PMATSTCLKSEL0</td></tr>
-<tr><td>TCELL10:IMUX.IMUX16</td><td>GTX_DUAL.TXENPMAPHASEALIGN0</td></tr>
-<tr><td>TCELL10:IMUX.IMUX17</td><td>GTX_DUAL.TXPMASETPHASE0</td></tr>
-<tr><td>TCELL10:IMUX.IMUX24</td><td>GTX_DUAL.DADDR2</td></tr>
-<tr><td>TCELL10:IMUX.IMUX31</td><td>GTX_DUAL.DADDR1</td></tr>
-<tr><td>TCELL10:IMUX.IMUX32</td><td>GTX_DUAL.DADDR0</td></tr>
-<tr><td>TCELL10:IMUX.IMUX33</td><td>GTX_DUAL.GTXTEST13</td></tr>
-<tr><td>TCELL10:IMUX.IMUX36</td><td>GTX_DUAL.PLLPOWERDOWN</td></tr>
-<tr><td>TCELL10:IMUX.IMUX39</td><td>GTX_DUAL.DEN</td></tr>
-<tr><td>TCELL10:IMUX.IMUX40</td><td>GTX_DUAL.GTXTEST8</td></tr>
+<tr><td>TCELL10:IMUX.IMUX0.DELAY</td><td>GTX_DUAL.DI7</td></tr>
+<tr><td>TCELL10:IMUX.IMUX1.DELAY</td><td>GTX_DUAL.DI6</td></tr>
+<tr><td>TCELL10:IMUX.IMUX2.DELAY</td><td>GTX_DUAL.DI5</td></tr>
+<tr><td>TCELL10:IMUX.IMUX3.DELAY</td><td>GTX_DUAL.DI4</td></tr>
+<tr><td>TCELL10:IMUX.IMUX6.DELAY</td><td>GTX_DUAL.INTDATAWIDTH</td></tr>
+<tr><td>TCELL10:IMUX.IMUX12.DELAY</td><td>GTX_DUAL.PMATSTCLKSEL2</td></tr>
+<tr><td>TCELL10:IMUX.IMUX13.DELAY</td><td>GTX_DUAL.PMATSTCLKSEL1</td></tr>
+<tr><td>TCELL10:IMUX.IMUX14.DELAY</td><td>GTX_DUAL.PMATSTCLKSEL0</td></tr>
+<tr><td>TCELL10:IMUX.IMUX16.DELAY</td><td>GTX_DUAL.TXENPMAPHASEALIGN0</td></tr>
+<tr><td>TCELL10:IMUX.IMUX17.DELAY</td><td>GTX_DUAL.TXPMASETPHASE0</td></tr>
+<tr><td>TCELL10:IMUX.IMUX24.DELAY</td><td>GTX_DUAL.DADDR2</td></tr>
+<tr><td>TCELL10:IMUX.IMUX31.DELAY</td><td>GTX_DUAL.DADDR1</td></tr>
+<tr><td>TCELL10:IMUX.IMUX32.DELAY</td><td>GTX_DUAL.DADDR0</td></tr>
+<tr><td>TCELL10:IMUX.IMUX33.DELAY</td><td>GTX_DUAL.GTXTEST13</td></tr>
+<tr><td>TCELL10:IMUX.IMUX36.DELAY</td><td>GTX_DUAL.PLLPOWERDOWN</td></tr>
+<tr><td>TCELL10:IMUX.IMUX39.DELAY</td><td>GTX_DUAL.DEN</td></tr>
+<tr><td>TCELL10:IMUX.IMUX40.DELAY</td><td>GTX_DUAL.GTXTEST8</td></tr>
 <tr><td>TCELL10:OUT0</td><td>GTX_DUAL.DO6</td></tr>
 <tr><td>TCELL10:OUT1</td><td>GTX_DUAL.DFETAP4MONITOR00</td></tr>
 <tr><td>TCELL10:OUT2</td><td>CRC32_2.CRCOUT3</td></tr>
@@ -1961,17 +1964,17 @@
 <tr><td>TCELL10:OUT23</td><td>CRC32_2.CRCOUT1</td></tr>
 <tr><td>TCELL11:IMUX.CLK0</td><td>GTX_DUAL.TXUSRCLK0</td></tr>
 <tr><td>TCELL11:IMUX.CLK1</td><td>GTX_DUAL.TXUSRCLK20</td></tr>
-<tr><td>TCELL11:IMUX.IMUX0</td><td>GTX_DUAL.DI3</td></tr>
-<tr><td>TCELL11:IMUX.IMUX1</td><td>GTX_DUAL.DI2</td></tr>
-<tr><td>TCELL11:IMUX.IMUX2</td><td>GTX_DUAL.DI1</td></tr>
-<tr><td>TCELL11:IMUX.IMUX3</td><td>GTX_DUAL.DI0</td></tr>
-<tr><td>TCELL11:IMUX.IMUX5</td><td>CRC32_2.CRCRESET</td></tr>
-<tr><td>TCELL11:IMUX.IMUX13</td><td>CRC32_2.CRCDATAWIDTH1</td></tr>
-<tr><td>TCELL11:IMUX.IMUX24</td><td>CRC32_2.CRCDATAWIDTH0</td></tr>
-<tr><td>TCELL11:IMUX.IMUX29</td><td>GTX_DUAL.SCANINPCSCOMMON</td></tr>
-<tr><td>TCELL11:IMUX.IMUX30</td><td>CRC32_2.CRCDATAVALID</td></tr>
-<tr><td>TCELL11:IMUX.IMUX36</td><td>GTX_DUAL.GTXRESET</td></tr>
-<tr><td>TCELL11:IMUX.IMUX45</td><td>GTX_DUAL.PRBSCNTRESET0</td></tr>
+<tr><td>TCELL11:IMUX.IMUX0.DELAY</td><td>GTX_DUAL.DI3</td></tr>
+<tr><td>TCELL11:IMUX.IMUX1.DELAY</td><td>GTX_DUAL.DI2</td></tr>
+<tr><td>TCELL11:IMUX.IMUX2.DELAY</td><td>GTX_DUAL.DI1</td></tr>
+<tr><td>TCELL11:IMUX.IMUX3.DELAY</td><td>GTX_DUAL.DI0</td></tr>
+<tr><td>TCELL11:IMUX.IMUX5.DELAY</td><td>CRC32_2.CRCRESET</td></tr>
+<tr><td>TCELL11:IMUX.IMUX13.DELAY</td><td>CRC32_2.CRCDATAWIDTH1</td></tr>
+<tr><td>TCELL11:IMUX.IMUX24.DELAY</td><td>CRC32_2.CRCDATAWIDTH0</td></tr>
+<tr><td>TCELL11:IMUX.IMUX29.DELAY</td><td>GTX_DUAL.SCANINPCSCOMMON</td></tr>
+<tr><td>TCELL11:IMUX.IMUX30.DELAY</td><td>CRC32_2.CRCDATAVALID</td></tr>
+<tr><td>TCELL11:IMUX.IMUX36.DELAY</td><td>GTX_DUAL.GTXRESET</td></tr>
+<tr><td>TCELL11:IMUX.IMUX45.DELAY</td><td>GTX_DUAL.PRBSCNTRESET0</td></tr>
 <tr><td>TCELL11:OUT1</td><td>GTX_DUAL.DFETAP3MONITOR02</td></tr>
 <tr><td>TCELL11:OUT3</td><td>CRC32_2.CRCOUT18</td></tr>
 <tr><td>TCELL11:OUT4</td><td>CRC32_2.CRCOUT10</td></tr>
@@ -1992,27 +1995,27 @@
 <tr><td>TCELL11:OUT22</td><td>CRC32_2.CRCOUT11</td></tr>
 <tr><td>TCELL11:OUT23</td><td>CRC32_2.CRCOUT15</td></tr>
 <tr><td>TCELL12:IMUX.CLK0</td><td>GTX_DUAL.GREFCLK</td></tr>
-<tr><td>TCELL12:IMUX.IMUX0</td><td>CRC32_2.CRCIN0, CRC64_1.CRCIN0</td></tr>
-<tr><td>TCELL12:IMUX.IMUX1</td><td>CRC32_2.CRCIN1, CRC64_1.CRCIN1</td></tr>
-<tr><td>TCELL12:IMUX.IMUX2</td><td>CRC32_2.CRCIN2, CRC64_1.CRCIN2</td></tr>
-<tr><td>TCELL12:IMUX.IMUX7</td><td>GTX_DUAL.RXPMASETPHASE0</td></tr>
-<tr><td>TCELL12:IMUX.IMUX9</td><td>CRC32_2.CRCIN3, CRC64_1.CRCIN3</td></tr>
-<tr><td>TCELL12:IMUX.IMUX10</td><td>CRC32_2.CRCIN6, CRC64_1.CRCIN6</td></tr>
-<tr><td>TCELL12:IMUX.IMUX11</td><td>CRC32_2.CRCIN7, CRC64_1.CRCIN7</td></tr>
-<tr><td>TCELL12:IMUX.IMUX13</td><td>GTX_DUAL.RXENPMAPHASEALIGN0</td></tr>
-<tr><td>TCELL12:IMUX.IMUX15</td><td>GTX_DUAL.LOOPBACK00</td></tr>
-<tr><td>TCELL12:IMUX.IMUX16</td><td>GTX_DUAL.LOOPBACK01</td></tr>
-<tr><td>TCELL12:IMUX.IMUX17</td><td>GTX_DUAL.LOOPBACK02</td></tr>
-<tr><td>TCELL12:IMUX.IMUX35</td><td>CRC32_2.CRCIN5, CRC64_1.CRCIN5</td></tr>
-<tr><td>TCELL12:IMUX.IMUX37</td><td>GTX_DUAL.DFETAP400</td></tr>
-<tr><td>TCELL12:IMUX.IMUX38</td><td>GTX_DUAL.RXPOWERDOWN00</td></tr>
-<tr><td>TCELL12:IMUX.IMUX39</td><td>GTX_DUAL.RXPOWERDOWN01</td></tr>
-<tr><td>TCELL12:IMUX.IMUX40</td><td>GTX_DUAL.DFETAP401</td></tr>
-<tr><td>TCELL12:IMUX.IMUX41</td><td>GTX_DUAL.DFETAP402</td></tr>
-<tr><td>TCELL12:IMUX.IMUX42</td><td>GTX_DUAL.RXRESET0</td></tr>
-<tr><td>TCELL12:IMUX.IMUX43</td><td>GTX_DUAL.RXBUFRESET0</td></tr>
-<tr><td>TCELL12:IMUX.IMUX45</td><td>CRC32_2.CRCIN4, CRC64_1.CRCIN4</td></tr>
-<tr><td>TCELL12:IMUX.IMUX47</td><td>GTX_DUAL.RXCDRRESET0</td></tr>
+<tr><td>TCELL12:IMUX.IMUX0.DELAY</td><td>CRC32_2.CRCIN0, CRC64_1.CRCIN0</td></tr>
+<tr><td>TCELL12:IMUX.IMUX1.DELAY</td><td>CRC32_2.CRCIN1, CRC64_1.CRCIN1</td></tr>
+<tr><td>TCELL12:IMUX.IMUX2.DELAY</td><td>CRC32_2.CRCIN2, CRC64_1.CRCIN2</td></tr>
+<tr><td>TCELL12:IMUX.IMUX7.DELAY</td><td>GTX_DUAL.RXPMASETPHASE0</td></tr>
+<tr><td>TCELL12:IMUX.IMUX9.DELAY</td><td>CRC32_2.CRCIN3, CRC64_1.CRCIN3</td></tr>
+<tr><td>TCELL12:IMUX.IMUX10.DELAY</td><td>CRC32_2.CRCIN6, CRC64_1.CRCIN6</td></tr>
+<tr><td>TCELL12:IMUX.IMUX11.DELAY</td><td>CRC32_2.CRCIN7, CRC64_1.CRCIN7</td></tr>
+<tr><td>TCELL12:IMUX.IMUX13.DELAY</td><td>GTX_DUAL.RXENPMAPHASEALIGN0</td></tr>
+<tr><td>TCELL12:IMUX.IMUX15.DELAY</td><td>GTX_DUAL.LOOPBACK00</td></tr>
+<tr><td>TCELL12:IMUX.IMUX16.DELAY</td><td>GTX_DUAL.LOOPBACK01</td></tr>
+<tr><td>TCELL12:IMUX.IMUX17.DELAY</td><td>GTX_DUAL.LOOPBACK02</td></tr>
+<tr><td>TCELL12:IMUX.IMUX35.DELAY</td><td>CRC32_2.CRCIN5, CRC64_1.CRCIN5</td></tr>
+<tr><td>TCELL12:IMUX.IMUX37.DELAY</td><td>GTX_DUAL.DFETAP400</td></tr>
+<tr><td>TCELL12:IMUX.IMUX38.DELAY</td><td>GTX_DUAL.RXPOWERDOWN00</td></tr>
+<tr><td>TCELL12:IMUX.IMUX39.DELAY</td><td>GTX_DUAL.RXPOWERDOWN01</td></tr>
+<tr><td>TCELL12:IMUX.IMUX40.DELAY</td><td>GTX_DUAL.DFETAP401</td></tr>
+<tr><td>TCELL12:IMUX.IMUX41.DELAY</td><td>GTX_DUAL.DFETAP402</td></tr>
+<tr><td>TCELL12:IMUX.IMUX42.DELAY</td><td>GTX_DUAL.RXRESET0</td></tr>
+<tr><td>TCELL12:IMUX.IMUX43.DELAY</td><td>GTX_DUAL.RXBUFRESET0</td></tr>
+<tr><td>TCELL12:IMUX.IMUX45.DELAY</td><td>CRC32_2.CRCIN4, CRC64_1.CRCIN4</td></tr>
+<tr><td>TCELL12:IMUX.IMUX47.DELAY</td><td>GTX_DUAL.RXCDRRESET0</td></tr>
 <tr><td>TCELL12:OUT1</td><td>GTX_DUAL.RXCHANBONDSEQ0</td></tr>
 <tr><td>TCELL12:OUT2</td><td>GTX_DUAL.DFETAP2MONITOR03</td></tr>
 <tr><td>TCELL12:OUT3</td><td>GTX_DUAL.RXCHANREALIGN0</td></tr>
@@ -2036,30 +2039,30 @@
 <tr><td>TCELL12:OUT22</td><td>GTX_DUAL.RXDATA015</td></tr>
 <tr><td>TCELL12:OUT23</td><td>GTX_DUAL.RXDATA013</td></tr>
 <tr><td>TCELL13:IMUX.CLK0</td><td>CRC32_2.CRCCLK</td></tr>
-<tr><td>TCELL13:IMUX.IMUX4</td><td>CRC32_2.CRCIN12, CRC64_1.CRCIN12</td></tr>
-<tr><td>TCELL13:IMUX.IMUX5</td><td>CRC32_2.CRCIN13, CRC64_1.CRCIN13</td></tr>
-<tr><td>TCELL13:IMUX.IMUX6</td><td>CRC32_2.CRCIN8, CRC64_1.CRCIN8</td></tr>
-<tr><td>TCELL13:IMUX.IMUX7</td><td>CRC32_2.CRCIN9, CRC64_1.CRCIN9</td></tr>
-<tr><td>TCELL13:IMUX.IMUX8</td><td>CRC32_2.CRCIN10, CRC64_1.CRCIN10</td></tr>
-<tr><td>TCELL13:IMUX.IMUX9</td><td>CRC32_2.CRCIN11, CRC64_1.CRCIN11</td></tr>
-<tr><td>TCELL13:IMUX.IMUX10</td><td>CRC32_2.CRCIN14, CRC64_1.CRCIN14</td></tr>
-<tr><td>TCELL13:IMUX.IMUX11</td><td>CRC32_2.CRCIN15, CRC64_1.CRCIN15</td></tr>
-<tr><td>TCELL13:IMUX.IMUX23</td><td>GTX_DUAL.RXENCHANSYNC0</td></tr>
-<tr><td>TCELL13:IMUX.IMUX25</td><td>GTX_DUAL.DFETAP300</td></tr>
-<tr><td>TCELL13:IMUX.IMUX26</td><td>GTX_DUAL.DFETAP301</td></tr>
-<tr><td>TCELL13:IMUX.IMUX27</td><td>GTX_DUAL.DFETAP302</td></tr>
-<tr><td>TCELL13:IMUX.IMUX28</td><td>GTX_DUAL.DFETAP303</td></tr>
-<tr><td>TCELL13:IMUX.IMUX31</td><td>GTX_DUAL.TSTPWRDN00</td></tr>
-<tr><td>TCELL13:IMUX.IMUX32</td><td>GTX_DUAL.TSTPWRDN01</td></tr>
-<tr><td>TCELL13:IMUX.IMUX33</td><td>GTX_DUAL.TSTPWRDN02</td></tr>
-<tr><td>TCELL13:IMUX.IMUX34</td><td>GTX_DUAL.TSTPWRDN03</td></tr>
-<tr><td>TCELL13:IMUX.IMUX35</td><td>GTX_DUAL.TSTPWRDN04</td></tr>
-<tr><td>TCELL13:IMUX.IMUX36</td><td>GTX_DUAL.DFETAP403</td></tr>
-<tr><td>TCELL13:IMUX.IMUX41</td><td>GTX_DUAL.RXDEC8B10BUSE0</td></tr>
-<tr><td>TCELL13:IMUX.IMUX43</td><td>GTX_DUAL.RXCHBONDI03</td></tr>
-<tr><td>TCELL13:IMUX.IMUX44</td><td>GTX_DUAL.RXCHBONDI00</td></tr>
-<tr><td>TCELL13:IMUX.IMUX45</td><td>GTX_DUAL.RXCHBONDI01</td></tr>
-<tr><td>TCELL13:IMUX.IMUX46</td><td>GTX_DUAL.RXCHBONDI02</td></tr>
+<tr><td>TCELL13:IMUX.IMUX4.DELAY</td><td>CRC32_2.CRCIN12, CRC64_1.CRCIN12</td></tr>
+<tr><td>TCELL13:IMUX.IMUX5.DELAY</td><td>CRC32_2.CRCIN13, CRC64_1.CRCIN13</td></tr>
+<tr><td>TCELL13:IMUX.IMUX6.DELAY</td><td>CRC32_2.CRCIN8, CRC64_1.CRCIN8</td></tr>
+<tr><td>TCELL13:IMUX.IMUX7.DELAY</td><td>CRC32_2.CRCIN9, CRC64_1.CRCIN9</td></tr>
+<tr><td>TCELL13:IMUX.IMUX8.DELAY</td><td>CRC32_2.CRCIN10, CRC64_1.CRCIN10</td></tr>
+<tr><td>TCELL13:IMUX.IMUX9.DELAY</td><td>CRC32_2.CRCIN11, CRC64_1.CRCIN11</td></tr>
+<tr><td>TCELL13:IMUX.IMUX10.DELAY</td><td>CRC32_2.CRCIN14, CRC64_1.CRCIN14</td></tr>
+<tr><td>TCELL13:IMUX.IMUX11.DELAY</td><td>CRC32_2.CRCIN15, CRC64_1.CRCIN15</td></tr>
+<tr><td>TCELL13:IMUX.IMUX23.DELAY</td><td>GTX_DUAL.RXENCHANSYNC0</td></tr>
+<tr><td>TCELL13:IMUX.IMUX25.DELAY</td><td>GTX_DUAL.DFETAP300</td></tr>
+<tr><td>TCELL13:IMUX.IMUX26.DELAY</td><td>GTX_DUAL.DFETAP301</td></tr>
+<tr><td>TCELL13:IMUX.IMUX27.DELAY</td><td>GTX_DUAL.DFETAP302</td></tr>
+<tr><td>TCELL13:IMUX.IMUX28.DELAY</td><td>GTX_DUAL.DFETAP303</td></tr>
+<tr><td>TCELL13:IMUX.IMUX31.DELAY</td><td>GTX_DUAL.TSTPWRDN00</td></tr>
+<tr><td>TCELL13:IMUX.IMUX32.DELAY</td><td>GTX_DUAL.TSTPWRDN01</td></tr>
+<tr><td>TCELL13:IMUX.IMUX33.DELAY</td><td>GTX_DUAL.TSTPWRDN02</td></tr>
+<tr><td>TCELL13:IMUX.IMUX34.DELAY</td><td>GTX_DUAL.TSTPWRDN03</td></tr>
+<tr><td>TCELL13:IMUX.IMUX35.DELAY</td><td>GTX_DUAL.TSTPWRDN04</td></tr>
+<tr><td>TCELL13:IMUX.IMUX36.DELAY</td><td>GTX_DUAL.DFETAP403</td></tr>
+<tr><td>TCELL13:IMUX.IMUX41.DELAY</td><td>GTX_DUAL.RXDEC8B10BUSE0</td></tr>
+<tr><td>TCELL13:IMUX.IMUX43.DELAY</td><td>GTX_DUAL.RXCHBONDI03</td></tr>
+<tr><td>TCELL13:IMUX.IMUX44.DELAY</td><td>GTX_DUAL.RXCHBONDI00</td></tr>
+<tr><td>TCELL13:IMUX.IMUX45.DELAY</td><td>GTX_DUAL.RXCHBONDI01</td></tr>
+<tr><td>TCELL13:IMUX.IMUX46.DELAY</td><td>GTX_DUAL.RXCHBONDI02</td></tr>
 <tr><td>TCELL13:OUT0</td><td>GTX_DUAL.DFETAP1MONITOR01</td></tr>
 <tr><td>TCELL13:OUT1</td><td>GTX_DUAL.RXRUNDISP01</td></tr>
 <tr><td>TCELL13:OUT3</td><td>GTX_DUAL.RXNOTINTABLE01</td></tr>
@@ -2080,32 +2083,32 @@
 <tr><td>TCELL13:OUT21</td><td>GTX_DUAL.RXLOSSOFSYNC01</td></tr>
 <tr><td>TCELL13:OUT22</td><td>GTX_DUAL.RXDATA011</td></tr>
 <tr><td>TCELL13:OUT23</td><td>GTX_DUAL.RXDATA09</td></tr>
-<tr><td>TCELL14:IMUX.IMUX4</td><td>CRC32_2.CRCIN20, CRC64_1.CRCIN20</td></tr>
-<tr><td>TCELL14:IMUX.IMUX5</td><td>CRC32_2.CRCIN21, CRC64_1.CRCIN21</td></tr>
-<tr><td>TCELL14:IMUX.IMUX6</td><td>CRC32_2.CRCIN16, CRC64_1.CRCIN16</td></tr>
-<tr><td>TCELL14:IMUX.IMUX7</td><td>CRC32_2.CRCIN17, CRC64_1.CRCIN17</td></tr>
-<tr><td>TCELL14:IMUX.IMUX8</td><td>CRC32_2.CRCIN18, CRC64_1.CRCIN18</td></tr>
-<tr><td>TCELL14:IMUX.IMUX9</td><td>CRC32_2.CRCIN19, CRC64_1.CRCIN19</td></tr>
-<tr><td>TCELL14:IMUX.IMUX10</td><td>CRC32_2.CRCIN22, CRC64_1.CRCIN22</td></tr>
-<tr><td>TCELL14:IMUX.IMUX11</td><td>CRC32_2.CRCIN23, CRC64_1.CRCIN23</td></tr>
-<tr><td>TCELL14:IMUX.IMUX12</td><td>GTX_DUAL.DFETAP200</td></tr>
-<tr><td>TCELL14:IMUX.IMUX22</td><td>GTX_DUAL.GTXTEST4</td></tr>
-<tr><td>TCELL14:IMUX.IMUX23</td><td>GTX_DUAL.DFECLKDLYADJ00</td></tr>
-<tr><td>TCELL14:IMUX.IMUX26</td><td>GTX_DUAL.DFETAP101</td></tr>
-<tr><td>TCELL14:IMUX.IMUX31</td><td>GTX_DUAL.DFETAP100</td></tr>
-<tr><td>TCELL14:IMUX.IMUX33</td><td>GTX_DUAL.DFETAP102</td></tr>
-<tr><td>TCELL14:IMUX.IMUX34</td><td>GTX_DUAL.DFETAP103</td></tr>
-<tr><td>TCELL14:IMUX.IMUX35</td><td>GTX_DUAL.DFETAP104</td></tr>
-<tr><td>TCELL14:IMUX.IMUX36</td><td>GTX_DUAL.DFETAP201</td></tr>
-<tr><td>TCELL14:IMUX.IMUX37</td><td>GTX_DUAL.DFETAP202</td></tr>
-<tr><td>TCELL14:IMUX.IMUX38</td><td>GTX_DUAL.DFETAP203</td></tr>
-<tr><td>TCELL14:IMUX.IMUX39</td><td>GTX_DUAL.DFETAP204</td></tr>
-<tr><td>TCELL14:IMUX.IMUX42</td><td>GTX_DUAL.RXEQPOLE00</td></tr>
-<tr><td>TCELL14:IMUX.IMUX43</td><td>GTX_DUAL.RXEQPOLE01</td></tr>
-<tr><td>TCELL14:IMUX.IMUX44</td><td>GTX_DUAL.RXEQPOLE02</td></tr>
-<tr><td>TCELL14:IMUX.IMUX45</td><td>GTX_DUAL.RXEQPOLE03</td></tr>
-<tr><td>TCELL14:IMUX.IMUX46</td><td>GTX_DUAL.RXEQMIX00</td></tr>
-<tr><td>TCELL14:IMUX.IMUX47</td><td>GTX_DUAL.RXEQMIX01</td></tr>
+<tr><td>TCELL14:IMUX.IMUX4.DELAY</td><td>CRC32_2.CRCIN20, CRC64_1.CRCIN20</td></tr>
+<tr><td>TCELL14:IMUX.IMUX5.DELAY</td><td>CRC32_2.CRCIN21, CRC64_1.CRCIN21</td></tr>
+<tr><td>TCELL14:IMUX.IMUX6.DELAY</td><td>CRC32_2.CRCIN16, CRC64_1.CRCIN16</td></tr>
+<tr><td>TCELL14:IMUX.IMUX7.DELAY</td><td>CRC32_2.CRCIN17, CRC64_1.CRCIN17</td></tr>
+<tr><td>TCELL14:IMUX.IMUX8.DELAY</td><td>CRC32_2.CRCIN18, CRC64_1.CRCIN18</td></tr>
+<tr><td>TCELL14:IMUX.IMUX9.DELAY</td><td>CRC32_2.CRCIN19, CRC64_1.CRCIN19</td></tr>
+<tr><td>TCELL14:IMUX.IMUX10.DELAY</td><td>CRC32_2.CRCIN22, CRC64_1.CRCIN22</td></tr>
+<tr><td>TCELL14:IMUX.IMUX11.DELAY</td><td>CRC32_2.CRCIN23, CRC64_1.CRCIN23</td></tr>
+<tr><td>TCELL14:IMUX.IMUX12.DELAY</td><td>GTX_DUAL.DFETAP200</td></tr>
+<tr><td>TCELL14:IMUX.IMUX22.DELAY</td><td>GTX_DUAL.GTXTEST4</td></tr>
+<tr><td>TCELL14:IMUX.IMUX23.DELAY</td><td>GTX_DUAL.DFECLKDLYADJ00</td></tr>
+<tr><td>TCELL14:IMUX.IMUX26.DELAY</td><td>GTX_DUAL.DFETAP101</td></tr>
+<tr><td>TCELL14:IMUX.IMUX31.DELAY</td><td>GTX_DUAL.DFETAP100</td></tr>
+<tr><td>TCELL14:IMUX.IMUX33.DELAY</td><td>GTX_DUAL.DFETAP102</td></tr>
+<tr><td>TCELL14:IMUX.IMUX34.DELAY</td><td>GTX_DUAL.DFETAP103</td></tr>
+<tr><td>TCELL14:IMUX.IMUX35.DELAY</td><td>GTX_DUAL.DFETAP104</td></tr>
+<tr><td>TCELL14:IMUX.IMUX36.DELAY</td><td>GTX_DUAL.DFETAP201</td></tr>
+<tr><td>TCELL14:IMUX.IMUX37.DELAY</td><td>GTX_DUAL.DFETAP202</td></tr>
+<tr><td>TCELL14:IMUX.IMUX38.DELAY</td><td>GTX_DUAL.DFETAP203</td></tr>
+<tr><td>TCELL14:IMUX.IMUX39.DELAY</td><td>GTX_DUAL.DFETAP204</td></tr>
+<tr><td>TCELL14:IMUX.IMUX42.DELAY</td><td>GTX_DUAL.RXEQPOLE00</td></tr>
+<tr><td>TCELL14:IMUX.IMUX43.DELAY</td><td>GTX_DUAL.RXEQPOLE01</td></tr>
+<tr><td>TCELL14:IMUX.IMUX44.DELAY</td><td>GTX_DUAL.RXEQPOLE02</td></tr>
+<tr><td>TCELL14:IMUX.IMUX45.DELAY</td><td>GTX_DUAL.RXEQPOLE03</td></tr>
+<tr><td>TCELL14:IMUX.IMUX46.DELAY</td><td>GTX_DUAL.RXEQMIX00</td></tr>
+<tr><td>TCELL14:IMUX.IMUX47.DELAY</td><td>GTX_DUAL.RXEQMIX01</td></tr>
 <tr><td>TCELL14:OUT0</td><td>GTX_DUAL.DFEEYEDACMONITOR00</td></tr>
 <tr><td>TCELL14:OUT1</td><td>GTX_DUAL.RXRUNDISP00</td></tr>
 <tr><td>TCELL14:OUT2</td><td>GTX_DUAL.DFEEYEDACMONITOR03</td></tr>
@@ -2126,33 +2129,33 @@
 <tr><td>TCELL14:OUT21</td><td>GTX_DUAL.RXCOMMADET0</td></tr>
 <tr><td>TCELL14:OUT22</td><td>GTX_DUAL.RXDATA07</td></tr>
 <tr><td>TCELL14:OUT23</td><td>GTX_DUAL.RXDATA05</td></tr>
-<tr><td>TCELL15:IMUX.IMUX4</td><td>CRC32_2.CRCIN28, CRC64_1.CRCIN28</td></tr>
-<tr><td>TCELL15:IMUX.IMUX5</td><td>CRC32_2.CRCIN29, CRC64_1.CRCIN29</td></tr>
-<tr><td>TCELL15:IMUX.IMUX6</td><td>CRC32_2.CRCIN24, CRC64_1.CRCIN24</td></tr>
-<tr><td>TCELL15:IMUX.IMUX7</td><td>CRC32_2.CRCIN25, CRC64_1.CRCIN25</td></tr>
-<tr><td>TCELL15:IMUX.IMUX8</td><td>CRC32_2.CRCIN26, CRC64_1.CRCIN26</td></tr>
-<tr><td>TCELL15:IMUX.IMUX9</td><td>CRC32_2.CRCIN27, CRC64_1.CRCIN27</td></tr>
-<tr><td>TCELL15:IMUX.IMUX10</td><td>CRC32_2.CRCIN30, CRC64_1.CRCIN30</td></tr>
-<tr><td>TCELL15:IMUX.IMUX11</td><td>CRC32_2.CRCIN31, CRC64_1.CRCIN31</td></tr>
-<tr><td>TCELL15:IMUX.IMUX14</td><td>GTX_DUAL.RXENSAMPLEALIGN0</td></tr>
-<tr><td>TCELL15:IMUX.IMUX17</td><td>GTX_DUAL.RXGEARBOXSLIP0</td></tr>
-<tr><td>TCELL15:IMUX.IMUX18</td><td>GTX_DUAL.RXDATAWIDTH01</td></tr>
-<tr><td>TCELL15:IMUX.IMUX19</td><td>GTX_DUAL.DFECLKDLYADJ02</td></tr>
-<tr><td>TCELL15:IMUX.IMUX21</td><td>GTX_DUAL.TXBYPASS8B10B03</td></tr>
-<tr><td>TCELL15:IMUX.IMUX27</td><td>GTX_DUAL.TXBYPASS8B10B02</td></tr>
-<tr><td>TCELL15:IMUX.IMUX28</td><td>GTX_DUAL.RXENPRBSTST00</td></tr>
-<tr><td>TCELL15:IMUX.IMUX29</td><td>GTX_DUAL.RXENPRBSTST01</td></tr>
-<tr><td>TCELL15:IMUX.IMUX30</td><td>GTX_DUAL.RXCOMMADETUSE0</td></tr>
-<tr><td>TCELL15:IMUX.IMUX36</td><td>GTX_DUAL.DFECLKDLYADJ01</td></tr>
-<tr><td>TCELL15:IMUX.IMUX37</td><td>GTX_DUAL.RXDATAWIDTH00</td></tr>
-<tr><td>TCELL15:IMUX.IMUX38</td><td>GTX_DUAL.DFECLKDLYADJ03</td></tr>
-<tr><td>TCELL15:IMUX.IMUX39</td><td>GTX_DUAL.DFECLKDLYADJ04</td></tr>
-<tr><td>TCELL15:IMUX.IMUX40</td><td>GTX_DUAL.DFECLKDLYADJ05</td></tr>
-<tr><td>TCELL15:IMUX.IMUX41</td><td>GTX_DUAL.RXPOLARITY0</td></tr>
-<tr><td>TCELL15:IMUX.IMUX42</td><td>GTX_DUAL.RXENEQB0</td></tr>
-<tr><td>TCELL15:IMUX.IMUX44</td><td>GTX_DUAL.RXSLIDE0</td></tr>
-<tr><td>TCELL15:IMUX.IMUX45</td><td>GTX_DUAL.RXENMCOMMAALIGN0</td></tr>
-<tr><td>TCELL15:IMUX.IMUX46</td><td>GTX_DUAL.RXENPCOMMAALIGN0</td></tr>
+<tr><td>TCELL15:IMUX.IMUX4.DELAY</td><td>CRC32_2.CRCIN28, CRC64_1.CRCIN28</td></tr>
+<tr><td>TCELL15:IMUX.IMUX5.DELAY</td><td>CRC32_2.CRCIN29, CRC64_1.CRCIN29</td></tr>
+<tr><td>TCELL15:IMUX.IMUX6.DELAY</td><td>CRC32_2.CRCIN24, CRC64_1.CRCIN24</td></tr>
+<tr><td>TCELL15:IMUX.IMUX7.DELAY</td><td>CRC32_2.CRCIN25, CRC64_1.CRCIN25</td></tr>
+<tr><td>TCELL15:IMUX.IMUX8.DELAY</td><td>CRC32_2.CRCIN26, CRC64_1.CRCIN26</td></tr>
+<tr><td>TCELL15:IMUX.IMUX9.DELAY</td><td>CRC32_2.CRCIN27, CRC64_1.CRCIN27</td></tr>
+<tr><td>TCELL15:IMUX.IMUX10.DELAY</td><td>CRC32_2.CRCIN30, CRC64_1.CRCIN30</td></tr>
+<tr><td>TCELL15:IMUX.IMUX11.DELAY</td><td>CRC32_2.CRCIN31, CRC64_1.CRCIN31</td></tr>
+<tr><td>TCELL15:IMUX.IMUX14.DELAY</td><td>GTX_DUAL.RXENSAMPLEALIGN0</td></tr>
+<tr><td>TCELL15:IMUX.IMUX17.DELAY</td><td>GTX_DUAL.RXGEARBOXSLIP0</td></tr>
+<tr><td>TCELL15:IMUX.IMUX18.DELAY</td><td>GTX_DUAL.RXDATAWIDTH01</td></tr>
+<tr><td>TCELL15:IMUX.IMUX19.DELAY</td><td>GTX_DUAL.DFECLKDLYADJ02</td></tr>
+<tr><td>TCELL15:IMUX.IMUX21.DELAY</td><td>GTX_DUAL.TXBYPASS8B10B03</td></tr>
+<tr><td>TCELL15:IMUX.IMUX27.DELAY</td><td>GTX_DUAL.TXBYPASS8B10B02</td></tr>
+<tr><td>TCELL15:IMUX.IMUX28.DELAY</td><td>GTX_DUAL.RXENPRBSTST00</td></tr>
+<tr><td>TCELL15:IMUX.IMUX29.DELAY</td><td>GTX_DUAL.RXENPRBSTST01</td></tr>
+<tr><td>TCELL15:IMUX.IMUX30.DELAY</td><td>GTX_DUAL.RXCOMMADETUSE0</td></tr>
+<tr><td>TCELL15:IMUX.IMUX36.DELAY</td><td>GTX_DUAL.DFECLKDLYADJ01</td></tr>
+<tr><td>TCELL15:IMUX.IMUX37.DELAY</td><td>GTX_DUAL.RXDATAWIDTH00</td></tr>
+<tr><td>TCELL15:IMUX.IMUX38.DELAY</td><td>GTX_DUAL.DFECLKDLYADJ03</td></tr>
+<tr><td>TCELL15:IMUX.IMUX39.DELAY</td><td>GTX_DUAL.DFECLKDLYADJ04</td></tr>
+<tr><td>TCELL15:IMUX.IMUX40.DELAY</td><td>GTX_DUAL.DFECLKDLYADJ05</td></tr>
+<tr><td>TCELL15:IMUX.IMUX41.DELAY</td><td>GTX_DUAL.RXPOLARITY0</td></tr>
+<tr><td>TCELL15:IMUX.IMUX42.DELAY</td><td>GTX_DUAL.RXENEQB0</td></tr>
+<tr><td>TCELL15:IMUX.IMUX44.DELAY</td><td>GTX_DUAL.RXSLIDE0</td></tr>
+<tr><td>TCELL15:IMUX.IMUX45.DELAY</td><td>GTX_DUAL.RXENMCOMMAALIGN0</td></tr>
+<tr><td>TCELL15:IMUX.IMUX46.DELAY</td><td>GTX_DUAL.RXENPCOMMAALIGN0</td></tr>
 <tr><td>TCELL15:OUT0</td><td>GTX_DUAL.DFECLKDLYADJMONITOR01</td></tr>
 <tr><td>TCELL15:OUT1</td><td>GTX_DUAL.RXBUFSTATUS00</td></tr>
 <tr><td>TCELL15:OUT3</td><td>GTX_DUAL.RXOVERSAMPLEERR0</td></tr>
@@ -2173,35 +2176,35 @@
 <tr><td>TCELL15:OUT21</td><td>GTX_DUAL.RXDATA017</td></tr>
 <tr><td>TCELL15:OUT22</td><td>GTX_DUAL.RXDATA03</td></tr>
 <tr><td>TCELL15:OUT23</td><td>GTX_DUAL.RXDATA01</td></tr>
-<tr><td>TCELL16:IMUX.IMUX1</td><td>CRC32_3.CRCDATAWIDTH1, CRC64_1.CRCDATAWIDTH1</td></tr>
-<tr><td>TCELL16:IMUX.IMUX4</td><td>GTX_DUAL.TXHEADER02</td></tr>
-<tr><td>TCELL16:IMUX.IMUX6</td><td>CRC32_3.CRCDATAWIDTH0, CRC64_1.CRCDATAWIDTH0</td></tr>
-<tr><td>TCELL16:IMUX.IMUX7</td><td>CRC32_3.CRCDATAVALID, CRC64_1.CRCDATAVALID</td></tr>
-<tr><td>TCELL16:IMUX.IMUX8</td><td>CRC32_2.CRCDATAWIDTH2, CRC32_3.CRCDATAWIDTH2, CRC64_1.CRCDATAWIDTH2</td></tr>
-<tr><td>TCELL16:IMUX.IMUX9</td><td>GTX_DUAL.TXSTARTSEQ0</td></tr>
-<tr><td>TCELL16:IMUX.IMUX10</td><td>CRC32_3.CRCIN6, CRC64_1.CRCIN38</td></tr>
-<tr><td>TCELL16:IMUX.IMUX11</td><td>CRC32_3.CRCIN7, CRC64_1.CRCIN39</td></tr>
-<tr><td>TCELL16:IMUX.IMUX20</td><td>GTX_DUAL.TXDATA031</td></tr>
-<tr><td>TCELL16:IMUX.IMUX21</td><td>GTX_DUAL.TXDATA030</td></tr>
-<tr><td>TCELL16:IMUX.IMUX22</td><td>GTX_DUAL.TXDATA029</td></tr>
-<tr><td>TCELL16:IMUX.IMUX23</td><td>GTX_DUAL.TXDATA028</td></tr>
-<tr><td>TCELL16:IMUX.IMUX24</td><td>GTX_DUAL.TXDATAWIDTH01</td></tr>
-<tr><td>TCELL16:IMUX.IMUX28</td><td>GTX_DUAL.TXINHIBIT0</td></tr>
-<tr><td>TCELL16:IMUX.IMUX30</td><td>GTX_DUAL.TXENC8B10BUSE0</td></tr>
-<tr><td>TCELL16:IMUX.IMUX31</td><td>GTX_DUAL.TXDATAWIDTH00</td></tr>
-<tr><td>TCELL16:IMUX.IMUX32</td><td>GTX_DUAL.TXHEADER00</td></tr>
-<tr><td>TCELL16:IMUX.IMUX33</td><td>GTX_DUAL.TXHEADER01</td></tr>
-<tr><td>TCELL16:IMUX.IMUX35</td><td>CRC32_3.CRCIN5, CRC64_1.CRCIN37</td></tr>
-<tr><td>TCELL16:IMUX.IMUX36</td><td>CRC32_3.CRCIN0, CRC64_1.CRCIN32</td></tr>
-<tr><td>TCELL16:IMUX.IMUX37</td><td>CRC32_3.CRCIN1, CRC64_1.CRCIN33</td></tr>
-<tr><td>TCELL16:IMUX.IMUX38</td><td>CRC32_3.CRCIN2, CRC64_1.CRCIN34</td></tr>
-<tr><td>TCELL16:IMUX.IMUX39</td><td>CRC32_3.CRCIN3, CRC64_1.CRCIN35</td></tr>
-<tr><td>TCELL16:IMUX.IMUX40</td><td>CRC32_3.CRCIN4, CRC64_1.CRCIN36</td></tr>
-<tr><td>TCELL16:IMUX.IMUX42</td><td>GTX_DUAL.TXDATA015</td></tr>
-<tr><td>TCELL16:IMUX.IMUX43</td><td>GTX_DUAL.TXDATA014</td></tr>
-<tr><td>TCELL16:IMUX.IMUX44</td><td>GTX_DUAL.TXDATA013</td></tr>
-<tr><td>TCELL16:IMUX.IMUX45</td><td>GTX_DUAL.TXDATA012</td></tr>
-<tr><td>TCELL16:IMUX.IMUX47</td><td>GTX_DUAL.TXRESET0</td></tr>
+<tr><td>TCELL16:IMUX.IMUX1.DELAY</td><td>CRC32_3.CRCDATAWIDTH1, CRC64_1.CRCDATAWIDTH1</td></tr>
+<tr><td>TCELL16:IMUX.IMUX4.DELAY</td><td>GTX_DUAL.TXHEADER02</td></tr>
+<tr><td>TCELL16:IMUX.IMUX6.DELAY</td><td>CRC32_3.CRCDATAWIDTH0, CRC64_1.CRCDATAWIDTH0</td></tr>
+<tr><td>TCELL16:IMUX.IMUX7.DELAY</td><td>CRC32_3.CRCDATAVALID, CRC64_1.CRCDATAVALID</td></tr>
+<tr><td>TCELL16:IMUX.IMUX8.DELAY</td><td>CRC32_2.CRCDATAWIDTH2, CRC32_3.CRCDATAWIDTH2, CRC64_1.CRCDATAWIDTH2</td></tr>
+<tr><td>TCELL16:IMUX.IMUX9.DELAY</td><td>GTX_DUAL.TXSTARTSEQ0</td></tr>
+<tr><td>TCELL16:IMUX.IMUX10.DELAY</td><td>CRC32_3.CRCIN6, CRC64_1.CRCIN38</td></tr>
+<tr><td>TCELL16:IMUX.IMUX11.DELAY</td><td>CRC32_3.CRCIN7, CRC64_1.CRCIN39</td></tr>
+<tr><td>TCELL16:IMUX.IMUX20.DELAY</td><td>GTX_DUAL.TXDATA031</td></tr>
+<tr><td>TCELL16:IMUX.IMUX21.DELAY</td><td>GTX_DUAL.TXDATA030</td></tr>
+<tr><td>TCELL16:IMUX.IMUX22.DELAY</td><td>GTX_DUAL.TXDATA029</td></tr>
+<tr><td>TCELL16:IMUX.IMUX23.DELAY</td><td>GTX_DUAL.TXDATA028</td></tr>
+<tr><td>TCELL16:IMUX.IMUX24.DELAY</td><td>GTX_DUAL.TXDATAWIDTH01</td></tr>
+<tr><td>TCELL16:IMUX.IMUX28.DELAY</td><td>GTX_DUAL.TXINHIBIT0</td></tr>
+<tr><td>TCELL16:IMUX.IMUX30.DELAY</td><td>GTX_DUAL.TXENC8B10BUSE0</td></tr>
+<tr><td>TCELL16:IMUX.IMUX31.DELAY</td><td>GTX_DUAL.TXDATAWIDTH00</td></tr>
+<tr><td>TCELL16:IMUX.IMUX32.DELAY</td><td>GTX_DUAL.TXHEADER00</td></tr>
+<tr><td>TCELL16:IMUX.IMUX33.DELAY</td><td>GTX_DUAL.TXHEADER01</td></tr>
+<tr><td>TCELL16:IMUX.IMUX35.DELAY</td><td>CRC32_3.CRCIN5, CRC64_1.CRCIN37</td></tr>
+<tr><td>TCELL16:IMUX.IMUX36.DELAY</td><td>CRC32_3.CRCIN0, CRC64_1.CRCIN32</td></tr>
+<tr><td>TCELL16:IMUX.IMUX37.DELAY</td><td>CRC32_3.CRCIN1, CRC64_1.CRCIN33</td></tr>
+<tr><td>TCELL16:IMUX.IMUX38.DELAY</td><td>CRC32_3.CRCIN2, CRC64_1.CRCIN34</td></tr>
+<tr><td>TCELL16:IMUX.IMUX39.DELAY</td><td>CRC32_3.CRCIN3, CRC64_1.CRCIN35</td></tr>
+<tr><td>TCELL16:IMUX.IMUX40.DELAY</td><td>CRC32_3.CRCIN4, CRC64_1.CRCIN36</td></tr>
+<tr><td>TCELL16:IMUX.IMUX42.DELAY</td><td>GTX_DUAL.TXDATA015</td></tr>
+<tr><td>TCELL16:IMUX.IMUX43.DELAY</td><td>GTX_DUAL.TXDATA014</td></tr>
+<tr><td>TCELL16:IMUX.IMUX44.DELAY</td><td>GTX_DUAL.TXDATA013</td></tr>
+<tr><td>TCELL16:IMUX.IMUX45.DELAY</td><td>GTX_DUAL.TXDATA012</td></tr>
+<tr><td>TCELL16:IMUX.IMUX47.DELAY</td><td>GTX_DUAL.TXRESET0</td></tr>
 <tr><td>TCELL16:OUT0</td><td>GTX_DUAL.RXNOTINTABLE02</td></tr>
 <tr><td>TCELL16:OUT1</td><td>GTX_DUAL.RXCHARISCOMMA02</td></tr>
 <tr><td>TCELL16:OUT2</td><td>GTX_DUAL.RXDATA020</td></tr>
@@ -2222,34 +2225,34 @@
 <tr><td>TCELL16:OUT21</td><td>GTX_DUAL.RXSTATUS02</td></tr>
 <tr><td>TCELL16:OUT22</td><td>GTX_DUAL.RXPRBSERR0</td></tr>
 <tr><td>TCELL16:OUT23</td><td>GTX_DUAL.RXCLKCORCNT01</td></tr>
-<tr><td>TCELL17:IMUX.IMUX0</td><td>CRC32_3.CRCRESET, CRC64_1.CRCRESET</td></tr>
-<tr><td>TCELL17:IMUX.IMUX7</td><td>GTX_DUAL.TXCHARDISPMODE03</td></tr>
-<tr><td>TCELL17:IMUX.IMUX8</td><td>GTX_DUAL.TXCHARISK03</td></tr>
-<tr><td>TCELL17:IMUX.IMUX10</td><td>GTX_DUAL.TXPOWERDOWN00</td></tr>
-<tr><td>TCELL17:IMUX.IMUX11</td><td>GTX_DUAL.TXPOWERDOWN01</td></tr>
-<tr><td>TCELL17:IMUX.IMUX15</td><td>GTX_DUAL.TXPOLARITY0</td></tr>
-<tr><td>TCELL17:IMUX.IMUX20</td><td>GTX_DUAL.TXDATA027</td></tr>
-<tr><td>TCELL17:IMUX.IMUX21</td><td>GTX_DUAL.TXDATA026</td></tr>
-<tr><td>TCELL17:IMUX.IMUX22</td><td>GTX_DUAL.TXDATA025</td></tr>
-<tr><td>TCELL17:IMUX.IMUX23</td><td>GTX_DUAL.TXDATA024</td></tr>
-<tr><td>TCELL17:IMUX.IMUX25</td><td>GTX_DUAL.TXCHARDISPVAL03</td></tr>
-<tr><td>TCELL17:IMUX.IMUX26</td><td>GTX_DUAL.TXCHARDISPVAL01</td></tr>
-<tr><td>TCELL17:IMUX.IMUX27</td><td>GTX_DUAL.TXCHARDISPMODE01</td></tr>
-<tr><td>TCELL17:IMUX.IMUX28</td><td>GTX_DUAL.TXCHARISK01</td></tr>
-<tr><td>TCELL17:IMUX.IMUX29</td><td>GTX_DUAL.TXBYPASS8B10B01</td></tr>
-<tr><td>TCELL17:IMUX.IMUX30</td><td>CRC32_3.CRCIN8, CRC64_1.CRCIN40</td></tr>
-<tr><td>TCELL17:IMUX.IMUX31</td><td>CRC32_3.CRCIN9, CRC64_1.CRCIN41</td></tr>
-<tr><td>TCELL17:IMUX.IMUX32</td><td>CRC32_3.CRCIN10, CRC64_1.CRCIN42</td></tr>
-<tr><td>TCELL17:IMUX.IMUX33</td><td>CRC32_3.CRCIN11, CRC64_1.CRCIN43</td></tr>
-<tr><td>TCELL17:IMUX.IMUX34</td><td>CRC32_3.CRCIN12, CRC64_1.CRCIN44</td></tr>
-<tr><td>TCELL17:IMUX.IMUX35</td><td>CRC32_3.CRCIN13, CRC64_1.CRCIN45</td></tr>
-<tr><td>TCELL17:IMUX.IMUX37</td><td>GTX_DUAL.TXPREEMPHASIS03</td></tr>
-<tr><td>TCELL17:IMUX.IMUX42</td><td>GTX_DUAL.TXDATA011</td></tr>
-<tr><td>TCELL17:IMUX.IMUX43</td><td>GTX_DUAL.TXDATA010</td></tr>
-<tr><td>TCELL17:IMUX.IMUX44</td><td>GTX_DUAL.TXDATA09</td></tr>
-<tr><td>TCELL17:IMUX.IMUX45</td><td>GTX_DUAL.TXDATA08</td></tr>
-<tr><td>TCELL17:IMUX.IMUX46</td><td>CRC32_3.CRCIN14, CRC64_1.CRCIN46</td></tr>
-<tr><td>TCELL17:IMUX.IMUX47</td><td>CRC32_3.CRCIN15, CRC64_1.CRCIN47</td></tr>
+<tr><td>TCELL17:IMUX.IMUX0.DELAY</td><td>CRC32_3.CRCRESET, CRC64_1.CRCRESET</td></tr>
+<tr><td>TCELL17:IMUX.IMUX7.DELAY</td><td>GTX_DUAL.TXCHARDISPMODE03</td></tr>
+<tr><td>TCELL17:IMUX.IMUX8.DELAY</td><td>GTX_DUAL.TXCHARISK03</td></tr>
+<tr><td>TCELL17:IMUX.IMUX10.DELAY</td><td>GTX_DUAL.TXPOWERDOWN00</td></tr>
+<tr><td>TCELL17:IMUX.IMUX11.DELAY</td><td>GTX_DUAL.TXPOWERDOWN01</td></tr>
+<tr><td>TCELL17:IMUX.IMUX15.DELAY</td><td>GTX_DUAL.TXPOLARITY0</td></tr>
+<tr><td>TCELL17:IMUX.IMUX20.DELAY</td><td>GTX_DUAL.TXDATA027</td></tr>
+<tr><td>TCELL17:IMUX.IMUX21.DELAY</td><td>GTX_DUAL.TXDATA026</td></tr>
+<tr><td>TCELL17:IMUX.IMUX22.DELAY</td><td>GTX_DUAL.TXDATA025</td></tr>
+<tr><td>TCELL17:IMUX.IMUX23.DELAY</td><td>GTX_DUAL.TXDATA024</td></tr>
+<tr><td>TCELL17:IMUX.IMUX25.DELAY</td><td>GTX_DUAL.TXCHARDISPVAL03</td></tr>
+<tr><td>TCELL17:IMUX.IMUX26.DELAY</td><td>GTX_DUAL.TXCHARDISPVAL01</td></tr>
+<tr><td>TCELL17:IMUX.IMUX27.DELAY</td><td>GTX_DUAL.TXCHARDISPMODE01</td></tr>
+<tr><td>TCELL17:IMUX.IMUX28.DELAY</td><td>GTX_DUAL.TXCHARISK01</td></tr>
+<tr><td>TCELL17:IMUX.IMUX29.DELAY</td><td>GTX_DUAL.TXBYPASS8B10B01</td></tr>
+<tr><td>TCELL17:IMUX.IMUX30.DELAY</td><td>CRC32_3.CRCIN8, CRC64_1.CRCIN40</td></tr>
+<tr><td>TCELL17:IMUX.IMUX31.DELAY</td><td>CRC32_3.CRCIN9, CRC64_1.CRCIN41</td></tr>
+<tr><td>TCELL17:IMUX.IMUX32.DELAY</td><td>CRC32_3.CRCIN10, CRC64_1.CRCIN42</td></tr>
+<tr><td>TCELL17:IMUX.IMUX33.DELAY</td><td>CRC32_3.CRCIN11, CRC64_1.CRCIN43</td></tr>
+<tr><td>TCELL17:IMUX.IMUX34.DELAY</td><td>CRC32_3.CRCIN12, CRC64_1.CRCIN44</td></tr>
+<tr><td>TCELL17:IMUX.IMUX35.DELAY</td><td>CRC32_3.CRCIN13, CRC64_1.CRCIN45</td></tr>
+<tr><td>TCELL17:IMUX.IMUX37.DELAY</td><td>GTX_DUAL.TXPREEMPHASIS03</td></tr>
+<tr><td>TCELL17:IMUX.IMUX42.DELAY</td><td>GTX_DUAL.TXDATA011</td></tr>
+<tr><td>TCELL17:IMUX.IMUX43.DELAY</td><td>GTX_DUAL.TXDATA010</td></tr>
+<tr><td>TCELL17:IMUX.IMUX44.DELAY</td><td>GTX_DUAL.TXDATA09</td></tr>
+<tr><td>TCELL17:IMUX.IMUX45.DELAY</td><td>GTX_DUAL.TXDATA08</td></tr>
+<tr><td>TCELL17:IMUX.IMUX46.DELAY</td><td>CRC32_3.CRCIN14, CRC64_1.CRCIN46</td></tr>
+<tr><td>TCELL17:IMUX.IMUX47.DELAY</td><td>CRC32_3.CRCIN15, CRC64_1.CRCIN47</td></tr>
 <tr><td>TCELL17:OUT1</td><td>CRC32_3.CRCOUT4, CRC64_1.CRCOUT4</td></tr>
 <tr><td>TCELL17:OUT2</td><td>GTX_DUAL.TXRUNDISP01</td></tr>
 <tr><td>TCELL17:OUT4</td><td>GTX_DUAL.RXDISPERR02</td></tr>
@@ -2272,37 +2275,37 @@
 <tr><td>TCELL17:OUT22</td><td>GTX_DUAL.TXKERR03</td></tr>
 <tr><td>TCELL17:OUT23</td><td>GTX_DUAL.RXDATA025</td></tr>
 <tr><td>TCELL18:IMUX.CLK0</td><td>CRC32_3.CRCCLK, CRC64_1.CRCCLK</td></tr>
-<tr><td>TCELL18:IMUX.IMUX2</td><td>GTX_DUAL.TXSEQUENCE00</td></tr>
-<tr><td>TCELL18:IMUX.IMUX3</td><td>GTX_DUAL.TXSEQUENCE01</td></tr>
-<tr><td>TCELL18:IMUX.IMUX4</td><td>GTX_DUAL.TXCOMSTART0</td></tr>
-<tr><td>TCELL18:IMUX.IMUX5</td><td>GTX_DUAL.TXCOMTYPE0</td></tr>
-<tr><td>TCELL18:IMUX.IMUX6</td><td>CRC32_3.CRCIN16, CRC64_1.CRCIN48</td></tr>
-<tr><td>TCELL18:IMUX.IMUX7</td><td>CRC32_3.CRCIN17, CRC64_1.CRCIN49</td></tr>
-<tr><td>TCELL18:IMUX.IMUX8</td><td>CRC32_3.CRCIN18, CRC64_1.CRCIN50</td></tr>
-<tr><td>TCELL18:IMUX.IMUX10</td><td>CRC32_3.CRCIN20, CRC64_1.CRCIN52</td></tr>
-<tr><td>TCELL18:IMUX.IMUX11</td><td>CRC32_3.CRCIN21, CRC64_1.CRCIN53</td></tr>
-<tr><td>TCELL18:IMUX.IMUX15</td><td>GTX_DUAL.TXPREEMPHASIS00</td></tr>
-<tr><td>TCELL18:IMUX.IMUX16</td><td>GTX_DUAL.TXPREEMPHASIS01</td></tr>
-<tr><td>TCELL18:IMUX.IMUX17</td><td>GTX_DUAL.TXPREEMPHASIS02</td></tr>
-<tr><td>TCELL18:IMUX.IMUX21</td><td>CRC32_3.CRCIN19, CRC64_1.CRCIN51</td></tr>
-<tr><td>TCELL18:IMUX.IMUX24</td><td>GTX_DUAL.TXENPRBSTST00</td></tr>
-<tr><td>TCELL18:IMUX.IMUX25</td><td>GTX_DUAL.TXENPRBSTST01</td></tr>
-<tr><td>TCELL18:IMUX.IMUX26</td><td>GTX_DUAL.TXCHARDISPVAL00</td></tr>
-<tr><td>TCELL18:IMUX.IMUX27</td><td>GTX_DUAL.TXCHARDISPMODE00</td></tr>
-<tr><td>TCELL18:IMUX.IMUX28</td><td>GTX_DUAL.TXCHARISK02</td></tr>
-<tr><td>TCELL18:IMUX.IMUX29</td><td>GTX_DUAL.TXBYPASS8B10B00</td></tr>
-<tr><td>TCELL18:IMUX.IMUX30</td><td>GTX_DUAL.TSTPWRDNOVRD0</td></tr>
-<tr><td>TCELL18:IMUX.IMUX31</td><td>GTX_DUAL.TXDATA023</td></tr>
-<tr><td>TCELL18:IMUX.IMUX32</td><td>GTX_DUAL.TXDATA022</td></tr>
-<tr><td>TCELL18:IMUX.IMUX33</td><td>GTX_DUAL.TXDATA021</td></tr>
-<tr><td>TCELL18:IMUX.IMUX35</td><td>GTX_DUAL.TXDATA020</td></tr>
-<tr><td>TCELL18:IMUX.IMUX40</td><td>CRC32_3.CRCIN22, CRC64_1.CRCIN54</td></tr>
-<tr><td>TCELL18:IMUX.IMUX41</td><td>CRC32_3.CRCIN23, CRC64_1.CRCIN55</td></tr>
-<tr><td>TCELL18:IMUX.IMUX42</td><td>GTX_DUAL.TXDATA07</td></tr>
-<tr><td>TCELL18:IMUX.IMUX43</td><td>GTX_DUAL.TXDATA06</td></tr>
-<tr><td>TCELL18:IMUX.IMUX44</td><td>GTX_DUAL.TXDATA05</td></tr>
-<tr><td>TCELL18:IMUX.IMUX45</td><td>GTX_DUAL.TXDATA04</td></tr>
-<tr><td>TCELL18:IMUX.IMUX46</td><td>GTX_DUAL.TXCHARISK00</td></tr>
+<tr><td>TCELL18:IMUX.IMUX2.DELAY</td><td>GTX_DUAL.TXSEQUENCE00</td></tr>
+<tr><td>TCELL18:IMUX.IMUX3.DELAY</td><td>GTX_DUAL.TXSEQUENCE01</td></tr>
+<tr><td>TCELL18:IMUX.IMUX4.DELAY</td><td>GTX_DUAL.TXCOMSTART0</td></tr>
+<tr><td>TCELL18:IMUX.IMUX5.DELAY</td><td>GTX_DUAL.TXCOMTYPE0</td></tr>
+<tr><td>TCELL18:IMUX.IMUX6.DELAY</td><td>CRC32_3.CRCIN16, CRC64_1.CRCIN48</td></tr>
+<tr><td>TCELL18:IMUX.IMUX7.DELAY</td><td>CRC32_3.CRCIN17, CRC64_1.CRCIN49</td></tr>
+<tr><td>TCELL18:IMUX.IMUX8.DELAY</td><td>CRC32_3.CRCIN18, CRC64_1.CRCIN50</td></tr>
+<tr><td>TCELL18:IMUX.IMUX10.DELAY</td><td>CRC32_3.CRCIN20, CRC64_1.CRCIN52</td></tr>
+<tr><td>TCELL18:IMUX.IMUX11.DELAY</td><td>CRC32_3.CRCIN21, CRC64_1.CRCIN53</td></tr>
+<tr><td>TCELL18:IMUX.IMUX15.DELAY</td><td>GTX_DUAL.TXPREEMPHASIS00</td></tr>
+<tr><td>TCELL18:IMUX.IMUX16.DELAY</td><td>GTX_DUAL.TXPREEMPHASIS01</td></tr>
+<tr><td>TCELL18:IMUX.IMUX17.DELAY</td><td>GTX_DUAL.TXPREEMPHASIS02</td></tr>
+<tr><td>TCELL18:IMUX.IMUX21.DELAY</td><td>CRC32_3.CRCIN19, CRC64_1.CRCIN51</td></tr>
+<tr><td>TCELL18:IMUX.IMUX24.DELAY</td><td>GTX_DUAL.TXENPRBSTST00</td></tr>
+<tr><td>TCELL18:IMUX.IMUX25.DELAY</td><td>GTX_DUAL.TXENPRBSTST01</td></tr>
+<tr><td>TCELL18:IMUX.IMUX26.DELAY</td><td>GTX_DUAL.TXCHARDISPVAL00</td></tr>
+<tr><td>TCELL18:IMUX.IMUX27.DELAY</td><td>GTX_DUAL.TXCHARDISPMODE00</td></tr>
+<tr><td>TCELL18:IMUX.IMUX28.DELAY</td><td>GTX_DUAL.TXCHARISK02</td></tr>
+<tr><td>TCELL18:IMUX.IMUX29.DELAY</td><td>GTX_DUAL.TXBYPASS8B10B00</td></tr>
+<tr><td>TCELL18:IMUX.IMUX30.DELAY</td><td>GTX_DUAL.TSTPWRDNOVRD0</td></tr>
+<tr><td>TCELL18:IMUX.IMUX31.DELAY</td><td>GTX_DUAL.TXDATA023</td></tr>
+<tr><td>TCELL18:IMUX.IMUX32.DELAY</td><td>GTX_DUAL.TXDATA022</td></tr>
+<tr><td>TCELL18:IMUX.IMUX33.DELAY</td><td>GTX_DUAL.TXDATA021</td></tr>
+<tr><td>TCELL18:IMUX.IMUX35.DELAY</td><td>GTX_DUAL.TXDATA020</td></tr>
+<tr><td>TCELL18:IMUX.IMUX40.DELAY</td><td>CRC32_3.CRCIN22, CRC64_1.CRCIN54</td></tr>
+<tr><td>TCELL18:IMUX.IMUX41.DELAY</td><td>CRC32_3.CRCIN23, CRC64_1.CRCIN55</td></tr>
+<tr><td>TCELL18:IMUX.IMUX42.DELAY</td><td>GTX_DUAL.TXDATA07</td></tr>
+<tr><td>TCELL18:IMUX.IMUX43.DELAY</td><td>GTX_DUAL.TXDATA06</td></tr>
+<tr><td>TCELL18:IMUX.IMUX44.DELAY</td><td>GTX_DUAL.TXDATA05</td></tr>
+<tr><td>TCELL18:IMUX.IMUX45.DELAY</td><td>GTX_DUAL.TXDATA04</td></tr>
+<tr><td>TCELL18:IMUX.IMUX46.DELAY</td><td>GTX_DUAL.TXCHARISK00</td></tr>
 <tr><td>TCELL18:OUT0</td><td>GTX_DUAL.TXBUFSTATUS00</td></tr>
 <tr><td>TCELL18:OUT3</td><td>CRC32_3.CRCOUT16, CRC64_1.CRCOUT16</td></tr>
 <tr><td>TCELL18:OUT4</td><td>GTX_DUAL.RXDISPERR03</td></tr>
@@ -2324,43 +2327,43 @@
 <tr><td>TCELL18:OUT21</td><td>CRC32_3.CRCOUT19, CRC64_1.CRCOUT19</td></tr>
 <tr><td>TCELL18:OUT22</td><td>GTX_DUAL.TXRUNDISP00</td></tr>
 <tr><td>TCELL18:OUT23</td><td>GTX_DUAL.TXBUFSTATUS01</td></tr>
-<tr><td>TCELL19:IMUX.IMUX0</td><td>GTX_DUAL.TXSEQUENCE02</td></tr>
-<tr><td>TCELL19:IMUX.IMUX1</td><td>GTX_DUAL.TXSEQUENCE03</td></tr>
-<tr><td>TCELL19:IMUX.IMUX2</td><td>GTX_DUAL.TXCHARDISPVAL02</td></tr>
-<tr><td>TCELL19:IMUX.IMUX3</td><td>GTX_DUAL.TXSEQUENCE04</td></tr>
-<tr><td>TCELL19:IMUX.IMUX4</td><td>GTX_DUAL.TXSEQUENCE05</td></tr>
-<tr><td>TCELL19:IMUX.IMUX5</td><td>GTX_DUAL.TXSEQUENCE06</td></tr>
-<tr><td>TCELL19:IMUX.IMUX6</td><td>GTX_DUAL.GTXTEST6</td></tr>
-<tr><td>TCELL19:IMUX.IMUX10</td><td>CRC32_3.CRCIN28, CRC64_1.CRCIN60</td></tr>
-<tr><td>TCELL19:IMUX.IMUX11</td><td>CRC32_3.CRCIN29, CRC64_1.CRCIN61</td></tr>
-<tr><td>TCELL19:IMUX.IMUX12</td><td>GTX_DUAL.TXDATA019</td></tr>
-<tr><td>TCELL19:IMUX.IMUX15</td><td>GTX_DUAL.TXCHARDISPMODE02</td></tr>
-<tr><td>TCELL19:IMUX.IMUX17</td><td>GTX_DUAL.SCANEN</td></tr>
-<tr><td>TCELL19:IMUX.IMUX18</td><td>GTX_DUAL.TXDETECTRX0</td></tr>
-<tr><td>TCELL19:IMUX.IMUX19</td><td>GTX_DUAL.TXELECIDLE0</td></tr>
-<tr><td>TCELL19:IMUX.IMUX20</td><td>GTX_DUAL.TXDATA018</td></tr>
-<tr><td>TCELL19:IMUX.IMUX21</td><td>CRC32_3.CRCIN27, CRC64_1.CRCIN59</td></tr>
-<tr><td>TCELL19:IMUX.IMUX22</td><td>GTX_DUAL.TXDATA017</td></tr>
-<tr><td>TCELL19:IMUX.IMUX23</td><td>GTX_DUAL.TXDATA016</td></tr>
-<tr><td>TCELL19:IMUX.IMUX24</td><td>CRC32_3.CRCIN24, CRC64_1.CRCIN56</td></tr>
-<tr><td>TCELL19:IMUX.IMUX25</td><td>CRC32_3.CRCIN25, CRC64_1.CRCIN57</td></tr>
-<tr><td>TCELL19:IMUX.IMUX26</td><td>CRC32_3.CRCIN26, CRC64_1.CRCIN58</td></tr>
-<tr><td>TCELL19:IMUX.IMUX27</td><td>GTX_DUAL.GTXTEST0</td></tr>
-<tr><td>TCELL19:IMUX.IMUX28</td><td>GTX_DUAL.GTXTEST5</td></tr>
-<tr><td>TCELL19:IMUX.IMUX29</td><td>GTX_DUAL.GTXTEST7</td></tr>
-<tr><td>TCELL19:IMUX.IMUX30</td><td>GTX_DUAL.TXBUFDIFFCTRL00</td></tr>
-<tr><td>TCELL19:IMUX.IMUX31</td><td>GTX_DUAL.TXBUFDIFFCTRL01</td></tr>
-<tr><td>TCELL19:IMUX.IMUX32</td><td>GTX_DUAL.TXBUFDIFFCTRL02</td></tr>
-<tr><td>TCELL19:IMUX.IMUX33</td><td>GTX_DUAL.TXDIFFCTRL00</td></tr>
-<tr><td>TCELL19:IMUX.IMUX34</td><td>GTX_DUAL.TXDIFFCTRL01</td></tr>
-<tr><td>TCELL19:IMUX.IMUX35</td><td>GTX_DUAL.TXDIFFCTRL02</td></tr>
-<tr><td>TCELL19:IMUX.IMUX40</td><td>CRC32_3.CRCIN30, CRC64_1.CRCIN62</td></tr>
-<tr><td>TCELL19:IMUX.IMUX41</td><td>CRC32_3.CRCIN31, CRC64_1.CRCIN63</td></tr>
-<tr><td>TCELL19:IMUX.IMUX42</td><td>GTX_DUAL.TXDATA03</td></tr>
-<tr><td>TCELL19:IMUX.IMUX43</td><td>GTX_DUAL.TXDATA02</td></tr>
-<tr><td>TCELL19:IMUX.IMUX44</td><td>GTX_DUAL.TXDATA01</td></tr>
-<tr><td>TCELL19:IMUX.IMUX45</td><td>GTX_DUAL.TXDATA00</td></tr>
-<tr><td>TCELL19:IMUX.IMUX47</td><td>GTX_DUAL.SCANINPCS0</td></tr>
+<tr><td>TCELL19:IMUX.IMUX0.DELAY</td><td>GTX_DUAL.TXSEQUENCE02</td></tr>
+<tr><td>TCELL19:IMUX.IMUX1.DELAY</td><td>GTX_DUAL.TXSEQUENCE03</td></tr>
+<tr><td>TCELL19:IMUX.IMUX2.DELAY</td><td>GTX_DUAL.TXCHARDISPVAL02</td></tr>
+<tr><td>TCELL19:IMUX.IMUX3.DELAY</td><td>GTX_DUAL.TXSEQUENCE04</td></tr>
+<tr><td>TCELL19:IMUX.IMUX4.DELAY</td><td>GTX_DUAL.TXSEQUENCE05</td></tr>
+<tr><td>TCELL19:IMUX.IMUX5.DELAY</td><td>GTX_DUAL.TXSEQUENCE06</td></tr>
+<tr><td>TCELL19:IMUX.IMUX6.DELAY</td><td>GTX_DUAL.GTXTEST6</td></tr>
+<tr><td>TCELL19:IMUX.IMUX10.DELAY</td><td>CRC32_3.CRCIN28, CRC64_1.CRCIN60</td></tr>
+<tr><td>TCELL19:IMUX.IMUX11.DELAY</td><td>CRC32_3.CRCIN29, CRC64_1.CRCIN61</td></tr>
+<tr><td>TCELL19:IMUX.IMUX12.DELAY</td><td>GTX_DUAL.TXDATA019</td></tr>
+<tr><td>TCELL19:IMUX.IMUX15.DELAY</td><td>GTX_DUAL.TXCHARDISPMODE02</td></tr>
+<tr><td>TCELL19:IMUX.IMUX17.DELAY</td><td>GTX_DUAL.SCANEN</td></tr>
+<tr><td>TCELL19:IMUX.IMUX18.DELAY</td><td>GTX_DUAL.TXDETECTRX0</td></tr>
+<tr><td>TCELL19:IMUX.IMUX19.DELAY</td><td>GTX_DUAL.TXELECIDLE0</td></tr>
+<tr><td>TCELL19:IMUX.IMUX20.DELAY</td><td>GTX_DUAL.TXDATA018</td></tr>
+<tr><td>TCELL19:IMUX.IMUX21.DELAY</td><td>CRC32_3.CRCIN27, CRC64_1.CRCIN59</td></tr>
+<tr><td>TCELL19:IMUX.IMUX22.DELAY</td><td>GTX_DUAL.TXDATA017</td></tr>
+<tr><td>TCELL19:IMUX.IMUX23.DELAY</td><td>GTX_DUAL.TXDATA016</td></tr>
+<tr><td>TCELL19:IMUX.IMUX24.DELAY</td><td>CRC32_3.CRCIN24, CRC64_1.CRCIN56</td></tr>
+<tr><td>TCELL19:IMUX.IMUX25.DELAY</td><td>CRC32_3.CRCIN25, CRC64_1.CRCIN57</td></tr>
+<tr><td>TCELL19:IMUX.IMUX26.DELAY</td><td>CRC32_3.CRCIN26, CRC64_1.CRCIN58</td></tr>
+<tr><td>TCELL19:IMUX.IMUX27.DELAY</td><td>GTX_DUAL.GTXTEST0</td></tr>
+<tr><td>TCELL19:IMUX.IMUX28.DELAY</td><td>GTX_DUAL.GTXTEST5</td></tr>
+<tr><td>TCELL19:IMUX.IMUX29.DELAY</td><td>GTX_DUAL.GTXTEST7</td></tr>
+<tr><td>TCELL19:IMUX.IMUX30.DELAY</td><td>GTX_DUAL.TXBUFDIFFCTRL00</td></tr>
+<tr><td>TCELL19:IMUX.IMUX31.DELAY</td><td>GTX_DUAL.TXBUFDIFFCTRL01</td></tr>
+<tr><td>TCELL19:IMUX.IMUX32.DELAY</td><td>GTX_DUAL.TXBUFDIFFCTRL02</td></tr>
+<tr><td>TCELL19:IMUX.IMUX33.DELAY</td><td>GTX_DUAL.TXDIFFCTRL00</td></tr>
+<tr><td>TCELL19:IMUX.IMUX34.DELAY</td><td>GTX_DUAL.TXDIFFCTRL01</td></tr>
+<tr><td>TCELL19:IMUX.IMUX35.DELAY</td><td>GTX_DUAL.TXDIFFCTRL02</td></tr>
+<tr><td>TCELL19:IMUX.IMUX40.DELAY</td><td>CRC32_3.CRCIN30, CRC64_1.CRCIN62</td></tr>
+<tr><td>TCELL19:IMUX.IMUX41.DELAY</td><td>CRC32_3.CRCIN31, CRC64_1.CRCIN63</td></tr>
+<tr><td>TCELL19:IMUX.IMUX42.DELAY</td><td>GTX_DUAL.TXDATA03</td></tr>
+<tr><td>TCELL19:IMUX.IMUX43.DELAY</td><td>GTX_DUAL.TXDATA02</td></tr>
+<tr><td>TCELL19:IMUX.IMUX44.DELAY</td><td>GTX_DUAL.TXDATA01</td></tr>
+<tr><td>TCELL19:IMUX.IMUX45.DELAY</td><td>GTX_DUAL.TXDATA00</td></tr>
+<tr><td>TCELL19:IMUX.IMUX47.DELAY</td><td>GTX_DUAL.SCANINPCS0</td></tr>
 <tr><td>TCELL19:OUT0</td><td>GTX_DUAL.RXHEADER01</td></tr>
 <tr><td>TCELL19:OUT1</td><td>CRC32_3.CRCOUT22, CRC64_1.CRCOUT22</td></tr>
 <tr><td>TCELL19:OUT3</td><td>CRC32_3.CRCOUT28, CRC64_1.CRCOUT28</td></tr>
@@ -39857,6 +39860,7 @@ non-inverted
         <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>
