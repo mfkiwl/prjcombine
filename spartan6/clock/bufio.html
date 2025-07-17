@@ -6910,7 +6910,7 @@ non-inverted
 </tbody>
 </table></div>
 <h2 id="tile-reg_l"><a class="header" href="#tile-reg_l">Tile REG_L</a></h2>
-<p>Cells: 1</p>
+<p>Cells: 2</p>
 <h3 id="bel-bufio2_0-2"><a class="header" href="#bel-bufio2_0-2">Bel BUFIO2_0</a></h3>
 <div class="table-wrapper"><table>
 <caption>spartan6 REG_L bel BUFIO2_0</caption>
@@ -7089,8 +7089,8 @@ non-inverted
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>LOCK0</td><td>output</td><td>OUT0</td></tr>
-<tr><td>LOCK1</td><td>output</td><td>OUT1</td></tr>
+<tr><td>LOCK0</td><td>output</td><td>TCELL0:OUT0</td></tr>
+<tr><td>LOCK1</td><td>output</td><td>TCELL0:OUT1</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-bufpll_ins_lr"><a class="header" href="#bel-bufpll_ins_lr">Bel BUFPLL_INS_LR</a></h3>
@@ -7100,10 +7100,10 @@ non-inverted
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>GCLK0</td><td>input</td><td>IMUX.CLK0</td></tr>
-<tr><td>GCLK1</td><td>input</td><td>IMUX.CLK1</td></tr>
-<tr><td>PLLIN0_GCLK</td><td>input</td><td>IMUX.CLK0</td></tr>
-<tr><td>PLLIN1_GCLK</td><td>input</td><td>IMUX.CLK1</td></tr>
+<tr><td>GCLK0</td><td>input</td><td>TCELL0:IMUX.CLK0</td></tr>
+<tr><td>GCLK1</td><td>input</td><td>TCELL0:IMUX.CLK1</td></tr>
+<tr><td>PLLIN0_GCLK</td><td>input</td><td>TCELL1:IMUX.CLK0</td></tr>
+<tr><td>PLLIN1_GCLK</td><td>input</td><td>TCELL1:IMUX.CLK1</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-bufio2_ins-2"><a class="header" href="#bel-bufio2_ins-2">Bel BUFIO2_INS</a></h3>
@@ -7149,12 +7149,12 @@ non-inverted
 <tr><th>Wire</th><th>Pins</th></tr>
 </thead>
 <tbody>
-<tr><td>IMUX.CLK0</td><td>BUFPLL_INS_LR.GCLK0</td></tr>
-<tr><td>IMUX.CLK1</td><td>BUFPLL_INS_LR.GCLK1</td></tr>
-<tr><td>OUT0</td><td>BUFPLL_OUT.LOCK0</td></tr>
-<tr><td>OUT1</td><td>BUFPLL_OUT.LOCK1</td></tr>
-<tr><td>IMUX.CLK0</td><td>BUFPLL_INS_LR.PLLIN0_GCLK</td></tr>
-<tr><td>IMUX.CLK1</td><td>BUFPLL_INS_LR.PLLIN1_GCLK</td></tr>
+<tr><td>TCELL0:IMUX.CLK0</td><td>BUFPLL_INS_LR.GCLK0</td></tr>
+<tr><td>TCELL0:IMUX.CLK1</td><td>BUFPLL_INS_LR.GCLK1</td></tr>
+<tr><td>TCELL0:OUT0</td><td>BUFPLL_OUT.LOCK0</td></tr>
+<tr><td>TCELL0:OUT1</td><td>BUFPLL_OUT.LOCK1</td></tr>
+<tr><td>TCELL1:IMUX.CLK0</td><td>BUFPLL_INS_LR.PLLIN0_GCLK</td></tr>
+<tr><td>TCELL1:IMUX.CLK1</td><td>BUFPLL_INS_LR.PLLIN1_GCLK</td></tr>
 </tbody>
 </table></div>
 <h3 id="bitstream-2"><a class="header" href="#bitstream-2">Bitstream</a></h3>
@@ -9924,7 +9924,7 @@ non-inverted
 </tbody>
 </table></div>
 <h2 id="tile-reg_r"><a class="header" href="#tile-reg_r">Tile REG_R</a></h2>
-<p>Cells: 1</p>
+<p>Cells: 2</p>
 <h3 id="bel-bufio2_0-3"><a class="header" href="#bel-bufio2_0-3">Bel BUFIO2_0</a></h3>
 <div class="table-wrapper"><table>
 <caption>spartan6 REG_R bel BUFIO2_0</caption>
@@ -10103,8 +10103,8 @@ non-inverted
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>LOCK0</td><td>output</td><td>OUT0</td></tr>
-<tr><td>LOCK1</td><td>output</td><td>OUT1</td></tr>
+<tr><td>LOCK0</td><td>output</td><td>TCELL0:OUT0</td></tr>
+<tr><td>LOCK1</td><td>output</td><td>TCELL0:OUT1</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-bufpll_ins_lr-1"><a class="header" href="#bel-bufpll_ins_lr-1">Bel BUFPLL_INS_LR</a></h3>
@@ -10114,10 +10114,10 @@ non-inverted
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>GCLK0</td><td>input</td><td>IMUX.CLK0</td></tr>
-<tr><td>GCLK1</td><td>input</td><td>IMUX.CLK1</td></tr>
-<tr><td>PLLIN0_GCLK</td><td>input</td><td>IMUX.CLK0</td></tr>
-<tr><td>PLLIN1_GCLK</td><td>input</td><td>IMUX.CLK1</td></tr>
+<tr><td>GCLK0</td><td>input</td><td>TCELL0:IMUX.CLK0</td></tr>
+<tr><td>GCLK1</td><td>input</td><td>TCELL0:IMUX.CLK1</td></tr>
+<tr><td>PLLIN0_GCLK</td><td>input</td><td>TCELL1:IMUX.CLK0</td></tr>
+<tr><td>PLLIN1_GCLK</td><td>input</td><td>TCELL1:IMUX.CLK1</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-bufio2_ins-3"><a class="header" href="#bel-bufio2_ins-3">Bel BUFIO2_INS</a></h3>
@@ -10163,12 +10163,12 @@ non-inverted
 <tr><th>Wire</th><th>Pins</th></tr>
 </thead>
 <tbody>
-<tr><td>IMUX.CLK0</td><td>BUFPLL_INS_LR.GCLK0</td></tr>
-<tr><td>IMUX.CLK1</td><td>BUFPLL_INS_LR.GCLK1</td></tr>
-<tr><td>OUT0</td><td>BUFPLL_OUT.LOCK0</td></tr>
-<tr><td>OUT1</td><td>BUFPLL_OUT.LOCK1</td></tr>
-<tr><td>IMUX.CLK0</td><td>BUFPLL_INS_LR.PLLIN0_GCLK</td></tr>
-<tr><td>IMUX.CLK1</td><td>BUFPLL_INS_LR.PLLIN1_GCLK</td></tr>
+<tr><td>TCELL0:IMUX.CLK0</td><td>BUFPLL_INS_LR.GCLK0</td></tr>
+<tr><td>TCELL0:IMUX.CLK1</td><td>BUFPLL_INS_LR.GCLK1</td></tr>
+<tr><td>TCELL0:OUT0</td><td>BUFPLL_OUT.LOCK0</td></tr>
+<tr><td>TCELL0:OUT1</td><td>BUFPLL_OUT.LOCK1</td></tr>
+<tr><td>TCELL1:IMUX.CLK0</td><td>BUFPLL_INS_LR.PLLIN0_GCLK</td></tr>
+<tr><td>TCELL1:IMUX.CLK1</td><td>BUFPLL_INS_LR.PLLIN1_GCLK</td></tr>
 </tbody>
 </table></div>
 <h3 id="bitstream-3"><a class="header" href="#bitstream-3">Bitstream</a></h3>

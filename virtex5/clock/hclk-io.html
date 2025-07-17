@@ -154,7 +154,7 @@
                     <main>
                         <h1 id="clock-io-and-cmt-buffers"><a class="header" href="#clock-io-and-cmt-buffers">Clock I/O and CMT buffers</a></h1>
 <h2 id="tile-hclk_ioi"><a class="header" href="#tile-hclk_ioi">Tile HCLK_IOI</a></h2>
-<p>Cells: 1</p>
+<p>Cells: 4</p>
 <h3 id="bel-ioclk"><a class="header" href="#bel-ioclk">Bel IOCLK</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex5 HCLK_IOI bel IOCLK</caption>
@@ -171,8 +171,8 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>CKINT0</td><td>input</td><td>IMUX.IMUX6</td></tr>
-<tr><td>CKINT1</td><td>input</td><td>IMUX.IMUX0</td></tr>
+<tr><td>CKINT0</td><td>input</td><td>TCELL0:IMUX.IMUX6</td></tr>
+<tr><td>CKINT1</td><td>input</td><td>TCELL3:IMUX.IMUX0</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-bufr0"><a class="header" href="#bel-bufr0">Bel BUFR0</a></h3>
@@ -182,8 +182,8 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>CE</td><td>input</td><td>IMUX.IMUX6</td></tr>
-<tr><td>CLR</td><td>input</td><td>IMUX.IMUX0</td></tr>
+<tr><td>CE</td><td>input</td><td>TCELL1:IMUX.IMUX6</td></tr>
+<tr><td>CLR</td><td>input</td><td>TCELL1:IMUX.IMUX0</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-bufr1"><a class="header" href="#bel-bufr1">Bel BUFR1</a></h3>
@@ -193,8 +193,8 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>CE</td><td>input</td><td>IMUX.IMUX6</td></tr>
-<tr><td>CLR</td><td>input</td><td>IMUX.IMUX0</td></tr>
+<tr><td>CE</td><td>input</td><td>TCELL2:IMUX.IMUX6</td></tr>
+<tr><td>CLR</td><td>input</td><td>TCELL2:IMUX.IMUX0</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-bufio0"><a class="header" href="#bel-bufio0">Bel BUFIO0</a></h3>
@@ -240,12 +240,12 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>DNPULSEOUT</td><td>output</td><td>OUT18</td></tr>
-<tr><td>OUTN1</td><td>output</td><td>OUT23</td></tr>
-<tr><td>OUTN65</td><td>output</td><td>OUT16</td></tr>
-<tr><td>RDY</td><td>output</td><td>OUT22</td></tr>
-<tr><td>RST</td><td>input</td><td>IMUX.IMUX0</td></tr>
-<tr><td>UPPULSEOUT</td><td>output</td><td>OUT17</td></tr>
+<tr><td>DNPULSEOUT</td><td>output</td><td>TCELL1:OUT18</td></tr>
+<tr><td>OUTN1</td><td>output</td><td>TCELL1:OUT23</td></tr>
+<tr><td>OUTN65</td><td>output</td><td>TCELL1:OUT16</td></tr>
+<tr><td>RDY</td><td>output</td><td>TCELL1:OUT22</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL0:IMUX.IMUX0</td></tr>
+<tr><td>UPPULSEOUT</td><td>output</td><td>TCELL1:OUT17</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-dci"><a class="header" href="#bel-dci">Bel DCI</a></h3>
@@ -255,18 +255,18 @@
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>DCIADDRESS0</td><td>output</td><td>OUT8</td></tr>
-<tr><td>DCIADDRESS1</td><td>output</td><td>OUT20</td></tr>
-<tr><td>DCIADDRESS2</td><td>output</td><td>OUT22</td></tr>
-<tr><td>DCIDATA</td><td>output</td><td>OUT22</td></tr>
-<tr><td>DCIDONE</td><td>output</td><td>OUT20</td></tr>
-<tr><td>DCIIOUPDATE</td><td>output</td><td>OUT8</td></tr>
-<tr><td>DCIREFIOUPDATE</td><td>output</td><td>OUT15</td></tr>
-<tr><td>DCISCLK</td><td>output</td><td>OUT20</td></tr>
-<tr><td>TSTCLK</td><td>input</td><td>IMUX.BYP2.SITE</td></tr>
-<tr><td>TSTHLN</td><td>input</td><td>IMUX.BYP6.SITE</td></tr>
-<tr><td>TSTHLP</td><td>input</td><td>IMUX.BYP3.SITE</td></tr>
-<tr><td>TSTRST</td><td>input</td><td>IMUX.BYP0.SITE</td></tr>
+<tr><td>DCIADDRESS0</td><td>output</td><td>TCELL1:OUT8</td></tr>
+<tr><td>DCIADDRESS1</td><td>output</td><td>TCELL1:OUT20</td></tr>
+<tr><td>DCIADDRESS2</td><td>output</td><td>TCELL1:OUT22</td></tr>
+<tr><td>DCIDATA</td><td>output</td><td>TCELL0:OUT22</td></tr>
+<tr><td>DCIDONE</td><td>output</td><td>TCELL0:OUT20</td></tr>
+<tr><td>DCIIOUPDATE</td><td>output</td><td>TCELL0:OUT8</td></tr>
+<tr><td>DCIREFIOUPDATE</td><td>output</td><td>TCELL0:OUT15</td></tr>
+<tr><td>DCISCLK</td><td>output</td><td>TCELL0:OUT20</td></tr>
+<tr><td>TSTCLK</td><td>input</td><td>TCELL1:IMUX.BYP2.SITE</td></tr>
+<tr><td>TSTHLN</td><td>input</td><td>TCELL1:IMUX.BYP6.SITE</td></tr>
+<tr><td>TSTHLP</td><td>input</td><td>TCELL1:IMUX.BYP3.SITE</td></tr>
+<tr><td>TSTRST</td><td>input</td><td>TCELL1:IMUX.BYP0.SITE</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-wires"><a class="header" href="#bel-wires">Bel wires</a></h3>
@@ -276,28 +276,28 @@
 <tr><th>Wire</th><th>Pins</th></tr>
 </thead>
 <tbody>
-<tr><td>IMUX.IMUX0</td><td>IDELAYCTRL.RST</td></tr>
-<tr><td>IMUX.IMUX6</td><td>RCLK.CKINT0</td></tr>
-<tr><td>OUT8</td><td>DCI.DCIIOUPDATE</td></tr>
-<tr><td>OUT15</td><td>DCI.DCIREFIOUPDATE</td></tr>
-<tr><td>OUT20</td><td>DCI.DCIDONE, DCI.DCISCLK</td></tr>
-<tr><td>OUT22</td><td>DCI.DCIDATA</td></tr>
-<tr><td>IMUX.BYP0.SITE</td><td>DCI.TSTRST</td></tr>
-<tr><td>IMUX.BYP2.SITE</td><td>DCI.TSTCLK</td></tr>
-<tr><td>IMUX.BYP3.SITE</td><td>DCI.TSTHLP</td></tr>
-<tr><td>IMUX.BYP6.SITE</td><td>DCI.TSTHLN</td></tr>
-<tr><td>IMUX.IMUX0</td><td>BUFR0.CLR</td></tr>
-<tr><td>IMUX.IMUX6</td><td>BUFR0.CE</td></tr>
-<tr><td>OUT8</td><td>DCI.DCIADDRESS0</td></tr>
-<tr><td>OUT16</td><td>IDELAYCTRL.OUTN65</td></tr>
-<tr><td>OUT17</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
-<tr><td>OUT18</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
-<tr><td>OUT20</td><td>DCI.DCIADDRESS1</td></tr>
-<tr><td>OUT22</td><td>IDELAYCTRL.RDY, DCI.DCIADDRESS2</td></tr>
-<tr><td>OUT23</td><td>IDELAYCTRL.OUTN1</td></tr>
-<tr><td>IMUX.IMUX0</td><td>BUFR1.CLR</td></tr>
-<tr><td>IMUX.IMUX6</td><td>BUFR1.CE</td></tr>
-<tr><td>IMUX.IMUX0</td><td>RCLK.CKINT1</td></tr>
+<tr><td>TCELL0:IMUX.IMUX0</td><td>IDELAYCTRL.RST</td></tr>
+<tr><td>TCELL0:IMUX.IMUX6</td><td>RCLK.CKINT0</td></tr>
+<tr><td>TCELL0:OUT8</td><td>DCI.DCIIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT15</td><td>DCI.DCIREFIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT20</td><td>DCI.DCIDONE, DCI.DCISCLK</td></tr>
+<tr><td>TCELL0:OUT22</td><td>DCI.DCIDATA</td></tr>
+<tr><td>TCELL1:IMUX.BYP0.SITE</td><td>DCI.TSTRST</td></tr>
+<tr><td>TCELL1:IMUX.BYP2.SITE</td><td>DCI.TSTCLK</td></tr>
+<tr><td>TCELL1:IMUX.BYP3.SITE</td><td>DCI.TSTHLP</td></tr>
+<tr><td>TCELL1:IMUX.BYP6.SITE</td><td>DCI.TSTHLN</td></tr>
+<tr><td>TCELL1:IMUX.IMUX0</td><td>BUFR0.CLR</td></tr>
+<tr><td>TCELL1:IMUX.IMUX6</td><td>BUFR0.CE</td></tr>
+<tr><td>TCELL1:OUT8</td><td>DCI.DCIADDRESS0</td></tr>
+<tr><td>TCELL1:OUT16</td><td>IDELAYCTRL.OUTN65</td></tr>
+<tr><td>TCELL1:OUT17</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT18</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT20</td><td>DCI.DCIADDRESS1</td></tr>
+<tr><td>TCELL1:OUT22</td><td>IDELAYCTRL.RDY, DCI.DCIADDRESS2</td></tr>
+<tr><td>TCELL1:OUT23</td><td>IDELAYCTRL.OUTN1</td></tr>
+<tr><td>TCELL2:IMUX.IMUX0</td><td>BUFR1.CLR</td></tr>
+<tr><td>TCELL2:IMUX.IMUX6</td><td>BUFR1.CE</td></tr>
+<tr><td>TCELL3:IMUX.IMUX0</td><td>RCLK.CKINT1</td></tr>
 </tbody>
 </table></div>
 <h3 id="bitstream"><a class="header" href="#bitstream">Bitstream</a></h3>
@@ -2297,7 +2297,7 @@ non-inverted
 </tbody>
 </table></div>
 <h2 id="tile-hclk_ioi_center"><a class="header" href="#tile-hclk_ioi_center">Tile HCLK_IOI_CENTER</a></h2>
-<p>Cells: 1</p>
+<p>Cells: 2</p>
 <h3 id="bel-ioclk-1"><a class="header" href="#bel-ioclk-1">Bel IOCLK</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex5 HCLK_IOI_CENTER bel IOCLK</caption>
@@ -2350,12 +2350,12 @@ non-inverted
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>DNPULSEOUT</td><td>output</td><td>OUT18</td></tr>
-<tr><td>OUTN1</td><td>output</td><td>OUT23</td></tr>
-<tr><td>OUTN65</td><td>output</td><td>OUT16</td></tr>
-<tr><td>RDY</td><td>output</td><td>OUT22</td></tr>
-<tr><td>RST</td><td>input</td><td>IMUX.IMUX0</td></tr>
-<tr><td>UPPULSEOUT</td><td>output</td><td>OUT17</td></tr>
+<tr><td>DNPULSEOUT</td><td>output</td><td>TCELL1:OUT18</td></tr>
+<tr><td>OUTN1</td><td>output</td><td>TCELL1:OUT23</td></tr>
+<tr><td>OUTN65</td><td>output</td><td>TCELL1:OUT16</td></tr>
+<tr><td>RDY</td><td>output</td><td>TCELL1:OUT22</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL0:IMUX.IMUX0</td></tr>
+<tr><td>UPPULSEOUT</td><td>output</td><td>TCELL1:OUT17</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-dci-1"><a class="header" href="#bel-dci-1">Bel DCI</a></h3>
@@ -2365,18 +2365,18 @@ non-inverted
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>DCIADDRESS0</td><td>output</td><td>OUT8</td></tr>
-<tr><td>DCIADDRESS1</td><td>output</td><td>OUT20</td></tr>
-<tr><td>DCIADDRESS2</td><td>output</td><td>OUT22</td></tr>
-<tr><td>DCIDATA</td><td>output</td><td>OUT22</td></tr>
-<tr><td>DCIDONE</td><td>output</td><td>OUT20</td></tr>
-<tr><td>DCIIOUPDATE</td><td>output</td><td>OUT8</td></tr>
-<tr><td>DCIREFIOUPDATE</td><td>output</td><td>OUT15</td></tr>
-<tr><td>DCISCLK</td><td>output</td><td>OUT20</td></tr>
-<tr><td>TSTCLK</td><td>input</td><td>IMUX.BYP2.SITE</td></tr>
-<tr><td>TSTHLN</td><td>input</td><td>IMUX.BYP6.SITE</td></tr>
-<tr><td>TSTHLP</td><td>input</td><td>IMUX.BYP3.SITE</td></tr>
-<tr><td>TSTRST</td><td>input</td><td>IMUX.BYP0.SITE</td></tr>
+<tr><td>DCIADDRESS0</td><td>output</td><td>TCELL1:OUT8</td></tr>
+<tr><td>DCIADDRESS1</td><td>output</td><td>TCELL1:OUT20</td></tr>
+<tr><td>DCIADDRESS2</td><td>output</td><td>TCELL1:OUT22</td></tr>
+<tr><td>DCIDATA</td><td>output</td><td>TCELL0:OUT22</td></tr>
+<tr><td>DCIDONE</td><td>output</td><td>TCELL0:OUT20</td></tr>
+<tr><td>DCIIOUPDATE</td><td>output</td><td>TCELL0:OUT8</td></tr>
+<tr><td>DCIREFIOUPDATE</td><td>output</td><td>TCELL0:OUT15</td></tr>
+<tr><td>DCISCLK</td><td>output</td><td>TCELL0:OUT20</td></tr>
+<tr><td>TSTCLK</td><td>input</td><td>TCELL1:IMUX.BYP2.SITE</td></tr>
+<tr><td>TSTHLN</td><td>input</td><td>TCELL1:IMUX.BYP6.SITE</td></tr>
+<tr><td>TSTHLP</td><td>input</td><td>TCELL1:IMUX.BYP3.SITE</td></tr>
+<tr><td>TSTRST</td><td>input</td><td>TCELL1:IMUX.BYP0.SITE</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-wires-1"><a class="header" href="#bel-wires-1">Bel wires</a></h3>
@@ -2386,22 +2386,22 @@ non-inverted
 <tr><th>Wire</th><th>Pins</th></tr>
 </thead>
 <tbody>
-<tr><td>IMUX.IMUX0</td><td>IDELAYCTRL.RST</td></tr>
-<tr><td>OUT8</td><td>DCI.DCIIOUPDATE</td></tr>
-<tr><td>OUT15</td><td>DCI.DCIREFIOUPDATE</td></tr>
-<tr><td>OUT20</td><td>DCI.DCIDONE, DCI.DCISCLK</td></tr>
-<tr><td>OUT22</td><td>DCI.DCIDATA</td></tr>
-<tr><td>IMUX.BYP0.SITE</td><td>DCI.TSTRST</td></tr>
-<tr><td>IMUX.BYP2.SITE</td><td>DCI.TSTCLK</td></tr>
-<tr><td>IMUX.BYP3.SITE</td><td>DCI.TSTHLP</td></tr>
-<tr><td>IMUX.BYP6.SITE</td><td>DCI.TSTHLN</td></tr>
-<tr><td>OUT8</td><td>DCI.DCIADDRESS0</td></tr>
-<tr><td>OUT16</td><td>IDELAYCTRL.OUTN65</td></tr>
-<tr><td>OUT17</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
-<tr><td>OUT18</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
-<tr><td>OUT20</td><td>DCI.DCIADDRESS1</td></tr>
-<tr><td>OUT22</td><td>IDELAYCTRL.RDY, DCI.DCIADDRESS2</td></tr>
-<tr><td>OUT23</td><td>IDELAYCTRL.OUTN1</td></tr>
+<tr><td>TCELL0:IMUX.IMUX0</td><td>IDELAYCTRL.RST</td></tr>
+<tr><td>TCELL0:OUT8</td><td>DCI.DCIIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT15</td><td>DCI.DCIREFIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT20</td><td>DCI.DCIDONE, DCI.DCISCLK</td></tr>
+<tr><td>TCELL0:OUT22</td><td>DCI.DCIDATA</td></tr>
+<tr><td>TCELL1:IMUX.BYP0.SITE</td><td>DCI.TSTRST</td></tr>
+<tr><td>TCELL1:IMUX.BYP2.SITE</td><td>DCI.TSTCLK</td></tr>
+<tr><td>TCELL1:IMUX.BYP3.SITE</td><td>DCI.TSTHLP</td></tr>
+<tr><td>TCELL1:IMUX.BYP6.SITE</td><td>DCI.TSTHLN</td></tr>
+<tr><td>TCELL1:OUT8</td><td>DCI.DCIADDRESS0</td></tr>
+<tr><td>TCELL1:OUT16</td><td>IDELAYCTRL.OUTN65</td></tr>
+<tr><td>TCELL1:OUT17</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT18</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT20</td><td>DCI.DCIADDRESS1</td></tr>
+<tr><td>TCELL1:OUT22</td><td>IDELAYCTRL.RDY, DCI.DCIADDRESS2</td></tr>
+<tr><td>TCELL1:OUT23</td><td>IDELAYCTRL.OUTN1</td></tr>
 </tbody>
 </table></div>
 <h3 id="bitstream-1"><a class="header" href="#bitstream-1">Bitstream</a></h3>
@@ -3987,7 +3987,7 @@ non-inverted
 </tbody>
 </table></div>
 <h2 id="tile-hclk_ioi_botcen"><a class="header" href="#tile-hclk_ioi_botcen">Tile HCLK_IOI_BOTCEN</a></h2>
-<p>Cells: 1</p>
+<p>Cells: 2</p>
 <h3 id="bel-ioclk-2"><a class="header" href="#bel-ioclk-2">Bel IOCLK</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex5 HCLK_IOI_BOTCEN bel IOCLK</caption>
@@ -4022,12 +4022,12 @@ non-inverted
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>DNPULSEOUT</td><td>output</td><td>OUT18</td></tr>
-<tr><td>OUTN1</td><td>output</td><td>OUT23</td></tr>
-<tr><td>OUTN65</td><td>output</td><td>OUT16</td></tr>
-<tr><td>RDY</td><td>output</td><td>OUT22</td></tr>
-<tr><td>RST</td><td>input</td><td>IMUX.IMUX0</td></tr>
-<tr><td>UPPULSEOUT</td><td>output</td><td>OUT17</td></tr>
+<tr><td>DNPULSEOUT</td><td>output</td><td>TCELL1:OUT18</td></tr>
+<tr><td>OUTN1</td><td>output</td><td>TCELL1:OUT23</td></tr>
+<tr><td>OUTN65</td><td>output</td><td>TCELL1:OUT16</td></tr>
+<tr><td>RDY</td><td>output</td><td>TCELL1:OUT22</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL0:IMUX.IMUX0</td></tr>
+<tr><td>UPPULSEOUT</td><td>output</td><td>TCELL1:OUT17</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-dci-2"><a class="header" href="#bel-dci-2">Bel DCI</a></h3>
@@ -4037,18 +4037,18 @@ non-inverted
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>DCIADDRESS0</td><td>output</td><td>OUT8</td></tr>
-<tr><td>DCIADDRESS1</td><td>output</td><td>OUT20</td></tr>
-<tr><td>DCIADDRESS2</td><td>output</td><td>OUT22</td></tr>
-<tr><td>DCIDATA</td><td>output</td><td>OUT22</td></tr>
-<tr><td>DCIDONE</td><td>output</td><td>OUT20</td></tr>
-<tr><td>DCIIOUPDATE</td><td>output</td><td>OUT8</td></tr>
-<tr><td>DCIREFIOUPDATE</td><td>output</td><td>OUT15</td></tr>
-<tr><td>DCISCLK</td><td>output</td><td>OUT20</td></tr>
-<tr><td>TSTCLK</td><td>input</td><td>IMUX.BYP2.SITE</td></tr>
-<tr><td>TSTHLN</td><td>input</td><td>IMUX.BYP6.SITE</td></tr>
-<tr><td>TSTHLP</td><td>input</td><td>IMUX.BYP3.SITE</td></tr>
-<tr><td>TSTRST</td><td>input</td><td>IMUX.BYP0.SITE</td></tr>
+<tr><td>DCIADDRESS0</td><td>output</td><td>TCELL1:OUT8</td></tr>
+<tr><td>DCIADDRESS1</td><td>output</td><td>TCELL1:OUT20</td></tr>
+<tr><td>DCIADDRESS2</td><td>output</td><td>TCELL1:OUT22</td></tr>
+<tr><td>DCIDATA</td><td>output</td><td>TCELL0:OUT22</td></tr>
+<tr><td>DCIDONE</td><td>output</td><td>TCELL0:OUT20</td></tr>
+<tr><td>DCIIOUPDATE</td><td>output</td><td>TCELL0:OUT8</td></tr>
+<tr><td>DCIREFIOUPDATE</td><td>output</td><td>TCELL0:OUT15</td></tr>
+<tr><td>DCISCLK</td><td>output</td><td>TCELL0:OUT20</td></tr>
+<tr><td>TSTCLK</td><td>input</td><td>TCELL1:IMUX.BYP2.SITE</td></tr>
+<tr><td>TSTHLN</td><td>input</td><td>TCELL1:IMUX.BYP6.SITE</td></tr>
+<tr><td>TSTHLP</td><td>input</td><td>TCELL1:IMUX.BYP3.SITE</td></tr>
+<tr><td>TSTRST</td><td>input</td><td>TCELL1:IMUX.BYP0.SITE</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-wires-2"><a class="header" href="#bel-wires-2">Bel wires</a></h3>
@@ -4058,22 +4058,22 @@ non-inverted
 <tr><th>Wire</th><th>Pins</th></tr>
 </thead>
 <tbody>
-<tr><td>IMUX.IMUX0</td><td>IDELAYCTRL.RST</td></tr>
-<tr><td>OUT8</td><td>DCI.DCIIOUPDATE</td></tr>
-<tr><td>OUT15</td><td>DCI.DCIREFIOUPDATE</td></tr>
-<tr><td>OUT20</td><td>DCI.DCIDONE, DCI.DCISCLK</td></tr>
-<tr><td>OUT22</td><td>DCI.DCIDATA</td></tr>
-<tr><td>IMUX.BYP0.SITE</td><td>DCI.TSTRST</td></tr>
-<tr><td>IMUX.BYP2.SITE</td><td>DCI.TSTCLK</td></tr>
-<tr><td>IMUX.BYP3.SITE</td><td>DCI.TSTHLP</td></tr>
-<tr><td>IMUX.BYP6.SITE</td><td>DCI.TSTHLN</td></tr>
-<tr><td>OUT8</td><td>DCI.DCIADDRESS0</td></tr>
-<tr><td>OUT16</td><td>IDELAYCTRL.OUTN65</td></tr>
-<tr><td>OUT17</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
-<tr><td>OUT18</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
-<tr><td>OUT20</td><td>DCI.DCIADDRESS1</td></tr>
-<tr><td>OUT22</td><td>IDELAYCTRL.RDY, DCI.DCIADDRESS2</td></tr>
-<tr><td>OUT23</td><td>IDELAYCTRL.OUTN1</td></tr>
+<tr><td>TCELL0:IMUX.IMUX0</td><td>IDELAYCTRL.RST</td></tr>
+<tr><td>TCELL0:OUT8</td><td>DCI.DCIIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT15</td><td>DCI.DCIREFIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT20</td><td>DCI.DCIDONE, DCI.DCISCLK</td></tr>
+<tr><td>TCELL0:OUT22</td><td>DCI.DCIDATA</td></tr>
+<tr><td>TCELL1:IMUX.BYP0.SITE</td><td>DCI.TSTRST</td></tr>
+<tr><td>TCELL1:IMUX.BYP2.SITE</td><td>DCI.TSTCLK</td></tr>
+<tr><td>TCELL1:IMUX.BYP3.SITE</td><td>DCI.TSTHLP</td></tr>
+<tr><td>TCELL1:IMUX.BYP6.SITE</td><td>DCI.TSTHLN</td></tr>
+<tr><td>TCELL1:OUT8</td><td>DCI.DCIADDRESS0</td></tr>
+<tr><td>TCELL1:OUT16</td><td>IDELAYCTRL.OUTN65</td></tr>
+<tr><td>TCELL1:OUT17</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT18</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT20</td><td>DCI.DCIADDRESS1</td></tr>
+<tr><td>TCELL1:OUT22</td><td>IDELAYCTRL.RDY, DCI.DCIADDRESS2</td></tr>
+<tr><td>TCELL1:OUT23</td><td>IDELAYCTRL.OUTN1</td></tr>
 </tbody>
 </table></div>
 <h3 id="bitstream-2"><a class="header" href="#bitstream-2">Bitstream</a></h3>
@@ -5649,7 +5649,7 @@ non-inverted
 </tbody>
 </table></div>
 <h2 id="tile-hclk_ioi_topcen"><a class="header" href="#tile-hclk_ioi_topcen">Tile HCLK_IOI_TOPCEN</a></h2>
-<p>Cells: 1</p>
+<p>Cells: 2</p>
 <h3 id="bel-ioclk-3"><a class="header" href="#bel-ioclk-3">Bel IOCLK</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex5 HCLK_IOI_TOPCEN bel IOCLK</caption>
@@ -5684,12 +5684,12 @@ non-inverted
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>DNPULSEOUT</td><td>output</td><td>OUT23</td></tr>
-<tr><td>OUTN1</td><td>output</td><td>OUT20</td></tr>
-<tr><td>OUTN65</td><td>output</td><td>OUT8</td></tr>
-<tr><td>RDY</td><td>output</td><td>OUT22</td></tr>
-<tr><td>RST</td><td>input</td><td>IMUX.IMUX6</td></tr>
-<tr><td>UPPULSEOUT</td><td>output</td><td>OUT15</td></tr>
+<tr><td>DNPULSEOUT</td><td>output</td><td>TCELL0:OUT23</td></tr>
+<tr><td>OUTN1</td><td>output</td><td>TCELL0:OUT20</td></tr>
+<tr><td>OUTN65</td><td>output</td><td>TCELL0:OUT8</td></tr>
+<tr><td>RDY</td><td>output</td><td>TCELL0:OUT22</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL1:IMUX.IMUX6</td></tr>
+<tr><td>UPPULSEOUT</td><td>output</td><td>TCELL0:OUT15</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-dci-3"><a class="header" href="#bel-dci-3">Bel DCI</a></h3>
@@ -5699,18 +5699,18 @@ non-inverted
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>DCIADDRESS0</td><td>output</td><td>OUT8</td></tr>
-<tr><td>DCIADDRESS1</td><td>output</td><td>OUT20</td></tr>
-<tr><td>DCIADDRESS2</td><td>output</td><td>OUT22</td></tr>
-<tr><td>DCIDATA</td><td>output</td><td>OUT22</td></tr>
-<tr><td>DCIDONE</td><td>output</td><td>OUT20</td></tr>
-<tr><td>DCIIOUPDATE</td><td>output</td><td>OUT8</td></tr>
-<tr><td>DCIREFIOUPDATE</td><td>output</td><td>OUT15</td></tr>
-<tr><td>DCISCLK</td><td>output</td><td>OUT20</td></tr>
-<tr><td>TSTCLK</td><td>input</td><td>IMUX.BYP2.SITE</td></tr>
-<tr><td>TSTHLN</td><td>input</td><td>IMUX.BYP6.SITE</td></tr>
-<tr><td>TSTHLP</td><td>input</td><td>IMUX.BYP3.SITE</td></tr>
-<tr><td>TSTRST</td><td>input</td><td>IMUX.BYP0.SITE</td></tr>
+<tr><td>DCIADDRESS0</td><td>output</td><td>TCELL0:OUT8</td></tr>
+<tr><td>DCIADDRESS1</td><td>output</td><td>TCELL0:OUT20</td></tr>
+<tr><td>DCIADDRESS2</td><td>output</td><td>TCELL0:OUT22</td></tr>
+<tr><td>DCIDATA</td><td>output</td><td>TCELL0:OUT22</td></tr>
+<tr><td>DCIDONE</td><td>output</td><td>TCELL0:OUT20</td></tr>
+<tr><td>DCIIOUPDATE</td><td>output</td><td>TCELL0:OUT8</td></tr>
+<tr><td>DCIREFIOUPDATE</td><td>output</td><td>TCELL0:OUT15</td></tr>
+<tr><td>DCISCLK</td><td>output</td><td>TCELL0:OUT20</td></tr>
+<tr><td>TSTCLK</td><td>input</td><td>TCELL0:IMUX.BYP2.SITE</td></tr>
+<tr><td>TSTHLN</td><td>input</td><td>TCELL0:IMUX.BYP6.SITE</td></tr>
+<tr><td>TSTHLP</td><td>input</td><td>TCELL0:IMUX.BYP3.SITE</td></tr>
+<tr><td>TSTRST</td><td>input</td><td>TCELL0:IMUX.BYP0.SITE</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-wires-3"><a class="header" href="#bel-wires-3">Bel wires</a></h3>
@@ -5720,16 +5720,16 @@ non-inverted
 <tr><th>Wire</th><th>Pins</th></tr>
 </thead>
 <tbody>
-<tr><td>IMUX.BYP0.SITE</td><td>DCI.TSTRST</td></tr>
-<tr><td>IMUX.BYP2.SITE</td><td>DCI.TSTCLK</td></tr>
-<tr><td>IMUX.BYP3.SITE</td><td>DCI.TSTHLP</td></tr>
-<tr><td>IMUX.BYP6.SITE</td><td>DCI.TSTHLN</td></tr>
-<tr><td>OUT8</td><td>IDELAYCTRL.OUTN65, DCI.DCIADDRESS0, DCI.DCIIOUPDATE</td></tr>
-<tr><td>OUT15</td><td>IDELAYCTRL.UPPULSEOUT, DCI.DCIREFIOUPDATE</td></tr>
-<tr><td>OUT20</td><td>IDELAYCTRL.OUTN1, DCI.DCIADDRESS1, DCI.DCIDONE, DCI.DCISCLK</td></tr>
-<tr><td>OUT22</td><td>IDELAYCTRL.RDY, DCI.DCIADDRESS2, DCI.DCIDATA</td></tr>
-<tr><td>OUT23</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
-<tr><td>IMUX.IMUX6</td><td>IDELAYCTRL.RST</td></tr>
+<tr><td>TCELL0:IMUX.BYP0.SITE</td><td>DCI.TSTRST</td></tr>
+<tr><td>TCELL0:IMUX.BYP2.SITE</td><td>DCI.TSTCLK</td></tr>
+<tr><td>TCELL0:IMUX.BYP3.SITE</td><td>DCI.TSTHLP</td></tr>
+<tr><td>TCELL0:IMUX.BYP6.SITE</td><td>DCI.TSTHLN</td></tr>
+<tr><td>TCELL0:OUT8</td><td>IDELAYCTRL.OUTN65, DCI.DCIADDRESS0, DCI.DCIIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT15</td><td>IDELAYCTRL.UPPULSEOUT, DCI.DCIREFIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT20</td><td>IDELAYCTRL.OUTN1, DCI.DCIADDRESS1, DCI.DCIDONE, DCI.DCISCLK</td></tr>
+<tr><td>TCELL0:OUT22</td><td>IDELAYCTRL.RDY, DCI.DCIADDRESS2, DCI.DCIDATA</td></tr>
+<tr><td>TCELL0:OUT23</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
+<tr><td>TCELL1:IMUX.IMUX6</td><td>IDELAYCTRL.RST</td></tr>
 </tbody>
 </table></div>
 <h3 id="bitstream-3"><a class="header" href="#bitstream-3">Bitstream</a></h3>
@@ -7310,7 +7310,7 @@ non-inverted
 </tbody>
 </table></div>
 <h2 id="tile-hclk_ioi_cmt"><a class="header" href="#tile-hclk_ioi_cmt">Tile HCLK_IOI_CMT</a></h2>
-<p>Cells: 1</p>
+<p>Cells: 2</p>
 <h3 id="bel-ioclk-4"><a class="header" href="#bel-ioclk-4">Bel IOCLK</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex5 HCLK_IOI_CMT bel IOCLK</caption>
@@ -7345,12 +7345,12 @@ non-inverted
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>DNPULSEOUT</td><td>output</td><td>OUT23</td></tr>
-<tr><td>OUTN1</td><td>output</td><td>OUT20</td></tr>
-<tr><td>OUTN65</td><td>output</td><td>OUT8</td></tr>
-<tr><td>RDY</td><td>output</td><td>OUT22</td></tr>
-<tr><td>RST</td><td>input</td><td>IMUX.IMUX6</td></tr>
-<tr><td>UPPULSEOUT</td><td>output</td><td>OUT15</td></tr>
+<tr><td>DNPULSEOUT</td><td>output</td><td>TCELL0:OUT23</td></tr>
+<tr><td>OUTN1</td><td>output</td><td>TCELL0:OUT20</td></tr>
+<tr><td>OUTN65</td><td>output</td><td>TCELL0:OUT8</td></tr>
+<tr><td>RDY</td><td>output</td><td>TCELL0:OUT22</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL1:IMUX.IMUX6</td></tr>
+<tr><td>UPPULSEOUT</td><td>output</td><td>TCELL0:OUT15</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-dci-4"><a class="header" href="#bel-dci-4">Bel DCI</a></h3>
@@ -7360,18 +7360,18 @@ non-inverted
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>DCIADDRESS0</td><td>output</td><td>OUT8</td></tr>
-<tr><td>DCIADDRESS1</td><td>output</td><td>OUT20</td></tr>
-<tr><td>DCIADDRESS2</td><td>output</td><td>OUT22</td></tr>
-<tr><td>DCIDATA</td><td>output</td><td>OUT22</td></tr>
-<tr><td>DCIDONE</td><td>output</td><td>OUT20</td></tr>
-<tr><td>DCIIOUPDATE</td><td>output</td><td>OUT8</td></tr>
-<tr><td>DCIREFIOUPDATE</td><td>output</td><td>OUT15</td></tr>
-<tr><td>DCISCLK</td><td>output</td><td>OUT20</td></tr>
-<tr><td>TSTCLK</td><td>input</td><td>IMUX.BYP2.SITE</td></tr>
-<tr><td>TSTHLN</td><td>input</td><td>IMUX.BYP6.SITE</td></tr>
-<tr><td>TSTHLP</td><td>input</td><td>IMUX.BYP3.SITE</td></tr>
-<tr><td>TSTRST</td><td>input</td><td>IMUX.BYP0.SITE</td></tr>
+<tr><td>DCIADDRESS0</td><td>output</td><td>TCELL0:OUT8</td></tr>
+<tr><td>DCIADDRESS1</td><td>output</td><td>TCELL0:OUT20</td></tr>
+<tr><td>DCIADDRESS2</td><td>output</td><td>TCELL0:OUT22</td></tr>
+<tr><td>DCIDATA</td><td>output</td><td>TCELL0:OUT22</td></tr>
+<tr><td>DCIDONE</td><td>output</td><td>TCELL0:OUT20</td></tr>
+<tr><td>DCIIOUPDATE</td><td>output</td><td>TCELL0:OUT8</td></tr>
+<tr><td>DCIREFIOUPDATE</td><td>output</td><td>TCELL0:OUT15</td></tr>
+<tr><td>DCISCLK</td><td>output</td><td>TCELL0:OUT20</td></tr>
+<tr><td>TSTCLK</td><td>input</td><td>TCELL0:IMUX.BYP2.SITE</td></tr>
+<tr><td>TSTHLN</td><td>input</td><td>TCELL0:IMUX.BYP6.SITE</td></tr>
+<tr><td>TSTHLP</td><td>input</td><td>TCELL0:IMUX.BYP3.SITE</td></tr>
+<tr><td>TSTRST</td><td>input</td><td>TCELL0:IMUX.BYP0.SITE</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-wires-4"><a class="header" href="#bel-wires-4">Bel wires</a></h3>
@@ -7381,16 +7381,16 @@ non-inverted
 <tr><th>Wire</th><th>Pins</th></tr>
 </thead>
 <tbody>
-<tr><td>IMUX.BYP0.SITE</td><td>DCI.TSTRST</td></tr>
-<tr><td>IMUX.BYP2.SITE</td><td>DCI.TSTCLK</td></tr>
-<tr><td>IMUX.BYP3.SITE</td><td>DCI.TSTHLP</td></tr>
-<tr><td>IMUX.BYP6.SITE</td><td>DCI.TSTHLN</td></tr>
-<tr><td>OUT8</td><td>IDELAYCTRL.OUTN65, DCI.DCIADDRESS0, DCI.DCIIOUPDATE</td></tr>
-<tr><td>OUT15</td><td>IDELAYCTRL.UPPULSEOUT, DCI.DCIREFIOUPDATE</td></tr>
-<tr><td>OUT20</td><td>IDELAYCTRL.OUTN1, DCI.DCIADDRESS1, DCI.DCIDONE, DCI.DCISCLK</td></tr>
-<tr><td>OUT22</td><td>IDELAYCTRL.RDY, DCI.DCIADDRESS2, DCI.DCIDATA</td></tr>
-<tr><td>OUT23</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
-<tr><td>IMUX.IMUX6</td><td>IDELAYCTRL.RST</td></tr>
+<tr><td>TCELL0:IMUX.BYP0.SITE</td><td>DCI.TSTRST</td></tr>
+<tr><td>TCELL0:IMUX.BYP2.SITE</td><td>DCI.TSTCLK</td></tr>
+<tr><td>TCELL0:IMUX.BYP3.SITE</td><td>DCI.TSTHLP</td></tr>
+<tr><td>TCELL0:IMUX.BYP6.SITE</td><td>DCI.TSTHLN</td></tr>
+<tr><td>TCELL0:OUT8</td><td>IDELAYCTRL.OUTN65, DCI.DCIADDRESS0, DCI.DCIIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT15</td><td>IDELAYCTRL.UPPULSEOUT, DCI.DCIREFIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT20</td><td>IDELAYCTRL.OUTN1, DCI.DCIADDRESS1, DCI.DCIDONE, DCI.DCISCLK</td></tr>
+<tr><td>TCELL0:OUT22</td><td>IDELAYCTRL.RDY, DCI.DCIADDRESS2, DCI.DCIDATA</td></tr>
+<tr><td>TCELL0:OUT23</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
+<tr><td>TCELL1:IMUX.IMUX6</td><td>IDELAYCTRL.RST</td></tr>
 </tbody>
 </table></div>
 <h3 id="bitstream-4"><a class="header" href="#bitstream-4">Bitstream</a></h3>
@@ -8966,7 +8966,7 @@ non-inverted
 </tbody>
 </table></div>
 <h2 id="tile-hclk_cmt_ioi"><a class="header" href="#tile-hclk_cmt_ioi">Tile HCLK_CMT_IOI</a></h2>
-<p>Cells: 1</p>
+<p>Cells: 2</p>
 <h3 id="bel-ioclk-5"><a class="header" href="#bel-ioclk-5">Bel IOCLK</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex5 HCLK_CMT_IOI bel IOCLK</caption>
@@ -9001,12 +9001,12 @@ non-inverted
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>DNPULSEOUT</td><td>output</td><td>OUT18</td></tr>
-<tr><td>OUTN1</td><td>output</td><td>OUT23</td></tr>
-<tr><td>OUTN65</td><td>output</td><td>OUT16</td></tr>
-<tr><td>RDY</td><td>output</td><td>OUT22</td></tr>
-<tr><td>RST</td><td>input</td><td>IMUX.IMUX0</td></tr>
-<tr><td>UPPULSEOUT</td><td>output</td><td>OUT17</td></tr>
+<tr><td>DNPULSEOUT</td><td>output</td><td>TCELL1:OUT18</td></tr>
+<tr><td>OUTN1</td><td>output</td><td>TCELL1:OUT23</td></tr>
+<tr><td>OUTN65</td><td>output</td><td>TCELL1:OUT16</td></tr>
+<tr><td>RDY</td><td>output</td><td>TCELL1:OUT22</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL0:IMUX.IMUX0</td></tr>
+<tr><td>UPPULSEOUT</td><td>output</td><td>TCELL1:OUT17</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-dci-5"><a class="header" href="#bel-dci-5">Bel DCI</a></h3>
@@ -9016,18 +9016,18 @@ non-inverted
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>DCIADDRESS0</td><td>output</td><td>OUT8</td></tr>
-<tr><td>DCIADDRESS1</td><td>output</td><td>OUT20</td></tr>
-<tr><td>DCIADDRESS2</td><td>output</td><td>OUT22</td></tr>
-<tr><td>DCIDATA</td><td>output</td><td>OUT22</td></tr>
-<tr><td>DCIDONE</td><td>output</td><td>OUT20</td></tr>
-<tr><td>DCIIOUPDATE</td><td>output</td><td>OUT8</td></tr>
-<tr><td>DCIREFIOUPDATE</td><td>output</td><td>OUT15</td></tr>
-<tr><td>DCISCLK</td><td>output</td><td>OUT20</td></tr>
-<tr><td>TSTCLK</td><td>input</td><td>IMUX.BYP2.SITE</td></tr>
-<tr><td>TSTHLN</td><td>input</td><td>IMUX.BYP6.SITE</td></tr>
-<tr><td>TSTHLP</td><td>input</td><td>IMUX.BYP3.SITE</td></tr>
-<tr><td>TSTRST</td><td>input</td><td>IMUX.BYP0.SITE</td></tr>
+<tr><td>DCIADDRESS0</td><td>output</td><td>TCELL1:OUT8</td></tr>
+<tr><td>DCIADDRESS1</td><td>output</td><td>TCELL1:OUT20</td></tr>
+<tr><td>DCIADDRESS2</td><td>output</td><td>TCELL1:OUT22</td></tr>
+<tr><td>DCIDATA</td><td>output</td><td>TCELL0:OUT22</td></tr>
+<tr><td>DCIDONE</td><td>output</td><td>TCELL0:OUT20</td></tr>
+<tr><td>DCIIOUPDATE</td><td>output</td><td>TCELL0:OUT8</td></tr>
+<tr><td>DCIREFIOUPDATE</td><td>output</td><td>TCELL0:OUT15</td></tr>
+<tr><td>DCISCLK</td><td>output</td><td>TCELL0:OUT20</td></tr>
+<tr><td>TSTCLK</td><td>input</td><td>TCELL1:IMUX.BYP2.SITE</td></tr>
+<tr><td>TSTHLN</td><td>input</td><td>TCELL1:IMUX.BYP6.SITE</td></tr>
+<tr><td>TSTHLP</td><td>input</td><td>TCELL1:IMUX.BYP3.SITE</td></tr>
+<tr><td>TSTRST</td><td>input</td><td>TCELL1:IMUX.BYP0.SITE</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-wires-5"><a class="header" href="#bel-wires-5">Bel wires</a></h3>
@@ -9037,22 +9037,22 @@ non-inverted
 <tr><th>Wire</th><th>Pins</th></tr>
 </thead>
 <tbody>
-<tr><td>IMUX.IMUX0</td><td>IDELAYCTRL.RST</td></tr>
-<tr><td>OUT8</td><td>DCI.DCIIOUPDATE</td></tr>
-<tr><td>OUT15</td><td>DCI.DCIREFIOUPDATE</td></tr>
-<tr><td>OUT20</td><td>DCI.DCIDONE, DCI.DCISCLK</td></tr>
-<tr><td>OUT22</td><td>DCI.DCIDATA</td></tr>
-<tr><td>IMUX.BYP0.SITE</td><td>DCI.TSTRST</td></tr>
-<tr><td>IMUX.BYP2.SITE</td><td>DCI.TSTCLK</td></tr>
-<tr><td>IMUX.BYP3.SITE</td><td>DCI.TSTHLP</td></tr>
-<tr><td>IMUX.BYP6.SITE</td><td>DCI.TSTHLN</td></tr>
-<tr><td>OUT8</td><td>DCI.DCIADDRESS0</td></tr>
-<tr><td>OUT16</td><td>IDELAYCTRL.OUTN65</td></tr>
-<tr><td>OUT17</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
-<tr><td>OUT18</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
-<tr><td>OUT20</td><td>DCI.DCIADDRESS1</td></tr>
-<tr><td>OUT22</td><td>IDELAYCTRL.RDY, DCI.DCIADDRESS2</td></tr>
-<tr><td>OUT23</td><td>IDELAYCTRL.OUTN1</td></tr>
+<tr><td>TCELL0:IMUX.IMUX0</td><td>IDELAYCTRL.RST</td></tr>
+<tr><td>TCELL0:OUT8</td><td>DCI.DCIIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT15</td><td>DCI.DCIREFIOUPDATE</td></tr>
+<tr><td>TCELL0:OUT20</td><td>DCI.DCIDONE, DCI.DCISCLK</td></tr>
+<tr><td>TCELL0:OUT22</td><td>DCI.DCIDATA</td></tr>
+<tr><td>TCELL1:IMUX.BYP0.SITE</td><td>DCI.TSTRST</td></tr>
+<tr><td>TCELL1:IMUX.BYP2.SITE</td><td>DCI.TSTCLK</td></tr>
+<tr><td>TCELL1:IMUX.BYP3.SITE</td><td>DCI.TSTHLP</td></tr>
+<tr><td>TCELL1:IMUX.BYP6.SITE</td><td>DCI.TSTHLN</td></tr>
+<tr><td>TCELL1:OUT8</td><td>DCI.DCIADDRESS0</td></tr>
+<tr><td>TCELL1:OUT16</td><td>IDELAYCTRL.OUTN65</td></tr>
+<tr><td>TCELL1:OUT17</td><td>IDELAYCTRL.UPPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT18</td><td>IDELAYCTRL.DNPULSEOUT</td></tr>
+<tr><td>TCELL1:OUT20</td><td>DCI.DCIADDRESS1</td></tr>
+<tr><td>TCELL1:OUT22</td><td>IDELAYCTRL.RDY, DCI.DCIADDRESS2</td></tr>
+<tr><td>TCELL1:OUT23</td><td>IDELAYCTRL.OUTN1</td></tr>
 </tbody>
 </table></div>
 <h3 id="bitstream-5"><a class="header" href="#bitstream-5">Bitstream</a></h3>
