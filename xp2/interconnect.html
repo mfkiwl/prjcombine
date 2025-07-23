@@ -155,15 +155,15 @@
                         <h1 id="general-interconnect"><a class="header" href="#general-interconnect">General interconnect</a></h1>
 <h2 id="tile-slots"><a class="header" href="#tile-slots">Tile slots</a></h2>
 <div class="table-wrapper"><table>
-<caption>ecp2 tile slots</caption>
+<caption>xp2 tile slots</caption>
 <thead>
 <tr><th>Slot</th><th>Tiles</th><th>Bel slots</th></tr>
 </thead>
 <tbody>
 <tr><td>INT</td><td>INT_PLC, INT_IO_WE, INT_IO_S, INT_IO_N, INT_EBR, INT_EBR_IO</td><td>INT</td></tr>
 <tr><td>IO</td><td>IO_W, IO_E, IO_S, IO_N</td><td>IO0, IO1, IO2, IO3, IO4, IO5</td></tr>
-<tr><td>BEL</td><td>PLC, FPLC, EBR, DSP, CONFIG, DQS_W, DQS_E, DQS_S, SPLL_W, SPLL_E, PLL_W, PLL_E</td><td>SLICE0, SLICE1, SLICE2, SLICE3, DQS, DQSDLL, SERDES, CIBTEST_SEL, EBR0, DSP0, PLL, DLL, DLLDEL, CLKDIV, ECLK_ALT_ROOT, SPLL, START, OSC, JTAG, RDBK, GSR, SED, SPIM, SSPI, WAKEUP, STF</td></tr>
-<tr><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL, CLK_ROOT_6PLL, ECLK_ROOT_W, ECLK_ROOT_E, ECLK_ROOT_S, ECLK_ROOT_N</td><td>DCS0, DCS1, DCS2, DCS3, DCS4, DCS5, DCS6, DCS7, CLK_ROOT, ECLK_ROOT</td></tr>
+<tr><td>BEL</td><td>PLC, FPLC, EBR, DSP, CONFIG, OSC, DQS_W, DQS_E, DQS_S, DQS_N, DQSDLL_W, DQSDLL_E, PLL_S, PLL_N</td><td>SLICE0, SLICE1, SLICE2, SLICE3, DQS, DQSDLL, SERDES, CIBTEST_SEL, EBR0, DSP0, PLL, DLL, DLLDEL, CLKDIV, ECLK_ALT_ROOT, SPLL, START, OSC, JTAG, RDBK, GSR, SED, SPIM, SSPI, WAKEUP, STF</td></tr>
+<tr><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL, ECLK_ROOT_W, ECLK_ROOT_E, ECLK_ROOT_S, ECLK_ROOT_N</td><td>DCS0, DCS1, DCS2, DCS3, DCS4, DCS5, DCS6, DCS7, CLK_ROOT, ECLK_ROOT</td></tr>
 <tr><td>SCLK_ROOT</td><td>SCLK0_ROOT, SCLK1_ROOT, SCLK2_ROOT, SCLK3_ROOT</td><td>SCLK_ROOT</td></tr>
 <tr><td>ECLK_TAP</td><td>ECLK_TAP</td><td>ECLK_TAP</td></tr>
 <tr><td>HSDCLK_SPLITTER</td><td>HSDCLK_SPLITTER, HSDCLK_ROOT</td><td>HSDCLK_ROOT, HSDCLK_SPLITTER</td></tr>
@@ -171,7 +171,7 @@
 </table></div>
 <h2 id="bel-slots"><a class="header" href="#bel-slots">Bel slots</a></h2>
 <div class="table-wrapper"><table>
-<caption>ecp2 bel slots</caption>
+<caption>xp2 bel slots</caption>
 <thead>
 <tr><th>Slot</th><th>Tile slot</th><th>Tiles</th></tr>
 </thead>
@@ -187,37 +187,37 @@
 <tr><td>IO3</td><td>IO</td><td></td></tr>
 <tr><td>IO4</td><td>IO</td><td></td></tr>
 <tr><td>IO5</td><td>IO</td><td></td></tr>
-<tr><td>DQS</td><td>BEL</td><td>DQS_W, DQS_E, DQS_S</td></tr>
-<tr><td>DQSDLL</td><td>BEL</td><td>PLL_W, PLL_E</td></tr>
+<tr><td>DQS</td><td>BEL</td><td>DQS_W, DQS_E, DQS_S, DQS_N</td></tr>
+<tr><td>DQSDLL</td><td>BEL</td><td>DQSDLL_W, DQSDLL_E</td></tr>
 <tr><td>SERDES</td><td>BEL</td><td></td></tr>
 <tr><td>CIBTEST_SEL</td><td>BEL</td><td></td></tr>
 <tr><td>EBR0</td><td>BEL</td><td>EBR</td></tr>
 <tr><td>DSP0</td><td>BEL</td><td>DSP</td></tr>
-<tr><td>PLL</td><td>BEL</td><td>PLL_W, PLL_E</td></tr>
-<tr><td>DLL</td><td>BEL</td><td>PLL_W, PLL_E</td></tr>
-<tr><td>DLLDEL</td><td>BEL</td><td>PLL_W, PLL_E</td></tr>
-<tr><td>CLKDIV</td><td>BEL</td><td>PLL_W, PLL_E</td></tr>
-<tr><td>ECLK_ALT_ROOT</td><td>BEL</td><td>PLL_W, PLL_E</td></tr>
-<tr><td>SPLL</td><td>BEL</td><td>SPLL_W, SPLL_E</td></tr>
-<tr><td>START</td><td>BEL</td><td>CONFIG</td></tr>
-<tr><td>OSC</td><td>BEL</td><td>CONFIG</td></tr>
+<tr><td>PLL</td><td>BEL</td><td>PLL_S, PLL_N</td></tr>
+<tr><td>DLL</td><td>BEL</td><td></td></tr>
+<tr><td>DLLDEL</td><td>BEL</td><td></td></tr>
+<tr><td>CLKDIV</td><td>BEL</td><td>DQSDLL_W, DQSDLL_E</td></tr>
+<tr><td>ECLK_ALT_ROOT</td><td>BEL</td><td></td></tr>
+<tr><td>SPLL</td><td>BEL</td><td></td></tr>
+<tr><td>START</td><td>BEL</td><td>DQSDLL_E</td></tr>
+<tr><td>OSC</td><td>BEL</td><td>OSC</td></tr>
 <tr><td>JTAG</td><td>BEL</td><td>CONFIG</td></tr>
 <tr><td>RDBK</td><td>BEL</td><td></td></tr>
-<tr><td>GSR</td><td>BEL</td><td>CONFIG</td></tr>
+<tr><td>GSR</td><td>BEL</td><td>DQSDLL_E</td></tr>
 <tr><td>SED</td><td>BEL</td><td>CONFIG</td></tr>
-<tr><td>SPIM</td><td>BEL</td><td>CONFIG</td></tr>
-<tr><td>SSPI</td><td>BEL</td><td></td></tr>
-<tr><td>WAKEUP</td><td>BEL</td><td></td></tr>
-<tr><td>STF</td><td>BEL</td><td></td></tr>
-<tr><td>DCS0</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL, CLK_ROOT_6PLL</td></tr>
-<tr><td>DCS1</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL, CLK_ROOT_6PLL</td></tr>
-<tr><td>DCS2</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL, CLK_ROOT_6PLL</td></tr>
-<tr><td>DCS3</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL, CLK_ROOT_6PLL</td></tr>
-<tr><td>DCS4</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL, CLK_ROOT_6PLL</td></tr>
-<tr><td>DCS5</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL, CLK_ROOT_6PLL</td></tr>
-<tr><td>DCS6</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL, CLK_ROOT_6PLL</td></tr>
-<tr><td>DCS7</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL, CLK_ROOT_6PLL</td></tr>
-<tr><td>CLK_ROOT</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL, CLK_ROOT_6PLL</td></tr>
+<tr><td>SPIM</td><td>BEL</td><td></td></tr>
+<tr><td>SSPI</td><td>BEL</td><td>DQSDLL_E</td></tr>
+<tr><td>WAKEUP</td><td>BEL</td><td>DQSDLL_E</td></tr>
+<tr><td>STF</td><td>BEL</td><td>DQSDLL_E</td></tr>
+<tr><td>DCS0</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL</td></tr>
+<tr><td>DCS1</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL</td></tr>
+<tr><td>DCS2</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL</td></tr>
+<tr><td>DCS3</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL</td></tr>
+<tr><td>DCS4</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL</td></tr>
+<tr><td>DCS5</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL</td></tr>
+<tr><td>DCS6</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL</td></tr>
+<tr><td>DCS7</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL</td></tr>
+<tr><td>CLK_ROOT</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL</td></tr>
 <tr><td>SCLK_ROOT</td><td>SCLK_ROOT</td><td>SCLK0_ROOT, SCLK1_ROOT, SCLK2_ROOT, SCLK3_ROOT</td></tr>
 <tr><td>ECLK_ROOT</td><td>CLK</td><td>ECLK_ROOT_W, ECLK_ROOT_E, ECLK_ROOT_S, ECLK_ROOT_N</td></tr>
 <tr><td>ECLK_TAP</td><td>ECLK_TAP</td><td>ECLK_TAP</td></tr>
@@ -227,7 +227,7 @@
 </table></div>
 <h2 id="connector-slots"><a class="header" href="#connector-slots">Connector slots</a></h2>
 <div class="table-wrapper"><table>
-<caption>ecp2 connector slots</caption>
+<caption>xp2 connector slots</caption>
 <thead>
 <tr><th>Slot</th><th>Opposite</th><th>Connectors</th></tr>
 </thead>
@@ -240,7 +240,7 @@
 </table></div>
 <h2 id="region-slots"><a class="header" href="#region-slots">Region slots</a></h2>
 <div class="table-wrapper"><table>
-<caption>ecp2 region slots</caption>
+<caption>xp2 region slots</caption>
 <thead>
 <tr><th>Slot</th><th>Wires</th></tr>
 </thead>
@@ -256,7 +256,7 @@
 </table></div>
 <h2 id="wires"><a class="header" href="#wires">Wires</a></h2>
 <div class="table-wrapper"><table>
-<caption>ecp2 wires</caption>
+<caption>xp2 wires</caption>
 <thead>
 <tr><th>Wire</th><th>Kind</th>
 </tr>
@@ -628,7 +628,7 @@
 </table></div>
 <h2 id="connectors--w"><a class="header" href="#connectors--w">Connectors — W</a></h2>
 <div class="table-wrapper"><table>
-<caption>ecp2 wires</caption>
+<caption>xp2 wires</caption>
 <thead>
 <tr><th>Wire</th>
 <th>PASS_W</th>
@@ -816,7 +816,7 @@
 </table></div>
 <h2 id="connectors--e"><a class="header" href="#connectors--e">Connectors — E</a></h2>
 <div class="table-wrapper"><table>
-<caption>ecp2 wires</caption>
+<caption>xp2 wires</caption>
 <thead>
 <tr><th>Wire</th>
 <th>PASS_E</th>
@@ -1004,7 +1004,7 @@
 </table></div>
 <h2 id="connectors--s"><a class="header" href="#connectors--s">Connectors — S</a></h2>
 <div class="table-wrapper"><table>
-<caption>ecp2 wires</caption>
+<caption>xp2 wires</caption>
 <thead>
 <tr><th>Wire</th>
 <th>PASS_S</th>
@@ -1200,7 +1200,7 @@
 </table></div>
 <h2 id="connectors--n"><a class="header" href="#connectors--n">Connectors — N</a></h2>
 <div class="table-wrapper"><table>
-<caption>ecp2 wires</caption>
+<caption>xp2 wires</caption>
 <thead>
 <tr><th>Wire</th>
 <th>PASS_N</th>
@@ -1391,7 +1391,7 @@
 <h3 id="bel-int"><a class="header" href="#bel-int">Bel INT</a></h3>
 <h3 id="switchbox-int"><a class="header" href="#switchbox-int">Switchbox INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>ecp2 INT_PLC switchbox INT</caption>
+<caption>xp2 INT_PLC switchbox INT</caption>
 <thead>
 <tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
@@ -5991,7 +5991,7 @@
 <h3 id="bel-int-1"><a class="header" href="#bel-int-1">Bel INT</a></h3>
 <h3 id="switchbox-int-1"><a class="header" href="#switchbox-int-1">Switchbox INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>ecp2 INT_IO_S switchbox INT</caption>
+<caption>xp2 INT_IO_S switchbox INT</caption>
 <thead>
 <tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
@@ -10511,7 +10511,7 @@
 <h3 id="bel-int-2"><a class="header" href="#bel-int-2">Bel INT</a></h3>
 <h3 id="switchbox-int-2"><a class="header" href="#switchbox-int-2">Switchbox INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>ecp2 INT_IO_N switchbox INT</caption>
+<caption>xp2 INT_IO_N switchbox INT</caption>
 <thead>
 <tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
@@ -15031,7 +15031,7 @@
 <h3 id="bel-int-3"><a class="header" href="#bel-int-3">Bel INT</a></h3>
 <h3 id="switchbox-int-3"><a class="header" href="#switchbox-int-3">Switchbox INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>ecp2 INT_IO_WE switchbox INT</caption>
+<caption>xp2 INT_IO_WE switchbox INT</caption>
 <thead>
 <tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
@@ -19284,54 +19284,6 @@
 </tr>
 <tr><td>SCLK3</td><td>mux</td>
 </tr>
-<tr><td rowspan="24">IMUX_CLK2</td><td>X0_W0</td><td>mux</td>
-</tr>
-<tr><td>X0_W1</td><td>mux</td>
-</tr>
-<tr><td>X0_E0</td><td>mux</td>
-</tr>
-<tr><td>X0_E1</td><td>mux</td>
-</tr>
-<tr><td>X2_W4_1</td><td>mux</td>
-</tr>
-<tr><td>X2_W4_2</td><td>mux</td>
-</tr>
-<tr><td>X2_E4_1</td><td>mux</td>
-</tr>
-<tr><td>X2_E4_2</td><td>mux</td>
-</tr>
-<tr><td>X2_S4_1</td><td>mux</td>
-</tr>
-<tr><td>X2_S4_2</td><td>mux</td>
-</tr>
-<tr><td>X2_N4_1</td><td>mux</td>
-</tr>
-<tr><td>X2_N4_2</td><td>mux</td>
-</tr>
-<tr><td>PCLK0</td><td>mux</td>
-</tr>
-<tr><td>PCLK1</td><td>mux</td>
-</tr>
-<tr><td>PCLK2</td><td>mux</td>
-</tr>
-<tr><td>PCLK3</td><td>mux</td>
-</tr>
-<tr><td>PCLK4</td><td>mux</td>
-</tr>
-<tr><td>PCLK5</td><td>mux</td>
-</tr>
-<tr><td>PCLK6</td><td>mux</td>
-</tr>
-<tr><td>PCLK7</td><td>mux</td>
-</tr>
-<tr><td>SCLK0</td><td>mux</td>
-</tr>
-<tr><td>SCLK1</td><td>mux</td>
-</tr>
-<tr><td>SCLK2</td><td>mux</td>
-</tr>
-<tr><td>SCLK3</td><td>mux</td>
-</tr>
 <tr><td rowspan="15">IMUX_LSR0</td><td>X0_S0</td><td>mux</td>
 </tr>
 <tr><td>X0_S1</td><td>mux</td>
@@ -19519,7 +19471,7 @@
 <h3 id="bel-int-4"><a class="header" href="#bel-int-4">Bel INT</a></h3>
 <h3 id="switchbox-int-4"><a class="header" href="#switchbox-int-4">Switchbox INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>ecp2 INT_EBR switchbox INT</caption>
+<caption>xp2 INT_EBR switchbox INT</caption>
 <thead>
 <tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
@@ -23633,7 +23585,7 @@
 <h3 id="bel-int-5"><a class="header" href="#bel-int-5">Bel INT</a></h3>
 <h3 id="switchbox-int-5"><a class="header" href="#switchbox-int-5">Switchbox INT</a></h3>
 <div class="table-wrapper"><table>
-<caption>ecp2 INT_EBR_IO switchbox INT</caption>
+<caption>xp2 INT_EBR_IO switchbox INT</caption>
 <thead>
 <tr><th>Destination</th><th>Source</th><th>Kind</th></tr>
 </thead>
@@ -27787,11 +27739,11 @@
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../ecp2/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../xp2/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../ecp2/plc.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../xp2/plc.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -27801,11 +27753,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../ecp2/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../xp2/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../ecp2/plc.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../xp2/plc.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
