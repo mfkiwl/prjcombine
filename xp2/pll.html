@@ -329,6 +329,171 @@
 <tr><td>TCELL1:OUT_Q5</td><td>PLL.CLKOK2</td></tr>
 </tbody>
 </table></div>
+<h2 id="tile-clk_w"><a class="header" href="#tile-clk_w">Tile CLK_W</a></h2>
+<p>Cells: 1</p>
+<h3 id="bel-dqsdll"><a class="header" href="#bel-dqsdll">Bel DQSDLL</a></h3>
+<div class="table-wrapper"><table>
+<caption>xp2 CLK_W bel DQSDLL</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>IMUX_CLK0</td></tr>
+<tr><td>LOCK</td><td>output</td><td>OUT_F4</td></tr>
+<tr><td>RST</td><td>input</td><td>IMUX_B0</td></tr>
+<tr><td>UDDCNTL</td><td>input</td><td>IMUX_A0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-clkdiv"><a class="header" href="#bel-clkdiv">Bel CLKDIV</a></h3>
+<div class="table-wrapper"><table>
+<caption>xp2 CLK_W bel CLKDIV</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CDIV1</td><td>output</td><td>OUT_F0</td></tr>
+<tr><td>CDIV2</td><td>output</td><td>OUT_F2</td></tr>
+<tr><td>CDIV4</td><td>output</td><td>OUT_F1</td></tr>
+<tr><td>CDIV8</td><td>output</td><td>OUT_F3</td></tr>
+<tr><td>RELEASE</td><td>input</td><td>IMUX_CE0</td></tr>
+<tr><td>RST</td><td>input</td><td>IMUX_LSR0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-2"><a class="header" href="#bel-wires-2">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>xp2 CLK_W bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>IMUX_A0</td><td>DQSDLL.UDDCNTL</td></tr>
+<tr><td>IMUX_B0</td><td>DQSDLL.RST</td></tr>
+<tr><td>IMUX_CLK0</td><td>DQSDLL.CLK</td></tr>
+<tr><td>IMUX_LSR0</td><td>CLKDIV.RST</td></tr>
+<tr><td>IMUX_CE0</td><td>CLKDIV.RELEASE</td></tr>
+<tr><td>OUT_F0</td><td>CLKDIV.CDIV1</td></tr>
+<tr><td>OUT_F1</td><td>CLKDIV.CDIV4</td></tr>
+<tr><td>OUT_F2</td><td>CLKDIV.CDIV2</td></tr>
+<tr><td>OUT_F3</td><td>CLKDIV.CDIV8</td></tr>
+<tr><td>OUT_F4</td><td>DQSDLL.LOCK</td></tr>
+</tbody>
+</table></div>
+<h2 id="tile-clk_e"><a class="header" href="#tile-clk_e">Tile CLK_E</a></h2>
+<p>Cells: 2</p>
+<h3 id="bel-dqsdll-1"><a class="header" href="#bel-dqsdll-1">Bel DQSDLL</a></h3>
+<div class="table-wrapper"><table>
+<caption>xp2 CLK_E bel DQSDLL</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:IMUX_CLK0</td></tr>
+<tr><td>LOCK</td><td>output</td><td>TCELL0:OUT_F4</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL0:IMUX_B0</td></tr>
+<tr><td>UDDCNTL</td><td>input</td><td>TCELL0:IMUX_A0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-clkdiv-1"><a class="header" href="#bel-clkdiv-1">Bel CLKDIV</a></h3>
+<div class="table-wrapper"><table>
+<caption>xp2 CLK_E bel CLKDIV</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CDIV1</td><td>output</td><td>TCELL0:OUT_F0</td></tr>
+<tr><td>CDIV2</td><td>output</td><td>TCELL0:OUT_F2</td></tr>
+<tr><td>CDIV4</td><td>output</td><td>TCELL0:OUT_F1</td></tr>
+<tr><td>CDIV8</td><td>output</td><td>TCELL0:OUT_F3</td></tr>
+<tr><td>RELEASE</td><td>input</td><td>TCELL0:IMUX_CE0</td></tr>
+<tr><td>RST</td><td>input</td><td>TCELL0:IMUX_LSR0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-start"><a class="header" href="#bel-start">Bel START</a></h3>
+<div class="table-wrapper"><table>
+<caption>xp2 CLK_E bel START</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>STARTCLK</td><td>input</td><td>TCELL0:IMUX_CLK1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-gsr"><a class="header" href="#bel-gsr">Bel GSR</a></h3>
+<div class="table-wrapper"><table>
+<caption>xp2 CLK_E bel GSR</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL1:IMUX_CLK1</td></tr>
+<tr><td>GSR</td><td>input</td><td>TCELL0:IMUX_D0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-sspi"><a class="header" href="#bel-sspi">Bel SSPI</a></h3>
+<div class="table-wrapper"><table>
+<caption>xp2 CLK_E bel SSPI</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>CLK</td><td>input</td><td>TCELL0:IMUX_C2</td></tr>
+<tr><td>CS</td><td>input</td><td>TCELL0:IMUX_D2</td></tr>
+<tr><td>SI</td><td>input</td><td>TCELL0:IMUX_B1</td></tr>
+<tr><td>SO</td><td>output</td><td>TCELL0:OUT_Q1</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wakeup"><a class="header" href="#bel-wakeup">Bel WAKEUP</a></h3>
+<div class="table-wrapper"><table>
+<caption>xp2 CLK_E bel WAKEUP</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>USRGOE</td><td>input</td><td>TCELL0:IMUX_C0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-stf"><a class="header" href="#bel-stf">Bel STF</a></h3>
+<div class="table-wrapper"><table>
+<caption>xp2 CLK_E bel STF</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>STOREN</td><td>input</td><td>TCELL0:IMUX_A1</td></tr>
+<tr><td>UFMBUSYN</td><td>output</td><td>TCELL0:OUT_F5</td></tr>
+<tr><td>UFMFAIL</td><td>output</td><td>TCELL0:OUT_Q0</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-3"><a class="header" href="#bel-wires-3">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>xp2 CLK_E bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>TCELL0:IMUX_A0</td><td>DQSDLL.UDDCNTL</td></tr>
+<tr><td>TCELL0:IMUX_A1</td><td>STF.STOREN</td></tr>
+<tr><td>TCELL0:IMUX_B0</td><td>DQSDLL.RST</td></tr>
+<tr><td>TCELL0:IMUX_B1</td><td>SSPI.SI</td></tr>
+<tr><td>TCELL0:IMUX_C0</td><td>WAKEUP.USRGOE</td></tr>
+<tr><td>TCELL0:IMUX_C2</td><td>SSPI.CLK</td></tr>
+<tr><td>TCELL0:IMUX_D0</td><td>GSR.GSR</td></tr>
+<tr><td>TCELL0:IMUX_D2</td><td>SSPI.CS</td></tr>
+<tr><td>TCELL0:IMUX_CLK0</td><td>DQSDLL.CLK</td></tr>
+<tr><td>TCELL0:IMUX_CLK1</td><td>START.STARTCLK</td></tr>
+<tr><td>TCELL0:IMUX_LSR0</td><td>CLKDIV.RST</td></tr>
+<tr><td>TCELL0:IMUX_CE0</td><td>CLKDIV.RELEASE</td></tr>
+<tr><td>TCELL0:OUT_F0</td><td>CLKDIV.CDIV1</td></tr>
+<tr><td>TCELL0:OUT_F1</td><td>CLKDIV.CDIV4</td></tr>
+<tr><td>TCELL0:OUT_F2</td><td>CLKDIV.CDIV2</td></tr>
+<tr><td>TCELL0:OUT_F3</td><td>CLKDIV.CDIV8</td></tr>
+<tr><td>TCELL0:OUT_F4</td><td>DQSDLL.LOCK</td></tr>
+<tr><td>TCELL0:OUT_F5</td><td>STF.UFMBUSYN</td></tr>
+<tr><td>TCELL0:OUT_Q0</td><td>STF.UFMFAIL</td></tr>
+<tr><td>TCELL0:OUT_Q1</td><td>SSPI.SO</td></tr>
+<tr><td>TCELL1:IMUX_CLK1</td><td>GSR.CLK</td></tr>
+</tbody>
+</table></div>
 
                     </main>
 
