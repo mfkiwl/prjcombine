@@ -162,8 +162,9 @@
 <tbody>
 <tr><td>INT</td><td>INT_PLC, INT_IO_WE, INT_IO_S, INT_IO_N, INT_EBR, INT_EBR_IO</td><td>INT</td></tr>
 <tr><td>IO</td><td>IO_W, IO_E, IO_S, IO_N</td><td>IO0, IO1, IO2, IO3, IO4, IO5</td></tr>
-<tr><td>BEL</td><td>PLC, FPLC, EBR, DSP, CONFIG, DQS_W, DQS_E, DQS_S, SPLL_W, SPLL_E, PLL_W, PLL_E</td><td>SLICE0, SLICE1, SLICE2, SLICE3, DQS, DQSTEST, DQSDLL, DQSDLLTEST, SERDES, CIBTEST_SEL, EBR0, DSP0, DSP1, PLL, DLL, DLLDEL, CLKDIV, ECLK_ALT_ROOT, SPLL, START, OSC, JTAG, RDBK, GSR, SED, SPIM, SSPI, WAKEUP, STF, AMBOOT, PERREG, TESTIN, TESTOUT, DTS</td></tr>
-<tr><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL, CLK_ROOT_6PLL, ECLK_ROOT_W, ECLK_ROOT_E, ECLK_ROOT_S, ECLK_ROOT_N</td><td>DCC_SW0, DCC_SW1, DCC_SW2, DCC_SW3, DCC_SW4, DCC_SW5, DCC_SE0, DCC_SE1, DCC_SE2, DCC_SE3, DCC_SE4, DCC_SE5, DCC_NW0, DCC_NW1, DCC_NW2, DCC_NW3, DCC_NW4, DCC_NW5, DCC_NE0, DCC_NE1, DCC_NE2, DCC_NE3, DCC_NE4, DCC_NE5, DCS_SW0, DCS_SW1, DCS_SE0, DCS_SE1, DCS_NW0, DCS_NW1, DCS_NE0, DCS_NE1, CLK_ROOT, ECLK_ROOT, ECLKSYNC0, ECLKSYNC1</td></tr>
+<tr><td>BEL</td><td>PLC, FPLC, EBR, DSP, CONFIG, DQS_W, DQS_E, DQS_S, SPLL_W, SPLL_E, PLL_W, PLL_E</td><td>SLICE0, SLICE1, SLICE2, SLICE3, DQS0, DQS1, DQSTEST, DQSDLL, DQSDLLTEST, SERDES, CIBTEST_SEL, EBR0, DSP0, DSP1, PLL, PLLREFCS, DLL, DLLDEL0, DLLDEL1, DLLDEL2, CLKDIV0, CLKDIV1, ECLK_ALT_ROOT, SPLL, START, OSC, JTAG, RDBK, GSR, TSALL, SED, SPIM, SSPI, WAKEUP, STF, AMBOOT, PERREG, PCNTR, EFB, ESB, TESTIN, TESTOUT, DTS</td></tr>
+<tr><td>BC</td><td></td><td>BCPG, BCINRD, BCLVDSO, BCSLEWRATE</td></tr>
+<tr><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL, CLK_ROOT_6PLL, ECLK_ROOT_W, ECLK_ROOT_E, ECLK_ROOT_S, ECLK_ROOT_N</td><td>DCC_SW0, DCC_SW1, DCC_SW2, DCC_SW3, DCC_SW4, DCC_SW5, DCC_SE0, DCC_SE1, DCC_SE2, DCC_SE3, DCC_SE4, DCC_SE5, DCC_NW0, DCC_NW1, DCC_NW2, DCC_NW3, DCC_NW4, DCC_NW5, DCC_NE0, DCC_NE1, DCC_NE2, DCC_NE3, DCC_NE4, DCC_NE5, DCS_SW0, DCS_SW1, DCS_SE0, DCS_SE1, DCS_NW0, DCS_NW1, DCS_NE0, DCS_NE1, DCC0, DCC1, DCC2, DCC3, DCC4, DCC5, DCC6, DCC7, DCM0, DCM1, ECLKBRIDGECS0, ECLKBRIDGECS1, CLKFBBUF0, CLKFBBUF1, CENTEST, CLK_ROOT, ECLK_ROOT, ECLKSYNC0, ECLKSYNC1</td></tr>
 <tr><td>SCLK_SOURCE</td><td>SCLK0_SOURCE, SCLK1_SOURCE, SCLK2_SOURCE, SCLK3_SOURCE</td><td>SCLK_SOURCE</td></tr>
 <tr><td>PCLK_SOURCE</td><td></td><td>PCLK_SOURCE_W, PCLK_SOURCE_E, PCLK_DCC0, PCLK_DCC1</td></tr>
 <tr><td>ECLK_TAP</td><td>ECLK_TAP</td><td>ECLK_TAP</td></tr>
@@ -188,7 +189,8 @@
 <tr><td>IO3</td><td>IO</td><td></td></tr>
 <tr><td>IO4</td><td>IO</td><td></td></tr>
 <tr><td>IO5</td><td>IO</td><td></td></tr>
-<tr><td>DQS</td><td>BEL</td><td>DQS_W, DQS_E, DQS_S</td></tr>
+<tr><td>DQS0</td><td>BEL</td><td>DQS_W, DQS_E, DQS_S</td></tr>
+<tr><td>DQS1</td><td>BEL</td><td></td></tr>
 <tr><td>DQSTEST</td><td>BEL</td><td></td></tr>
 <tr><td>DQSDLL</td><td>BEL</td><td>PLL_W, PLL_E</td></tr>
 <tr><td>DQSDLLTEST</td><td>BEL</td><td></td></tr>
@@ -198,9 +200,13 @@
 <tr><td>DSP0</td><td>BEL</td><td>DSP</td></tr>
 <tr><td>DSP1</td><td>BEL</td><td></td></tr>
 <tr><td>PLL</td><td>BEL</td><td>PLL_W, PLL_E</td></tr>
+<tr><td>PLLREFCS</td><td>BEL</td><td></td></tr>
 <tr><td>DLL</td><td>BEL</td><td>PLL_W, PLL_E</td></tr>
-<tr><td>DLLDEL</td><td>BEL</td><td>PLL_W, PLL_E</td></tr>
-<tr><td>CLKDIV</td><td>BEL</td><td>PLL_W, PLL_E</td></tr>
+<tr><td>DLLDEL0</td><td>BEL</td><td>PLL_W, PLL_E</td></tr>
+<tr><td>DLLDEL1</td><td>BEL</td><td></td></tr>
+<tr><td>DLLDEL2</td><td>BEL</td><td></td></tr>
+<tr><td>CLKDIV0</td><td>BEL</td><td>PLL_W, PLL_E</td></tr>
+<tr><td>CLKDIV1</td><td>BEL</td><td></td></tr>
 <tr><td>ECLK_ALT_ROOT</td><td>BEL</td><td>PLL_W, PLL_E</td></tr>
 <tr><td>SPLL</td><td>BEL</td><td>SPLL_W, SPLL_E</td></tr>
 <tr><td>START</td><td>BEL</td><td>CONFIG</td></tr>
@@ -208,6 +214,7 @@
 <tr><td>JTAG</td><td>BEL</td><td>CONFIG</td></tr>
 <tr><td>RDBK</td><td>BEL</td><td></td></tr>
 <tr><td>GSR</td><td>BEL</td><td>CONFIG</td></tr>
+<tr><td>TSALL</td><td>BEL</td><td></td></tr>
 <tr><td>SED</td><td>BEL</td><td>CONFIG</td></tr>
 <tr><td>SPIM</td><td>BEL</td><td>CONFIG</td></tr>
 <tr><td>SSPI</td><td>BEL</td><td></td></tr>
@@ -215,6 +222,13 @@
 <tr><td>STF</td><td>BEL</td><td></td></tr>
 <tr><td>AMBOOT</td><td>BEL</td><td></td></tr>
 <tr><td>PERREG</td><td>BEL</td><td></td></tr>
+<tr><td>PCNTR</td><td>BEL</td><td></td></tr>
+<tr><td>EFB</td><td>BEL</td><td></td></tr>
+<tr><td>ESB</td><td>BEL</td><td></td></tr>
+<tr><td>BCPG</td><td>BC</td><td></td></tr>
+<tr><td>BCINRD</td><td>BC</td><td></td></tr>
+<tr><td>BCLVDSO</td><td>BC</td><td></td></tr>
+<tr><td>BCSLEWRATE</td><td>BC</td><td></td></tr>
 <tr><td>DCC_SW0</td><td>CLK</td><td></td></tr>
 <tr><td>DCC_SW1</td><td>CLK</td><td></td></tr>
 <tr><td>DCC_SW2</td><td>CLK</td><td></td></tr>
@@ -247,6 +261,21 @@
 <tr><td>DCS_NW1</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL, CLK_ROOT_6PLL</td></tr>
 <tr><td>DCS_NE0</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL, CLK_ROOT_6PLL</td></tr>
 <tr><td>DCS_NE1</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL, CLK_ROOT_6PLL</td></tr>
+<tr><td>DCC0</td><td>CLK</td><td></td></tr>
+<tr><td>DCC1</td><td>CLK</td><td></td></tr>
+<tr><td>DCC2</td><td>CLK</td><td></td></tr>
+<tr><td>DCC3</td><td>CLK</td><td></td></tr>
+<tr><td>DCC4</td><td>CLK</td><td></td></tr>
+<tr><td>DCC5</td><td>CLK</td><td></td></tr>
+<tr><td>DCC6</td><td>CLK</td><td></td></tr>
+<tr><td>DCC7</td><td>CLK</td><td></td></tr>
+<tr><td>DCM0</td><td>CLK</td><td></td></tr>
+<tr><td>DCM1</td><td>CLK</td><td></td></tr>
+<tr><td>ECLKBRIDGECS0</td><td>CLK</td><td></td></tr>
+<tr><td>ECLKBRIDGECS1</td><td>CLK</td><td></td></tr>
+<tr><td>CLKFBBUF0</td><td>CLK</td><td></td></tr>
+<tr><td>CLKFBBUF1</td><td>CLK</td><td></td></tr>
+<tr><td>CENTEST</td><td>CLK</td><td></td></tr>
 <tr><td>CLK_ROOT</td><td>CLK</td><td>CLK_ROOT_2PLL, CLK_ROOT_4PLL, CLK_ROOT_6PLL</td></tr>
 <tr><td>SCLK_SOURCE</td><td>SCLK_SOURCE</td><td>SCLK0_SOURCE, SCLK1_SOURCE, SCLK2_SOURCE, SCLK3_SOURCE</td></tr>
 <tr><td>PCLK_SOURCE_W</td><td>PCLK_SOURCE</td><td></td></tr>
