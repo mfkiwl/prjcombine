@@ -255,26 +255,6 @@
 <tr><td>SEL</td><td>input</td><td>TCELL5:IMUX_B5</td></tr>
 </tbody>
 </table></div>
-<h3 id="bel-centest"><a class="header" href="#bel-centest">Bel CENTEST</a></h3>
-<div class="table-wrapper"><table>
-<caption>machxo2 CLK_ROOT_0EBR bel CENTEST</caption>
-<thead>
-<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
-</thead>
-<tbody>
-<tr><td>TESTIN0</td><td>input</td><td>TCELL6:IMUX_A2</td></tr>
-<tr><td>TESTIN1</td><td>input</td><td>TCELL6:IMUX_B2</td></tr>
-<tr><td>TESTIN10</td><td>input</td><td>TCELL6:IMUX_C4</td></tr>
-<tr><td>TESTIN2</td><td>input</td><td>TCELL6:IMUX_C2</td></tr>
-<tr><td>TESTIN3</td><td>input</td><td>TCELL6:IMUX_D2</td></tr>
-<tr><td>TESTIN4</td><td>input</td><td>TCELL6:IMUX_A3</td></tr>
-<tr><td>TESTIN5</td><td>input</td><td>TCELL6:IMUX_B3</td></tr>
-<tr><td>TESTIN6</td><td>input</td><td>TCELL6:IMUX_C3</td></tr>
-<tr><td>TESTIN7</td><td>input</td><td>TCELL6:IMUX_D3</td></tr>
-<tr><td>TESTIN8</td><td>input</td><td>TCELL6:IMUX_A4</td></tr>
-<tr><td>TESTIN9</td><td>input</td><td>TCELL6:IMUX_B4</td></tr>
-</tbody>
-</table></div>
 <h3 id="bel-clk_root"><a class="header" href="#bel-clk_root">Bel CLK_ROOT</a></h3>
 <div class="table-wrapper"><table>
 <caption>machxo2 CLK_ROOT_0EBR bel CLK_ROOT</caption>
@@ -308,6 +288,26 @@
 <tr><td>SCLK_IN_W1</td><td>input</td><td>TCELL1:IMUX_B5</td></tr>
 </tbody>
 </table></div>
+<h3 id="bel-clktest"><a class="header" href="#bel-clktest">Bel CLKTEST</a></h3>
+<div class="table-wrapper"><table>
+<caption>machxo2 CLK_ROOT_0EBR bel CLKTEST</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>TESTIN0</td><td>input</td><td>TCELL6:IMUX_A2</td></tr>
+<tr><td>TESTIN1</td><td>input</td><td>TCELL6:IMUX_B2</td></tr>
+<tr><td>TESTIN10</td><td>input</td><td>TCELL6:IMUX_C4</td></tr>
+<tr><td>TESTIN2</td><td>input</td><td>TCELL6:IMUX_C2</td></tr>
+<tr><td>TESTIN3</td><td>input</td><td>TCELL6:IMUX_D2</td></tr>
+<tr><td>TESTIN4</td><td>input</td><td>TCELL6:IMUX_A3</td></tr>
+<tr><td>TESTIN5</td><td>input</td><td>TCELL6:IMUX_B3</td></tr>
+<tr><td>TESTIN6</td><td>input</td><td>TCELL6:IMUX_C3</td></tr>
+<tr><td>TESTIN7</td><td>input</td><td>TCELL6:IMUX_D3</td></tr>
+<tr><td>TESTIN8</td><td>input</td><td>TCELL6:IMUX_A4</td></tr>
+<tr><td>TESTIN9</td><td>input</td><td>TCELL6:IMUX_B4</td></tr>
+</tbody>
+</table></div>
 <h3 id="bel-wires"><a class="header" href="#bel-wires">Bel wires</a></h3>
 <div class="table-wrapper"><table>
 <caption>machxo2 CLK_ROOT_0EBR bel wires</caption>
@@ -337,25 +337,25 @@
 <tr><td>TCELL5:IMUX_B5</td><td>DCM1.SEL</td></tr>
 <tr><td>TCELL6:IMUX_A0</td><td>DCC0.CE</td></tr>
 <tr><td>TCELL6:IMUX_A1</td><td>DCC4.CE</td></tr>
-<tr><td>TCELL6:IMUX_A2</td><td>CENTEST.TESTIN0</td></tr>
-<tr><td>TCELL6:IMUX_A3</td><td>CENTEST.TESTIN4</td></tr>
-<tr><td>TCELL6:IMUX_A4</td><td>CENTEST.TESTIN8</td></tr>
+<tr><td>TCELL6:IMUX_A2</td><td>CLKTEST.TESTIN0</td></tr>
+<tr><td>TCELL6:IMUX_A3</td><td>CLKTEST.TESTIN4</td></tr>
+<tr><td>TCELL6:IMUX_A4</td><td>CLKTEST.TESTIN8</td></tr>
 <tr><td>TCELL6:IMUX_A5</td><td>CLK_ROOT.SCLK_IN_N0</td></tr>
 <tr><td>TCELL6:IMUX_B0</td><td>DCC1.CE</td></tr>
 <tr><td>TCELL6:IMUX_B1</td><td>DCC5.CE</td></tr>
-<tr><td>TCELL6:IMUX_B2</td><td>CENTEST.TESTIN1</td></tr>
-<tr><td>TCELL6:IMUX_B3</td><td>CENTEST.TESTIN5</td></tr>
-<tr><td>TCELL6:IMUX_B4</td><td>CENTEST.TESTIN9</td></tr>
+<tr><td>TCELL6:IMUX_B2</td><td>CLKTEST.TESTIN1</td></tr>
+<tr><td>TCELL6:IMUX_B3</td><td>CLKTEST.TESTIN5</td></tr>
+<tr><td>TCELL6:IMUX_B4</td><td>CLKTEST.TESTIN9</td></tr>
 <tr><td>TCELL6:IMUX_B5</td><td>CLK_ROOT.SCLK_IN_N1</td></tr>
 <tr><td>TCELL6:IMUX_C0</td><td>DCC2.CE</td></tr>
 <tr><td>TCELL6:IMUX_C1</td><td>DCC6.CE</td></tr>
-<tr><td>TCELL6:IMUX_C2</td><td>CENTEST.TESTIN2</td></tr>
-<tr><td>TCELL6:IMUX_C3</td><td>CENTEST.TESTIN6</td></tr>
-<tr><td>TCELL6:IMUX_C4</td><td>CENTEST.TESTIN10</td></tr>
+<tr><td>TCELL6:IMUX_C2</td><td>CLKTEST.TESTIN2</td></tr>
+<tr><td>TCELL6:IMUX_C3</td><td>CLKTEST.TESTIN6</td></tr>
+<tr><td>TCELL6:IMUX_C4</td><td>CLKTEST.TESTIN10</td></tr>
 <tr><td>TCELL6:IMUX_D0</td><td>DCC3.CE</td></tr>
 <tr><td>TCELL6:IMUX_D1</td><td>DCC7.CE</td></tr>
-<tr><td>TCELL6:IMUX_D2</td><td>CENTEST.TESTIN3</td></tr>
-<tr><td>TCELL6:IMUX_D3</td><td>CENTEST.TESTIN7</td></tr>
+<tr><td>TCELL6:IMUX_D2</td><td>CLKTEST.TESTIN3</td></tr>
+<tr><td>TCELL6:IMUX_D3</td><td>CLKTEST.TESTIN7</td></tr>
 <tr><td>TCELL6:IMUX_CLK0</td><td>CLK_ROOT.PCLK_IN_N0</td></tr>
 <tr><td>TCELL6:IMUX_CLK1</td><td>CLK_ROOT.PCLK_IN_N1</td></tr>
 <tr><td>TCELL7:IMUX_A5</td><td>CLK_ROOT.SCLK_IN_M4</td></tr>
@@ -488,26 +488,6 @@
 <tr><td>SEL</td><td>input</td><td>TCELL0:IMUX_B5</td></tr>
 </tbody>
 </table></div>
-<h3 id="bel-centest-1"><a class="header" href="#bel-centest-1">Bel CENTEST</a></h3>
-<div class="table-wrapper"><table>
-<caption>machxo2 CLK_ROOT_1EBR bel CENTEST</caption>
-<thead>
-<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
-</thead>
-<tbody>
-<tr><td>TESTIN0</td><td>input</td><td>TCELL2:IMUX_A2</td></tr>
-<tr><td>TESTIN1</td><td>input</td><td>TCELL2:IMUX_B2</td></tr>
-<tr><td>TESTIN10</td><td>input</td><td>TCELL2:IMUX_C4</td></tr>
-<tr><td>TESTIN2</td><td>input</td><td>TCELL2:IMUX_C2</td></tr>
-<tr><td>TESTIN3</td><td>input</td><td>TCELL2:IMUX_D2</td></tr>
-<tr><td>TESTIN4</td><td>input</td><td>TCELL2:IMUX_A3</td></tr>
-<tr><td>TESTIN5</td><td>input</td><td>TCELL2:IMUX_B3</td></tr>
-<tr><td>TESTIN6</td><td>input</td><td>TCELL2:IMUX_C3</td></tr>
-<tr><td>TESTIN7</td><td>input</td><td>TCELL2:IMUX_D3</td></tr>
-<tr><td>TESTIN8</td><td>input</td><td>TCELL2:IMUX_A4</td></tr>
-<tr><td>TESTIN9</td><td>input</td><td>TCELL2:IMUX_B4</td></tr>
-</tbody>
-</table></div>
 <h3 id="bel-clk_root-1"><a class="header" href="#bel-clk_root-1">Bel CLK_ROOT</a></h3>
 <div class="table-wrapper"><table>
 <caption>machxo2 CLK_ROOT_1EBR bel CLK_ROOT</caption>
@@ -543,6 +523,26 @@
 <tr><td>SCLK_IN_W1</td><td>input</td><td>TCELL4:IMUX_B5</td></tr>
 </tbody>
 </table></div>
+<h3 id="bel-clktest-1"><a class="header" href="#bel-clktest-1">Bel CLKTEST</a></h3>
+<div class="table-wrapper"><table>
+<caption>machxo2 CLK_ROOT_1EBR bel CLKTEST</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>TESTIN0</td><td>input</td><td>TCELL2:IMUX_A2</td></tr>
+<tr><td>TESTIN1</td><td>input</td><td>TCELL2:IMUX_B2</td></tr>
+<tr><td>TESTIN10</td><td>input</td><td>TCELL2:IMUX_C4</td></tr>
+<tr><td>TESTIN2</td><td>input</td><td>TCELL2:IMUX_C2</td></tr>
+<tr><td>TESTIN3</td><td>input</td><td>TCELL2:IMUX_D2</td></tr>
+<tr><td>TESTIN4</td><td>input</td><td>TCELL2:IMUX_A3</td></tr>
+<tr><td>TESTIN5</td><td>input</td><td>TCELL2:IMUX_B3</td></tr>
+<tr><td>TESTIN6</td><td>input</td><td>TCELL2:IMUX_C3</td></tr>
+<tr><td>TESTIN7</td><td>input</td><td>TCELL2:IMUX_D3</td></tr>
+<tr><td>TESTIN8</td><td>input</td><td>TCELL2:IMUX_A4</td></tr>
+<tr><td>TESTIN9</td><td>input</td><td>TCELL2:IMUX_B4</td></tr>
+</tbody>
+</table></div>
 <h3 id="bel-wires-1"><a class="header" href="#bel-wires-1">Bel wires</a></h3>
 <div class="table-wrapper"><table>
 <caption>machxo2 CLK_ROOT_1EBR bel wires</caption>
@@ -558,25 +558,25 @@
 <tr><td>TCELL1:IMUX_D5</td><td>CLK_ROOT.SCLK_IN_M3</td></tr>
 <tr><td>TCELL2:IMUX_A0</td><td>DCC0.CE</td></tr>
 <tr><td>TCELL2:IMUX_A1</td><td>DCC4.CE</td></tr>
-<tr><td>TCELL2:IMUX_A2</td><td>CENTEST.TESTIN0</td></tr>
-<tr><td>TCELL2:IMUX_A3</td><td>CENTEST.TESTIN4</td></tr>
-<tr><td>TCELL2:IMUX_A4</td><td>CENTEST.TESTIN8</td></tr>
+<tr><td>TCELL2:IMUX_A2</td><td>CLKTEST.TESTIN0</td></tr>
+<tr><td>TCELL2:IMUX_A3</td><td>CLKTEST.TESTIN4</td></tr>
+<tr><td>TCELL2:IMUX_A4</td><td>CLKTEST.TESTIN8</td></tr>
 <tr><td>TCELL2:IMUX_A5</td><td>DCM0.SEL</td></tr>
 <tr><td>TCELL2:IMUX_B0</td><td>DCC1.CE</td></tr>
 <tr><td>TCELL2:IMUX_B1</td><td>DCC5.CE</td></tr>
-<tr><td>TCELL2:IMUX_B2</td><td>CENTEST.TESTIN1</td></tr>
-<tr><td>TCELL2:IMUX_B3</td><td>CENTEST.TESTIN5</td></tr>
-<tr><td>TCELL2:IMUX_B4</td><td>CENTEST.TESTIN9</td></tr>
+<tr><td>TCELL2:IMUX_B2</td><td>CLKTEST.TESTIN1</td></tr>
+<tr><td>TCELL2:IMUX_B3</td><td>CLKTEST.TESTIN5</td></tr>
+<tr><td>TCELL2:IMUX_B4</td><td>CLKTEST.TESTIN9</td></tr>
 <tr><td>TCELL2:IMUX_B5</td><td>DCM1.SEL</td></tr>
 <tr><td>TCELL2:IMUX_C0</td><td>DCC2.CE</td></tr>
 <tr><td>TCELL2:IMUX_C1</td><td>DCC6.CE</td></tr>
-<tr><td>TCELL2:IMUX_C2</td><td>CENTEST.TESTIN2</td></tr>
-<tr><td>TCELL2:IMUX_C3</td><td>CENTEST.TESTIN6</td></tr>
-<tr><td>TCELL2:IMUX_C4</td><td>CENTEST.TESTIN10</td></tr>
+<tr><td>TCELL2:IMUX_C2</td><td>CLKTEST.TESTIN2</td></tr>
+<tr><td>TCELL2:IMUX_C3</td><td>CLKTEST.TESTIN6</td></tr>
+<tr><td>TCELL2:IMUX_C4</td><td>CLKTEST.TESTIN10</td></tr>
 <tr><td>TCELL2:IMUX_D0</td><td>DCC3.CE</td></tr>
 <tr><td>TCELL2:IMUX_D1</td><td>DCC7.CE</td></tr>
-<tr><td>TCELL2:IMUX_D2</td><td>CENTEST.TESTIN3</td></tr>
-<tr><td>TCELL2:IMUX_D3</td><td>CENTEST.TESTIN7</td></tr>
+<tr><td>TCELL2:IMUX_D2</td><td>CLKTEST.TESTIN3</td></tr>
+<tr><td>TCELL2:IMUX_D3</td><td>CLKTEST.TESTIN7</td></tr>
 <tr><td>TCELL2:IMUX_CLK0</td><td>CLK_ROOT.PCLK_IN_M2</td></tr>
 <tr><td>TCELL2:IMUX_CLK1</td><td>CLK_ROOT.PCLK_IN_M3</td></tr>
 <tr><td>TCELL3:IMUX_A5</td><td>CLK_ROOT.SCLK_IN_M4</td></tr>
@@ -731,26 +731,6 @@
 <tr><td>SEL</td><td>input</td><td>TCELL0:IMUX_B5</td></tr>
 </tbody>
 </table></div>
-<h3 id="bel-centest-2"><a class="header" href="#bel-centest-2">Bel CENTEST</a></h3>
-<div class="table-wrapper"><table>
-<caption>machxo2 CLK_ROOT_2EBR bel CENTEST</caption>
-<thead>
-<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
-</thead>
-<tbody>
-<tr><td>TESTIN0</td><td>input</td><td>TCELL2:IMUX_A2</td></tr>
-<tr><td>TESTIN1</td><td>input</td><td>TCELL2:IMUX_B2</td></tr>
-<tr><td>TESTIN10</td><td>input</td><td>TCELL2:IMUX_C4</td></tr>
-<tr><td>TESTIN2</td><td>input</td><td>TCELL2:IMUX_C2</td></tr>
-<tr><td>TESTIN3</td><td>input</td><td>TCELL2:IMUX_D2</td></tr>
-<tr><td>TESTIN4</td><td>input</td><td>TCELL2:IMUX_A3</td></tr>
-<tr><td>TESTIN5</td><td>input</td><td>TCELL2:IMUX_B3</td></tr>
-<tr><td>TESTIN6</td><td>input</td><td>TCELL2:IMUX_C3</td></tr>
-<tr><td>TESTIN7</td><td>input</td><td>TCELL2:IMUX_D3</td></tr>
-<tr><td>TESTIN8</td><td>input</td><td>TCELL2:IMUX_A4</td></tr>
-<tr><td>TESTIN9</td><td>input</td><td>TCELL2:IMUX_B4</td></tr>
-</tbody>
-</table></div>
 <h3 id="bel-clk_root-2"><a class="header" href="#bel-clk_root-2">Bel CLK_ROOT</a></h3>
 <div class="table-wrapper"><table>
 <caption>machxo2 CLK_ROOT_2EBR bel CLK_ROOT</caption>
@@ -792,6 +772,26 @@
 <tr><td>SCLK_IN_W1</td><td>input</td><td>TCELL4:IMUX_B5</td></tr>
 </tbody>
 </table></div>
+<h3 id="bel-clktest-2"><a class="header" href="#bel-clktest-2">Bel CLKTEST</a></h3>
+<div class="table-wrapper"><table>
+<caption>machxo2 CLK_ROOT_2EBR bel CLKTEST</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>TESTIN0</td><td>input</td><td>TCELL2:IMUX_A2</td></tr>
+<tr><td>TESTIN1</td><td>input</td><td>TCELL2:IMUX_B2</td></tr>
+<tr><td>TESTIN10</td><td>input</td><td>TCELL2:IMUX_C4</td></tr>
+<tr><td>TESTIN2</td><td>input</td><td>TCELL2:IMUX_C2</td></tr>
+<tr><td>TESTIN3</td><td>input</td><td>TCELL2:IMUX_D2</td></tr>
+<tr><td>TESTIN4</td><td>input</td><td>TCELL2:IMUX_A3</td></tr>
+<tr><td>TESTIN5</td><td>input</td><td>TCELL2:IMUX_B3</td></tr>
+<tr><td>TESTIN6</td><td>input</td><td>TCELL2:IMUX_C3</td></tr>
+<tr><td>TESTIN7</td><td>input</td><td>TCELL2:IMUX_D3</td></tr>
+<tr><td>TESTIN8</td><td>input</td><td>TCELL2:IMUX_A4</td></tr>
+<tr><td>TESTIN9</td><td>input</td><td>TCELL2:IMUX_B4</td></tr>
+</tbody>
+</table></div>
 <h3 id="bel-wires-2"><a class="header" href="#bel-wires-2">Bel wires</a></h3>
 <div class="table-wrapper"><table>
 <caption>machxo2 CLK_ROOT_2EBR bel wires</caption>
@@ -805,25 +805,25 @@
 <tr><td>TCELL1:IMUX_B5</td><td>CLK_ROOT.SCLK_IN_M1</td></tr>
 <tr><td>TCELL2:IMUX_A0</td><td>DCC0.CE</td></tr>
 <tr><td>TCELL2:IMUX_A1</td><td>DCC4.CE</td></tr>
-<tr><td>TCELL2:IMUX_A2</td><td>CENTEST.TESTIN0</td></tr>
-<tr><td>TCELL2:IMUX_A3</td><td>CENTEST.TESTIN4</td></tr>
-<tr><td>TCELL2:IMUX_A4</td><td>CENTEST.TESTIN8</td></tr>
+<tr><td>TCELL2:IMUX_A2</td><td>CLKTEST.TESTIN0</td></tr>
+<tr><td>TCELL2:IMUX_A3</td><td>CLKTEST.TESTIN4</td></tr>
+<tr><td>TCELL2:IMUX_A4</td><td>CLKTEST.TESTIN8</td></tr>
 <tr><td>TCELL2:IMUX_A5</td><td>DCM0.SEL</td></tr>
 <tr><td>TCELL2:IMUX_B0</td><td>DCC1.CE</td></tr>
 <tr><td>TCELL2:IMUX_B1</td><td>DCC5.CE</td></tr>
-<tr><td>TCELL2:IMUX_B2</td><td>CENTEST.TESTIN1</td></tr>
-<tr><td>TCELL2:IMUX_B3</td><td>CENTEST.TESTIN5</td></tr>
-<tr><td>TCELL2:IMUX_B4</td><td>CENTEST.TESTIN9</td></tr>
+<tr><td>TCELL2:IMUX_B2</td><td>CLKTEST.TESTIN1</td></tr>
+<tr><td>TCELL2:IMUX_B3</td><td>CLKTEST.TESTIN5</td></tr>
+<tr><td>TCELL2:IMUX_B4</td><td>CLKTEST.TESTIN9</td></tr>
 <tr><td>TCELL2:IMUX_B5</td><td>DCM1.SEL</td></tr>
 <tr><td>TCELL2:IMUX_C0</td><td>DCC2.CE</td></tr>
 <tr><td>TCELL2:IMUX_C1</td><td>DCC6.CE</td></tr>
-<tr><td>TCELL2:IMUX_C2</td><td>CENTEST.TESTIN2</td></tr>
-<tr><td>TCELL2:IMUX_C3</td><td>CENTEST.TESTIN6</td></tr>
-<tr><td>TCELL2:IMUX_C4</td><td>CENTEST.TESTIN10</td></tr>
+<tr><td>TCELL2:IMUX_C2</td><td>CLKTEST.TESTIN2</td></tr>
+<tr><td>TCELL2:IMUX_C3</td><td>CLKTEST.TESTIN6</td></tr>
+<tr><td>TCELL2:IMUX_C4</td><td>CLKTEST.TESTIN10</td></tr>
 <tr><td>TCELL2:IMUX_D0</td><td>DCC3.CE</td></tr>
 <tr><td>TCELL2:IMUX_D1</td><td>DCC7.CE</td></tr>
-<tr><td>TCELL2:IMUX_D2</td><td>CENTEST.TESTIN3</td></tr>
-<tr><td>TCELL2:IMUX_D3</td><td>CENTEST.TESTIN7</td></tr>
+<tr><td>TCELL2:IMUX_D2</td><td>CLKTEST.TESTIN3</td></tr>
+<tr><td>TCELL2:IMUX_D3</td><td>CLKTEST.TESTIN7</td></tr>
 <tr><td>TCELL2:IMUX_CLK0</td><td>CLK_ROOT.PCLK_IN_M0</td></tr>
 <tr><td>TCELL2:IMUX_CLK1</td><td>CLK_ROOT.PCLK_IN_M1</td></tr>
 <tr><td>TCELL3:IMUX_A5</td><td>CLK_ROOT.SCLK_IN_M4</td></tr>
@@ -986,26 +986,6 @@
 <tr><td>SEL</td><td>input</td><td>TCELL0:IMUX_B5</td></tr>
 </tbody>
 </table></div>
-<h3 id="bel-centest-3"><a class="header" href="#bel-centest-3">Bel CENTEST</a></h3>
-<div class="table-wrapper"><table>
-<caption>machxo2 CLK_ROOT_3EBR bel CENTEST</caption>
-<thead>
-<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
-</thead>
-<tbody>
-<tr><td>TESTIN0</td><td>input</td><td>TCELL1:IMUX_A2</td></tr>
-<tr><td>TESTIN1</td><td>input</td><td>TCELL1:IMUX_B2</td></tr>
-<tr><td>TESTIN10</td><td>input</td><td>TCELL1:IMUX_C4</td></tr>
-<tr><td>TESTIN2</td><td>input</td><td>TCELL1:IMUX_C2</td></tr>
-<tr><td>TESTIN3</td><td>input</td><td>TCELL1:IMUX_D2</td></tr>
-<tr><td>TESTIN4</td><td>input</td><td>TCELL1:IMUX_A3</td></tr>
-<tr><td>TESTIN5</td><td>input</td><td>TCELL1:IMUX_B3</td></tr>
-<tr><td>TESTIN6</td><td>input</td><td>TCELL1:IMUX_C3</td></tr>
-<tr><td>TESTIN7</td><td>input</td><td>TCELL1:IMUX_D3</td></tr>
-<tr><td>TESTIN8</td><td>input</td><td>TCELL1:IMUX_A4</td></tr>
-<tr><td>TESTIN9</td><td>input</td><td>TCELL1:IMUX_B4</td></tr>
-</tbody>
-</table></div>
 <h3 id="bel-clk_root-3"><a class="header" href="#bel-clk_root-3">Bel CLK_ROOT</a></h3>
 <div class="table-wrapper"><table>
 <caption>machxo2 CLK_ROOT_3EBR bel CLK_ROOT</caption>
@@ -1047,6 +1027,26 @@
 <tr><td>SCLK_IN_W1</td><td>input</td><td>TCELL2:IMUX_B5</td></tr>
 </tbody>
 </table></div>
+<h3 id="bel-clktest-3"><a class="header" href="#bel-clktest-3">Bel CLKTEST</a></h3>
+<div class="table-wrapper"><table>
+<caption>machxo2 CLK_ROOT_3EBR bel CLKTEST</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>TESTIN0</td><td>input</td><td>TCELL1:IMUX_A2</td></tr>
+<tr><td>TESTIN1</td><td>input</td><td>TCELL1:IMUX_B2</td></tr>
+<tr><td>TESTIN10</td><td>input</td><td>TCELL1:IMUX_C4</td></tr>
+<tr><td>TESTIN2</td><td>input</td><td>TCELL1:IMUX_C2</td></tr>
+<tr><td>TESTIN3</td><td>input</td><td>TCELL1:IMUX_D2</td></tr>
+<tr><td>TESTIN4</td><td>input</td><td>TCELL1:IMUX_A3</td></tr>
+<tr><td>TESTIN5</td><td>input</td><td>TCELL1:IMUX_B3</td></tr>
+<tr><td>TESTIN6</td><td>input</td><td>TCELL1:IMUX_C3</td></tr>
+<tr><td>TESTIN7</td><td>input</td><td>TCELL1:IMUX_D3</td></tr>
+<tr><td>TESTIN8</td><td>input</td><td>TCELL1:IMUX_A4</td></tr>
+<tr><td>TESTIN9</td><td>input</td><td>TCELL1:IMUX_B4</td></tr>
+</tbody>
+</table></div>
 <h3 id="bel-wires-3"><a class="header" href="#bel-wires-3">Bel wires</a></h3>
 <div class="table-wrapper"><table>
 <caption>machxo2 CLK_ROOT_3EBR bel wires</caption>
@@ -1058,25 +1058,25 @@
 <tr><td>TCELL0:IMUX_B5</td><td>ECLKBRIDGECS1.SEL</td></tr>
 <tr><td>TCELL1:IMUX_A0</td><td>DCC0.CE</td></tr>
 <tr><td>TCELL1:IMUX_A1</td><td>DCC4.CE</td></tr>
-<tr><td>TCELL1:IMUX_A2</td><td>CENTEST.TESTIN0</td></tr>
-<tr><td>TCELL1:IMUX_A3</td><td>CENTEST.TESTIN4</td></tr>
-<tr><td>TCELL1:IMUX_A4</td><td>CENTEST.TESTIN8</td></tr>
+<tr><td>TCELL1:IMUX_A2</td><td>CLKTEST.TESTIN0</td></tr>
+<tr><td>TCELL1:IMUX_A3</td><td>CLKTEST.TESTIN4</td></tr>
+<tr><td>TCELL1:IMUX_A4</td><td>CLKTEST.TESTIN8</td></tr>
 <tr><td>TCELL1:IMUX_A5</td><td>DCM0.SEL</td></tr>
 <tr><td>TCELL1:IMUX_B0</td><td>DCC1.CE</td></tr>
 <tr><td>TCELL1:IMUX_B1</td><td>DCC5.CE</td></tr>
-<tr><td>TCELL1:IMUX_B2</td><td>CENTEST.TESTIN1</td></tr>
-<tr><td>TCELL1:IMUX_B3</td><td>CENTEST.TESTIN5</td></tr>
-<tr><td>TCELL1:IMUX_B4</td><td>CENTEST.TESTIN9</td></tr>
+<tr><td>TCELL1:IMUX_B2</td><td>CLKTEST.TESTIN1</td></tr>
+<tr><td>TCELL1:IMUX_B3</td><td>CLKTEST.TESTIN5</td></tr>
+<tr><td>TCELL1:IMUX_B4</td><td>CLKTEST.TESTIN9</td></tr>
 <tr><td>TCELL1:IMUX_B5</td><td>DCM1.SEL</td></tr>
 <tr><td>TCELL1:IMUX_C0</td><td>DCC2.CE</td></tr>
 <tr><td>TCELL1:IMUX_C1</td><td>DCC6.CE</td></tr>
-<tr><td>TCELL1:IMUX_C2</td><td>CENTEST.TESTIN2</td></tr>
-<tr><td>TCELL1:IMUX_C3</td><td>CENTEST.TESTIN6</td></tr>
-<tr><td>TCELL1:IMUX_C4</td><td>CENTEST.TESTIN10</td></tr>
+<tr><td>TCELL1:IMUX_C2</td><td>CLKTEST.TESTIN2</td></tr>
+<tr><td>TCELL1:IMUX_C3</td><td>CLKTEST.TESTIN6</td></tr>
+<tr><td>TCELL1:IMUX_C4</td><td>CLKTEST.TESTIN10</td></tr>
 <tr><td>TCELL1:IMUX_D0</td><td>DCC3.CE</td></tr>
 <tr><td>TCELL1:IMUX_D1</td><td>DCC7.CE</td></tr>
-<tr><td>TCELL1:IMUX_D2</td><td>CENTEST.TESTIN3</td></tr>
-<tr><td>TCELL1:IMUX_D3</td><td>CENTEST.TESTIN7</td></tr>
+<tr><td>TCELL1:IMUX_D2</td><td>CLKTEST.TESTIN3</td></tr>
+<tr><td>TCELL1:IMUX_D3</td><td>CLKTEST.TESTIN7</td></tr>
 <tr><td>TCELL2:IMUX_A5</td><td>CLK_ROOT.SCLK_IN_W0</td></tr>
 <tr><td>TCELL2:IMUX_B5</td><td>CLK_ROOT.SCLK_IN_W1</td></tr>
 <tr><td>TCELL2:IMUX_CLK0</td><td>CLK_ROOT.PCLK_IN_W2</td></tr>
