@@ -155,161 +155,150 @@
                         <h1 id="configuration-center"><a class="header" href="#configuration-center">Configuration center</a></h1>
 <h2 id="tile-config"><a class="header" href="#tile-config">Tile CONFIG</a></h2>
 <p>Cells: 4</p>
-<h3 id="bel-start"><a class="header" href="#bel-start">Bel START</a></h3>
-<div class="table-wrapper"><table>
-<caption>ecp5 CONFIG bel START</caption>
-<thead>
-<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
-</thead>
-<tbody>
-<tr><td>STARTCLK</td><td>input</td><td>TCELL0:IMUX_CLK1</td></tr>
-</tbody>
-</table></div>
-<h3 id="bel-osc"><a class="header" href="#bel-osc">Bel OSC</a></h3>
-<div class="table-wrapper"><table>
-<caption>ecp5 CONFIG bel OSC</caption>
-<thead>
-<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
-</thead>
-<tbody>
-<tr><td>OSC</td><td>output</td><td>TCELL2:OUT_Q1</td></tr>
-<tr><td>STDBY</td><td>input</td><td>TCELL1:IMUX_CE1</td></tr>
-</tbody>
-</table></div>
-<h3 id="bel-jtag"><a class="header" href="#bel-jtag">Bel JTAG</a></h3>
-<div class="table-wrapper"><table>
-<caption>ecp5 CONFIG bel JTAG</caption>
-<thead>
-<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
-</thead>
-<tbody>
-<tr><td>JCE1</td><td>output</td><td>TCELL0:OUT_Q1</td></tr>
-<tr><td>JCE2</td><td>output</td><td>TCELL0:OUT_Q3</td></tr>
-<tr><td>JRSTN</td><td>output</td><td>TCELL0:OUT_F6</td></tr>
-<tr><td>JRTI1</td><td>output</td><td>TCELL0:OUT_Q2</td></tr>
-<tr><td>JRTI2</td><td>output</td><td>TCELL0:OUT_Q4</td></tr>
-<tr><td>JSHIFT</td><td>output</td><td>TCELL0:OUT_F7</td></tr>
-<tr><td>JTCK</td><td>output</td><td>TCELL0:OUT_F4</td></tr>
-<tr><td>JTDI</td><td>output</td><td>TCELL0:OUT_F5</td></tr>
-<tr><td>JTDO1</td><td>input</td><td>TCELL0:IMUX_A4</td></tr>
-<tr><td>JTDO2</td><td>input</td><td>TCELL0:IMUX_B4</td></tr>
-<tr><td>JUPDATE</td><td>output</td><td>TCELL0:OUT_Q5</td></tr>
-</tbody>
-</table></div>
 <h3 id="bel-gsr"><a class="header" href="#bel-gsr">Bel GSR</a></h3>
 <div class="table-wrapper"><table>
-<caption>ecp5 CONFIG bel GSR</caption>
+<caption>crosslink CONFIG bel GSR</caption>
 <thead>
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
 <tr><td>CLK</td><td>input</td><td>TCELL3:IMUX_CLK0</td></tr>
-<tr><td>GSR</td><td>input</td><td>TCELL0:IMUX_A5</td></tr>
+<tr><td>GSR</td><td>input</td><td>TCELL0:IMUX_D4</td></tr>
 </tbody>
 </table></div>
-<h3 id="bel-sed"><a class="header" href="#bel-sed">Bel SED</a></h3>
+<h3 id="bel-cfgtest"><a class="header" href="#bel-cfgtest">Bel CFGTEST</a></h3>
 <div class="table-wrapper"><table>
-<caption>ecp5 CONFIG bel SED</caption>
+<caption>crosslink CONFIG bel CFGTEST</caption>
 <thead>
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>AUTODONE</td><td>output</td><td>TCELL2:OUT_Q2</td></tr>
-<tr><td>SEDCLKOUT</td><td>output</td><td>TCELL2:OUT_F4</td></tr>
-<tr><td>SEDDONE</td><td>output</td><td>TCELL2:OUT_F5</td></tr>
-<tr><td>SEDENABLE</td><td>input</td><td>TCELL2:IMUX_CE1</td></tr>
-<tr><td>SEDERR</td><td>output</td><td>TCELL2:OUT_F6</td></tr>
-<tr><td>SEDEXCLK</td><td>input</td><td>TCELL2:IMUX_CLK1</td></tr>
-<tr><td>SEDFRCERR</td><td>input</td><td>TCELL2:IMUX_A3</td></tr>
-<tr><td>SEDINPROG</td><td>output</td><td>TCELL2:OUT_F7</td></tr>
-<tr><td>SEDSTART</td><td>input</td><td>TCELL2:IMUX_CE2</td></tr>
-</tbody>
-</table></div>
-<h3 id="bel-cclk"><a class="header" href="#bel-cclk">Bel CCLK</a></h3>
-<div class="table-wrapper"><table>
-<caption>ecp5 CONFIG bel CCLK</caption>
-<thead>
-<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
-</thead>
-<tbody>
-<tr><td>PADDI</td><td>output</td><td>TCELL1:OUT_F5</td></tr>
-<tr><td>PADDO</td><td>input</td><td>TCELL1:IMUX_A4</td></tr>
-<tr><td>PADDT</td><td>input</td><td>TCELL1:IMUX_B4</td></tr>
+<tr><td>CFGSCANCLK</td><td>input</td><td>TCELL2:IMUX_B4</td></tr>
+<tr><td>CFGSCANRESET</td><td>input</td><td>TCELL2:IMUX_D5</td></tr>
+<tr><td>CFGSCANSDI</td><td>input</td><td>TCELL2:IMUX_B5</td></tr>
+<tr><td>CFGSCANSDO</td><td>output</td><td>TCELL1:OUT_F7</td></tr>
+<tr><td>CFGSCANSHIFTEN</td><td>input</td><td>TCELL2:IMUX_D4</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-wires"><a class="header" href="#bel-wires">Bel wires</a></h3>
 <div class="table-wrapper"><table>
-<caption>ecp5 CONFIG bel wires</caption>
+<caption>crosslink CONFIG bel wires</caption>
 <thead>
 <tr><th>Wire</th><th>Pins</th></tr>
 </thead>
 <tbody>
-<tr><td>TCELL0:IMUX_A4</td><td>JTAG.JTDO1</td></tr>
-<tr><td>TCELL0:IMUX_A5</td><td>GSR.GSR</td></tr>
-<tr><td>TCELL0:IMUX_B4</td><td>JTAG.JTDO2</td></tr>
-<tr><td>TCELL0:IMUX_CLK1</td><td>START.STARTCLK</td></tr>
-<tr><td>TCELL0:OUT_F4</td><td>JTAG.JTCK</td></tr>
-<tr><td>TCELL0:OUT_F5</td><td>JTAG.JTDI</td></tr>
-<tr><td>TCELL0:OUT_F6</td><td>JTAG.JRSTN</td></tr>
-<tr><td>TCELL0:OUT_F7</td><td>JTAG.JSHIFT</td></tr>
-<tr><td>TCELL0:OUT_Q1</td><td>JTAG.JCE1</td></tr>
-<tr><td>TCELL0:OUT_Q2</td><td>JTAG.JRTI1</td></tr>
-<tr><td>TCELL0:OUT_Q3</td><td>JTAG.JCE2</td></tr>
-<tr><td>TCELL0:OUT_Q4</td><td>JTAG.JRTI2</td></tr>
-<tr><td>TCELL0:OUT_Q5</td><td>JTAG.JUPDATE</td></tr>
-<tr><td>TCELL1:IMUX_A4</td><td>CCLK.PADDO</td></tr>
-<tr><td>TCELL1:IMUX_B4</td><td>CCLK.PADDT</td></tr>
-<tr><td>TCELL1:IMUX_CE1</td><td>OSC.STDBY</td></tr>
-<tr><td>TCELL1:OUT_F5</td><td>CCLK.PADDI</td></tr>
-<tr><td>TCELL2:IMUX_A3</td><td>SED.SEDFRCERR</td></tr>
-<tr><td>TCELL2:IMUX_CLK1</td><td>SED.SEDEXCLK</td></tr>
-<tr><td>TCELL2:IMUX_CE1</td><td>SED.SEDENABLE</td></tr>
-<tr><td>TCELL2:IMUX_CE2</td><td>SED.SEDSTART</td></tr>
-<tr><td>TCELL2:OUT_F4</td><td>SED.SEDCLKOUT</td></tr>
-<tr><td>TCELL2:OUT_F5</td><td>SED.SEDDONE</td></tr>
-<tr><td>TCELL2:OUT_F6</td><td>SED.SEDERR</td></tr>
-<tr><td>TCELL2:OUT_F7</td><td>SED.SEDINPROG</td></tr>
-<tr><td>TCELL2:OUT_Q1</td><td>OSC.OSC</td></tr>
-<tr><td>TCELL2:OUT_Q2</td><td>SED.AUTODONE</td></tr>
+<tr><td>TCELL0:IMUX_D4</td><td>GSR.GSR</td></tr>
+<tr><td>TCELL1:OUT_F7</td><td>CFGTEST.CFGSCANSDO</td></tr>
+<tr><td>TCELL2:IMUX_B4</td><td>CFGTEST.CFGSCANCLK</td></tr>
+<tr><td>TCELL2:IMUX_B5</td><td>CFGTEST.CFGSCANSDI</td></tr>
+<tr><td>TCELL2:IMUX_D4</td><td>CFGTEST.CFGSCANSHIFTEN</td></tr>
+<tr><td>TCELL2:IMUX_D5</td><td>CFGTEST.CFGSCANRESET</td></tr>
 <tr><td>TCELL3:IMUX_CLK0</td><td>GSR.CLK</td></tr>
 </tbody>
 </table></div>
-<h2 id="tile-dtr"><a class="header" href="#tile-dtr">Tile DTR</a></h2>
+<h2 id="tile-osc"><a class="header" href="#tile-osc">Tile OSC</a></h2>
 <p>Cells: 1</p>
-<h3 id="bel-dtr"><a class="header" href="#bel-dtr">Bel DTR</a></h3>
+<h3 id="bel-osc"><a class="header" href="#bel-osc">Bel OSC</a></h3>
 <div class="table-wrapper"><table>
-<caption>ecp5 DTR bel DTR</caption>
+<caption>crosslink OSC bel OSC</caption>
 <thead>
 <tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
 </thead>
 <tbody>
-<tr><td>DTROUT0</td><td>output</td><td>OUT_F0</td></tr>
-<tr><td>DTROUT1</td><td>output</td><td>OUT_F1</td></tr>
-<tr><td>DTROUT2</td><td>output</td><td>OUT_F2</td></tr>
-<tr><td>DTROUT3</td><td>output</td><td>OUT_F3</td></tr>
-<tr><td>DTROUT4</td><td>output</td><td>OUT_F4</td></tr>
-<tr><td>DTROUT5</td><td>output</td><td>OUT_F5</td></tr>
-<tr><td>DTROUT6</td><td>output</td><td>OUT_F6</td></tr>
-<tr><td>DTROUT7</td><td>output</td><td>OUT_F7</td></tr>
-<tr><td>STARTPULSE</td><td>input</td><td>IMUX_A0</td></tr>
+<tr><td>HFCLKDIV0</td><td>input</td><td>IMUX_A1</td></tr>
+<tr><td>HFCLKDIV1</td><td>input</td><td>IMUX_C1</td></tr>
+<tr><td>HFCLKOUT</td><td>output</td><td>OUT_F1</td></tr>
+<tr><td>HFOUTEN</td><td>input</td><td>IMUX_D7</td></tr>
+<tr><td>LFCLKOUT</td><td>output</td><td>OUT_F0</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-wires-1"><a class="header" href="#bel-wires-1">Bel wires</a></h3>
 <div class="table-wrapper"><table>
-<caption>ecp5 DTR bel wires</caption>
+<caption>crosslink OSC bel wires</caption>
 <thead>
 <tr><th>Wire</th><th>Pins</th></tr>
 </thead>
 <tbody>
-<tr><td>IMUX_A0</td><td>DTR.STARTPULSE</td></tr>
-<tr><td>OUT_F0</td><td>DTR.DTROUT0</td></tr>
-<tr><td>OUT_F1</td><td>DTR.DTROUT1</td></tr>
-<tr><td>OUT_F2</td><td>DTR.DTROUT2</td></tr>
-<tr><td>OUT_F3</td><td>DTR.DTROUT3</td></tr>
-<tr><td>OUT_F4</td><td>DTR.DTROUT4</td></tr>
-<tr><td>OUT_F5</td><td>DTR.DTROUT5</td></tr>
-<tr><td>OUT_F6</td><td>DTR.DTROUT6</td></tr>
-<tr><td>OUT_F7</td><td>DTR.DTROUT7</td></tr>
+<tr><td>IMUX_A1</td><td>OSC.HFCLKDIV0</td></tr>
+<tr><td>IMUX_C1</td><td>OSC.HFCLKDIV1</td></tr>
+<tr><td>IMUX_D7</td><td>OSC.HFOUTEN</td></tr>
+<tr><td>OUT_F0</td><td>OSC.LFCLKOUT</td></tr>
+<tr><td>OUT_F1</td><td>OSC.HFCLKOUT</td></tr>
+</tbody>
+</table></div>
+<h2 id="tile-pmu"><a class="header" href="#tile-pmu">Tile PMU</a></h2>
+<p>Cells: 1</p>
+<h3 id="bel-pmu"><a class="header" href="#bel-pmu">Bel PMU</a></h3>
+<div class="table-wrapper"><table>
+<caption>crosslink PMU bel PMU</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>SLEEP</td><td>input</td><td>IMUX_B7</td></tr>
+<tr><td>USRADR0</td><td>input</td><td>IMUX_C2</td></tr>
+<tr><td>USRADR1</td><td>input</td><td>IMUX_D3</td></tr>
+<tr><td>USRADR2</td><td>input</td><td>IMUX_B3</td></tr>
+<tr><td>USRADR3</td><td>input</td><td>IMUX_C3</td></tr>
+<tr><td>USRCLK</td><td>input</td><td>IMUX_CLK1</td></tr>
+<tr><td>USRCS</td><td>input</td><td>IMUX_A2</td></tr>
+<tr><td>USRDATA0</td><td>input</td><td>IMUX_C4</td></tr>
+<tr><td>USRDATA1</td><td>input</td><td>IMUX_A5</td></tr>
+<tr><td>USRDATA2</td><td>input</td><td>IMUX_B5</td></tr>
+<tr><td>USRDATA3</td><td>input</td><td>IMUX_C5</td></tr>
+<tr><td>USRDATA4</td><td>input</td><td>IMUX_A6</td></tr>
+<tr><td>USRDATA5</td><td>input</td><td>IMUX_C6</td></tr>
+<tr><td>USRDATA6</td><td>input</td><td>IMUX_A7</td></tr>
+<tr><td>USRDATA7</td><td>input</td><td>IMUX_C7</td></tr>
+<tr><td>USRSTB</td><td>input</td><td>IMUX_B2</td></tr>
+<tr><td>USRWDTDONE</td><td>output</td><td>OUT_F0</td></tr>
+<tr><td>USRWDTINT</td><td>output</td><td>OUT_F2</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-pmutest"><a class="header" href="#bel-pmutest">Bel PMUTEST</a></h3>
+<div class="table-wrapper"><table>
+<caption>crosslink PMU bel PMUTEST</caption>
+<thead>
+<tr><th>Pin</th><th>Direction</th><th>Wires</th></tr>
+</thead>
+<tbody>
+<tr><td>PMUSCANCLK</td><td>input</td><td>IMUX_D6</td></tr>
+<tr><td>PMUSCANRESET</td><td>input</td><td>IMUX_LSR1</td></tr>
+<tr><td>PMUSCANSDI</td><td>input</td><td>IMUX_B6</td></tr>
+<tr><td>PMUSCANSDO</td><td>output</td><td>OUT_F3</td></tr>
+<tr><td>PMUSCANSHIFTEN</td><td>input</td><td>IMUX_D7</td></tr>
+</tbody>
+</table></div>
+<h3 id="bel-wires-2"><a class="header" href="#bel-wires-2">Bel wires</a></h3>
+<div class="table-wrapper"><table>
+<caption>crosslink PMU bel wires</caption>
+<thead>
+<tr><th>Wire</th><th>Pins</th></tr>
+</thead>
+<tbody>
+<tr><td>IMUX_A2</td><td>PMU.USRCS</td></tr>
+<tr><td>IMUX_A5</td><td>PMU.USRDATA1</td></tr>
+<tr><td>IMUX_A6</td><td>PMU.USRDATA4</td></tr>
+<tr><td>IMUX_A7</td><td>PMU.USRDATA6</td></tr>
+<tr><td>IMUX_B2</td><td>PMU.USRSTB</td></tr>
+<tr><td>IMUX_B3</td><td>PMU.USRADR2</td></tr>
+<tr><td>IMUX_B5</td><td>PMU.USRDATA2</td></tr>
+<tr><td>IMUX_B6</td><td>PMUTEST.PMUSCANSDI</td></tr>
+<tr><td>IMUX_B7</td><td>PMU.SLEEP</td></tr>
+<tr><td>IMUX_C2</td><td>PMU.USRADR0</td></tr>
+<tr><td>IMUX_C3</td><td>PMU.USRADR3</td></tr>
+<tr><td>IMUX_C4</td><td>PMU.USRDATA0</td></tr>
+<tr><td>IMUX_C5</td><td>PMU.USRDATA3</td></tr>
+<tr><td>IMUX_C6</td><td>PMU.USRDATA5</td></tr>
+<tr><td>IMUX_C7</td><td>PMU.USRDATA7</td></tr>
+<tr><td>IMUX_D3</td><td>PMU.USRADR1</td></tr>
+<tr><td>IMUX_D6</td><td>PMUTEST.PMUSCANCLK</td></tr>
+<tr><td>IMUX_D7</td><td>PMUTEST.PMUSCANSHIFTEN</td></tr>
+<tr><td>IMUX_CLK1</td><td>PMU.USRCLK</td></tr>
+<tr><td>IMUX_LSR1</td><td>PMUTEST.PMUSCANRESET</td></tr>
+<tr><td>OUT_F0</td><td>PMU.USRWDTDONE</td></tr>
+<tr><td>OUT_F2</td><td>PMU.USRWDTINT</td></tr>
+<tr><td>OUT_F3</td><td>PMUTEST.PMUSCANSDO</td></tr>
 </tbody>
 </table></div>
 
@@ -317,11 +306,11 @@
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../ecp5/serdes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../crosslink/i2c.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../crosslink/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../xc9500/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -331,11 +320,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../ecp5/serdes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../crosslink/i2c.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../crosslink/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../xc9500/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
