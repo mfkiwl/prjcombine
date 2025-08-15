@@ -161,8 +161,8 @@
 </thead>
 <tbody>
 <tr><td>INT</td><td>INT_PLC, INT_IO_WE, INT_IO_S, INT_IO_N, INT_EBR, INT_EBR_IO, INT_SERDES_N</td><td>INT</td></tr>
-<tr><td>IO</td><td>IO_W, IO_E, IO_S, IO_N</td><td>IO0, IO1, IO2, IO3, IO4, IO5</td></tr>
-<tr><td>BEL</td><td>PLC, FPLC, EBR, DSP, CONFIG, DQS_W, DQS_E, DQS_S, SERDES_S, SERDES_N, SPLL_W, SPLL_E, PLL_W, PLL_E</td><td>SLICE0, SLICE1, SLICE2, SLICE3, DQS0, DQS1, DQSTEST, DQSDLL, DQSDLLTEST, SERDES, CIBTEST_SEL, EBR0, EBR1, EBR2, EBR3, DSP0, DSP1, PLL0, PLL1, PLLREFCS0, PLLREFCS1, DLL, DDRDLL, DTR, DLLDEL0, DLLDEL1, DLLDEL2, DLLDEL3, DLLDEL4, DLLDEL5, DLLDEL6, DLLDEL7, CLKDIV0, CLKDIV1, CLKDIV2, CLKDIV3, ECLK_ALT_ROOT, SPLL, START, OSC, JTAG, RDBK, GSR, TSALL, SED, CCLK, SPIM, SSPI, WAKEUP, STF, AMBOOT, PERREG, PCNTR, EFB, ESB, PVTTEST, PVTCAL, TESTIN, TESTOUT, DTS</td></tr>
+<tr><td>IO</td><td>IO_W, IO_E, IO_S, IO_N</td><td>IO0, IO1, IO2, IO3, IO4, IO5, IO6, IO7, IO8, IO9, IO10, IO11, PICTEST0, PICTEST1, PICTEST2</td></tr>
+<tr><td>BEL</td><td>PLC, FPLC, EBR, DSP, CONFIG, DQS_W, DQS_E, DQS_S, SERDES_S, SERDES_N, SPLL_W, SPLL_E, PLL_W, PLL_E</td><td>SLICE0, SLICE1, SLICE2, SLICE3, IO_INT, DQS0, DQS1, DQSTEST, DQSDLL, DQSDLLTEST, SERDES, SERDES_CENTER, SERDES_CORNER, MACO, MACO_INT, MIPI, CLKTEST_MIPI, CIBTEST_SEL, EBR0, EBR1, EBR2, EBR3, EBR_INT, DSP0, DSP1, PLL0, PLL1, PLL_SMI, PLLREFCS0, PLLREFCS1, DLL0, DLL1, DLL2, DLL3, DLL_DCNTL0, DLL_DCNTL1, PROMON, RNET, DDRDLL, DTR, DLLDEL0, DLLDEL1, DLLDEL2, DLLDEL3, DLLDEL4, DLLDEL5, DLLDEL6, DLLDEL7, CLKDIV0, CLKDIV1, CLKDIV2, CLKDIV3, ECLK_ALT_ROOT, SPLL, SYSBUS, START, OSC, JTAG, RDBK, GSR, TSALL, SED, M0, M1, M2, M3, RESETN, RDCFGN, CCLK, TCK, TMS, TDI, SPIM, SSPI, WAKEUP, STF, AMBOOT, PERREG, PCNTR, EFB, ESB, I2C, NVCMTEST, PMU, PMUTEST, CFGTEST, PVTTEST, PVTCAL, TESTIN, TESTOUT, DTS</td></tr>
 <tr><td>BC</td><td></td><td>BCPG, BCINRD, BCLVDSO, BCSLEWRATE, BCPUSL, BREFTEST</td></tr>
 <tr><td>CLK</td><td>CLK_ROOT_8PLL, ECLK_ROOT_W, ECLK_ROOT_E, ECLK_ROOT_S, ECLK_ROOT_N</td><td>PCSCLKDIV0, PCSCLKDIV1, PCSCLKDIV2, PCSCLKDIV3, DCC_SW0, DCC_SW1, DCC_SW2, DCC_SW3, DCC_SW4, DCC_SW5, DCC_SE0, DCC_SE1, DCC_SE2, DCC_SE3, DCC_SE4, DCC_SE5, DCC_NW0, DCC_NW1, DCC_NW2, DCC_NW3, DCC_NW4, DCC_NW5, DCC_NE0, DCC_NE1, DCC_NE2, DCC_NE3, DCC_NE4, DCC_NE5, DCS_SW0, DCS_SW1, DCS_SE0, DCS_SE1, DCS_NW0, DCS_NW1, DCS_NE0, DCS_NE1, DCC0, DCC1, DCC2, DCC3, DCC4, DCC5, DCC6, DCC7, DCC8, DCC9, DCC10, DCC11, DCC12, DCC13, DCC14, DCC15, DCM0, DCM1, DCS0, DCS1, ECLKBRIDGECS0, ECLKBRIDGECS1, BRGECLKSYNC0, BRGECLKSYNC1, CLKFBBUF0, CLKFBBUF1, CLK_ROOT, CLK_EDGE, CLKTEST, ECLK_ROOT, ECLKSYNC0, ECLKSYNC1, ECLKSYNC2, ECLKSYNC3, ECLKSYNC4, ECLKSYNC5, ECLKSYNC6, ECLKSYNC7, ECLKSYNC8, ECLKSYNC9, ECLKSYNC10, ECLKSYNC11, ECLKSYNC12, ECLKSYNC13, ECLKSYNC14, ECLKSYNC15, CLKTEST_ECLK</td></tr>
 <tr><td>SCLK_SOURCE</td><td>SCLK0_SOURCE, SCLK1_SOURCE, SCLK2_SOURCE, SCLK3_SOURCE</td><td>SCLK_SOURCE</td></tr>
@@ -189,24 +189,49 @@
 <tr><td>IO3</td><td>IO</td><td></td></tr>
 <tr><td>IO4</td><td>IO</td><td></td></tr>
 <tr><td>IO5</td><td>IO</td><td></td></tr>
+<tr><td>IO6</td><td>IO</td><td></td></tr>
+<tr><td>IO7</td><td>IO</td><td></td></tr>
+<tr><td>IO8</td><td>IO</td><td></td></tr>
+<tr><td>IO9</td><td>IO</td><td></td></tr>
+<tr><td>IO10</td><td>IO</td><td></td></tr>
+<tr><td>IO11</td><td>IO</td><td></td></tr>
+<tr><td>PICTEST0</td><td>IO</td><td></td></tr>
+<tr><td>PICTEST1</td><td>IO</td><td></td></tr>
+<tr><td>PICTEST2</td><td>IO</td><td></td></tr>
+<tr><td>IO_INT</td><td>BEL</td><td></td></tr>
 <tr><td>DQS0</td><td>BEL</td><td>DQS_W, DQS_E, DQS_S</td></tr>
 <tr><td>DQS1</td><td>BEL</td><td></td></tr>
 <tr><td>DQSTEST</td><td>BEL</td><td></td></tr>
 <tr><td>DQSDLL</td><td>BEL</td><td>PLL_W, PLL_E</td></tr>
 <tr><td>DQSDLLTEST</td><td>BEL</td><td></td></tr>
 <tr><td>SERDES</td><td>BEL</td><td>SERDES_S, SERDES_N</td></tr>
+<tr><td>SERDES_CENTER</td><td>BEL</td><td></td></tr>
+<tr><td>SERDES_CORNER</td><td>BEL</td><td></td></tr>
+<tr><td>MACO</td><td>BEL</td><td></td></tr>
+<tr><td>MACO_INT</td><td>BEL</td><td></td></tr>
+<tr><td>MIPI</td><td>BEL</td><td></td></tr>
+<tr><td>CLKTEST_MIPI</td><td>BEL</td><td></td></tr>
 <tr><td>CIBTEST_SEL</td><td>BEL</td><td></td></tr>
 <tr><td>EBR0</td><td>BEL</td><td>EBR</td></tr>
 <tr><td>EBR1</td><td>BEL</td><td></td></tr>
 <tr><td>EBR2</td><td>BEL</td><td></td></tr>
 <tr><td>EBR3</td><td>BEL</td><td></td></tr>
+<tr><td>EBR_INT</td><td>BEL</td><td></td></tr>
 <tr><td>DSP0</td><td>BEL</td><td>DSP</td></tr>
 <tr><td>DSP1</td><td>BEL</td><td></td></tr>
 <tr><td>PLL0</td><td>BEL</td><td>PLL_W, PLL_E</td></tr>
 <tr><td>PLL1</td><td>BEL</td><td></td></tr>
+<tr><td>PLL_SMI</td><td>BEL</td><td></td></tr>
 <tr><td>PLLREFCS0</td><td>BEL</td><td></td></tr>
 <tr><td>PLLREFCS1</td><td>BEL</td><td></td></tr>
-<tr><td>DLL</td><td>BEL</td><td>PLL_W, PLL_E</td></tr>
+<tr><td>DLL0</td><td>BEL</td><td>PLL_W, PLL_E</td></tr>
+<tr><td>DLL1</td><td>BEL</td><td></td></tr>
+<tr><td>DLL2</td><td>BEL</td><td></td></tr>
+<tr><td>DLL3</td><td>BEL</td><td></td></tr>
+<tr><td>DLL_DCNTL0</td><td>BEL</td><td></td></tr>
+<tr><td>DLL_DCNTL1</td><td>BEL</td><td></td></tr>
+<tr><td>PROMON</td><td>BEL</td><td></td></tr>
+<tr><td>RNET</td><td>BEL</td><td></td></tr>
 <tr><td>DDRDLL</td><td>BEL</td><td></td></tr>
 <tr><td>DTR</td><td>BEL</td><td></td></tr>
 <tr><td>DLLDEL0</td><td>BEL</td><td>PLL_W, PLL_E</td></tr>
@@ -227,6 +252,7 @@
 <tr><td>PCSCLKDIV3</td><td>CLK</td><td></td></tr>
 <tr><td>ECLK_ALT_ROOT</td><td>BEL</td><td>PLL_W, PLL_E</td></tr>
 <tr><td>SPLL</td><td>BEL</td><td>SPLL_W, SPLL_E</td></tr>
+<tr><td>SYSBUS</td><td>BEL</td><td></td></tr>
 <tr><td>START</td><td>BEL</td><td>CONFIG</td></tr>
 <tr><td>OSC</td><td>BEL</td><td>CONFIG</td></tr>
 <tr><td>JTAG</td><td>BEL</td><td>CONFIG</td></tr>
@@ -234,7 +260,16 @@
 <tr><td>GSR</td><td>BEL</td><td>CONFIG</td></tr>
 <tr><td>TSALL</td><td>BEL</td><td></td></tr>
 <tr><td>SED</td><td>BEL</td><td>CONFIG</td></tr>
+<tr><td>M0</td><td>BEL</td><td></td></tr>
+<tr><td>M1</td><td>BEL</td><td></td></tr>
+<tr><td>M2</td><td>BEL</td><td></td></tr>
+<tr><td>M3</td><td>BEL</td><td></td></tr>
+<tr><td>RESETN</td><td>BEL</td><td></td></tr>
+<tr><td>RDCFGN</td><td>BEL</td><td></td></tr>
 <tr><td>CCLK</td><td>BEL</td><td></td></tr>
+<tr><td>TCK</td><td>BEL</td><td></td></tr>
+<tr><td>TMS</td><td>BEL</td><td></td></tr>
+<tr><td>TDI</td><td>BEL</td><td></td></tr>
 <tr><td>SPIM</td><td>BEL</td><td>CONFIG</td></tr>
 <tr><td>SSPI</td><td>BEL</td><td></td></tr>
 <tr><td>WAKEUP</td><td>BEL</td><td></td></tr>
@@ -244,6 +279,11 @@
 <tr><td>PCNTR</td><td>BEL</td><td></td></tr>
 <tr><td>EFB</td><td>BEL</td><td></td></tr>
 <tr><td>ESB</td><td>BEL</td><td></td></tr>
+<tr><td>I2C</td><td>BEL</td><td></td></tr>
+<tr><td>NVCMTEST</td><td>BEL</td><td></td></tr>
+<tr><td>PMU</td><td>BEL</td><td></td></tr>
+<tr><td>PMUTEST</td><td>BEL</td><td></td></tr>
+<tr><td>CFGTEST</td><td>BEL</td><td></td></tr>
 <tr><td>BCPG</td><td>BC</td><td></td></tr>
 <tr><td>BCINRD</td><td>BC</td><td></td></tr>
 <tr><td>BCLVDSO</td><td>BC</td><td></td></tr>
@@ -357,6 +397,10 @@
 <tr><td>N</td><td>S</td><td>PASS_N, TERM_N</td></tr>
 <tr><td>SW</td><td>SE</td><td>PASS_SW</td></tr>
 <tr><td>SE</td><td>SW</td><td>PASS_SE</td></tr>
+<tr><td>EBR_W</td><td>EBR_E</td><td></td></tr>
+<tr><td>EBR_E</td><td>EBR_W</td><td></td></tr>
+<tr><td>IO_W</td><td>IO_E</td><td></td></tr>
+<tr><td>IO_E</td><td>IO_W</td><td></td></tr>
 </tbody>
 </table></div>
 <h2 id="region-slots"><a class="header" href="#region-slots">Region slots</a></h2>
@@ -1558,6 +1602,46 @@
 <thead>
 <tr><th>Wire</th>
 <th>PASS_SE</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h2 id="connectors--ebr_w"><a class="header" href="#connectors--ebr_w">Connectors — EBR_W</a></h2>
+<div class="table-wrapper"><table>
+<caption>ecp2m wires</caption>
+<thead>
+<tr><th>Wire</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h2 id="connectors--ebr_e"><a class="header" href="#connectors--ebr_e">Connectors — EBR_E</a></h2>
+<div class="table-wrapper"><table>
+<caption>ecp2m wires</caption>
+<thead>
+<tr><th>Wire</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h2 id="connectors--io_w"><a class="header" href="#connectors--io_w">Connectors — IO_W</a></h2>
+<div class="table-wrapper"><table>
+<caption>ecp2m wires</caption>
+<thead>
+<tr><th>Wire</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table></div>
+<h2 id="connectors--io_e"><a class="header" href="#connectors--io_e">Connectors — IO_E</a></h2>
+<div class="table-wrapper"><table>
+<caption>ecp2m wires</caption>
+<thead>
+<tr><th>Wire</th>
 </tr>
 </thead>
 <tbody>
