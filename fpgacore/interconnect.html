@@ -162,7 +162,7 @@
 </thead>
 <tbody>
 <tr><td>INT</td><td>INT.CLB, INT.IOI.FC</td><td>INT, RLL, PTE2OMUX0, PTE2OMUX1, PTE2OMUX2, PTE2OMUX3</td></tr>
-<tr><td>INTF</td><td></td><td></td></tr>
+<tr><td>INTF</td><td></td><td>INTF_TESTMUX</td></tr>
 <tr><td>BEL</td><td>CLB, IOI.FC, LL.FC, LR.FC, UL.FC, UR.FC</td><td>SLICE0, SLICE1, SLICE2, SLICE3, TBUF0, TBUF1, TBUS, IO0, IO1, IO2, IO3, IBUF0, IBUF1, IBUF2, IBUF3, OBUF0, OBUF1, OBUF2, OBUF3, BRAM, MULT, DSP, DCM, GT, GT10, IPAD_RXP, IPAD_RXN, OPAD_TXP, OPAD_TXN, PPC405, DCI0, DCI1, DCIRESET0, DCIRESET1, STARTUP, CAPTURE, ICAP, SPI_ACCESS, PMV, DNA_PORT, BSCAN, JTAGPPC, DCMCONN_S3E, BREFCLK_INT, RANDOR_OUT, MISR</td></tr>
 <tr><td>TERM_H</td><td></td><td>TERM_W, TERM_E, PPC_TERM_W, PPC_TERM_E, LLH</td></tr>
 <tr><td>TERM_V</td><td></td><td>TERM_S, TERM_N, PPC_TERM_S, PPC_TERM_N, LLV</td></tr>
@@ -183,6 +183,7 @@
 <tbody>
 <tr><td>INT</td><td>INT</td><td>INT.CLB, INT.IOI.FC</td></tr>
 <tr><td>RLL</td><td>INT</td><td>INT.CLB, INT.IOI.FC</td></tr>
+<tr><td>INTF_TESTMUX</td><td>INTF</td><td></td></tr>
 <tr><td>CLK_INT</td><td>CLK</td><td>CLKB.FC, CLKT.FC</td></tr>
 <tr><td>TERM_W</td><td>TERM_H</td><td></td></tr>
 <tr><td>TERM_E</td><td>TERM_H</td><td></td></tr>
@@ -796,37 +797,69 @@
 <tr><td>IMUX.DATA30</td><td>MUX_OUT</td></tr>
 <tr><td>IMUX.DATA31</td><td>MUX_OUT</td></tr>
 <tr><td>OUT.FAN0</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.FAN0.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.FAN1</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.FAN1.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.FAN2</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.FAN2.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.FAN3</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.FAN3.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.FAN4</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.FAN4.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.FAN5</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.FAN5.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.FAN6</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.FAN6.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.FAN7</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.FAN7.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC0</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC0.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC1</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC1.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC2</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC2.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC3</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC3.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC4</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC4.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC5</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC5.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC6</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC6.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC7</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC7.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC8</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC8.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC9</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC9.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC10</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC10.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC11</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC11.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC12</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC12.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC13</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC13.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC14</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC14.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC15</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC15.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.HALF0.0</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.HALF0.0.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.HALF0.1</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.HALF0.1.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.HALF1.0</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.HALF1.0.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.HALF1.1</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.HALF1.1.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.HALF2.0</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.HALF2.0.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.HALF2.1</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.HALF2.1.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.HALF3.0</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.HALF3.0.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.HALF3.1</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.HALF3.1.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>CLK.IMUX.SEL0</td><td>MUX_OUT</td></tr>
 <tr><td>CLK.IMUX.SEL1</td><td>MUX_OUT</td></tr>
 <tr><td>CLK.IMUX.SEL2</td><td>MUX_OUT</td></tr>
@@ -2181,7 +2214,6 @@
 <p>The interconnect tiles are 19×64 bits. The space on the left is unused by the interconnect tile, and contains data for whatever primitive is associated with the interconnect tile.</p>
 <h2 id="tile-intclb"><a class="header" href="#tile-intclb">Tile INT.CLB</a></h2>
 <p>Cells: 1</p>
-<h3 id="bel-int"><a class="header" href="#bel-int">Bel INT</a></h3>
 <h3 id="switchbox-int"><a class="header" href="#switchbox-int">Switchbox INT</a></h3>
 <div class="table-wrapper"><table>
 <caption>fpgacore INT.CLB switchbox INT</caption>
@@ -22523,7 +22555,6 @@ non-inverted
 </table></div>
 <h2 id="tile-intioifc"><a class="header" href="#tile-intioifc">Tile INT.IOI.FC</a></h2>
 <p>Cells: 1</p>
-<h3 id="bel-int-1"><a class="header" href="#bel-int-1">Bel INT</a></h3>
 <h3 id="switchbox-int-1"><a class="header" href="#switchbox-int-1">Switchbox INT</a></h3>
 <div class="table-wrapper"><table>
 <caption>fpgacore INT.IOI.FC switchbox INT</caption>

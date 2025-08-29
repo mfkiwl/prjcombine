@@ -15871,14 +15871,14 @@ non-inverted
 <tr><td>CLK</td><td>input</td><td>IMUX.IMUX4</td></tr>
 <tr><td>DIN</td><td>input</td><td>IMUX.IMUX43</td></tr>
 <tr><td>EN</td><td>input</td><td>IMUX.IMUX27</td></tr>
-<tr><td>Q0B</td><td>output</td><td>OUT16</td></tr>
-<tr><td>Q1B</td><td>output</td><td>OUT6</td></tr>
-<tr><td>Q2B</td><td>output</td><td>OUT10</td></tr>
-<tr><td>Q3B</td><td>output</td><td>OUT9</td></tr>
-<tr><td>Q4B</td><td>output</td><td>OUT5</td></tr>
-<tr><td>Q5B</td><td>output</td><td>OUT19</td></tr>
-<tr><td>Q6B</td><td>output</td><td>OUT14</td></tr>
-<tr><td>Q7B</td><td>output</td><td>OUT2</td></tr>
+<tr><td>Q0B</td><td>output</td><td>OUT16.TMIN</td></tr>
+<tr><td>Q1B</td><td>output</td><td>OUT6.TMIN</td></tr>
+<tr><td>Q2B</td><td>output</td><td>OUT10.TMIN</td></tr>
+<tr><td>Q3B</td><td>output</td><td>OUT9.TMIN</td></tr>
+<tr><td>Q4B</td><td>output</td><td>OUT5.TMIN</td></tr>
+<tr><td>Q5B</td><td>output</td><td>OUT19.TMIN</td></tr>
+<tr><td>Q6B</td><td>output</td><td>OUT14.TMIN</td></tr>
+<tr><td>Q7B</td><td>output</td><td>OUT2.TMIN</td></tr>
 <tr><td>RESET</td><td>input</td><td>IMUX.IMUX35</td></tr>
 </tbody>
 </table></div>
@@ -15893,14 +15893,14 @@ non-inverted
 <tr><td>IMUX.IMUX27</td><td>MTBF2.EN</td></tr>
 <tr><td>IMUX.IMUX35</td><td>MTBF2.RESET</td></tr>
 <tr><td>IMUX.IMUX43</td><td>MTBF2.DIN</td></tr>
-<tr><td>OUT2</td><td>MTBF2.Q7B</td></tr>
-<tr><td>OUT5</td><td>MTBF2.Q4B</td></tr>
-<tr><td>OUT6</td><td>MTBF2.Q1B</td></tr>
-<tr><td>OUT9</td><td>MTBF2.Q3B</td></tr>
-<tr><td>OUT10</td><td>MTBF2.Q2B</td></tr>
-<tr><td>OUT14</td><td>MTBF2.Q6B</td></tr>
-<tr><td>OUT16</td><td>MTBF2.Q0B</td></tr>
-<tr><td>OUT19</td><td>MTBF2.Q5B</td></tr>
+<tr><td>OUT2.TMIN</td><td>MTBF2.Q7B</td></tr>
+<tr><td>OUT5.TMIN</td><td>MTBF2.Q4B</td></tr>
+<tr><td>OUT6.TMIN</td><td>MTBF2.Q1B</td></tr>
+<tr><td>OUT9.TMIN</td><td>MTBF2.Q3B</td></tr>
+<tr><td>OUT10.TMIN</td><td>MTBF2.Q2B</td></tr>
+<tr><td>OUT14.TMIN</td><td>MTBF2.Q6B</td></tr>
+<tr><td>OUT16.TMIN</td><td>MTBF2.Q0B</td></tr>
+<tr><td>OUT19.TMIN</td><td>MTBF2.Q5B</td></tr>
 </tbody>
 </table></div>
 <h2 id="tile-clk_pmv"><a class="header" href="#tile-clk_pmv">Tile CLK_PMV</a></h2>
@@ -15919,9 +15919,9 @@ non-inverted
 <tr><td>A4</td><td>input</td><td>IMUX.IMUX1</td></tr>
 <tr><td>A5</td><td>input</td><td>IMUX.IMUX16</td></tr>
 <tr><td>EN</td><td>input</td><td>IMUX.IMUX24</td></tr>
-<tr><td>O</td><td>output</td><td>OUT9</td></tr>
-<tr><td>ODIV2</td><td>output</td><td>OUT13</td></tr>
-<tr><td>ODIV4</td><td>output</td><td>OUT1</td></tr>
+<tr><td>O</td><td>output</td><td>OUT9.TMIN</td></tr>
+<tr><td>ODIV2</td><td>output</td><td>OUT13.TMIN</td></tr>
+<tr><td>ODIV4</td><td>output</td><td>OUT1.TMIN</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-wires-1"><a class="header" href="#bel-wires-1">Bel wires</a></h3>
@@ -15938,9 +15938,9 @@ non-inverted
 <tr><td>IMUX.IMUX24</td><td>PMV0.EN</td></tr>
 <tr><td>IMUX.IMUX25</td><td>PMV0.A1</td></tr>
 <tr><td>IMUX.IMUX33</td><td>PMV0.A2</td></tr>
-<tr><td>OUT1</td><td>PMV0.ODIV4</td></tr>
-<tr><td>OUT9</td><td>PMV0.O</td></tr>
-<tr><td>OUT13</td><td>PMV0.ODIV2</td></tr>
+<tr><td>OUT1.TMIN</td><td>PMV0.ODIV4</td></tr>
+<tr><td>OUT9.TMIN</td><td>PMV0.O</td></tr>
+<tr><td>OUT13.TMIN</td><td>PMV0.ODIV2</td></tr>
 </tbody>
 </table></div>
 <h2 id="tile-clk_pmv2"><a class="header" href="#tile-clk_pmv2">Tile CLK_PMV2</a></h2>
@@ -15956,9 +15956,9 @@ non-inverted
 <tr><td>A1</td><td>input</td><td>IMUX.IMUX27</td></tr>
 <tr><td>A2</td><td>input</td><td>IMUX.IMUX35</td></tr>
 <tr><td>EN</td><td>input</td><td>IMUX.IMUX4</td></tr>
-<tr><td>O</td><td>output</td><td>OUT9</td></tr>
-<tr><td>ODIV2</td><td>output</td><td>OUT5</td></tr>
-<tr><td>ODIV4</td><td>output</td><td>OUT19</td></tr>
+<tr><td>O</td><td>output</td><td>OUT9.TMIN</td></tr>
+<tr><td>ODIV2</td><td>output</td><td>OUT5.TMIN</td></tr>
+<tr><td>ODIV4</td><td>output</td><td>OUT19.TMIN</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-wires-2"><a class="header" href="#bel-wires-2">Bel wires</a></h3>
@@ -15972,9 +15972,9 @@ non-inverted
 <tr><td>IMUX.IMUX27</td><td>PMV2.A1</td></tr>
 <tr><td>IMUX.IMUX35</td><td>PMV2.A2</td></tr>
 <tr><td>IMUX.IMUX43</td><td>PMV2.A0</td></tr>
-<tr><td>OUT5</td><td>PMV2.ODIV2</td></tr>
-<tr><td>OUT9</td><td>PMV2.O</td></tr>
-<tr><td>OUT19</td><td>PMV2.ODIV4</td></tr>
+<tr><td>OUT5.TMIN</td><td>PMV2.ODIV2</td></tr>
+<tr><td>OUT9.TMIN</td><td>PMV2.O</td></tr>
+<tr><td>OUT19.TMIN</td><td>PMV2.ODIV4</td></tr>
 </tbody>
 </table></div>
 <h2 id="tile-clk_pmv2_svt"><a class="header" href="#tile-clk_pmv2_svt">Tile CLK_PMV2_SVT</a></h2>
@@ -15990,9 +15990,9 @@ non-inverted
 <tr><td>A1</td><td>input</td><td>IMUX.IMUX27</td></tr>
 <tr><td>A2</td><td>input</td><td>IMUX.IMUX35</td></tr>
 <tr><td>EN</td><td>input</td><td>IMUX.IMUX4</td></tr>
-<tr><td>O</td><td>output</td><td>OUT9</td></tr>
-<tr><td>ODIV2</td><td>output</td><td>OUT5</td></tr>
-<tr><td>ODIV4</td><td>output</td><td>OUT19</td></tr>
+<tr><td>O</td><td>output</td><td>OUT9.TMIN</td></tr>
+<tr><td>ODIV2</td><td>output</td><td>OUT5.TMIN</td></tr>
+<tr><td>ODIV4</td><td>output</td><td>OUT19.TMIN</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-wires-3"><a class="header" href="#bel-wires-3">Bel wires</a></h3>
@@ -16006,9 +16006,9 @@ non-inverted
 <tr><td>IMUX.IMUX27</td><td>PMV2_SVT.A1</td></tr>
 <tr><td>IMUX.IMUX35</td><td>PMV2_SVT.A2</td></tr>
 <tr><td>IMUX.IMUX43</td><td>PMV2_SVT.A0</td></tr>
-<tr><td>OUT5</td><td>PMV2_SVT.ODIV2</td></tr>
-<tr><td>OUT9</td><td>PMV2_SVT.O</td></tr>
-<tr><td>OUT19</td><td>PMV2_SVT.ODIV4</td></tr>
+<tr><td>OUT5.TMIN</td><td>PMV2_SVT.ODIV2</td></tr>
+<tr><td>OUT9.TMIN</td><td>PMV2_SVT.O</td></tr>
+<tr><td>OUT19.TMIN</td><td>PMV2_SVT.ODIV4</td></tr>
 </tbody>
 </table></div>
 <h2 id="tile-clk_pmviob"><a class="header" href="#tile-clk_pmviob">Tile CLK_PMVIOB</a></h2>
@@ -16023,9 +16023,9 @@ non-inverted
 <tr><td>A0</td><td>input</td><td>IMUX.IMUX1</td></tr>
 <tr><td>A1</td><td>input</td><td>IMUX.IMUX2</td></tr>
 <tr><td>EN</td><td>input</td><td>IMUX.IMUX0</td></tr>
-<tr><td>O</td><td>output</td><td>OUT0</td></tr>
-<tr><td>ODIV2</td><td>output</td><td>OUT1</td></tr>
-<tr><td>ODIV4</td><td>output</td><td>OUT2</td></tr>
+<tr><td>O</td><td>output</td><td>OUT0.TMIN</td></tr>
+<tr><td>ODIV2</td><td>output</td><td>OUT1.TMIN</td></tr>
+<tr><td>ODIV4</td><td>output</td><td>OUT2.TMIN</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-wires-4"><a class="header" href="#bel-wires-4">Bel wires</a></h3>
@@ -16038,9 +16038,9 @@ non-inverted
 <tr><td>IMUX.IMUX0</td><td>PMVIOB.EN</td></tr>
 <tr><td>IMUX.IMUX1</td><td>PMVIOB.A0</td></tr>
 <tr><td>IMUX.IMUX2</td><td>PMVIOB.A1</td></tr>
-<tr><td>OUT0</td><td>PMVIOB.O</td></tr>
-<tr><td>OUT1</td><td>PMVIOB.ODIV2</td></tr>
-<tr><td>OUT2</td><td>PMVIOB.ODIV4</td></tr>
+<tr><td>OUT0.TMIN</td><td>PMVIOB.O</td></tr>
+<tr><td>OUT1.TMIN</td><td>PMVIOB.ODIV2</td></tr>
+<tr><td>OUT2.TMIN</td><td>PMVIOB.ODIV4</td></tr>
 </tbody>
 </table></div>
 

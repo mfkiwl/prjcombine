@@ -311,13 +311,13 @@
 <tr><td>CE1</td><td>input</td><td>IMUX.IMUX13</td></tr>
 <tr><td>CE2</td><td>input</td><td>IMUX.IMUX16</td></tr>
 <tr><td>CLKDIV</td><td>input</td><td>IMUX.CLK0</td></tr>
-<tr><td>O</td><td>output</td><td>OUT21</td></tr>
-<tr><td>Q1</td><td>output</td><td>OUT3, OUT9</td></tr>
-<tr><td>Q2</td><td>output</td><td>OUT1, OUT19</td></tr>
-<tr><td>Q3</td><td>output</td><td>OUT4</td></tr>
-<tr><td>Q4</td><td>output</td><td>OUT6</td></tr>
-<tr><td>Q5</td><td>output</td><td>OUT13</td></tr>
-<tr><td>Q6</td><td>output</td><td>OUT8</td></tr>
+<tr><td>O</td><td>output</td><td>OUT21.TMIN</td></tr>
+<tr><td>Q1</td><td>output</td><td>OUT3.TMIN, OUT9.TMIN</td></tr>
+<tr><td>Q2</td><td>output</td><td>OUT1.TMIN, OUT19.TMIN</td></tr>
+<tr><td>Q3</td><td>output</td><td>OUT4.TMIN</td></tr>
+<tr><td>Q4</td><td>output</td><td>OUT6.TMIN</td></tr>
+<tr><td>Q5</td><td>output</td><td>OUT13.TMIN</td></tr>
+<tr><td>Q6</td><td>output</td><td>OUT8.TMIN</td></tr>
 <tr><td>REV</td><td>input</td><td>IMUX.IMUX2</td></tr>
 <tr><td>SR</td><td>input</td><td>IMUX.CTRL0.SITE</td></tr>
 </tbody>
@@ -333,13 +333,13 @@
 <tr><td>CE1</td><td>input</td><td>IMUX.IMUX19</td></tr>
 <tr><td>CE2</td><td>input</td><td>IMUX.IMUX22</td></tr>
 <tr><td>CLKDIV</td><td>input</td><td>IMUX.CLK1</td></tr>
-<tr><td>O</td><td>output</td><td>OUT11</td></tr>
-<tr><td>Q1</td><td>output</td><td>OUT0, OUT10</td></tr>
-<tr><td>Q2</td><td>output</td><td>OUT2, OUT16</td></tr>
-<tr><td>Q3</td><td>output</td><td>OUT7</td></tr>
-<tr><td>Q4</td><td>output</td><td>OUT5</td></tr>
-<tr><td>Q5</td><td>output</td><td>OUT14</td></tr>
-<tr><td>Q6</td><td>output</td><td>OUT20</td></tr>
+<tr><td>O</td><td>output</td><td>OUT11.TMIN</td></tr>
+<tr><td>Q1</td><td>output</td><td>OUT0.TMIN, OUT10.TMIN</td></tr>
+<tr><td>Q2</td><td>output</td><td>OUT2.TMIN, OUT16.TMIN</td></tr>
+<tr><td>Q3</td><td>output</td><td>OUT7.TMIN</td></tr>
+<tr><td>Q4</td><td>output</td><td>OUT5.TMIN</td></tr>
+<tr><td>Q5</td><td>output</td><td>OUT14.TMIN</td></tr>
+<tr><td>Q6</td><td>output</td><td>OUT20.TMIN</td></tr>
 <tr><td>REV</td><td>input</td><td>IMUX.IMUX8</td></tr>
 <tr><td>SR</td><td>input</td><td>IMUX.CTRL1.SITE</td></tr>
 </tbody>
@@ -369,7 +369,7 @@
 <tr><td>T3</td><td>input</td><td>IMUX.IMUX28</td></tr>
 <tr><td>T4</td><td>input</td><td>IMUX.IMUX29</td></tr>
 <tr><td>TCE</td><td>input</td><td>IMUX.IMUX26</td></tr>
-<tr><td>TQ</td><td>output</td><td>OUT23</td></tr>
+<tr><td>TQ</td><td>output</td><td>OUT23.TMIN</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-ologic1"><a class="header" href="#bel-ologic1">Bel OLOGIC1</a></h3>
@@ -397,7 +397,7 @@
 <tr><td>T3</td><td>input</td><td>IMUX.IMUX34</td></tr>
 <tr><td>T4</td><td>input</td><td>IMUX.IMUX35</td></tr>
 <tr><td>TCE</td><td>input</td><td>IMUX.IMUX32</td></tr>
-<tr><td>TQ</td><td>output</td><td>OUT12</td></tr>
+<tr><td>TQ</td><td>output</td><td>OUT12.TMIN</td></tr>
 </tbody>
 </table></div>
 <h3 id="bel-iodelay0"><a class="header" href="#bel-iodelay0">Bel IODELAY0</a></h3>
@@ -516,26 +516,26 @@
 <tr><td>IMUX.IMUX45</td><td>OLOGIC1.D3</td></tr>
 <tr><td>IMUX.IMUX46</td><td>OLOGIC1.D2</td></tr>
 <tr><td>IMUX.IMUX47</td><td>OLOGIC1.D1</td></tr>
-<tr><td>OUT0</td><td>ILOGIC1.Q1</td></tr>
-<tr><td>OUT1</td><td>ILOGIC0.Q2</td></tr>
-<tr><td>OUT2</td><td>ILOGIC1.Q2</td></tr>
-<tr><td>OUT3</td><td>ILOGIC0.Q1</td></tr>
-<tr><td>OUT4</td><td>ILOGIC0.Q3</td></tr>
-<tr><td>OUT5</td><td>ILOGIC1.Q4</td></tr>
-<tr><td>OUT6</td><td>ILOGIC0.Q4</td></tr>
-<tr><td>OUT7</td><td>ILOGIC1.Q3</td></tr>
-<tr><td>OUT8</td><td>ILOGIC0.Q6</td></tr>
-<tr><td>OUT9</td><td>ILOGIC0.Q1</td></tr>
-<tr><td>OUT10</td><td>ILOGIC1.Q1</td></tr>
-<tr><td>OUT11</td><td>ILOGIC1.O</td></tr>
-<tr><td>OUT12</td><td>OLOGIC1.TQ</td></tr>
-<tr><td>OUT13</td><td>ILOGIC0.Q5</td></tr>
-<tr><td>OUT14</td><td>ILOGIC1.Q5</td></tr>
-<tr><td>OUT16</td><td>ILOGIC1.Q2</td></tr>
-<tr><td>OUT19</td><td>ILOGIC0.Q2</td></tr>
-<tr><td>OUT20</td><td>ILOGIC1.Q6</td></tr>
-<tr><td>OUT21</td><td>ILOGIC0.O</td></tr>
-<tr><td>OUT23</td><td>OLOGIC0.TQ</td></tr>
+<tr><td>OUT0.TMIN</td><td>ILOGIC1.Q1</td></tr>
+<tr><td>OUT1.TMIN</td><td>ILOGIC0.Q2</td></tr>
+<tr><td>OUT2.TMIN</td><td>ILOGIC1.Q2</td></tr>
+<tr><td>OUT3.TMIN</td><td>ILOGIC0.Q1</td></tr>
+<tr><td>OUT4.TMIN</td><td>ILOGIC0.Q3</td></tr>
+<tr><td>OUT5.TMIN</td><td>ILOGIC1.Q4</td></tr>
+<tr><td>OUT6.TMIN</td><td>ILOGIC0.Q4</td></tr>
+<tr><td>OUT7.TMIN</td><td>ILOGIC1.Q3</td></tr>
+<tr><td>OUT8.TMIN</td><td>ILOGIC0.Q6</td></tr>
+<tr><td>OUT9.TMIN</td><td>ILOGIC0.Q1</td></tr>
+<tr><td>OUT10.TMIN</td><td>ILOGIC1.Q1</td></tr>
+<tr><td>OUT11.TMIN</td><td>ILOGIC1.O</td></tr>
+<tr><td>OUT12.TMIN</td><td>OLOGIC1.TQ</td></tr>
+<tr><td>OUT13.TMIN</td><td>ILOGIC0.Q5</td></tr>
+<tr><td>OUT14.TMIN</td><td>ILOGIC1.Q5</td></tr>
+<tr><td>OUT16.TMIN</td><td>ILOGIC1.Q2</td></tr>
+<tr><td>OUT19.TMIN</td><td>ILOGIC0.Q2</td></tr>
+<tr><td>OUT20.TMIN</td><td>ILOGIC1.Q6</td></tr>
+<tr><td>OUT21.TMIN</td><td>ILOGIC0.O</td></tr>
+<tr><td>OUT23.TMIN</td><td>OLOGIC0.TQ</td></tr>
 <tr><td>TEST0</td><td>OLOGIC0.CLKMUX</td></tr>
 <tr><td>TEST1</td><td>OLOGIC0.CLKDIVMUX</td></tr>
 <tr><td>TEST2</td><td>OLOGIC1.CLKMUX</td></tr>

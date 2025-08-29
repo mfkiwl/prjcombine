@@ -539,7 +539,7 @@ Only <code>.0</code>, <code>.6</code>, <code>.12</code>, <code>.18</code> segmen
 </thead>
 <tbody>
 <tr><td>INT</td><td>INT.CLB, INT.IOI, INT.BRAM, INT.DCM.V2, INT.CNR, INT.DCM.V2P, INT.PPC, INT.GT.CLKPAD, INT.IOI.CLK_B, INT.IOI.CLK_T</td><td>INT, RLL, PTE2OMUX0, PTE2OMUX1, PTE2OMUX2, PTE2OMUX3</td></tr>
-<tr><td>INTF</td><td>INTF.GT.B0, INTF.GT.B123, INTF.GT.BCLKPAD, INTF.GT.T0, INTF.GT.T123, INTF.GT.TCLKPAD, INTF.PPC</td><td></td></tr>
+<tr><td>INTF</td><td>INTF.GT.B0, INTF.GT.B123, INTF.GT.BCLKPAD, INTF.GT.T0, INTF.GT.T123, INTF.GT.TCLKPAD, INTF.PPC</td><td>INTF_TESTMUX</td></tr>
 <tr><td>BEL</td><td>CLB, IOI, DCM.V2, LL.V2, LR.V2, UL.V2, UR.V2, BRAM, DCM.V2P, LL.V2P, LR.V2P, UL.V2P, UR.V2P, GIGABIT.B, GIGABIT.T, RBPPC, LBPPC, IOI.CLK_B, IOI.CLK_T, GIGABIT10.B, GIGABIT10.T</td><td>SLICE0, SLICE1, SLICE2, SLICE3, TBUF0, TBUF1, TBUS, IO0, IO1, IO2, IO3, IBUF0, IBUF1, IBUF2, IBUF3, OBUF0, OBUF1, OBUF2, OBUF3, BRAM, MULT, DSP, DCM, GT, GT10, IPAD_RXP, IPAD_RXN, OPAD_TXP, OPAD_TXN, PPC405, DCI0, DCI1, DCIRESET0, DCIRESET1, STARTUP, CAPTURE, ICAP, SPI_ACCESS, PMV, DNA_PORT, BSCAN, JTAGPPC, DCMCONN_S3E, BREFCLK_INT, RANDOR_OUT, MISR</td></tr>
 <tr><td>TERM_H</td><td>TERM.W, TERM.E, PPC.W, PPC.E</td><td>TERM_W, TERM_E, PPC_TERM_W, PPC_TERM_E, LLH</td></tr>
 <tr><td>TERM_V</td><td>TERM.S, TERM.N, PPC.S, PPC.N</td><td>TERM_S, TERM_N, PPC_TERM_S, PPC_TERM_N, LLV</td></tr>
@@ -560,6 +560,7 @@ Only <code>.0</code>, <code>.6</code>, <code>.12</code>, <code>.18</code> segmen
 <tbody>
 <tr><td>INT</td><td>INT</td><td>INT.CLB, INT.IOI, INT.BRAM, INT.DCM.V2, INT.CNR, INT.DCM.V2P, INT.PPC, INT.GT.CLKPAD, INT.IOI.CLK_B, INT.IOI.CLK_T</td></tr>
 <tr><td>RLL</td><td>INT</td><td>INT.CLB, INT.IOI, INT.BRAM, INT.DCM.V2, INT.CNR, INT.DCM.V2P, INT.PPC, INT.GT.CLKPAD, INT.IOI.CLK_B, INT.IOI.CLK_T</td></tr>
+<tr><td>INTF_TESTMUX</td><td>INTF</td><td>INTF.GT.B0, INTF.GT.B123, INTF.GT.BCLKPAD, INTF.GT.T0, INTF.GT.T123, INTF.GT.TCLKPAD, INTF.PPC</td></tr>
 <tr><td>CLK_INT</td><td>CLK</td><td>CLKB.V2, CLKT.V2, CLKB.V2P, CLKT.V2P, CLKB.V2PX, CLKT.V2PX</td></tr>
 <tr><td>TERM_W</td><td>TERM_H</td><td>TERM.W</td></tr>
 <tr><td>TERM_E</td><td>TERM_H</td><td>TERM.E</td></tr>
@@ -1405,35 +1406,65 @@ Only <code>.0</code>, <code>.6</code>, <code>.12</code>, <code>.18</code> segmen
 <tr><td>IMUX.BRAM_ADDRB3.N3</td><td>BRANCH:S</td></tr>
 <tr><td>IMUX.BRAM_ADDRB3.N4</td><td>BRANCH:S</td></tr>
 <tr><td>OUT.FAN0</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.FAN0.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.FAN1</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.FAN1.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.FAN2</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.FAN2.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.FAN3</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.FAN3.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.FAN4</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.FAN4.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.FAN5</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.FAN5.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.FAN6</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.FAN6.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.FAN7</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.FAN7.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC2</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC2.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC3</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC3.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC4</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC4.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC5</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC5.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC6</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC6.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC7</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC7.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC8</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC8.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC9</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC9.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC10</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC10.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC11</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC11.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC12</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC12.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC13</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC13.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC14</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC14.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC15</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC15.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC16</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC16.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC17</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC17.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC18</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC18.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC19</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC19.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC20</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC20.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC21</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC21.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC22</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC22.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.SEC23</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT.SEC23.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.HALF8.0</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.HALF8.1</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT.HALF9.0</td><td>LOGIC_OUT</td></tr>

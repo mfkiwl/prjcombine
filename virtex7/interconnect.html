@@ -181,7 +181,7 @@
 <tbody>
 <tr><td>INT</td><td>INT</td><td>INT</td></tr>
 <tr><td>INTF_DELAY</td><td>INTF</td><td>INTF.DELAY</td></tr>
-<tr><td>INTF_TESTMUX</td><td>INTF</td><td></td></tr>
+<tr><td>INTF_TESTMUX</td><td>INTF</td><td>INTF, INTF.BRAM, INTF.DELAY</td></tr>
 <tr><td>SLICE0</td><td>BEL</td><td>CLBLL, CLBLM</td></tr>
 <tr><td>SLICE1</td><td>BEL</td><td>CLBLL, CLBLM</td></tr>
 <tr><td>SLICE2</td><td>BEL</td><td></td></tr>
@@ -1303,29 +1303,53 @@
 <tr><td>IMUX.BRAM46</td><td>TEST_OUT</td></tr>
 <tr><td>IMUX.BRAM47</td><td>TEST_OUT</td></tr>
 <tr><td>OUT0</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT0.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT1</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT1.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT2</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT2.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT3</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT3.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT4</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT4.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT5</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT5.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT6</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT6.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT7</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT7.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT8</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT8.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT9</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT9.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT10</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT10.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT11</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT11.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT12</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT12.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT13</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT13.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT14</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT14.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT15</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT15.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT16</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT16.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT17</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT17.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT18</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT18.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT19</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT19.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT20</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT20.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT21</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT21.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT22</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT22.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT23</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT23.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>TEST0</td><td>TEST_OUT</td></tr>
 <tr><td>TEST1</td><td>TEST_OUT</td></tr>
 <tr><td>TEST2</td><td>TEST_OUT</td></tr>
@@ -3184,7 +3208,6 @@
 </table></div>
 <h2 id="tile-int"><a class="header" href="#tile-int">Tile INT</a></h2>
 <p>Cells: 1</p>
-<h3 id="bel-int"><a class="header" href="#bel-int">Bel INT</a></h3>
 <h3 id="switchbox-int"><a class="header" href="#switchbox-int">Switchbox INT</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex7 INT switchbox INT</caption>
@@ -45141,37 +45164,37 @@
 </table></div>
 <h2 id="tile-intf"><a class="header" href="#tile-intf">Tile INTF</a></h2>
 <p>Cells: 1</p>
-<h3 id="intf"><a class="header" href="#intf">Intf</a></h3>
+<h3 id="test-mux-intf_testmux"><a class="header" href="#test-mux-intf_testmux">Test mux INTF_TESTMUX</a></h3>
 <div class="table-wrapper"><table>
-<caption>virtex7 INTF intfs</caption>
+<caption>virtex7 INTF INTF_TESTMUX mux</caption>
 <thead>
-<tr><th>Wire</th><th>Interface</th></tr>
+<tr><th>Destination</th><th>Primary source</th><th>Test sources</th></tr>
 </thead>
 <tbody>
-<tr><td>OUT0</td><td>TEST_MUX IMUX.IMUX17, IMUX.IMUX25</td></tr>
-<tr><td>OUT1</td><td>TEST_MUX IMUX.IMUX18, IMUX.IMUX26</td></tr>
-<tr><td>OUT2</td><td>TEST_MUX IMUX.IMUX21, IMUX.IMUX29</td></tr>
-<tr><td>OUT3</td><td>TEST_MUX IMUX.IMUX22, IMUX.IMUX30</td></tr>
-<tr><td>OUT4</td><td>TEST_MUX IMUX.IMUX16, IMUX.IMUX24</td></tr>
-<tr><td>OUT5</td><td>TEST_MUX IMUX.IMUX19, IMUX.IMUX27</td></tr>
-<tr><td>OUT6</td><td>TEST_MUX IMUX.IMUX20, IMUX.IMUX28</td></tr>
-<tr><td>OUT7</td><td>TEST_MUX IMUX.IMUX23, IMUX.IMUX31</td></tr>
-<tr><td>OUT8</td><td>TEST_MUX IMUX.IMUX0, IMUX.IMUX8</td></tr>
-<tr><td>OUT9</td><td>TEST_MUX IMUX.IMUX3, IMUX.IMUX11</td></tr>
-<tr><td>OUT10</td><td>TEST_MUX IMUX.IMUX4, IMUX.IMUX12</td></tr>
-<tr><td>OUT11</td><td>TEST_MUX IMUX.IMUX7, IMUX.IMUX15</td></tr>
-<tr><td>OUT12</td><td>TEST_MUX IMUX.IMUX1, IMUX.IMUX9</td></tr>
-<tr><td>OUT13</td><td>TEST_MUX IMUX.IMUX2, IMUX.IMUX10</td></tr>
-<tr><td>OUT14</td><td>TEST_MUX IMUX.IMUX5, IMUX.IMUX13</td></tr>
-<tr><td>OUT15</td><td>TEST_MUX IMUX.IMUX6, IMUX.IMUX14</td></tr>
-<tr><td>OUT16</td><td>TEST_MUX IMUX.IMUX36, IMUX.IMUX44</td></tr>
-<tr><td>OUT17</td><td>TEST_MUX IMUX.BYP7.SITE, IMUX.IMUX39, IMUX.IMUX47, TEST3</td></tr>
-<tr><td>OUT18</td><td>TEST_MUX IMUX.FAN0.SITE, IMUX.IMUX32, IMUX.IMUX40, TEST0</td></tr>
-<tr><td>OUT19</td><td>TEST_MUX IMUX.CLK0, IMUX.CLK1, IMUX.IMUX35, IMUX.IMUX43</td></tr>
-<tr><td>OUT20</td><td>TEST_MUX IMUX.CTRL0, IMUX.CTRL1, IMUX.IMUX37, IMUX.IMUX45</td></tr>
-<tr><td>OUT21</td><td>TEST_MUX IMUX.BYP6.SITE, IMUX.IMUX38, IMUX.IMUX46, TEST2</td></tr>
-<tr><td>OUT22</td><td>TEST_MUX IMUX.FAN4.SITE, IMUX.IMUX33, IMUX.IMUX41, TEST1</td></tr>
-<tr><td>OUT23</td><td>TEST_MUX IMUX.IMUX34, IMUX.IMUX42</td></tr>
+<tr><td>OUT0</td><td>OUT0.TMIN</td><td>IMUX.IMUX17, IMUX.IMUX25</td></tr>
+<tr><td>OUT1</td><td>OUT1.TMIN</td><td>IMUX.IMUX18, IMUX.IMUX26</td></tr>
+<tr><td>OUT2</td><td>OUT2.TMIN</td><td>IMUX.IMUX21, IMUX.IMUX29</td></tr>
+<tr><td>OUT3</td><td>OUT3.TMIN</td><td>IMUX.IMUX22, IMUX.IMUX30</td></tr>
+<tr><td>OUT4</td><td>OUT4.TMIN</td><td>IMUX.IMUX16, IMUX.IMUX24</td></tr>
+<tr><td>OUT5</td><td>OUT5.TMIN</td><td>IMUX.IMUX19, IMUX.IMUX27</td></tr>
+<tr><td>OUT6</td><td>OUT6.TMIN</td><td>IMUX.IMUX20, IMUX.IMUX28</td></tr>
+<tr><td>OUT7</td><td>OUT7.TMIN</td><td>IMUX.IMUX23, IMUX.IMUX31</td></tr>
+<tr><td>OUT8</td><td>OUT8.TMIN</td><td>IMUX.IMUX0, IMUX.IMUX8</td></tr>
+<tr><td>OUT9</td><td>OUT9.TMIN</td><td>IMUX.IMUX3, IMUX.IMUX11</td></tr>
+<tr><td>OUT10</td><td>OUT10.TMIN</td><td>IMUX.IMUX4, IMUX.IMUX12</td></tr>
+<tr><td>OUT11</td><td>OUT11.TMIN</td><td>IMUX.IMUX7, IMUX.IMUX15</td></tr>
+<tr><td>OUT12</td><td>OUT12.TMIN</td><td>IMUX.IMUX1, IMUX.IMUX9</td></tr>
+<tr><td>OUT13</td><td>OUT13.TMIN</td><td>IMUX.IMUX2, IMUX.IMUX10</td></tr>
+<tr><td>OUT14</td><td>OUT14.TMIN</td><td>IMUX.IMUX5, IMUX.IMUX13</td></tr>
+<tr><td>OUT15</td><td>OUT15.TMIN</td><td>IMUX.IMUX6, IMUX.IMUX14</td></tr>
+<tr><td>OUT16</td><td>OUT16.TMIN</td><td>IMUX.IMUX36, IMUX.IMUX44</td></tr>
+<tr><td>OUT17</td><td>OUT17.TMIN</td><td>IMUX.BYP7.SITE, IMUX.IMUX39, IMUX.IMUX47, TEST3</td></tr>
+<tr><td>OUT18</td><td>OUT18.TMIN</td><td>IMUX.FAN0.SITE, IMUX.IMUX32, IMUX.IMUX40, TEST0</td></tr>
+<tr><td>OUT19</td><td>OUT19.TMIN</td><td>IMUX.CLK0, IMUX.CLK1, IMUX.IMUX35, IMUX.IMUX43</td></tr>
+<tr><td>OUT20</td><td>OUT20.TMIN</td><td>IMUX.CTRL0, IMUX.CTRL1, IMUX.IMUX37, IMUX.IMUX45</td></tr>
+<tr><td>OUT21</td><td>OUT21.TMIN</td><td>IMUX.BYP6.SITE, IMUX.IMUX38, IMUX.IMUX46, TEST2</td></tr>
+<tr><td>OUT22</td><td>OUT22.TMIN</td><td>IMUX.FAN4.SITE, IMUX.IMUX33, IMUX.IMUX41, TEST1</td></tr>
+<tr><td>OUT23</td><td>OUT23.TMIN</td><td>IMUX.IMUX34, IMUX.IMUX42</td></tr>
 </tbody>
 </table></div>
 <h3 id="bitstream-1"><a class="header" href="#bitstream-1">Bitstream</a></h3>
@@ -45190,11 +45213,11 @@
 <tr><td>63</td>
 <td>-</td>
 <td title="0.1.63">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT17">INTF:MUX.OUT17[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT17">INTF_TESTMUX:MUX.OUT17[1]</a>
 </td>
 <td>-</td>
 <td title="0.3.63">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT17">INTF:MUX.OUT17[2]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT17">INTF_TESTMUX:MUX.OUT17[2]</a>
 </td>
 </tr>
 <tr><td>62</td>
@@ -45211,22 +45234,22 @@
 </tr>
 <tr><td>60</td>
 <td title="0.0.60">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT17">INTF:MUX.OUT17[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT17">INTF_TESTMUX:MUX.OUT17[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.60">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT17">INTF:MUX.OUT17[3]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT17">INTF_TESTMUX:MUX.OUT17[3]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>59</td>
 <td>-</td>
 <td title="0.1.59">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT7">INTF:MUX.OUT7[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT7">INTF_TESTMUX:MUX.OUT7[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.59">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT7">INTF:MUX.OUT7[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT7">INTF_TESTMUX:MUX.OUT7[1]</a>
 </td>
 </tr>
 <tr><td>58</td>
@@ -45243,22 +45266,22 @@
 </tr>
 <tr><td>56</td>
 <td title="0.0.56">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT11">INTF:MUX.OUT11[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT11">INTF_TESTMUX:MUX.OUT11[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.56">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT11">INTF:MUX.OUT11[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT11">INTF_TESTMUX:MUX.OUT11[0]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>55</td>
 <td>-</td>
 <td title="0.1.55">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT21">INTF:MUX.OUT21[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT21">INTF_TESTMUX:MUX.OUT21[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.55">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT21">INTF:MUX.OUT21[3]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT21">INTF_TESTMUX:MUX.OUT21[3]</a>
 </td>
 </tr>
 <tr><td>54</td>
@@ -45275,22 +45298,22 @@
 </tr>
 <tr><td>52</td>
 <td title="0.0.52">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT21">INTF:MUX.OUT21[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT21">INTF_TESTMUX:MUX.OUT21[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.52">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT21">INTF:MUX.OUT21[2]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT21">INTF_TESTMUX:MUX.OUT21[2]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>51</td>
 <td>-</td>
 <td title="0.1.51">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT3">INTF:MUX.OUT3[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT3">INTF_TESTMUX:MUX.OUT3[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.51">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT3">INTF:MUX.OUT3[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT3">INTF_TESTMUX:MUX.OUT3[1]</a>
 </td>
 </tr>
 <tr><td>50</td>
@@ -45307,11 +45330,11 @@
 </tr>
 <tr><td>48</td>
 <td title="0.0.48">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT15">INTF:MUX.OUT15[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT15">INTF_TESTMUX:MUX.OUT15[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.48">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT15">INTF:MUX.OUT15[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT15">INTF_TESTMUX:MUX.OUT15[1]</a>
 </td>
 <td>-</td>
 </tr>
@@ -45337,18 +45360,18 @@
 <td>-</td>
 <td>-</td>
 <td title="0.2.44">
-<a href="#tile-virtex7-INTF-INTF:TEST_ENABLE">INTF:TEST_ENABLE</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:TEST_ENABLE">INTF_TESTMUX:TEST_ENABLE</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>43</td>
 <td>-</td>
 <td title="0.1.43">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT20">INTF:MUX.OUT20[2]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT20">INTF_TESTMUX:MUX.OUT20[2]</a>
 </td>
 <td>-</td>
 <td title="0.3.43">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT20">INTF:MUX.OUT20[3]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT20">INTF_TESTMUX:MUX.OUT20[3]</a>
 </td>
 </tr>
 <tr><td>42</td>
@@ -45365,22 +45388,22 @@
 </tr>
 <tr><td>40</td>
 <td title="0.0.40">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT20">INTF:MUX.OUT20[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT20">INTF_TESTMUX:MUX.OUT20[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.40">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT20">INTF:MUX.OUT20[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT20">INTF_TESTMUX:MUX.OUT20[1]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>39</td>
 <td>-</td>
 <td title="0.1.39">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT2">INTF:MUX.OUT2[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT2">INTF_TESTMUX:MUX.OUT2[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.39">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT2">INTF:MUX.OUT2[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT2">INTF_TESTMUX:MUX.OUT2[1]</a>
 </td>
 </tr>
 <tr><td>38</td>
@@ -45397,22 +45420,22 @@
 </tr>
 <tr><td>36</td>
 <td title="0.0.36">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT14">INTF:MUX.OUT14[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT14">INTF_TESTMUX:MUX.OUT14[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.36">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT14">INTF:MUX.OUT14[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT14">INTF_TESTMUX:MUX.OUT14[0]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>35</td>
 <td>-</td>
 <td title="0.1.35">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT16">INTF:MUX.OUT16[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT16">INTF_TESTMUX:MUX.OUT16[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.35">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT16">INTF:MUX.OUT16[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT16">INTF_TESTMUX:MUX.OUT16[1]</a>
 </td>
 </tr>
 <tr><td>34</td>
@@ -45429,22 +45452,22 @@
 </tr>
 <tr><td>32</td>
 <td title="0.0.32">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT6">INTF:MUX.OUT6[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT6">INTF_TESTMUX:MUX.OUT6[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.32">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT6">INTF:MUX.OUT6[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT6">INTF_TESTMUX:MUX.OUT6[1]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>31</td>
 <td>-</td>
 <td title="0.1.31">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT10">INTF:MUX.OUT10[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT10">INTF_TESTMUX:MUX.OUT10[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.31">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT10">INTF:MUX.OUT10[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT10">INTF_TESTMUX:MUX.OUT10[1]</a>
 </td>
 </tr>
 <tr><td>30</td>
@@ -45461,22 +45484,22 @@
 </tr>
 <tr><td>28</td>
 <td title="0.0.28">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT22">INTF:MUX.OUT22[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT22">INTF_TESTMUX:MUX.OUT22[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.28">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT22">INTF:MUX.OUT22[2]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT22">INTF_TESTMUX:MUX.OUT22[2]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>27</td>
 <td>-</td>
 <td title="0.1.27">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT19">INTF:MUX.OUT19[2]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT19">INTF_TESTMUX:MUX.OUT19[2]</a>
 </td>
 <td>-</td>
 <td title="0.3.27">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT19">INTF:MUX.OUT19[3]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT19">INTF_TESTMUX:MUX.OUT19[3]</a>
 </td>
 </tr>
 <tr><td>26</td>
@@ -45493,22 +45516,22 @@
 </tr>
 <tr><td>24</td>
 <td title="0.0.24">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT19">INTF:MUX.OUT19[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT19">INTF_TESTMUX:MUX.OUT19[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.24">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT19">INTF:MUX.OUT19[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT19">INTF_TESTMUX:MUX.OUT19[1]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>23</td>
 <td>-</td>
 <td title="0.1.23">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT5">INTF:MUX.OUT5[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT5">INTF_TESTMUX:MUX.OUT5[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.23">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT5">INTF:MUX.OUT5[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT5">INTF_TESTMUX:MUX.OUT5[1]</a>
 </td>
 </tr>
 <tr><td>22</td>
@@ -45525,22 +45548,22 @@
 </tr>
 <tr><td>20</td>
 <td title="0.0.20">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT9">INTF:MUX.OUT9[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT9">INTF_TESTMUX:MUX.OUT9[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.20">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT9">INTF:MUX.OUT9[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT9">INTF_TESTMUX:MUX.OUT9[0]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>19</td>
 <td>-</td>
 <td title="0.1.19">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT23">INTF:MUX.OUT23[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT23">INTF_TESTMUX:MUX.OUT23[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.19">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT23">INTF:MUX.OUT23[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT23">INTF_TESTMUX:MUX.OUT23[1]</a>
 </td>
 </tr>
 <tr><td>18</td>
@@ -45557,22 +45580,22 @@
 </tr>
 <tr><td>16</td>
 <td title="0.0.16">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT1">INTF:MUX.OUT1[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT1">INTF_TESTMUX:MUX.OUT1[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.16">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT1">INTF:MUX.OUT1[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT1">INTF_TESTMUX:MUX.OUT1[1]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>15</td>
 <td>-</td>
 <td title="0.1.15">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT13">INTF:MUX.OUT13[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT13">INTF_TESTMUX:MUX.OUT13[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.15">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT13">INTF:MUX.OUT13[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT13">INTF_TESTMUX:MUX.OUT13[1]</a>
 </td>
 </tr>
 <tr><td>14</td>
@@ -45589,22 +45612,22 @@
 </tr>
 <tr><td>12</td>
 <td title="0.0.12">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT22">INTF:MUX.OUT22[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT22">INTF_TESTMUX:MUX.OUT22[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.12">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT22">INTF:MUX.OUT22[3]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT22">INTF_TESTMUX:MUX.OUT22[3]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>11</td>
 <td>-</td>
 <td title="0.1.11">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT0">INTF:MUX.OUT0[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT0">INTF_TESTMUX:MUX.OUT0[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.11">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT0">INTF:MUX.OUT0[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT0">INTF_TESTMUX:MUX.OUT0[1]</a>
 </td>
 </tr>
 <tr><td>10</td>
@@ -45621,22 +45644,22 @@
 </tr>
 <tr><td>8</td>
 <td title="0.0.8">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT12">INTF:MUX.OUT12[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT12">INTF_TESTMUX:MUX.OUT12[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.8">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT12">INTF:MUX.OUT12[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT12">INTF_TESTMUX:MUX.OUT12[0]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>7</td>
 <td>-</td>
 <td title="0.1.7">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT18">INTF:MUX.OUT18[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT18">INTF_TESTMUX:MUX.OUT18[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.7">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT18">INTF:MUX.OUT18[3]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT18">INTF_TESTMUX:MUX.OUT18[3]</a>
 </td>
 </tr>
 <tr><td>6</td>
@@ -45653,22 +45676,22 @@
 </tr>
 <tr><td>4</td>
 <td title="0.0.4">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT18">INTF:MUX.OUT18[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT18">INTF_TESTMUX:MUX.OUT18[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.4">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT18">INTF:MUX.OUT18[2]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT18">INTF_TESTMUX:MUX.OUT18[2]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>3</td>
 <td>-</td>
 <td title="0.1.3">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT4">INTF:MUX.OUT4[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT4">INTF_TESTMUX:MUX.OUT4[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.3">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT4">INTF:MUX.OUT4[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT4">INTF_TESTMUX:MUX.OUT4[1]</a>
 </td>
 </tr>
 <tr><td>2</td>
@@ -45685,11 +45708,11 @@
 </tr>
 <tr><td>0</td>
 <td title="0.0.0">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT8">INTF:MUX.OUT8[0]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT8">INTF_TESTMUX:MUX.OUT8[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.0">
-<a href="#tile-virtex7-INTF-INTF:MUX.OUT8">INTF:MUX.OUT8[1]</a>
+<a href="#tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT8">INTF_TESTMUX:MUX.OUT8[1]</a>
 </td>
 <td>-</td>
 </tr>
@@ -45697,7 +45720,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT0">INTF:MUX.OUT0</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT0">INTF_TESTMUX:MUX.OUT0</th>
 <th>0.3.11</th>
 <th>0.1.11</th>
 </tr>
@@ -45719,7 +45742,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT1">INTF:MUX.OUT1</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT1">INTF_TESTMUX:MUX.OUT1</th>
 <th>0.2.16</th>
 <th>0.0.16</th>
 </tr>
@@ -45741,7 +45764,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT10">INTF:MUX.OUT10</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT10">INTF_TESTMUX:MUX.OUT10</th>
 <th>0.3.31</th>
 <th>0.1.31</th>
 </tr>
@@ -45763,7 +45786,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT11">INTF:MUX.OUT11</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT11">INTF_TESTMUX:MUX.OUT11</th>
 <th>0.0.56</th>
 <th>0.2.56</th>
 </tr>
@@ -45785,7 +45808,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT12">INTF:MUX.OUT12</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT12">INTF_TESTMUX:MUX.OUT12</th>
 <th>0.0.8</th>
 <th>0.2.8</th>
 </tr>
@@ -45807,7 +45830,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT13">INTF:MUX.OUT13</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT13">INTF_TESTMUX:MUX.OUT13</th>
 <th>0.3.15</th>
 <th>0.1.15</th>
 </tr>
@@ -45829,7 +45852,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT14">INTF:MUX.OUT14</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT14">INTF_TESTMUX:MUX.OUT14</th>
 <th>0.0.36</th>
 <th>0.2.36</th>
 </tr>
@@ -45851,7 +45874,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT15">INTF:MUX.OUT15</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT15">INTF_TESTMUX:MUX.OUT15</th>
 <th>0.2.48</th>
 <th>0.0.48</th>
 </tr>
@@ -45873,7 +45896,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT16">INTF:MUX.OUT16</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT16">INTF_TESTMUX:MUX.OUT16</th>
 <th>0.3.35</th>
 <th>0.1.35</th>
 </tr>
@@ -45895,7 +45918,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT17">INTF:MUX.OUT17</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT17">INTF_TESTMUX:MUX.OUT17</th>
 <th>0.2.60</th>
 <th>0.3.63</th>
 <th>0.1.63</th>
@@ -45937,7 +45960,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT18">INTF:MUX.OUT18</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT18">INTF_TESTMUX:MUX.OUT18</th>
 <th>0.3.7</th>
 <th>0.2.4</th>
 <th>0.0.4</th>
@@ -45979,7 +46002,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT19">INTF:MUX.OUT19</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT19">INTF_TESTMUX:MUX.OUT19</th>
 <th>0.3.27</th>
 <th>0.1.27</th>
 <th>0.2.24</th>
@@ -46021,7 +46044,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT2">INTF:MUX.OUT2</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT2">INTF_TESTMUX:MUX.OUT2</th>
 <th>0.3.39</th>
 <th>0.1.39</th>
 </tr>
@@ -46043,7 +46066,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT20">INTF:MUX.OUT20</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT20">INTF_TESTMUX:MUX.OUT20</th>
 <th>0.3.43</th>
 <th>0.1.43</th>
 <th>0.2.40</th>
@@ -46085,7 +46108,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT21">INTF:MUX.OUT21</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT21">INTF_TESTMUX:MUX.OUT21</th>
 <th>0.3.55</th>
 <th>0.2.52</th>
 <th>0.0.52</th>
@@ -46127,7 +46150,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT22">INTF:MUX.OUT22</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT22">INTF_TESTMUX:MUX.OUT22</th>
 <th>0.2.12</th>
 <th>0.2.28</th>
 <th>0.0.28</th>
@@ -46169,7 +46192,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT23">INTF:MUX.OUT23</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT23">INTF_TESTMUX:MUX.OUT23</th>
 <th>0.3.19</th>
 <th>0.1.19</th>
 </tr>
@@ -46191,7 +46214,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT3">INTF:MUX.OUT3</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT3">INTF_TESTMUX:MUX.OUT3</th>
 <th>0.3.51</th>
 <th>0.1.51</th>
 </tr>
@@ -46213,7 +46236,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT4">INTF:MUX.OUT4</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT4">INTF_TESTMUX:MUX.OUT4</th>
 <th>0.3.3</th>
 <th>0.1.3</th>
 </tr>
@@ -46235,7 +46258,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT5">INTF:MUX.OUT5</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT5">INTF_TESTMUX:MUX.OUT5</th>
 <th>0.3.23</th>
 <th>0.1.23</th>
 </tr>
@@ -46257,7 +46280,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT6">INTF:MUX.OUT6</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT6">INTF_TESTMUX:MUX.OUT6</th>
 <th>0.2.32</th>
 <th>0.0.32</th>
 </tr>
@@ -46279,7 +46302,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT7">INTF:MUX.OUT7</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT7">INTF_TESTMUX:MUX.OUT7</th>
 <th>0.3.59</th>
 <th>0.1.59</th>
 </tr>
@@ -46301,7 +46324,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT8">INTF:MUX.OUT8</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT8">INTF_TESTMUX:MUX.OUT8</th>
 <th>0.2.0</th>
 <th>0.0.0</th>
 </tr>
@@ -46323,7 +46346,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:MUX.OUT9">INTF:MUX.OUT9</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:MUX.OUT9">INTF_TESTMUX:MUX.OUT9</th>
 <th>0.0.20</th>
 <th>0.2.20</th>
 </tr>
@@ -46345,7 +46368,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF-INTF:TEST_ENABLE">INTF:TEST_ENABLE</th>
+<tr><th id="tile-virtex7-INTF-INTF_TESTMUX:TEST_ENABLE">INTF_TESTMUX:TEST_ENABLE</th>
 <th>0.2.44</th>
 </tr>
 </thead>
@@ -46359,37 +46382,37 @@ non-inverted
 </table></div>
 <h2 id="tile-intfbram"><a class="header" href="#tile-intfbram">Tile INTF.BRAM</a></h2>
 <p>Cells: 1</p>
-<h3 id="intf-1"><a class="header" href="#intf-1">Intf</a></h3>
+<h3 id="test-mux-intf_testmux-1"><a class="header" href="#test-mux-intf_testmux-1">Test mux INTF_TESTMUX</a></h3>
 <div class="table-wrapper"><table>
-<caption>virtex7 INTF.BRAM intfs</caption>
+<caption>virtex7 INTF.BRAM INTF_TESTMUX mux</caption>
 <thead>
-<tr><th>Wire</th><th>Interface</th></tr>
+<tr><th>Destination</th><th>Primary source</th><th>Test sources</th></tr>
 </thead>
 <tbody>
-<tr><td>OUT0</td><td>TEST_MUX IMUX.BRAM17, IMUX.BRAM25</td></tr>
-<tr><td>OUT1</td><td>TEST_MUX IMUX.BRAM18, IMUX.BRAM26</td></tr>
-<tr><td>OUT2</td><td>TEST_MUX IMUX.BRAM21, IMUX.BRAM29</td></tr>
-<tr><td>OUT3</td><td>TEST_MUX IMUX.BRAM22, IMUX.BRAM30</td></tr>
-<tr><td>OUT4</td><td>TEST_MUX IMUX.BRAM16, IMUX.BRAM24</td></tr>
-<tr><td>OUT5</td><td>TEST_MUX IMUX.BRAM19, IMUX.BRAM27</td></tr>
-<tr><td>OUT6</td><td>TEST_MUX IMUX.BRAM20, IMUX.BRAM28</td></tr>
-<tr><td>OUT7</td><td>TEST_MUX IMUX.BRAM23, IMUX.BRAM31</td></tr>
-<tr><td>OUT8</td><td>TEST_MUX IMUX.BRAM0, IMUX.BRAM8</td></tr>
-<tr><td>OUT9</td><td>TEST_MUX IMUX.BRAM3, IMUX.BRAM11</td></tr>
-<tr><td>OUT10</td><td>TEST_MUX IMUX.BRAM4, IMUX.BRAM12</td></tr>
-<tr><td>OUT11</td><td>TEST_MUX IMUX.BRAM7, IMUX.BRAM15</td></tr>
-<tr><td>OUT12</td><td>TEST_MUX IMUX.BRAM1, IMUX.BRAM9</td></tr>
-<tr><td>OUT13</td><td>TEST_MUX IMUX.BRAM2, IMUX.BRAM10</td></tr>
-<tr><td>OUT14</td><td>TEST_MUX IMUX.BRAM5, IMUX.BRAM13</td></tr>
-<tr><td>OUT15</td><td>TEST_MUX IMUX.BRAM6, IMUX.BRAM14</td></tr>
-<tr><td>OUT16</td><td>TEST_MUX IMUX.BRAM36, IMUX.BRAM44</td></tr>
-<tr><td>OUT17</td><td>TEST_MUX IMUX.BYP7.SITE, IMUX.BRAM39, IMUX.BRAM47, TEST3</td></tr>
-<tr><td>OUT18</td><td>TEST_MUX IMUX.FAN0.SITE, IMUX.BRAM32, IMUX.BRAM40, TEST0</td></tr>
-<tr><td>OUT19</td><td>TEST_MUX IMUX.CLK0, IMUX.CLK1, IMUX.BRAM35, IMUX.BRAM43</td></tr>
-<tr><td>OUT20</td><td>TEST_MUX IMUX.CTRL0, IMUX.CTRL1, IMUX.BRAM37, IMUX.BRAM45</td></tr>
-<tr><td>OUT21</td><td>TEST_MUX IMUX.BYP6.SITE, IMUX.BRAM38, IMUX.BRAM46, TEST2</td></tr>
-<tr><td>OUT22</td><td>TEST_MUX IMUX.FAN4.SITE, IMUX.BRAM33, IMUX.BRAM41, TEST1</td></tr>
-<tr><td>OUT23</td><td>TEST_MUX IMUX.BRAM34, IMUX.BRAM42</td></tr>
+<tr><td>OUT0</td><td>OUT0.TMIN</td><td>IMUX.BRAM17, IMUX.BRAM25</td></tr>
+<tr><td>OUT1</td><td>OUT1.TMIN</td><td>IMUX.BRAM18, IMUX.BRAM26</td></tr>
+<tr><td>OUT2</td><td>OUT2.TMIN</td><td>IMUX.BRAM21, IMUX.BRAM29</td></tr>
+<tr><td>OUT3</td><td>OUT3.TMIN</td><td>IMUX.BRAM22, IMUX.BRAM30</td></tr>
+<tr><td>OUT4</td><td>OUT4.TMIN</td><td>IMUX.BRAM16, IMUX.BRAM24</td></tr>
+<tr><td>OUT5</td><td>OUT5.TMIN</td><td>IMUX.BRAM19, IMUX.BRAM27</td></tr>
+<tr><td>OUT6</td><td>OUT6.TMIN</td><td>IMUX.BRAM20, IMUX.BRAM28</td></tr>
+<tr><td>OUT7</td><td>OUT7.TMIN</td><td>IMUX.BRAM23, IMUX.BRAM31</td></tr>
+<tr><td>OUT8</td><td>OUT8.TMIN</td><td>IMUX.BRAM0, IMUX.BRAM8</td></tr>
+<tr><td>OUT9</td><td>OUT9.TMIN</td><td>IMUX.BRAM3, IMUX.BRAM11</td></tr>
+<tr><td>OUT10</td><td>OUT10.TMIN</td><td>IMUX.BRAM4, IMUX.BRAM12</td></tr>
+<tr><td>OUT11</td><td>OUT11.TMIN</td><td>IMUX.BRAM7, IMUX.BRAM15</td></tr>
+<tr><td>OUT12</td><td>OUT12.TMIN</td><td>IMUX.BRAM1, IMUX.BRAM9</td></tr>
+<tr><td>OUT13</td><td>OUT13.TMIN</td><td>IMUX.BRAM2, IMUX.BRAM10</td></tr>
+<tr><td>OUT14</td><td>OUT14.TMIN</td><td>IMUX.BRAM5, IMUX.BRAM13</td></tr>
+<tr><td>OUT15</td><td>OUT15.TMIN</td><td>IMUX.BRAM6, IMUX.BRAM14</td></tr>
+<tr><td>OUT16</td><td>OUT16.TMIN</td><td>IMUX.BRAM36, IMUX.BRAM44</td></tr>
+<tr><td>OUT17</td><td>OUT17.TMIN</td><td>IMUX.BYP7.SITE, IMUX.BRAM39, IMUX.BRAM47, TEST3</td></tr>
+<tr><td>OUT18</td><td>OUT18.TMIN</td><td>IMUX.FAN0.SITE, IMUX.BRAM32, IMUX.BRAM40, TEST0</td></tr>
+<tr><td>OUT19</td><td>OUT19.TMIN</td><td>IMUX.CLK0, IMUX.CLK1, IMUX.BRAM35, IMUX.BRAM43</td></tr>
+<tr><td>OUT20</td><td>OUT20.TMIN</td><td>IMUX.CTRL0, IMUX.CTRL1, IMUX.BRAM37, IMUX.BRAM45</td></tr>
+<tr><td>OUT21</td><td>OUT21.TMIN</td><td>IMUX.BYP6.SITE, IMUX.BRAM38, IMUX.BRAM46, TEST2</td></tr>
+<tr><td>OUT22</td><td>OUT22.TMIN</td><td>IMUX.FAN4.SITE, IMUX.BRAM33, IMUX.BRAM41, TEST1</td></tr>
+<tr><td>OUT23</td><td>OUT23.TMIN</td><td>IMUX.BRAM34, IMUX.BRAM42</td></tr>
 </tbody>
 </table></div>
 <h3 id="bitstream-2"><a class="header" href="#bitstream-2">Bitstream</a></h3>
@@ -46408,11 +46431,11 @@ non-inverted
 <tr><td>63</td>
 <td>-</td>
 <td title="0.1.63">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT17">INTF:MUX.OUT17[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT17">INTF_TESTMUX:MUX.OUT17[1]</a>
 </td>
 <td>-</td>
 <td title="0.3.63">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT17">INTF:MUX.OUT17[2]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT17">INTF_TESTMUX:MUX.OUT17[2]</a>
 </td>
 </tr>
 <tr><td>62</td>
@@ -46429,22 +46452,22 @@ non-inverted
 </tr>
 <tr><td>60</td>
 <td title="0.0.60">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT17">INTF:MUX.OUT17[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT17">INTF_TESTMUX:MUX.OUT17[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.60">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT17">INTF:MUX.OUT17[3]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT17">INTF_TESTMUX:MUX.OUT17[3]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>59</td>
 <td>-</td>
 <td title="0.1.59">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT7">INTF:MUX.OUT7[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT7">INTF_TESTMUX:MUX.OUT7[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.59">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT7">INTF:MUX.OUT7[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT7">INTF_TESTMUX:MUX.OUT7[1]</a>
 </td>
 </tr>
 <tr><td>58</td>
@@ -46461,22 +46484,22 @@ non-inverted
 </tr>
 <tr><td>56</td>
 <td title="0.0.56">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT11">INTF:MUX.OUT11[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT11">INTF_TESTMUX:MUX.OUT11[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.56">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT11">INTF:MUX.OUT11[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT11">INTF_TESTMUX:MUX.OUT11[0]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>55</td>
 <td>-</td>
 <td title="0.1.55">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT21">INTF:MUX.OUT21[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT21">INTF_TESTMUX:MUX.OUT21[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.55">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT21">INTF:MUX.OUT21[3]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT21">INTF_TESTMUX:MUX.OUT21[3]</a>
 </td>
 </tr>
 <tr><td>54</td>
@@ -46493,22 +46516,22 @@ non-inverted
 </tr>
 <tr><td>52</td>
 <td title="0.0.52">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT21">INTF:MUX.OUT21[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT21">INTF_TESTMUX:MUX.OUT21[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.52">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT21">INTF:MUX.OUT21[2]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT21">INTF_TESTMUX:MUX.OUT21[2]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>51</td>
 <td>-</td>
 <td title="0.1.51">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT3">INTF:MUX.OUT3[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT3">INTF_TESTMUX:MUX.OUT3[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.51">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT3">INTF:MUX.OUT3[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT3">INTF_TESTMUX:MUX.OUT3[1]</a>
 </td>
 </tr>
 <tr><td>50</td>
@@ -46525,11 +46548,11 @@ non-inverted
 </tr>
 <tr><td>48</td>
 <td title="0.0.48">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT15">INTF:MUX.OUT15[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT15">INTF_TESTMUX:MUX.OUT15[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.48">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT15">INTF:MUX.OUT15[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT15">INTF_TESTMUX:MUX.OUT15[1]</a>
 </td>
 <td>-</td>
 </tr>
@@ -46555,18 +46578,18 @@ non-inverted
 <td>-</td>
 <td>-</td>
 <td title="0.2.44">
-<a href="#tile-virtex7-INTF.BRAM-INTF:TEST_ENABLE">INTF:TEST_ENABLE</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:TEST_ENABLE">INTF_TESTMUX:TEST_ENABLE</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>43</td>
 <td>-</td>
 <td title="0.1.43">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT20">INTF:MUX.OUT20[2]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT20">INTF_TESTMUX:MUX.OUT20[2]</a>
 </td>
 <td>-</td>
 <td title="0.3.43">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT20">INTF:MUX.OUT20[3]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT20">INTF_TESTMUX:MUX.OUT20[3]</a>
 </td>
 </tr>
 <tr><td>42</td>
@@ -46583,22 +46606,22 @@ non-inverted
 </tr>
 <tr><td>40</td>
 <td title="0.0.40">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT20">INTF:MUX.OUT20[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT20">INTF_TESTMUX:MUX.OUT20[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.40">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT20">INTF:MUX.OUT20[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT20">INTF_TESTMUX:MUX.OUT20[1]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>39</td>
 <td>-</td>
 <td title="0.1.39">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT2">INTF:MUX.OUT2[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT2">INTF_TESTMUX:MUX.OUT2[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.39">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT2">INTF:MUX.OUT2[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT2">INTF_TESTMUX:MUX.OUT2[1]</a>
 </td>
 </tr>
 <tr><td>38</td>
@@ -46615,22 +46638,22 @@ non-inverted
 </tr>
 <tr><td>36</td>
 <td title="0.0.36">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT14">INTF:MUX.OUT14[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT14">INTF_TESTMUX:MUX.OUT14[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.36">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT14">INTF:MUX.OUT14[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT14">INTF_TESTMUX:MUX.OUT14[0]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>35</td>
 <td>-</td>
 <td title="0.1.35">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT16">INTF:MUX.OUT16[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT16">INTF_TESTMUX:MUX.OUT16[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.35">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT16">INTF:MUX.OUT16[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT16">INTF_TESTMUX:MUX.OUT16[1]</a>
 </td>
 </tr>
 <tr><td>34</td>
@@ -46647,22 +46670,22 @@ non-inverted
 </tr>
 <tr><td>32</td>
 <td title="0.0.32">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT6">INTF:MUX.OUT6[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT6">INTF_TESTMUX:MUX.OUT6[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.32">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT6">INTF:MUX.OUT6[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT6">INTF_TESTMUX:MUX.OUT6[1]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>31</td>
 <td>-</td>
 <td title="0.1.31">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT10">INTF:MUX.OUT10[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT10">INTF_TESTMUX:MUX.OUT10[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.31">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT10">INTF:MUX.OUT10[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT10">INTF_TESTMUX:MUX.OUT10[1]</a>
 </td>
 </tr>
 <tr><td>30</td>
@@ -46679,22 +46702,22 @@ non-inverted
 </tr>
 <tr><td>28</td>
 <td title="0.0.28">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT22">INTF:MUX.OUT22[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT22">INTF_TESTMUX:MUX.OUT22[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.28">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT22">INTF:MUX.OUT22[2]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT22">INTF_TESTMUX:MUX.OUT22[2]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>27</td>
 <td>-</td>
 <td title="0.1.27">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT19">INTF:MUX.OUT19[2]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT19">INTF_TESTMUX:MUX.OUT19[2]</a>
 </td>
 <td>-</td>
 <td title="0.3.27">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT19">INTF:MUX.OUT19[3]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT19">INTF_TESTMUX:MUX.OUT19[3]</a>
 </td>
 </tr>
 <tr><td>26</td>
@@ -46711,22 +46734,22 @@ non-inverted
 </tr>
 <tr><td>24</td>
 <td title="0.0.24">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT19">INTF:MUX.OUT19[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT19">INTF_TESTMUX:MUX.OUT19[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.24">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT19">INTF:MUX.OUT19[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT19">INTF_TESTMUX:MUX.OUT19[1]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>23</td>
 <td>-</td>
 <td title="0.1.23">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT5">INTF:MUX.OUT5[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT5">INTF_TESTMUX:MUX.OUT5[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.23">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT5">INTF:MUX.OUT5[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT5">INTF_TESTMUX:MUX.OUT5[1]</a>
 </td>
 </tr>
 <tr><td>22</td>
@@ -46743,22 +46766,22 @@ non-inverted
 </tr>
 <tr><td>20</td>
 <td title="0.0.20">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT9">INTF:MUX.OUT9[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT9">INTF_TESTMUX:MUX.OUT9[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.20">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT9">INTF:MUX.OUT9[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT9">INTF_TESTMUX:MUX.OUT9[0]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>19</td>
 <td>-</td>
 <td title="0.1.19">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT23">INTF:MUX.OUT23[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT23">INTF_TESTMUX:MUX.OUT23[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.19">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT23">INTF:MUX.OUT23[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT23">INTF_TESTMUX:MUX.OUT23[1]</a>
 </td>
 </tr>
 <tr><td>18</td>
@@ -46775,22 +46798,22 @@ non-inverted
 </tr>
 <tr><td>16</td>
 <td title="0.0.16">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT1">INTF:MUX.OUT1[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT1">INTF_TESTMUX:MUX.OUT1[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.16">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT1">INTF:MUX.OUT1[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT1">INTF_TESTMUX:MUX.OUT1[1]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>15</td>
 <td>-</td>
 <td title="0.1.15">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT13">INTF:MUX.OUT13[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT13">INTF_TESTMUX:MUX.OUT13[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.15">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT13">INTF:MUX.OUT13[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT13">INTF_TESTMUX:MUX.OUT13[1]</a>
 </td>
 </tr>
 <tr><td>14</td>
@@ -46807,22 +46830,22 @@ non-inverted
 </tr>
 <tr><td>12</td>
 <td title="0.0.12">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT22">INTF:MUX.OUT22[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT22">INTF_TESTMUX:MUX.OUT22[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.12">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT22">INTF:MUX.OUT22[3]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT22">INTF_TESTMUX:MUX.OUT22[3]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>11</td>
 <td>-</td>
 <td title="0.1.11">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT0">INTF:MUX.OUT0[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT0">INTF_TESTMUX:MUX.OUT0[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.11">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT0">INTF:MUX.OUT0[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT0">INTF_TESTMUX:MUX.OUT0[1]</a>
 </td>
 </tr>
 <tr><td>10</td>
@@ -46839,22 +46862,22 @@ non-inverted
 </tr>
 <tr><td>8</td>
 <td title="0.0.8">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT12">INTF:MUX.OUT12[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT12">INTF_TESTMUX:MUX.OUT12[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.8">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT12">INTF:MUX.OUT12[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT12">INTF_TESTMUX:MUX.OUT12[0]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>7</td>
 <td>-</td>
 <td title="0.1.7">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT18">INTF:MUX.OUT18[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT18">INTF_TESTMUX:MUX.OUT18[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.7">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT18">INTF:MUX.OUT18[3]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT18">INTF_TESTMUX:MUX.OUT18[3]</a>
 </td>
 </tr>
 <tr><td>6</td>
@@ -46871,22 +46894,22 @@ non-inverted
 </tr>
 <tr><td>4</td>
 <td title="0.0.4">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT18">INTF:MUX.OUT18[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT18">INTF_TESTMUX:MUX.OUT18[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.4">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT18">INTF:MUX.OUT18[2]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT18">INTF_TESTMUX:MUX.OUT18[2]</a>
 </td>
 <td>-</td>
 </tr>
 <tr><td>3</td>
 <td>-</td>
 <td title="0.1.3">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT4">INTF:MUX.OUT4[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT4">INTF_TESTMUX:MUX.OUT4[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.3">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT4">INTF:MUX.OUT4[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT4">INTF_TESTMUX:MUX.OUT4[1]</a>
 </td>
 </tr>
 <tr><td>2</td>
@@ -46903,11 +46926,11 @@ non-inverted
 </tr>
 <tr><td>0</td>
 <td title="0.0.0">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT8">INTF:MUX.OUT8[0]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT8">INTF_TESTMUX:MUX.OUT8[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.0">
-<a href="#tile-virtex7-INTF.BRAM-INTF:MUX.OUT8">INTF:MUX.OUT8[1]</a>
+<a href="#tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT8">INTF_TESTMUX:MUX.OUT8[1]</a>
 </td>
 <td>-</td>
 </tr>
@@ -46915,7 +46938,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT0">INTF:MUX.OUT0</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT0">INTF_TESTMUX:MUX.OUT0</th>
 <th>0.3.11</th>
 <th>0.1.11</th>
 </tr>
@@ -46937,7 +46960,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT1">INTF:MUX.OUT1</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT1">INTF_TESTMUX:MUX.OUT1</th>
 <th>0.2.16</th>
 <th>0.0.16</th>
 </tr>
@@ -46959,7 +46982,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT10">INTF:MUX.OUT10</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT10">INTF_TESTMUX:MUX.OUT10</th>
 <th>0.3.31</th>
 <th>0.1.31</th>
 </tr>
@@ -46981,7 +47004,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT11">INTF:MUX.OUT11</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT11">INTF_TESTMUX:MUX.OUT11</th>
 <th>0.0.56</th>
 <th>0.2.56</th>
 </tr>
@@ -47003,7 +47026,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT12">INTF:MUX.OUT12</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT12">INTF_TESTMUX:MUX.OUT12</th>
 <th>0.0.8</th>
 <th>0.2.8</th>
 </tr>
@@ -47025,7 +47048,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT13">INTF:MUX.OUT13</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT13">INTF_TESTMUX:MUX.OUT13</th>
 <th>0.3.15</th>
 <th>0.1.15</th>
 </tr>
@@ -47047,7 +47070,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT14">INTF:MUX.OUT14</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT14">INTF_TESTMUX:MUX.OUT14</th>
 <th>0.0.36</th>
 <th>0.2.36</th>
 </tr>
@@ -47069,7 +47092,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT15">INTF:MUX.OUT15</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT15">INTF_TESTMUX:MUX.OUT15</th>
 <th>0.2.48</th>
 <th>0.0.48</th>
 </tr>
@@ -47091,7 +47114,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT16">INTF:MUX.OUT16</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT16">INTF_TESTMUX:MUX.OUT16</th>
 <th>0.3.35</th>
 <th>0.1.35</th>
 </tr>
@@ -47113,7 +47136,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT17">INTF:MUX.OUT17</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT17">INTF_TESTMUX:MUX.OUT17</th>
 <th>0.2.60</th>
 <th>0.3.63</th>
 <th>0.1.63</th>
@@ -47155,7 +47178,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT18">INTF:MUX.OUT18</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT18">INTF_TESTMUX:MUX.OUT18</th>
 <th>0.3.7</th>
 <th>0.2.4</th>
 <th>0.0.4</th>
@@ -47197,7 +47220,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT19">INTF:MUX.OUT19</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT19">INTF_TESTMUX:MUX.OUT19</th>
 <th>0.3.27</th>
 <th>0.1.27</th>
 <th>0.2.24</th>
@@ -47239,7 +47262,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT2">INTF:MUX.OUT2</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT2">INTF_TESTMUX:MUX.OUT2</th>
 <th>0.3.39</th>
 <th>0.1.39</th>
 </tr>
@@ -47261,7 +47284,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT20">INTF:MUX.OUT20</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT20">INTF_TESTMUX:MUX.OUT20</th>
 <th>0.3.43</th>
 <th>0.1.43</th>
 <th>0.2.40</th>
@@ -47303,7 +47326,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT21">INTF:MUX.OUT21</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT21">INTF_TESTMUX:MUX.OUT21</th>
 <th>0.3.55</th>
 <th>0.2.52</th>
 <th>0.0.52</th>
@@ -47345,7 +47368,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT22">INTF:MUX.OUT22</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT22">INTF_TESTMUX:MUX.OUT22</th>
 <th>0.2.12</th>
 <th>0.2.28</th>
 <th>0.0.28</th>
@@ -47387,7 +47410,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT23">INTF:MUX.OUT23</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT23">INTF_TESTMUX:MUX.OUT23</th>
 <th>0.3.19</th>
 <th>0.1.19</th>
 </tr>
@@ -47409,7 +47432,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT3">INTF:MUX.OUT3</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT3">INTF_TESTMUX:MUX.OUT3</th>
 <th>0.3.51</th>
 <th>0.1.51</th>
 </tr>
@@ -47431,7 +47454,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT4">INTF:MUX.OUT4</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT4">INTF_TESTMUX:MUX.OUT4</th>
 <th>0.3.3</th>
 <th>0.1.3</th>
 </tr>
@@ -47453,7 +47476,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT5">INTF:MUX.OUT5</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT5">INTF_TESTMUX:MUX.OUT5</th>
 <th>0.3.23</th>
 <th>0.1.23</th>
 </tr>
@@ -47475,7 +47498,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT6">INTF:MUX.OUT6</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT6">INTF_TESTMUX:MUX.OUT6</th>
 <th>0.2.32</th>
 <th>0.0.32</th>
 </tr>
@@ -47497,7 +47520,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT7">INTF:MUX.OUT7</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT7">INTF_TESTMUX:MUX.OUT7</th>
 <th>0.3.59</th>
 <th>0.1.59</th>
 </tr>
@@ -47519,7 +47542,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT8">INTF:MUX.OUT8</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT8">INTF_TESTMUX:MUX.OUT8</th>
 <th>0.2.0</th>
 <th>0.0.0</th>
 </tr>
@@ -47541,7 +47564,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:MUX.OUT9">INTF:MUX.OUT9</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:MUX.OUT9">INTF_TESTMUX:MUX.OUT9</th>
 <th>0.0.20</th>
 <th>0.2.20</th>
 </tr>
@@ -47563,7 +47586,7 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.BRAM-INTF:TEST_ENABLE">INTF:TEST_ENABLE</th>
+<tr><th id="tile-virtex7-INTF.BRAM-INTF_TESTMUX:TEST_ENABLE">INTF_TESTMUX:TEST_ENABLE</th>
 <th>0.2.44</th>
 </tr>
 </thead>
@@ -47577,40 +47600,6 @@ non-inverted
 </table></div>
 <h2 id="tile-intfdelay"><a class="header" href="#tile-intfdelay">Tile INTF.DELAY</a></h2>
 <p>Cells: 1</p>
-<h3 id="intf-2"><a class="header" href="#intf-2">Intf</a></h3>
-<div class="table-wrapper"><table>
-<caption>virtex7 INTF.DELAY intfs</caption>
-<thead>
-<tr><th>Wire</th><th>Interface</th></tr>
-</thead>
-<tbody>
-<tr><td>OUT0</td><td>TEST_MUX IMUX.IMUX17.DELAY, IMUX.IMUX25.DELAY</td></tr>
-<tr><td>OUT1</td><td>TEST_MUX IMUX.IMUX18.DELAY, IMUX.IMUX26.DELAY</td></tr>
-<tr><td>OUT2</td><td>TEST_MUX IMUX.IMUX21.DELAY, IMUX.IMUX29.DELAY</td></tr>
-<tr><td>OUT3</td><td>TEST_MUX IMUX.IMUX22.DELAY, IMUX.IMUX30.DELAY</td></tr>
-<tr><td>OUT4</td><td>TEST_MUX IMUX.IMUX16.DELAY, IMUX.IMUX24.DELAY</td></tr>
-<tr><td>OUT5</td><td>TEST_MUX IMUX.IMUX19.DELAY, IMUX.IMUX27.DELAY</td></tr>
-<tr><td>OUT6</td><td>TEST_MUX IMUX.IMUX20.DELAY, IMUX.IMUX28.DELAY</td></tr>
-<tr><td>OUT7</td><td>TEST_MUX IMUX.IMUX23.DELAY, IMUX.IMUX31.DELAY</td></tr>
-<tr><td>OUT8</td><td>TEST_MUX IMUX.IMUX0.DELAY, IMUX.IMUX8.DELAY</td></tr>
-<tr><td>OUT9</td><td>TEST_MUX IMUX.IMUX3.DELAY, IMUX.IMUX11.DELAY</td></tr>
-<tr><td>OUT10</td><td>TEST_MUX IMUX.IMUX4.DELAY, IMUX.IMUX12.DELAY</td></tr>
-<tr><td>OUT11</td><td>TEST_MUX IMUX.IMUX7.DELAY, IMUX.IMUX15.DELAY</td></tr>
-<tr><td>OUT12</td><td>TEST_MUX IMUX.IMUX1.DELAY, IMUX.IMUX9.DELAY</td></tr>
-<tr><td>OUT13</td><td>TEST_MUX IMUX.IMUX2.DELAY, IMUX.IMUX10.DELAY</td></tr>
-<tr><td>OUT14</td><td>TEST_MUX IMUX.IMUX5.DELAY, IMUX.IMUX13.DELAY</td></tr>
-<tr><td>OUT15</td><td>TEST_MUX IMUX.IMUX6.DELAY, IMUX.IMUX14.DELAY</td></tr>
-<tr><td>OUT16</td><td>TEST_MUX IMUX.IMUX36.DELAY, IMUX.IMUX44.DELAY</td></tr>
-<tr><td>OUT17</td><td>TEST_MUX IMUX.BYP7.SITE, IMUX.IMUX39.DELAY, IMUX.IMUX47.DELAY, TEST3</td></tr>
-<tr><td>OUT18</td><td>TEST_MUX IMUX.FAN0.SITE, IMUX.IMUX32.DELAY, IMUX.IMUX40.DELAY, TEST0</td></tr>
-<tr><td>OUT19</td><td>TEST_MUX IMUX.CLK0, IMUX.CLK1, IMUX.IMUX35.DELAY, IMUX.IMUX43.DELAY</td></tr>
-<tr><td>OUT20</td><td>TEST_MUX IMUX.CTRL0, IMUX.CTRL1, IMUX.IMUX37.DELAY, IMUX.IMUX45.DELAY</td></tr>
-<tr><td>OUT21</td><td>TEST_MUX IMUX.BYP6.SITE, IMUX.IMUX38.DELAY, IMUX.IMUX46.DELAY, TEST2</td></tr>
-<tr><td>OUT22</td><td>TEST_MUX IMUX.FAN4.SITE, IMUX.IMUX33.DELAY, IMUX.IMUX41.DELAY, TEST1</td></tr>
-<tr><td>OUT23</td><td>TEST_MUX IMUX.IMUX34.DELAY, IMUX.IMUX42.DELAY</td></tr>
-</tbody>
-</table></div>
-<h3 id="bel-intf_delay"><a class="header" href="#bel-intf_delay">Bel INTF_DELAY</a></h3>
 <h3 id="switchbox-intf_delay"><a class="header" href="#switchbox-intf_delay">Switchbox INTF_DELAY</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex7 INTF.DELAY switchbox INTF_DELAY</caption>
@@ -47716,6 +47705,39 @@ non-inverted
 </tr>
 </tbody>
 </table></div>
+<h3 id="test-mux-intf_testmux-2"><a class="header" href="#test-mux-intf_testmux-2">Test mux INTF_TESTMUX</a></h3>
+<div class="table-wrapper"><table>
+<caption>virtex7 INTF.DELAY INTF_TESTMUX mux</caption>
+<thead>
+<tr><th>Destination</th><th>Primary source</th><th>Test sources</th></tr>
+</thead>
+<tbody>
+<tr><td>OUT0</td><td>OUT0.TMIN</td><td>IMUX.IMUX17.DELAY, IMUX.IMUX25.DELAY</td></tr>
+<tr><td>OUT1</td><td>OUT1.TMIN</td><td>IMUX.IMUX18.DELAY, IMUX.IMUX26.DELAY</td></tr>
+<tr><td>OUT2</td><td>OUT2.TMIN</td><td>IMUX.IMUX21.DELAY, IMUX.IMUX29.DELAY</td></tr>
+<tr><td>OUT3</td><td>OUT3.TMIN</td><td>IMUX.IMUX22.DELAY, IMUX.IMUX30.DELAY</td></tr>
+<tr><td>OUT4</td><td>OUT4.TMIN</td><td>IMUX.IMUX16.DELAY, IMUX.IMUX24.DELAY</td></tr>
+<tr><td>OUT5</td><td>OUT5.TMIN</td><td>IMUX.IMUX19.DELAY, IMUX.IMUX27.DELAY</td></tr>
+<tr><td>OUT6</td><td>OUT6.TMIN</td><td>IMUX.IMUX20.DELAY, IMUX.IMUX28.DELAY</td></tr>
+<tr><td>OUT7</td><td>OUT7.TMIN</td><td>IMUX.IMUX23.DELAY, IMUX.IMUX31.DELAY</td></tr>
+<tr><td>OUT8</td><td>OUT8.TMIN</td><td>IMUX.IMUX0.DELAY, IMUX.IMUX8.DELAY</td></tr>
+<tr><td>OUT9</td><td>OUT9.TMIN</td><td>IMUX.IMUX3.DELAY, IMUX.IMUX11.DELAY</td></tr>
+<tr><td>OUT10</td><td>OUT10.TMIN</td><td>IMUX.IMUX4.DELAY, IMUX.IMUX12.DELAY</td></tr>
+<tr><td>OUT11</td><td>OUT11.TMIN</td><td>IMUX.IMUX7.DELAY, IMUX.IMUX15.DELAY</td></tr>
+<tr><td>OUT12</td><td>OUT12.TMIN</td><td>IMUX.IMUX1.DELAY, IMUX.IMUX9.DELAY</td></tr>
+<tr><td>OUT13</td><td>OUT13.TMIN</td><td>IMUX.IMUX2.DELAY, IMUX.IMUX10.DELAY</td></tr>
+<tr><td>OUT14</td><td>OUT14.TMIN</td><td>IMUX.IMUX5.DELAY, IMUX.IMUX13.DELAY</td></tr>
+<tr><td>OUT15</td><td>OUT15.TMIN</td><td>IMUX.IMUX6.DELAY, IMUX.IMUX14.DELAY</td></tr>
+<tr><td>OUT16</td><td>OUT16.TMIN</td><td>IMUX.IMUX36.DELAY, IMUX.IMUX44.DELAY</td></tr>
+<tr><td>OUT17</td><td>OUT17.TMIN</td><td>IMUX.BYP7.SITE, IMUX.IMUX39.DELAY, IMUX.IMUX47.DELAY, TEST3</td></tr>
+<tr><td>OUT18</td><td>OUT18.TMIN</td><td>IMUX.FAN0.SITE, IMUX.IMUX32.DELAY, IMUX.IMUX40.DELAY, TEST0</td></tr>
+<tr><td>OUT19</td><td>OUT19.TMIN</td><td>IMUX.CLK0, IMUX.CLK1, IMUX.IMUX35.DELAY, IMUX.IMUX43.DELAY</td></tr>
+<tr><td>OUT20</td><td>OUT20.TMIN</td><td>IMUX.CTRL0, IMUX.CTRL1, IMUX.IMUX37.DELAY, IMUX.IMUX45.DELAY</td></tr>
+<tr><td>OUT21</td><td>OUT21.TMIN</td><td>IMUX.BYP6.SITE, IMUX.IMUX38.DELAY, IMUX.IMUX46.DELAY, TEST2</td></tr>
+<tr><td>OUT22</td><td>OUT22.TMIN</td><td>IMUX.FAN4.SITE, IMUX.IMUX33.DELAY, IMUX.IMUX41.DELAY, TEST1</td></tr>
+<tr><td>OUT23</td><td>OUT23.TMIN</td><td>IMUX.IMUX34.DELAY, IMUX.IMUX42.DELAY</td></tr>
+</tbody>
+</table></div>
 <h3 id="bitstream-3"><a class="header" href="#bitstream-3">Bitstream</a></h3>
 <div class="table-wrapper"><table>
 <caption>virtex7 INTF.DELAY bittile 0</caption>
@@ -47756,11 +47778,11 @@ non-inverted
 <tr><td>63</td>
 <td>-</td>
 <td title="0.1.63">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT17">INTF:MUX.OUT17[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT17">INTF_TESTMUX:MUX.OUT17[1]</a>
 </td>
 <td>-</td>
 <td title="0.3.63">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT17">INTF:MUX.OUT17[2]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT17">INTF_TESTMUX:MUX.OUT17[2]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -47853,11 +47875,11 @@ non-inverted
 </tr>
 <tr><td>60</td>
 <td title="0.0.60">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT17">INTF:MUX.OUT17[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT17">INTF_TESTMUX:MUX.OUT17[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.60">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT17">INTF:MUX.OUT17[3]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT17">INTF_TESTMUX:MUX.OUT17[3]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -47890,11 +47912,11 @@ non-inverted
 <tr><td>59</td>
 <td>-</td>
 <td title="0.1.59">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT7">INTF:MUX.OUT7[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT7">INTF_TESTMUX:MUX.OUT7[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.59">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT7">INTF:MUX.OUT7[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT7">INTF_TESTMUX:MUX.OUT7[1]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -47987,11 +48009,11 @@ non-inverted
 </tr>
 <tr><td>56</td>
 <td title="0.0.56">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT11">INTF:MUX.OUT11[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT11">INTF_TESTMUX:MUX.OUT11[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.56">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT11">INTF:MUX.OUT11[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT11">INTF_TESTMUX:MUX.OUT11[0]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -48024,11 +48046,11 @@ non-inverted
 <tr><td>55</td>
 <td>-</td>
 <td title="0.1.55">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT21">INTF:MUX.OUT21[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT21">INTF_TESTMUX:MUX.OUT21[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.55">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT21">INTF:MUX.OUT21[3]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT21">INTF_TESTMUX:MUX.OUT21[3]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -48121,11 +48143,11 @@ non-inverted
 </tr>
 <tr><td>52</td>
 <td title="0.0.52">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT21">INTF:MUX.OUT21[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT21">INTF_TESTMUX:MUX.OUT21[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.52">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT21">INTF:MUX.OUT21[2]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT21">INTF_TESTMUX:MUX.OUT21[2]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -48158,11 +48180,11 @@ non-inverted
 <tr><td>51</td>
 <td>-</td>
 <td title="0.1.51">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT3">INTF:MUX.OUT3[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT3">INTF_TESTMUX:MUX.OUT3[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.51">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT3">INTF:MUX.OUT3[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT3">INTF_TESTMUX:MUX.OUT3[1]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -48255,11 +48277,11 @@ non-inverted
 </tr>
 <tr><td>48</td>
 <td title="0.0.48">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT15">INTF:MUX.OUT15[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT15">INTF_TESTMUX:MUX.OUT15[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.48">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT15">INTF:MUX.OUT15[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT15">INTF_TESTMUX:MUX.OUT15[1]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -48387,7 +48409,7 @@ non-inverted
 <td>-</td>
 <td>-</td>
 <td title="0.2.44">
-<a href="#tile-virtex7-INTF.DELAY-INTF:TEST_ENABLE">INTF:TEST_ENABLE</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:TEST_ENABLE">INTF_TESTMUX:TEST_ENABLE</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -48420,11 +48442,11 @@ non-inverted
 <tr><td>43</td>
 <td>-</td>
 <td title="0.1.43">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT20">INTF:MUX.OUT20[2]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT20">INTF_TESTMUX:MUX.OUT20[2]</a>
 </td>
 <td>-</td>
 <td title="0.3.43">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT20">INTF:MUX.OUT20[3]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT20">INTF_TESTMUX:MUX.OUT20[3]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -48517,11 +48539,11 @@ non-inverted
 </tr>
 <tr><td>40</td>
 <td title="0.0.40">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT20">INTF:MUX.OUT20[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT20">INTF_TESTMUX:MUX.OUT20[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.40">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT20">INTF:MUX.OUT20[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT20">INTF_TESTMUX:MUX.OUT20[1]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -48554,11 +48576,11 @@ non-inverted
 <tr><td>39</td>
 <td>-</td>
 <td title="0.1.39">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT2">INTF:MUX.OUT2[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT2">INTF_TESTMUX:MUX.OUT2[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.39">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT2">INTF:MUX.OUT2[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT2">INTF_TESTMUX:MUX.OUT2[1]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -48651,11 +48673,11 @@ non-inverted
 </tr>
 <tr><td>36</td>
 <td title="0.0.36">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT14">INTF:MUX.OUT14[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT14">INTF_TESTMUX:MUX.OUT14[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.36">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT14">INTF:MUX.OUT14[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT14">INTF_TESTMUX:MUX.OUT14[0]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -48688,11 +48710,11 @@ non-inverted
 <tr><td>35</td>
 <td>-</td>
 <td title="0.1.35">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT16">INTF:MUX.OUT16[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT16">INTF_TESTMUX:MUX.OUT16[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.35">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT16">INTF:MUX.OUT16[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT16">INTF_TESTMUX:MUX.OUT16[1]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -48785,11 +48807,11 @@ non-inverted
 </tr>
 <tr><td>32</td>
 <td title="0.0.32">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT6">INTF:MUX.OUT6[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT6">INTF_TESTMUX:MUX.OUT6[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.32">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT6">INTF:MUX.OUT6[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT6">INTF_TESTMUX:MUX.OUT6[1]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -48822,11 +48844,11 @@ non-inverted
 <tr><td>31</td>
 <td>-</td>
 <td title="0.1.31">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT10">INTF:MUX.OUT10[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT10">INTF_TESTMUX:MUX.OUT10[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.31">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT10">INTF:MUX.OUT10[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT10">INTF_TESTMUX:MUX.OUT10[1]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -48919,11 +48941,11 @@ non-inverted
 </tr>
 <tr><td>28</td>
 <td title="0.0.28">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT22">INTF:MUX.OUT22[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT22">INTF_TESTMUX:MUX.OUT22[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.28">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT22">INTF:MUX.OUT22[2]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT22">INTF_TESTMUX:MUX.OUT22[2]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -48956,11 +48978,11 @@ non-inverted
 <tr><td>27</td>
 <td>-</td>
 <td title="0.1.27">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT19">INTF:MUX.OUT19[2]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT19">INTF_TESTMUX:MUX.OUT19[2]</a>
 </td>
 <td>-</td>
 <td title="0.3.27">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT19">INTF:MUX.OUT19[3]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT19">INTF_TESTMUX:MUX.OUT19[3]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -49053,11 +49075,11 @@ non-inverted
 </tr>
 <tr><td>24</td>
 <td title="0.0.24">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT19">INTF:MUX.OUT19[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT19">INTF_TESTMUX:MUX.OUT19[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.24">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT19">INTF:MUX.OUT19[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT19">INTF_TESTMUX:MUX.OUT19[1]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -49090,11 +49112,11 @@ non-inverted
 <tr><td>23</td>
 <td>-</td>
 <td title="0.1.23">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT5">INTF:MUX.OUT5[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT5">INTF_TESTMUX:MUX.OUT5[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.23">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT5">INTF:MUX.OUT5[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT5">INTF_TESTMUX:MUX.OUT5[1]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -49187,11 +49209,11 @@ non-inverted
 </tr>
 <tr><td>20</td>
 <td title="0.0.20">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT9">INTF:MUX.OUT9[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT9">INTF_TESTMUX:MUX.OUT9[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.20">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT9">INTF:MUX.OUT9[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT9">INTF_TESTMUX:MUX.OUT9[0]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -49224,11 +49246,11 @@ non-inverted
 <tr><td>19</td>
 <td>-</td>
 <td title="0.1.19">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT23">INTF:MUX.OUT23[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT23">INTF_TESTMUX:MUX.OUT23[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.19">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT23">INTF:MUX.OUT23[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT23">INTF_TESTMUX:MUX.OUT23[1]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -49321,11 +49343,11 @@ non-inverted
 </tr>
 <tr><td>16</td>
 <td title="0.0.16">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT1">INTF:MUX.OUT1[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT1">INTF_TESTMUX:MUX.OUT1[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.16">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT1">INTF:MUX.OUT1[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT1">INTF_TESTMUX:MUX.OUT1[1]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -49358,11 +49380,11 @@ non-inverted
 <tr><td>15</td>
 <td>-</td>
 <td title="0.1.15">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT13">INTF:MUX.OUT13[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT13">INTF_TESTMUX:MUX.OUT13[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.15">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT13">INTF:MUX.OUT13[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT13">INTF_TESTMUX:MUX.OUT13[1]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -49455,11 +49477,11 @@ non-inverted
 </tr>
 <tr><td>12</td>
 <td title="0.0.12">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT22">INTF:MUX.OUT22[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT22">INTF_TESTMUX:MUX.OUT22[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.12">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT22">INTF:MUX.OUT22[3]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT22">INTF_TESTMUX:MUX.OUT22[3]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -49492,11 +49514,11 @@ non-inverted
 <tr><td>11</td>
 <td>-</td>
 <td title="0.1.11">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT0">INTF:MUX.OUT0[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT0">INTF_TESTMUX:MUX.OUT0[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.11">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT0">INTF:MUX.OUT0[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT0">INTF_TESTMUX:MUX.OUT0[1]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -49589,11 +49611,11 @@ non-inverted
 </tr>
 <tr><td>8</td>
 <td title="0.0.8">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT12">INTF:MUX.OUT12[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT12">INTF_TESTMUX:MUX.OUT12[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.8">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT12">INTF:MUX.OUT12[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT12">INTF_TESTMUX:MUX.OUT12[0]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -49626,11 +49648,11 @@ non-inverted
 <tr><td>7</td>
 <td>-</td>
 <td title="0.1.7">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT18">INTF:MUX.OUT18[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT18">INTF_TESTMUX:MUX.OUT18[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.7">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT18">INTF:MUX.OUT18[3]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT18">INTF_TESTMUX:MUX.OUT18[3]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -49723,11 +49745,11 @@ non-inverted
 </tr>
 <tr><td>4</td>
 <td title="0.0.4">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT18">INTF:MUX.OUT18[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT18">INTF_TESTMUX:MUX.OUT18[1]</a>
 </td>
 <td>-</td>
 <td title="0.2.4">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT18">INTF:MUX.OUT18[2]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT18">INTF_TESTMUX:MUX.OUT18[2]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -49760,11 +49782,11 @@ non-inverted
 <tr><td>3</td>
 <td>-</td>
 <td title="0.1.3">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT4">INTF:MUX.OUT4[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT4">INTF_TESTMUX:MUX.OUT4[0]</a>
 </td>
 <td>-</td>
 <td title="0.3.3">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT4">INTF:MUX.OUT4[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT4">INTF_TESTMUX:MUX.OUT4[1]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -49857,11 +49879,11 @@ non-inverted
 </tr>
 <tr><td>0</td>
 <td title="0.0.0">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT8">INTF:MUX.OUT8[0]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT8">INTF_TESTMUX:MUX.OUT8[0]</a>
 </td>
 <td>-</td>
 <td title="0.2.0">
-<a href="#tile-virtex7-INTF.DELAY-INTF:MUX.OUT8">INTF:MUX.OUT8[1]</a>
+<a href="#tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT8">INTF_TESTMUX:MUX.OUT8[1]</a>
 </td>
 <td>-</td>
 <td>-</td>
@@ -49895,657 +49917,6 @@ non-inverted
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT0">INTF:MUX.OUT0</th>
-<th>0.3.11</th>
-<th>0.1.11</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX17.DELAY</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX25.DELAY</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT1">INTF:MUX.OUT1</th>
-<th>0.2.16</th>
-<th>0.0.16</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX18.DELAY</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX26.DELAY</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT10">INTF:MUX.OUT10</th>
-<th>0.3.31</th>
-<th>0.1.31</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX4.DELAY</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX12.DELAY</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT11">INTF:MUX.OUT11</th>
-<th>0.0.56</th>
-<th>0.2.56</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX7.DELAY</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX15.DELAY</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT12">INTF:MUX.OUT12</th>
-<th>0.0.8</th>
-<th>0.2.8</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX1.DELAY</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX9.DELAY</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT13">INTF:MUX.OUT13</th>
-<th>0.3.15</th>
-<th>0.1.15</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX2.DELAY</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX10.DELAY</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT14">INTF:MUX.OUT14</th>
-<th>0.0.36</th>
-<th>0.2.36</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX5.DELAY</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX13.DELAY</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT15">INTF:MUX.OUT15</th>
-<th>0.2.48</th>
-<th>0.0.48</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX6.DELAY</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX14.DELAY</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT16">INTF:MUX.OUT16</th>
-<th>0.3.35</th>
-<th>0.1.35</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX36.DELAY</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX44.DELAY</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT17">INTF:MUX.OUT17</th>
-<th>0.2.60</th>
-<th>0.3.63</th>
-<th>0.1.63</th>
-<th>0.0.60</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.BYP7.SITE</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX39.DELAY</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX47.DELAY</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>TEST3</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT18">INTF:MUX.OUT18</th>
-<th>0.3.7</th>
-<th>0.2.4</th>
-<th>0.0.4</th>
-<th>0.1.7</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.FAN0.SITE</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX32.DELAY</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX40.DELAY</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>TEST0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT19">INTF:MUX.OUT19</th>
-<th>0.3.27</th>
-<th>0.1.27</th>
-<th>0.2.24</th>
-<th>0.0.24</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.CLK0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.CLK1</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX35.DELAY</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX43.DELAY</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT2">INTF:MUX.OUT2</th>
-<th>0.3.39</th>
-<th>0.1.39</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX21.DELAY</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX29.DELAY</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT20">INTF:MUX.OUT20</th>
-<th>0.3.43</th>
-<th>0.1.43</th>
-<th>0.2.40</th>
-<th>0.0.40</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.CTRL0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.CTRL1</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX37.DELAY</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX45.DELAY</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT21">INTF:MUX.OUT21</th>
-<th>0.3.55</th>
-<th>0.2.52</th>
-<th>0.0.52</th>
-<th>0.1.55</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.BYP6.SITE</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX38.DELAY</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX46.DELAY</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>TEST2</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT22">INTF:MUX.OUT22</th>
-<th>0.2.12</th>
-<th>0.2.28</th>
-<th>0.0.28</th>
-<th>0.0.12</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.FAN4.SITE</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX33.DELAY</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX41.DELAY</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>TEST1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT23">INTF:MUX.OUT23</th>
-<th>0.3.19</th>
-<th>0.1.19</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX34.DELAY</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX42.DELAY</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT3">INTF:MUX.OUT3</th>
-<th>0.3.51</th>
-<th>0.1.51</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX22.DELAY</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX30.DELAY</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT4">INTF:MUX.OUT4</th>
-<th>0.3.3</th>
-<th>0.1.3</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX16.DELAY</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX24.DELAY</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT5">INTF:MUX.OUT5</th>
-<th>0.3.23</th>
-<th>0.1.23</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX19.DELAY</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX27.DELAY</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT6">INTF:MUX.OUT6</th>
-<th>0.2.32</th>
-<th>0.0.32</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX20.DELAY</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX28.DELAY</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT7">INTF:MUX.OUT7</th>
-<th>0.3.59</th>
-<th>0.1.59</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX23.DELAY</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX31.DELAY</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT8">INTF:MUX.OUT8</th>
-<th>0.2.0</th>
-<th>0.0.0</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX0.DELAY</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX8.DELAY</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:MUX.OUT9">INTF:MUX.OUT9</th>
-<th>0.0.20</th>
-<th>0.2.20</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>NONE</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr><td>IMUX.IMUX3.DELAY</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr><td>IMUX.IMUX11.DELAY</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table></div>
-<div class="table-wrapper"><table>
-<thead>
-<tr><th id="tile-virtex7-INTF.DELAY-INTF:TEST_ENABLE">INTF:TEST_ENABLE</th>
-<th>0.2.44</th>
-</tr>
 <tr><th id="tile-virtex7-INTF.DELAY-INTF_DELAY:DELAY.IMUX.IMUX0.DELAY">INTF_DELAY:DELAY.IMUX.IMUX0.DELAY</th>
 <th>0.26.0</th>
 </tr>
@@ -50690,12 +50061,663 @@ non-inverted
 <tr><th id="tile-virtex7-INTF.DELAY-INTF_DELAY:DELAY.IMUX.IMUX9.DELAY">INTF_DELAY:DELAY.IMUX.IMUX9.DELAY</th>
 <th>0.26.10</th>
 </tr>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:TEST_ENABLE">INTF_TESTMUX:TEST_ENABLE</th>
+<th>0.2.44</th>
+</tr>
 </thead>
 <tbody>
 <tr><td>
 non-inverted
 </td>
 <td>[0]</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT0">INTF_TESTMUX:MUX.OUT0</th>
+<th>0.3.11</th>
+<th>0.1.11</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX17.DELAY</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX25.DELAY</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT1">INTF_TESTMUX:MUX.OUT1</th>
+<th>0.2.16</th>
+<th>0.0.16</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX18.DELAY</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX26.DELAY</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT10">INTF_TESTMUX:MUX.OUT10</th>
+<th>0.3.31</th>
+<th>0.1.31</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX4.DELAY</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX12.DELAY</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT11">INTF_TESTMUX:MUX.OUT11</th>
+<th>0.0.56</th>
+<th>0.2.56</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX7.DELAY</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX15.DELAY</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT12">INTF_TESTMUX:MUX.OUT12</th>
+<th>0.0.8</th>
+<th>0.2.8</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX1.DELAY</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX9.DELAY</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT13">INTF_TESTMUX:MUX.OUT13</th>
+<th>0.3.15</th>
+<th>0.1.15</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX2.DELAY</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX10.DELAY</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT14">INTF_TESTMUX:MUX.OUT14</th>
+<th>0.0.36</th>
+<th>0.2.36</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX5.DELAY</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX13.DELAY</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT15">INTF_TESTMUX:MUX.OUT15</th>
+<th>0.2.48</th>
+<th>0.0.48</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX6.DELAY</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX14.DELAY</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT16">INTF_TESTMUX:MUX.OUT16</th>
+<th>0.3.35</th>
+<th>0.1.35</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX36.DELAY</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX44.DELAY</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT17">INTF_TESTMUX:MUX.OUT17</th>
+<th>0.2.60</th>
+<th>0.3.63</th>
+<th>0.1.63</th>
+<th>0.0.60</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.BYP7.SITE</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX39.DELAY</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX47.DELAY</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>TEST3</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT18">INTF_TESTMUX:MUX.OUT18</th>
+<th>0.3.7</th>
+<th>0.2.4</th>
+<th>0.0.4</th>
+<th>0.1.7</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.FAN0.SITE</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX32.DELAY</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX40.DELAY</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>TEST0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT19">INTF_TESTMUX:MUX.OUT19</th>
+<th>0.3.27</th>
+<th>0.1.27</th>
+<th>0.2.24</th>
+<th>0.0.24</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.CLK0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.CLK1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX35.DELAY</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX43.DELAY</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT2">INTF_TESTMUX:MUX.OUT2</th>
+<th>0.3.39</th>
+<th>0.1.39</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX21.DELAY</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX29.DELAY</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT20">INTF_TESTMUX:MUX.OUT20</th>
+<th>0.3.43</th>
+<th>0.1.43</th>
+<th>0.2.40</th>
+<th>0.0.40</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.CTRL0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.CTRL1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX37.DELAY</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX45.DELAY</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT21">INTF_TESTMUX:MUX.OUT21</th>
+<th>0.3.55</th>
+<th>0.2.52</th>
+<th>0.0.52</th>
+<th>0.1.55</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.BYP6.SITE</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX38.DELAY</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX46.DELAY</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>TEST2</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT22">INTF_TESTMUX:MUX.OUT22</th>
+<th>0.2.12</th>
+<th>0.2.28</th>
+<th>0.0.28</th>
+<th>0.0.12</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.FAN4.SITE</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX33.DELAY</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX41.DELAY</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>TEST1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT23">INTF_TESTMUX:MUX.OUT23</th>
+<th>0.3.19</th>
+<th>0.1.19</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX34.DELAY</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX42.DELAY</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT3">INTF_TESTMUX:MUX.OUT3</th>
+<th>0.3.51</th>
+<th>0.1.51</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX22.DELAY</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX30.DELAY</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT4">INTF_TESTMUX:MUX.OUT4</th>
+<th>0.3.3</th>
+<th>0.1.3</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX16.DELAY</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX24.DELAY</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT5">INTF_TESTMUX:MUX.OUT5</th>
+<th>0.3.23</th>
+<th>0.1.23</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX19.DELAY</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX27.DELAY</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT6">INTF_TESTMUX:MUX.OUT6</th>
+<th>0.2.32</th>
+<th>0.0.32</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX20.DELAY</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX28.DELAY</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT7">INTF_TESTMUX:MUX.OUT7</th>
+<th>0.3.59</th>
+<th>0.1.59</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX23.DELAY</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX31.DELAY</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT8">INTF_TESTMUX:MUX.OUT8</th>
+<th>0.2.0</th>
+<th>0.0.0</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX0.DELAY</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX8.DELAY</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrapper"><table>
+<thead>
+<tr><th id="tile-virtex7-INTF.DELAY-INTF_TESTMUX:MUX.OUT9">INTF_TESTMUX:MUX.OUT9</th>
+<th>0.0.20</th>
+<th>0.2.20</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>NONE</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr><td>IMUX.IMUX3.DELAY</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr><td>IMUX.IMUX11.DELAY</td>
+<td>1</td>
+<td>0</td>
 </tr>
 </tbody>
 </table></div>

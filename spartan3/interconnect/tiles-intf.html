@@ -157,92 +157,332 @@
 <p>This tile, unusually, takes up four interconnect tiles. It shares its bitstream tiles with the four corresponding <code>INT.BRAM.S3ADSP</code> tiles.</p>
 <h2 id="tile-intfdsp"><a class="header" href="#tile-intfdsp">Tile INTF.DSP</a></h2>
 <p>Cells: 4</p>
-<h3 id="intf"><a class="header" href="#intf">Intf</a></h3>
+<h3 id="test-mux-intf_testmux"><a class="header" href="#test-mux-intf_testmux">Test mux INTF_TESTMUX</a></h3>
 <div class="table-wrapper"><table>
-<caption>spartan3 INTF.DSP intfs</caption>
+<caption>spartan3 INTF.DSP INTF_TESTMUX mux</caption>
 <thead>
-<tr><th>Wire</th><th>Interface</th></tr>
+<tr><th>Destination</th><th>Primary source</th>
+<th>Test source 0</th>
+<th>Test source 1</th>
+</tr>
 </thead>
 <tbody>
-<tr><td>TCELL0:OUT.FAN0</td><td>TEST_MUX TCELL0:IMUX.DATA11, TCELL0:IMUX.DATA22</td></tr>
-<tr><td>TCELL0:OUT.FAN1</td><td>TEST_MUX TCELL0:IMUX.DATA14, TCELL0:IMUX.DATA17</td></tr>
-<tr><td>TCELL0:OUT.FAN2</td><td>TEST_MUX TCELL0:IMUX.DATA10, TCELL0:IMUX.DATA16</td></tr>
-<tr><td>TCELL0:OUT.FAN3</td><td>TEST_MUX TCELL0:IMUX.DATA8, TCELL0:IMUX.DATA13</td></tr>
-<tr><td>TCELL0:OUT.FAN4</td><td>TEST_MUX TCELL0:IMUX.FAN.BY2, TCELL0:IMUX.DATA27</td></tr>
-<tr><td>TCELL0:OUT.FAN5</td><td>TEST_MUX TCELL0:IMUX.FAN.BY1, TCELL0:IMUX.DATA3</td></tr>
-<tr><td>TCELL0:OUT.FAN6</td><td>TEST_MUX TCELL0:IMUX.DATA1, TCELL0:IMUX.DATA6</td></tr>
-<tr><td>TCELL0:OUT.FAN7</td><td>TEST_MUX TCELL0:IMUX.DATA24, TCELL0:IMUX.DATA26</td></tr>
-<tr><td>TCELL0:OUT.SEC8</td><td>TEST_MUX TCELL0:IMUX.SR3</td></tr>
-<tr><td>TCELL0:OUT.SEC9</td><td>TEST_MUX TCELL0:IMUX.SR2</td></tr>
-<tr><td>TCELL0:OUT.SEC10</td><td>TEST_MUX TCELL0:IMUX.SR1</td></tr>
-<tr><td>TCELL0:OUT.SEC11</td><td>TEST_MUX TCELL0:IMUX.SR0</td></tr>
-<tr><td>TCELL0:OUT.SEC12</td><td>TEST_MUX TCELL0:IMUX.FAN.BY3, TCELL0:IMUX.DATA0</td></tr>
-<tr><td>TCELL0:OUT.SEC13</td><td>TEST_MUX TCELL0:IMUX.FAN.BY0, TCELL0:IMUX.DATA19</td></tr>
-<tr><td>TCELL0:OUT.SEC14</td><td>TEST_MUX TCELL0:IMUX.DATA21, TCELL3:IMUX.FAN.BY0</td></tr>
-<tr><td>TCELL0:OUT.SEC15</td><td>TEST_MUX TCELL0:IMUX.DATA29, TCELL3:IMUX.DATA30</td></tr>
-<tr><td>TCELL1:OUT.FAN0</td><td>TEST_MUX TCELL1:IMUX.DATA11, TCELL3:IMUX.FAN.BY3</td></tr>
-<tr><td>TCELL1:OUT.FAN1</td><td>TEST_MUX TCELL1:IMUX.DATA14, TCELL3:IMUX.FAN.BY1</td></tr>
-<tr><td>TCELL1:OUT.FAN2</td><td>TEST_MUX TCELL1:IMUX.FAN.BX2, TCELL1:IMUX.DATA16</td></tr>
-<tr><td>TCELL1:OUT.FAN3</td><td>TEST_MUX TCELL1:IMUX.FAN.BY0, TCELL1:IMUX.DATA8</td></tr>
-<tr><td>TCELL1:OUT.FAN4</td><td>TEST_MUX TCELL1:IMUX.DATA27, TCELL3:IMUX.DATA10</td></tr>
-<tr><td>TCELL1:OUT.FAN5</td><td>TEST_MUX TCELL1:IMUX.DATA3, TCELL3:IMUX.DATA5</td></tr>
-<tr><td>TCELL1:OUT.FAN6</td><td>TEST_MUX TCELL1:IMUX.DATA6, TCELL3:IMUX.FAN.BY2</td></tr>
-<tr><td>TCELL1:OUT.FAN7</td><td>TEST_MUX TCELL1:IMUX.FAN.BY2, TCELL1:IMUX.DATA24</td></tr>
-<tr><td>TCELL1:OUT.SEC8</td><td>TEST_MUX TCELL1:IMUX.SR3</td></tr>
-<tr><td>TCELL1:OUT.SEC9</td><td>TEST_MUX TCELL1:IMUX.SR2</td></tr>
-<tr><td>TCELL1:OUT.SEC10</td><td>TEST_MUX TCELL1:IMUX.SR1</td></tr>
-<tr><td>TCELL1:OUT.SEC11</td><td>TEST_MUX TCELL1:IMUX.SR0</td></tr>
-<tr><td>TCELL1:OUT.SEC12</td><td>TEST_MUX TCELL1:IMUX.FAN.BX0, TCELL1:IMUX.DATA0</td></tr>
-<tr><td>TCELL1:OUT.SEC13</td><td>TEST_MUX TCELL1:IMUX.DATA19, TCELL3:IMUX.DATA26</td></tr>
-<tr><td>TCELL1:OUT.SEC14</td><td>TEST_MUX TCELL1:IMUX.FAN.BY1, TCELL1:IMUX.DATA21</td></tr>
-<tr><td>TCELL1:OUT.SEC15</td><td>TEST_MUX TCELL1:IMUX.FAN.BX1, TCELL1:IMUX.DATA29</td></tr>
-<tr><td>TCELL1:OUT.HALF0.0</td><td>TEST_MUX TCELL1:IMUX.DATA1</td></tr>
-<tr><td>TCELL1:OUT.HALF0.1</td><td>TEST_MUX TCELL1:IMUX.DATA13</td></tr>
-<tr><td>TCELL1:OUT.HALF1.0</td><td>TEST_MUX TCELL1:IMUX.DATA9</td></tr>
-<tr><td>TCELL1:OUT.HALF1.1</td><td>TEST_MUX TCELL1:IMUX.DATA30</td></tr>
-<tr><td>TCELL1:OUT.HALF2.0</td><td>TEST_MUX TCELL1:IMUX.DATA25</td></tr>
-<tr><td>TCELL1:OUT.HALF2.1</td><td>TEST_MUX TCELL1:IMUX.DATA22</td></tr>
-<tr><td>TCELL1:OUT.HALF3.0</td><td>TEST_MUX TCELL1:IMUX.DATA17</td></tr>
-<tr><td>TCELL1:OUT.HALF3.1</td><td>TEST_MUX TCELL1:IMUX.DATA5</td></tr>
-<tr><td>TCELL2:OUT.FAN0</td><td>TEST_MUX TCELL1:IMUX.DATA2, TCELL2:IMUX.DATA11</td></tr>
-<tr><td>TCELL2:OUT.FAN1</td><td>TEST_MUX TCELL1:IMUX.FAN.BY3, TCELL2:IMUX.DATA14</td></tr>
-<tr><td>TCELL2:OUT.FAN2</td><td>TEST_MUX TCELL2:IMUX.FAN.BY1, TCELL2:IMUX.DATA16</td></tr>
-<tr><td>TCELL2:OUT.FAN3</td><td>TEST_MUX TCELL2:IMUX.FAN.BX1, TCELL2:IMUX.DATA8</td></tr>
-<tr><td>TCELL2:OUT.FAN4</td><td>TEST_MUX TCELL2:IMUX.FAN.BY0, TCELL2:IMUX.DATA27</td></tr>
-<tr><td>TCELL2:OUT.FAN5</td><td>TEST_MUX TCELL2:IMUX.FAN.BX0, TCELL2:IMUX.DATA3</td></tr>
-<tr><td>TCELL2:OUT.FAN6</td><td>TEST_MUX TCELL1:IMUX.FAN.BX3, TCELL2:IMUX.DATA6</td></tr>
-<tr><td>TCELL2:OUT.FAN7</td><td>TEST_MUX TCELL2:IMUX.FAN.BX3, TCELL2:IMUX.DATA24</td></tr>
-<tr><td>TCELL2:OUT.SEC7</td><td>TEST_MUX TCELL2:IMUX.CLK3</td></tr>
-<tr><td>TCELL2:OUT.SEC8</td><td>TEST_MUX TCELL2:IMUX.CE3</td></tr>
-<tr><td>TCELL2:OUT.SEC9</td><td>TEST_MUX TCELL2:IMUX.CE2</td></tr>
-<tr><td>TCELL2:OUT.SEC10</td><td>TEST_MUX TCELL2:IMUX.CE1</td></tr>
-<tr><td>TCELL2:OUT.SEC11</td><td>TEST_MUX TCELL2:IMUX.CE0</td></tr>
-<tr><td>TCELL2:OUT.SEC12</td><td>TEST_MUX TCELL2:IMUX.FAN.BY2, TCELL2:IMUX.DATA0</td></tr>
-<tr><td>TCELL2:OUT.SEC13</td><td>TEST_MUX TCELL2:IMUX.FAN.BX2, TCELL2:IMUX.DATA19</td></tr>
-<tr><td>TCELL2:OUT.SEC14</td><td>TEST_MUX TCELL2:IMUX.DATA2, TCELL2:IMUX.DATA21</td></tr>
-<tr><td>TCELL2:OUT.SEC15</td><td>TEST_MUX TCELL2:IMUX.FAN.BY3, TCELL2:IMUX.DATA29</td></tr>
-<tr><td>TCELL3:OUT.FAN0</td><td>TEST_MUX TCELL0:IMUX.DATA30, TCELL3:IMUX.DATA11</td></tr>
-<tr><td>TCELL3:OUT.FAN1</td><td>TEST_MUX TCELL0:IMUX.DATA25, TCELL3:IMUX.DATA14</td></tr>
-<tr><td>TCELL3:OUT.FAN2</td><td>TEST_MUX TCELL0:IMUX.DATA2, TCELL3:IMUX.DATA16</td></tr>
-<tr><td>TCELL3:OUT.FAN3</td><td>TEST_MUX TCELL0:IMUX.DATA5, TCELL3:IMUX.DATA8</td></tr>
-<tr><td>TCELL3:OUT.FAN4</td><td>TEST_MUX TCELL0:IMUX.FAN.BX2, TCELL3:IMUX.DATA27</td></tr>
-<tr><td>TCELL3:OUT.FAN5</td><td>TEST_MUX TCELL0:IMUX.FAN.BX0, TCELL3:IMUX.DATA3</td></tr>
-<tr><td>TCELL3:OUT.FAN6</td><td>TEST_MUX TCELL0:IMUX.DATA9, TCELL3:IMUX.DATA6</td></tr>
-<tr><td>TCELL3:OUT.FAN7</td><td>TEST_MUX TCELL0:IMUX.DATA18, TCELL3:IMUX.DATA24</td></tr>
-<tr><td>TCELL3:OUT.SEC8</td><td>TEST_MUX TCELL3:IMUX.CE3</td></tr>
-<tr><td>TCELL3:OUT.SEC9</td><td>TEST_MUX TCELL3:IMUX.CE2</td></tr>
-<tr><td>TCELL3:OUT.SEC10</td><td>TEST_MUX TCELL3:IMUX.CE1</td></tr>
-<tr><td>TCELL3:OUT.SEC11</td><td>TEST_MUX TCELL3:IMUX.CE0</td></tr>
-<tr><td>TCELL3:OUT.SEC12</td><td>TEST_MUX TCELL0:IMUX.FAN.BX3, TCELL3:IMUX.DATA0</td></tr>
-<tr><td>TCELL3:OUT.SEC13</td><td>TEST_MUX TCELL0:IMUX.FAN.BX1, TCELL3:IMUX.DATA19</td></tr>
-<tr><td>TCELL3:OUT.SEC14</td><td>TEST_MUX TCELL3:IMUX.FAN.BX0, TCELL3:IMUX.DATA21</td></tr>
-<tr><td>TCELL3:OUT.SEC15</td><td>TEST_MUX TCELL3:IMUX.DATA22, TCELL3:IMUX.DATA29</td></tr>
-<tr><td>TCELL3:OUT.HALF0.0</td><td>TEST_MUX TCELL3:IMUX.FAN.BX2</td></tr>
-<tr><td>TCELL3:OUT.HALF0.1</td><td>TEST_MUX TCELL3:IMUX.DATA13</td></tr>
-<tr><td>TCELL3:OUT.HALF1.0</td><td>TEST_MUX TCELL3:IMUX.FAN.BX1</td></tr>
-<tr><td>TCELL3:OUT.HALF1.1</td><td>TEST_MUX TCELL3:IMUX.DATA2</td></tr>
-<tr><td>TCELL3:OUT.HALF3.0</td><td>TEST_MUX TCELL3:IMUX.FAN.BX3</td></tr>
-<tr><td>TCELL3:OUT.HALF3.1</td><td>TEST_MUX TCELL3:IMUX.DATA18</td></tr>
+<tr><td>TCELL0:OUT.FAN0</td><td>TCELL0:OUT.FAN0.TMIN</td>
+<td>TCELL0:IMUX.DATA11</td>
+<td>TCELL0:IMUX.DATA22</td>
+</tr>
+<tr><td>TCELL0:OUT.FAN1</td><td>TCELL0:OUT.FAN1.TMIN</td>
+<td>TCELL0:IMUX.DATA14</td>
+<td>TCELL0:IMUX.DATA17</td>
+</tr>
+<tr><td>TCELL0:OUT.FAN2</td><td>TCELL0:OUT.FAN2.TMIN</td>
+<td>TCELL0:IMUX.DATA16</td>
+<td>TCELL0:IMUX.DATA10</td>
+</tr>
+<tr><td>TCELL0:OUT.FAN3</td><td>TCELL0:OUT.FAN3.TMIN</td>
+<td>TCELL0:IMUX.DATA8</td>
+<td>TCELL0:IMUX.DATA13</td>
+</tr>
+<tr><td>TCELL0:OUT.FAN4</td><td>TCELL0:OUT.FAN4.TMIN</td>
+<td>TCELL0:IMUX.DATA27</td>
+<td>TCELL0:IMUX.FAN.BY2</td>
+</tr>
+<tr><td>TCELL0:OUT.FAN5</td><td>TCELL0:OUT.FAN5.TMIN</td>
+<td>TCELL0:IMUX.DATA3</td>
+<td>TCELL0:IMUX.FAN.BY1</td>
+</tr>
+<tr><td>TCELL0:OUT.FAN6</td><td>TCELL0:OUT.FAN6.TMIN</td>
+<td>TCELL0:IMUX.DATA6</td>
+<td>TCELL0:IMUX.DATA1</td>
+</tr>
+<tr><td>TCELL0:OUT.FAN7</td><td>TCELL0:OUT.FAN7.TMIN</td>
+<td>TCELL0:IMUX.DATA24</td>
+<td>TCELL0:IMUX.DATA26</td>
+</tr>
+<tr><td>TCELL0:OUT.SEC8</td><td>TCELL0:OUT.SEC8.TMIN</td>
+<td>TCELL0:IMUX.SR3</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL0:OUT.SEC9</td><td>TCELL0:OUT.SEC9.TMIN</td>
+<td>TCELL0:IMUX.SR2</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL0:OUT.SEC10</td><td>TCELL0:OUT.SEC10.TMIN</td>
+<td>TCELL0:IMUX.SR1</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL0:OUT.SEC11</td><td>TCELL0:OUT.SEC11.TMIN</td>
+<td>TCELL0:IMUX.SR0</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL0:OUT.SEC12</td><td>TCELL0:OUT.SEC12.TMIN</td>
+<td>TCELL0:IMUX.DATA0</td>
+<td>TCELL0:IMUX.FAN.BY3</td>
+</tr>
+<tr><td>TCELL0:OUT.SEC13</td><td>TCELL0:OUT.SEC13.TMIN</td>
+<td>TCELL0:IMUX.DATA19</td>
+<td>TCELL0:IMUX.FAN.BY0</td>
+</tr>
+<tr><td>TCELL0:OUT.SEC14</td><td>TCELL0:OUT.SEC14.TMIN</td>
+<td>TCELL0:IMUX.DATA21</td>
+<td>TCELL3:IMUX.FAN.BY0</td>
+</tr>
+<tr><td>TCELL0:OUT.SEC15</td><td>TCELL0:OUT.SEC15.TMIN</td>
+<td>TCELL0:IMUX.DATA29</td>
+<td>TCELL3:IMUX.DATA30</td>
+</tr>
+<tr><td>TCELL1:OUT.FAN0</td><td>TCELL1:OUT.FAN0.TMIN</td>
+<td>TCELL1:IMUX.DATA11</td>
+<td>TCELL3:IMUX.FAN.BY3</td>
+</tr>
+<tr><td>TCELL1:OUT.FAN1</td><td>TCELL1:OUT.FAN1.TMIN</td>
+<td>TCELL1:IMUX.DATA14</td>
+<td>TCELL3:IMUX.FAN.BY1</td>
+</tr>
+<tr><td>TCELL1:OUT.FAN2</td><td>TCELL1:OUT.FAN2.TMIN</td>
+<td>TCELL1:IMUX.DATA16</td>
+<td>TCELL1:IMUX.FAN.BX2</td>
+</tr>
+<tr><td>TCELL1:OUT.FAN3</td><td>TCELL1:OUT.FAN3.TMIN</td>
+<td>TCELL1:IMUX.DATA8</td>
+<td>TCELL1:IMUX.FAN.BY0</td>
+</tr>
+<tr><td>TCELL1:OUT.FAN4</td><td>TCELL1:OUT.FAN4.TMIN</td>
+<td>TCELL1:IMUX.DATA27</td>
+<td>TCELL3:IMUX.DATA10</td>
+</tr>
+<tr><td>TCELL1:OUT.FAN5</td><td>TCELL1:OUT.FAN5.TMIN</td>
+<td>TCELL1:IMUX.DATA3</td>
+<td>TCELL3:IMUX.DATA5</td>
+</tr>
+<tr><td>TCELL1:OUT.FAN6</td><td>TCELL1:OUT.FAN6.TMIN</td>
+<td>TCELL1:IMUX.DATA6</td>
+<td>TCELL3:IMUX.FAN.BY2</td>
+</tr>
+<tr><td>TCELL1:OUT.FAN7</td><td>TCELL1:OUT.FAN7.TMIN</td>
+<td>TCELL1:IMUX.DATA24</td>
+<td>TCELL1:IMUX.FAN.BY2</td>
+</tr>
+<tr><td>TCELL1:OUT.SEC8</td><td>TCELL1:OUT.SEC8.TMIN</td>
+<td>TCELL1:IMUX.SR3</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL1:OUT.SEC9</td><td>TCELL1:OUT.SEC9.TMIN</td>
+<td>TCELL1:IMUX.SR2</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL1:OUT.SEC10</td><td>TCELL1:OUT.SEC10.TMIN</td>
+<td>TCELL1:IMUX.SR1</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL1:OUT.SEC11</td><td>TCELL1:OUT.SEC11.TMIN</td>
+<td>TCELL1:IMUX.SR0</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL1:OUT.SEC12</td><td>TCELL1:OUT.SEC12.TMIN</td>
+<td>TCELL1:IMUX.DATA0</td>
+<td>TCELL1:IMUX.FAN.BX0</td>
+</tr>
+<tr><td>TCELL1:OUT.SEC13</td><td>TCELL1:OUT.SEC13.TMIN</td>
+<td>TCELL1:IMUX.DATA19</td>
+<td>TCELL3:IMUX.DATA26</td>
+</tr>
+<tr><td>TCELL1:OUT.SEC14</td><td>TCELL1:OUT.SEC14.TMIN</td>
+<td>TCELL1:IMUX.DATA21</td>
+<td>TCELL1:IMUX.FAN.BY1</td>
+</tr>
+<tr><td>TCELL1:OUT.SEC15</td><td>TCELL1:OUT.SEC15.TMIN</td>
+<td>TCELL1:IMUX.DATA29</td>
+<td>TCELL1:IMUX.FAN.BX1</td>
+</tr>
+<tr><td>TCELL1:OUT.HALF0.0</td><td>TCELL1:OUT.HALF0.0.TMIN</td>
+<td>TCELL1:IMUX.DATA1</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL1:OUT.HALF0.1</td><td>TCELL1:OUT.HALF0.1.TMIN</td>
+<td>TCELL1:IMUX.DATA13</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL1:OUT.HALF1.0</td><td>TCELL1:OUT.HALF1.0.TMIN</td>
+<td>TCELL1:IMUX.DATA9</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL1:OUT.HALF1.1</td><td>TCELL1:OUT.HALF1.1.TMIN</td>
+<td>TCELL1:IMUX.DATA30</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL1:OUT.HALF2.0</td><td>TCELL1:OUT.HALF2.0.TMIN</td>
+<td>TCELL1:IMUX.DATA25</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL1:OUT.HALF2.1</td><td>TCELL1:OUT.HALF2.1.TMIN</td>
+<td>TCELL1:IMUX.DATA22</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL1:OUT.HALF3.0</td><td>TCELL1:OUT.HALF3.0.TMIN</td>
+<td>TCELL1:IMUX.DATA17</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL1:OUT.HALF3.1</td><td>TCELL1:OUT.HALF3.1.TMIN</td>
+<td>TCELL1:IMUX.DATA5</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL2:OUT.FAN0</td><td>TCELL2:OUT.FAN0.TMIN</td>
+<td>TCELL2:IMUX.DATA11</td>
+<td>TCELL1:IMUX.DATA2</td>
+</tr>
+<tr><td>TCELL2:OUT.FAN1</td><td>TCELL2:OUT.FAN1.TMIN</td>
+<td>TCELL2:IMUX.DATA14</td>
+<td>TCELL1:IMUX.FAN.BY3</td>
+</tr>
+<tr><td>TCELL2:OUT.FAN2</td><td>TCELL2:OUT.FAN2.TMIN</td>
+<td>TCELL2:IMUX.DATA16</td>
+<td>TCELL2:IMUX.FAN.BY1</td>
+</tr>
+<tr><td>TCELL2:OUT.FAN3</td><td>TCELL2:OUT.FAN3.TMIN</td>
+<td>TCELL2:IMUX.DATA8</td>
+<td>TCELL2:IMUX.FAN.BX1</td>
+</tr>
+<tr><td>TCELL2:OUT.FAN4</td><td>TCELL2:OUT.FAN4.TMIN</td>
+<td>TCELL2:IMUX.DATA27</td>
+<td>TCELL2:IMUX.FAN.BY0</td>
+</tr>
+<tr><td>TCELL2:OUT.FAN5</td><td>TCELL2:OUT.FAN5.TMIN</td>
+<td>TCELL2:IMUX.DATA3</td>
+<td>TCELL2:IMUX.FAN.BX0</td>
+</tr>
+<tr><td>TCELL2:OUT.FAN6</td><td>TCELL2:OUT.FAN6.TMIN</td>
+<td>TCELL2:IMUX.DATA6</td>
+<td>TCELL1:IMUX.FAN.BX3</td>
+</tr>
+<tr><td>TCELL2:OUT.FAN7</td><td>TCELL2:OUT.FAN7.TMIN</td>
+<td>TCELL2:IMUX.DATA24</td>
+<td>TCELL2:IMUX.FAN.BX3</td>
+</tr>
+<tr><td>TCELL2:OUT.SEC7</td><td>TCELL2:OUT.SEC7.TMIN</td>
+<td>TCELL2:IMUX.CLK3</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL2:OUT.SEC8</td><td>TCELL2:OUT.SEC8.TMIN</td>
+<td>TCELL2:IMUX.CE3</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL2:OUT.SEC9</td><td>TCELL2:OUT.SEC9.TMIN</td>
+<td>TCELL2:IMUX.CE2</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL2:OUT.SEC10</td><td>TCELL2:OUT.SEC10.TMIN</td>
+<td>TCELL2:IMUX.CE1</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL2:OUT.SEC11</td><td>TCELL2:OUT.SEC11.TMIN</td>
+<td>TCELL2:IMUX.CE0</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL2:OUT.SEC12</td><td>TCELL2:OUT.SEC12.TMIN</td>
+<td>TCELL2:IMUX.DATA0</td>
+<td>TCELL2:IMUX.FAN.BY2</td>
+</tr>
+<tr><td>TCELL2:OUT.SEC13</td><td>TCELL2:OUT.SEC13.TMIN</td>
+<td>TCELL2:IMUX.DATA19</td>
+<td>TCELL2:IMUX.FAN.BX2</td>
+</tr>
+<tr><td>TCELL2:OUT.SEC14</td><td>TCELL2:OUT.SEC14.TMIN</td>
+<td>TCELL2:IMUX.DATA21</td>
+<td>TCELL2:IMUX.DATA2</td>
+</tr>
+<tr><td>TCELL2:OUT.SEC15</td><td>TCELL2:OUT.SEC15.TMIN</td>
+<td>TCELL2:IMUX.DATA29</td>
+<td>TCELL2:IMUX.FAN.BY3</td>
+</tr>
+<tr><td>TCELL3:OUT.FAN0</td><td>TCELL3:OUT.FAN0.TMIN</td>
+<td>TCELL3:IMUX.DATA11</td>
+<td>TCELL0:IMUX.DATA30</td>
+</tr>
+<tr><td>TCELL3:OUT.FAN1</td><td>TCELL3:OUT.FAN1.TMIN</td>
+<td>TCELL3:IMUX.DATA14</td>
+<td>TCELL0:IMUX.DATA25</td>
+</tr>
+<tr><td>TCELL3:OUT.FAN2</td><td>TCELL3:OUT.FAN2.TMIN</td>
+<td>TCELL3:IMUX.DATA16</td>
+<td>TCELL0:IMUX.DATA2</td>
+</tr>
+<tr><td>TCELL3:OUT.FAN3</td><td>TCELL3:OUT.FAN3.TMIN</td>
+<td>TCELL3:IMUX.DATA8</td>
+<td>TCELL0:IMUX.DATA5</td>
+</tr>
+<tr><td>TCELL3:OUT.FAN4</td><td>TCELL3:OUT.FAN4.TMIN</td>
+<td>TCELL3:IMUX.DATA27</td>
+<td>TCELL0:IMUX.FAN.BX2</td>
+</tr>
+<tr><td>TCELL3:OUT.FAN5</td><td>TCELL3:OUT.FAN5.TMIN</td>
+<td>TCELL3:IMUX.DATA3</td>
+<td>TCELL0:IMUX.FAN.BX0</td>
+</tr>
+<tr><td>TCELL3:OUT.FAN6</td><td>TCELL3:OUT.FAN6.TMIN</td>
+<td>TCELL3:IMUX.DATA6</td>
+<td>TCELL0:IMUX.DATA9</td>
+</tr>
+<tr><td>TCELL3:OUT.FAN7</td><td>TCELL3:OUT.FAN7.TMIN</td>
+<td>TCELL3:IMUX.DATA24</td>
+<td>TCELL0:IMUX.DATA18</td>
+</tr>
+<tr><td>TCELL3:OUT.SEC8</td><td>TCELL3:OUT.SEC8.TMIN</td>
+<td>TCELL3:IMUX.CE3</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL3:OUT.SEC9</td><td>TCELL3:OUT.SEC9.TMIN</td>
+<td>TCELL3:IMUX.CE2</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL3:OUT.SEC10</td><td>TCELL3:OUT.SEC10.TMIN</td>
+<td>TCELL3:IMUX.CE1</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL3:OUT.SEC11</td><td>TCELL3:OUT.SEC11.TMIN</td>
+<td>TCELL3:IMUX.CE0</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL3:OUT.SEC12</td><td>TCELL3:OUT.SEC12.TMIN</td>
+<td>TCELL3:IMUX.DATA0</td>
+<td>TCELL0:IMUX.FAN.BX3</td>
+</tr>
+<tr><td>TCELL3:OUT.SEC13</td><td>TCELL3:OUT.SEC13.TMIN</td>
+<td>TCELL3:IMUX.DATA19</td>
+<td>TCELL0:IMUX.FAN.BX1</td>
+</tr>
+<tr><td>TCELL3:OUT.SEC14</td><td>TCELL3:OUT.SEC14.TMIN</td>
+<td>TCELL3:IMUX.DATA21</td>
+<td>TCELL3:IMUX.FAN.BX0</td>
+</tr>
+<tr><td>TCELL3:OUT.SEC15</td><td>TCELL3:OUT.SEC15.TMIN</td>
+<td>TCELL3:IMUX.DATA29</td>
+<td>TCELL3:IMUX.DATA22</td>
+</tr>
+<tr><td>TCELL3:OUT.HALF0.0</td><td>TCELL3:OUT.HALF0.0.TMIN</td>
+<td>TCELL3:IMUX.FAN.BX2</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL3:OUT.HALF0.1</td><td>TCELL3:OUT.HALF0.1.TMIN</td>
+<td>TCELL3:IMUX.DATA13</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL3:OUT.HALF1.0</td><td>TCELL3:OUT.HALF1.0.TMIN</td>
+<td>TCELL3:IMUX.FAN.BX1</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL3:OUT.HALF1.1</td><td>TCELL3:OUT.HALF1.1.TMIN</td>
+<td>TCELL3:IMUX.DATA2</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL3:OUT.HALF3.0</td><td>TCELL3:OUT.HALF3.0.TMIN</td>
+<td>TCELL3:IMUX.FAN.BX3</td>
+<td>-</td>
+</tr>
+<tr><td>TCELL3:OUT.HALF3.1</td><td>TCELL3:OUT.HALF3.1.TMIN</td>
+<td>TCELL3:IMUX.DATA18</td>
+<td>-</td>
+</tr>
 </tbody>
 </table></div>
 <h3 id="bitstream"><a class="header" href="#bitstream">Bitstream</a></h3>
@@ -289,13 +529,13 @@
 <tr><td>46</td>
 <td>-</td>
 <td title="3.1.46">
-<a href="#tile-spartan3-INTF.DSP-INTF:TEST_ENABLE">INTF:TEST_ENABLE[1]</a>
+<a href="#tile-spartan3-INTF.DSP-INTF_TESTMUX:TEST_GROUP">INTF_TESTMUX:TEST_GROUP[1]</a>
 </td>
 </tr>
 <tr><td>45</td>
 <td>-</td>
 <td title="3.1.45">
-<a href="#tile-spartan3-INTF.DSP-INTF:TEST_ENABLE">INTF:TEST_ENABLE[0]</a>
+<a href="#tile-spartan3-INTF.DSP-INTF_TESTMUX:TEST_GROUP">INTF_TESTMUX:TEST_GROUP[0]</a>
 </td>
 </tr>
 <tr><td>44</td>
@@ -482,7 +722,7 @@
 </table></div>
 <div class="table-wrapper"><table>
 <thead>
-<tr><th id="tile-spartan3-INTF.DSP-INTF:TEST_ENABLE">INTF:TEST_ENABLE</th>
+<tr><th id="tile-spartan3-INTF.DSP-INTF_TESTMUX:TEST_GROUP">INTF_TESTMUX:TEST_GROUP</th>
 <th>3.1.46</th>
 <th>3.1.45</th>
 </tr>
@@ -502,9 +742,6 @@
 </tr>
 </tbody>
 </table></div>
-<p>The associated groups are:</p>
-<p>.. raw:: html
-:file: ../gen/xc3s-INTF.DSP.html</p>
 
                     </main>
 

@@ -161,8 +161,8 @@
 </thead>
 <tbody>
 <tr><td>INT</td><td>INT, INT.IOI</td><td>INT</td></tr>
-<tr><td>INTF</td><td>INTF, INTF.CMT, INTF.CMT.IOI, INTF.IOI</td><td></td></tr>
-<tr><td>BEL</td><td>CLEXM, BRAM, DSP, LL, UL, LR, UR, IOI.LR, IOI.BT, PCILOGICSE, CLKC, CMT_DCM, CMT_PLL, CLEXL, MCB, PCIE, GTP</td><td>SLICE0, SLICE1, BRAM_F, BRAM_H0, BRAM_H1, DSP, ILOGIC0, ILOGIC1, OLOGIC0, OLOGIC1, IODELAY0, IODELAY1, IOICLK0, IOICLK1, IOI, DCM0, DCM1, PLL, CMT, MCB, PCIE, GTP, BUFDS0, BUFDS1, PCILOGICSE, OCT_CAL0, OCT_CAL1, OCT_CAL2, OCT_CAL3, OCT_CAL4, OCT_CAL5, PMV, DNA_PORT, ICAP, SPI_ACCESS, SUSPEND_SYNC, POST_CRC_INTERNAL, STARTUP, SLAVE_SPI, BSCAN0, BSCAN1, BSCAN2, BSCAN3, BUFGMUX0, BUFGMUX1, BUFGMUX2, BUFGMUX3, BUFGMUX4, BUFGMUX5, BUFGMUX6, BUFGMUX7, BUFGMUX8, BUFGMUX9, BUFGMUX10, BUFGMUX11, BUFGMUX12, BUFGMUX13, BUFGMUX14, BUFGMUX15, CLKC, CLKC_BUFPLL, MCB_TIE_CLK, MCB_TIE_DQS0, MCB_TIE_DQS1, TIEOFF_IOI, TIEOFF_PLL, TIEOFF_CLK, TIEOFF_DQS0, TIEOFF_DQS1, IPAD_RXP0, IPAD_RXN0, IPAD_RXP1, IPAD_RXN1, IPAD_CLKP0, IPAD_CLKN0, IPAD_CLKP1, IPAD_CLKN1, OPAD_TXP0, OPAD_TXN0, OPAD_TXP1, OPAD_TXN1, GTP_BUF</td></tr>
+<tr><td>INTF</td><td>INTF, INTF.CMT, INTF.CMT.IOI, INTF.IOI</td><td>INTF_TESTMUX</td></tr>
+<tr><td>BEL</td><td>CLEXL, CLEXM, BRAM, DSP, LL, UL, LR, UR, IOI.LR, IOI.BT, PCILOGICSE, MCB, CLKC, CMT_DCM, CMT_PLL, PCIE, GTP</td><td>SLICE0, SLICE1, BRAM_F, BRAM_H0, BRAM_H1, DSP, ILOGIC0, ILOGIC1, OLOGIC0, OLOGIC1, IODELAY0, IODELAY1, IOICLK0, IOICLK1, IOI, DCM0, DCM1, PLL, CMT, MCB, PCIE, GTP, BUFDS0, BUFDS1, PCILOGICSE, OCT_CAL0, OCT_CAL1, OCT_CAL2, OCT_CAL3, OCT_CAL4, OCT_CAL5, PMV, DNA_PORT, ICAP, SPI_ACCESS, SUSPEND_SYNC, POST_CRC_INTERNAL, STARTUP, SLAVE_SPI, BSCAN0, BSCAN1, BSCAN2, BSCAN3, BUFGMUX0, BUFGMUX1, BUFGMUX2, BUFGMUX3, BUFGMUX4, BUFGMUX5, BUFGMUX6, BUFGMUX7, BUFGMUX8, BUFGMUX9, BUFGMUX10, BUFGMUX11, BUFGMUX12, BUFGMUX13, BUFGMUX14, BUFGMUX15, CLKC, CLKC_BUFPLL, MCB_TIE_CLK, MCB_TIE_DQS0, MCB_TIE_DQS1, TIEOFF_IOI, TIEOFF_PLL, TIEOFF_CLK, TIEOFF_DQS0, TIEOFF_DQS1, IPAD_RXP0, IPAD_RXN0, IPAD_RXP1, IPAD_RXN1, IPAD_CLKP0, IPAD_CLKN0, IPAD_CLKP1, IPAD_CLKN1, OPAD_TXP0, OPAD_TXN0, OPAD_TXP1, OPAD_TXN1, GTP_BUF</td></tr>
 <tr><td>IOB</td><td>IOB</td><td>IOB0, IOB1</td></tr>
 <tr><td>HCLK</td><td>HCLK</td><td>HCLK</td></tr>
 <tr><td>HCLK_ROW</td><td>HCLK_ROW</td><td>BUFH_W0, BUFH_W1, BUFH_W2, BUFH_W3, BUFH_W4, BUFH_W5, BUFH_W6, BUFH_W7, BUFH_W8, BUFH_W9, BUFH_W10, BUFH_W11, BUFH_W12, BUFH_W13, BUFH_W14, BUFH_W15, BUFH_E0, BUFH_E1, BUFH_E2, BUFH_E3, BUFH_E4, BUFH_E5, BUFH_E6, BUFH_E7, BUFH_E8, BUFH_E9, BUFH_E10, BUFH_E11, BUFH_E12, BUFH_E13, BUFH_E14, BUFH_E15, HCLK_ROW</td></tr>
@@ -182,9 +182,10 @@
 </thead>
 <tbody>
 <tr><td>INT</td><td>INT</td><td>INT, INT.IOI</td></tr>
+<tr><td>INTF_TESTMUX</td><td>INTF</td><td>INTF, INTF.CMT, INTF.CMT.IOI, INTF.IOI</td></tr>
 <tr><td>REG_INT</td><td>REG</td><td>REG_B, REG_T</td></tr>
-<tr><td>SLICE0</td><td>BEL</td><td>CLEXM, CLEXL</td></tr>
-<tr><td>SLICE1</td><td>BEL</td><td>CLEXM, CLEXL</td></tr>
+<tr><td>SLICE0</td><td>BEL</td><td>CLEXL, CLEXM</td></tr>
+<tr><td>SLICE1</td><td>BEL</td><td>CLEXL, CLEXM</td></tr>
 <tr><td>BRAM_F</td><td>BEL</td><td>BRAM</td></tr>
 <tr><td>BRAM_H0</td><td>BEL</td><td>BRAM</td></tr>
 <tr><td>BRAM_H1</td><td>BEL</td><td>BRAM</td></tr>
@@ -821,29 +822,53 @@
 <tr><td>IMUX.LOGICIN62.BOUNCE.S</td><td>BRANCH:N</td></tr>
 <tr><td>IMUX.LOGICIN63</td><td>MUX_OUT</td></tr>
 <tr><td>OUT0</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT0.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT1</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT1.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT2</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT2.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT3</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT3.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT4</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT4.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT5</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT5.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT6</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT6.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT7</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT7.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT8</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT8.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT9</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT9.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT10</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT10.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT11</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT11.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT12</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT12.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT13</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT13.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT14</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT14.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT15</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT15.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT16</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT16.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT17</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT17.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT18</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT18.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT19</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT19.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT20</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT20.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT21</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT21.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT22</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT22.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>OUT23</td><td>LOGIC_OUT</td></tr>
+<tr><td>OUT23.TMIN</td><td>LOGIC_OUT</td></tr>
 <tr><td>IMUX.REGB.GCLK0</td><td>MUX_OUT</td></tr>
 <tr><td>IMUX.REGB.GCLK1</td><td>MUX_OUT</td></tr>
 <tr><td>IMUX.REGT.GCLK0</td><td>MUX_OUT</td></tr>
